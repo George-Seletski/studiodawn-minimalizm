@@ -406,7 +406,7 @@ img {
 }
 
 #instagram-icon {
-    background-image: url("/static/icons/instagram-svg.svg");
+    background-image: url("../icons/instagram-svg.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 18px;
@@ -422,7 +422,7 @@ img {
 }
 
 #behance-icon {
-    background-image: url("/static/icons/behance.svg");
+    background-image: url("../icons/behance.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 18px;
@@ -432,7 +432,7 @@ img {
 }
 
 #facebook-icon {
-    background-image: url("/static/icons/facebook-svg-large.svg");
+    background-image: url("../icons/facebook-svg-large.svg");
     background-repeat: no-repeat;
     background-size: 100% 115%;
     width: 18px;
@@ -649,21 +649,21 @@ footer {
 }
 
 .img1 {
-    background-image: url("../static/img/inst_1.png");
+    background-image: url("..\/img/inst_1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .img2 {
-    background-image: url("../static/img/inst_2.png");
+    background-image: url("../img/inst_2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .img3 {
-    background-image: url("../static/img/inst_3.png");
+    background-image: url("../img/inst_3.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -698,7 +698,7 @@ footer {
 }
 
 .svg-icon {
-    background-image: url("/static/icons/global.svg");
+    background-image: url("../icons/global.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 35px;
