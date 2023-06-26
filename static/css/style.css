@@ -5,22 +5,22 @@
 
 @font-face {
     font-family: 'Roboto Regular';
-    src: url("../ffonts/Roboto/Roboto-Regular.ttf");
+    src: url("/static/fonts/Roboto/Roboto-Regular.ttf");
 }
 
 @font-face {
     font-family: 'Cormorant Garamond Light';
-    src: url("../fonts/Cormorant-Garamond/CormorantGaramond-Light.ttf");
+    src: url("/static/fonts/Cormorant-Garamond/CormorantGaramond-Light.ttf");
 }
 
 @font-face {
     font-family: 'Cormorant Garamond Semibold';
-    src: url("../fonts/Cormorant-Garamond/CormorantGaramond-SemiBold.ttf");
+    src: url("/static/fonts/Cormorant-Garamond/CormorantGaramond-SemiBold.ttf");
 }
 
 @font-face {
     font-family: 'Roboto Bold';
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    src: url("/static/fonts/Roboto/Roboto-Bold.ttf");
 }
 
 * {
@@ -82,6 +82,7 @@ h2 {
 .gif-animation {
     height: 500px;
     width: 1000px;
+    background-color: #9D988C;
 }
 
 .bottom-text-header {
@@ -406,7 +407,7 @@ img {
 }
 
 #instagram-icon {
-    background-image: url("../icons/instagram-svg.svg");
+    background-image: url("/static/icons/instagram-svg.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 18px;
@@ -422,7 +423,7 @@ img {
 }
 
 #behance-icon {
-    background-image: url("../icons/behance.svg");
+    background-image: url("/static/icons/behance.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 18px;
@@ -432,7 +433,7 @@ img {
 }
 
 #facebook-icon {
-    background-image: url("../icons/facebook-svg-large.svg");
+    background-image: url("/static/icons/facebook-svg-large.svg");
     background-repeat: no-repeat;
     background-size: 100% 115%;
     width: 18px;
@@ -649,21 +650,21 @@ footer {
 }
 
 .img1 {
-    background-image: url("..\/img/inst_1.png");
+    background-image: url("/static/img/inst_1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .img2 {
-    background-image: url("../img/inst_2.png");
+    background-image: url("/static/img/inst_2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .img3 {
-    background-image: url("../img/inst_3.png");
+    background-image: url("/static/img/inst_3.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -698,7 +699,7 @@ footer {
 }
 
 .svg-icon {
-    background-image: url("../icons/global.svg");
+    background-image: url("/static/icons/global.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 35px;
