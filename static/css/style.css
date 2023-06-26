@@ -5,22 +5,22 @@
 
 @font-face {
     font-family: 'Roboto Regular';
-    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+    src: url("../ffonts/Roboto/Roboto-Regular.ttf");
 }
 
 @font-face {
     font-family: 'Cormorant Garamond Light';
-    src: url("/static/fonts/Cormorant-Garamond/CormorantGaramond-Light.ttf");
+    src: url("../fonts/Cormorant-Garamond/CormorantGaramond-Light.ttf");
 }
 
 @font-face {
     font-family: 'Cormorant Garamond Semibold';
-    src: url("/static/fonts/Cormorant-Garamond/CormorantGaramond-SemiBold.ttf");
+    src: url("../fonts/Cormorant-Garamond/CormorantGaramond-SemiBold.ttf");
 }
 
 @font-face {
     font-family: 'Roboto Bold';
-    src: url("/static/fonts/Roboto/Roboto-Bold.ttf");
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
 }
 
 * {
