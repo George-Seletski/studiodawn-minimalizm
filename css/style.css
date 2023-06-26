@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'Roboto Thin';
-    src: url("/fonts/Roboto/Roboto-Thin.ttf") format('truetype');
+    src: url("fonts/Roboto/Roboto-Thin.ttf") format('truetype');
 }
 
 @font-face {
     font-family: 'Roboto Regular';
-    src: url("/fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+    src: url("fonts/Roboto/Roboto-Regular.ttf") format('truetype');
 }
 
 @font-face {
     font-family: 'Cormorant Garamond Light';
-    src: url("/fonts/Cormorant-Garamond/CormorantGaramond-Light.ttf") format('truetype');
+    src: url("fonts/Cormorant-Garamond/CormorantGaramond-Light.ttf") format('truetype');
 }
 
 @font-face {
