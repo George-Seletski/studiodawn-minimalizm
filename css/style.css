@@ -650,7 +650,7 @@ footer {
 }
 
 .img1 {
-    background-image: url("/img/inst_1.png");
+    background-image: url("../img/inst_1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -699,7 +699,7 @@ footer {
 }
 
 .svg-icon {
-    background-image: url("/icons/global.svg");
+    background-image: url("../icons/global.svg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 35px;
