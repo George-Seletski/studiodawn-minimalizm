@@ -281,8 +281,8 @@ img {
     justify-content: space-between;
     align-items: center;
     display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .header-logo {
