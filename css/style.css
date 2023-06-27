@@ -61,9 +61,9 @@ h2 {
 }
 
 #header-font {
-    font-size: 85px;
+    font-size: 45px;
     text-align: left;
-    margin-bottom: 120px;
+    margin-bottom: 35px;
     font-family: 'Cormorant Garamond Semibold', sans-serif;
 }
 
@@ -90,15 +90,13 @@ h2 {
     bottom: 0;
     display: flex;
     overflow: auto;
-    padding: 60px 160px;
     flex-direction: column;
 }
 
 .bottom-text-header>span {
     text-align: center;
-    font-size: 12px;
     letter-spacing: 1.5px;
-    width: 1000px;
+    width: 1050px;
     font-weight: 800;
 }
 
@@ -297,7 +295,7 @@ img {
 .row-container {
     display: flex;
     align-items: center;
-    margin: 15em 13em;
+    margin: 11em 9em;
     gap: 150px;
 }
 
@@ -306,16 +304,25 @@ img {
 }
 
 .description {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 800;
     line-height: 28px;
 }
 
 .text {
     text-align: center;
-    padding: 100px 330px;
-    font-size: 15px;
-    line-height: 30px;
+    padding: 50px 290px;
+    font-size: 30px;
+    line-height: 70px;
+}
+
+#brand-name {
+    text-decoration: underline;
+    font-family: 'Roboto Thin', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    font-size: 50px !important;
+    line-height: 70px;
 }
 
 
@@ -612,15 +619,13 @@ footer {
 
 .instagram-container {
     display: flex;
-    gap: 100px;
+    gap: 70px;
     margin: 150px 200px;
     align-items: center;
 }
 
 .instagram-text-contianer>h2 {
     font-family: 'Cormorant Garamond Semibold';
-    font-size: 80px;
-    margin-bottom: 50px;
 }
 
 .instagram-text-contianer {
@@ -628,21 +633,24 @@ footer {
 }
 
 .instagram-text-contianer>span {
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 16px;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
 }
 
 .instagram-images {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
 .instagram-img {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     background-color: #888;
     transition: transform 5s;
     transition: all 0.5s ease;
+    margin-top: 50px;
 }
 
 .instagram-img:hover {
@@ -800,6 +808,9 @@ footer {
     }
     .text {
         padding: 80px 60px;
+        padding: 100px 10px 200px;
+        font-size: 20px;
+        line-height: 50px;
     }
     .instagram-text-contianer {
         width: 600px;
@@ -809,7 +820,9 @@ footer {
         margin-bottom: 120px;
     }
     .instagram-text-contianer>span {
+        width: 500px;
         font-size: 18.7px;
+        padding: 0 60px;
     }
     .instagram-container {
         flex-direction: column;
