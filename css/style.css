@@ -68,11 +68,12 @@ h2 {
 }
 
 .page-wrapper {
-    margin-left: 0px;
-    margin-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
     width: 100%;
     position: relative;
     scroll-behavior: smooth;
+    display: block;
 }
 
 .video-container {
@@ -553,7 +554,6 @@ img {
 
 .header-section-content {
     z-index: 0;
-    max-width: 100%;
     text-align: center;
     position: relative;
     line-height: 53px;
@@ -776,20 +776,21 @@ footer {
         text-align: center;
         font-size: 12px;
         letter-spacing: 1.5px;
-        width: 780px;
+        width: 735px;
     }
     .nav-link {
         font-size: 45px;
     }
     .page-wrapper {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     .video-container {
-        margin: 7.5em 10px;
+        margin: 7.5em;
     }
     .gif-animation {
-        width: 780px;
+        width: 735px;
+        height: 345px;
     }
     .row-container {
         flex-direction: column;
@@ -806,7 +807,7 @@ footer {
     }
     .text {
         padding: 80px 60px;
-        padding: 100px 10px 200px;
+        padding: 100px 140px 100px;
         font-size: 20px;
         line-height: 50px;
     }
