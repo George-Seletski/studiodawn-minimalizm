@@ -189,8 +189,6 @@ img {
     right: 0;
     padding: 20px;
     z-index: 999;
-    transition: 0.5s;
-    transition-delay: 0.2s;
 }
 
 .w-nav-menu-info {
