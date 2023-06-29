@@ -132,7 +132,24 @@
 
 
         <div class="video-container">
-            <img class="gif-animation hover-area" src="video/video-tmp.gif" alt="video" data-cursor-text="Play">
+            <div class="movie-btn sixteen-nine-btn" vidUrl="https://dieselpunkindustries.com/films/f015.mp4">
+                <img class="gif-animation movie-btn sixteen-nine-btn" src="video/video-tmp.gif" alt="video" data-cursor-text="Play"></div>
+
+            <div class="modal-vid">
+                <div class="movie-box">
+                    <div class="wide-screen">
+                        <div class="vid-holder">
+                            <div class="close" vidUrl="#">
+                                <div class="remove-circle"><img src="/icons/close_white_24dp.svg" loading="lazy" width="75" alt="" class="remove" /></div>
+                            </div>
+
+
+                            <video id="myVideo" class="myVideo hide" src="" controls></video>
+                            <iframe class="youTube hide" src="" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row-container">
@@ -342,6 +359,82 @@
         window.onscroll = null;
         document.body.classList.remove('scroll-lock');
     }
+    /*video*/
+
+    $(document).ready(function() {
+
+        $(".movie-btn").click(function() {
+            $('.myVideo').attr("src", $(this).attr("vidUrl"));
+            document.getElementById('myVideo').play();
+            $('.myVideo').removeClass("hide");
+            $('.myVideo').addClass("show");
+            $('.youTube').addClass("hide");
+            $('.youTube').removeClass("show");
+            $('.gif-animation').css('display', 'none');
+        });
+
+        $(".tube-link").click(function() {
+            $('.youTube').removeClass("hide");
+            $('.youTube').addClass("show");
+            $('.myVideo').addClass("hide");
+            $('.myVideo').removeClass("show");
+            $('.youTube').attr("src", $(this).attr("vidUrl"));
+            $('.gif-animation').css('display', 'none');
+        });
+
+        $(".widscreen-btn").click(function() {
+            $(".modal-vid").fadeIn(500);
+            $(".vid-holder img").removeClass("show");
+            $(".widescreen-img").addClass("show");
+            $('.gif-animation').css('display', 'none');
+        });
+
+        $(".standard-btn").click(function() {
+            $(".modal-vid").fadeIn(500);
+            $(".vid-holder img").removeClass("show");
+            $(".standard-img").addClass("show");
+            $('.gif-animation').css('display', 'none');
+        });
+
+        $(".sixteen-nine-btn").click(function() {
+            $(".modal-vid").fadeIn(500);
+            $(".vid-holder img").removeClass("show");
+            $(".sixteen-nine").addClass("show");
+            $('.gif-animation').css('display', 'none');
+
+        });
+
+        $(".pal-btn").click(function() {
+            $(".modal-vid").fadeIn(500);
+            $(".vid-holder img").removeClass("show");
+            $(".pal").addClass("show");
+            $('.gif-animation').css('display', 'none');
+        });
+
+
+        $(".close").click(function() {
+            $(".modal-vid").fadeOut(500);
+            /*document.getElementById('myVideo').pause();*/
+            $('.youTube, .myVideo').attr('src', '');
+            $('.gif-animation').css('display', 'block');
+        });
+
+    });
+
+
+
+    window.document.onkeydown = function(e) {
+        if (!e) e = event;
+        if (e.keyCode == 27) {
+
+            $('.youTube, .myVideo').attr('src', '');
+            $('.modal-vid').fadeOut(500);
+            document.getElementById('myVideo').pause();
+
+        }
+
+
+    };
 </script>
 
 </html>
