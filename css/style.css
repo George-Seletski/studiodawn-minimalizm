@@ -380,6 +380,7 @@ img {
     backdrop-filter: saturate(180%) blur(10px);
     transform: none;
     cursor: none;
+    border-radius: 100px;
 }
 
 .standard-img,
@@ -408,6 +409,7 @@ img {
     left: 0px;
     position: relative;
     margin: 0 auto;
+    background-color: transparent;
 }
 
 #myVideo {
