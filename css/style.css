@@ -67,9 +67,12 @@ h2 {
     font-family: 'Cormorant Garamond Semibold', sans-serif;
 }
 
+#narrow-block {
+    width: 300px !important;
+    margin-left: 7.8em !important;
+}
+
 .page-wrapper {
-    padding-left: 10px;
-    padding-right: 10px;
     width: 100%;
     position: relative;
     scroll-behavior: smooth;
@@ -150,6 +153,12 @@ img {
     font-family: 'Cormorant Garamond Light', sans-serif !important;
     font-weight: 100;
     font-size: 1.3em;
+}
+
+.font-30 {
+    font-size: 1.5em !important;
+    line-height: 120px;
+    text-align: center;
 }
 
 .w-container {
@@ -465,7 +474,7 @@ img {
 .brands-section {
     border-top: 2px solid;
     border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
-    margin: 10em 13em;
+    margin: 5em 13em;
     padding: 150px 0;
     display: flex;
     gap: 100px;
@@ -482,7 +491,7 @@ img {
 #brand {
     width: 200px;
     height: 100px;
-    background-color: #ffffff;
+    background-color: rgb(171, 157, 157);
 }
 
 .icons {
@@ -491,6 +500,34 @@ img {
     align-items: flex-start;
     padding: 0px;
     gap: 10px;
+}
+
+.button {
+    display: flex;
+    border: 2px solid #000;
+    border-radius: 100px;
+    padding: 15px 30px;
+    margin-bottom: 100px;
+    transition: transform 5s;
+    transition: all 0.5s ease;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #000;
+    border-color: transparent;
+}
+
+.button:hover>span {
+    color: #f9f4f4;
+}
+
+.button>span {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000;
+    padding: 5px;
 }
 
 .icons>div {
@@ -641,6 +678,38 @@ img {
     width: 100%;
 }
 
+.header-image-description {
+    position: relative;
+    overflow-x: hidden;
+    height: 100hv;
+}
+
+.header-image-description>.description {
+    display: block;
+    margin: 3em auto 8em 50em;
+    width: 800px;
+    font-size: 18px !important;
+    line-height: 40px;
+}
+
+.header-cover {
+    margin-top: 3em;
+    height: 700px;
+    width: 1200px;
+    background-color: #9D988C;
+}
+
+.section-block {
+    height: 700px !important;
+    font-size: 8px;
+    margin: auto;
+    align-items: baseline !important;
+}
+
+.h-600 {
+    height: 600px !important;
+}
+
 .header-section-content {
     z-index: 0;
     text-align: center;
@@ -668,7 +737,6 @@ img {
     padding-left: 24px;
     padding-right: 24px;
     overflow: auto;
-    border: 1px solid;
     transition: 0.5s;
     transition-delay: 0.5s;
 }
@@ -698,6 +766,31 @@ footer {
 
 .text-header {
     padding: 10px;
+}
+
+.team-section {
+    margin-top: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-gallery {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 200px;
+}
+
+.team-gallery>img {
+    width: 400px;
+    margin: 50px;
+}
+
+.team-gallery>:nth-child(2) {
+    margin-bottom: 100px;
+}
+
+#main-team-img {
+    width: 700px !important;
 }
 
 .text-header>h2 {
