@@ -79,16 +79,6 @@ h2 {
     display: block;
 }
 
-.video-container {
-    margin: 7.5em 450px;
-}
-
-.gif-animation {
-    height: 500px;
-    width: 1000px;
-    background-color: #9D988C;
-}
-
 .bottom-text-header {
     position: absolute;
     bottom: 0;
@@ -102,6 +92,21 @@ h2 {
     letter-spacing: 1.5px;
     width: 1050px;
     font-weight: 800;
+}
+
+.text-header {
+    top: 0;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+}
+
+.text-header>span {
+    text-align: center;
+    letter-spacing: 1.5px;
+    width: 1050px;
+    font-weight: 800;
+    padding: 50px 400px;
 }
 
 
@@ -159,6 +164,14 @@ img {
     font-size: 1.5em !important;
     line-height: 120px;
     text-align: center;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-800 {
+    font-weight: 800;
 }
 
 .w-container {
@@ -328,6 +341,7 @@ img {
     grid-row-gap: 120px;
     flex-direction: column;
     display: flex;
+    padding: 100px 0;
 }
 
 .grid {
@@ -355,7 +369,7 @@ img {
 
 .text {
     text-align: center;
-    padding: 50px 290px;
+    padding: 100px 290px;
     font-size: 30px;
     line-height: 70px;
 }
@@ -371,6 +385,15 @@ img {
 
 
 /*video*/
+
+.video-container {
+    margin: 7.5em 450px;
+}
+
+.gif-animation {
+    width: 100% !important;
+    background-color: #9D988C;
+}
 
 .modal-vid {
     position: fixed;
@@ -389,6 +412,7 @@ img {
     width: 100%;
     height: 100vh;
     backdrop-filter: saturate(180%) blur(10px);
+    background-color: rgba(0, 0, 0, 0.756);
     color: #fff;
     text-align: center;
 }
@@ -408,6 +432,8 @@ img {
     right: 0px;
     top: -10px;
     background-color: transparent;
+    border-radius: 100%;
+    width: 70px;
 }
 
 .remove-circle {
@@ -417,7 +443,7 @@ img {
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    background: rgba(0, 0, 0, 0.089);
+    background: rgba(255, 255, 255, 0.733);
     backdrop-filter: saturate(180%) blur(10px);
     transform: none;
     cursor: none;
@@ -532,15 +558,30 @@ img {
     gap: 10px;
 }
 
+.bottom-content {
+    width: fit-content;
+    margin-top: 2em;
+}
+
+.container-text {
+    display: block;
+    z-index: 0;
+    position: relative;
+    font-size: 2em !important;
+    width: 100%;
+    line-height: 1.257em !important;
+}
+
 .button {
     display: flex;
     border: 2px solid #000;
     border-radius: 100px;
-    padding: 15px 30px;
+    padding: 10px 30px;
     margin-bottom: 100px;
     transition: transform 5s;
     transition: all 0.5s ease;
     align-items: center;
+    text-align: center;
 }
 
 .button:hover {
@@ -553,11 +594,10 @@ img {
 }
 
 .button>span {
-    font-size: 20px;
+    font-size: 20px !important;
     text-transform: uppercase;
     font-weight: 600;
     color: #000;
-    padding: 5px;
 }
 
 .icons>div {
@@ -708,6 +748,34 @@ img {
     width: 100%;
 }
 
+.container-header {
+    margin-bottom: 100px;
+}
+
+.colomns-container {
+    z-index: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #f9f4f4;
+    overflow-x: hidden;
+    width: 100%;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.two-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.odd-header {
+    height: 85vh;
+}
+
 .header-image-description {
     position: relative;
     overflow-x: hidden;
@@ -716,14 +784,13 @@ img {
 
 .header-image-description>.description {
     display: block;
-    margin: 3em auto 8em 60em;
+    margin: 3em 0 0 25em;
     width: 800px;
     font-size: 14px !important;
     line-height: 40px;
 }
 
 .header-cover {
-    margin-top: 7em;
     height: 700px;
     width: 60%;
     background-color: #9D988C;
@@ -734,9 +801,9 @@ img {
     font-size: 8px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10em;
     margin-bottom: 5em;
     align-items: baseline !important;
+    margin-top: 20em;
 }
 
 .h-600 {
