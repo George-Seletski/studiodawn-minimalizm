@@ -64,7 +64,8 @@ h2 {
     font-size: 45px;
     text-align: left;
     margin-bottom: 35px;
-    font-family: 'Cormorant Garamond Semibold', sans-serif;
+    /*font-family: 'Cormorant Garamond Semibold', sans-serif;*/
+    font-family: 'Cormorant Garamond Light', sans-serif;
 }
 
 #narrow-block {
@@ -752,11 +753,48 @@ img {
     margin-bottom: 100px;
 }
 
-.colomns-container {
+
+/*contanct-form*/
+
+#contact-form-container {
+    width: 650px;
+}
+
+.form-control {
+    width: 100%;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group .form-control {
+    -webkit-box-shadow: none;
+    border-bottom: 1px;
+    border-style: none none solid none;
+    border-radius: 0;
+    border-color: #000;
+    background-color: #f9f4f4;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+}
+
+.columns-container {
     z-index: 0;
-    height: 100vh;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -764,12 +802,73 @@ img {
     overflow-x: hidden;
     width: 100%;
     flex-direction: row;
+    gap: 40px;
+    padding-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.columns-container>div {
+    padding: 50px;
+}
+
+.contact-h2 {
+    font-size: 46px;
+    text-align: left;
+    margin-bottom: 75px;
+}
+
+.contact-h3 {
+    font-family: 'Cormorant Garamond Light', sans-serif;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+.info-block {
+    padding-bottom: 100px;
+}
+
+.contanct-links {
+    display: block;
+    text-align: right;
+}
+
+.contanct-links>.link-email a,
+.contanct-links>.link-telephone a {
+    font-size: 34px !important;
+}
+
+.info-block>a {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    line-height: 30px;
+    color: rgba(0, 0, 0);
+}
+
+.info-block>a:hover {
+    color: #9D988C;
+    transition: 0.3s;
+}
+
+.size-2x {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.info-block>.icons {
     gap: 20px;
+    margin-top: 30px;
+    margin-left: 54%;
+    align-items: flex-end !important;
+    width: fit-content;
 }
 
 .two-columns {
     display: flex;
     flex-direction: row;
+    gap: 30px;
 }
 
 .odd-header {

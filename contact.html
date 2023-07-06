@@ -107,30 +107,38 @@
         </div>
     </div>
 
-    <div class="header-section" style="border: 1px solid;">
+    <div class="header-section">
 
-        <div class="colomns-container">
-            <div style="width:40%;border:1px solid;">
+        <div class="columns-container">
+            <div>
                 <div class="container-header">
                     <h1>
                         <span class="container-text garamond-font fw-800">All the world is<br> made of faith, trust<br></span>
                         <span class="container-text fw-800">and pixie dust.</span>
                     </h1>
                 </div>
-                <div class="contact-form-container">
+                <div id="contact-form-container">
                     <div class="two-columns">
-                        <div>
-                            <span>-----------------------</span>
+                        <div class="form-group">
+
+                            <label class="form-label" id="nameLabel" for="name"></label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" tabindex="1">
+
                         </div>
-                        <div><span> /-----------------------/</span></div>
+                        <div class="form-group">
+                            <label class="form-label" id="emailLabel" for="email"></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" tabindex="2"></div>
                     </div>
                     <div class="two-columns">
-                        <div>
-                            <span>-----------------------</span>
+                        <div class="form-group">
+                            <label class="form-label" id="phoneLabel" for="phone"></label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" tabindex="3">
                         </div>
-                        <div><span> /-----------------------/</span></div>
+                        <div class="form-group"><label class="form-label" id="companyLabel" for="company"></label>
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Company" tabindex="4"></div>
                     </div>
-                    <div><span>-----------------------</span></div>
+                    <div class="form-group"><label class="form-label" id="messageLabel" for="message"></label>
+                        <textarea rows="1" cols="60" name="message" class="form-control" id="message" placeholder="Message" tabindex="5"></textarea></div>
                 </div>
                 <div class="bottom-content">
                     <a href="http://" target="_blank" rel="noopener noreferrer">
@@ -144,17 +152,45 @@
                     </a>
                 </div>
             </div>
-            <div style="width:20%;border:1px solid;">
+            <div>
                 <h2 class="contact-h2">Our Studio</h2>
                 <div class="info-block">
                     <h3 class="contact-h3">Canada</h3>
-                    <a href="#" class="link-address">228 Nelson's Crescent<br> New
-                        Westminster,<br> BC V3L 3E3</a>
+                    <a href="#" class="link-address">228 Nelson's Crescent,<br>BC V3L 3E3 New
+                    Westminster, <br>
+                Canada</a>
                 </div>
-
+                <div class="info-block">
+                    <h3 class="contact-h3">Slovakia</h3>
+                    <a href="#" class="link-address">Tallerova 4,<br>
+                        811 02 Bratislava,<br>Slovakia</a>
+                </div>
             </div>
-            <div style=" width:30%; border:1px solid;">
+            <div>
+                <div class="info-block">
+                    <div class="contanct-links">
+                        <div class="link-email">
+                            <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                        </div>
+                        <div class="link-telephone">
+                            <a href="tel:+421905455208">+421 905 455 208</a>
+                        </div>
+                    </div>
 
+                    <div class="icons">
+                        <div class="wh-45 size-2x" id="facebook-icon">
+
+                        </div>
+                        <div class="wh-45 size-2x" id="instagram-icon">
+
+                        </div>
+                        <div class="wh-45 size-2x" id="behance-icon">
+
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
         </div>
 
