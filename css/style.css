@@ -100,14 +100,15 @@ h2 {
     display: flex;
     overflow: auto;
     flex-direction: column;
+    margin-top: 6.5em;
 }
 
 .text-header>span {
     text-align: center;
     letter-spacing: 1.5px;
-    width: 1050px;
     font-weight: 800;
     padding: 50px 400px;
+    margin: 0 45px;
 }
 
 
@@ -162,8 +163,8 @@ img {
 }
 
 .font-30 {
-    font-size: 1.5em !important;
-    line-height: 120px;
+    font-size: 60px !important;
+    line-height: 80px;
     text-align: center;
 }
 
@@ -323,7 +324,7 @@ img {
 .row-container {
     display: flex;
     align-items: center;
-    margin: 11em 9em;
+    margin: 8em 9em 8em 9em;
     gap: 150px;
 }
 
@@ -388,7 +389,7 @@ img {
 /*video*/
 
 .video-container {
-    margin: 7.5em 450px;
+    margin: 3.5em 450px;
 }
 
 .gif-animation {
@@ -531,7 +532,7 @@ img {
 .brands-section {
     border-top: 2px solid;
     border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
-    margin: 5em 13em;
+    margin: 0 13em;
     padding: 150px 0;
     display: flex;
     gap: 100px;
@@ -896,13 +897,28 @@ textarea {
 }
 
 .section-block {
-    height: 700px !important;
+    font-size: 2em !important;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100hv !important;
+}
+
+.section-block>.header-section-content {
+    line-height: 150px !important;
+    padding-bottom: 2em;
+    font-size: 3.8em !important;
+}
+
+.section-block-text {
     font-size: 8px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5em;
-    align-items: baseline !important;
     margin-top: 20em;
+    height: fit-content !important;
+}
+
+.section-block-text>.header-section-content {
+    font-size: 3.8em !important;
 }
 
 .h-600 {
@@ -913,15 +929,15 @@ textarea {
     z-index: 0;
     text-align: center;
     position: relative;
-    line-height: 53px;
     font-size: 5.8em;
     width: 100%;
+    line-height: 150px;
 }
 
 .mb-bottom---10px {
     margin-bottom: 10px;
     display: block;
-    margin-top: 105px;
+    margin-top: 35px;
 }
 
 .mr-55 {
@@ -971,6 +987,7 @@ footer {
     margin-top: 500px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 120px;
 }
 
 .team-gallery {
@@ -980,16 +997,16 @@ footer {
 }
 
 .team-gallery>img {
-    width: 400px;
-    margin: 50px;
+    width: 350px;
+    margin: 80px;
 }
 
 .team-gallery>:nth-child(2) {
-    margin-bottom: 100px;
+    margin-bottom: 160px;
 }
 
 #main-team-img {
-    width: 700px !important;
+    width: 600px !important;
 }
 
 .text-header>h2 {
