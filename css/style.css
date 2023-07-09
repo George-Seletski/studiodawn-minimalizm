@@ -29,6 +29,9 @@
 }
 
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     cursor: none;
 }
 
@@ -43,9 +46,7 @@ html {
 body {
     font-family: 'Roboto Thin', sans-serif;
     width: 100%;
-    margin: 0;
     height: 100%;
-    box-sizing: border-box;
     transition: var(--transition);
     font-size: 14px;
     line-height: 20px;
@@ -313,6 +314,8 @@ img {
     justify-content: space-between;
     align-items: center;
     display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .header-logo {
@@ -489,6 +492,23 @@ img {
 .gif-animation {
     width: 100% !important;
     background-color: #9D988C;
+}
+
+.play-button {
+    width: fit-content;
+    padding: 2em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(8px);
+    position: absolute;
+    margin: 17em 32em;
+}
+
+#play-buttton-icon {
+    width: 50px;
+    height: 50px;
 }
 
 .modal-vid {
@@ -1084,18 +1104,6 @@ textarea {
     transition-delay: 0.5s;
 }
 
-.cursor-play {
-    position: absolute;
-    transform: translate(-50%, -80%);
-    pointer-events: none;
-    opacity: 0;
-    z-index: 999;
-    display: grid;
-    place-items: center;
-    transition: opacity 150ms ease-in-out;
-    background-color: #9D988C;
-}
-
 footer {
     display: flex;
     gap: 120px;
@@ -1127,6 +1135,7 @@ footer {
 .team-gallery>img {
     width: 350px;
     margin: 80px;
+    transition: transform 0.5s;
 }
 
 .team-gallery>:nth-child(2) {
@@ -1259,15 +1268,15 @@ footer {
 
 .custom-cursor {
     position: fixed;
-    opacity: 0;
+    opacity: 1;
     top: 0;
     left: 0;
     pointer-events: none;
     mix-blend-mode: difference;
     width: 50px;
+    height: 50px;
     margin-left: -25px;
     margin-top: -25px;
-    aspect-ratio: 1;
     border-radius: 50%;
     background-color: white;
     transition-property: transform, scale, opacity;
@@ -1279,10 +1288,6 @@ footer {
 
 .custom-cursor--link {
     scale: 1;
-}
-
-.custom-cursor--init {
-    opacity: 1;
 }
 
 @media screen and (max-width: 991px) {

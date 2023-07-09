@@ -308,42 +308,30 @@
     }
 
     /*cursor*/
-    const cursor = document.querySelector(".custom-cursor");
-    const links = document.querySelectorAll("a");
-    let isCursorInited = false;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
+        // false for not mobile device
 
-    const initCursor = () => {
-        cursor.classList.add("custom-cursor--init");
-        isCursorInited = true;
-    };
+        /*cursor*/
+        const cards = document.querySelectorAll('#team-img');
+        const customCursor = document.querySelector(".custom-cursor");
+        const links = document.querySelectorAll("a");
 
-    const destroyCursor = () => {
-        cursor.classList.remove("custom-cursor--init");
-        isCursorInited = false;
-    };
+        links.forEach((link) => {
+            link.addEventListener("mouseover", () => {
+                customCursor.classList.add("custom-cursor--link");
+            });
 
-    links.forEach((link) => {
-        link.addEventListener("mouseover", () => {
-            cursor.classList.add("custom-cursor--link");
+            link.addEventListener("mouseout", () => {
+                customCursor.classList.remove("custom-cursor--link");
+            });
         });
 
-        link.addEventListener("mouseout", () => {
-            cursor.classList.remove("custom-cursor--link");
+        // Update custom cursor appearance on mousemove
+        document.addEventListener('mousemove', function(event) {
+            customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
+
         });
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-
-        if (!isCursorInited) {
-            initCursor();
-        }
-
-        cursor.style = `translate: ${mouseX}px ${mouseY}px`;
-    });
-
-    document.addEventListener("mouseout", destroyCursor);
+    }
 </script>
 
 </html>

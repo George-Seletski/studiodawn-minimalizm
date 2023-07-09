@@ -210,9 +210,10 @@
 
             </div>
             <div class="team-gallery">
-                <img src="team/photo-team-01.png" alt="photo tema #1" lazy="loading">
-                <img src="team/photo-team-03.png" alt="photo tema #2" lazy="loading">
-                <img src="team/main.png" id='main-team-img' alt="photo tema #3" lazy="loading">
+
+                <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading">
+                <img id="team-img" src="team/photo-team-03.png" alt="photo tema #2" lazy="loading">
+                <img id="team-img" src="team/main.png" id='main-team-img' alt="photo tema #3" lazy="loading">
             </div>
         </div>
 
@@ -380,8 +381,48 @@
         document.body.classList.remove('scroll-lock');
     }
 
+
     /*cursor*/
-    const cursor = document.querySelector(".custom-cursor");
+    const cards = document.querySelectorAll('#team-img');
+    const customCursor = document.querySelector(".custom-cursor");
+    const links = document.querySelectorAll("a");
+
+    links.forEach((link) => {
+        link.addEventListener("mouseover", () => {
+            customCursor.classList.add("custom-cursor--link");
+        });
+
+        link.addEventListener("mouseout", () => {
+            customCursor.classList.remove("custom-cursor--link");
+        });
+    });
+    //Team Cards Effect
+    cards.forEach((card) => {
+        card.addEventListener('mousemove', (event) => {
+            const cardWidth = card.offsetWidth;
+            const cursorPosition = event.pageX - card.offsetLeft;
+
+            if (cursorPosition > cardWidth / 2) {
+                card.style.transform = `rotate(15deg)`;
+            } else {
+                card.style.transform = `rotate(-15deg)`;
+            }
+
+        });
+
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = '';
+        });
+    });
+
+
+    // Update custom cursor appearance on mousemove
+    document.addEventListener('mousemove', function(event) {
+        customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
+
+    });
+
+    /*const cursor = document.querySelector(".custom-cursor");
     const links = document.querySelectorAll("a");
     let isCursorInited = false;
 
@@ -416,7 +457,7 @@
         cursor.style = `translate: ${mouseX}px ${mouseY}px`;
     });
 
-    document.addEventListener("mouseout", destroyCursor);
+    document.addEventListener("mouseout", destroyCursor);*/
 </script>
 
 </html>

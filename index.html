@@ -134,8 +134,13 @@
         </div>
 
         <div class="video-container">
-            <div class="movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
-                <img class="gif-animation movie-btn sixteen-nine-btn" src="video/video-tmp.gif" alt="video" data-cursor-text="Play"></div>
+            <div class=" movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                <div class=" movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                    <img id='play-buttton-icon' src="./icons/play-svg.svg" alt="play video">
+                </div>
+                <img class="gif-animation " src="video/video-tmp.gif" alt="video">
+
+            </div>
 
             <div class="modal-vid">
                 <div class="movie-box">
@@ -286,45 +291,26 @@
         // false for not mobile device
 
         /*cursor*/
-        const cursor = document.querySelector(".custom-cursor");
+        const playVideo = document.querySelector('play-button');
+        const customCursor = document.querySelector(".custom-cursor");
         const links = document.querySelectorAll("a");
-        let isCursorInited = false;
 
-        const initCursor = () => {
-            cursor.classList.add("custom-cursor--init");
-            isCursorInited = true;
-        };
-
-        const destroyCursor = () => {
-            cursor.classList.remove("custom-cursor--init");
-            isCursorInited = false;
-        };
 
         links.forEach((link) => {
             link.addEventListener("mouseover", () => {
-                cursor.classList.add("custom-cursor--link");
-
+                customCursor.classList.add("custom-cursor--link");
             });
 
             link.addEventListener("mouseout", () => {
-                cursor.classList.remove("custom-cursor--link");
-
+                customCursor.classList.remove("custom-cursor--link");
             });
         });
 
-        document.addEventListener("mousemove", (e) => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
+        // Update custom cursor appearance on mousemove
+        document.addEventListener('mousemove', function(event) {
+            customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
 
-            if (!isCursorInited) {
-                initCursor();
-            }
-
-
-            cursor.style = `translate: ${mouseX}px ${mouseY}px`;
         });
-
-        document.addEventListener("mouseout", destroyCursor);
     }
     $(document).ready(function() {
         $('.hamburger-menu-wrapper').click(function() {
