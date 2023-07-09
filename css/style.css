@@ -400,6 +400,7 @@ img {
     grid-auto-rows: auto;
     margin: 0 10em;
     justify-items: stretch;
+    transition: all 0.5s ease;
 }
 
 .case-grid-item {
@@ -407,13 +408,19 @@ img {
     height: auto;
     max-width: 100%;
     overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.case-grid-item:hover {
+    opacity: 0.8;
 }
 
 .cases-list {
     margin: 0 10em;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 20px;
+    transition: all 0.5s ease;
 }
 
 .case-list-img {
@@ -424,6 +431,11 @@ img {
     display: flex;
     flex-direction: row;
     gap: 50px;
+    transition: all 0.5s ease;
+}
+
+.case-item:hover {
+    opacity: 0.8;
 }
 
 .row-container {

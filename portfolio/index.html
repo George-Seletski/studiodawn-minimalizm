@@ -120,8 +120,8 @@
     <div class="page-wrapper">
         <div class="row-container mg-10">
             <div class="icons-view">
-                <div id="list-view-icon"></div>
-                <div id="grid-view-icon"></div>
+                <div id="list-view-icon" onclick="showList()"></div>
+                <div id="grid-view-icon" onclick="showGrid()"></div>
             </div>
             <div class="filter-container">
                 <div id="column">
@@ -185,7 +185,7 @@
             </a>
         </div>
     </div>
-    <!--<div class="cases-list">
+    <div class="cases-list">
         <div class="case-item">
             <div class='case-list-img'>
                 <a href="./product-design/index.html" target="_blank" rel="noopener noreferrer">
@@ -213,7 +213,7 @@
             <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate
                 euismod. Sed non sapien ligula. Proin suscipit mollis gravida.</div>
         </div>
-    </div>-->
+    </div>
 
 
 </body>
@@ -307,12 +307,25 @@
         document.body.classList.remove('scroll-lock');
     }
 
+    const casesGrid = document.querySelector(".cases-grid");
+    const casesList = document.querySelector(".cases-list");
+
+    function showList() {
+        casesList.style.display = "flex";
+        casesGrid.style.display = "none";
+    }
+
+    function showGrid() {
+        casesList.style.display = "none";
+        casesGrid.style.display = "grid";
+    }
+
+
     /*cursor*/
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
         // false for not mobile device
 
         /*cursor*/
-        const cards = document.querySelectorAll('#team-img');
         const customCursor = document.querySelector(".custom-cursor");
         const links = document.querySelectorAll("a");
 
