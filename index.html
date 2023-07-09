@@ -288,20 +288,29 @@
 
 <script>
     /*cursor*/
-    const playVideo = document.querySelector('play-button');
-    const customCursor = document.querySelector(".custom-cursor");
-    const links = document.querySelectorAll("a");
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
+        // false for not mobile device
 
+        /*cursor*/
+        const customCursor = document.querySelector(".custom-cursor");
+        const links = document.querySelectorAll("a");
 
-    links.forEach((link) => {
-        link.addEventListener("mouseover", () => {
-            customCursor.classList.add("custom-cursor--link");
+        links.forEach((link) => {
+            link.addEventListener("mouseover", () => {
+                customCursor.classList.add("custom-cursor--link");
+            });
+
+            link.addEventListener("mouseout", () => {
+                customCursor.classList.remove("custom-cursor--link");
+            });
         });
 
-        link.addEventListener("mouseout", () => {
-            customCursor.classList.remove("custom-cursor--link");
+        // Update custom cursor appearance on mousemove
+        document.addEventListener('mousemove', function(event) {
+            customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
+
         });
-    });
+    }
 
     // Update custom cursor appearance on mousemove
     document.addEventListener('mousemove', function(event) {
