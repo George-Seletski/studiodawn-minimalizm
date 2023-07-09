@@ -825,11 +825,12 @@ img {
     gap: 5px;
     list-style-type: none;
     overflow: hidden;
+    margin-bottom: 60px;
 }
 
 .nav-info-header {
     text-align: unset;
-    line-height: 30px;
+    line-height: 60px;
     font-family: 'Cormorant Garamond Light';
     font-weight: 100 !important;
     font-size: 60px;
