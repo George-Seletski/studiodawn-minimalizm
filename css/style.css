@@ -313,12 +313,11 @@ img {
     justify-content: space-between;
     align-items: center;
     display: flex;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .header-logo {
     max-width: 250px;
+    padding-top: 10px;
 }
 
 .header-logo-link {
@@ -480,15 +479,6 @@ img {
     line-height: 70px;
 }
 
-#brand-name {
-    text-decoration: underline;
-    font-family: 'Roboto Thin', sans-serif;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-    font-size: 50px !important;
-    line-height: 70px;
-}
-
 
 /*video*/
 
@@ -645,7 +635,7 @@ img {
 .brands-container {
     flex-direction: row;
     display: flex;
-    gap: 10px;
+    gap: 50px;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -653,7 +643,17 @@ img {
 #brand {
     width: 200px;
     height: 100px;
-    background-color: rgb(171, 157, 157);
+    display: flex;
+    align-items: center;
+}
+
+#brand-name {
+    text-decoration: underline;
+    font-family: 'Roboto Thin', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    font-size: 50px !important;
+    line-height: 70px;
 }
 
 .icons {
