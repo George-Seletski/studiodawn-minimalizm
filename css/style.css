@@ -1158,31 +1158,49 @@ footer {
     border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
 }
 
-.text-header {
-    padding: 10px;
+.about-main-section {
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #f9f4f4;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    /*height: 1600px;*/
 }
 
+.team-header-text {}
+
 .team-section {
-    margin-top: 500px;
     margin-left: auto;
     margin-right: auto;
     line-height: 120px;
-    height: 100%;
 }
 
 .team-gallery {
     position: absolute;
+    height: 100%;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: transparent;
 }
 
-.team-gallery>img {
+#team-img {
+    transition: transform 0.5s;
+}
+
+.team-gallery>.image-container {
     width: 450px;
     margin: 80px;
     transition: transform 0.5s;
 }
 
 .team-gallery>:nth-child(2) {
-    margin-bottom: 160px;
+    bottom: 160px;
 }
 
 #main-team-img {
