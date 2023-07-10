@@ -314,6 +314,7 @@
 
     // Update custom cursor appearance on mousemove
     document.addEventListener('mousemove', function(event) {
+        const customCursor = document.querySelector(".custom-cursor");
         customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
 
     });

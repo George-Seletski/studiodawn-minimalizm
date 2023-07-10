@@ -1119,7 +1119,7 @@ textarea {
 
 footer {
     display: flex;
-    gap: 120px;
+    gap: 150px;
     border-top: 2px solid;
     margin-left: 220px;
     margin-right: 220px;
@@ -1164,6 +1164,7 @@ footer {
     font-size: 80px !important;
     font-weight: 600 !important;
     margin-bottom: 50px;
+    line-height: 60px;
 }
 
 .instagram-container {
