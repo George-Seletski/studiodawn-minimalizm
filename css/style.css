@@ -364,10 +364,12 @@ img {
     justify-content: space-between;
 }
 
-#active {
-    font-weight: 300;
-    font-size: 40px;
-    font-family: 'Roboto Regular';
+.active {}
+
+.active>a {
+    font-weight: 300 !important;
+    font-size: 40px !important;
+    font-family: 'Roboto Regular' !important;
 }
 
 .filter-list>li>a {

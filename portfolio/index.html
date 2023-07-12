@@ -126,7 +126,7 @@
             <div class="filter-container">
                 <div id="column">
                     <ul class="filter-list">
-                        <li class="filter-button" onclick="filterCards('all')"><a id="active">All projects</a></li>
+                        <li class="filter-button active" onclick="filterCards('all')"><a>All projects</a></li>
                         <li class="filter-button" onclick="filterCards('product design')"><a>Product design</a></li>
                         <li class="filter-button" onclick="filterCards('logo & branding')"><a>Logo & Branding</a></li>
                         <li class="filter-button" onclick="filterCards('graphic design')"><a>Graphic design</a></li>
@@ -152,67 +152,9 @@
         </div>
     </div>
     <div class="cases-grid">
-        <!--<figure class="case-grid-item">
-            <a href="./project1.html" target="_blank" rel="noopener noreferrer">
-                <img src="../img/inst_1.png" alt="">
-            </a>
-        </figure>
-        <figure class="case-grid-item">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-                <img src="../img/inst_2.png" alt="">
-            </a>
-        </figure>
-        <figure class="case-grid-item">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-                <img src="../img/inst_3.png" alt="">
-            </a>
-        </figure>
 
-        <figure class="case-grid-item">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-                <img src="../img/inst_3.png" alt="">
-            </a>
-        </figure>
-
-        <figure class="case-grid-item">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-                <img src="../img/inst_2.png" alt="">
-            </a>
-        </figure>
-        <figure class="case-grid-item">
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-                <img src="../img/inst_1.png" alt="">
-            </a>
-        </figure>-->
     </div>
     <div class="cases-list">
-        <!--<figure class="case-item">
-            <div class='case-list-img'>
-                <a href="./project1.html" target="_blank" rel="noopener noreferrer">
-                    <img src="../img/inst_1.png" alt="">
-                </a>
-            </div>
-            <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate
-                euismod. Sed non sapien ligula. Proin suscipit mollis gravida.</div>
-        </figure>
-        <figure class="case-item">
-            <div class='case-list-img'>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <img src="../img/inst_3.png" alt="">
-                </a>
-            </div>
-            <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate
-                euismod. Sed non sapien ligula. Proin suscipit mollis gravida.</div>
-        </figure>
-        <figure class="case-item">
-            <div class='case-list-img'>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <img src="../img/inst_2.png" alt="">
-                </a>
-            </div>
-            <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate
-                euismod. Sed non sapien ligula. Proin suscipit mollis gravida.</div>
-        </figure>-->
     </div>
 
 
@@ -337,12 +279,20 @@
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu."
     }];
 
-    var tagClicked = false;
-
+    var Objectag = 'all';
+    var filterButton = document.getElementsByClassName('filter-button')[0];
+    var filter_Button = document.getElementsByClassName('filter-button');
+    let buttonClicked = false;
+    filterButton.addEventListener('click', function handleClick() {
+        if (buttonClicked) {
+            filter_Button.addClass('active');
+        }
+        filter_Button.removeClass('active');
+    });
     // Function to filter cards based on the selected tag
     function filterCards(tag) {
         var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
-            tagClicked = true;
+
             return obj.tag === tag;
         });
 
@@ -352,7 +302,8 @@
             cardContainer.innerHTML = '';
 
             filteredObjects.forEach(function(obj) {
-
+                Objectag = obj.tag;
+                console.log('grid', Objectag, obj.tag);
                 var card = document.createElement('figure');
                 card.className = 'case-grid-item';
 
@@ -371,14 +322,17 @@
                 card.appendChild(link);
 
                 cardContainer.appendChild(card);
+
             });
+
         } else {
 
             var cardContainer = document.getElementsByClassName('cases-list')[0]; // Use [0] to access the first element
             cardContainer.innerHTML = '';
 
             filteredObjects.forEach(function(obj) {
-
+                Objectag = obj.tag;
+                console.log('list', Objectag, obj.tag);
                 var card = document.createElement('figure');
                 card.className = 'case-item';
 
@@ -405,8 +359,12 @@
                 card.appendChild(textContent);
 
                 cardContainer.appendChild(card);
+
             });
+
+
         }
+
     }
 
 
@@ -414,20 +372,31 @@
         casesList.style.display = "flex";
         casesGrid.style.display = "none";
         ListView = true;
-        if (tagClicked === false) {
+        console.log(Objectag, 'showList');
+        if (buttonClicked === false) {
             filterCards('all');
+        } else {
+            filterCards(Objectag);
+            Objectag = '';
         }
+
     }
 
     function showGrid() {
         casesList.style.display = "none";
         casesGrid.style.display = "block";
         ListView = false;
-        if (tagClicked === false) {
+        console.log(Objectag, 'showGrid');
+        if (buttonClicked === false) {
             filterCards('all');
+        } else {
+            filterCards(Objectag);
+            Objectag = '';
         }
 
+
     }
+    filterCards('all');
     showGrid();
 
 
