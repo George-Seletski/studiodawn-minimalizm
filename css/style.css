@@ -269,7 +269,7 @@ img {
 
 .w--open .w-nav-menu {
     display: block;
-    min-height: 100vh;
+    min-height: 0vh;
     opacity: 1;
 }
 
@@ -277,6 +277,7 @@ img {
     display: none;
     min-height: 100vh;
     opacity: 1;
+    transition: max-height 0.4s ease;
 }
 
 .w-nav[data-collapse="all"] .w-nav-button,
@@ -464,7 +465,7 @@ img {
 .row-container {
     display: flex;
     align-items: center;
-    margin: 8em 9em 8em 9em;
+    margin: 9em 9em 9em 9em;
     gap: 150px;
 }
 
@@ -542,9 +543,11 @@ img {
 }*/
 
 .text {
+    display: flex;
     text-align: center;
-    padding: 100px 290px;
+    margin: 10em;
     font-size: 30px;
+    align-items: center;
     line-height: 70px;
 }
 
@@ -552,7 +555,12 @@ img {
 /*video*/
 
 .video-container {
-    margin: 3.5em 450px;
+    margin: 2.5em 25em;
+}
+
+.container-100hv {
+    height: 100vh;
+    padding: 2em 0;
 }
 
 .gif-animation {
@@ -666,6 +674,7 @@ img {
     max-height: calc(100vh - 122px) !important;
     max-width: calc(100vw - 122px) !important;
     background-color: transparent;
+    transition: max-height 0.4s ease;
 }
 
 
@@ -972,6 +981,10 @@ img {
 
 /*contanct-form*/
 
+.form-container {
+    display: flex;
+}
+
 #contact-form-container {
     width: 650px;
 }
@@ -1010,7 +1023,6 @@ textarea {
 .columns-container {
     z-index: 0;
     justify-content: center;
-    align-items: center;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -1226,7 +1238,7 @@ footer {
     transition: transform 0.5s;
 }
 
-.team-gallery>:nth-child(2) {
+.team-gallery>:nth-child(3) {
     bottom: 160px;
 }
 
@@ -1245,7 +1257,9 @@ footer {
 .instagram-container {
     display: flex;
     gap: 70px;
-    margin: 150px 200px;
+    align-items: center;
+    margin: 180px;
+    height: 100vh !important;
     align-items: center;
 }
 
@@ -1267,6 +1281,7 @@ footer {
 .instagram-images {
     display: flex;
     gap: 30px;
+    position: relative;
 }
 
 .instagram-img {

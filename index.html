@@ -122,8 +122,9 @@
     </div>
 
     <div class="page-wrapper">
-        <div class="text-header">
-            <span>
+        <div class="container-100hv">
+            <div class="text-header">
+                <span>
                 <div class="description">
                     Unlock limitless possibilities with our comprehensive solutions block from trademark management to
                     digital transformation, we offer a wide range of services to elevate your brands success. Harness
@@ -131,34 +132,34 @@
                     new heights in the ever-evolving digital landscape.
                 </div>
             </span>
-        </div>
-
-        <div class="video-container">
-            <div class=" movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
-                <div class=" movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
-                    <img id='play-buttton-icon' src="./icons/play-svg.svg" alt="play video">
-                </div>
-                <img class="gif-animation " src="video/video-tmp.gif" alt="video">
-
             </div>
 
-            <div class="modal-vid">
-                <div class="movie-box">
-                    <div class="wide-screen">
-                        <div class="vid-holder">
-                            <div class="close" vidUrl="#">
-                                <div class="remove-circle"><img src="./icons/close_white_24dp.svg" loading="lazy" width="75" alt="" class="remove" /></div>
+            <div class="video-container">
+                <div class=" movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                    <div class=" movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                        <img id='play-buttton-icon' src="./icons/play-svg.svg" alt="play video">
+                    </div>
+                    <img class="gif-animation " src="video/video-tmp.gif" alt="video">
+
+                </div>
+
+                <div class="modal-vid">
+                    <div class="movie-box">
+                        <div class="wide-screen">
+                            <div class="vid-holder">
+                                <div class="close" vidUrl="#">
+                                    <div class="remove-circle"><img src="./icons/close_white_24dp.svg" loading="lazy" width="75" alt="" class="remove" /></div>
+                                </div>
+
+
+                                <video id="myVideo" class="myVideo hide" src="" controls></video>
+                                <iframe class="youTube hide" src="" frameborder="0" allowfullscreen></iframe>
                             </div>
-
-
-                            <video id="myVideo" class="myVideo hide" src="" controls></video>
-                            <iframe class="youTube hide" src="" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="row-container">
             <div>
                 <h2 id="header-font">The what</h2>
@@ -225,6 +226,7 @@
                         We don't just design brands for pleasing aesthetic, we bring purposeful business to life and
                         grant them longevity in the game.
                     </p>
+                    <br>
                     <p class="description">
                         Follow us to stay updated with syudio happenings and projects in the works.
                     </p>
@@ -368,29 +370,24 @@
         document.body.classList.remove('scroll-lock');
     }
     /*video*/
-
     $(document).ready(function() {
 
         $(".movie-btn").click(function() {
-            $('.myVideo').attr("src", $(this).attr("vidUrl"));
-            document.getElementById('myVideo').play();
-            $('.myVideo').removeClass("hide");
-            $('.myVideo').addClass("show");
+            var video = $('.myVideo');
+            video.attr("src", $(this).attr("vidUrl"));
+
+            video.on('loadedmetadata', function() {
+                video[0].play();
+            });
+
+            video.removeClass("hide");
+            video.addClass("show");
             $('.youTube').addClass("hide");
             $('.youTube').removeClass("show");
             $('.gif-animation').css('display', 'none');
         });
 
-        $(".tube-link").click(function() {
-            $('.youTube').removeClass("hide");
-            $('.youTube').addClass("show");
-            $('.myVideo').addClass("hide");
-            $('.myVideo').removeClass("show");
-            $('.youTube').attr("src", $(this).attr("vidUrl"));
-            $('.gif-animation').css('display', 'none');
-        });
-
-        $(".widscreen-btn").click(function() {
+        $(".widescreen-btn").click(function() {
             $(".modal-vid").fadeIn(500);
             $(".vid-holder img").removeClass("show");
             $(".widescreen-img").addClass("show");
@@ -409,7 +406,6 @@
             $(".vid-holder img").removeClass("show");
             $(".sixteen-nine").addClass("show");
             $('.gif-animation').css('display', 'none');
-
         });
 
         $(".pal-btn").click(function() {
@@ -419,30 +415,22 @@
             $('.gif-animation').css('display', 'none');
         });
 
-
         $(".close").click(function() {
             $(".modal-vid").fadeOut(500);
-            /*document.getElementById('myVideo').pause();*/
             $('.youTube, .myVideo').attr('src', '');
             $('.gif-animation').css('display', 'block');
         });
 
     });
 
-
-
-    window.document.onkeydown = function(e) {
-        if (!e) e = event;
+    $(document).keydown(function(e) {
         if (e.keyCode == 27) {
-
             $('.youTube, .myVideo').attr('src', '');
             $('.modal-vid').fadeOut(500);
-            document.getElementById('myVideo').pause();
-
+            var video = document.getElementById('myVideo');
+            video.pause();
         }
-
-
-    };
+    });
 </script>
 
 </html>
