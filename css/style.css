@@ -1104,11 +1104,11 @@ textarea {
 
 .header-cover {
     width: 100%;
-    padding: 20px;
+    position: relative;
 }
 
 .header-cover>img {
-    height: 900px;
+    height: calc(100vh / 1.4);
 }
 
 .section-block {

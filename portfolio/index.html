@@ -128,7 +128,7 @@
                     <ul class="filter-list">
                         <li class="filter-button" onclick="filterCards('all')"><a id="active">All projects</a></li>
                         <li class="filter-button" onclick="filterCards('product design')"><a>Product design</a></li>
-                        <li class="filter-button" onclick="filterCards('logo&branding')"><a>Logo & Branding</a></li>
+                        <li class="filter-button" onclick="filterCards('logo & branding')"><a>Logo & Branding</a></li>
                         <li class="filter-button" onclick="filterCards('graphic design')"><a>Graphic design</a></li>
                     </ul>
                 </div>
@@ -152,7 +152,7 @@
         </div>
     </div>
     <div class="cases-grid">
-        <figure class="case-grid-item">
+        <!--<figure class="case-grid-item">
             <a href="./project1.html" target="_blank" rel="noopener noreferrer">
                 <img src="../img/inst_1.png" alt="">
             </a>
@@ -183,10 +183,10 @@
             <a href="http://" target="_blank" rel="noopener noreferrer">
                 <img src="../img/inst_1.png" alt="">
             </a>
-        </figure>
+        </figure>-->
     </div>
     <div class="cases-list">
-        <figure class="case-item">
+        <!--<figure class="case-item">
             <div class='case-list-img'>
                 <a href="./project1.html" target="_blank" rel="noopener noreferrer">
                     <img src="../img/inst_1.png" alt="">
@@ -212,7 +212,7 @@
             </div>
             <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate
                 euismod. Sed non sapien ligula. Proin suscipit mollis gravida.</div>
-        </figure>
+        </figure>-->
     </div>
 
 
@@ -309,22 +309,12 @@
     // Enable Grid / List view
     const casesGrid = document.querySelector(".cases-grid");
     const casesList = document.querySelector(".cases-list");
-    let ListView = false;
+    var ListView = false;
 
 
-    function showList() {
-        casesList.style.display = "flex";
-        casesGrid.style.display = "none";
-        ListView = true;
-    }
-
-    function showGrid() {
-        casesList.style.display = "none";
-        casesGrid.style.display = "block";
-    }
     //Filter functionality
     // Sample array of objects
-    /*
+
     var objects = [{
         link: "./project1.html",
         imagePath: "../img/inst_1.png",
@@ -333,7 +323,7 @@
     }, {
         link: "./project1.html",
         imagePath: "../img/inst_2.png",
-        tag: "logo&branding",
+        tag: "logo & branding",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. "
     }, {
         link: "./project1.html",
@@ -347,20 +337,22 @@
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu."
     }];
 
-
+    var tagClicked = false;
 
     // Function to filter cards based on the selected tag
     function filterCards(tag) {
         var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
+            tagClicked = true;
             return obj.tag === tag;
         });
-        var cardGrid = document.getElementsByClassName('cases-grid');
-        cardGrid.innerHTML = '';
-        var cardContainer = document.getElementsByClassName('cases-list');
-        cardContainer.innerHTML = '';
-        if (ListView === true) {
+
+        if (ListView === false) {
+
+            var cardContainer = document.getElementsByClassName('cases-grid')[0]; // Use [0] to access the first element
+            cardContainer.innerHTML = '';
 
             filteredObjects.forEach(function(obj) {
+
                 var card = document.createElement('figure');
                 card.className = 'case-grid-item';
 
@@ -371,20 +363,25 @@
 
                 var image = document.createElement('img');
                 image.src = obj.imagePath;
-                image.alt = 'image' + 'obj.tag';
+                image.alt = 'image ' + obj.tag; // Fix the concatenation
+
                 image.loading = "lazy";
 
                 link.appendChild(image);
                 card.appendChild(link);
 
-
-                cardGrid.appendChild(card);
+                cardContainer.appendChild(card);
             });
         } else {
 
+            var cardContainer = document.getElementsByClassName('cases-list')[0]; // Use [0] to access the first element
+            cardContainer.innerHTML = '';
+
             filteredObjects.forEach(function(obj) {
+
                 var card = document.createElement('figure');
                 card.className = 'case-item';
+
                 var card_image = document.createElement('div');
                 card_image.className = 'case-list-img';
 
@@ -395,11 +392,10 @@
 
                 var image = document.createElement('img');
                 image.src = obj.imagePath;
-                image.alt = 'image' + 'obj.tag';
+                image.alt = 'image ' + obj.tag; // Fix the concatenation
                 image.loading = "lazy";
 
-
-                var textContent = document.createElement('div');
+                var textContent = document.createElement('span');
                 textContent.className = "description";
                 textContent.textContent = obj.text;
 
@@ -407,14 +403,33 @@
                 card_image.appendChild(link);
                 card.appendChild(card_image);
                 card.appendChild(textContent);
+
                 cardContainer.appendChild(card);
             });
         }
-
     }
 
-    // Display all cards by default
-    //filterCards('all');*/
+
+    function showList() {
+        casesList.style.display = "flex";
+        casesGrid.style.display = "none";
+        ListView = true;
+        if (tagClicked === false) {
+            filterCards('all');
+        }
+    }
+
+    function showGrid() {
+        casesList.style.display = "none";
+        casesGrid.style.display = "block";
+        ListView = false;
+        if (tagClicked === false) {
+            filterCards('all');
+        }
+
+    }
+    showGrid();
+
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
         // false for not mobile device
