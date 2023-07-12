@@ -126,26 +126,26 @@
             <div class="filter-container">
                 <div id="column">
                     <ul class="filter-list">
-                        <li class="filter-button active" onclick="filterCards('all')"><a>All projects</a></li>
-                        <li class="filter-button" onclick="filterCards('product design')"><a>Product design</a></li>
-                        <li class="filter-button" onclick="filterCards('logo & branding')"><a>Logo & Branding</a></li>
-                        <li class="filter-button" onclick="filterCards('graphic design')"><a>Graphic design</a></li>
+                        <li class="filter-button active" onclick="handleFilterClick(this, 'all')"><a>All projects</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'product design')"><a>Product design</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'logo & branding')"><a>Logo & Branding</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'graphic design')"><a>Graphic design</a></li>
                     </ul>
                 </div>
                 <div id="column">
                     <ul class="filter-list">
-                        <li><a>Website</a></li>
-                        <li><a>Eshop</a></li>
-                        <li><a>Print</a></li>
-                        <li><a>Design</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'website')"><a>Website</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'eshop')"><a>Eshop</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'print')"><a>Print</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'design')"><a>Design</a></li>
                     </ul>
                 </div>
                 <div id="column">
                     <ul class="filter-list">
-                        <li><a>Marketing</a></li>
-                        <li><a>Compain</a></li>
-                        <li><a>Social</a></li>
-                        <li><a>Event</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'marketing')"><a>Marketing</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'compain')"><a>Compain</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'social')"><a>Social</a></li>
+                        <li class="filter-button" onclick="handleFilterClick(this, 'event')"><a>Event</a></li>
                     </ul>
                 </div>
             </div>
@@ -283,12 +283,19 @@
     var filterButton = document.getElementsByClassName('filter-button')[0];
     var filter_Button = document.getElementsByClassName('filter-button');
     let buttonClicked = false;
-    filterButton.addEventListener('click', function handleClick() {
-        if (buttonClicked) {
-            filter_Button.addClass('active');
-        }
-        filter_Button.removeClass('active');
-    });
+
+    function handleFilterClick(element, tag) {
+        var filterButtons = document.querySelectorAll('.filter-button');
+
+        filterButtons.forEach(function(button) {
+            button.classList.remove('active');
+        });
+
+        element.classList.add('active');
+
+        filterCards(tag);
+    }
+
     // Function to filter cards based on the selected tag
     function filterCards(tag) {
         var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
@@ -303,7 +310,7 @@
 
             filteredObjects.forEach(function(obj) {
                 Objectag = obj.tag;
-                console.log('grid', Objectag, obj.tag);
+                //console.log('grid', Objectag, obj.tag);
                 var card = document.createElement('figure');
                 card.className = 'case-grid-item';
 
@@ -332,7 +339,7 @@
 
             filteredObjects.forEach(function(obj) {
                 Objectag = obj.tag;
-                console.log('list', Objectag, obj.tag);
+                //console.log('list', Objectag, obj.tag);
                 var card = document.createElement('figure');
                 card.className = 'case-item';
 
@@ -372,7 +379,7 @@
         casesList.style.display = "flex";
         casesGrid.style.display = "none";
         ListView = true;
-        console.log(Objectag, 'showList');
+        //console.log(Objectag, 'showList');
         if (buttonClicked === false) {
             filterCards('all');
         } else {
@@ -386,7 +393,7 @@
         casesList.style.display = "none";
         casesGrid.style.display = "block";
         ListView = false;
-        console.log(Objectag, 'showGrid');
+        //console.log(Objectag, 'showGrid');
         if (buttonClicked === false) {
             filterCards('all');
         } else {
