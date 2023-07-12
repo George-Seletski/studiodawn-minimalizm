@@ -1203,15 +1203,17 @@ footer {
     align-items: center;
     display: flex;
     position: relative;
-    overflow: hidden;
+    overflow: scroll !important;
     background-color: #f9f4f4;
-    overflow-x: hidden;
     width: 100%;
-    height: 100vh;
+    height: 1900px;
     /*height: 1600px;*/
 }
 
-.team-header-text {}
+.team-header-text {
+    align-items: center;
+    position: relative;
+}
 
 .team-section {
     margin-left: auto;
@@ -1221,21 +1223,29 @@ footer {
 
 .team-gallery {
     position: absolute;
-    height: 100%;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    column-count: 3;
+    column-gap: 10px;
+    margin: auto;
     background-color: transparent;
+    z-index: 999;
 }
 
 #team-img {
     transition: transform 0.5s;
+    grid-row: 1 / -1;
+    grid-column: 1;
 }
 
 .team-gallery>.image-container {
     width: 450px;
     margin: 80px;
     transition: transform 0.5s;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin: 5em;
+    break-inside: avoid;
 }
 
 .team-gallery>:nth-child(3) {
