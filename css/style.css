@@ -1213,12 +1213,31 @@ footer {
 .team-header-text {
     align-items: center;
     position: relative;
+    transform: translate(0px, 112px);
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    max-width: 2114.44px;
+    width: 2114.44px;
+    max-height: 666.667px;
+    height: 666.667px;
+    padding: 0px;
 }
 
 .team-section {
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 120px;
+    place-self: auto;
+    grid-area: auto / auto / auto / auto;
+    z-index: auto;
+    float: none;
+    flex-shrink: 1;
+    display: block;
+    margin: 0px;
+    inset: auto;
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+    width: 2114px;
+    height: 667px;
+    padding: 0px;
 }
 
 .team-gallery {
@@ -1229,6 +1248,33 @@ footer {
     margin: auto;
     background-color: transparent;
     z-index: 999;
+}
+
+.team-cardinfo {
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+    top: auto;
+    bottom: 6rem;
+    left: 0%;
+    right: auto;
+}
+
+.vscroll__section {
+    margin-top: -50vh;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.team__title {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 6em;
+    padding-left: 1rem;
+    padding-right: 6px;
+    line-height: 1em;
+    font-family: 'Roboto Regular';
 }
 
 #team-img {
@@ -1246,14 +1292,6 @@ footer {
     grid-template-rows: 1fr auto;
     margin: 5em;
     break-inside: avoid;
-}
-
-.team-gallery>:nth-child(3) {
-    bottom: 160px;
-}
-
-#main-team-img {
-    width: 600px !important;
 }
 
 .text-header>h2 {
