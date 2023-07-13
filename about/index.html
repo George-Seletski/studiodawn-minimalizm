@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="../css/normalize.css" type="text/css">
 
     <script src="../js/jquery-3.6.0.min.js"></script>
-
+    <script src="../js/gsap.min.js"></script>
+    <script src="../js/ScrollTriger.js"></script>
 </head>
 
 <body>
@@ -34,7 +35,7 @@
                                     <a href="../contact" class="nav-link">Contact us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/" class="nav-link w--current">About</a>
+                                    <a href="../about" class="nav-link w--current">About</a>
                                 </li>
                             </ul>
                         </div>
@@ -203,7 +204,7 @@
         </div>
 
         <div class="about-main-section">
-            <div class="header-section-content  team-section">
+            <div class="header-section-content  team-section ">
                 <div class="vscroll__section">
                     <div class="team-header-text">
                         <h1>
@@ -226,6 +227,16 @@
                 </div>
                 <div class="image-container">
                     <div class="team__image-wrap">
+                        <img id="team-img" src="team/main.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                    </div>
+                    <div class="team-cardinfo">
+                        <div class="team__title">
+                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <div class="team__image-wrap">
                         <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
                     </div>
                     <div class="team-cardinfo">
@@ -244,6 +255,27 @@
                         </div>
                     </div>
                 </div>
+                <div class="image-container">
+                    <div class="team__image-wrap">
+                        <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                    </div>
+                    <div class="team-cardinfo">
+                        <div class="team__title">
+                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <div class="team__image-wrap">
+                        <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                    </div>
+                    <div class="team-cardinfo">
+                        <div class="team__title">
+                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!--<div class="team-gallery">
 
@@ -445,22 +477,57 @@
         });
     });
     //Team Cards Effect
+    /* cards.forEach((card) => {
+         card.addEventListener('mousemove', (event) => {
+             const cardWidth = card.offsetWidth;
+             const cursorPosition = event.pageX - card.offsetLeft;
+
+             if (cursorPosition > cardWidth / 2) {
+                 card.style.transform = `rotate(15deg)`;
+             } else {
+                 card.style.transform = `rotate(-15deg)`;
+             }
+
+         });
+
+         card.addEventListener('mouseleave', function() {
+             card.style.transform = '';
+         });
+     });*/
+
+    // Team Cards Effect
     cards.forEach((card) => {
         card.addEventListener('mousemove', (event) => {
             const cardWidth = card.offsetWidth;
             const cursorPosition = event.pageX - card.offsetLeft;
 
             if (cursorPosition > cardWidth / 2) {
-                card.style.transform = `rotate(15deg)`;
+                card.style.transform = `translateY(-50%) rotate(15deg)`;
             } else {
-                card.style.transform = `rotate(-15deg)`;
+                card.style.transform = `translateY(-50%) rotate(-15deg)`;
             }
 
         });
 
         card.addEventListener('mouseleave', function() {
-            card.style.transform = '';
+            card.style.transform = 'translateY(-50%)';
         });
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.image-container', {
+        scrollTrigger: {
+            trigger: '.container',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+        },
+        y: '-60%',
+        onComplete: function() {
+            cards.forEach((card) => {
+                card.style.transform = 'translateY(-90%)'; // Reset the translateY value after the animation completes
+            });
+        }
     });
 
 

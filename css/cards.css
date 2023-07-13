@@ -1136,14 +1136,14 @@ textarea {
     line-height: 150px !important;
     padding-bottom: 2em;
     font-size: 3.8em !important;
-    margin-top: -20vh;
+    /*margin-top: -50vh;*/
 }
 
 .section-block-text {
     font-size: 8px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20em;
+    margin-top: 10em;
     height: fit-content !important;
 }
 
@@ -1248,6 +1248,7 @@ footer {
     margin: auto;
     background-color: transparent;
     z-index: 999;
+    row-gap: 10em;
 }
 
 .team-cardinfo {
@@ -1264,8 +1265,6 @@ footer {
     margin-top: -50vh;
     padding-left: 0;
     padding-right: 0;
-    font-size: 1.5em;
-    line-height: 1;
 }
 
 .team__title {
