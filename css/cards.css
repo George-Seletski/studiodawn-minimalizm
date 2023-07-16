@@ -1306,8 +1306,7 @@ footer {
     display: flex;
     gap: 70px;
     align-items: center;
-    margin: 180px;
-    height: 100vh !important;
+    margin: 11.25rem;
     align-items: center;
 }
 
