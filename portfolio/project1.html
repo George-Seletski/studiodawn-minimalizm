@@ -467,21 +467,19 @@
 </body>
 
 <script>
-    //Wait for the DOM to load
     document.addEventListener("DOMContentLoaded", function() {
-        // Select the case-container element
         const caseContainer = document.querySelector(".case-container");
         const container = document.querySelector(".case-container");
-        container.addEventListener("wheel", handleMouseWheel);
+        container.addEventListener("wheel", handleMouseWheel, {
+            passive: false
+        });
 
-        // Create a GSAP timeline for the animation
         const timeline = gsap.timeline({
             defaults: {
                 ease: "power1.out"
             }
         });
 
-        // Add scroll animation to the case-container
         timeline.fromTo(caseContainer, {
             opacity: 0,
             x: "-=100"
@@ -491,7 +489,6 @@
             duration: 1
         });
 
-        // Trigger the animation when the page is fully loaded
         timeline.play();
     });
 
@@ -500,7 +497,12 @@
         const container = event.currentTarget;
         const scrollAmount = event.deltaY;
 
-        container.scrollLeft += scrollAmount;
+        // Smooth scroll using GSAP animation with increased duration
+        gsap.to(container, {
+            scrollLeft: container.scrollLeft + scrollAmount,
+            duration: 0.1,
+            ease: "power1.out"
+        });
     }
 
     $(document).ready(function() {
@@ -509,7 +511,6 @@
             $navMenu.toggle();
             $(this).toggleClass('w--open');
 
-            // Disable scroll when menu is open
             if ($navMenu.is(':visible')) {
                 $('.header-content-wrapper').css('display', 'none');
                 $('.w-nav').css('background-color', '#050a11');
@@ -531,20 +532,16 @@
         });
     });
 
-    // Disable scroll
     function disableScroll() {
-        // Get the current scroll position
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-        // Save the current scroll position and add scroll-lock styles
         window.onscroll = function() {
             window.scrollTo(scrollLeft, scrollTop);
         };
         document.body.classList.add('scroll-lock');
     }
 
-    // Enable scroll
     function enableScroll() {
         window.onscroll = null;
         document.body.classList.remove('scroll-lock');
@@ -563,12 +560,7 @@
         casesGrid.style.display = "grid";
     }
 
-
-    /*cursor*/
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
-        // false for not mobile device
-
-        /*cursor*/
         const customCursor = document.querySelector(".custom-cursor");
         const links = document.querySelectorAll("a");
 
@@ -582,10 +574,9 @@
             });
         });
 
-        // Update custom cursor appearance on mousemove
         document.addEventListener('mousemove', function(event) {
-            customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
-
+            customCursor.style.left = `${event.clientX}px`;
+            customCursor.style.top = `${event.clientY}px`;
         });
     }
 </script>
