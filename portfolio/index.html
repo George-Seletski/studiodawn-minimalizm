@@ -325,9 +325,10 @@
 
                 var image = document.createElement('img');
                 image.src = obj.imagePath;
+                image.loading = "eager";
                 image.alt = 'image ' + obj.tag; // Fix the concatenation
 
-                image.loading = "lazy";
+                //image.loading = "lazy";
 
                 link.appendChild(image);
                 card.appendChild(link);
@@ -358,7 +359,7 @@
                 var image = document.createElement('img');
                 image.src = obj.imagePath;
                 image.alt = 'image ' + obj.tag; // Fix the concatenation
-                image.loading = "lazy";
+                image.loading = "eager";
 
                 var Div = document.createElement('div');
                 Div.className = "description__content";
