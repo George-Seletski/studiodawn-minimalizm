@@ -121,19 +121,6 @@ h1 {
     margin: 0 45px;
 }
 
-
-/* For Chrome, Safari, and Opera */
-
-::-webkit-scrollbar {
-    width: 1px;
-    /* Adjust the width as desired */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #888;
-    /* Change the color as desired */
-}
-
 a {
     font-size: 18px;
     line-height: 1.667em;
