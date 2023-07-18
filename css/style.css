@@ -607,7 +607,7 @@
         background-color: rgb(255 255 255 / 0.3);
         backdrop-filter: blur(8px);
         position: absolute;
-        top: 50%;
+        top: 48%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
