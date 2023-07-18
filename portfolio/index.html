@@ -318,7 +318,7 @@
             filteredObjects.forEach(function(obj) {
                 Objectag = obj.tag;
                 //console.log('grid', Objectag, obj.tag);
-                var card = document.createElement('figure');
+                var card = document.createElement('div');
                 card.className = 'case-grid-item';
 
                 var link = document.createElement('a');
@@ -348,7 +348,7 @@
             filteredObjects.forEach(function(obj) {
                 Objectag = obj.tag;
                 //console.log('list', Objectag, obj.tag);
-                var card = document.createElement('figure');
+                var card = document.createElement('div');
                 card.className = 'case-item';
 
                 var card_image = document.createElement('div');
@@ -431,10 +431,9 @@
     showGrid();
 
 
+    /*cursor*/
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
         // false for not mobile device
-
-        /*cursor*/
         const customCursor = document.querySelector(".custom-cursor");
         const links = document.querySelectorAll("a");
 
@@ -454,6 +453,13 @@
 
         });
     }
+
+    // Update custom cursor appearance on mousemove
+    document.addEventListener('mousemove', function(event) {
+        const customCursor = document.querySelector(".custom-cursor");
+        customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
+
+    });
 </script>
 
 </html>

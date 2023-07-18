@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
 
     <script src="js/jquery-3.6.0.min.js"></script>
-
+    <script src="js/ScrollTriger.js"></script>
+    <script src="js/gsap.min.js"></script>
 </head>
 
 <body>
@@ -87,7 +88,7 @@
                     <div class="hamburger-menu-bar-top"></div>
                     <div class="hamburger-menu-bar-bottom"></div>
                 </div>
-                <div class="header-logo-link w-nav-brand w--current ">
+                <div class="header-logo-link w-nav-brand ">
                     <img src="img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
                 </div>
 
@@ -191,7 +192,7 @@
 
         </div>
     </div>
-    <div class="case-gallery">
+    <!--<div class="case-gallery">
         <div class="grid">
             <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
             <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
@@ -203,7 +204,7 @@
             <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
 
         </div>
-    </div>
+    </div>-->
     <div class="page-wrapper">
         <div class="text">
             <h2>
@@ -295,11 +296,26 @@
 </body>
 
 <script>
+    // Smooth GSAP scroll
+    /* $(document).ready(function() {
+         // Select all anchor links except those with the "no-smooth-scroll" class
+         const smoothScrollLinks = $('a:not(.no-smooth-scroll)');
+
+         smoothScrollLinks.click(function(event) {
+             event.preventDefault();
+             const target = $(this).attr('href');
+             const offset = $(target).offset().top;
+
+             $('html, body').animate({
+                 scrollTop: offset
+             }, 800);
+         });
+     });*/
+
+
     /*cursor*/
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
         // false for not mobile device
-
-        /*cursor*/
         const customCursor = document.querySelector(".custom-cursor");
         const links = document.querySelectorAll("a");
 
@@ -326,6 +342,8 @@
         customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
 
     });
+
+
     $(document).ready(function() {
         $('.hamburger-menu-wrapper').click(function() {
             var $navMenu = $('.w-nav-menu');

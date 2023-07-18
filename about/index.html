@@ -125,7 +125,7 @@
                 <img src="./team/main.png" alt="our team" loading="lazy">
             </div>
             <span class="description">
-
+            
                 <h2>
                     Unlock limitless possibilities with our comprehensive solutions block from trademark management to
                     digital transformation, we offer a wide range of services to elevate your brands success. Harness
@@ -299,8 +299,8 @@
         </section>
 
         <div class="brands-section">
-            <div>
-                <h2 class="brands-section-header" id="header-font">Customers</h2>
+            <div class="brands-section-header">
+                <h2 id="header-font">Customers</h2>
             </div>
             <div class="brands-container">
 
@@ -416,6 +416,35 @@
 </body>
 
 <script>
+    /*cursor*/
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
+        // false for not mobile device
+        const customCursor = document.querySelector(".custom-cursor");
+        const links = document.querySelectorAll("a");
+
+        links.forEach((link) => {
+            link.addEventListener("mouseover", () => {
+                customCursor.classList.add("custom-cursor--link");
+            });
+
+            link.addEventListener("mouseout", () => {
+                customCursor.classList.remove("custom-cursor--link");
+            });
+        });
+
+        // Update custom cursor appearance on mousemove
+        document.addEventListener('mousemove', function(event) {
+            customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
+
+        });
+    }
+
+    // Update custom cursor appearance on mousemove
+    document.addEventListener('mousemove', function(event) {
+        const customCursor = document.querySelector(".custom-cursor");
+        customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
+
+    });
     $(document).ready(function() {
         $('.hamburger-menu-wrapper').click(function() {
             var $navMenu = $('.w-nav-menu');
@@ -465,19 +494,8 @@
 
 
     /*cursor*/
-    const cards = document.querySelectorAll('.image-container');
-    const customCursor = document.querySelector(".custom-cursor");
-    const links = document.querySelectorAll("a");
+    //
 
-    links.forEach((link) => {
-        link.addEventListener("mouseover", () => {
-            customCursor.classList.add("custom-cursor--link");
-        });
-
-        link.addEventListener("mouseout", () => {
-            customCursor.classList.remove("custom-cursor--link");
-        });
-    });
     //Team Cards Effect
     /* cards.forEach((card) => {
          card.addEventListener('mousemove', (event) => {
@@ -499,6 +517,7 @@
 
 
     // Team Cards Effect
+    const cards = document.querySelectorAll('.image-container');
     cards.forEach((card) => {
         card.addEventListener('mousemove', (event) => {
             const cardWidth = card.offsetWidth;
@@ -520,7 +539,7 @@
     gsap.registerPlugin(ScrollTrigger);
     gsap.to('.image-container', {
         scrollTrigger: {
-            trigger: '.container',
+            trigger: '.image-container',
             start: 'top top',
             end: 'bottom top',
             scrub: true
@@ -531,13 +550,6 @@
                 card.style.transform = 'translateY(-90%)'; // Reset the translateY value after the animation completes
             });
         }
-    });
-
-
-    // Update custom cursor appearance on mousemove
-    document.addEventListener('mousemove', function(event) {
-        customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
-
     });
 </script>
 
