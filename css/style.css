@@ -359,6 +359,11 @@
         margin-left: 10em;
     }
     
+    .filter-button.active {
+        /* Transition properties */
+        transition-timing-function: ease-in-out;
+    }
+    
     .mg-10 {
         justify-content: space-between;
     }
@@ -375,10 +380,23 @@
         font-family: 'Roboto Regular' !important;
     }
     
+    #list-1 {
+        width: 19em;
+    }
+    
+    #list-2 {
+        width: 11em;
+    }
+    
+    #list-3 {
+        width: 10em;
+    }
+    
     .filter-list>li>a {
         font-size: 30px !important;
         line-height: 50px;
         font-family: 'Roboto Light';
+        transition: all 0.5s ease;
     }
     
     .icons-view {
@@ -386,7 +404,7 @@
         height: 210px;
         flex-direction: row;
         gap: 50px;
-        margin-left: 1em;
+        margin-left: 2em;
     }
     
     .icons-view>div {
@@ -485,7 +503,7 @@
     .row-container {
         display: flex;
         align-items: center;
-        margin: 14em 9em 9em 9em;
+        margin: 9em 9em 9em 9em;
         gap: 150px;
     }
     
@@ -771,7 +789,6 @@
         width: 200px;
         height: 100px;
         display: flex;
-        align-items: center;
     }
     
     #brand-name {
@@ -903,7 +920,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 30px;
+        padding: 2em;
         margin-right: 0;
         gap: 65px;
         list-style-type: none;
@@ -1497,6 +1514,14 @@
     }
     
     @media screen and (max-width: 991px) {
+        /*navbar*/
+        .container-default-center {
+            flex-direction: column;
+            gap: 10em;
+        }
+        .nav-list {
+            padding: 0;
+        }
         .container-100hv {
             height: auto;
         }
@@ -1512,8 +1537,14 @@
             font-size: 4em;
             line-height: 103px;
         }
+        .section-block>.header-section-content {
+            font-size: 3em !important;
+        }
         .mb-bottom---10px {
             margin-top: 0;
+        }
+        .mr-55 {
+            margin-right: -21px !important;
         }
         .bottom-text-header>span {
             text-align: center;
@@ -1579,8 +1610,8 @@
             flex-direction: row;
         }
         .instagram-img {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
         }
         footer {
             flex-direction: column;
@@ -1660,9 +1691,45 @@
         .icons-view {
             height: 100px;
         }
+        /*About*/
+        .header-cover>img {
+            height: 50vh;
+            padding: 4em 0;
+        }
+        .header-image-description>.description {
+            margin: 0 2em;
+            width: 720px;
+        }
+        .section-block-text {
+            margin-top: 9em;
+        }
+        .team-gallery {
+            column-count: 2;
+        }
+        .team-gallery>.image-container {
+            width: 200px;
+        }
+        .about-main-section {
+            margin-top: 30em;
+        }
     }
     
     @media screen and (max-width: 767px) {
+        .container-default-center {
+            flex-direction: column;
+            gap: 5em;
+        }
+        .nav-list {
+            padding: 0;
+            gap: 2em;
+        }
+        .nav-info {
+            margin-bottom: 1em;
+        }
+        .nav-info-header {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
         .mr-55 {
             margin-right: 0 !important;
         }
@@ -1708,6 +1775,21 @@
     }
     
     @media screen and (max-width: 479px) {
+        .container-default-center {
+            flex-direction: column;
+            gap: 5em;
+        }
+        .nav-list {
+            padding: 0;
+            gap: 1em;
+        }
+        .nav-info {
+            margin-bottom: 1em;
+        }
+        .nav-info-header {
+            font-size: 40px;
+            margin-bottom: 0px;
+        }
         .mr-55 {
             margin-right: 0 !important;
         }
@@ -1885,6 +1967,10 @@
         }
         .info-block {
             padding-bottom: 3em;
+        }
+        .instagram-img {
+            width: 350px;
+            height: 350px;
         }
     }
     

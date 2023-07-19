@@ -192,7 +192,19 @@
 
         </div>
     </div>
+    <!--<div class="case-gallery">
+        <div class="grid">
+            <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
+            <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+            <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
+            <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+            <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
+            <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
+            <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+            <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
 
+        </div>
+    </div>-->
     <div class="page-wrapper">
         <div class="text">
             <h2>
@@ -357,6 +369,25 @@
             } else {
                 $(".header-wrapper").removeClass("with-effect");
             }
+        });
+    });
+    // Team Cards Effect
+    const cards = document.querySelectorAll('.image-container');
+    cards.forEach((card) => {
+        card.addEventListener('mousemove', (event) => {
+            const cardWidth = card.offsetWidth;
+            const cursorPosition = event.pageX - card.offsetLeft;
+
+            if (cursorPosition > cardWidth / 2) {
+                card.style.transform = `translateY(-50%) rotate(15deg)`;
+            } else {
+                card.style.transform = `translateY(-50%) rotate(-15deg)`;
+            }
+
+        });
+
+        card.addEventListener('mouseleave', function() {
+            card.style.transform = 'translateY(-50%)';
         });
     });
 
