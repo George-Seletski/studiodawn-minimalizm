@@ -13,7 +13,6 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/ScrollTriger.js"></script>
     <script src="js/gsap.min.js"></script>
-    <script src="js/preloader.js"></script>
 </head>
 
 <body>
@@ -351,6 +350,50 @@
 </body>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Your GSAP animation for the preloader content (loading animation)
+        gsap.fromTo(".snowflake", {
+            y: 10,
+            opacity: 0
+        }, {
+            y: 0,
+            opacity: 1,
+            duration: 1.5,
+            ease: "Sine.inOut"
+        });
+
+        gsap.from(".rounded-text", {
+            scale: 0,
+            duration: 0,
+            ease: "back.out(1)"
+        });
+
+
+        // Simulate content loading time (remove this in your actual implementation)
+        setTimeout(function() {
+            const preloader = document.querySelector(".preloader-container");
+            const mainContent = document.getElementById("main-content");
+
+            // Use GSAP to smoothly fade out the preloader
+            gsap.to(preloader, {
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                    // Hide the preloader after the fade-out animation is complete
+                    preloader.style.display = "none";
+                    // Show the main content
+                    mainContent.style.display = "block";
+                    // Use GSAP to smoothly fade in the main content
+                    gsap.from(mainContent, {
+                        opacity: 0,
+                        duration: 0.5
+                    });
+                },
+            });
+        }, 2000); // Change the duration to match your actual content loading time
+    });
+
+
     // Smooth GSAP scroll
     /* $(document).ready(function() {
          // Select all anchor links except those with the "no-smooth-scroll" class
