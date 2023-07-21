@@ -351,23 +351,34 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Your GSAP animation for the preloader content (loading animation)
-        gsap.fromTo(".snowflake", {
-            y: 10,
+        const rotatingText = document.querySelector(".rotating");
+        const snowflake = document.querySelector(".snowflake");
+        const roundedText = document.querySelector(".rounded-text");
+
+        // Set initial states (hidden) for the rotating text and snowflake
+        gsap.set([rotatingText, snowflake], {
             opacity: 0
-        }, {
-            y: 0,
+        });
+
+        // Create a GSAP timeline for parallel animations
+        const timeline = gsap.timeline();
+
+        // Your GSAP animation for the snowflake
+        timeline.to(snowflake, {
             opacity: 1,
+            y: -10,
             duration: 1.5,
-            ease: "Sine.inOut"
+            ease: "Sine.inOut",
         });
 
-        gsap.from(".rounded-text", {
-            scale: 0,
-            duration: 0,
-            ease: "back.out(1)"
+        // Your GSAP animation for the rotating text
+        timeline.to(rotatingText, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.5,
+            ease: "back.out(1)",
+            delay: -1.5, // Delay the rotating text animation by -1.5 seconds to make it start parallelly with the snowflake
         });
-
 
         // Simulate content loading time (remove this in your actual implementation)
         setTimeout(function() {
@@ -377,7 +388,7 @@
             // Use GSAP to smoothly fade out the preloader
             gsap.to(preloader, {
                 opacity: 0,
-                duration: 0.5,
+                duration: 1,
                 onComplete: () => {
                     // Hide the preloader after the fade-out animation is complete
                     preloader.style.display = "none";

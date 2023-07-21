@@ -24,6 +24,7 @@
         align-items: center;
         height: 100%;
         background: var(--background-color);
+        cursor: pointer;
     }
     
      :root {
@@ -35,10 +36,12 @@
     .snowflake {
         position: absolute;
         margin-bottom: 3em;
+        cursor: pointer;
     }
     
     .line {
         position: absolute;
+        cursor: pointer;
         top: 50%;
         width: 325px;
         /* Adjust this to change the length of the lines */
@@ -47,6 +50,7 @@
         transform-origin: 0 50%;
         border-radius: 14px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        z-index: -2;
     }
     
     .line::before {
@@ -197,8 +201,9 @@
         text-transform: uppercase;
         transform: rotate(-103deg);
         color: #000;
-        z-index: -1;
+        z-index: -3;
         position: absolute;
+        cursor: pointer;
     }
     
     text {
@@ -254,6 +259,7 @@
     
     #surface {
         background: #9e978e;
+        cursor: pointer;
         margin-top: 22.8em;
         margin-left: 2em;
         margin-right: 2em;
