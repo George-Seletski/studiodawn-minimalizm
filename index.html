@@ -8,125 +8,180 @@
     <title>STUDIODAWN</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="css/preloader.css">
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/ScrollTriger.js"></script>
     <script src="js/gsap.min.js"></script>
+    <script src="js/preloader.js"></script>
 </head>
 
 <body>
-    <div class="custom-cursor"></div>
+    <div class="preloader-container">
+        <div class="preloader">
+            <div class="snowflake">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
 
-    <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
-        <div class="container-default w-container">
+            </div>
+            <div class="rounded-text rotating">
+                <svg viewBox="0 0 200 200">
+                <path
+                    id="textPath"
+                    d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0"
+                    transform="translate(100,100)"
+                    fill="none"
+                    stroke-width="0"
+                ></path>
+                <g font-size="13.1px">
+                    <text text-anchor="start">
+                        <textPath
+                            class="coloring"
+                            xlink:href="#textPath"
+                            startOffset="0%"
+                        >
+                            <tspan>·</tspan>
+                            STUDIODAWN
+                            <tspan>·</tspan>
+                            STUDIODAWN<tspan>·</tspan>
+                            STUDIODAWN
+                            <tspan>·</tspan>
+                            STUDIODAWN<tspan>·</tspan>
+                            STUDIODAWN
+                            <tspan>·</tspan>
+                            STUDIODAWN
+                        </textPath>
+                    </text>
+                </g>
+            </svg>
+            </div>
+            <div id="surface" class="bottom">
+            </div>
+        </div>
+    </div>
+    <div id="main-content" style="display: none;">
+        <div class="custom-cursor"></div>
 
-            <div class="header-right-col">
-                <nav role="navigation" class="w-nav-menu">
+        <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
+            <div class="container-default w-container">
 
-                    <div class="menu container-default-center">
+                <div class="header-right-col">
+                    <nav role="navigation" class="w-nav-menu">
 
-                        <div class="w-container">
-                            <ul role="list" class="nav-list white">
-                                <li class="nav-item">
-                                    <a href="./" class="nav-link w--current">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="about" class="nav-link">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="portfolio" class="nav-link">Cases</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact" class="nav-link">Contact us</a>
-                                </li>
+                        <div class="menu container-default-center">
 
-                            </ul>
-                        </div>
-                        <div class="w-container">
-                            <div class="nav-info-submenu">
-
-                                <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header ">Work Inquiries.</h2>
+                            <div class="w-container">
+                                <ul role="list" class="nav-list white">
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
-                                    </li>
-                                </ul>
-                                <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header white">Get in touch.</h2>
-                                    <li class="nav-item">
-                                        <a href="#" class="link-address white">228 Nelson's Crescent New
-                                            Westminster, BC V3L 3E3</a>
+                                        <a href="./" class="nav-link w--current">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        <a href="about" class="nav-link">About</a>
                                     </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                    <li class="nav-item">
+                                        <a href="portfolio" class="nav-link">Cases</a>
                                     </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                    <li class="nav-item">
+                                        <a href="contact" class="nav-link">Contact us</a>
                                     </li>
 
                                 </ul>
                             </div>
+                            <div class="w-container">
+                                <div class="nav-info-submenu">
+
+                                    <ul role="list" class="nav-info">
+                                        <h2 class="nav-info-header ">Work Inquiries.</h2>
+                                        <li class="nav-item">
+                                            <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        </li>
+                                    </ul>
+                                    <ul role="list" class="nav-info">
+                                        <h2 class="nav-info-header white">Get in touch.</h2>
+                                        <li class="nav-item">
+                                            <a href="#" class="link-address white">228 Nelson's Crescent New
+                                            Westminster, BC V3L 3E3</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="header-content-wrapper">
+                    <div class="hamburger-menu-wrapper w-nav-button">
+                        <div class="hamburger-menu-bar-top"></div>
+                        <div class="hamburger-menu-bar-top"></div>
+                        <div class="hamburger-menu-bar-bottom"></div>
+                    </div>
+                    <div class="header-logo-link w-nav-brand ">
+                        <img src="img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                    </div>
+
+
+                    <div class="icons">
+                        <div id="facebook-icon">
+
+                        </div>
+                        <div id="instagram-icon">
+
+                        </div>
+                        <div id="behance-icon">
 
                         </div>
 
                     </div>
-                </nav>
-            </div>
-
-            <div class="header-content-wrapper">
-                <div class="hamburger-menu-wrapper w-nav-button">
-                    <div class="hamburger-menu-bar-top"></div>
-                    <div class="hamburger-menu-bar-top"></div>
-                    <div class="hamburger-menu-bar-bottom"></div>
-                </div>
-                <div class="header-logo-link w-nav-brand ">
-                    <img src="img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
-                </div>
-
-
-                <div class="icons">
-                    <div id="facebook-icon">
-
-                    </div>
-                    <div id="instagram-icon">
-
-                    </div>
-                    <div id="behance-icon">
-
-                    </div>
-
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="header-section">
-        <div class="header-section-content">
+        <div class="header-section">
+            <div class="header-section-content">
 
-            <h1>
-                <span class="mb-bottom---10px garamond-font">We build</span>
-                <span class="mb-bottom---10px mr-55"> future brands</span>
-            </h1>
+                <h1>
+                    <span class="mb-bottom---10px garamond-font">We build</span>
+                    <span class="mb-bottom---10px mr-55"> future brands</span>
+                </h1>
 
+            </div>
+            <div class="bottom-text-header">
+
+            </div>
         </div>
-        <div class="bottom-text-header">
 
-        </div>
-    </div>
-
-    <div class="page-wrapper">
-        <div class="container-100hv">
-            <div class="text-header">
-                <span>
+        <div class="page-wrapper">
+            <div class="container-100hv">
+                <div class="text-header">
+                    <span>
                 <div class="description">
                     Unlock limitless possibilities with our comprehensive solutions block from trademark management to
                     digital transformation, we offer a wide range of services to elevate your brands success. Harness
@@ -134,81 +189,81 @@
                     new heights in the ever-evolving digital landscape.
                 </div>
             </span>
-            </div>
-
-            <div class="video-container">
-                <div class=" movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
-                    <div class=" movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
-                        <img id='play-buttton-icon' src="./icons/play-svg.svg" alt="play video">
-                    </div>
-                    <img class="gif-animation " src="video/video-tmp.gif" alt="video">
-
                 </div>
 
-                <div class="modal-vid">
-                    <div class="movie-box">
-                        <div class="wide-screen">
-                            <div class="vid-holder">
-                                <div class="close" vidUrl="#">
-                                    <div class="remove-circle"><img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thubmail" class="remove" /></div>
+                <div class="video-container">
+                    <div class=" movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                        <div class=" movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                            <img id='play-buttton-icon' src="./icons/play-svg.svg" alt="play video">
+                        </div>
+                        <img class="gif-animation " src="video/video-tmp.gif" alt="video">
+
+                    </div>
+
+                    <div class="modal-vid">
+                        <div class="movie-box">
+                            <div class="wide-screen">
+                                <div class="vid-holder">
+                                    <div class="close" vidUrl="#">
+                                        <div class="remove-circle"><img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thubmail" class="remove" /></div>
+                                    </div>
+
+
+                                    <video id="myVideo" class="myVideo hide" src="" controls></video>
+                                    <iframe class="youTube hide" src="" frameborder="0" allowfullscreen></iframe>
                                 </div>
-
-
-                                <video id="myVideo" class="myVideo hide" src="" controls></video>
-                                <iframe class="youTube hide" src="" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row-container">
-            <div>
-                <h2 id="header-font">The what</h2>
-                <span class="description">
+            <div class="row-container">
+                <div>
+                    <h2 id="header-font">The what</h2>
+                    <span class="description">
                     From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
                     creativity to clients doing right by the world. We turn compeling ideas into commercial success
                     stories through the power of brand in all its forms.
                 </span>
-            </div>
-            <div>
-                <h2 id="header-font">The how</h2>
-                <span class="description">
+                </div>
+                <div>
+                    <h2 id="header-font">The how</h2>
+                    <span class="description">
                     We're all about collective succes. Everyone's an equal in the creative process as we work toward a
                     shared goal - no egos here. We don't make our partners fit into our formula. Instead, we find what
                     works for you.
                 </span>
-            </div>
-            <div>
-                <h2 id="header-font">The why</h2>
-                <span class="description">
+                </div>
+                <div>
+                    <h2 id="header-font">The why</h2>
+                    <span class="description">
                     From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
                     creativity
                     to clients doing right by the world. We turn compeling ideas into commercial success stories through
                     the power
                     of brand.
                 </span>
+                </div>
+
             </div>
-
         </div>
-    </div>
-    <!--<div class="case-gallery">
-        <div class="grid">
-            <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
-            <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-            <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
-            <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-            <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
-            <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
-            <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-            <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
+        <div class="case-gallery">
+            <div class="grid">
+                <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
+                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
 
+            </div>
         </div>
-    </div>-->
-    <div class="page-wrapper">
-        <div class="text">
-            <h2>
-                <span class="garamond-font">We work with clients to create immersive worlds &mdash; brands that draw you into their orbit, make an impact & gain a cult following. 
+        <div class="page-wrapper">
+            <div class="text">
+                <h2>
+                    <span class="garamond-font">We work with clients to create immersive worlds &mdash; brands that draw you into their orbit, make an impact & gain a cult following. 
                     Just ask 
                         <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer"> Microsoft</a>,
                 <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">P.E Notion</a>,
@@ -216,14 +271,14 @@
                 <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Worn For Good</a> and
                 <a href="https://"  id="brand-name" target="_blank" rel="noopener noreferrer">Beaty Bites.</a>
                 </span>
-            </h2>
-        </div>
-        <div class="instagram-container">
-            <div class="instagram-text-contianer">
+                </h2>
+            </div>
+            <div class="instagram-container">
+                <div class="instagram-text-contianer">
 
-                <h2 id="header-font">Instagram</h2>
+                    <h2 id="header-font">Instagram</h2>
 
-                <span>
+                    <span>
                     <p class="description">
                         We don't just design brands for pleasing aesthetic, we bring purposeful business to life and
                         grant them longevity in the game.
@@ -236,63 +291,63 @@
                   <br>
                 </p>
                 </span>
-                <span class="instgram-link">
+                    <span class="instgram-link">
                         <a href="https://" target="_blank" rel="noopener noreferrer">@studiodawn</a>
                         </span>
-            </div>
-            <div class="instagram-images">
-                <div loading="eager" class="instagram-img img1"></div>
-                <div loading="eager" class="instagram-img img2"></div>
-                <div loading="eager" class="instagram-img img3"></div>
-            </div>
+                </div>
+                <div class="instagram-images">
+                    <div loading="eager" class="instagram-img img1"></div>
+                    <div loading="eager" class="instagram-img img2"></div>
+                    <div loading="eager" class="instagram-img img3"></div>
+                </div>
 
-        </div>
-    </div>
-    <footer>
-        <div class="text-header">
-            <div class="footer-header">
-                <h2>Get in touch</h2>
             </div>
         </div>
-        <div class="footer-links">
-            <div class="footer-fnt link-email">
-                <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+        <footer>
+            <div class="text-header">
+                <div class="footer-header">
+                    <h2>Get in touch</h2>
+                </div>
             </div>
-            <div class="footer-fnt link-email">
-                <a href="tel:+421905455208">+421 905 455 208</a>
+            <div class="footer-links">
+                <div class="footer-fnt link-email">
+                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                </div>
+                <div class="footer-fnt link-email">
+                    <a href="tel:+421905455208">+421 905 455 208</a>
+                </div>
             </div>
-        </div>
-        <div class="licence-container">
-            <ul class="licence-container-list">
-                <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
-                <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
-                <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
-            </ul>
-        </div>
-        <div class="icon-box">
+            <div class="licence-container">
+                <ul class="licence-container-list">
+                    <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
+                    <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
+                    <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
+                </ul>
+            </div>
+            <div class="icon-box">
 
-            <div class="language-icon">
-                <div id="language-icon-circle">
-                    <div class="svg-icon">
+                <div class="language-icon">
+                    <div id="language-icon-circle">
+                        <div class="svg-icon">
 
+                        </div>
                     </div>
                 </div>
+                <div class="icons">
+                    <div class="wh-45" id="facebook-icon">
+
+                    </div>
+                    <div class="wh-45" id="instagram-icon">
+
+                    </div>
+                    <div class="wh-45" id="behance-icon">
+
+                    </div>
+
+                </div>
             </div>
-            <div class="icons">
-                <div class="wh-45" id="facebook-icon">
-
-                </div>
-                <div class="wh-45" id="instagram-icon">
-
-                </div>
-                <div class="wh-45" id="behance-icon">
-
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
+        </footer>
+    </div>
 </body>
 
 <script>
