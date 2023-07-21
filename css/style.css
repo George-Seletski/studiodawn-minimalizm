@@ -313,6 +313,7 @@
         display: flex;
         padding-top: 10px;
         padding-bottom: 10px;
+        border: 1px solid;
     }
     
     .header-logo {
@@ -803,10 +804,9 @@
     .icons {
         display: flex;
         flex-direction: row;
-        align-items: flex-start;
-        padding: 0px;
         gap: 10px;
         /*padding-right: 2.3em;*/
+        border: 1px solid;
     }
     
     .bottom-content {
@@ -865,6 +865,7 @@
         height: 18px;
         transition: transform 5s;
         transition: all 0.5s ease;
+        border: 1px solid;
     }
     
     #facebook-icon:hover,
@@ -883,9 +884,11 @@
         height: 18px;
         transition: transform 5s;
         transition: all 0.5s ease;
+        border: 1px solid;
     }
     
     #facebook-icon {
+        border: 1px solid;
         background-image: url("../icons/facebook-svg-large.svg");
         background-repeat: no-repeat;
         background-size: 100% 115%;
@@ -1535,7 +1538,7 @@
             margin-right: 0;
         }
         .header-section-content {
-            font-size: 2em;
+            font-size: 4em;
             line-height: 103px;
         }
         .section-block>.header-section-content {
