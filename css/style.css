@@ -1535,7 +1535,7 @@
             margin-right: 0;
         }
         .header-section-content {
-            font-size: 4em;
+            font-size: 2em;
             line-height: 103px;
         }
         .section-block>.header-section-content {
@@ -1808,8 +1808,8 @@
             margin: 0 !important;
         }
         .container-text {
-            font-size: 1.9em !important;
-            width: 300px;
+            font-size: 1.6em !important;
+            width: fit-content;
         }
         .info-block {
             padding-bottom: 1em;
