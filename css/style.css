@@ -2121,9 +2121,6 @@
             flex-direction: column;
             gap: 0px;
         }
-        .bottom-content {
-            margin-left: 2em;
-        }
         .form-group .form-control {
             margin-bottom: 40px;
         }
@@ -2135,6 +2132,9 @@
         #forms {
             align-items: center;
             justify-content: center;
+        }
+        .form-group .form-control {
+            margin-bottom: 25px;
         }
         .contact-h2 {
             margin-bottom: 0;
@@ -2187,7 +2187,7 @@
             position: relative;
         }
         .bottom-content {
-            margin: 2em 0 0 0 !important;
+            margin: 0 2em 2em 0 !important;
             display: block;
         }
         .link-address {
