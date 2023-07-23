@@ -350,10 +350,10 @@
 </body>
 
 <script>
+    // The DOMContentLoaded event listener
     document.addEventListener("DOMContentLoaded", function() {
         const rotatingText = document.querySelector(".rotating");
         const snowflake = document.querySelector(".snowflake");
-        const roundedText = document.querySelector(".rounded-text");
 
         // Set initial states (hidden) for the rotating text and snowflake
         gsap.set([rotatingText, snowflake], {
@@ -375,7 +375,7 @@
         timeline.to(rotatingText, {
             opacity: 1,
             scale: 1,
-            duration: 0.5,
+            duration: 0,
             ease: "back.out(1)",
             delay: -1.5, // Delay the rotating text animation by -1.5 seconds to make it start parallelly with the snowflake
         });
@@ -480,25 +480,8 @@
             }
         });
     });
-    // Team Cards Effect
-    const cards = document.querySelectorAll('.image-container');
-    cards.forEach((card) => {
-        card.addEventListener('mousemove', (event) => {
-            const cardWidth = card.offsetWidth;
-            const cursorPosition = event.pageX - card.offsetLeft;
 
-            if (cursorPosition > cardWidth / 2) {
-                card.style.transform = `translateY(-50%) rotate(15deg)`;
-            } else {
-                card.style.transform = `translateY(-50%) rotate(-15deg)`;
-            }
 
-        });
-
-        card.addEventListener('mouseleave', function() {
-            card.style.transform = 'translateY(-50%)';
-        });
-    });
 
     // Disable scroll
     function disableScroll() {
