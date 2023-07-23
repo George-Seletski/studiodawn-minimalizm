@@ -1653,6 +1653,7 @@
         }
         #contact-links {
             height: 50vh;
+            display: block;
         }
         .contact-h2 {
             font-size: 8em;
@@ -1795,6 +1796,7 @@
         }
         #contact-links {
             height: 50vh;
+            display: block;
         }
         .contact-h2 {
             font-size: 4em !important;
@@ -2042,6 +2044,7 @@
         }
         #contact-links {
             height: 50vh;
+            display: block;
         }
         .contact-h2 {
             font-size: 4em !important;
