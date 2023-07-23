@@ -1512,6 +1512,48 @@
         width: 100%;
     }
     
+    @media screen and (max-width: 1400px) {
+        .contact-section {
+            height: 100vh !important;
+        }
+        #forms,
+        #contact-form-container,
+        .bottom-content {
+            margin-left: 2em;
+        }
+        .container-header>h1 {
+            max-width: 100%;
+            margin-left: 1em;
+            font-size: 1.5em;
+        }
+        #contact-form-container {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+        .columns-container>div {
+            padding: 0;
+        }
+        .columns-container>#icon-box {
+            margin-right: 2em;
+        }
+        .contact-h2 {
+            font-size: 2.8em;
+            margin-bottom: 1.4em;
+            padding-top: 0.5em;
+        }
+        .info-block>* {
+            font-size: 2em;
+        }
+        .contanct-links>.link-email a,
+        .contanct-links>.link-telephone a {
+            font-size: 24px !important;
+        }
+        .contanct-links {
+            padding-top: 0.5em;
+        }
+    }
+    
     @media screen and (max-width: 991px) {
         /*navbar*/
         .container-default-center {
@@ -1648,19 +1690,35 @@
             margin-bottom: 30px;
         }
         /*Contact*/
+        .contact-section {
+            height: 100% !important;
+        }
         #forms {
             height: 100vh;
         }
         #contact-links {
             height: 50vh;
-            display: block;
+            gap: 4em;
         }
         .contact-h2 {
+            padding: 0;
             font-size: 8em;
+            margin-bottom: 0;
+        }
+        .info-block>h3 {
+            font-size: 4em;
+        }
+        .info-block>a {
+            font-size: 2em;
         }
         .container-header {
             font-size: 1.4em !important;
-            margin-bottom: 16em;
+            margin-top: 10rem;
+        }
+        .container-header>h1 {
+            max-width: 100%;
+            margin-left: 1em;
+            font-size: 2em;
         }
         .info-block {
             padding-bottom: 1em;
@@ -1681,6 +1739,18 @@
         .contanct-links {
             text-align: left;
             margin-top: 4em;
+        }
+        .container-header>h1 {
+            max-width: 100%;
+            margin: 3em 0.5em;
+        }
+        #contact-form-container {
+            width: 100%;
+        }
+        #forms,
+        #contact-form-container,
+        .bottom-content {
+            margin: 0;
         }
         /*Portfolio*/
         .portfolio-header-text {
@@ -1799,18 +1869,59 @@
             display: block;
         }
         .contact-h2 {
-            font-size: 4em !important;
+            font-size: 3em;
         }
         .container-header {
-            display: flex;
-            font-size: .9em !important;
-            margin-bottom: 10em;
-            flex-direction: column;
-            margin: 0 !important;
+            margin-top: 0;
+            margin-bottom: 1em;
         }
-        .container-text {
-            font-size: 1.6em !important;
-            width: fit-content;
+        .container-header>h1 {
+            font-size: 1em !important;
+            margin: 0;
+        }
+        .info-block>h3 {
+            font-size: 2em;
+        }
+        .info-block>a {
+            font-size: 1.2em;
+        }
+        #contact-form-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-control {
+            width: 100%;
+            font-weight: 800;
+            font-size: 1.2em;
+        }
+        .button {
+            display: flex;
+            border: 1px solid #000;
+            border-radius: 100px;
+            padding: 10px 30px;
+            margin-bottom: 0px;
+            transition: transform 5s;
+            transition: all 0.5s ease;
+            align-items: center;
+            text-align: center;
+            background-color: #f9f4f4;
+        }
+        .form-group .form-control {
+            -webkit-box-shadow: none;
+            border-bottom: 1px;
+            border-style: none none solid none;
+            border-radius: 0;
+            border-color: #000;
+            background-color: #f9f4f4;
+            margin-bottom: 2em;
+            line-height: 30px;
+        }
+        .button>span {
+            font-size: 12px !important;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #000;
         }
         .info-block {
             padding-bottom: 1em;
@@ -1828,33 +1939,12 @@
             flex-direction: column;
             gap: 2em;
         }
-        .columns-container>#icon-box {
-            height: 50vh;
-        }
         .contanct-links {
             text-align: left;
             margin-top: 4em;
         }
-        #contact-form-container {
-            width: 300px;
-            flex-direction: column;
-            margin: 0;
-            margin-top: 4em !important;
-        }
         .bottom-content {
-            margin: 2em 0 0 0 !important;
-        }
-        .columns-container>div {
-            padding: 0 0 0 0;
-        }
-        .contact-h2 {
-            margin-bottom: 0;
-        }
-        .info-block {
-            padding-bottom: 1em;
-        }
-        .info-block>.icons {
-            margin: 0 !important;
+            margin-bottom: 2em;
         }
     }
     
@@ -2043,21 +2133,23 @@
         }
         /*Contact*/
         #forms {
-            height: 100vh;
-        }
-        #contact-links {
-            height: 50vh;
-            display: block;
+            align-items: center;
+            justify-content: center;
         }
         .contact-h2 {
-            font-size: 4em !important;
+            margin-bottom: 0;
+            font-size: 3em !important;
         }
         .container-header {
-            display: flex;
-            font-size: .9em !important;
-            margin-bottom: 10em;
-            flex-direction: column;
-            margin: 0 !important;
+            max-width: 100%;
+            margin: 0;
+        }
+        .container-header>h1 {
+            font-size: 1.2em !important;
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 2em;
         }
         .container-text {
             font-size: 1.6em !important;
@@ -2072,6 +2164,7 @@
             margin-top: 7em;
             margin-left: 4em;
             margin-right: 4em;
+            position: relative;
         }
         .columns-container>div {
             padding: 1em 0;
@@ -2080,26 +2173,22 @@
             gap: 2em;
             padding: 0;
         }
-        .columns-container>#icon-box {
+        .contact-links {
             height: 50vh;
-        }
-        .contanct-links {
             text-align: left;
-            margin-top: 4em;
+            margin: 14em 0 !important;
             display: block;
+            position: relative;
         }
         #contact-form-container {
-            width: 300px;
+            width: 100%;
             flex-direction: column;
             margin: 0;
-            margin-top: 4em !important;
+            position: relative;
         }
         .bottom-content {
             margin: 2em 0 0 0 !important;
-        }
-        .contact-h2 {
-            margin-bottom: 0;
-            font-size: 2em !important;
+            display: block;
         }
         .link-address {
             font-size: 14px !important;
