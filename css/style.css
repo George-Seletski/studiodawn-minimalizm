@@ -1828,6 +1828,9 @@
             flex-direction: column;
             gap: 2em;
         }
+        .columns-container>#icon-box {
+            height: 50vh;
+        }
         .contanct-links {
             text-align: left;
             margin-top: 4em;
@@ -2075,6 +2078,10 @@
             display: flex;
             flex-direction: column;
             gap: 2em;
+            padding: 0;
+        }
+        .columns-container>#icon-box {
+            height: 50vh;
         }
         .contanct-links {
             text-align: left;
@@ -2089,9 +2096,6 @@
         }
         .bottom-content {
             margin: 2em 0 0 0 !important;
-        }
-        .columns-container>div {
-            padding: 0 0 0 0;
         }
         .contact-h2 {
             margin-bottom: 0;
