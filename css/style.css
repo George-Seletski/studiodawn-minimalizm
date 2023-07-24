@@ -1638,9 +1638,6 @@
             height: 72vh;
             padding: 4em 0;
         }
-        .odd-header>.header-section-content {
-            font-size: 4em;
-        }
         .description__content>.description {
             display: block;
             font-size: 1em !important;
@@ -1684,6 +1681,9 @@
         .header-wrapper {
             top: 0;
             left: 0;
+        }
+        .w-nav-menu {
+            overflow: scroll !important;
         }
         .w-container {
             margin-left: 0;
