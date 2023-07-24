@@ -455,15 +455,15 @@
             const cursorPosition = event.pageX - card.offsetLeft;
 
             if (cursorPosition > cardWidth / 2) {
-                card.style.transform = `translateY(-50%) rotate(15deg)`;
+                card.style.transform = `translateY(0%) rotate(15deg)`;
             } else {
-                card.style.transform = `translateY(-50%) rotate(-15deg)`;
+                card.style.transform = `translateY(0%) rotate(-15deg)`;
             }
 
         });
 
         card.addEventListener('mouseleave', function() {
-            card.style.transform = 'translateY(-50%)';
+            card.style.transform = 'translateY(0%)';
         });
     });
 
@@ -475,10 +475,10 @@
             end: 'bottom top',
             scrub: true
         },
-        y: '-60%',
+        y: '0%',
         onComplete: function() {
             cards.forEach((card) => {
-                card.style.transform = 'translateY(-90%)'; // Reset the translateY value after the animation completes
+                card.style.transform = 'translateY(0%)'; // Reset the translateY value after the animation completes
             });
         }
     });

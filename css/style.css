@@ -55,6 +55,12 @@
         background-color: #f9f4f4;
     }
     
+    html,
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+    
     h1,
     h2,
     h3,
@@ -118,8 +124,8 @@
         text-align: center;
         letter-spacing: 1.5px;
         font-weight: 800;
-        padding: 50px 400px;
-        margin: 0 45px;
+        padding: 50px 29em;
+        margin: 0 2em;
     }
     
     a {
@@ -213,6 +219,7 @@
         transition: 0.5s;
         transition-delay: 0.2s;
         opacity: 0;
+        width: 100vw;
     }
     
     .w-nav-menu-info {
@@ -248,6 +255,10 @@
         font-size: 24px;
         display: none;
         position: relative;
+    }
+    
+    .btn-close-wrppaer {
+        float: left !important;
     }
     
     .w-nav-button:focus {
@@ -313,6 +324,11 @@
         display: flex;
         padding-top: 10px;
         padding-bottom: 10px;
+        width: 100vw;
+    }
+    
+    .header-content-wrapper>.icons {
+        padding-right: 2.3em;
     }
     
     .header-logo {
@@ -607,9 +623,8 @@
         margin: 2.5em 25em;
     }
     
-    .container-100hv {
+    .container {
         height: 100vh;
-        padding: 2em 0;
     }
     
     .gif-animation {
@@ -625,7 +640,7 @@
         background-color: rgb(255 255 255 / 0.3);
         backdrop-filter: blur(8px);
         position: absolute;
-        top: 48%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -678,8 +693,8 @@
     
     .remove-circle {
         display: flex;
-        width: 70px;
-        height: 70px;
+        width: 40px;
+        height: 40px;
         justify-content: center;
         align-items: center;
         border-radius: 100%;
@@ -746,6 +761,23 @@
         margin-bottom: 0px;
     }
     
+    .button-close {
+        width: 30px;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        /* Horizontal centering */
+        align-items: center;
+        /* Vertical centering */
+    }
+    
+    .button-close>img {
+        width: 20px;
+        height: 20px;
+    }
+    
     .hamburger-menu-wrapper {
         padding: 0;
         transition: transform 0.3s;
@@ -780,14 +812,13 @@
     .brands-container {
         flex-direction: row;
         display: flex;
-        gap: 50px;
+        gap: 10em;
         flex-wrap: wrap;
         width: 100%;
     }
     
     #brand {
-        width: 200px;
-        height: 100px;
+        width: 20em;
         display: flex;
     }
     
@@ -1016,7 +1047,7 @@
         overflow: hidden;
         background-color: #f9f4f4;
         overflow-x: hidden;
-        width: 100%;
+        width: 100vw;
     }
     
     .container-header {
@@ -1245,10 +1276,11 @@
     
     footer {
         display: flex;
+        justify-content: center;
         gap: 150px;
         border-top: 2px solid;
-        margin-left: 220px;
-        margin-right: 220px;
+        margin: 0 2em;
+        max-width: 100%;
         align-items: center;
         margin-bottom: 50px;
         border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
@@ -1261,10 +1293,10 @@
         display: flex;
         position: relative;
         background-color: #f9f4f4;
-        width: 100%;
         margin-top: 70em;
         margin-bottom: 15em;
         /*height: 1600px;*/
+        width: 100vw;
     }
     
     .team-header-text {
@@ -1343,7 +1375,7 @@
     }
     
     .team-gallery>.image-container {
-        width: 450px;
+        width: 350px;
         transition: transform 0.5s;
         margin: 0;
         display: grid;
@@ -1368,7 +1400,6 @@
         gap: 70px;
         align-items: center;
         margin: 11.25rem;
-        align-items: center;
     }
     
     .instagram-text-contianer>h2 {
@@ -1552,6 +1583,83 @@
         .contanct-links {
             padding-top: 0.5em;
         }
+        .play-button {
+            top: 55%;
+        }
+        .text-header>span {
+            padding: 50px 9em;
+        }
+        .video-container {
+            margin: 2.5em 12em;
+        }
+        .row-container {
+            margin: 4em 7em;
+            gap: 50px;
+        }
+        .text {
+            margin: 3em 6em;
+        }
+        .instagram-container {
+            margin: 12em 8em;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .instagram-text-contianer {
+            width: fit-content;
+        }
+        .instagram-img {
+            margin: 0;
+        }
+        footer {
+            gap: 5em;
+        }
+        .footer-header {
+            font-family: 'Cormorant Garamond Semibold';
+            font-size: 40px !important;
+            margin-left: 0;
+        }
+        .footer-fnt>a {
+            font-size: 20px !important;
+        }
+        #licence-item>a {
+            font-size: 16px !important;
+        }
+        .language-icon {
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+        .header-cover>img {
+            height: 72vh;
+            padding: 4em 0;
+        }
+        .odd-header>.header-section-content {
+            font-size: 4em;
+        }
+        .description__content>.description {
+            display: block;
+            font-size: 1em !important;
+            line-height: 1.75;
+            padding-top: 2em;
+        }
+        .filter-container {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            margin: 2em;
+        }
+        .filter-list {
+            width: fit-content;
+        }
+        .filter-list>li>a {
+            font-size: 20px !important;
+            line-height: 30px;
+            font-family: 'Roboto Light';
+            transition: all 0.5s ease;
+        }
+        .icons-view {
+            height: fit-content;
+            margin-top: 4em;
+        }
     }
     
     @media screen and (max-width: 991px) {
@@ -1579,6 +1687,10 @@
             font-size: 4em;
             line-height: 103px;
         }
+        .text-header>span {
+            padding: 50px 2em;
+            margin: 0 2em;
+        }
         .section-block>.header-section-content {
             font-size: 3em !important;
         }
@@ -1602,27 +1714,27 @@
             margin-right: 0px;
         }
         .video-container {
-            margin: 7.5em;
+            margin: 2em;
         }
         .gif-animation {
-            width: 735px;
-            height: 345px;
+            /*width: 735px;
+            height: 345px;*/
+        }
+        .container {
+            height: auto;
         }
         .play-button {
-            top: 32%;
+            top: 67%;
         }
         .row-container {
             flex-direction: column;
             align-items: flex-start;
-            margin: 7.5em 100px;
+            margin: 7.5em 2em;
             text-align: left;
             gap: 100px;
         }
         #header-font {
             text-align: left;
-        }
-        .text-header>span {
-            padding: 0px;
         }
         .description {
             font-size: 18.7px;
@@ -1630,8 +1742,7 @@
         .text {
             font-size: 20px;
             line-height: 50px;
-            text-align: left;
-            margin: 8em;
+            margin: 8em 4em;
         }
         .instagram-text-contianer {
             text-align: left;
@@ -1647,6 +1758,8 @@
         .instagram-container {
             flex-direction: column;
             height: auto;
+            margin: 11.25em 2em;
+            align-items: center;
         }
         .instagram-images {
             flex-direction: row;
@@ -1692,6 +1805,7 @@
         /*Contact*/
         .contact-section {
             height: 100% !important;
+            overflow: scroll;
         }
         #forms {
             height: 100vh;
@@ -1726,7 +1840,7 @@
         }
         .columns-container {
             flex-direction: column;
-            margin-top: 7em;
+            margin-top: 92em;
             margin-left: 4em;
             margin-right: 4em;
         }
@@ -1758,18 +1872,29 @@
         }
         .mg-10 {
             margin: 2em !important;
+            gap: 2em !important;
+        }
+        .filter-list>li>a {
+            font-size: 25px !important;
+            line-height: 40px;
+            font-family: 'Roboto Light';
+            transition: all 0.5s ease;
         }
         .filter-container {
             margin: 0;
         }
+        .icons-view {
+            height: fit-content;
+            margin: 0;
+        }
         .cases-grid {
             column-gap: 10px;
-            margin: 2em;
+            margin: 6em 2em 6em 2em;
             position: relative;
             scroll-behavior: smooth;
         }
         .cases-list {
-            margin: 2em;
+            margin: 4em 2em 2em 2em;
         }
         .case-item {
             flex-direction: column;
@@ -1800,6 +1925,22 @@
         }
         .about-main-section {
             margin-top: 30em;
+        }
+        #brand {
+            width: 20em;
+        }
+        .brands-section {
+            margin: 0 1em;
+            padding: 10em 0 0 0;
+        }
+        .brands-section-header {
+            margin-bottom: 4em !important;
+        }
+        .description__content>.description {
+            display: block;
+            font-size: 1.5em !important;
+            line-height: 1.75;
+            padding-top: 2em;
         }
     }
     
@@ -1964,12 +2105,30 @@
             font-size: 40px;
             margin-bottom: 0px;
         }
+        .nav-link {
+            font-size: 40px;
+        }
         .mr-55 {
             margin-right: 0 !important;
         }
+        .header-section-content {
+            font-size: 2em;
+        }
+        .text-header {
+            margin-top: 0em;
+        }
         .video-container {
+            margin: 8.5em;
             margin-left: 0em !important;
             margin-right: 0em !important;
+        }
+        .play-button {
+            padding: 1.25em;
+            top: 83%;
+        }
+        #play-buttton-icon {
+            width: 20px;
+            height: 20px;
         }
         .row-container {
             flex-direction: column;
@@ -1994,15 +2153,13 @@
         .instagram-text-contianer>span {
             width: 340px;
         }
-        .play-button {
-            top: 34%;
-        }
         .instagram-images {
             flex-direction: column;
         }
         .text-header>span {
             text-align: left;
-            margin: 0 2em;
+            margin: 0;
+            padding: 2em;
         }
         .footer-header {
             margin: 0;
@@ -2057,6 +2214,7 @@
             align-items: center;
             margin: auto;
             flex-direction: row;
+            gap: 5em;
         }
         #brand {
             width: 100px;
@@ -2065,7 +2223,7 @@
             margin: 0 auto;
             width: auto;
             display: block;
-            padding: 2em 0;
+            padding: 5em 0 0 0;
         }
         .section-block>.header-section-content {
             font-size: 1.8em !important;
@@ -2161,7 +2319,7 @@
         }
         .columns-container {
             flex-direction: column;
-            margin-top: 7em;
+            margin-top: 82em;
             margin-left: 4em;
             margin-right: 4em;
             position: relative;
@@ -2211,6 +2369,10 @@
             width: 25px !important;
             height: 25px !important;
             margin: 0;
+        }
+        footer {
+            padding-bottom: 2em;
+            padding-top: 2em;
         }
     }
     

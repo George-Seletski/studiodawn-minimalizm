@@ -76,7 +76,12 @@
 
                 <div class="header-right-col">
                     <nav role="navigation" class="w-nav-menu">
+                        <div class="w-nav-button btn-close-wrppaer">
 
+                            <div class="button-close ">
+                                <img src="./icons/arrow-left-black.svg" alt="" srcset="">
+                            </div>
+                        </div>
                         <div class="menu container-default-center">
 
                             <div class="w-container">
@@ -178,16 +183,16 @@
         </div>
 
         <div class="page-wrapper">
-            <div class="container-100hv">
+            <div class="container">
                 <div class="text-header">
                     <span>
-                <div class="description">
-                    Unlock limitless possibilities with our comprehensive solutions block from trademark management to
-                    digital transformation, we offer a wide range of services to elevate your brands success. Harness
-                    the power of our solutions and propel your business to
-                    new heights in the ever-evolving digital landscape.
-                </div>
-            </span>
+                        <div class="description">
+                            Unlock limitless possibilities with our comprehensive solutions block from trademark management to
+                            digital transformation, we offer a wide range of services to elevate your brands success. Harness
+                            the power of our solutions and propel your business to
+                            new heights in the ever-evolving digital landscape.
+                        </div>
+                </span>
                 </div>
 
                 <div class="video-container">
@@ -216,36 +221,37 @@
                     </div>
                 </div>
             </div>
-            <div class="row-container">
-                <div>
-                    <h2 id="header-font">The what</h2>
-                    <span class="description">
+        </div>
+        <div class="row-container">
+            <div>
+                <h2 id="header-font">The what</h2>
+                <span class="description">
                     From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
                     creativity to clients doing right by the world. We turn compeling ideas into commercial success
                     stories through the power of brand in all its forms.
                 </span>
-                </div>
-                <div>
-                    <h2 id="header-font">The how</h2>
-                    <span class="description">
+            </div>
+            <div>
+                <h2 id="header-font">The how</h2>
+                <span class="description">
                     We're all about collective succes. Everyone's an equal in the creative process as we work toward a
                     shared goal - no egos here. We don't make our partners fit into our formula. Instead, we find what
                     works for you.
                 </span>
-                </div>
-                <div>
-                    <h2 id="header-font">The why</h2>
-                    <span class="description">
+            </div>
+            <div>
+                <h2 id="header-font">The why</h2>
+                <span class="description">
                     From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
                     creativity
                     to clients doing right by the world. We turn compeling ideas into commercial success stories through
                     the power
                     of brand.
                 </span>
-                </div>
-
             </div>
+
         </div>
+
         <div class="case-gallery">
             <div class="grid">
                 <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
@@ -318,9 +324,9 @@
             </div>
             <div class="licence-container">
                 <ul class="licence-container-list">
-                    <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
-                    <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
-                    <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
+                    <li id="licence-item"> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
+                    <li id="licence-item"><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
+                    <li id="licence-item"><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
                 </ul>
             </div>
             <div class="icon-box">
@@ -470,6 +476,8 @@
             }
         });
     });
+
+
 
     $(document).ready(function() {
         $(window).on("scroll", function() {
