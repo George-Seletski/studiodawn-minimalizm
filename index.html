@@ -49,16 +49,20 @@
                             xlink:href="#textPath"
                             startOffset="0%"
                         >
+                            
+                            <tspan>·</tspan>
+                           STUDIODAWN
                             <tspan>·</tspan>
                             STUDIODAWN
                             <tspan>·</tspan>
-                            STUDIODAWN<tspan>·</tspan>
-                            STUDIODAWN
-                            <tspan>·</tspan>
-                            STUDIODAWN<tspan>·</tspan>
                             STUDIODAWN
                             <tspan>·</tspan>
                             STUDIODAWN
+                           
+                            
+                     
+                        
+
                         </textPath>
                     </text>
                 </g>
@@ -356,58 +360,33 @@
 </body>
 
 <script>
-    // The DOMContentLoaded event listener
-    document.addEventListener("DOMContentLoaded", function() {
-        const rotatingText = document.querySelector(".rotating");
-        const snowflake = document.querySelector(".snowflake");
+    // Function to hide the preloader and show the main content using GSAP
+    function showMainContent() {
+        var preloaderContainer = document.querySelector('.preloader-container');
+        var mainContent = document.getElementById('main-content');
 
-        // Set initial states (hidden) for the rotating text and snowflake
-        gsap.set([rotatingText, snowflake], {
-            opacity: 0
+        // Use GSAP to fade out the preloader container
+        gsap.to(preloaderContainer, {
+            duration: 5, // Adjust the duration (in seconds) to control the smoothness
+            opacity: 0,
+            onComplete: function() {
+                // Hide the preloader container after fading out
+                preloaderContainer.style.display = 'none';
+            },
         });
 
-        // Create a GSAP timeline for parallel animations
-        const timeline = gsap.timeline();
-
-        // Your GSAP animation for the snowflake
-        timeline.to(snowflake, {
+        // Show the main content using GSAP
+        gsap.to(mainContent, {
+            delay: 4, // Add a delay (in seconds) before showing the main content
+            display: 'block',
             opacity: 1,
-            y: -10,
-            duration: 1.5,
-            ease: "Sine.inOut",
         });
+    }
 
-        // Your GSAP animation for the rotating text
-        timeline.to(rotatingText, {
-            opacity: 1,
-            scale: 1,
-            duration: 0,
-            ease: "back.out(1)",
-            delay: -1.5, // Delay the rotating text animation by -1.5 seconds to make it start parallelly with the snowflake
-        });
-
-        // Simulate content loading time (remove this in your actual implementation)
-        setTimeout(function() {
-            const preloader = document.querySelector(".preloader-container");
-            const mainContent = document.getElementById("main-content");
-
-            // Use GSAP to smoothly fade out the preloader
-            gsap.to(preloader, {
-                opacity: 0,
-                duration: 1,
-                onComplete: () => {
-                    // Hide the preloader after the fade-out animation is complete
-                    preloader.style.display = "none";
-                    // Show the main content
-                    mainContent.style.display = "block";
-                    // Use GSAP to smoothly fade in the main content
-                    gsap.from(mainContent, {
-                        opacity: 0,
-                        duration: 0.5
-                    });
-                },
-            });
-        }, 2000); // Change the duration to match your actual content loading time
+    // Wait for the DOM content to load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Call the function to show the main content and hide the preloader
+        showMainContent();
     });
 
 
