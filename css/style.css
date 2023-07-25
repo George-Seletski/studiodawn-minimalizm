@@ -1952,6 +1952,7 @@
         .container-default-center {
             flex-direction: column;
             gap: 5em;
+            padding: 4em 0 0 2em;
         }
         .nav-list {
             padding: 0;
@@ -2100,7 +2101,7 @@
         }
         .nav-list {
             padding: 0;
-            gap: 1em;
+            gap: 2em;
         }
         .nav-info {
             margin-bottom: 1em;
@@ -2110,7 +2111,7 @@
             margin-bottom: 0px;
         }
         .nav-link {
-            font-size: 40px;
+            font-size: 50px;
         }
         .mr-55 {
             margin-right: 0 !important;
@@ -2133,6 +2134,13 @@
         #play-buttton-icon {
             width: 20px;
             height: 20px;
+        }
+        .remove-circle {
+            width: 21px;
+            height: 21px;
+        }
+        #myVideo {
+            max-width: calc(100vw - 12px) !important;
         }
         .row-container {
             flex-direction: column;

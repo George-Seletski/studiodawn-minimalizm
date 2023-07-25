@@ -217,8 +217,8 @@
                                     </div>
 
 
-                                    <video id="myVideo" class="myVideo hide" src="" controls></video>
-                                    <iframe class="youTube hide" src="" frameborder="0" allowfullscreen></iframe>
+                                    <video id="myVideo" class="myVideo hide" src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4" controls></video>
+                                    <iframe class="youTube hide" src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -367,19 +367,20 @@
 
         // Use GSAP to fade out the preloader container
         gsap.to(preloaderContainer, {
-            duration: 5, // Adjust the duration (in seconds) to control the smoothness
+            duration: 1, // Adjust the duration (in seconds) for the preloader fade-out
             opacity: 0,
             onComplete: function() {
                 // Hide the preloader container after fading out
                 preloaderContainer.style.display = 'none';
-            },
-        });
 
-        // Show the main content using GSAP
-        gsap.to(mainContent, {
-            delay: 4, // Add a delay (in seconds) before showing the main content
-            display: 'block',
-            opacity: 1,
+                // Show the main content using GSAP
+                gsap.to(mainContent, {
+                    display: 'block',
+                    opacity: 1,
+                    duration: 1, // Animation duration in seconds for main content show
+                    ease: 'power2.out', // Easing function for a smoother animation
+                });
+            },
         });
     }
 
