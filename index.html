@@ -376,224 +376,209 @@
 </body>
 
 <script>
-    // Function to hide the preloader and show the main content using GSAP
-    function showMainContent() {
-        var preloaderContainer = document.querySelector('.preloader-container');
-        var mainContent = document.getElementById('main-content');
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to hide the preloader and show the main content using GSAP
+        function showMainContent() {
+            var preloaderContainer = document.querySelector('.preloader-container');
+            var mainContent = document.getElementById('main-content');
 
-        // Use GSAP to fade out the preloader container
-        gsap.to(preloaderContainer, {
-            duration: 5, // Adjust the duration (in seconds) for the preloader fade-out
-            opacity: 0,
-            onComplete: function() {
-                // Hide the preloader container after fading out
-                preloaderContainer.style.display = 'none';
+            // Use GSAP to fade out the preloader container
+            gsap.to(preloaderContainer, {
+                duration: 5,
+                opacity: 0,
+                onComplete: function() {
+                    preloaderContainer.style.display = 'none';
+                    // Show the main content using GSAP
+                    gsap.to(mainContent, {
+                        display: 'block',
+                        opacity: 1,
+                        duration: 5,
+                        ease: 'power2.out',
+                    });
+                },
+            });
+        }
 
-                // Show the main content using GSAP
-                gsap.to(mainContent, {
-                    display: 'block',
-                    opacity: 1,
-                    duration: 5, // Animation duration in seconds for main content show
-                    ease: 'power2.out', // Easing function for a smoother animation
+        // Wait for all resources to load
+        window.onload = function() {
+            // Call the function to show the main content and hide the preloader
+            showMainContent();
+        };
+
+        // Check if the device supports touch events
+        var isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+        if (!isTouchDevice) {
+            // Add custom cursor functionality for non-touch devices
+            const customCursor = document.querySelector(".custom-cursor");
+            const links = document.querySelectorAll("a");
+
+            links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    customCursor.classList.add("custom-cursor--link");
                 });
-            },
-        });
-    }
 
-    // Wait for all resources to load
-    window.onload = function() {
-        // Call the function to show the main content and hide the preloader
-        showMainContent();
-    };
-
-
-    // Smooth GSAP scroll
-    /* $(document).ready(function() {
-         // Select all anchor links except those with the "no-smooth-scroll" class
-         const smoothScrollLinks = $('a:not(.no-smooth-scroll)');
-
-         smoothScrollLinks.click(function(event) {
-             event.preventDefault();
-             const target = $(this).attr('href');
-             const offset = $(target).offset().top;
-
-             $('html, body').animate({
-                 scrollTop: offset
-             }, 800);
-         });
-     });*/
-
-
-    /*cursor*/
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
-        // false for not mobile device
-        const customCursor = document.querySelector(".custom-cursor");
-        const links = document.querySelectorAll("a");
-
-        links.forEach((link) => {
-            link.addEventListener("mouseover", () => {
-                customCursor.classList.add("custom-cursor--link");
+                link.addEventListener("mouseout", () => {
+                    customCursor.classList.remove("custom-cursor--link");
+                });
             });
 
-            link.addEventListener("mouseout", () => {
-                customCursor.classList.remove("custom-cursor--link");
+            // Update custom cursor appearance on mousemove
+            document.addEventListener('mousemove', function(event) {
+                customCursor.style.style = `translate(${event.clientX}px, ${event.clientY}px)`;
             });
-        });
+        }
+
 
         // Update custom cursor appearance on mousemove
         document.addEventListener('mousemove', function(event) {
+            const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
 
         });
-    }
-
-    // Update custom cursor appearance on mousemove
-    document.addEventListener('mousemove', function(event) {
-        const customCursor = document.querySelector(".custom-cursor");
-        customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
-
-    });
 
 
-    $(document).ready(function() {
-        $('.hamburger-menu-wrapper').click(function() {
-            var $navMenu = $('.w-nav-menu');
-            $navMenu.toggle();
-            $(this).toggleClass('w--open');
+        $(document).ready(function() {
+            $('.hamburger-menu-wrapper').click(function() {
+                var $navMenu = $('.w-nav-menu');
+                $navMenu.toggle();
+                $(this).toggleClass('w--open');
 
-            // Disable scroll when menu is open
-            if ($navMenu.is(':visible')) {
-                $('.header-content-wrapper').css('display', 'none');
+                // Disable scroll when menu is open
+                if ($navMenu.is(':visible')) {
+                    $('.header-content-wrapper').css('display', 'none');
 
-                $('.container-default').css('padding-top', '0px');
-                disableScroll();
-            } else {
-                enableScroll();
-            }
-        });
-    });
-
-    $(document).ready(function() {
-        $(window).on("scroll", function() {
-            if ($(window).scrollTop() >= 30) {
-                $(".header-wrapper").addClass("with-effect");
-            } else {
-                $(".header-wrapper").removeClass("with-effect");
-            }
-        });
-    });
-
-    // Disable scroll
-    function disableScroll() {
-        // Get the current scroll position
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-        // Save the current scroll position and add scroll-lock styles
-        window.onscroll = function() {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
-        document.body.classList.add('scroll-lock');
-    }
-
-    // GSAP animation
-    const revealAnimation = gsap.timeline();
-
-    // Set initial state (fully transparent)
-    revealAnimation.set(".header-section-content h1 span", {
-        opacity: 0
-    });
-
-    // Define the animation
-    revealAnimation.from(".garamond-font", {
-            opacity: 0,
-            y: 20,
-            duration: 1,
-            delay: 1
-        })
-        .from(".mr-55", {
-            opacity: 0,
-            y: 20,
-            duration: 1
-        }, "-=0.7");
-
-
-    // Enable scroll
-    function enableScroll() {
-        window.onscroll = null;
-        document.body.classList.remove('scroll-lock');
-    }
-    /*video*/
-    $(document).ready(function() {
-        $(".movie-btn").click(function() {
-            var video = $('#myVideo');
-            var vidUrl = $(this).attr("vidUrl");
-            if (vidUrl) {
-                video.attr("src", vidUrl);
-                video[0].load();
-
-                video.on('loadedmetadata', function() {
-                    video[0].play();
-                });
-
-                video.removeClass("hide");
-                video.addClass("show");
-                $('.youTube').addClass("hide");
-                $('.youTube').removeClass("show");
-                $('.gif-animation').css('display', 'none');
-            }
+                    $('.container-default').css('padding-top', '0px');
+                    disableScroll();
+                } else {
+                    enableScroll();
+                }
+            });
         });
 
-        $(".widescreen-btn").click(function() {
-            $(".modal-vid").fadeIn(500);
-            $(".vid-holder img").removeClass("show");
-            $(".widescreen-img").addClass("show");
-            $('.gif-animation').css('display', 'none');
+        $(document).ready(function() {
+            $(window).on("scroll", function() {
+                if ($(window).scrollTop() >= 30) {
+                    $(".header-wrapper").addClass("with-effect");
+                } else {
+                    $(".header-wrapper").removeClass("with-effect");
+                }
+            });
         });
 
-        $(".standard-btn").click(function() {
-            $(".modal-vid").fadeIn(500);
-            $(".vid-holder img").removeClass("show");
-            $(".standard-img").addClass("show");
-            $('.gif-animation').css('display', 'none');
-        });
+        // Disable scroll
+        function disableScroll() {
+            // Get the current scroll position
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-        $(".sixteen-nine-btn").click(function() {
-            $(".modal-vid").fadeIn(500);
-            $(".vid-holder img").removeClass("show");
-            $(".sixteen-nine").addClass("show");
-            $('.gif-animation').css('display', 'none');
-        });
-
-        $(".pal-btn").click(function() {
-            $(".modal-vid").fadeIn(500);
-            $(".vid-holder img").removeClass("show");
-            $(".pal").addClass("show");
-            $('.gif-animation').css('display', 'none');
-        });
-
-        $(".close").click(function() {
-            var video = $('#myVideo')[0];
-            if (video) {
-                video.pause();
-                video.currentTime = 0;
-            }
-            $(".modal-vid").fadeOut(500);
-            $('.youTube, .myVideo').attr('src', '');
-            $('.gif-animation').css('display', 'block');
-        });
-    });
-
-    $(document).keydown(function(e) {
-        if (e.keyCode == 27) { // ESC key
-            var video = $('#myVideo')[0];
-            if (video) {
-                video.pause();
-                video.currentTime = 0;
-            }
-            $('.youTube, .myVideo').attr('src', '');
-            $('.modal-vid').fadeOut(1000);
+            // Save the current scroll position and add scroll-lock styles
+            window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+            document.body.classList.add('scroll-lock');
         }
+
+        // Enable scroll
+        function enableScroll() {
+            window.onscroll = null;
+            document.body.classList.remove('scroll-lock');
+        }
+        // GSAP animation
+        const revealAnimation = gsap.timeline();
+
+        // Set initial state (fully transparent)
+        revealAnimation.set(".header-section-content h1 span", {
+            opacity: 0
+        });
+
+        // Define the animation
+        revealAnimation.from(".garamond-font", {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+                delay: 1
+            })
+            .from(".mr-55", {
+                opacity: 0,
+                y: 20,
+                duration: 1
+            }, "-=0.7");
+
+
+
+        /*video*/
+        $(document).ready(function() {
+            $(".movie-btn").click(function() {
+                var video = $('#myVideo');
+                var vidUrl = $(this).attr("vidUrl");
+                if (vidUrl) {
+                    video.attr("src", vidUrl);
+                    video[0].load();
+
+                    video.on('loadedmetadata', function() {
+                        video[0].play();
+                    });
+
+                    video.removeClass("hide");
+                    video.addClass("show");
+                    $('.youTube').addClass("hide");
+                    $('.youTube').removeClass("show");
+                    $('.gif-animation').css('display', 'none');
+                }
+            });
+
+            $(".widescreen-btn").click(function() {
+                $(".modal-vid").fadeIn(500);
+                $(".vid-holder img").removeClass("show");
+                $(".widescreen-img").addClass("show");
+                $('.gif-animation').css('display', 'none');
+            });
+
+            $(".standard-btn").click(function() {
+                $(".modal-vid").fadeIn(500);
+                $(".vid-holder img").removeClass("show");
+                $(".standard-img").addClass("show");
+                $('.gif-animation').css('display', 'none');
+            });
+
+            $(".sixteen-nine-btn").click(function() {
+                $(".modal-vid").fadeIn(500);
+                $(".vid-holder img").removeClass("show");
+                $(".sixteen-nine").addClass("show");
+                $('.gif-animation').css('display', 'none');
+            });
+
+            $(".pal-btn").click(function() {
+                $(".modal-vid").fadeIn(500);
+                $(".vid-holder img").removeClass("show");
+                $(".pal").addClass("show");
+                $('.gif-animation').css('display', 'none');
+            });
+
+            $(".close").click(function() {
+                var video = $('#myVideo')[0];
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+                $(".modal-vid").fadeOut(500);
+                $('.youTube, .myVideo').attr('src', '');
+                $('.gif-animation').css('display', 'block');
+            });
+        });
+
+        $(document).keydown(function(e) {
+            if (e.keyCode == 27) { // ESC key
+                var video = $('#myVideo')[0];
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+                $('.youTube, .myVideo').attr('src', '');
+                $('.modal-vid').fadeOut(1000);
+            }
+        });
     });
 </script>
 
