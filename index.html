@@ -357,17 +357,17 @@
                 <div class="icons">
                     <div class="wh-30">
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                            <img src="./icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
                         </a>
                     </div>
                     <div class="wh-30">
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                            <img src="./icons/instagram-svg.svg" id="icon" alt="" srcset="">
                         </a>
                     </div>
                     <div class="wh-30">
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                            <img src="./icons/behance.svg" id="icon" alt="" srcset="">
                         </a>
                     </div>
                 </div>
@@ -377,34 +377,6 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Function to hide the preloader and show the main content using GSAP
-        function showMainContent() {
-            var preloaderContainer = document.querySelector('.preloader-container');
-            var mainContent = document.getElementById('main-content');
-
-            // Use GSAP to fade out the preloader container
-            gsap.to(preloaderContainer, {
-                duration: 5,
-                opacity: 0,
-                onComplete: function() {
-                    preloaderContainer.style.display = 'none';
-                    // Show the main content using GSAP
-                    gsap.to(mainContent, {
-                        display: 'block',
-                        opacity: 1,
-                        duration: 5,
-                        ease: 'power2.out',
-                    });
-                },
-            });
-        }
-
-        // Wait for all resources to load
-        window.onload = function() {
-            // Call the function to show the main content and hide the preloader
-            showMainContent();
-        };
-
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
@@ -437,6 +409,49 @@
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
         }
+
+        // Function to hide the preloader and show the main content using GSAP
+        function showMainContent() {
+            var preloaderContainer = document.querySelector('.preloader-container');
+            var mainContent = document.getElementById('main-content');
+
+            body = document.querySelector('body');
+            body.style = `overflow-y:scroll;`;
+            // Use GSAP to fade out the preloader container
+            gsap.to(preloaderContainer, {
+                duration: 1,
+                opacity: 0,
+                onComplete: function() {
+                    preloaderContainer.style.display = 'none';
+                    // Show the main content using GSAP
+                    gsap.to(mainContent, {
+                        display: 'block',
+                        opacity: 1,
+                        duration: 1,
+                        ease: 'power2.out',
+                        onComplete: function() {
+                            // Re-enable scrolling after 0.1 seconds
+                            document.body.style.overflowY = 'auto';
+                        },
+                    });
+
+
+                },
+            });
+        }
+
+        // Disable scrolling while the preloader is shown
+        window.addEventListener('DOMContentLoaded', function() {
+            document.body.style.overflowY = 'hidden';
+        });
+
+        // Wait for all resources to load
+        window.onload = function() {
+            // Call the function to show the main content and hide the preloader
+            showMainContent();
+        };
+
+
 
 
         $(document).ready(function() {

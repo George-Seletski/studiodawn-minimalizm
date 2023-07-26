@@ -16,21 +16,19 @@
       place-items: center;
       background: var(--background-color);
       color: var(--text-color);
-      height: 100vh;
-      width: 100%;
+      max-height: 100vh;
+      max-width: 100vw;
       cursor: none;
-      overflow: hidden;
+      height: 100%;
   }
   
   .preloader {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
       background: var(--background-color);
       padding: 0;
       margin: 0;
-      overflow: hidden;
   }
   
    :root {
@@ -54,6 +52,7 @@
       transform-origin: 0 50%;
       border-radius: 14px;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      overflow: hidden;
   }
   
   .line::before {
@@ -205,6 +204,7 @@
       transform: rotate(-103deg);
       color: #000;
       position: absolute;
+      overflow: hidden;
   }
   
   text {
@@ -212,6 +212,7 @@
       font-size: 20px;
       letter-spacing: 2.5px;
       font-family: 'Cormorant Garamond Semibold';
+      overflow: hidden;
   }
   
   .white {
@@ -259,6 +260,7 @@
   }
   
   #surface {
+      overflow: hidden;
       background: #9e978e;
       margin-top: 22.1em;
       margin-left: 2em;
