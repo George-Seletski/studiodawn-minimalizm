@@ -157,14 +157,20 @@
 
 
                     <div class="icons">
-                        <div id="facebook-icon">
-
+                        <div class="navbar-icon">
+                            <a href="http://" target="_blank" rel="noopener noreferrer">
+                                <img src="../icons/facebook-svg-large.svg" id="icon" alt="facebook-icon" srcset="">
+                            </a>
                         </div>
-                        <div id="instagram-icon">
-
+                        <div class="navbar-icon">
+                            <a href="http://" target="_blank" rel="noopener noreferrer">
+                                <img src="../icons/instagram-svg.svg" id="icon" alt="instagram-icon" srcset="">
+                            </a>
                         </div>
-                        <div id="behance-icon">
-
+                        <div class="navbar-icon">
+                            <a href="http://" target="_blank" rel="noopener noreferrer">
+                                <img src="../icons/behance.svg" id="icon" alt="behance-icon" srcset="">
+                            </a>
                         </div>
 
                     </div>
@@ -349,20 +355,24 @@
                     </div>
                 </div>
                 <div class="icons">
-                    <div class="wh-45" id="facebook-icon">
-
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                        </a>
                     </div>
-                    <div class="wh-45" id="instagram-icon">
-
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                        </a>
                     </div>
-                    <div class="wh-45" id="behance-icon">
-
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                        </a>
                     </div>
-
                 </div>
-            </div>
         </footer>
-    </div>
+        </div>
 </body>
 
 <script>
@@ -390,11 +400,11 @@
         });
     }
 
-    // Wait for the DOM content to load
-    document.addEventListener('DOMContentLoaded', function() {
+    // Wait for all resources to load
+    window.onload = function() {
         // Call the function to show the main content and hide the preloader
         showMainContent();
-    });
+    };
 
 
     // Smooth GSAP scroll
@@ -463,8 +473,6 @@
         });
     });
 
-
-
     $(document).ready(function() {
         $(window).on("scroll", function() {
             if ($(window).scrollTop() >= 30) {
@@ -474,8 +482,6 @@
             }
         });
     });
-
-
 
     // Disable scroll
     function disableScroll() {
@@ -490,6 +496,28 @@
         document.body.classList.add('scroll-lock');
     }
 
+    // GSAP animation
+    const revealAnimation = gsap.timeline();
+
+    // Set initial state (fully transparent)
+    revealAnimation.set(".header-section-content h1 span", {
+        opacity: 0
+    });
+
+    // Define the animation
+    revealAnimation.from(".garamond-font", {
+            opacity: 0,
+            y: 20,
+            duration: 1,
+            delay: 1
+        })
+        .from(".mr-55", {
+            opacity: 0,
+            y: 20,
+            duration: 1
+        }, "-=0.7");
+
+
     // Enable scroll
     function enableScroll() {
         window.onscroll = null;
@@ -497,20 +525,23 @@
     }
     /*video*/
     $(document).ready(function() {
-
         $(".movie-btn").click(function() {
-            var video = $('.myVideo');
-            video.attr("src", $(this).attr("vidUrl"));
+            var video = $('#myVideo');
+            var vidUrl = $(this).attr("vidUrl");
+            if (vidUrl) {
+                video.attr("src", vidUrl);
+                video[0].load();
 
-            video.on('loadedmetadata', function() {
-                video[0].play();
-            });
+                video.on('loadedmetadata', function() {
+                    video[0].play();
+                });
 
-            video.removeClass("hide");
-            video.addClass("show");
-            $('.youTube').addClass("hide");
-            $('.youTube').removeClass("show");
-            $('.gif-animation').css('display', 'none');
+                video.removeClass("hide");
+                video.addClass("show");
+                $('.youTube').addClass("hide");
+                $('.youTube').removeClass("show");
+                $('.gif-animation').css('display', 'none');
+            }
         });
 
         $(".widescreen-btn").click(function() {
@@ -542,19 +573,26 @@
         });
 
         $(".close").click(function() {
+            var video = $('#myVideo')[0];
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
             $(".modal-vid").fadeOut(500);
             $('.youTube, .myVideo').attr('src', '');
             $('.gif-animation').css('display', 'block');
         });
-
     });
 
     $(document).keydown(function(e) {
-        if (e.keyCode == 27) {
+        if (e.keyCode == 27) { // ESC key
+            var video = $('#myVideo')[0];
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
             $('.youTube, .myVideo').attr('src', '');
-            $('.modal-vid').fadeOut(500);
-            var video = document.getElementById('myVideo');
-            video.pause();
+            $('.modal-vid').fadeOut(1000);
         }
     });
 </script>

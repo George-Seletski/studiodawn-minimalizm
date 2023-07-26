@@ -419,12 +419,13 @@
         display: flex;
         height: 210px;
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
         gap: 50px;
         margin-left: 2em;
     }
     
     .icons-view>div {
-        margin-top: auto;
         margin-left: auto;
         width: fit-content;
     }
@@ -637,10 +638,10 @@
         border-radius: 50%;
         display: flex;
         justify-content: center;
-        background-color: rgb(255 255 255 / 0.3);
+        background-color: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(8px);
         position: absolute;
-        top: 55%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -658,6 +659,7 @@
         z-index: 9999;
         display: none;
         background-color: transparent;
+        transition: transform 5s;
     }
     
     .movie-box {
@@ -835,6 +837,7 @@
         display: flex;
         flex-direction: row;
         gap: 10px;
+        align-items: center;
         /*padding-right: 2.3em;*/
     }
     
@@ -880,67 +883,40 @@
         color: #000;
     }
     
-    .icons>div {
-        border-radius: 4.6655px;
-        background-color: transparent !important;
-        margin-left: 10px;
+    .navbar-icon {
+        width: 30px !important;
+        padding: 0 !important;
+        height: 30px;
+    }
+    
+    #icon {
+        transition: transform 5s;
+        transition: all 0.5s ease;
+        padding: 5px;
+        background-repeat: no-repeat;
+        background-size: 100% 115%;
     }
     
     #instagram-icon {
         background-image: url("../icons/instagram-svg.svg");
         background-repeat: no-repeat;
         background-size: cover;
-        width: 18px;
-        height: 18px;
-        transition: transform 5s;
-        transition: all 0.5s ease;
     }
     
-    #facebook-icon:hover,
-    #instagram-icon:hover,
-    #behance-icon:hover,
+    #icon:hover,
     #list-view-icon:hover,
     #grid-view-icon:hover {
         transform: scale(1.3);
     }
     
-    #behance-icon {
-        background-image: url("../icons/behance.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 18px;
-        height: 18px;
-        transition: transform 5s;
-        transition: all 0.5s ease;
-    }
-    
-    #facebook-icon {
-        background-image: url("../icons/facebook-svg-large.svg");
-        background-repeat: no-repeat;
-        background-size: 100% 115%;
-        width: 18px;
-        height: 18px;
-        transition: transform 5s;
-        transition: all 0.5s ease;
-    }
-    
     #list-view-icon {
-        background-image: url("../icons/list-svg.svg");
-        background-repeat: no-repeat;
-        background-size: 100% 115%;
-        width: 44px;
-        height: 44px;
         transition: transform 5s;
         transition: all 0.5s ease;
-        background-position-y: 3px;
+        width: 54px;
     }
     
     #grid-view-icon {
-        background-image: url("../icons/more-grid-big-svg.svg");
-        background-repeat: no-repeat;
-        background-size: 100% 115%;
-        width: 38px;
-        height: 38px;
+        width: 44px;
         transition: transform 5s;
         transition: all 0.5s ease;
     }
@@ -1132,6 +1108,8 @@
     .info-block {
         padding-bottom: 100px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     
     .contanct-links {
@@ -1157,27 +1135,33 @@
         transition: 0.3s;
     }
     
+    .info-block>.icons {
+        padding: 0 !important;
+        align-items: flex-end;
+        text-align: right;
+        gap: 20px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    
     .size-2x {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .wh-30 {
         width: 30px !important;
         height: 30px !important;
     }
     
     .icons>div {
         gap: 20px;
-        margin-top: 30px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
+        display: block;
         width: 100%;
-    }
-    
-    .icons>div {
-        gap: 20px;
-        margin-top: 30px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        width: 100%;
+        border-radius: 4.6655px;
+        background-color: transparent !important;
     }
     
     .two-columns {
@@ -1802,9 +1786,7 @@
         .icons {
             margin-right: 45px;
         }
-        .wh-45 {
-            width: 35px !important;
-            height: 35px !important;
+        .wh-30 {
             margin-top: 30px;
             margin-bottom: 30px;
         }
@@ -1819,6 +1801,9 @@
         #contact-links {
             height: 100%;
             gap: 4em;
+        }
+        .info-block>.icons {
+            justify-content: flex-start;
         }
         .contact-h2 {
             padding: 0;
@@ -2031,6 +2016,9 @@
         .info-block>a {
             font-size: 1.2em;
         }
+        .info-block>.icons {
+            justify-content: flex-start;
+        }
         #contact-form-container {
             width: 100%;
             display: flex;
@@ -2129,11 +2117,11 @@
         }
         .play-button {
             padding: 1.25em;
-            top: 83%;
+            top: 85%;
         }
         #play-buttton-icon {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
         }
         .remove-circle {
             width: 21px;
@@ -2302,6 +2290,7 @@
         #forms {
             align-items: center;
             justify-content: center;
+            height: 83vh;
         }
         .form-group .form-control {
             margin-bottom: 25px;
@@ -2371,12 +2360,13 @@
         }
         .info-block>.icons {
             margin: 0 !important;
+            justify-content: flex-start;
         }
         .contanct-links>.link-email a,
         .contanct-links>.link-telephone a {
             font-size: 20px !important;
         }
-        .wh-45 {
+        .wh-30 {
             width: 25px !important;
             height: 25px !important;
             margin: 0;
