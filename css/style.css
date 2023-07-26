@@ -1720,7 +1720,7 @@
             height: 345px;*/
         }
         .container {
-            height: auto;
+            height: 100%;
         }
         .play-button {
             top: 67%;
@@ -1741,7 +1741,8 @@
         .text {
             font-size: 20px;
             line-height: 50px;
-            margin: 8em 4em;
+            margin: 8em 2em;
+            text-align: left;
         }
         .instagram-text-contianer {
             text-align: left;
@@ -1758,14 +1759,15 @@
             flex-direction: column;
             height: auto;
             margin: 11.25em 2em;
-            align-items: center;
+            align-items: left;
         }
         .instagram-images {
             flex-direction: row;
+            margin: 0 auto;
         }
         .instagram-img {
-            width: 150px;
-            height: 150px;
+            width: 210px;
+            height: 210px;
         }
         footer {
             flex-direction: column;
