@@ -381,140 +381,142 @@
 </body>
 
 <script>
-    // Check if the device supports touch events
-    const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if the device supports touch events
+        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
-    if (!isTouchDevice) {
-        const customCursor = document.querySelector(".custom-cursor");
-        // Add custom cursor functionality for non-touch devices
+        if (!isTouchDevice) {
+            const customCursor = document.querySelector(".custom-cursor");
+            // Add custom cursor functionality for non-touch devices
 
-        const links = document.querySelectorAll("a");
+            const links = document.querySelectorAll("a");
 
-        document.addEventListener('mousemove', function(event) {
-            customCursor.style.left = `${event.clientX}px`;
-            customCursor.style.top = `${event.clientY}px`;
-        });
-
-        links.forEach((link) => {
-            link.addEventListener("mouseover", () => {
-                customCursor.classList.add("custom-cursor--link");
+            document.addEventListener('mousemove', function(event) {
+                customCursor.style.left = `${event.clientX}px`;
+                customCursor.style.top = `${event.clientY}px`;
             });
 
-            link.addEventListener("mouseout", () => {
-                customCursor.classList.remove("custom-cursor--link");
-                // Add a slight delay to prevent cursor flickering on hover-out
-                setTimeout(() => {
-                    customCursor.style.left = `${event.clientX}px`;
-                    customCursor.style.top = `${event.clientY}px`;
-                }, 50);
+            links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    customCursor.classList.add("custom-cursor--link");
+                });
+
+                link.addEventListener("mouseout", () => {
+                    customCursor.classList.remove("custom-cursor--link");
+                    // Add a slight delay to prevent cursor flickering on hover-out
+                    setTimeout(() => {
+                        customCursor.style.left = `${event.clientX}px`;
+                        customCursor.style.top = `${event.clientY}px`;
+                    }, 50);
+                });
             });
-        });
-    } else {
-        const customCursor = document.querySelector(".custom-cursor");
-        customCursor.style = `opacity: 0 !important;`;
-    }
-    $(document).ready(function() {
-        $('.hamburger-menu-wrapper').click(function() {
-            var $navMenu = $('.w-nav-menu');
-            $navMenu.toggle();
-            $(this).toggleClass('w--open');
-
-            // Disable scroll when menu is open
-            if ($navMenu.is(':visible')) {
-                $('.header-content-wrapper').css('display', 'none');
-                $('.w-nav').css('background-color', '#050a11');
-                $('.container-default').css('padding-top', '0px');
-                disableScroll();
-            } else {
-                enableScroll();
-            }
-        });
-    });
-
-    $(document).ready(function() {
-        $(window).on("scroll", function() {
-            if ($(window).scrollTop() >= 30) {
-                $(".header-wrapper").addClass("with-effect");
-            } else {
-                $(".header-wrapper").removeClass("with-effect");
-            }
-        });
-    });
-
-    // Disable scroll
-    function disableScroll() {
-        // Get the current scroll position
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-        // Save the current scroll position and add scroll-lock styles
-        window.onscroll = function() {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
-        document.body.classList.add('scroll-lock');
-    }
-
-    // Enable scroll
-    function enableScroll() {
-        window.onscroll = null;
-        document.body.classList.remove('scroll-lock');
-    }
-    // GSAP animation
-    const revealAnimation = gsap.timeline();
-
-    // Set initial state (fully transparent)
-    revealAnimation.set(".header-section-content h1 span", {
-        opacity: 0
-    });
-
-    // Define the animation
-    revealAnimation.from(".garamond-font", {
-            opacity: 0,
-            y: 20,
-            duration: 1,
-            delay: 1
-        })
-        .from(".mr-55", {
-            opacity: 0,
-            y: 20,
-            duration: 1
-        }, "-=0.7");
-
-
-    // Team Cards Effect
-    const cards = document.querySelectorAll('.image-container');
-    cards.forEach((card) => {
-        card.addEventListener('mousemove', (event) => {
-            const cardWidth = card.offsetWidth;
-            const cursorPosition = event.pageX - card.offsetLeft;
-
-            if (cursorPosition > cardWidth / 2) {
-                card.style.transform = `translateY(0%) rotate(15deg)`;
-            } else {
-                card.style.transform = `translateY(0%) rotate(-15deg)`;
-            }
-
-        });
-
-        card.addEventListener('mouseleave', function() {
-            card.style.transform = 'translateY(0%)';
-        });
-    });
-
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to('.image-container', {
-        scrollTrigger: {
-            trigger: '.image-container',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true
-        },
-        y: '0%',
-        onComplete: function() {
-            cards.forEach((card) => {
-                card.style.transform = 'translateY(0%)'; // Reset the translateY value after the animation completes
-            });
+        } else {
+            const customCursor = document.querySelector(".custom-cursor");
+            customCursor.style = `opacity: 0 !important;`;
         }
+        $(document).ready(function() {
+            $('.hamburger-menu-wrapper').click(function() {
+                var $navMenu = $('.w-nav-menu');
+                $navMenu.toggle();
+                $(this).toggleClass('w--open');
+
+                // Disable scroll when menu is open
+                if ($navMenu.is(':visible')) {
+                    $('.header-content-wrapper').css('display', 'none');
+                    $('.w-nav').css('background-color', '#050a11');
+                    $('.container-default').css('padding-top', '0px');
+                    disableScroll();
+                } else {
+                    enableScroll();
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $(window).on("scroll", function() {
+                if ($(window).scrollTop() >= 30) {
+                    $(".header-wrapper").addClass("with-effect");
+                } else {
+                    $(".header-wrapper").removeClass("with-effect");
+                }
+            });
+        });
+
+        // Disable scroll
+        function disableScroll() {
+            // Get the current scroll position
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            // Save the current scroll position and add scroll-lock styles
+            window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+            document.body.classList.add('scroll-lock');
+        }
+
+        // Enable scroll
+        function enableScroll() {
+            window.onscroll = null;
+            document.body.classList.remove('scroll-lock');
+        }
+        // GSAP animation
+        const revealAnimation = gsap.timeline();
+
+        // Set initial state (fully transparent)
+        revealAnimation.set(".header-section-content h1 span", {
+            opacity: 0
+        });
+
+        // Define the animation
+        revealAnimation.from(".garamond-font", {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+                delay: 1
+            })
+            .from(".mr-55", {
+                opacity: 0,
+                y: 20,
+                duration: 1
+            }, "-=0.7");
+
+
+        // Team Cards Effect
+        const cards = document.querySelectorAll('.image-container');
+        cards.forEach((card) => {
+            card.addEventListener('mousemove', (event) => {
+                const cardWidth = card.offsetWidth;
+                const cursorPosition = event.pageX - card.offsetLeft;
+
+                if (cursorPosition > cardWidth / 2) {
+                    card.style.transform = `translateY(0%) rotate(15deg)`;
+                } else {
+                    card.style.transform = `translateY(0%) rotate(-15deg)`;
+                }
+
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = 'translateY(0%)';
+            });
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to('.image-container', {
+            scrollTrigger: {
+                trigger: '.image-container',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            },
+            y: '0%',
+            onComplete: function() {
+                cards.forEach((card) => {
+                    card.style.transform = 'translateY(0%)'; // Reset the translateY value after the animation completes
+                });
+            }
+        });
     });
 </script>
 
