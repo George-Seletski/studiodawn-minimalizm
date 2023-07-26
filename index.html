@@ -383,7 +383,7 @@
 
         // Use GSAP to fade out the preloader container
         gsap.to(preloaderContainer, {
-            duration: 100, // Adjust the duration (in seconds) for the preloader fade-out
+            duration: 5, // Adjust the duration (in seconds) for the preloader fade-out
             opacity: 0,
             onComplete: function() {
                 // Hide the preloader container after fading out
@@ -393,7 +393,7 @@
                 gsap.to(mainContent, {
                     display: 'block',
                     opacity: 1,
-                    duration: 1, // Animation duration in seconds for main content show
+                    duration: 5, // Animation duration in seconds for main content show
                     ease: 'power2.out', // Easing function for a smoother animation
                 });
             },
