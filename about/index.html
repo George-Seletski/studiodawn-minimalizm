@@ -381,11 +381,19 @@
 </body>
 
 <script>
-    /*cursor*/
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
-        // false for not mobile device
+    // Check if the device supports touch events
+    const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+    if (!isTouchDevice) {
         const customCursor = document.querySelector(".custom-cursor");
+        // Add custom cursor functionality for non-touch devices
+
         const links = document.querySelectorAll("a");
+
+        document.addEventListener('mousemove', function(event) {
+            customCursor.style.left = `${event.clientX}px`;
+            customCursor.style.top = `${event.clientY}px`;
+        });
 
         links.forEach((link) => {
             link.addEventListener("mouseover", () => {
@@ -394,22 +402,17 @@
 
             link.addEventListener("mouseout", () => {
                 customCursor.classList.remove("custom-cursor--link");
+                // Add a slight delay to prevent cursor flickering on hover-out
+                setTimeout(() => {
+                    customCursor.style.left = `${event.clientX}px`;
+                    customCursor.style.top = `${event.clientY}px`;
+                }, 50);
             });
         });
-
-        // Update custom cursor appearance on mousemove
-        document.addEventListener('mousemove', function(event) {
-            customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
-
-        });
-    }
-
-    // Update custom cursor appearance on mousemove
-    document.addEventListener('mousemove', function(event) {
+    } else {
         const customCursor = document.querySelector(".custom-cursor");
-        customCursor.style = `translate: ${event.clientX}px ${event.clientY}px`;
-
-    });
+        customCursor.style = `opacity: 0 !important;`;
+    }
     $(document).ready(function() {
         $('.hamburger-menu-wrapper').click(function() {
             var $navMenu = $('.w-nav-menu');

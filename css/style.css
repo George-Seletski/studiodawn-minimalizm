@@ -978,7 +978,6 @@
         /* Gradient text */
         color: transparent;
         -webkit-background-clip: text;
-        background-clip: text;
         background-image: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.801) 35%, rgba(185, 181, 181, 0.247) 60%, rgba(20, 18, 18, 0.685) 75%, rgb(0, 0, 0) 100%);
         font-size: 105px;
         text-align: center;
@@ -1537,6 +1536,12 @@
         .contact-section {
             height: 100vh !important;
         }
+        .nav-link {
+            font-size: 4em;
+        }
+        .container-default-center {
+            flex-wrap: nowrap;
+        }
         #forms,
         #contact-form-container,
         .bottom-content {
@@ -1650,6 +1655,10 @@
     }
     
     @media screen and (max-width: 991px) {
+        .custom-cursor {
+            opacity: 0;
+            background-color: unset;
+        }
         /*navbar*/
         .container-default-center {
             flex-direction: column;
@@ -1934,6 +1943,10 @@
     }
     
     @media screen and (max-width: 767px) {
+        .custom-cursor {
+            opacity: 0;
+            background-color: unset;
+        }
         .container-default-center {
             flex-direction: column;
             gap: 5em;
@@ -1993,7 +2006,7 @@
         }
         /*Contact*/
         #forms {
-            height: 100vh;
+            height: 100%;
         }
         #contact-links {
             height: 100%;
@@ -2083,6 +2096,10 @@
     }
     
     @media screen and (max-width: 479px) {
+        .custom-cursor {
+            opacity: 0;
+            background-color: unset;
+        }
         .container-default-center {
             flex-direction: column;
             gap: 5em;
@@ -2239,7 +2256,6 @@
             display: flex;
             flex-direction: column;
             gap: 60px;
-            margin-left: 2em;
         }
         .portfolio-header-text {
             width: 300px;
@@ -2270,11 +2286,6 @@
         .container-header {
             margin: 0 2em;
         }
-        .columns-container {
-            flex-direction: column;
-            gap: 0px;
-            margin-top: 7em;
-        }
         .two-columns {
             flex-direction: column;
             gap: 0px;
@@ -2290,10 +2301,9 @@
         #forms {
             align-items: center;
             justify-content: center;
-            height: 83vh;
         }
         .form-group .form-control {
-            margin-bottom: 25px;
+            margin-bottom: 10px;
         }
         .contact-h2 {
             margin-bottom: 0;
@@ -2308,7 +2318,7 @@
             margin-top: 0;
             margin-left: 0;
             margin-right: 0;
-            margin-bottom: 2em;
+            margin-bottom: 0em;
         }
         .container-text {
             font-size: 1.6em !important;
@@ -2323,6 +2333,8 @@
             margin-left: 4em;
             margin-right: 4em;
             position: relative;
+            gap: 0px;
+            margin-top: 7em;
         }
         .columns-container>div {
             padding: 1em 0;
@@ -2374,6 +2386,9 @@
         footer {
             padding-bottom: 2em;
             padding-top: 2em;
+        }
+        .form-container {
+            height: 100%;
         }
     }
     
