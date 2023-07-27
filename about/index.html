@@ -183,7 +183,7 @@
 
         </div>
 
-        <!--<section class="about-main-section">
+        <main class="about-main-section">
             <div class="header-section-content  team-section ">
                 <div class="vscroll__section">
                     <div class="team-header-text">
@@ -194,7 +194,10 @@
                     </div>
                 </div>
             </div>
-            <div class="team-gallery">
+            <!-- <div class="team-gallery">
+                <section></section>
+                <section></section>
+                <section></section>
                 <div class="image-container">
                     <div class="team__image-wrap">
                         <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
@@ -225,6 +228,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="image-container">
                     <div class="team__image-wrap">
                         <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
@@ -256,9 +260,11 @@
                     </div>
                 </div>
 
-            </div>
 
-        </section>-->
+
+            </div>-->
+
+        </main>
 
         <div class="brands-section">
             <div class="brands-section-header">
@@ -414,6 +420,8 @@
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
         }
+
+
         $(document).ready(function() {
             $('.hamburger-menu-wrapper').click(function() {
                 var $navMenu = $('.w-nav-menu');
@@ -472,14 +480,14 @@
         revealAnimation.from(".garamond-font", {
                 opacity: 0,
                 y: 20,
-                duration: 1,
+                duration: 0.9,
                 delay: 1
             })
             .from(".mr-55", {
                 opacity: 0,
                 y: 20,
-                duration: 1
-            }, "-=0.7");
+                duration: 0.8
+            }, "-=0.5");
 
 
         // Team Cards Effect
