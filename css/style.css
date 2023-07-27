@@ -822,7 +822,7 @@
     }
     
     #brand {
-        width: 20em;
+        width: 18em;
         display: flex;
     }
     
@@ -1932,7 +1932,7 @@
             margin-top: 30em;
         }
         #brand {
-            width: 19em;
+            width: 20em;
         }
         .brands-section {
             margin: 0 1em;
