@@ -207,12 +207,11 @@
                 </div>
 
                 <div class="video-container">
-                    <div class=" movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
-                        <div class=" movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                    <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
                             <img id='play-buttton-icon' src="./icons/play-svg.svg" alt="play video">
                         </div>
-                        <img class="gif-animation " src="video/video-tmp.gif" alt="video">
-
+                        <img class="gif-animation" src="video/video-tmp.gif" alt="video">
                     </div>
 
                     <div class="modal-vid">
@@ -220,23 +219,26 @@
                             <div class="wide-screen">
                                 <div class="vid-holder">
                                     <div class="close" vidUrl="#">
-                                        <div class="remove-circle"><img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thubmail" class="remove" /></div>
+                                        <div class="remove-circle">
+                                            <img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thumbnail" class="remove" />
+                                        </div>
                                     </div>
 
-
+                                    <!-- Add a cache-busting query parameter to the video URL -->
                                     <video id="myVideo" class="myVideo hide" controls>
                                     <source
-                                        src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4"
+                                        src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4?v=1"
                                         type="video/mp4"
                                     >
                                     Your browser does not support the video tag.
                                 </video>
-                                    <iframe class="youTube hide" src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4" frameborder="0" allowfullscreen></iframe>
+                                    <iframe class="youTube hide" src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4?v=1" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="row-container">
