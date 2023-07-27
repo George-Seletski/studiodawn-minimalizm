@@ -37,6 +37,7 @@
   .preloader-hidden {
       opacity: 0;
       pointer-events: none;
+      display: none;
       /* Prevent clicks on hidden preloader */
   }
   
@@ -354,4 +355,5 @@
   
   #main-content {
       max-width: 100vw;
+      display: none;
   }
