@@ -411,46 +411,16 @@
             customCursor.style = `opacity: 0 !important;`;
         }
 
-        // Function to hide the preloader and show the main content using GSAP
-        function showMainContent() {
-            var preloaderContainer = document.querySelector('.preloader-container');
-            var mainContent = document.getElementById('main-content');
+        // JavaScript to hide the preloader when the webpage and all media fully load
+        window.addEventListener('load', function() {
+            // Hide the preloader by adding the 'preloader-hidden' class
+            const preloaderContainer = document.querySelector('.preloader-container');
+            preloaderContainer.classList.add('preloader-hidden');
 
-            body = document.querySelector('body');
-            body.style = `overflow-y:scroll;`;
-            // Use GSAP to fade out the preloader container
-            gsap.to(preloaderContainer, {
-                duration: 1,
-                opacity: 0,
-                onComplete: function() {
-                    preloaderContainer.style.display = 'none';
-                    // Show the main content using GSAP
-                    gsap.to(mainContent, {
-                        display: 'block',
-                        opacity: 1,
-                        duration: 5,
-                        ease: 'power2.out',
-                        onComplete: function() {
-                            // Re-enable scrolling after 0.1 seconds
-                            document.body.style.overflowY = 'auto';
-                        },
-                    });
-
-
-                },
-            });
-        }
-
-        // Disable scrolling while the preloader is shown
-        window.addEventListener('DOMContentLoaded', function() {
-            document.body.style.overflowY = 'hidden';
+            // Show the main content by setting its display property to "block"
+            const mainContent = document.getElementById('main-content');
+            mainContent.style.display = 'block';
         });
-
-        // Wait for all resources to load
-        window.onload = function() {
-            // Call the function to show the main content and hide the preloader
-            showMainContent();
-        };
 
 
 
