@@ -1534,7 +1534,7 @@
         padding: 0;
     }
     
-    @media screen and (max-width: 1400px) {
+    @media screen and (min-width: 1400px) {
         .contact-section {
             height: 100vh !important;
         }
@@ -1932,7 +1932,7 @@
             margin-top: 30em;
         }
         #brand {
-            width: 20em;
+            width: 19em;
         }
         .brands-section {
             margin: 0 1em;
