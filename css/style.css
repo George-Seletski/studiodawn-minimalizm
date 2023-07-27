@@ -2015,6 +2015,9 @@
         .header-logo {
             width: 150px;
         }
+        .section-block {
+            font-size: 2em !important;
+        }
         /*Contact*/
         #forms {
             height: 100%;
