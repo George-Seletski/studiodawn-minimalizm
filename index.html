@@ -411,15 +411,34 @@
             customCursor.style = `opacity: 0 !important;`;
         }
 
-        // JavaScript to hide the preloader when the webpage and all media fully load
-        window.addEventListener('load', function() {
-            // Hide the preloader by adding the 'preloader-hidden' class
-            const preloaderContainer = document.querySelector('.preloader-container');
-            preloaderContainer.classList.add('preloader-hidden');
+        // GSAP TimelineMax for animations
+        const timeline = gsap.timeline();
 
-            // Show the main content by setting its display property to "block"
-            const mainContent = document.getElementById('main-content');
-            mainContent.style.display = 'block';
+        // Preloader animations
+        timeline.to('.preloader-container', {
+                opacity: 0,
+                duration: 0.5
+            })
+            .to('.preloader-container', {
+                display: 'none',
+                duration: 0
+            });
+
+        // Show the main content by setting its display property to "block"
+        const mainContent = document.getElementById('main-content');
+        mainContent.style.display = 'block';
+
+        // ScrollTrigger for scroll-based animations (if needed)
+        // Example: fade-in animation for the main content
+        gsap.from(mainContent, {
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: mainContent,
+                start: 'top center+=100', // Start the animation 100 pixels below the center of the viewport
+                end: 'bottom center', // End the animation when the bottom of the main content reaches the center of the viewport
+                toggleActions: 'play none none reverse', // Play the animation when the main content is in the viewport, reverse when it exits
+            }
         });
 
 
