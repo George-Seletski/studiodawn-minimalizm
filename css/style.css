@@ -1186,7 +1186,7 @@
     }
     
     .contact-h2 {
-        font-size: 46px;
+        font-size: 3rem;
         text-align: left;
         margin-bottom: 75px;
         line-height: 1;
@@ -1626,6 +1626,12 @@
         scroll-behavior: smooth;
         margin: 0;
         padding: 0;
+    }
+    
+    #contact-links {
+        height: 100%;
+        gap: 4em;
+        border: 1px solid;
     }
     
     @media screen and (max-width: 1400px) {
