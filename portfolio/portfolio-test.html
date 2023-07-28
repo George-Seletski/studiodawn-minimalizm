@@ -3,25 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta
-        http-equiv="X-UA-Compatible"
-        content="IE=edge"
-    >
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDIODAWN</title>
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-        type="text/css"
-    >
-    <link
-        rel="stylesheet"
-        href="../css/normalize.css"
-        type="text/css"
-    >
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css">
 
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/ScrollTriger.js"></script>
@@ -31,57 +17,59 @@
     .case-container {
         width: 100%;
         height: 100vh;
+        max-height: 100vh;
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
         display: block;
     }
-
+    
     .case-container::-webkit-scrollbar {
         display: none;
     }
-
+    
     .case-container::-webkit-scrollbar-thumb {
         background-color: transparent;
     }
-
+    
     .scroll-container {
         display: flex;
         width: 500%;
         height: 100%;
     }
-
+    
     .scroll-section {
         width: 100%;
         height: 100vh;
+        max-height: 100vh;
         scroll-snap-align: start;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: #f4f4f4;
-        font-size: 3em;
+        font-size: 48px;
     }
-
+    
     .brand-story {
         padding: 0;
         margin-right: 20px;
         width: 50%;
         margin: 4em 2em;
     }
-
+    
     .odd-img {
         height: 80vh;
         margin: 2em;
     }
-
+    
     .brand-story>img {
         display: block;
         padding: 0;
     }
-
+    
     .h-scroll__section {
         vertical-align: middle;
     }
-
+    
     .content-grid {
         width: 100%;
         height: 100%;
@@ -92,12 +80,12 @@
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         align-items: start;
     }
-
+    
     .content-grid.study__intro {
         padding-left: 0;
         padding-right: 0;
     }
-
+    
     .w-layout-grid {
         grid-row-gap: 16px;
         grid-column-gap: 16px;
@@ -106,21 +94,21 @@
         grid-auto-columns: 1fr;
         display: grid;
     }
-
+    
     .case-page__cover>img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
     }
-
+    
     img {
         max-width: 100%;
         vertical-align: middle;
         display: inline-block;
         width: 100%;
     }
-
+    
     .case-covering {
         width: 100%;
         height: 100%;
@@ -131,18 +119,18 @@
         left: 0%;
         right: 0%;
     }
-
+    
     .story__block.intro {
         max-width: 40vw;
         flex-direction: column;
         align-items: flex-start;
         margin-left: 0;
         margin-right: 9rem;
-        padding-top: 9.9rem;
+        padding-top: 20%;
         padding-bottom: 4.7rem;
         padding-left: 6rem;
     }
-
+    
     .story__block {
         height: 100%;
         align-items: center;
@@ -153,31 +141,33 @@
         display: flex;
         position: relative;
     }
-
+    
     .p {
         flex: 1;
         margin-bottom: 1em;
         line-height: 1.2;
-        font-size: 1.2rem;
+        font-size: 0.4em;
         font-family: 'Roboto Light';
+        padding-top: 20%;
+        width: 100%;
     }
-
+    
     .cases-page__meta {
         text-align: left;
         font-size: 1.75rem;
         font-family: 'Roboto Light';
     }
-
+    
     #w-node-_94154434-1036-a7d8-10b7-6abab97b5db8-41af1f24 {
         grid-area: 1 / 1 / 2 / 8;
     }
-
+    
     .case-page__cover {
         width: 100%;
         height: 100%;
         position: relative;
     }
-
+    
     .case__coverimg {
         width: 100%;
         height: 100%;
@@ -188,33 +178,39 @@
         left: 0%;
         right: 0%;
     }
-
+    
     img {
         border: 0;
     }
-
+    
+    #last-section {
+        width: 100vw;
+    }
+    
     #w-node-_1cec452e-7cf8-af20-6a1a-b55ad5757c48-41af1f24 {
         grid-area: 1 / 8 / 2 / 13;
     }
-
+    
     .story__block.intro {
-        max-width: 40vw;
+        width: 100% !important;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
         margin-left: 0;
         margin-right: 9rem;
         padding-top: 9.9rem;
         padding-bottom: 4.7rem;
         padding-left: 6rem;
     }
-
+    
     .story__heading {
         letter-spacing: -.01em;
         margin-bottom: 0.5em;
         font-family: 'Roboto Light';
         font-weight: 400;
+        font-size: 50px;
     }
-
+    
     .contact-us-block {
         max-width: 50%;
         flex-direction: row;
@@ -222,7 +218,7 @@
         margin-left: 0;
         margin-right: 15rem;
     }
-
+    
     .local-contacts {
         display: flex;
         flex-direction: row;
@@ -230,19 +226,19 @@
         gap: 50px;
         padding: 0;
     }
-
+    
     .local-contacts>div:nth-child(1) {
         width: 320px;
     }
-
+    
     .font-case-page {
         font-size: 1.5em;
     }
-
+    
     .font-link-case-page {
         font-size: 0.6em !important;
     }
-
+    
     .cover__heading {
         display: block;
         font-size: 2em;
@@ -250,7 +246,7 @@
         height: 100%;
         padding: 0 150px;
     }
-
+    
     .case-page-icons {
         padding: 0 !important;
         align-items: flex-end;
@@ -262,22 +258,44 @@
         align-items: flex-end;
         width: 100%;
     }
-
+    
     .case-page-icons>div {
         gap: 20px;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
     }
-
+    
     .info-block-case {
         padding-bottom: 11rem;
     }
-
+    
     .info-block-case>.link-address {
         font-size: 0.5em;
     }
-
+    
+    @media screen and (min-width: 1921px) {
+        .p {
+            font-size: 40px;
+            width: 100% !important;
+        }
+        .story__block.intro {
+            width: 100% !important;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 0;
+            margin-right: 9rem;
+            padding-top: 9.9rem;
+            padding-bottom: 4.7rem;
+            padding-left: 6rem;
+        }
+        #last-section {
+            width: 100vw;
+            align-items: flex-start;
+        }
+    }
+    
     @media screen and (max-width: 991px) {
         .scroll-container {
             display: flex;
@@ -286,7 +304,6 @@
             height: auto;
             gap: 0px;
         }
-
         .scroll-section {
             width: 100%;
             display: block;
@@ -295,25 +312,21 @@
             padding: 0;
             height: 100%;
         }
-
         #last-section {
             height: 100vh;
             display: flex;
             flex-direction: column;
         }
-
         .last-page {
             height: 100%;
             position: relative;
             font-size: 60px;
         }
-
         .last-page-block {
             height: auto;
             width: 100%;
             position: relative;
         }
-
         .info-block-case {
             padding-bottom: 20%;
             display: flex;
@@ -321,19 +334,17 @@
             gap: 20px;
             flex-direction: column;
         }
-
         .case-container {
             width: 100%;
             height: 100vh;
+            max-height: 100vh;
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
         }
-
         .contanct-links {
             text-align: left;
             margin-top: 0;
         }
-
         .case-page-icons {
             padding: 0 !important;
             justify-content: flex-start;
@@ -342,38 +353,31 @@
             display: flex;
             width: 100%;
         }
-
         .contact-us-block {
             max-width: 50%;
             flex-direction: row;
             align-items: flex-start;
             margin: 0;
         }
-
         .local-contacts {
             display: flex;
             padding-top: 5em;
             justify-content: space-between;
         }
-
         .case-page__cover {
             width: 100%;
             height: 70vh;
         }
-
         .font-case-page {
             font-size: 40px;
         }
-
         .local-contacts>div:nth-child(1) {
             width: 100%;
         }
-
         .info-block-case>.link-address {
             font-size: 20px;
             line-height: normal;
         }
-
         .story__block.intro {
             max-width: 100vw;
             flex-direction: column;
@@ -382,11 +386,9 @@
             padding: 2em 0;
             height: 90vh;
         }
-
         .story__heading {
             font-size: 60px;
         }
-
         .brand-story {
             padding: 0;
             max-width: 100vw;
@@ -394,21 +396,17 @@
             width: 100%;
             display: block;
         }
-
         .p {
             font-size: 30px;
             padding: 0 2em 0 0;
         }
-
         .cases-page__meta {
             margin-bottom: 0;
         }
-
         .post {
             margin-bottom: 0.5em;
             width: 100%;
         }
-
         .odd-img {
             margin: 0;
         }
@@ -418,47 +416,25 @@
 <body>
     <div class="custom-cursor"></div>
 
-    <div
-        class="header-wrapper w-nav blur"
-        data-duration="400"
-        data-collapse="all"
-    >
+    <div class="header-wrapper w-nav blur" data-duration="400" data-collapse="all">
         <div class="container-default w-container">
 
             <div class="header-right-col">
-                <nav
-                    role="navigation"
-                    class="header-hamburger-desktop-wrapper w-nav-menu "
-                >
+                <nav role="navigation" class="header-hamburger-desktop-wrapper w-nav-menu ">
                     <div class="menu container-default-center">
                         <div class="w-container">
-                            <ul
-                                role="list"
-                                class="nav-list white"
-                            >
+                            <ul role="list" class="nav-list white">
                                 <li class="nav-item">
-                                    <a
-                                        href="../"
-                                        class="nav-link "
-                                    >Home</a>
+                                    <a href="../" class="nav-link ">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a
-                                        href="../about"
-                                        class="nav-link "
-                                    >About</a>
+                                    <a href="../about" class="nav-link ">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a
-                                        href="../portfolio/"
-                                        class="nav-link"
-                                    >Cases</a>
+                                    <a href="../portfolio/" class="nav-link">Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a
-                                        href="../contact"
-                                        class="nav-link"
-                                    >Contact us</a>
+                                    <a href="../contact" class="nav-link">Contact us</a>
                                 </li>
 
                             </ul>
@@ -466,59 +442,32 @@
                         <div class="w-container">
                             <div class="nav-info-submenu">
 
-                                <ul
-                                    role="list"
-                                    class="nav-info"
-                                >
+                                <ul role="list" class="nav-info">
                                     <h2 class="nav-info-header ">Work Inquiries.</h2>
                                     <li class="nav-item">
-                                        <a
-                                            href="mailto:hello@dawnstudio.com"
-                                            class="link-email white"
-                                        >hello@dawnstudio.com</a>
+                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
                                     </li>
                                 </ul>
-                                <ul
-                                    role="list"
-                                    class="nav-info"
-                                >
+                                <ul role="list" class="nav-info">
                                     <h2 class="nav-info-header white">Get in touch.</h2>
                                     <li class="nav-item">
-                                        <a
-                                            href="#"
-                                            class="link-address white"
-                                        >228 Nelson's Crescent New
+                                        <a href="#" class="link-address white">228 Nelson's Crescent New
                                             Westminster, BC V3L 3E3</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a
-                                            href="mailto:hello@dawnstudio.com"
-                                            class="link-email white"
-                                        >hello@dawnstudio.com</a>
+                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a
-                                            href="tel:+421905455208"
-                                            class="link-telephone white"
-                                        > Slovakia: +421-905-455-208</a>
+                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a
-                                            href="tel:+421905455208"
-                                            class="link-telephone white"
-                                        > Europe: +33-6-84-13-30-45</a>
+                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a
-                                            href="tel:+421905455208"
-                                            class="link-telephone white"
-                                        > Russia: +7 (963) 945-64-98</a>
+                                        <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a
-                                            href="tel:+421905455208"
-                                            class="link-telephone white"
-                                        > Canada: +1 (604) 786-6046</a>
+                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
                                     </li>
 
                                 </ul>
@@ -536,61 +485,25 @@
                     <div class="hamburger-menu-bar-top"></div>
                     <div class="hamburger-menu-bar-bottom"></div>
                 </div>
-                <a
-                    href="../index.html"
-                    aria-current="page"
-                    class="header-logo-link w-nav-brand w--current "
-                >
-                    <img
-                        src="../img/logo-black.png"
-                        alt="STUDIODAWN"
-                        class="header-logo blur"
-                        lazy="loading"
-                    >
+                <a href="../index.html" aria-current="page" class="header-logo-link w-nav-brand w--current ">
+                    <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo blur" lazy="loading">
                 </a>
 
 
                 <div class="icons">
                     <div class="navbar-icon">
-                        <a
-                            href="http://"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="../icons/facebook-svg-large.svg"
-                                id="icon"
-                                alt="facebook-icon"
-                                srcset=""
-                            >
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="facebook-icon" srcset="">
                         </a>
                     </div>
                     <div class="navbar-icon">
-                        <a
-                            href="http://"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="../icons/instagram-svg.svg"
-                                id="icon"
-                                alt="instagram-icon"
-                                srcset=""
-                            >
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/instagram-svg.svg" id="icon" alt="instagram-icon" srcset="">
                         </a>
                     </div>
                     <div class="navbar-icon">
-                        <a
-                            href="http://"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="../icons/behance.svg"
-                                id="icon"
-                                alt="behance-icon"
-                                srcset=""
-                            >
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/behance.svg" id="icon" alt="behance-icon" srcset="">
                         </a>
                     </div>
 
@@ -600,130 +513,51 @@
     </div>
     <div class="case-container">
         <div class="scroll-container">
-            <section
-                class="scroll-section"
-                id="case-cover"
-            >
+            <section class="scroll-section" id="case-cover">
                 <div class="case-page__cover">
-                    <img
-                        src="./project1/img/inst_1.png"
-                        alt="case cover"
-                        loading="eager"
-                        class="case__covering"
-                        srcset=""
-                    >
+                    <img src="./project1/img/inst_1.png" alt="case cover" loading="eager" class="case__covering" srcset="">
                 </div>
                 <div class="story__block intro">
-                    <a
-                        class="company-link"
-                        href="http://"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a class="company-link" href="http://" target="_blank" rel="noopener noreferrer">
                         <h2>Google </h2>
                     </a>
                     <h1 class="story__heading">
-                        <div
-                            class="lines"
-                            style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);"
-                        >Leading</div>
-                        <div
-                            class="lines"
-                            style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);"
-                        >People and</div>
-                        <div
-                            class="lines"
-                            style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);"
-                        >projects</div>
+                        <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">Leading</div>
+                        <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">People and</div>
+                        <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">projects</div>
                     </h1>
-                    <p
-                        class="p"
-                        style="opacity: 1; transform: translate(0px, 0px);"
-                    >Reqiro - formerly Planning &amp; Logistics, is a leading project management consultancy to clients
-                        in the power/energy, infrastructure/train and industrial sectors. As the business evolved and
-                        more offerings were developed, the identity
-                        and brand strategy needed to reflect the new scope of services while positioning them as an
-                        attractive partner for both client and consultant in a competitive market. Working closely with
-                        the client, we developed a new vision,
-                        brand platform, tone of voice and visual identity that represents Reqiro's values and focus on
-                        team spirit and skills development.</p>
+                    <p class="p" style="opacity: 1; transform: translate(0px, 0px);">Reqiro - formerly Planning &amp; Logistics, is a leading project management consultancy to clients in the power/energy, infrastructure/train and industrial sectors. As the business evolved and more offerings were developed, the identity
+                        and brand strategy needed to reflect the new scope of services while positioning them as an attractive partner for both client and consultant in a competitive market. Working closely with the client, we developed a new vision,
+                        brand platform, tone of voice and visual identity that represents Reqiro's values and focus on team spirit and skills development.</p>
                     <p class="cases-page__meta">Brand platform, Visual identity</p>
                 </div>
             </section>
             <section class="scroll-section ">
 
                 <!--<div class="post brand-story"> <img loading="eager" src="./project1/img/project5.jpg" alt="" srcset=""></div>-->
-                <div class="post brand-story"> <img
-                        loading="eager"
-                        class="normal-image odd-img"
-                        src="./project1/img/project3.jpg"
-                        alt=""
-                        srcset=""
-                    ></div>
-                <div class="post brand-story"> <img
-                        loading="lazy"
-                        class="normal-image"
-                        src="./project1/img/project5.jpg"
-                        alt=""
-                        srcset=""
-                    ></div>
+                <div class="post brand-story"> <img loading="eager" class="normal-image odd-img" src="./project1/img/project3.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
 
 
             </section>
             <section class="scroll-section ">
 
-                <div class="post brand-story"> <img
-                        loading="eager"
-                        class="normal-image odd-img"
-                        src="./project1/img/project3.jpg"
-                        alt=""
-                        srcset=""
-                    ></div>
-                <div class="post brand-story"> <img
-                        loading="lazy"
-                        class="normal-image"
-                        src="./project1/img/project5.jpg"
-                        alt=""
-                        srcset=""
-                    ></div>
+                <div class="post brand-story"> <img loading="eager" class="normal-image odd-img" src="./project1/img/project3.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
 
             </section>
             <section class="scroll-section">
-                <div class="post brand-story"> <img
-                        loading="lazy"
-                        class="normal-image"
-                        src="./project1/img/project5.jpg"
-                        alt=""
-                        srcset=""
-                    ></div>
-                <div class="post brand-story"> <img
-                        loading="lazy"
-                        class="normal-image"
-                        src="./project1/img/project5.jpg"
-                        alt=""
-                        srcset=""
-                    ></div>
+                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
 
             </section>
 
-            <section
-                class="scroll-section"
-                id="last-section"
-            >
-                <div
-                    class="case-page__cover"
-                    id="last-section"
-                >
+            <section class="scroll-section" id="last-section">
+                <div class="case-page__cover" id="last-section">
                     <div class="cover__heading last-page">
                         <h1>
-                            <div
-                                class="lines"
-                                style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';"
-                            >Contact</div>
-                            <div
-                                class="lines"
-                                style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);"
-                            >us.</div>
+                            <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';">Contact</div>
+                            <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">us.</div>
                         </h1>
                     </div>
                 </div>
@@ -741,45 +575,18 @@
 
                             <div class="case-page-icons">
                                 <div class="size-2x">
-                                    <a
-                                        href="http://"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <img
-                                            src="../icons/facebook-svg-large.svg"
-                                            id="icon"
-                                            alt=""
-                                            srcset=""
-                                        >
+                                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                                        <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
                                     </a>
                                 </div>
                                 <div class=" size-2x">
-                                    <a
-                                        href="http://"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <img
-                                            src="../icons/instagram-svg.svg"
-                                            id="icon"
-                                            alt=""
-                                            srcset=""
-                                        >
+                                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                                        <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
                                     </a>
                                 </div>
                                 <div class=" size-2x">
-                                    <a
-                                        href="http://"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <img
-                                            src="../icons/behance.svg"
-                                            id="icon"
-                                            alt=""
-                                            srcset=""
-                                        >
+                                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                                        <img src="../icons/behance.svg" id="icon" alt="" srcset="">
                                     </a>
                                 </div>
 
@@ -792,19 +599,13 @@
 
                         <div class="info-block-case">
                             <h3 class="contact-h3 font-case-page">Canada</h3>
-                            <a
-                                href="#"
-                                class="link-address "
-                            >228 Nelson's Crescent, <br>BC V3L 3E3 New
+                            <a href="#" class="link-address ">228 Nelson's Crescent, <br>BC V3L 3E3 New
                                 Westminster, <br>
                                 Canada</a>
                         </div>
                         <div class="info-block-case">
                             <h3 class="contact-h3 font-case-page">Slovakia</h3>
-                            <a
-                                href="#"
-                                class="link-address "
-                            >Tallerova 4,<br>
+                            <a href="#" class="link-address ">Tallerova 4,<br>
                                 811 02 Bratislava,<br>Slovakia</a>
                         </div>
                     </div>
