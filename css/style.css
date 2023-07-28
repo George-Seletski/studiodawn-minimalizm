@@ -1644,7 +1644,7 @@
             margin-left: 2em;
         }
         .container-header>h1 {
-            max-width: 100%;
+            width: 100%;
             margin-left: 1em;
             font-size: 1.5em;
         }
