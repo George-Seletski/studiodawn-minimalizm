@@ -102,7 +102,7 @@
         display: flex;
         overflow: auto;
         flex-direction: column;
-        padding-bottom: 2em;
+        padding-bottom: 0;
     }
     
     .bottom-text-header>span {
@@ -124,8 +124,99 @@
         text-align: center;
         letter-spacing: 1.5px;
         font-weight: 800;
-        padding: 50px 29em;
+        padding: 50px 20%;
         margin: 0 2em;
+    }
+    
+    .bottom-text-title {}
+    
+    #arrow-down {
+        width: 30px;
+        height: 30px;
+        transform: rotate(-90deg);
+        padding: 0;
+        margin: 0;
+    }
+    /* Just for Demo */
+    
+    @-webkit-keyframes scroll-ani {
+        0% {
+            opacity: 1;
+            top: 29%;
+        }
+        15% {
+            opacity: 1;
+            top: 50%;
+        }
+        50% {
+            opacity: 0;
+            top: 50%;
+        }
+        100% {
+            opacity: 0;
+            top: 29%;
+        }
+    }
+    /* Mouse & Message Styles */
+    /* The Scroll Link */
+    
+    .mouse-scroll {
+        display: inline-block;
+        line-height: 18px;
+        font-size: 13px;
+        font-weight: normal;
+        color: #7F8C8D;
+        color: #000;
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        letter-spacing: 2px;
+        margin-top: 10%;
+        text-decoration: none;
+        overflow: hidden;
+    }
+    /* The Mouse */
+    
+    .mouse-scroll .mouse {
+        position: relative;
+        display: block;
+        width: 23px;
+        height: 36px;
+        margin: 0 auto 20px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 2px solid #000;
+        border-radius: 23px;
+    }
+    /* Scroll Indicator */
+    
+    .mouse-scroll .mouse .mouse-movement {
+        position: absolute;
+        display: block;
+        top: 29%;
+        left: 50%;
+        width: 4px;
+        height: 4px;
+        margin: -6px 0 0 -2px;
+        background: #000;
+        border-radius: 50%;
+        -webkit-animation: scroll-ani 4s linear infinite;
+        -moz-animation: scroll-ani 4s linear infinite;
+        animation: scroll-ani 4s linear infinite;
+    }
+    /* The Scroll Message */
+    
+    .mouse-scroll .mouse .mouse-message {
+        float: left;
+        margin: 0 0 0 7px;
+        padding: 0;
+        -webkit-animation: scroll-ani 4s linear infinite;
+        -moz-animation: scroll-ani 4s linear infinite;
+        animation: scroll-ani 4s linear infinite;
+    }
+    /* Shown on Hover of The Mouse */
+    
+    .mouse-scroll:hover .mouse .mouse-message {
+        margin-top: 0;
     }
     
     a {
@@ -1387,6 +1478,7 @@
         gap: 70px;
         align-items: center;
         margin: 11.25rem;
+        justify-content: center;
     }
     
     .instagram-text-contianer>h2 {

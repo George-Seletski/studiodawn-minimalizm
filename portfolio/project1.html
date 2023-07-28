@@ -37,7 +37,7 @@
     
     .scroll-section {
         width: 100%;
-        height: 100%;
+        height: 100vh;
         scroll-snap-align: start;
         display: flex;
         justify-content: center;
@@ -103,6 +103,7 @@
         max-width: 100%;
         vertical-align: middle;
         display: inline-block;
+        width: 100%;
     }
     
     .case-covering {
@@ -143,7 +144,6 @@
         margin-bottom: 1em;
         line-height: 1.2;
         font-size: 1.2rem;
-        flex: 1;
         font-family: 'Roboto Light';
     }
     
@@ -221,7 +221,7 @@
     }
     
     .font-case-page {
-        font-size: 1.5em !important;
+        font-size: 1.5em;
     }
     
     .font-link-case-page {
@@ -261,6 +261,121 @@
     
     .info-block-case>.link-address {
         font-size: 0.5em;
+    }
+    
+    @media screen and (max-width: 991px) {
+        .scroll-container {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            height: auto;
+            gap: 0px;
+        }
+        .scroll-section {
+            width: 100%;
+            display: block;
+            font-size: unset;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #last-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .last-page {
+            height: 100%;
+            position: relative;
+            font-size: 60px;
+        }
+        .last-page-block {
+            height: auto;
+            width: 100%;
+            position: relative;
+        }
+        .info-block-case {
+            padding-bottom: 20%;
+            display: flex;
+            width: 100%;
+            gap: 20px;
+            flex-direction: column;
+        }
+        .case-container {
+            width: 100%;
+            height: 100vh;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+        }
+        .contanct-links {
+            text-align: left;
+            margin-top: 0;
+        }
+        .case-page-icons {
+            padding: 0 !important;
+            justify-content: flex-start;
+            gap: 20px;
+            margin-top: 0;
+            display: flex;
+            width: 100%;
+        }
+        .contact-us-block {
+            max-width: 50%;
+            flex-direction: row;
+            align-items: flex-start;
+            margin: 0;
+        }
+        .local-contacts {
+            display: flex;
+            padding-top: 5em;
+            justify-content: space-between;
+        }
+        .case-page__cover {
+            width: 100%;
+            height: 70vh;
+        }
+        .font-case-page {
+            font-size: 40px;
+        }
+        .local-contacts>div:nth-child(1) {
+            width: 100%;
+        }
+        .info-block-case>.link-address {
+            font-size: 20px;
+            line-height: normal;
+        }
+        .story__block.intro {
+            max-width: 100vw;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 2em;
+            padding: 2em 0;
+            height: 90vh;
+        }
+        .story__heading {
+            font-size: 60px;
+        }
+        .brand-story {
+            padding: 0;
+            max-width: 100vw;
+            margin: 0;
+            width: 100%;
+            display: block;
+        }
+        .p {
+            font-size: 30px;
+            padding: 0 2em 0 0;
+        }
+        .cases-page__meta {
+            margin-bottom: 0;
+        }
+        .post {
+            margin-bottom: 0.5em;
+            width: 100%;
+        }
+        .odd-img {
+            margin: 0;
+        }
     }
 </style>
 
@@ -364,7 +479,7 @@
     </div>
     <div class="case-container">
         <div class="scroll-container">
-            <section class="scroll-section">
+            <section class="scroll-section" id="case-cover">
                 <div class="case-page__cover">
                     <img src="./project1/img/inst_1.png" alt="case cover" loading="eager" class="case__covering" srcset="">
                 </div>
@@ -386,33 +501,33 @@
             <section class="scroll-section ">
 
                 <!--<div class="post brand-story"> <img loading="eager" src="./project1/img/project5.jpg" alt="" srcset=""></div>-->
-                <div class="post brand-story"> <img loading="eager" class="odd-img" src="./project1/img/project3.jpg" alt="" srcset=""></div>
-                <div class="post brand-story"> <img loading="lazy" src="./project1/img/project5.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="eager" class="normal-image odd-img" src="./project1/img/project3.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
 
 
             </section>
             <section class="scroll-section ">
 
-                <div class="post brand-story"> <img loading="eager" class="odd-img" src="./project1/img/project3.jpg" alt="" srcset=""></div>
-                <div class="post brand-story"> <img loading="lazy" src="./project1/img/project5.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="eager" class="normal-image odd-img" src="./project1/img/project3.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
 
             </section>
             <section class="scroll-section">
-                <div class="post brand-story"> <img loading="lazy" src="./project1/img/project5.jpg" alt="" srcset=""></div>
-                <div class="post brand-story"> <img loading="lazy" src="./project1/img/project5.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
+                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
 
             </section>
 
-            <section class="scroll-section">
-                <div class="case-page__cover">
-                    <div class="cover__heading">
+            <section class="scroll-section" id="last-section">
+                <div class="case-page__cover" id="last-section">
+                    <div class="cover__heading last-page">
                         <h1>
                             <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';">Contact</div>
                             <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">us.</div>
                         </h1>
                     </div>
                 </div>
-                <div class="contact-us-block">
+                <div class="contact-us-block last-page-block">
                     <div id="icon-box">
                         <div class="info-block-case">
                             <div class="contanct-links">
