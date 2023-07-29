@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../portfolio/css/project_page_style.css">
+    <link rel="stylesheet" href="css/project_page_style.css" type="text/css">
 
-
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/ScrollTriger.js"></script>
+    <script src="../js/gsap.min.js"></script>
 
 </head>
 <style>
@@ -248,9 +250,34 @@
         width: 100%;
         overflow: hidden;
     }
+    
+    .custom-cursor {
+        position: fixed;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        mix-blend-mode: difference;
+        width: 50px;
+        height: 50px;
+        margin-left: -25px;
+        margin-top: -25px;
+        border-radius: 50%;
+        background-color: white;
+        transition-property: transform, scale, opacity;
+        transition-duration: 250ms;
+        transition-timing-function: ease-in-out;
+        scale: 0.3;
+        z-index: 99999;
+    }
+    
+    .custom-cursor--link {
+        scale: 1;
+    }
 </style>
 
 <body>
+    <div class="custom-cursor"></div>
     <main class="main h-scroll">
         <div class="h-scroll">
             <div class="h-scroll__inner">
@@ -311,11 +338,13 @@
                                 <div class="story__video w-embed w-iframe"><iframe loading="" src="https://player.vimeo.com/video/746524188?h=f9592c3c33?h=e84ca202d4?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203"
                                         frameborder="0" autoplay="" playsinline="" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay" data-ready="true"></iframe></div>
                             </div>
-                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag.jpg 867w"
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag.jpg 867w"
                                     id="w-node-caf25592-e66f-5c65-6242-b0f2b66fc0b4-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 952px) 91vw, (max-width: 991px) 867px, 100vw" alt="" class="study__img"></div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
                                 <div class="w-layout-grid content-grid">
-                                    <div id="w-node-_558cbe49-47be-6b80-4e52-a6d05b617516-41af1f24"><a href="/portfolio" class="l uc" style="opacity: 1; transform: translate(0px, 100px);">More cases</a></div>
+                                    <div id="w-node-_558cbe49-47be-6b80-4e52-a6d05b617516-41af1f24">
+                                        <a href="/portfolio" class="l uc" style="opacity: 1; transform: translate(0px, 100px);">More cases</a></div>
                                 </div>
                             </div>
                         </div>
@@ -331,5 +360,78 @@
         </div>
     </main>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check if the device supports touch events
+        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+        if (!isTouchDevice) {
+            const customCursor = document.querySelector(".custom-cursor");
+            // Add custom cursor functionality for non-touch devices
+
+            const links = document.querySelectorAll("a");
+
+            document.addEventListener('mousemove', function(event) {
+                customCursor.style.left = `${event.clientX}px`;
+                customCursor.style.top = `${event.clientY}px`;
+            });
+
+            links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    customCursor.classList.add("custom-cursor--link");
+                });
+
+                link.addEventListener("mouseout", () => {
+                    customCursor.classList.remove("custom-cursor--link");
+                    // Add a slight delay to prevent cursor flickering on hover-out
+                    setTimeout(() => {
+                        customCursor.style.left = `${event.clientX}px`;
+                        customCursor.style.top = `${event.clientY}px`;
+                    }, 50);
+                });
+            });
+        } else {
+            const customCursor = document.querySelector(".custom-cursor");
+            customCursor.style = `opacity: 0 !important;`;
+        }
+
+
+        /* const caseContainer = document.querySelector(".h-scroll__inner");
+         const container = document.querySelector(".h-scroll__inner");
+         container.addEventListener("wheel", handleMouseWheel, {
+             passive: false
+         });
+
+         const timeline = gsap.timeline({
+             defaults: {
+                 ease: "power1.out"
+             }
+         });
+
+         timeline.fromTo(caseContainer, {
+             opacity: 0,
+             x: "-=100"
+         }, {
+             opacity: 1,
+             x: "0",
+             duration: 1
+         });
+
+         timeline.play();*/
+    });
+
+    function handleMouseWheel(event) {
+        event.preventDefault();
+        const container = event.currentTarget;
+        const scrollAmount = event.deltaY;
+
+        // Smooth scroll using GSAP animation with increased duration
+        gsap.to(container, {
+            scrollLeft: container.scrollLeft + scrollAmount,
+            duration: 0,
+            ease: "power1.out"
+        });
+    }
+</script>
 
 </html>
