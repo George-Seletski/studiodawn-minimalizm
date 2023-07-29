@@ -2427,7 +2427,7 @@ label {
 
 .p {
     flex: 1;
-    margin-bottom: 1em;
+    margin-bottom: 2.67em;
     line-height: 1.2;
 }
 
@@ -3109,8 +3109,8 @@ label {
 .story__heading {
     letter-spacing: -.01em;
     margin-bottom: .5em;
-    font-family: 'Cormorant Garamond Semibold', sans-serif;
-    font-size: 12rem;
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 10rem;
     font-weight: 400;
 }
 
@@ -6152,6 +6152,20 @@ label {
 @font-face {
     font-family: 'Roboto Bold';
     src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Roboto Thin';
+    src: url("../fonts/Roboto/Roboto-Thin.ttf") format('truetype');
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
     font-style: normal;
     font-display: block;
 }
