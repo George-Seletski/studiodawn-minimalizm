@@ -5,716 +5,331 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDIODAWN</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="stylesheet" href="../css/normalize.css" type="text/css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../portfolio/css/project_page_style.css">
 
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/ScrollTriger.js"></script>
-    <script src="../js/gsap.min.js"></script>
+
+
 </head>
 <style>
-    .case-container {
-        width: 100%;
-        height: 100vh;
-        overflow-y: scroll;
-        scroll-snap-type: y mandatory;
-        display: block;
-    }
-    
-    .case-container::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .case-container::-webkit-scrollbar-thumb {
-        background-color: transparent;
-    }
-    
-    .scroll-container {
-        display: flex;
-        width: 500%;
+    html {
+        font-size: 8px;
         height: 100%;
     }
     
-    .scroll-section {
-        width: 100%;
-        height: 100vh;
-        scroll-snap-align: start;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f4f4f4;
-        font-size: 3em;
+    @media screen and (min-width: 992px) {
+        html {
+            font-size: .5208333333vw;
+        }
     }
     
-    .brand-story {
-        padding: 0;
-        margin-right: 20px;
-        width: 50%;
-        margin: 4em 2em;
+    .cursor,
+    .cursor-follow {
+        pointer-events: none;
+        user-select: none;
     }
     
-    .odd-img {
-        height: 80vh;
-        margin: 2em;
+    .hand {
+        font-feature-settings: 'ss01';
     }
     
-    .brand-story>img {
-        display: block;
-        padding: 0;
+    .nav__ill .squig {
+        stroke-dasharray: 550;
+        stroke-dashoffset: 0;
+    }
+    
+    .nav__item a:hover+.nav__ill .squig {
+        animation: linestroke 1s linear 1;
+        stroke: currentColor;
+    }
+    
+    @keyframes linestroke {
+        0% {
+            stroke-dashoffset: 550;
+        }
+        50% {
+            stroke-dashoffset: 0;
+        }
+    }
+    
+    .squig {
+        fill: none;
+        stroke: currentColor;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+    }
+    
+    .stroke {
+        stroke: #131314;
+        fill: none;
+        stroke-miterlimit: 2;
+        stroke-width: 2px;
+    }
+    
+    .noscaling {
+        vector-effect: non-scaling-stroke;
+    }
+    
+    .case__squiggly-arrow {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+        stroke-dasharray: 30rem;
+        stroke-dashoffset: 30rem;
+        transition: 500ms linear;
+    }
+    
+    .case__item:hover .case__squiggly-arrow {
+        stroke-dashoffset: 0;
     }
     
     .h-scroll__section {
         vertical-align: middle;
     }
     
-    .content-grid {
-        width: 100%;
-        height: 100%;
-        max-width: 100vw;
-        grid-column-gap: 3rem;
-        grid-row-gap: 3rem;
-        grid-template-rows: auto;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        align-items: start;
-    }
-    
-    .content-grid.study__intro {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    
-    .w-layout-grid {
-        grid-row-gap: 16px;
-        grid-column-gap: 16px;
-        grid-template-rows: auto auto;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-columns: 1fr;
-        display: grid;
-    }
-    
-    .case-page__cover>img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    img {
-        max-width: 100%;
-        vertical-align: middle;
-        display: inline-block;
-        width: 100%;
-    }
-    
-    .case-covering {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .cursor::after {
+        content: var(--content, "");
         position: absolute;
-        top: 0%;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
-    }
-    
-    .story__block.intro {
-        max-width: 40vw;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0;
-        margin-right: 9rem;
-        padding-top: 9.9rem;
-        padding-bottom: 4.7rem;
-        padding-left: 6rem;
-    }
-    
-    .story__block {
-        height: 100%;
-        align-items: center;
-        margin-left: 3rem;
-        margin-right: 3rem;
-        padding-top: 20.2rem;
-        padding-bottom: 20.2rem;
-        display: flex;
-        position: relative;
-    }
-    
-    .p {
-        flex: 1;
-        margin-bottom: 1em;
-        line-height: 1.2;
-        font-size: 1.2rem;
-        font-family: 'Roboto Light';
-    }
-    
-    .cases-page__meta {
-        text-align: left;
-        font-size: 1.75rem;
-        font-family: 'Roboto Light';
-    }
-    
-    #w-node-_94154434-1036-a7d8-10b7-6abab97b5db8-41af1f24 {
-        grid-area: 1 / 1 / 2 / 8;
-    }
-    
-    .case-page__cover {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-    
-    .case__coverimg {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0%;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
-    }
-    
-    img {
-        border: 0;
-    }
-    
-    #w-node-_1cec452e-7cf8-af20-6a1a-b55ad5757c48-41af1f24 {
-        grid-area: 1 / 8 / 2 / 13;
-    }
-    
-    .story__block.intro {
-        max-width: 40vw;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 0;
-        margin-right: 9rem;
-        padding-top: 9.9rem;
-        padding-bottom: 4.7rem;
-        padding-left: 6rem;
-    }
-    
-    .story__heading {
-        letter-spacing: -.01em;
-        margin-bottom: 0.5em;
-        font-family: 'Roboto Light';
-        font-weight: 400;
-    }
-    
-    .contact-us-block {
-        max-width: 50%;
-        flex-direction: row;
-        align-items: flex-start;
-        margin-left: 0;
-        margin-right: 15rem;
-    }
-    
-    .local-contacts {
-        display: flex;
-        flex-direction: row;
-        padding-top: 5em;
-        gap: 50px;
-        padding: 0;
-    }
-    
-    .local-contacts>div:nth-child(1) {
-        width: 320px;
-    }
-    
-    .font-case-page {
-        font-size: 1.5em;
-    }
-    
-    .font-link-case-page {
-        font-size: 0.6em !important;
-    }
-    
-    .cover__heading {
+        top: 2rem;
+        left: 2rem;
+        font-size: 3rem;
         display: block;
-        font-size: 2em;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 500ms ease-out 0s, transform 300ms ease-out 0s;
+        transform: translate3d(0px, 1rem, 0px);
+        will-change: transform, opacity;
+    }
+    
+    [data-hover="case-item"] .cursor::after {
+        --content: var(--custom-content);
+        opacity: 1;
+        transform: none;
+    }
+    
+    html.has-scroll-smooth {
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    
+    .header.nav-open a {
+        color: #131314;
+    }
+    
+    .image-wrap::before {
+        display: block;
+        content: "";
+        padding-bottom: 55%;
+    }
+    
+    .image-wrap__fx::before {
+        display: block;
+        content: "";
+        padding-bottom: 120%;
+    }
+    
+    .story__video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
         height: 100%;
-        padding: 0 150px;
+        pointer-events: none;
     }
     
-    .case-page-icons {
-        padding: 0 !important;
-        align-items: flex-end;
-        text-align: right;
-        gap: 20px;
-        margin-top: 30px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
+    body.invert {
+        color: #ffffff;
+        background: #131314;
+    }
+    
+    body.invert a:not(.nav-open, .nav-open a, .nav__link) {
+        color: #ffffff;
+    }
+    
+    body.invert .divider-title {
+        border-color: #ffffff;
+    }
+    
+    .home_lottie path {
+        fill: currentColor !important;
+    }
+    
+    #processAnim path {
+        stroke: currentColor !important;
+        stroke-width: 2;
+        vector-effect: non-scaling-stroke;
+    }
+    
+    .nav-open {
+        mix-blend-mode: normal;
+    }
+    
+    .scroll-list:nth-child(1) {
+        animation: scrollServices1A 60s linear -20s infinite;
+    }
+    
+    .scroll-list:nth-child(2) {
+        animation: scrollServices1B 60s linear 11.5s infinite;
+    }
+    
+    .scroll-list_wrap.second .scroll-list:nth-child(1) {
+        animation: scrollServices2A 60s linear -20s infinite;
+    }
+    
+    .scroll-list_wrap.second .scroll-list:nth-child(2) {
+        animation: scrollServices2B 60s linear 11.5s infinite;
+    }
+    
+    body.case-page,
+    body.case-page .story__block.intro {
+        background-color: var(--main);
+    }
+    
+    body.case-page .story__block {
+        color: var(--textc);
+    }
+    
+    body.case-page .story__block a {
+        color: var(--textc);
+        border-color: var(--textc);
+    }
+    
+    .team_habitat {
+        user-select: none;
+    }
+    
+    .story__video iframe {
+        pointer-events: none;
+        z-index: -1;
+        cursor: none;
+    }
+    
+    @supports (mix-blend-mode: multiply) {
+        .home-heading {
+            color: #fff;
+            mix-blend-mode: difference;
+        }
+    }
+    
+    .main.invert {
+        background: #131314;
+        color: #fff;
+    }
+    
+    @media screen and (min-width: 992px) {
+        .process__headingxl {
+            color: #131314 !important;
+        }
+    }
+    
+    .intro-section.invert,
+    .story-content.invert {
+        background: #000;
+        color: #fff;
+    }
+    
+    .main.invert .divider-title {
+        border-color: #fff;
+    }
+    
+    .counter::after {
+        content: '%';
+    }
+    
+    .nav-open--full {
+        height: 100%;
         width: 100%;
-    }
-    
-    .case-page-icons>div {
-        gap: 20px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-    }
-    
-    .info-block-case {
-        padding-bottom: 11rem;
-    }
-    
-    .info-block-case>.link-address {
-        font-size: 0.5em;
-    }
-    
-    @media screen and (max-width: 991px) {
-        .scroll-container {
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            height: auto;
-            gap: 0px;
-        }
-        .scroll-section {
-            width: 100%;
-            display: block;
-            font-size: unset;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-        #last-section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .last-page {
-            height: 100%;
-            position: relative;
-            font-size: 60px;
-        }
-        .last-page-block {
-            height: auto;
-            width: 100%;
-            position: relative;
-        }
-        .info-block-case {
-            padding-bottom: 20%;
-            display: flex;
-            width: 100%;
-            gap: 20px;
-            flex-direction: column;
-        }
-        .case-container {
-            width: 100%;
-            height: 100vh;
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
-        }
-        .contanct-links {
-            text-align: left;
-            margin-top: 0;
-        }
-        .case-page-icons {
-            padding: 0 !important;
-            justify-content: flex-start;
-            gap: 20px;
-            margin-top: 0;
-            display: flex;
-            width: 100%;
-        }
-        .contact-us-block {
-            max-width: 50%;
-            flex-direction: row;
-            align-items: flex-start;
-            margin: 0;
-        }
-        .local-contacts {
-            display: flex;
-            padding-top: 5em;
-            justify-content: space-between;
-        }
-        .case-page__cover {
-            width: 100%;
-            height: 70vh;
-        }
-        .font-case-page {
-            font-size: 40px;
-        }
-        .local-contacts>div:nth-child(1) {
-            width: 100%;
-        }
-        .info-block-case>.link-address {
-            font-size: 20px;
-            line-height: normal;
-        }
-        .story__block.intro {
-            max-width: 100vw;
-            flex-direction: column;
-            align-items: flex-start;
-            margin: 0 2em;
-            padding: 2em 0;
-            height: 90vh;
-        }
-        .story__heading {
-            font-size: 60px;
-        }
-        .brand-story {
-            padding: 0;
-            max-width: 100vw;
-            margin: 0;
-            width: 100%;
-            display: block;
-        }
-        .p {
-            font-size: 30px;
-            padding: 0 2em 0 0;
-        }
-        .cases-page__meta {
-            margin-bottom: 0;
-        }
-        .post {
-            margin-bottom: 0.5em;
-            width: 100%;
-        }
-        .odd-img {
-            margin: 0;
-        }
+        overflow: hidden;
     }
 </style>
 
 <body>
-    <div class="custom-cursor"></div>
-
-    <div class="header-wrapper w-nav blur" data-duration="400" data-collapse="all">
-        <div class="container-default w-container">
-
-            <div class="header-right-col">
-                <nav role="navigation" class="header-hamburger-desktop-wrapper w-nav-menu ">
-                    <div class="menu container-default-center">
-                        <div class="w-container">
-                            <ul role="list" class="nav-list white">
-                                <li class="nav-item">
-                                    <a href="../" class="nav-link ">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../about" class="nav-link ">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../portfolio/" class="nav-link">Cases</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../contact" class="nav-link">Contact us</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="w-container">
-                            <div class="nav-info-submenu">
-
-                                <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header ">Work Inquiries.</h2>
-                                    <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
-                                    </li>
-                                </ul>
-                                <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header white">Get in touch.</h2>
-                                    <li class="nav-item">
-                                        <a href="#" class="link-address white">228 Nelson's Crescent New
-                                            Westminster, BC V3L 3E3</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
-                                    </li>
-
-                                </ul>
+    <main class="main h-scroll">
+        <div class="h-scroll">
+            <div class="h-scroll__inner">
+                <div class="h-scroll__inview" data-scroll-section-id="section0" data-scroll-section-inview="" style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); opacity: 1; pointer-events: all;">
+                    <section class="h-scroll__section intro-section">
+                        <div class="w-layout-grid content-grid study__intro">
+                            <div id="w-node-_94154434-1036-a7d8-10b7-6abab97b5db8-41af1f24" class="case-page__cover">
+                                <img src="../img/inst_1.png" loading="eager" alt="" class="case__coverimg">
+                            </div>
+                            <div id="w-node-_1cec452e-7cf8-af20-6a1a-b55ad5757c48-41af1f24" class="story__block intro">
+                                <h2 class="p uc" style="opacity: 1; transform: translate(0px, 0px);">Reqiro</h2>
+                                <h1 class="xxxl story__heading">
+                                    <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">Leading People</div>
+                                    <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">and projects</div>
+                                </h1>
+                                <p class="p" style="opacity: 1; transform: translate(0px, 0px);">Reqiro - formerly Planning &amp; Logistics, is a leading project management consultancy to clients in the power/energy, infrastructure/train and industrial sectors. As the business evolved and more offerings were developed,
+                                    the identity and brand strategy needed to reflect the new scope of services while positioning them as an attractive partner for both client and consultant in a competitive market. Working closely with the client, we
+                                    developed a new vision, brand platform, tone of voice and visual identity that represents Reqiro's values and focus on team spirit and skills development.</p>
+                                <p class="cases-page__meta">Brand platform, Visual identity</p>
                             </div>
                         </div>
-                    </div>
+                    </section>
+                    <section class="h-scroll__section story-content">
+                        <div class="story__wrap">
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder.png" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-500.png 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-800.png 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-1080.png 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-1600.png 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder.png 1920w"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 100vw" alt="Placeholder image" class="vid-placeholder">
+                                <div class="story__video w-embed w-iframe"><iframe loading="" src="https://player.vimeo.com/video/746522806?h=cbdbdcdccd?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203" frameborder="0"
+                                        webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe></div>
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ea96bfb65a56108eb61f_reqiro_Mission.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ea96bfb65a56108eb61f_reqiro_Mission-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ea96bfb65a56108eb61f_reqiro_Mission-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ea96bfb65a56108eb61f_reqiro_Mission-p-1080.jpg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ea96bfb65a56108eb61f_reqiro_Mission.jpg 1504w"
+                                    id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0080bda289dd4404c44_Typography-1.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0080bda289dd4404c44_Typography-1-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0080bda289dd4404c44_Typography-1-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0080bda289dd4404c44_Typography-1-p-1080.jpg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0080bda289dd4404c44_Typography-1.jpg 1504w"
+                                    id="w-node-_031ab426-d9c7-75ad-3f9f-2eb841e6ba75-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0300cc3cf5e713a9dfc_Typography-2.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0300cc3cf5e713a9dfc_Typography-2-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0300cc3cf5e713a9dfc_Typography-2-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0300cc3cf5e713a9dfc_Typography-2-p-1080.jpg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0300cc3cf5e713a9dfc_Typography-2.jpg 1504w"
+                                    id="w-node-_687b2552-0aed-221f-8699-585dd911412d-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e02fc73ad33ccf89a5cf_Colors.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e02fc73ad33ccf89a5cf_Colors-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e02fc73ad33ccf89a5cf_Colors-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e02fc73ad33ccf89a5cf_Colors-p-1080.jpg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e02fc73ad33ccf89a5cf_Colors.jpg 1504w"
+                                    id="w-node-a9dc65c7-1202-abae-edbc-d97270793e78-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03065cd533ce46fcc4f_Graphic.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03065cd533ce46fcc4f_Graphic-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03065cd533ce46fcc4f_Graphic-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03065cd533ce46fcc4f_Graphic.jpg 867w"
+                                    id="w-node-d9566b07-5750-0852-f3fa-37642a747082-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 952px) 91vw, (max-width: 991px) 867px, 100vw" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03070df905c15266e30_Instagram.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03070df905c15266e30_Instagram-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03070df905c15266e30_Instagram-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03070df905c15266e30_Instagram-p-1080.jpg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e03070df905c15266e30_Instagram.jpg 1504w"
+                                    id="w-node-_504bb402-38d5-46a8-e898-b4f6fdd42c18-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder.png" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-500.png 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-800.png 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-1080.png 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-1600.png 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder.png 1920w"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 100vw" alt="Placeholder image" class="vid-placeholder">
+                                <div class="story__video w-embed w-iframe"><iframe loading="" src="https://player.vimeo.com/video/746520307?h=5a3a1d765e?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203" frameborder="0"
+                                        webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe></div>
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030c73ad30cd289a5d2_Businesscard.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030c73ad30cd289a5d2_Businesscard-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030c73ad30cd289a5d2_Businesscard-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030c73ad30cd289a5d2_Businesscard-p-1080.jpg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030c73ad30cd289a5d2_Businesscard.jpg 1156w"
+                                    id="w-node-f9b241bd-6b29-1beb-9985-9d1941254a75-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1562px) 74vw, 1156px" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ecb5e5a49606bcc4e36e_reqiro_stationary3.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ecb5e5a49606bcc4e36e_reqiro_stationary3-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ecb5e5a49606bcc4e36e_reqiro_stationary3-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ecb5e5a49606bcc4e36e_reqiro_stationary3-p-1080.jpg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ecb5e5a49606bcc4e36e_reqiro_stationary3-p-1600.jpg 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315ecb5e5a49606bcc4e36e_reqiro_stationary3.jpg 1920w"
+                                    id="w-node-_4211b638-78b6-800b-55c5-7cf476ca52fc-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1920px) 100vw, 1920px" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030bb1e223dd447f18a_Bottle.jpg" loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 952px) 91vw, (max-width: 991px) 867px, 100vw"
+                                    srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030bb1e223dd447f18a_Bottle-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030bb1e223dd447f18a_Bottle-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e030bb1e223dd447f18a_Bottle.jpg 867w"
+                                    alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e6960cc3cf091d3ad25f_reqiro-umbrella.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e6960cc3cf091d3ad25f_reqiro-umbrella-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e6960cc3cf091d3ad25f_reqiro-umbrella-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e6960cc3cf091d3ad25f_reqiro-umbrella-p-1080.jpg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e6960cc3cf091d3ad25f_reqiro-umbrella-p-1600.jpg 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e6960cc3cf091d3ad25f_reqiro-umbrella-p-2000.jpg 2000w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e6960cc3cf091d3ad25f_reqiro-umbrella.jpg 2000w"
+                                    id="w-node-_5f448aab-1b57-5e62-bb61-374dce0a5257-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 2000px) 100vw, 2000px" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b5d53e9679c40c18d7deb_squareweb_placeholder.png" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b5d53e9679c40c18d7deb_squareweb_placeholder-p-500.png 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b5d53e9679c40c18d7deb_squareweb_placeholder-p-800.png 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b5d53e9679c40c18d7deb_squareweb_placeholder.png 1080w"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 100vw" alt="" class="vid-placeholder">
+                                <div class="story__video w-embed w-iframe"><iframe loading="" src="https://player.vimeo.com/video/746524188?h=f9592c3c33?h=e84ca202d4?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203"
+                                        frameborder="0" autoplay="" playsinline="" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay" data-ready="true"></iframe></div>
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag.jpg" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag-p-500.jpg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag-p-800.jpg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6315e0ac6a2fa122a676829f_TeamBag.jpg 867w"
+                                    id="w-node-caf25592-e66f-5c65-6242-b0f2b66fc0b4-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 952px) 91vw, (max-width: 991px) 867px, 100vw" alt="" class="study__img"></div>
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <div class="w-layout-grid content-grid">
+                                    <div id="w-node-_558cbe49-47be-6b80-4e52-a6d05b617516-41af1f24"><a href="/case" class="l uc" style="opacity: 1; transform: translate(0px, 100px);">More cases</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="h-scroll__section contain">
+                        <div class="w-layout-grid content-grid">
 
 
-                </nav>
-            </div>
-
-            <div class="header-content-wrapper">
-                <div class="hamburger-menu-wrapper w-nav-button">
-                    <div class="hamburger-menu-bar-top"></div>
-                    <div class="hamburger-menu-bar-top"></div>
-                    <div class="hamburger-menu-bar-bottom"></div>
-                </div>
-                <a href="../index.html" aria-current="page" class="header-logo-link w-nav-brand w--current ">
-                    <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo blur" lazy="loading">
-                </a>
-
-
-                <div class="icons">
-                    <div class="navbar-icon">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="facebook-icon" srcset="">
-                        </a>
-                    </div>
-                    <div class="navbar-icon">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/instagram-svg.svg" id="icon" alt="instagram-icon" srcset="">
-                        </a>
-                    </div>
-                    <div class="navbar-icon">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/behance.svg" id="icon" alt="behance-icon" srcset="">
-                        </a>
-                    </div>
-
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="case-container">
-        <div class="scroll-container">
-            <section class="scroll-section" id="case-cover">
-                <div class="case-page__cover">
-                    <img src="./project1/img/inst_1.png" alt="case cover" loading="eager" class="case__covering" srcset="">
-                </div>
-                <div class="story__block intro">
-                    <a class="company-link" href="http://" target="_blank" rel="noopener noreferrer">
-                        <h2>Google </h2>
-                    </a>
-                    <h1 class="story__heading">
-                        <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">Leading</div>
-                        <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">People and</div>
-                        <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">projects</div>
-                    </h1>
-                    <p class="p" style="opacity: 1; transform: translate(0px, 0px);">Reqiro - formerly Planning &amp; Logistics, is a leading project management consultancy to clients in the power/energy, infrastructure/train and industrial sectors. As the business evolved and more offerings were developed, the identity
-                        and brand strategy needed to reflect the new scope of services while positioning them as an attractive partner for both client and consultant in a competitive market. Working closely with the client, we developed a new vision,
-                        brand platform, tone of voice and visual identity that represents Reqiro's values and focus on team spirit and skills development.</p>
-                    <p class="cases-page__meta">Brand platform, Visual identity</p>
-                </div>
-            </section>
-            <section class="scroll-section ">
-
-                <!--<div class="post brand-story"> <img loading="eager" src="./project1/img/project5.jpg" alt="" srcset=""></div>-->
-                <div class="post brand-story"> <img loading="eager" class="normal-image odd-img" src="./project1/img/project3.jpg" alt="" srcset=""></div>
-                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
-
-
-            </section>
-            <section class="scroll-section ">
-
-                <div class="post brand-story"> <img loading="eager" class="normal-image odd-img" src="./project1/img/project3.jpg" alt="" srcset=""></div>
-                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
-
-            </section>
-            <section class="scroll-section">
-                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
-                <div class="post brand-story"> <img loading="lazy" class="normal-image" src="./project1/img/project5.jpg" alt="" srcset=""></div>
-
-            </section>
-
-            <section class="scroll-section" id="last-section">
-                <div class="case-page__cover" id="last-section">
-                    <div class="cover__heading last-page">
-                        <h1>
-                            <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';">Contact</div>
-                            <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">us.</div>
-                        </h1>
-                    </div>
-                </div>
-                <div class="contact-us-block last-page-block">
-                    <div id="icon-box">
-                        <div class="info-block-case">
-                            <div class="contanct-links">
-                                <div class="link-email">
-                                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
-                                </div>
-                                <div class="link-telephone">
-                                    <a href="tel:+421905455208">+421 905 455 208</a>
-                                </div>
-                            </div>
-
-                            <div class="case-page-icons">
-                                <div class="size-2x">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                                        <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
-                                    </a>
-                                </div>
-                                <div class=" size-2x">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                                        <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
-                                    </a>
-                                </div>
-                                <div class=" size-2x">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                                        <img src="../icons/behance.svg" id="icon" alt="" srcset="">
-                                    </a>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="local-contacts">
-
-
-                        <div class="info-block-case">
-                            <h3 class="contact-h3 font-case-page">Canada</h3>
-                            <a href="#" class="link-address ">228 Nelson's Crescent, <br>BC V3L 3E3 New
-                                Westminster, <br>
-                                Canada</a>
-                        </div>
-                        <div class="info-block-case">
-                            <h3 class="contact-h3 font-case-page">Slovakia</h3>
-                            <a href="#" class="link-address ">Tallerova 4,<br>
-                                811 02 Bratislava,<br>Slovakia</a>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-        </div>
-    </div>
-
-
-
-
-    </div>
+    </main>
 </body>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Check if the device supports touch events
-        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
-
-        if (!isTouchDevice) {
-            const customCursor = document.querySelector(".custom-cursor");
-            // Add custom cursor functionality for non-touch devices
-
-            const links = document.querySelectorAll("a");
-
-            document.addEventListener('mousemove', function(event) {
-                customCursor.style.left = `${event.clientX}px`;
-                customCursor.style.top = `${event.clientY}px`;
-            });
-
-            links.forEach((link) => {
-                link.addEventListener("mouseover", () => {
-                    customCursor.classList.add("custom-cursor--link");
-                });
-
-                link.addEventListener("mouseout", () => {
-                    customCursor.classList.remove("custom-cursor--link");
-                    // Add a slight delay to prevent cursor flickering on hover-out
-                    setTimeout(() => {
-                        customCursor.style.left = `${event.clientX}px`;
-                        customCursor.style.top = `${event.clientY}px`;
-                    }, 50);
-                });
-            });
-        } else {
-            const customCursor = document.querySelector(".custom-cursor");
-            customCursor.style = `opacity: 0 !important;`;
-        }
-
-
-        const caseContainer = document.querySelector(".case-container");
-        const container = document.querySelector(".case-container");
-        container.addEventListener("wheel", handleMouseWheel, {
-            passive: false
-        });
-
-        const timeline = gsap.timeline({
-            defaults: {
-                ease: "power1.out"
-            }
-        });
-
-        timeline.fromTo(caseContainer, {
-            opacity: 0,
-            x: "-=100"
-        }, {
-            opacity: 1,
-            x: "0",
-            duration: 1
-        });
-
-        timeline.play();
-    });
-
-    function handleMouseWheel(event) {
-        event.preventDefault();
-        const container = event.currentTarget;
-        const scrollAmount = event.deltaY;
-
-        // Smooth scroll using GSAP animation with increased duration
-        gsap.to(container, {
-            scrollLeft: container.scrollLeft + scrollAmount,
-            duration: 0,
-            ease: "power1.out"
-        });
-    }
-
-    $(document).ready(function() {
-        $('.hamburger-menu-wrapper').click(function() {
-            var $navMenu = $('.w-nav-menu');
-            $navMenu.toggle();
-            $(this).toggleClass('w--open');
-
-            if ($navMenu.is(':visible')) {
-                $('.header-content-wrapper').css('display', 'none');
-                $('.w-nav').css('background-color', '#050a11');
-                $('.container-default').css('padding-top', '0px');
-                disableScroll();
-            } else {
-                enableScroll();
-            }
-        });
-    });
-
-    $(document).ready(function() {
-        $(window).on("scroll", function() {
-            if ($(window).scrollTop() >= 30) {
-                $(".header-wrapper").addClass("with-effect");
-            } else {
-                $(".header-wrapper").removeClass("with-effect");
-            }
-        });
-    });
-
-    function disableScroll() {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-        window.onscroll = function() {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
-        document.body.classList.add('scroll-lock');
-    }
-
-    function enableScroll() {
-        window.onscroll = null;
-        document.body.classList.remove('scroll-lock');
-    }
-
-    const casesGrid = document.querySelector(".cases-grid");
-    const casesList = document.querySelector(".cases-list");
-
-    function showList() {
-        casesList.style.display = "flex";
-        casesGrid.style.display = "none";
-    }
-
-    function showGrid() {
-        casesList.style.display = "none";
-        casesGrid.style.display = "grid";
-    }
-</script>
 
 </html>
