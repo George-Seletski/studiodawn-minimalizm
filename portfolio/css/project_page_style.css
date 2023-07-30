@@ -337,6 +337,10 @@ fieldset {
     padding: 0;
 }
 
+button {
+    background-color: transparent;
+}
+
 button,
 [type="button"],
 [type="reset"] {
