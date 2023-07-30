@@ -481,26 +481,6 @@
                 }
             });
 
-            $('.h-scroll__section').each(function(index) {
-                let triggerElement = $(this);
-                let targetElement = triggerElement.find('.sticker');
-                if (targetElement) {
-                    let tl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: targetElement,
-                            horizontal: true,
-                            scroller: scrollContainer,
-                            start: "0 95%",
-                            end: "0 80%",
-                        }
-                    });
-                    tl.from(targetElement, {
-                        scale: 0,
-                        ease: Elastic.easeOut.config(1, 0.4),
-                        duration: 0.6
-                    }, 0.5);
-                }
-            });
 
             fitty('.services__item', {
                 maxSize: 100
@@ -518,9 +498,7 @@
                 }
             });
 
-            gsap.to($('.case--bg'), {
-                visibility: 'visible'
-            });
+
 
             let collageImages = gsap.utils.toArray(".collage__img");
 
@@ -641,7 +619,7 @@
                 y: '-=50%'
             });
             gsap.to($('.client-grid__col:nth-child(2)'), {
-                y: '+=30%',
+                y: '+=50%',
                 scrollTrigger: {
                     trigger: $('.client-grid'),
                     horizontal: true,
@@ -772,7 +750,7 @@
                         locoScroll.update();
 
                     });
-                }, 500);
+                }, 1000);
 
             }
 
