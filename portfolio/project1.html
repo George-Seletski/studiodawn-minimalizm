@@ -410,7 +410,7 @@
             locoScroll = new LocomotiveScroll({
                 el: scrollContainer,
                 smooth: true,
-                multiplier: 1,
+                multiplier: 3,
                 direction: 'horizontal',
                 reloadOnContextChange: false,
                 touchMultiplier: 3,
@@ -468,18 +468,7 @@
 
 
 
-            gsap.to(".sticker.sticker-scroll", {
-                rotation: 360 * 2,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: $(".sticker.sticker-scroll"),
-                    horizontal: true,
-                    scroller: scrollContainer,
-                    start: "0 82%",
-                    end: "0 -20%",
-                    scrub: 0.01
-                }
-            });
+
 
 
             fitty('.services__item', {
@@ -493,7 +482,7 @@
                     horizontal: true,
                     scroller: scrollContainer,
                     start: "0 120%",
-                    end: "0 -50%",
+                    end: "0 -100%",
                     scrub: 0.5
                 }
             });
@@ -616,10 +605,10 @@
                 }
             });
             gsap.set($('.client-grid__col:nth-child(2)'), {
-                y: '-=50%'
+                y: '-=100%'
             });
             gsap.to($('.client-grid__col:nth-child(2)'), {
-                y: '+=50%',
+                y: '+=100%',
                 scrollTrigger: {
                     trigger: $('.client-grid'),
                     horizontal: true,
@@ -750,7 +739,7 @@
                         locoScroll.update();
 
                     });
-                }, 1000);
+                }, 1);
 
             }
 
@@ -765,7 +754,7 @@
 
             locoScroll = new LocomotiveScroll({
                 el: scrollContainer,
-                smooth: true,
+
                 multiplier: 1,
                 resetNativeScroll: false,
                 reloadOnContextChange: false,
@@ -905,7 +894,7 @@
                     tl.to(section, {
                         opacity: 0,
                         y: -50,
-                        duration: 0.3,
+                        duration: 0.1,
                         ease: Power4.easeOut,
                     }, "s" + blockCount);
 
