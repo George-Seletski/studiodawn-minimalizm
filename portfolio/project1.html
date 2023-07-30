@@ -468,7 +468,39 @@
 
 
 
+            gsap.to(".sticker.sticker-scroll", {
+                rotation: 360 * 2,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: $(".sticker.sticker-scroll"),
+                    horizontal: true,
+                    scroller: scrollContainer,
+                    start: "0 82%",
+                    end: "0 -20%",
+                    scrub: 0.01
+                }
+            });
 
+            $('.h-scroll__section').each(function(index) {
+                let triggerElement = $(this);
+                let targetElement = triggerElement.find('.sticker');
+                if (targetElement) {
+                    let tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: targetElement,
+                            horizontal: true,
+                            scroller: scrollContainer,
+                            start: "0 95%",
+                            end: "0 80%",
+                        }
+                    });
+                    tl.from(targetElement, {
+                        scale: 0,
+                        ease: Elastic.easeOut.config(1, 0.4),
+                        duration: 0.6
+                    }, 0.5);
+                }
+            });
 
             fitty('.services__item', {
                 maxSize: 100
@@ -481,12 +513,14 @@
                     horizontal: true,
                     scroller: scrollContainer,
                     start: "0 120%",
-                    end: "0 -100%",
+                    end: "0 -50%",
                     scrub: 0.5
                 }
             });
 
-
+            gsap.to($('.case--bg'), {
+                visibility: 'visible'
+            });
 
             let collageImages = gsap.utils.toArray(".collage__img");
 
@@ -604,10 +638,10 @@
                 }
             });
             gsap.set($('.client-grid__col:nth-child(2)'), {
-                y: '-=100%'
+                y: '-=50%'
             });
             gsap.to($('.client-grid__col:nth-child(2)'), {
-                y: '+=100%',
+                y: '+=30%',
                 scrollTrigger: {
                     trigger: $('.client-grid'),
                     horizontal: true,
@@ -738,7 +772,7 @@
                         locoScroll.update();
 
                     });
-                }, 1);
+                }, 500);
 
             }
 
@@ -753,7 +787,7 @@
 
             locoScroll = new LocomotiveScroll({
                 el: scrollContainer,
-
+                smooth: true,
                 multiplier: 1,
                 resetNativeScroll: false,
                 reloadOnContextChange: false,
@@ -893,7 +927,7 @@
                     tl.to(section, {
                         opacity: 0,
                         y: -50,
-                        duration: 0.1,
+                        duration: 0.3,
                         ease: Power4.easeOut,
                     }, "s" + blockCount);
 
