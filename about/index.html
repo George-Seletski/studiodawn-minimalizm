@@ -13,6 +13,268 @@
     <script src="../js/gsap.min.js"></script>
     <script src="../js/ScrollTriger.js"></script>
 </head>
+<style>
+    *,
+     :after,
+     :before {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box
+    }
+    
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+    
+    article,
+    aside,
+    figcaption,
+    figure,
+    main,
+    section {
+        display: block
+    }
+    
+    body {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+        background-color: #f9f4f4;
+    }
+    
+    .main {
+        position: relative;
+        min-height: 100vh;
+        display: block;
+    }
+    
+    @media screen and (max-width: 1199px) {
+        .no-gl .main {
+            padding-bottom: 5vmin !important
+        }
+    }
+    
+    @media screen and (min-width: 769px) {
+        .main {
+            padding-top: 62px
+        }
+    }
+    
+    @media screen and (max-width: 991px) {
+        .main-grid {
+            justify-content: center !important;
+        }
+        .image-container {
+            margin: 0px !important;
+        }
+        .main-grid__column:first-child {
+            margin-top: 0 !important;
+        }
+        .main-grid__column:nth-child(2) {
+            margin-top: 0 !important;
+        }
+        .main-grid__column:nth-child(3) {
+            margin-top: 0 !important;
+        }
+    }
+    
+    @media (max-width: 478px) {
+        .image-container {
+            margin: 0px !important;
+        }
+        .main-grid__column:first-child {
+            margin-top: 0 !important;
+        }
+        .main-grid__column:nth-child(2) {
+            margin-top: 0 !important;
+        }
+        .main-grid__column:nth-child(3) {
+            margin-top: 0 !important;
+        }
+        .team-header-text>h1 {
+            font-size: 1.3em !important;
+        }
+    }
+    
+    @media (-o-min-device-pixel-ratio: 2/1) and (min-width:1201px),
+    (-webkit-min-device-pixel-ratio:2) and (min-width:1201px),
+    (min-resolution:2dppx) and (min-width:1201px),
+    (min-resolution:192dpi) and (min-width:1201px) {
+        .main {
+            padding-top: 70px
+        }
+    }
+    
+    .no-gl .hero-title--home {
+        margin-top: 0px;
+    }
+    
+    .hero-title__svg {
+        margin-top: 29px;
+        margin-left: -20px;
+        width: calc(100% + 20px);
+    }
+    
+    .main-grid {
+        padding-bottom: 20vmin;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: transparent;
+        padding: 0 25px;
+        margin-top: 100vh;
+        will-change: transform;
+        position: relative;
+        justify-content: space-between;
+    }
+    
+    .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    
+    .main-grid__column:first-child {
+        margin-top: -65px;
+        background-color: transparent;
+    }
+    
+    .main-grid__column:nth-child(2) {
+        margin-top: -294px;
+        background-color: transparent;
+    }
+    
+    .main-grid__column:nth-child(3) {
+        margin-top: 27px;
+        background-color: transparent;
+    }
+    /* Add space between each main-grid__column (section) */
+    
+    .main-grid__column {
+        margin-bottom: 20px;
+        /* Adjust this value to control the space between sections */
+    }
+    /* Optional: Add space between each image container within the main-grid__column */
+    
+    .image-container {
+        margin-bottom: 250px;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    .team__title {
+        text-align: center;
+        text-transform: uppercase;
+        padding-left: 1rem;
+        padding-right: 6px;
+        line-height: 1em;
+    }
+    
+    #team-img {
+        transition: transform 0.5s;
+        display: block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+    
+    .team-cardinfo {
+        position: relative;
+        width: 100%;
+        margin-top: -32px;
+        top: auto;
+        bottom: 6rem;
+        left: 0%;
+        right: auto;
+    }
+    /*Title*/
+    
+    .about-main-section {
+        z-index: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: relative;
+        background-color: #f9f4f4;
+        margin-top: 70em;
+        margin-bottom: 15em;
+        /*height: 1600px;*/
+        width: 100%;
+    }
+    
+    .team-section {
+        z-index: auto;
+        float: none;
+        display: block;
+        margin: 0;
+        inset: auto;
+        position: absolute;
+        overflow: visible;
+        box-sizing: border-box;
+        padding: 0px;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .vscroll__section {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1.5em;
+        line-height: 1;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .team-header-text {
+        align-items: center;
+        position: relative;
+        inset: 0px auto auto 0px;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        font-family: 'Roboto Thin', sans-serif;
+        transform: translateY(0%);
+    }
+    
+    .mb-bottom---10px {
+        margin-bottom: 10px;
+        display: block;
+        margin-top: 35px;
+    }
+    /*Media Queries*/
+    
+    @media (min-width: 576px) {
+        .col-md-6 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+            max-width: 75%
+        }
+    }
+    
+    @media (min-width: 992px) {
+        .col-lg-2 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+        .offset-lg-1 {
+            margin-left: 12.5%;
+        }
+    }
+    
+    .pb-2 {
+        padding-bottom: 2em;
+    }
+</style>
 
 <body>
 
@@ -183,7 +445,9 @@
 
         </div>
 
-        <!--<main class="about-main-section">
+
+        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" data-barba="container" data-barba-namespace="home">
+
             <div class="header-section-content  team-section ">
                 <div class="vscroll__section">
                     <div class="team-header-text">
@@ -194,77 +458,115 @@
                     </div>
                 </div>
             </div>
-            <div class="team-gallery">
-                <section></section>
-                <section></section>
-                <section></section>
-                <div class="image-container">
-                    <div class="team__image-wrap">
-                        <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                    </div>
-                    <div class="team-cardinfo">
-                        <div class="team__title">
-                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
-                        </div>
-                    </div>
-                </div>
-                <div class="image-container">
-                    <div class="team__image-wrap">
-                        <img id="team-img" src="team/main.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                    </div>
-                    <div class="team-cardinfo">
-                        <div class="team__title">
-                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
-                        </div>
-                    </div>
-                </div>
-                <div class="image-container">
-                    <div class="team__image-wrap">
-                        <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                    </div>
-                    <div class="team-cardinfo">
-                        <div class="team__title">
-                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
-                        </div>
-                    </div>
-                </div>
 
-                <div class="image-container">
-                    <div class="team__image-wrap">
-                        <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                    </div>
-                    <div class="team-cardinfo">
-                        <div class="team__title">
-                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+            <section class="main-grid row " data-component="HomepageGrid" style="opacity: 1; visibility: inherit;">
+                <section class="main-grid__column  col-md-6 col-lg-2">
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="image-container">
-                    <div class="team__image-wrap">
-                        <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                    </div>
-                    <div class="team-cardinfo">
-                        <div class="team__title">
-                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="image-container">
-                    <div class="team__image-wrap">
-                        <img id="team-img" src="team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                    </div>
-                    <div class="team-cardinfo">
-                        <div class="team__title">
-                            Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                </section>
+                <section class="main-grid__column  offset-lg-1 col-md-6 col-lg-2">
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section class="main-grid__column  offset-lg-1 col-md-6 col-lg-2">
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="image-container">
+                            <div class="team__image-wrap">
+                                <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            </div>
+                            <div class="team-cardinfo">
+                                <div class="team__title">
+                                    Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <div class="team__image-wrap">
+                                <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            </div>
+                            <div class="team-cardinfo">
+                                <div class="team__title">
+                                    Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                                </div>
+                            </div>
+                        </div>
 
 
+                </section>
+            </section>
 
-            </div>
 
-        </main>-->
+        </main>
+
 
         <div class="brands-section">
             <div class="brands-section-header">
@@ -318,7 +620,7 @@
                 </h1>
 
             </div>
-            <div class="bottom-text-header">
+            <div class="bottom-text-header pb-2">
                 <a href="../portfolio/" target="_blank" rel="noopener noreferrer">
                     <div class="button">
                         <span>
@@ -332,62 +634,62 @@
         </div>
 
 
-    </div>
 
-    <footer>
-        <div class="text-header">
-            <div class="footer-header">
-                <h2>Get in touch</h2>
-            </div>
-        </div>
-        <div class="footer-links">
-            <div class="footer-fnt link-email">
-                <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
-            </div>
-            <div class="footer-fnt link-email">
-                <a href="tel:+421905455208">+421 905 455 208</a>
-            </div>
-        </div>
-        <div class="licence-container">
-            <ul class="licence-container-list">
-                <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
-                <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
-                <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
-            </ul>
-        </div>
-        <div class="icon-box">
 
-            <div class="language-icon">
-                <div id="language-icon-circle">
-                    <div class="svg-icon">
+        <footer>
+            <div class="text-header">
+                <div class="footer-header">
+                    <h2>Get in touch</h2>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-fnt link-email">
+                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                </div>
+                <div class="footer-fnt link-email">
+                    <a href="tel:+421905455208">+421 905 455 208</a>
+                </div>
+            </div>
+            <div class="licence-container">
+                <ul class="licence-container-list">
+                    <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
+                    <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
+                    <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
+                </ul>
+            </div>
+            <div class="icon-box">
 
+                <div class="language-icon">
+                    <div id="language-icon-circle">
+                        <div class="svg-icon">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="icons">
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="icons">
-                <div class="wh-30">
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                        <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
-                    </a>
-                </div>
-                <div class="wh-30">
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                        <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
-                    </a>
-                </div>
-                <div class="wh-30">
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                        <img src="../icons/behance.svg" id="icon" alt="" srcset="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
 </body>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    $(document).ready(function() {
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
@@ -407,7 +709,7 @@
                     customCursor.classList.add("custom-cursor--link");
                 });
 
-                link.addEventListener("mouseout", () => {
+                link.addEventListener("mouseout", (event) => {
                     customCursor.classList.remove("custom-cursor--link");
                     // Add a slight delay to prevent cursor flickering on hover-out
                     setTimeout(() => {
@@ -416,38 +718,95 @@
                     }, 50);
                 });
             });
+
+            // Team Cards Effect
+            const cards = document.querySelectorAll('.image-container');
+            cards.forEach((card) => {
+                card.addEventListener('mousemove', (event) => {
+                    const cardWidth = card.offsetWidth;
+                    const cursorPosition = event.pageX - card.offsetLeft;
+
+                    if (cursorPosition > cardWidth / 2) {
+                        card.style.transform = `translateY(0%) rotate(15deg)`;
+                    } else {
+                        card.style.transform = `translateY(0%) rotate(-15deg)`;
+                    }
+
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    card.style.transform = 'translateY(0%)';
+                });
+            });
+
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.to('.image-container', {
+                scrollTrigger: {
+                    trigger: '.image-container',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                y: '0%',
+                onComplete: function() {
+                    cards.forEach((card) => {
+                        card.style.transform = 'translateY(0%)'; // Reset the translateY value after the animation completes
+                    });
+                }
+            });
+
+            const mainGrid = document.querySelector(".team-header-text");
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: mainGrid,
+                    pin: true,
+                    start: "top top",
+                    end: "+=3000", // End the animation when the bottom of mainGrid is at the center of the viewport
+                    scrub: true, // Makes the animation follow the scrolling more smoothly
+
+                }
+            });
+
         } else {
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
+
+            const mainGrid = document.querySelector(".team-header-text");
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: mainGrid,
+                    pin: true,
+                    start: 'bottom bottom',
+                    end: "+=8700", // End the animation when the bottom of mainGrid is at the center of the viewport
+                    scrub: true, // Makes the animation follow the scrolling more smoothly
+                }
+            });
         }
 
+        $('.hamburger-menu-wrapper').click(function() {
+            var $navMenu = $('.w-nav-menu');
+            $navMenu.toggle();
+            $(this).toggleClass('w--open');
 
-        $(document).ready(function() {
-            $('.hamburger-menu-wrapper').click(function() {
-                var $navMenu = $('.w-nav-menu');
-                $navMenu.toggle();
-                $(this).toggleClass('w--open');
-
-                // Disable scroll when menu is open
-                if ($navMenu.is(':visible')) {
-                    $('.header-content-wrapper').css('display', 'none');
-                    $('.w-nav').css('background-color', '#050a11');
-                    $('.container-default').css('padding-top', '0px');
-                    disableScroll();
-                } else {
-                    enableScroll();
-                }
-            });
+            // Disable scroll when menu is open
+            if ($navMenu.is(':visible')) {
+                $('.header-content-wrapper').css('display', 'none');
+                $('.w-nav').css('background-color', '#050a11');
+                $('.container-default').css('padding-top', '0px');
+                disableScroll();
+            } else {
+                enableScroll();
+            }
         });
 
-        $(document).ready(function() {
-            $(window).on("scroll", function() {
-                if ($(window).scrollTop() >= 30) {
-                    $(".header-wrapper").addClass("with-effect");
-                } else {
-                    $(".header-wrapper").removeClass("with-effect");
-                }
-            });
+        $(window).on("scroll", function() {
+            if ($(window).scrollTop() >= 30) {
+                $(".header-wrapper").addClass("with-effect");
+            } else {
+                $(".header-wrapper").removeClass("with-effect");
+            }
         });
 
         // Disable scroll
@@ -468,6 +827,7 @@
             window.onscroll = null;
             document.body.classList.remove('scroll-lock');
         }
+
         // GSAP animation
         const revealAnimation = gsap.timeline();
 
@@ -478,53 +838,26 @@
 
         // Define the animation
         revealAnimation.from(".garamond-font", {
-                opacity: 0,
-                y: 20,
-                duration: 0.9,
-                delay: 1
-            })
-            .from(".mr-55", {
-                opacity: 0,
-                y: 20,
-                duration: 0.8
-            }, "-=0.5");
+            opacity: 0,
+            y: 20,
+            duration: 0.9,
+            delay: 1
+        }).from(".mr-55", {
+            opacity: 0,
+            y: 20,
+            duration: 0.8
+        }, "-=0.5");
+
+        revealAnimation.from(".fw-500", {
+            opacity: 0,
+            y: 20,
+            duration: 0.9,
+            delay: 1
+        }, "-=0.5")
 
 
-        // Team Cards Effect
-        const cards = document.querySelectorAll('.image-container');
-        cards.forEach((card) => {
-            card.addEventListener('mousemove', (event) => {
-                const cardWidth = card.offsetWidth;
-                const cursorPosition = event.pageX - card.offsetLeft;
 
-                if (cursorPosition > cardWidth / 2) {
-                    card.style.transform = `translateY(0%) rotate(15deg)`;
-                } else {
-                    card.style.transform = `translateY(0%) rotate(-15deg)`;
-                }
 
-            });
-
-            card.addEventListener('mouseleave', function() {
-                card.style.transform = 'translateY(0%)';
-            });
-        });
-
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to('.image-container', {
-            scrollTrigger: {
-                trigger: '.image-container',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true
-            },
-            y: '0%',
-            onComplete: function() {
-                cards.forEach((card) => {
-                    card.style.transform = 'translateY(0%)'; // Reset the translateY value after the animation completes
-                });
-            }
-        });
     });
 </script>
 
