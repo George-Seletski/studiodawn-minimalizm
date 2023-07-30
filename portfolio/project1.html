@@ -425,10 +425,10 @@
                 }
             });
 
-            locoScroll.on("scroll", ScrollTrigger.update);
+            // Move the pinType check outside the if-else block
+            const pinType = scrollContainer.style.transform ? "transform" : "fixed";
 
             if (screenWidth > 991) {
-                // ScrollProxy tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
                 ScrollTrigger.scrollerProxy(scrollContainer, {
                     scrollLeft(value) {
                         if (arguments.length) {
@@ -444,9 +444,7 @@
                             height: window.innerHeight
                         };
                     },
-                    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-                    pinType: scrollContainer.style.transform ? "transform" : "fixed"
-
+                    pinType // Use the pinType variable here
                 });
             } else {
                 ScrollTrigger.scrollerProxy(scrollContainer, {
@@ -461,10 +459,10 @@
                             height: window.innerHeight
                         };
                     },
-                    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-                    pinType: scrollContainer.style.transform ? "transform" : "fixed"
+                    pinType // Use the pinType variable here
                 });
             }
+
 
 
 
