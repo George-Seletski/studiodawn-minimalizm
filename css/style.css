@@ -736,12 +736,12 @@
         background-color: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(8px);
         position: absolute;
-        top: 50%;
+        top: calc(54vh);
         left: 50%;
         transform: translate(-50%, -50%);
     }
     
-    #play-buttton-icon {
+    #play-button-icon {
         width: 50px;
         height: 50px;
     }
@@ -1626,6 +1626,23 @@
         padding: 0;
     }
     
+    @media screen and (min-width:1921px) {
+        .play-button {
+            top: calc(40vh);
+            padding: 6em;
+        }
+        #play-buttton-icon {
+            width: 60px;
+            height: 60px;
+        }
+        .description {
+            font-size: 1.8em;
+        }
+        .video-container {
+            margin: 2.5em 35em;
+        }
+    }
+    
     @media screen and (max-width: 1400px) {
         .contact-section {
             height: 100vh !important;
@@ -1673,7 +1690,7 @@
             padding-top: 0.5em;
         }
         .play-button {
-            top: 55%;
+            top: calc(54vh);
         }
         .text-header>span {
             padding: 50px 9em;
@@ -1820,7 +1837,7 @@
             height: 100%;
         }
         .play-button {
-            top: 67%;
+            top: 68%;
         }
         .row-container {
             flex-direction: column;
@@ -2096,7 +2113,7 @@
             width: 100%;
         }
         .play-button {
-            top: 34%;
+            top: calc(54vh);
         }
         .text-header>span {
             text-align: left;
@@ -2206,6 +2223,16 @@
     }
     
     @media screen and (max-width: 479px) {
+        .filter-list>li>a {
+            font-size: 16px !important;
+        }
+        .header-content-wrapper>.icons {
+            gap: 0;
+        }
+        .navbar-icon {
+            width: 22px !important;
+            height: 22px;
+        }
         .custom-cursor {
             opacity: 0;
             background-color: unset;
@@ -2244,7 +2271,7 @@
         }
         .play-button {
             padding: 1.25em;
-            top: 85%;
+            top: 84%;
         }
         #play-buttton-icon {
             width: 30px;
@@ -2364,13 +2391,30 @@
         }
         .filter-container {
             display: flex;
-            flex-direction: column;
-            gap: 60px;
+            gap: 0px;
         }
         .portfolio-header-text {
             width: 300px;
             font-size: 1em !important;
             margin: 0 2em;
+        }
+        .icons-view {
+            height: fit-content;
+        }
+        #grid-view-icon {
+            width: 35px;
+        }
+        #list-view-icon {
+            width: 39px;
+        }
+        #list-1 {
+            width: 10em;
+        }
+        #list-2 {
+            width: 8em;
+        }
+        #list-3 {
+            width: auto !important;
         }
         .cases-grid {
             column-count: 2;
@@ -2443,7 +2487,7 @@
             margin-left: 4em;
             margin-right: 4em;
             position: relative;
-            gap: 0px;
+            gap: 2em;
             margin-top: 7em;
         }
         .columns-container>div {

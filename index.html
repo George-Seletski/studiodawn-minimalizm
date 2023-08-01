@@ -81,12 +81,12 @@
 
                 <div class="header-right-col">
                     <nav role="navigation" class="w-nav-menu">
-                        <div class="w-nav-button btn-close-wrppaer">
+                        <!-- <div class="w-nav-button btn-close-wrppaer">
 
                             <div class="button-close ">
                                 <img src="./icons/arrow-left-black.svg" alt="" srcset="">
                             </div>
-                        </div>
+                        </div>-->
                         <div class="menu container-default-center">
 
                             <div class="w-container">
@@ -220,7 +220,7 @@
                 <div class="video-container">
                     <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
                         <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
-                            <img id='play-buttton-icon' src="./icons/play-svg.svg" alt="play video">
+                            <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
                         </div>
                         <img class="gif-animation" src="video/video-tmp.gif" alt="video">
                     </div>
@@ -235,15 +235,14 @@
                                         </div>
                                     </div>
 
-                                    <!-- Add a cache-busting query parameter to the video URL -->
+                                    <!-- The video element -->
                                     <video id="myVideo" class="myVideo hide" controls>
                                     <source
-                                        src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4?v=1"
+                                        src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4"
                                         type="video/mp4"
                                     >
                                     Your browser does not support the video tag.
                                 </video>
-                                    <iframe class="youTube hide" src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4?v=1" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -423,6 +422,7 @@
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
         }
+
 
         // GSAP TimelineMax for animations
         const timeline = gsap.timeline();
