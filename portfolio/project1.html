@@ -12,7 +12,7 @@
     <script src="../js/ScrollTriger.js"></script>
     <script src="../js/gsap.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
 </head>
 <style>
     html {
@@ -302,7 +302,8 @@
                     </section>
                     <section class="h-scroll__section story-content">
                         <div class="story__wrap">
-                            <div class="story__block" style="transform: translate(0px, 0px);"><img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder.png" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-500.png 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-800.png 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-1080.png 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-1600.png 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder.png 1920w"
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder.png" loading="eager" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-500.png 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-800.png 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-1080.png 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder-p-1600.png 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/622b4913d1430db5dbead264_hdweb_placeholder.png 1920w"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 100vw" alt="Placeholder image" class="vid-placeholder">
                                 <div class="story__video w-embed w-iframe"><iframe loading="" src="https://player.vimeo.com/video/746522806?h=cbdbdcdccd?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203" frameborder="0"
                                         webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe></div>
@@ -460,21 +461,6 @@
             }
 
 
-
-
-            gsap.to(".sticker.sticker-scroll", {
-                rotation: 360 * 2,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: $(".sticker.sticker-scroll"),
-                    horizontal: true,
-                    scroller: scrollContainer,
-                    start: "0 82%",
-                    end: "0 -20%",
-                    scrub: 0.01
-                }
-            });
-
             $('.h-scroll__section').each(function(index) {
                 let triggerElement = $(this);
                 let targetElement = triggerElement.find('.sticker');
@@ -496,56 +482,7 @@
                 }
             });
 
-            fitty('.services__item', {
-                maxSize: 100
-            });
 
-            gsap.to(".services__list", {
-                y: '-100%',
-                scrollTrigger: {
-                    trigger: $(".services"),
-                    horizontal: true,
-                    scroller: scrollContainer,
-                    start: "0 120%",
-                    end: "0 -50%",
-                    scrub: 0.5
-                }
-            });
-
-            gsap.to($('.case--bg'), {
-                visibility: 'visible'
-            });
-
-            let collageImages = gsap.utils.toArray(".collage__img");
-
-            let imageCollage = gsap.timeline({
-                repeat: -1,
-                repeatDelay: 1,
-                repeatRefresh: true
-            });
-            collageImages.forEach((image, i) => {
-                imageCollage.set(image, {
-                    scale: 1,
-                    autoAlpha: 0,
-                    left: '50%',
-                    x: '-50%'
-                });
-
-            });
-            imageCollage.to(collageImages, {
-                rotation: function() {
-                    return getRand(-20, 20)
-                },
-                duration: 0
-            });
-            imageCollage.to(collageImages, {
-                autoAlpha: 1,
-                duration: 0.1,
-
-                stagger: {
-                    each: 1
-                }
-            });
 
 
             $('.case__item').each(function(index) {
@@ -725,7 +662,7 @@
 
 
             if (locoScroll.scroll.direction == 'horizontal') {
-
+                locoScroll.update();
                 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
                 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
@@ -776,7 +713,7 @@
 
         if ($('.v-scroll').length > 0) {
 
-
+            locoScroll.update();
             const scrollContainer = document.querySelector(".v-scroll");
 
             locoScroll = new LocomotiveScroll({
