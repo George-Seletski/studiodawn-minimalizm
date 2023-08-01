@@ -368,7 +368,9 @@
     document.addEventListener("DOMContentLoaded", function() {
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
         screenWidth = $(window).width();
+
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
             // Add custom cursor functionality for non-touch devices
@@ -728,59 +730,54 @@
             }
 
 
-            if (locoScroll.scroll.direction == 'horizontal') {
-
-                // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+            // Check if LocomotiveScroll is used for horizontal scrolling
+            if (locoScroll.scroll.direction === 'horizontal') {
+                // Refresh ScrollTrigger and update LocomotiveScroll whenever the window is updated
                 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-                // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
                 ScrollTrigger.refresh();
 
-                contentAnimation(scrollContainer, true);
-
-                $(window).on('resize', function() {
+                // Function to calculate and update the container width when the window is resized
+                function updateContainerWidth() {
                     let containerW = 0;
                     $('.h-scroll__section').each(function(index) {
-
                         let sectionW = $(this).outerWidth();
-
-                        containerW = Math.ceil(parseInt(containerW + sectionW + 1.5));
-
+                        containerW += Math.ceil(sectionW + 1.5);
                     });
 
                     $('.h-scroll__inview').width(containerW);
                     locoScroll.update();
-                });
+                }
 
+                // Call the updateContainerWidth function when the window is resized
+                $(window).on('resize', updateContainerWidth);
 
+                // Trigger a window resize event after images are loaded to handle layout changes
                 imagesLoaded(scrollContainer, function() {
-
                     window.dispatchEvent(new Event('resize'));
-
                 });
 
+                // Call the updateContainerWidth function initially to set the correct container width
+                updateContainerWidth();
             } else {
+                // If vertical scrolling, call contentAnimation without passing the second argument
+                contentAnimation(scrollContainer);
 
-                contentAnimation(scrollContainer, false);
-
+                // Update LocomotiveScroll after images are loaded and 500ms delay
                 setTimeout(function() {
                     imagesLoaded(scrollContainer, {
                         background: true
                     }, function() {
                         locoScroll.update();
-
                     });
                 }, 500);
-
             }
+
 
         } // End home page
         ///////////////////////////////////////////////////////////////////////////////
         // Start vertical scroll
 
         if ($('.v-scroll').length > 0) {
-
-
             const scrollContainer = document.querySelector(".v-scroll");
 
             locoScroll = new LocomotiveScroll({
@@ -819,6 +816,7 @@
                 // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
                 pinType: scrollContainer.style.transform ? "transform" : "fixed"
             });
+
             // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
             ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
@@ -826,8 +824,6 @@
             ScrollTrigger.refresh();
 
             if ($('.process').length > 0) {
-
-
                 gsap.set($('.process'), {
                     height: '100vh'
                 });
@@ -898,62 +894,61 @@
                     currentSection = sections[0];
                 let titlesfirst = document.querySelector(".process__title-first");
 
-            }
-            // create a ScrollTrigger for each section
-            sections.forEach((section, i) => {
+                // create a ScrollTrigger for each section
+                sections.forEach((section, i) => {
 
-                gsap.set(section, {
-                    position: 'absolute'
-                });
-                let blockCount = i + 1;
+                    gsap.set(section, {
+                        position: 'absolute'
+                    });
+                    let blockCount = i + 1;
 
-                tl.addLabel("s" + blockCount, blockCount);
+                    tl.addLabel("s" + blockCount, blockCount);
 
-                tl.fromTo(section, {
-                    opacity: 0,
-                    y: 50
-                }, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.3,
-                    ease: Power4.easeOut,
-                }, "s" + blockCount + "-=0.7");
-
-
-                if (blockCount != 4) {
-
-                    tl.to(section, {
+                    tl.fromTo(section, {
                         opacity: 0,
-                        y: -50,
+                        y: 50
+                    }, {
+                        y: 0,
+                        opacity: 1,
                         duration: 0.3,
                         ease: Power4.easeOut,
-                    }, "s" + blockCount);
+                    }, "s" + blockCount + "-=0.7");
 
-                }
+                    if (blockCount != 4) {
 
-            });
+                        tl.to(section, {
+                            opacity: 0,
+                            y: -50,
+                            duration: 0.3,
+                            ease: Power4.easeOut,
+                        }, "s" + blockCount);
 
-            let titles = gsap.utils.toArray(".process__title-sub");
+                    }
 
-            titles.forEach((title, i) => {
+                });
 
-                let blockCount = i + 1;
+                let titles = gsap.utils.toArray(".process__title-sub");
 
-                tl.to(title, {
-                    y: '-=100%',
-                    duration: 0.3,
-                    ease: Power4.easeOut,
-                }, "s" + blockCount + "-=0.7");
+                titles.forEach((title, i) => {
 
-                if (blockCount != 4) {
+                    let blockCount = i + 1;
+
                     tl.to(title, {
-                        y: '-=200%',
+                        y: '-=100%',
                         duration: 0.3,
                         ease: Power4.easeOut,
-                    }, "s" + blockCount);
-                }
+                    }, "s" + blockCount + "-=0.7");
 
-            });
+                    if (blockCount != 4) {
+                        tl.to(title, {
+                            y: '-=200%',
+                            duration: 0.3,
+                            ease: Power4.easeOut,
+                        }, "s" + blockCount);
+                    }
+
+                });
+            }
         }
     });
 </script>
