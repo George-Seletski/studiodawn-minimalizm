@@ -367,14 +367,8 @@
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
         // Check the current web page width
         let screenWidth = $(window).width();
-        console.log("Current web page width: ", screenWidth);
 
-        // Event listener to handle window resize
-        window.addEventListener("resize", function() {
-            // Update the screenWidth when the window is resized
-            screenWidth = $(window).width();
-            console.log("New web page width: ", screenWidth);
-        });
+
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
             // Add custom cursor functionality for non-touch devices
@@ -434,37 +428,18 @@
             const pinType = scrollContainer.style.transform ? "transform" : "fixed";
 
             if (screenWidth > 991) {
-                ScrollTrigger.scrollerProxy(scrollContainer, {
-                    scrollLeft(value) {
-                        if (arguments.length) {
-                            locoScroll.scroll.instance.scroll.x = value;
-                        }
-                        return locoScroll.scroll.instance.scroll.x;
-                    },
-                    getBoundingClientRect() {
-                        return {
-                            top: 0,
-                            left: 0,
-                            width: window.innerWidth,
-                            height: window.innerHeight
-                        };
-                    },
-                    pinType // Use the pinType variable here
+                // Use LocomotiveScroll methods for horizontal scroll control
+                scrollContainer.addEventListener("scroll", () => {
+                    locoScroll.scroll.instance.scroll.x = scrollContainer.scrollLeft;
+                });
+
+                window.addEventListener("resize", () => {
+                    locoScroll.update();
                 });
             } else {
-                ScrollTrigger.scrollerProxy(scrollContainer, {
-                    scrollTop(value) {
-                        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-                    },
-                    getBoundingClientRect() {
-                        return {
-                            top: 0,
-                            left: 0,
-                            width: window.innerWidth,
-                            height: window.innerHeight
-                        };
-                    },
-                    pinType // Use the pinType variable here
+                // Use LocomotiveScroll methods for vertical scroll control
+                window.addEventListener("scroll", () => {
+                    locoScroll.scrollTo(window.scrollY, 0, 0);
                 });
             }
 
@@ -668,9 +643,10 @@
 
             }
 
-
+            console.log(str(locoScroll));
             if (locoScroll.scroll.direction == 'horizontal') {
                 locoScroll.update();
+
                 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
                 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
