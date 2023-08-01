@@ -1612,7 +1612,6 @@
         display: flex;
         position: relative;
         overflow: hidden;
-        background-color: #f9f4f4;
         overflow-x: hidden;
         width: 100%;
         height: 100%;
@@ -1635,6 +1634,17 @@
         }
         .video-container {
             margin: 2.5em 35em;
+        }
+    }
+    
+    @media screen and (min-width:1400px) {
+        .columns-container {
+            gap: 30px;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+        .columns-container>div {
+            padding: 0px;
         }
     }
     
