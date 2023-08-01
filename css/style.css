@@ -905,7 +905,7 @@
     .brands-container {
         flex-direction: row;
         display: flex;
-        gap: 10em;
+        gap: 5em;
         flex-wrap: wrap;
         width: 100%;
     }
@@ -1378,13 +1378,10 @@
     .team-header-text {
         align-items: center;
         position: relative;
-        transform: translate(0px, 112px);
+        transform: translate(0px, 0px);
         inset: 0px auto auto 0px;
         margin: 0px;
-        max-width: 2114.44px;
-        width: 2114.44px;
-        max-height: 666.667px;
-        height: 666.667px;
+        width: 100%;
         padding: 0px;
     }
     
@@ -1400,7 +1397,7 @@
         position: relative;
         overflow: visible;
         box-sizing: border-box;
-        width: 2114px;
+        width: 100%;
         height: 667px;
         padding: 0px;
     }
@@ -1412,7 +1409,7 @@
         column-gap: 10px;
         margin: auto;
         background-color: transparent;
-        z-index: 999;
+        z-index: 99;
     }
     
     .team-cardinfo {
@@ -1426,7 +1423,7 @@
     }
     
     .vscroll__section {
-        margin-top: -50vh;
+        margin-top: -10vh;
         padding-left: 0;
         padding-right: 0;
         font-size: 1.5em;
@@ -2348,11 +2345,12 @@
             padding: 0px;
         }
         .vscroll__section {
-            margin-top: -10vh;
+            margin-top: 0vh;
             padding-left: 0;
             padding-right: 0;
             font-size: 0.5em;
             line-height: 1;
+            padding: 0;
         }
         .team-gallery>.image-container {
             width: 110px;

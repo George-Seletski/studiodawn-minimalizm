@@ -95,9 +95,6 @@
         .main-grid__column:nth-child(3) {
             margin-top: 0 !important;
         }
-        .team-header-text>h1 {
-            font-size: 1.3em !important;
-        }
     }
     
     @media (-o-min-device-pixel-ratio: 2/1) and (min-width:1201px),
@@ -273,6 +270,24 @@
     
     .pb-2 {
         padding-bottom: 2em;
+    }
+    
+    @media screen and (max-width: 479px) {
+        .main-grid {
+            margin-top: 10vh;
+        }
+    }
+    
+    @media screen and (max-width: 769px) {
+        .main-grid {
+            margin-top: 10vh;
+        }
+    }
+    
+    @media screen and (max-width: 991px) {
+        .main-grid {
+            margin-top: 20vh;
+        }
     }
 </style>
 
@@ -538,27 +553,27 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="image-container">
-                        <div class="image-container">
-                            <div class="team__image-wrap">
-                                <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                            </div>
-                            <div class="team-cardinfo">
-                                <div class="team__title">
-                                    Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
-                                </div>
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
                             </div>
                         </div>
-                        <div class="image-container">
-                            <div class="team__image-wrap">
-                                <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                            </div>
-                            <div class="team-cardinfo">
-                                <div class="team__title">
-                                    Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
-                                </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
                             </div>
                         </div>
+                    </div>
 
 
                 </section>
@@ -773,13 +788,36 @@
             customCursor.style = `opacity: 0 !important;`;
 
             const mainGrid = document.querySelector(".team-header-text");
+            let screenWidth = $(window).width();
+            if (screenWidth < 991) {
+                if (screenWidth > 767) {
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: mainGrid,
+                            pin: true,
+                            start: 'top top',
+                            end: "+=7000", // End the animation when the bottom of mainGrid is at the center of the viewport
+                            scrub: true, // Makes the animation follow the scrolling more smoothly
+                        }
+                    });
+                } else {
+                    gsap.timeline({
+                        scrollTrigger: {
+                            trigger: mainGrid,
+                            pin: true,
 
+                            end: "+=8600", // End the animation when the bottom of mainGrid is at the center of the viewport
+                            scrub: true, // Makes the animation follow the scrolling more smoothly
+                        }
+                    });
+                }
+            }
             gsap.timeline({
                 scrollTrigger: {
                     trigger: mainGrid,
                     pin: true,
                     start: 'bottom bottom',
-                    end: "+=8700", // End the animation when the bottom of mainGrid is at the center of the viewport
+                    end: "+=4650", // End the animation when the bottom of mainGrid is at the center of the viewport
                     scrub: true, // Makes the animation follow the scrolling more smoothly
                 }
             });
