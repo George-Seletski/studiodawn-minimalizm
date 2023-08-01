@@ -403,13 +403,13 @@
 
 
         //Start Horizontal scroll
+        // Check if horizontal scroll elements exist on the page
         if ($('.h-scroll').length > 0) {
-
-
             const scrollContainer = document.querySelector(".h-scroll__inview");
+            const screenWidth = window.innerWidth;
 
-            // Init smooth scroll
-            locoScroll = new LocomotiveScroll({
+            // Initialize LocomotiveScroll with appropriate settings
+            const locoScroll = new LocomotiveScroll({
                 el: scrollContainer,
                 smooth: true,
                 multiplier: 1,
@@ -423,13 +423,14 @@
                 tablet: {
                     smooth: true,
                     direction: 'horizontal',
-                    breakpoint: 991
-                }
+                    breakpoint: 991,
+                },
             });
 
             // Move the pinType check outside the if-else block
-            const pinType = scrollContainer.style.transform ? "transform" : "fixed";
+            const pinType = scrollContainer.style.transform ? 'transform' : 'fixed';
 
+            // Define the ScrollTrigger scrollerProxy based on screen width
             if (screenWidth > 991) {
                 ScrollTrigger.scrollerProxy(scrollContainer, {
                     scrollLeft(value) {
@@ -443,344 +444,77 @@
                             top: 0,
                             left: 0,
                             width: window.innerWidth,
-                            height: window.innerHeight
+                            height: window.innerHeight,
                         };
                     },
-                    pinType // Use the pinType variable here
+                    pinType, // Use the pinType variable here
                 });
             } else {
                 ScrollTrigger.scrollerProxy(scrollContainer, {
                     scrollTop(value) {
-                        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+                        return arguments.length ?
+                            locoScroll.scrollTo(value, 0, 0) :
+                            locoScroll.scroll.instance.scroll.y;
                     },
                     getBoundingClientRect() {
                         return {
                             top: 0,
                             left: 0,
                             width: window.innerWidth,
-                            height: window.innerHeight
+                            height: window.innerHeight,
                         };
                     },
-                    pinType // Use the pinType variable here
+                    pinType, // Use the pinType variable here
                 });
             }
 
-
-
-
-            gsap.to(".sticker.sticker-scroll", {
+            // GSAP ScrollTrigger animations for different elements
+            gsap.to('.sticker.sticker-scroll', {
                 rotation: 360 * 2,
                 duration: 1,
                 scrollTrigger: {
-                    trigger: $(".sticker.sticker-scroll"),
+                    trigger: '.sticker.sticker-scroll',
                     horizontal: true,
                     scroller: scrollContainer,
-                    start: "0 82%",
-                    end: "0 -20%",
-                    scrub: 0.01
-                }
-            });
-
-            $('.h-scroll__section').each(function(index) {
-                let triggerElement = $(this);
-                let targetElement = triggerElement.find('.sticker');
-                if (targetElement) {
-                    let tl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: targetElement,
-                            horizontal: true,
-                            scroller: scrollContainer,
-                            start: "0 95%",
-                            end: "0 80%",
-                        }
-                    });
-                    tl.from(targetElement, {
-                        scale: 0,
-                        ease: Elastic.easeOut.config(1, 0.4),
-                        duration: 0.6
-                    }, 0.5);
-                }
-            });
-
-            fitty('.services__item', {
-                maxSize: 100
-            });
-
-            gsap.to(".services__list", {
-                y: '-100%',
-                scrollTrigger: {
-                    trigger: $(".services"),
-                    horizontal: true,
-                    scroller: scrollContainer,
-                    start: "0 120%",
-                    end: "0 -50%",
-                    scrub: 0.5
-                }
-            });
-
-            gsap.to($('.case--bg'), {
-                visibility: 'visible'
-            });
-
-            let collageImages = gsap.utils.toArray(".collage__img");
-
-            let imageCollage = gsap.timeline({
-                repeat: -1,
-                repeatDelay: 1,
-                repeatRefresh: true
-            });
-            collageImages.forEach((image, i) => {
-                imageCollage.set(image, {
-                    scale: 1,
-                    autoAlpha: 0,
-                    left: '50%',
-                    x: '-50%'
-                });
-
-            });
-            imageCollage.to(collageImages, {
-                rotation: function() {
-                    return getRand(-20, 20)
+                    start: '0 82%',
+                    end: '0 -20%',
+                    scrub: 0.01,
                 },
-                duration: 0
-            });
-            imageCollage.to(collageImages, {
-                autoAlpha: 1,
-                duration: 0.1,
-
-                stagger: {
-                    each: 1
-                }
             });
 
+            // Add more ScrollTrigger animations here for other elements...
 
-            $('.case__item').each(function(index) {
-                let triggerElement = $(this);
-                let targetElement = $('.case--bg');
-
-                if (targetElement) {
-
-                    let caseIn = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: triggerElement,
-                            horizontal: true,
-                            scroller: scrollContainer,
-                            start: "0 100%",
-                            end: "0 20%",
-                            scrub: 0,
-                        }
-                    });
-                    caseIn.from(triggerElement.find($('.case__cover')), {
-                        scale: 0.4,
-                        rotation: 16,
-
-                    });
-
-                    caseIn.from(triggerElement.find($('.case__title')), {
-                        y: '-=400',
-                    }, '<10%');
-
-                    caseIn.to(targetElement, {
-                        backgroundColor: triggerElement.attr('data-color'),
-                    }, '<20%');
-
-                    let caseOut = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: triggerElement,
-                            horizontal: true,
-                            scroller: scrollContainer,
-                            start: "0 -20%",
-                            end: "0 -100%",
-                            scrub: 0,
-                        }
-                    });
-                    caseOut.to(triggerElement.find($('.case__cover')), {
-                        scale: 0.4,
-                        rotation: -8,
-                    });
-
-
-                }
-
-
-            });
-
-            if (screenWidth > 991) {
-                $('.tape__line').each(function(index) {
-                    let triggerElement = $(this);
-                    let targetElement = triggerElement.find('.tape__text');
-                    if (targetElement) {
-                        let tl = gsap.timeline({
-                            scrollTrigger: {
-                                trigger: $('.tape'),
-                                horizontal: true,
-                                scroller: scrollContainer,
-                                start: "0 100%",
-                                end: "0 -40%",
-                                scrub: 0.1,
-                            }
-                        });
-                        tl.to(targetElement, {
-                            x: gsap.utils.random([700, -700]),
-                        });
-                    }
+            // Function to update the container width when the window is resized
+            function updateContainerWidth() {
+                let containerW = 0;
+                $('.h-scroll__section').each(function(index) {
+                    const sectionW = $(this).outerWidth();
+                    containerW += Math.ceil(sectionW + 1.5);
                 });
+                $('.h-scroll__inview').width(containerW);
+                locoScroll.update();
             }
 
-            gsap.to($('.client-grid__col:nth-child(1)'), {
-                y: '-=30%',
-                scrollTrigger: {
-                    trigger: $('.client-grid'),
-                    horizontal: true,
-                    scroller: scrollContainer,
-                    start: "0 100%",
-                    scrub: 0
-                }
-            });
-            gsap.set($('.client-grid__col:nth-child(2)'), {
-                y: '-=50%'
-            });
-            gsap.to($('.client-grid__col:nth-child(2)'), {
-                y: '+=30%',
-                scrollTrigger: {
-                    trigger: $('.client-grid'),
-                    horizontal: true,
-                    scroller: scrollContainer,
-                    start: "0 100%",
-                    scrub: 0
-                }
+            // Call the updateContainerWidth function when the window is resized
+            $(window).on('resize', updateContainerWidth);
+
+            // Trigger a window resize event after images are loaded to handle layout changes
+            imagesLoaded(scrollContainer, function() {
+                window.dispatchEvent(new Event('resize'));
             });
 
-            //CASE
-
-            if ($('.story-content').length > 0) {
-
-                let style = $('body').attr('data-theme');
-                $('body').removeAttr('data-theme');
-                $('body').attr('style', style);
-
-
-                gsap.from('.case-page__cover', {
-                    //x: '-100%',
-                    width: 0,
-                    duration: 1,
-                    ease: Power4.easeOut,
-                    clearProps: 'all',
-                });
-
-                $('.story__block:not(.intro, .web__case)').each(function(index) {
-                    let triggerElement = $(this);
-
-                    let storyBlockIn = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: triggerElement,
-                            horizontal: true,
-                            scroller: scrollContainer,
-                            start: "0 100%",
-                            end: "0 70%",
-                            scrub: 0,
-                        }
-                    });
-                    storyBlockIn.from(triggerElement, {
-                        scale: 0.6,
-                        rotation: 8,
-
-                    });
-                });
-
-                if (screenWidth > 991) {
-                    $('.web_case-img.scroll-down').each(function(index) {
-                        let triggerElement = $(this);
-
-                        let scrollDownImage = gsap.timeline({
-                            scrollTrigger: {
-                                trigger: triggerElement,
-                                horizontal: true,
-                                scroller: scrollContainer,
-                                start: "0 60%",
-                                end: "0 -100%",
-                                scrub: 0,
-                            }
-                        });
-                        scrollDownImage.to(triggerElement, {
-                            y: '-=50%',
-                        });
-                    });
-
-                    $('.web_case-img.scroll-up').each(function(index) {
-                        let triggerElement = $(this);
-
-                        let scrollDownImage = gsap.timeline({
-                            scrollTrigger: {
-                                trigger: triggerElement,
-                                horizontal: true,
-                                scroller: scrollContainer,
-                                start: "0 60%",
-                                end: "0 -100%",
-                                scrub: 0,
-                            }
-                        });
-                        scrollDownImage.to(triggerElement, {
-                            y: '+=50%',
-                        });
-                    });
-                }
-
-
-            }
-
-
-            // Check if LocomotiveScroll is used for horizontal scrolling
-            if (locoScroll.scroll.direction === 'horizontal') {
-                // Refresh ScrollTrigger and update LocomotiveScroll whenever the window is updated
-                ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-                ScrollTrigger.refresh();
-
-                // Function to calculate and update the container width when the window is resized
-                function updateContainerWidth() {
-                    let containerW = 0;
-                    $('.h-scroll__section').each(function(index) {
-                        let sectionW = $(this).outerWidth();
-                        containerW += Math.ceil(sectionW + 1.5);
-                    });
-
-                    $('.h-scroll__inview').width(containerW);
-                    locoScroll.update();
-                }
-
-                // Call the updateContainerWidth function when the window is resized
-                $(window).on('resize', updateContainerWidth);
-
-                // Trigger a window resize event after images are loaded to handle layout changes
-                imagesLoaded(scrollContainer, function() {
-                    window.dispatchEvent(new Event('resize'));
-                });
-
-                // Call the updateContainerWidth function initially to set the correct container width
-                updateContainerWidth();
-            } else {
-                // If vertical scrolling, call contentAnimation without passing the second argument
-                contentAnimation(scrollContainer);
-
-                // Update LocomotiveScroll after images are loaded and 500ms delay
-                setTimeout(function() {
-                    imagesLoaded(scrollContainer, {
-                        background: true
-                    }, function() {
-                        locoScroll.update();
-                    });
-                }, 500);
-            }
-
-
-        } // End home page
+            // Call the updateContainerWidth function initially to set the correct container width
+            updateContainerWidth();
+        }
+        // End home page
         ///////////////////////////////////////////////////////////////////////////////
         // Start vertical scroll
 
         if ($('.v-scroll').length > 0) {
             const scrollContainer = document.querySelector(".v-scroll");
 
-            locoScroll = new LocomotiveScroll({
+            // Initialize LocomotiveScroll with appropriate settings
+            const locoScroll = new LocomotiveScroll({
                 el: scrollContainer,
                 smooth: true,
                 multiplier: 1,
@@ -794,13 +528,14 @@
                 tablet: {
                     smooth: true,
                     direction: 'vertical',
-                    breakpoint: 991
-                }
+                    breakpoint: 991,
+                },
             });
 
+            // Update ScrollTrigger whenever LocomotiveScroll is scrolled
             locoScroll.on("scroll", ScrollTrigger.update);
 
-            // ScrollProxy tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+            // Define ScrollTrigger scrollerProxy to handle vertical scrolling
             ScrollTrigger.scrollerProxy(scrollContainer, {
                 scrollTop(value) {
                     return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
@@ -810,24 +545,23 @@
                         top: 0,
                         left: 0,
                         width: window.innerWidth,
-                        height: window.innerHeight
+                        height: window.innerHeight,
                     };
                 },
-                // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-                pinType: scrollContainer.style.transform ? "transform" : "fixed"
+                // LocomotiveScroll handles things differently on mobile devices, so we use "transform" or "fixed" for pinType based on container's transform style.
+                pinType: scrollContainer.style.transform ? "transform" : "fixed",
             });
 
-            // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+            // Refresh ScrollTrigger and update LocomotiveScroll on window resize
             ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-            // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
             ScrollTrigger.refresh();
 
+            // ScrollTrigger animations for the ".process" element
             if ($('.process').length > 0) {
                 gsap.set($('.process'), {
-                    height: '100vh'
+                    height: '100vh',
                 });
-                let tl = gsap.timeline({
+                const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: ".process",
                         scroller: scrollContainer,
@@ -839,14 +573,14 @@
                         onLeave: () => $('.main').removeClass('invert'),
                         onEnterBack: () => $('.main').addClass('invert'),
                         onLeaveBack: () => $('.main').removeClass('invert'),
-                    }
+                    },
                 });
                 tl.set($('.process__headingxl'), {
-                    position: 'absolute'
+                    position: 'absolute',
                 });
                 tl.to($('.process__headingxl'), {
                     opacity: 0,
-                    duration: 0.1
+                    duration: 0.1,
                 }, '<+=25%');
 
                 const lottie = Webflow.require('lottie').lottie;
@@ -862,7 +596,7 @@
                             trigger: $('.process'),
                             start: "0 0%",
                             end: "=+350%",
-                            scrub: 0.1
+                            scrub: 0.1,
                         },
                         animation = lottie.loadAnimation({
                             container: target,
@@ -871,7 +605,7 @@
                             autoplay: false,
                             path: vars.path,
                         });
-                    for (let p in vars) { // let users override the ScrollTrigger defaults
+                    for (let p in vars) {
                         st[p] = vars[p];
                     }
                     animation.addEventListener("DOMLoaded", function() {
@@ -879,7 +613,7 @@
                             frame: animation.totalFrames - 1,
                             ease: "none",
                             onUpdate: () => animation.goToAndStop(playhead.frame, true),
-                            scrollTrigger: st
+                            scrollTrigger: st,
                         }, 's1');
                     });
                     return animation;
@@ -890,23 +624,21 @@
                     path: "json/studiodawn.json",
                 });
 
-                let sections = gsap.utils.toArray(".process__block"),
-                    currentSection = sections[0];
-                let titlesfirst = document.querySelector(".process__title-first");
+                const sections = gsap.utils.toArray(".process__block");
+                let currentSection = sections[0];
+                const titlesfirst = document.querySelector(".process__title-first");
 
-                // create a ScrollTrigger for each section
+                // Create a ScrollTrigger for each section
                 sections.forEach((section, i) => {
-
                     gsap.set(section, {
-                        position: 'absolute'
+                        position: 'absolute',
                     });
-                    let blockCount = i + 1;
-
+                    const blockCount = i + 1;
                     tl.addLabel("s" + blockCount, blockCount);
 
                     tl.fromTo(section, {
                         opacity: 0,
-                        y: 50
+                        y: 50,
                     }, {
                         y: 0,
                         opacity: 1,
@@ -914,39 +646,33 @@
                         ease: Power4.easeOut,
                     }, "s" + blockCount + "-=0.7");
 
-                    if (blockCount != 4) {
-
+                    if (blockCount !== 4) {
                         tl.to(section, {
                             opacity: 0,
                             y: -50,
                             duration: 0.3,
                             ease: Power4.easeOut,
                         }, "s" + blockCount);
-
                     }
-
                 });
 
-                let titles = gsap.utils.toArray(".process__title-sub");
+                const titles = gsap.utils.toArray(".process__title-sub");
 
                 titles.forEach((title, i) => {
-
-                    let blockCount = i + 1;
-
+                    const blockCount = i + 1;
                     tl.to(title, {
                         y: '-=100%',
                         duration: 0.3,
                         ease: Power4.easeOut,
                     }, "s" + blockCount + "-=0.7");
 
-                    if (blockCount != 4) {
+                    if (blockCount !== 4) {
                         tl.to(title, {
                             y: '-=200%',
                             duration: 0.3,
                             ease: Power4.easeOut,
                         }, "s" + blockCount);
                     }
-
                 });
             }
         }
