@@ -830,8 +830,8 @@
     }
     
     #myVideo {
-        max-height: calc(100vh - 122px) !important;
-        max-width: calc(100vw - 122px) !important;
+        height: calc(100vh - 122px) !important;
+        width: calc(100vw - 122px) !important;
         background-color: transparent;
         transition: max-height 0.4s ease;
     }

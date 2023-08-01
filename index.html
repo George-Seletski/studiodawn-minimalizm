@@ -13,7 +13,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/ScrollTriger.js"></script>
     <script src="js/gsap.min.js"></script>
-
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 
 <body>
@@ -83,9 +83,9 @@
                     <nav role="navigation" class="w-nav-menu">
                         <div class="w-nav-button btn-close-wrppaer">
 
-                            <div class="button-close ">
+                            <!--<div class="button-close ">
                                 <img src="./icons/arrow-left-black.svg" alt="" srcset="">
-                            </div>
+                            </div>-->
                         </div>
                         <div class="menu container-default-center">
 
@@ -218,10 +218,11 @@
                 </div>
 
                 <div class="video-container">
-                    <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
-                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4">
+                    <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="https://player.vimeo.com/video/850727482">
+                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="https://player.vimeo.com/video/850727482">
                             <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
                         </div>
+                        <!-- Add the thumbnail image here -->
                         <img class="gif-animation" src="video/video-tmp.gif" alt="video">
                     </div>
 
@@ -234,20 +235,15 @@
                                             <img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thumbnail" class="remove" />
                                         </div>
                                     </div>
-
                                     <!-- The video element -->
-                                    <video id="myVideo" class="myVideo hide" controls>
-                                    <source
-                                        src="video/pexels-ron-lach-9594577-2048x1080-25fps.mp4"
-                                        type="video/mp4"
-                                    >
-                                    Your browser does not support the video tag.
-                                </video>
+
+                                    <iframe id="myVideo" class="myVideo hide" src="https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Iceland_cinematic"></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
             </div>
         </div>
@@ -531,13 +527,8 @@
                 var video = $('#myVideo');
                 var vidUrl = $(this).attr("vidUrl");
                 if (vidUrl) {
+                    // Update the iframe src attribute with the Vimeo URL
                     video.attr("src", vidUrl);
-                    video[0].load();
-
-                    video.on('loadedmetadata', function() {
-                        video[0].play();
-                    });
-
                     video.removeClass("hide");
                     video.addClass("show");
                     $('.youTube').addClass("hide");
@@ -586,14 +577,21 @@
             });
         });
 
+        $(".close").click(function() {
+            // Close button click code here
+            var video = $('#myVideo');
+            video.attr("src", ""); // Reset the iframe src to stop video playback
+            video.removeClass("show");
+            video.addClass("hide");
+            $('.modal-vid').fadeOut(500);
+        });
+
         $(document).keydown(function(e) {
             if (e.keyCode == 27) { // ESC key
-                var video = $('#myVideo')[0];
-                if (video) {
-                    video.pause();
-                    video.currentTime = 0;
-                }
-                $('.youTube, .myVideo').attr('src', '');
+                var video = $('#myVideo');
+                video.attr("src", ""); // Reset the iframe src to stop video playback
+                video.removeClass("show");
+                video.addClass("hide");
                 $('.modal-vid').fadeOut(500);
             }
         });
