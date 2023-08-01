@@ -12,7 +12,7 @@
     <script src="../js/ScrollTriger.js"></script>
     <script src="../js/gsap.min.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 </head>
 <style>
     html {
@@ -365,7 +365,16 @@
     document.addEventListener("DOMContentLoaded", function() {
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
-        screenWidth = $(window).width();
+        // Check the current web page width
+        let screenWidth = $(window).width();
+        console.log("Current web page width: ", screenWidth);
+
+        // Event listener to handle window resize
+        window.addEventListener("resize", function() {
+            // Update the screenWidth when the window is resized
+            screenWidth = $(window).width();
+            console.log("New web page width: ", screenWidth);
+        });
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
             // Add custom cursor functionality for non-touch devices
@@ -397,11 +406,10 @@
         }
 
 
-        //Start Horizontal scroll
         if ($('.h-scroll').length > 0) {
-
-
+            let screenWidth = $(window).width();
             const scrollContainer = document.querySelector(".h-scroll__inview");
+            let locoScroll;
 
             // Init smooth scroll
             locoScroll = new LocomotiveScroll({
