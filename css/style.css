@@ -443,7 +443,6 @@
         display: flex;
         flex-direction: column;
         margin: 0 10em;
-        width: 560px;
     }
     
     .portfolio-container-text {
@@ -452,7 +451,6 @@
         position: relative;
         font-size: 3em !important;
         width: 100%;
-        line-height: 0.8em;
     }
     
     .fnt-small {

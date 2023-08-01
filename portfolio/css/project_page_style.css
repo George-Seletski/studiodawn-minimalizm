@@ -33,6 +33,7 @@ nav,
 section,
 summary {
     display: block;
+    border: 1px solid;
 }
 
 audio,
@@ -2088,7 +2089,7 @@ label {
 }
 
 .h-scroll__section.contain {
-    background-color: #ebeae5;
+    background-color: #fff;
     align-items: center;
     padding-top: 11rem;
     padding-bottom: 6rem;
@@ -2129,7 +2130,7 @@ label {
 
 .h-scroll__section.auto.services {
     width: 37vw;
-    background-color: #ebeae5;
+    background-color: #fff;
     padding-left: 8.8rem;
     padding-right: 8.8rem;
     position: relative;
@@ -3115,7 +3116,7 @@ label {
 }
 
 .button.invert:hover {
-    color: #ebeae5;
+    color: #fff;
     background-color: #131314;
 }
 
@@ -3707,7 +3708,7 @@ label {
 }
 
 .vit {
-    color: #ebeae5;
+    color: #fff;
 }
 
 .vit.date {

@@ -401,12 +401,37 @@
             customCursor.style = `opacity: 0 !important;`;
         }
 
-
-        //Start Horizontal scroll
+        // Start Horizontal scroll
         // Check if horizontal scroll elements exist on the page
-        if ($('.h-scroll').length > 0) {
+        if (document.querySelectorAll('.h-scroll').length > 0) {
             const scrollContainer = document.querySelector(".h-scroll__inview");
             const screenWidth = window.innerWidth;
+
+            // Function to handle horizontal scroll
+            function handleHorizontalScroll(scrollX) {
+                if (scrollWidth > 991) {
+                    locoScroll.scroll.instance.scroll.x = scrollX;
+                } else {
+                    locoScroll.scrollTo(scrollX, 0, 0);
+                }
+            }
+
+            // Function to get container width
+            function getContainerWidth() {
+                let containerW = 0;
+                document.querySelectorAll('.h-scroll__section').forEach(function(section) {
+                    const sectionW = section.offsetWidth;
+                    containerW += Math.ceil(sectionW + 1.5);
+                });
+                scrollContainer.style.width = containerW + 'px';
+                locoScroll.update();
+            }
+
+            // Function to handle window resize
+            function handleResize() {
+                getContainerWidth();
+                handleHorizontalScroll(scrollContainer.scrollLeft);
+            }
 
             // Initialize LocomotiveScroll with appropriate settings
             const locoScroll = new LocomotiveScroll({
@@ -427,91 +452,36 @@
                 },
             });
 
-            // Move the pinType check outside the if-else block
-            const pinType = scrollContainer.style.transform ? 'transform' : 'fixed';
-
-            // Define the ScrollTrigger scrollerProxy based on screen width
-            if (screenWidth > 991) {
-                ScrollTrigger.scrollerProxy(scrollContainer, {
-                    scrollLeft(value) {
-                        if (arguments.length) {
-                            locoScroll.scroll.instance.scroll.x = value;
-                        }
-                        return locoScroll.scroll.instance.scroll.x;
-                    },
-                    getBoundingClientRect() {
-                        return {
-                            top: 0,
-                            left: 0,
-                            width: window.innerWidth,
-                            height: window.innerHeight,
-                        };
-                    },
-                    pinType, // Use the pinType variable here
-                });
-            } else {
-                ScrollTrigger.scrollerProxy(scrollContainer, {
-                    scrollTop(value) {
-                        return arguments.length ?
-                            locoScroll.scrollTo(value, 0, 0) :
-                            locoScroll.scroll.instance.scroll.y;
-                    },
-                    getBoundingClientRect() {
-                        return {
-                            top: 0,
-                            left: 0,
-                            width: window.innerWidth,
-                            height: window.innerHeight,
-                        };
-                    },
-                    pinType, // Use the pinType variable here
-                });
-            }
-
-            // GSAP ScrollTrigger animations for different elements
-            gsap.to('.sticker.sticker-scroll', {
-                rotation: 360 * 2,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: '.sticker.sticker-scroll',
-                    horizontal: true,
-                    scroller: scrollContainer,
-                    start: '0 82%',
-                    end: '0 -20%',
-                    scrub: 0.01,
-                },
+            // Bind the horizontal scroll function to the scroll event of the container
+            scrollContainer.addEventListener('scroll', function() {
+                handleHorizontalScroll(scrollContainer.scrollLeft);
             });
 
-            // Add more ScrollTrigger animations here for other elements...
+            // Bind the resize function to the window resize event
+            window.addEventListener('resize', handleResize);
 
-            // Function to update the container width when the window is resized
-            function updateContainerWidth() {
-                let containerW = 0;
-                $('.h-scroll__section').each(function(index) {
-                    const sectionW = $(this).outerWidth();
-                    containerW += Math.ceil(sectionW + 1.5);
-                });
-                $('.h-scroll__inview').width(containerW);
-                locoScroll.update();
-            }
-
-            // Call the updateContainerWidth function when the window is resized
-            $(window).on('resize', updateContainerWidth);
+            // Trigger the initial resize event to set the correct container width
+            handleResize();
 
             // Trigger a window resize event after images are loaded to handle layout changes
             imagesLoaded(scrollContainer, function() {
                 window.dispatchEvent(new Event('resize'));
             });
-
-            // Call the updateContainerWidth function initially to set the correct container width
-            updateContainerWidth();
         }
-        // End home page
-        ///////////////////////////////////////////////////////////////////////////////
-        // Start vertical scroll
-
-        if ($('.v-scroll').length > 0) {
+        // Start Vertical scroll
+        // Check if vertical scroll elements exist on the page
+        if (document.querySelectorAll('.v-scroll').length > 0) {
             const scrollContainer = document.querySelector(".v-scroll");
+
+            // Function to handle vertical scroll
+            function handleVerticalScroll(scrollY) {
+                locoScroll.scrollTo(scrollY, 0, 0);
+            }
+
+            // Function to handle window resize
+            function handleResize() {
+                locoScroll.update();
+            }
 
             // Initialize LocomotiveScroll with appropriate settings
             const locoScroll = new LocomotiveScroll({
@@ -531,6 +501,17 @@
                     breakpoint: 991,
                 },
             });
+
+            // Bind the vertical scroll function to the scroll event of the container
+            scrollContainer.addEventListener('scroll', function() {
+                handleVerticalScroll(scrollContainer.scrollTop);
+            });
+
+            // Bind the resize function to the window resize event
+            window.addEventListener('resize', handleResize);
+
+            // Trigger the initial resize event to update LocomotiveScroll
+            handleResize();
 
             // Update ScrollTrigger whenever LocomotiveScroll is scrolled
             locoScroll.on("scroll", ScrollTrigger.update);
@@ -553,129 +534,11 @@
             });
 
             // Refresh ScrollTrigger and update LocomotiveScroll on window resize
-            ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+            ScrollTrigger.addEventListener("refresh", () => handleResize());
             ScrollTrigger.refresh();
-
-            // ScrollTrigger animations for the ".process" element
-            if ($('.process').length > 0) {
-                gsap.set($('.process'), {
-                    height: '100vh',
-                });
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".process",
-                        scroller: scrollContainer,
-                        scrub: true,
-                        pin: true,
-                        start: "0 0%",
-                        end: "=400%",
-                        onEnter: () => $('.main').addClass('invert'),
-                        onLeave: () => $('.main').removeClass('invert'),
-                        onEnterBack: () => $('.main').addClass('invert'),
-                        onLeaveBack: () => $('.main').removeClass('invert'),
-                    },
-                });
-                tl.set($('.process__headingxl'), {
-                    position: 'absolute',
-                });
-                tl.to($('.process__headingxl'), {
-                    opacity: 0,
-                    duration: 0.1,
-                }, '<+=25%');
-
-                const lottie = Webflow.require('lottie').lottie;
-
-                function LottieScrollTrigger(vars) {
-                    let playhead = {
-                            frame: 0
-                        },
-                        target = gsap.utils.toArray(vars.target)[0],
-                        st = {
-                            scroller: scrollContainer,
-                            target: target,
-                            trigger: $('.process'),
-                            start: "0 0%",
-                            end: "=+350%",
-                            scrub: 0.1,
-                        },
-                        animation = lottie.loadAnimation({
-                            container: target,
-                            renderer: vars.renderer || "svg",
-                            loop: false,
-                            autoplay: false,
-                            path: vars.path,
-                        });
-                    for (let p in vars) {
-                        st[p] = vars[p];
-                    }
-                    animation.addEventListener("DOMLoaded", function() {
-                        gsap.to(playhead, {
-                            frame: animation.totalFrames - 1,
-                            ease: "none",
-                            onUpdate: () => animation.goToAndStop(playhead.frame, true),
-                            scrollTrigger: st,
-                        }, 's1');
-                    });
-                    return animation;
-                }
-
-                LottieScrollTrigger({
-                    target: "#processAnim",
-                    path: "json/studiodawn.json",
-                });
-
-                const sections = gsap.utils.toArray(".process__block");
-                let currentSection = sections[0];
-                const titlesfirst = document.querySelector(".process__title-first");
-
-                // Create a ScrollTrigger for each section
-                sections.forEach((section, i) => {
-                    gsap.set(section, {
-                        position: 'absolute',
-                    });
-                    const blockCount = i + 1;
-                    tl.addLabel("s" + blockCount, blockCount);
-
-                    tl.fromTo(section, {
-                        opacity: 0,
-                        y: 50,
-                    }, {
-                        y: 0,
-                        opacity: 1,
-                        duration: 0.3,
-                        ease: Power4.easeOut,
-                    }, "s" + blockCount + "-=0.7");
-
-                    if (blockCount !== 4) {
-                        tl.to(section, {
-                            opacity: 0,
-                            y: -50,
-                            duration: 0.3,
-                            ease: Power4.easeOut,
-                        }, "s" + blockCount);
-                    }
-                });
-
-                const titles = gsap.utils.toArray(".process__title-sub");
-
-                titles.forEach((title, i) => {
-                    const blockCount = i + 1;
-                    tl.to(title, {
-                        y: '-=100%',
-                        duration: 0.3,
-                        ease: Power4.easeOut,
-                    }, "s" + blockCount + "-=0.7");
-
-                    if (blockCount !== 4) {
-                        tl.to(title, {
-                            y: '-=200%',
-                            duration: 0.3,
-                            ease: Power4.easeOut,
-                        }, "s" + blockCount);
-                    }
-                });
-            }
         }
+
+
     });
 </script>
 
