@@ -370,21 +370,6 @@
         let screenWidth = $(window).width();
 
 
-
-        imagesLoaded($('body'), {
-            background: true
-        }, function() {
-            var tl = gsap.timeline();
-            tl.set(".transition", {
-                display: 'block',
-                autoAlpha: 1,
-            });
-            tl.to(".transition", {
-                duration: 0.3,
-                autoAlpha: 0,
-            }), '<';
-        });
-
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
             // Add custom cursor functionality for non-touch devices
@@ -705,7 +690,19 @@
 
         } // End home page
         ///////////////////////////////////////////////////////////////////////////////
-
+        imagesLoaded($('body'), {
+            background: true
+        }, function() {
+            var tl = gsap.timeline();
+            tl.set(".transition", {
+                display: 'block',
+                autoAlpha: 1,
+            });
+            tl.to(".transition", {
+                duration: 0.3,
+                autoAlpha: 0,
+            }), '<';
+        });
 
         function contentAnimation(scrollContainer, horizontal) {
 
