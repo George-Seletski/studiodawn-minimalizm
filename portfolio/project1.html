@@ -814,7 +814,7 @@
 
             locoScroll.on("scroll", ScrollTrigger.update);
 
-            // ScrollProxy tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
+            /// ScrollProxy tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
             ScrollTrigger.scrollerProxy(scrollContainer, {
                 scrollTop(value) {
                     return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
@@ -830,6 +830,7 @@
                 // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
                 pinType: scrollContainer.style.transform ? "transform" : "fixed"
             });
+
             // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
             ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
@@ -900,69 +901,453 @@
                     return animation;
                 }
 
+                LottieScrollTrigger({
+                    target: "#processAnim",
 
+                });
 
                 let sections = gsap.utils.toArray(".process__block"),
                     currentSection = sections[0];
                 let titlesfirst = document.querySelector(".process__title-first");
 
-            }
-            // create a ScrollTrigger for each section
-            sections.forEach((section, i) => {
 
-                gsap.set(section, {
-                    position: 'absolute'
-                });
-                let blockCount = i + 1;
+                // create a ScrollTrigger for each section
+                sections.forEach((section, i) => {
 
-                tl.addLabel("s" + blockCount, blockCount);
+                    gsap.set(section, {
+                        position: 'absolute'
+                    });
+                    let blockCount = i + 1;
 
-                tl.fromTo(section, {
-                    opacity: 0,
-                    y: 50
-                }, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.3,
-                    ease: Power4.easeOut,
-                }, "s" + blockCount + "-=0.7");
+                    tl.addLabel("s" + blockCount, blockCount);
 
-
-                if (blockCount != 4) {
-
-                    tl.to(section, {
+                    tl.fromTo(section, {
                         opacity: 0,
-                        y: -50,
+                        y: 50
+                    }, {
+                        y: 0,
+                        opacity: 1,
                         duration: 0.3,
                         ease: Power4.easeOut,
-                    }, "s" + blockCount);
+                    }, "s" + blockCount + "-=0.7");
 
-                }
 
-            });
+                    if (blockCount != 4) {
 
-            let titles = gsap.utils.toArray(".process__title-sub");
+                        tl.to(section, {
+                            opacity: 0,
+                            y: -50,
+                            duration: 0.3,
+                            ease: Power4.easeOut,
+                        }, "s" + blockCount);
 
-            titles.forEach((title, i) => {
+                    }
 
-                let blockCount = i + 1;
+                });
 
-                tl.to(title, {
-                    y: '-=100%',
-                    duration: 0.3,
-                    ease: Power4.easeOut,
-                }, "s" + blockCount + "-=0.7");
+                let titles = gsap.utils.toArray(".process__title-sub");
 
-                if (blockCount != 4) {
+                titles.forEach((title, i) => {
+
+                    let blockCount = i + 1;
+
                     tl.to(title, {
-                        y: '-=200%',
+                        y: '-=100%',
                         duration: 0.3,
                         ease: Power4.easeOut,
-                    }, "s" + blockCount);
+                    }, "s" + blockCount + "-=0.7");
+
+                    if (blockCount != 4) {
+                        tl.to(title, {
+                            y: '-=200%',
+                            duration: 0.3,
+                            ease: Power4.easeOut,
+                        }, "s" + blockCount);
+                    }
+
+                });
+            }
+
+
+            $('.image-wrap').each(function(index) {
+
+                let triggerElement = $(this);
+                let targetElement = triggerElement;
+
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        horizontal: false,
+                        scroller: scrollContainer,
+                        start: "0 100%",
+                        scrub: true
+                    }
+                });
+
+                tl.to($('.image-wrap').find('.image-wrap__fx'), {
+                    scale: 0.9,
+                });
+            });
+
+
+
+
+            $('.contact-team__item').each(function(index) {
+
+                let triggerElement = $(this);
+                let targetElement = triggerElement;
+
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        horizontal: false,
+                        scroller: scrollContainer,
+                        start: "0 100%",
+                    }
+                });
+
+                tl.from(targetElement, {
+                    y: +100,
+                    duration: 0.5,
+                    ease: Power4.easeOut,
+                    opacity: 0,
+                }, 0.05 * index);
+            });
+
+
+            /*
+            gsap.to($('.tape.horizontal'), {
+                y: '-=100%',
+                scrollTrigger: {
+                    trigger: $('.team'),
+                    scroller: scrollContainer,
+                    scrub: true,
+                    start: "0 100%",
+                    end: "0 50%"
+                }
+            });
+            */
+
+            let teamHeadline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: $('.team_habitat'),
+                    scroller: scrollContainer,
+                    scrub: true,
+                    pin: true,
+                    start: "0 20%",
+                    end: "+370%",
+                }
+            });
+
+
+            $('.tape__line').each(function(index) {
+                let triggerElement = $('.team');
+                let targetElement = $(this).find('.tape__text');
+                if (targetElement) {
+                    let tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: triggerElement,
+                            scroller: scrollContainer,
+                            start: "0 100%",
+                            end: "0 0%",
+                            scrub: 0.5
+                        }
+                    });
+                    tl.to(targetElement, {
+                        x: gsap.utils.random([500, -500, -300, 300]),
+                        duration: 0.5,
+                        ease: 'none'
+                    });
+                }
+            });
+
+
+            $('.team__card-transform').each(function(index) {
+
+                gsap.set($(this), {
+                    scale: 1,
+                    rotation: gsap.utils.random(-12, 12)
+                });
+
+                let triggerElement = $(this);
+                let targetElement = $(this);
+
+                if (targetElement) {
+                    let tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: triggerElement,
+                            scroller: scrollContainer,
+                            start: "0 120%",
+                            end: "0 0%",
+                            scrub: true
+                        }
+                    });
+                    tl.to(targetElement, {
+                        rotation: 0
+                    }, '<100%');
+                    tl.to(targetElement, {
+                        y: -250 + (index * 20),
+                        duration: 0.5,
+                    }, '<50%');
                 }
 
             });
-        }
+
+            $('.team__card').each(function(index) {
+
+                let triggerElement = $(this);
+                let targetElement = triggerElement;
+
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        horizontal: false,
+                        scroller: scrollContainer,
+                        start: "0 100%",
+                        scrub: true
+                    }
+                });
+
+                tl.from(targetElement.find('.team__image-wrap img'), {
+                    scale: 1.2,
+                });
+            });
+
+
+            let music = {
+
+                dunk: Object.assign(document.createElement('audio'), {
+                    src: 'https://dev.klemetszackrisson.se/habitat/music.mp3',
+                    loop: true,
+                    volume: 0.1
+                }),
+
+            }
+
+            let teamCards = gsap.utils.toArray(".team__card-transform");
+
+            let danceButtonS = $('#danceOff').find('p');
+            let danceButtonSOrg = danceButtonS.html();
+
+            teamCards.forEach((teamCard, i) => {
+
+                let randAngle;
+                let danceOff = gsap.timeline({
+                    repeat: -1,
+                    repeatRefresh: true,
+                    paused: true,
+                });
+                let dancing = false;
+
+                danceOff.to(teamCard, {
+                    duration: 0.08,
+                    scale: 1.1,
+                    transformOrigin: '50% 50%',
+                    rotation: function() {
+                        return getRand(-5, 5)
+                    },
+                });
+                danceOff.to(teamCard, {
+                    rotation: function() {
+                        return getRand(-5, 5)
+                    },
+                    duration: 0.4,
+                    scale: 1,
+                    transformOrigin: '50% 50%',
+                });
+
+                let strobe = gsap.timeline({
+                    repeat: -1,
+                    paused: true,
+                    yoyo: true
+                });
+
+                strobe.to($('body'), {
+                    duration: 0.08,
+                    onComplete: function() {
+                        $('.main').addClass('invert'); // then only replace with blue div with new height and width
+                    }
+                });
+                strobe.to($('body'), {
+                    duration: 0.4,
+                    onComplete: function() {
+                        $('.main').removeClass('invert'); // then only replace with blue div with new height and width
+                    }
+                });
+
+
+                $('#danceOff').click(function() {
+
+                    if (dancing == false) {
+                        dancing = true;
+                        music.dunk.play();
+                        danceButtonS.html('STOP <br/> DANCE <br/> PARTY');
+                        strobe.play();
+                        danceOff.play();
+
+                    } else {
+                        danceOff.pause();
+                        gsap.to(teamCard, {
+                            rotation: 0,
+                            scale: 1,
+                            duration: 0.6,
+                            ease: Elastic.easeOut.config(1, 0.4),
+                        });
+
+                        danceOff.seek(0);
+                        dancing = false;
+                        music.dunk.pause();
+                        music.dunk.currentTime = 0;
+                        danceButtonS.html(danceButtonSOrg);
+                        strobe.pause();
+                        strobe.seek(0);
+                        $('.main').removeClass('invert');
+
+                    }
+                });
+
+                teamCard.addEventListener("mouseenter", () => {
+
+                    randAngle = gsap.utils.random(-12, 12);
+
+                    if (dancing == false) {
+                        gsap.to(teamCard, {
+                            rotation: randAngle,
+                            scale: 1.01,
+                            duration: 0.6,
+                            ease: Elastic.easeOut.config(1, 0.4),
+                        });
+                    }
+
+                });
+
+                teamCard.addEventListener("mouseleave", () => {
+                    if (dancing == false) {
+                        gsap.to(teamCard, {
+                            rotation: 0,
+                            scale: 1,
+                            duration: 0.6,
+                            ease: Elastic.easeOut.config(1, 0.4)
+                        });
+                    }
+
+                });
+
+
+            });
+
+            let clientLogos = gsap.utils.toArray(".client-list > div");
+
+            clientLogos.forEach((clientLogo, i) => {
+                let triggerElement = $('.client-list');
+                let targetElement = clientLogo;
+
+                gsap.from(targetElement, {
+                    opacity: 0,
+                    y: '100',
+                    delay: i * 0.05,
+
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        scroller: scrollContainer,
+                        start: "0 70%",
+                    }
+                });
+            });
+
+            $('.v-scroll__section').each(function(index) {
+                let triggerElement = $(this);
+                let targetElement = triggerElement.find('.sticker');
+                if (targetElement) {
+                    let tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: targetElement,
+                            horizontal: false,
+                            scroller: scrollContainer,
+                            start: "0 95%",
+                            end: "0 80%",
+                        }
+                    });
+                    tl.from(targetElement, {
+                        scale: 0,
+                        ease: Elastic.easeOut.config(1, 0.4),
+                        duration: 0.6
+                    }, 0.5);
+                }
+            });
+
+
+            //CASES PAGE
+
+            if ($('.cases-page__cols').length > 0) {
+
+                $('.cases-page__item').each(function(index) {
+
+                    let triggerElement = $(this);
+                    let targetElement = $(this);
+
+                    gsap.set(targetElement, {
+                        y: 100 + (index * 20),
+                        scale: 1,
+                        rotation: gsap.utils.random(-12, 12)
+                    });
+
+                    let tl2 = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: triggerElement,
+                            scroller: scrollContainer,
+                            start: "0 120%",
+                            end: "0 40%",
+                            scrub: true
+                        }
+                    });
+
+                    tl2.to(targetElement, {
+                        y: 0,
+                        rotation: 0
+                    }, '<');
+
+                });
+
+                $('.cases-page__item').each(function(index) {
+
+                    let triggerElement = $(this);
+                    let targetElement = triggerElement;
+
+                    let tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: triggerElement,
+                            horizontal: false,
+                            scroller: scrollContainer,
+                            start: "0 100%",
+                            scrub: true
+                        }
+                    });
+
+                    tl.from(targetElement.find('.cases-page__img-wrap img'), {
+                        scale: 1.2,
+                    });
+                });
+
+
+            }
+
+            contentAnimation(scrollContainer, false);
+
+            setTimeout(function() {
+                imagesLoaded(scrollContainer, {
+                    background: true
+                }, function() {
+                    locoScroll.update();
+
+                });
+            }, 500);
+
+
+        };
+
+
+
     });
 </script>
 
