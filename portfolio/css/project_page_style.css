@@ -31,8 +31,7 @@ main,
 menu,
 nav,
 section,
-summary,
-div {
+summary {
     display: block;
 }
 
