@@ -341,25 +341,35 @@
     }
     
     @media screen and (max-width: 479px) {
+        .w-layout-grid>.case-page__cover {
+            height: fit-content;
+            padding-bottom: 2em;
+        }
         .info-block-case {
             padding-bottom: 6rem;
-            text-align: right;
+            text-align: left;
         }
         .case-page-icons {
             padding: 0 !important;
-            align-items: flex-end;
             text-align: right;
             gap: 0px;
             margin-top: 10px;
             display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
+            justify-content: flex-start;
+            align-items: flex-start;
             width: 100%;
+        }
+        .contact-h3 {
+            text-align: left;
         }
     }
     
     #icon-box {
         padding: 5em 0;
+    }
+    
+    .contanct-links {
+        text-align: left;
     }
 </style>
 
