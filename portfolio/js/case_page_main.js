@@ -340,9 +340,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 ScrollTrigger.scrollerProxy(scrollContainer, {
                     scrollLeft(value) {
                         if (arguments.length) {
-                            locoScroll.scroll.instance.scroll.x = value + 100;
+                            locoScroll.scroll.instance.scroll.x = value + 300;
                         }
-                        return locoScroll.scroll.instance.scroll.x + 100;
+                        return locoScroll.scroll.instance.scroll.x + 300;
                     },
                     getBoundingClientRect() {
                         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
