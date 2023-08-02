@@ -11,6 +11,7 @@
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/ScrollTriger.js"></script>
     <script src="./js/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 </head>
@@ -200,7 +201,6 @@
     
     body.case-page .story__block a {
         color: var(--textc);
-        border-color: var(--textc);
     }
     
     .team_habitat {
@@ -274,6 +274,90 @@
     .custom-cursor--link {
         scale: 1;
     }
+    
+    .local-contacts {
+        display: flex;
+        flex-direction: row;
+        padding-top: 5em;
+        gap: 50px;
+        padding: 0;
+    }
+    
+    .font-case-page {
+        font-size: 1.5em;
+    }
+    
+    .contact-us-block {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-left: 0;
+        margin-right: 15rem;
+    }
+    
+    .last-page-block {
+        height: auto;
+        width: 100%;
+        position: relative;
+    }
+    
+    .columns-container>div {
+        padding: 0;
+    }
+    
+    .columns-container>#icon-box {
+        margin-right: 2em;
+    }
+    
+    .info-block-case {
+        padding-bottom: 11rem;
+        text-align: right;
+        width: 100%;
+    }
+    
+    .contanct-links {
+        display: block;
+        text-align: right;
+        width: 100%;
+    }
+    
+    .case-page-icons {
+        padding: 0 !important;
+        align-items: flex-end;
+        text-align: right;
+        gap: 20px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 100%;
+    }
+    
+    .size-2x {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .size-2x>a {
+        text-decoration: none !important;
+    }
+    
+    @media screen and (max-width: 479px) {
+        .info-block-case {
+            padding-bottom: 6rem;
+            text-align: right;
+        }
+        .case-page-icons {
+            padding: 0 !important;
+            align-items: flex-end;
+            text-align: right;
+            gap: 0px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            width: 100%;
+        }
+    }
 </style>
 
 <body>
@@ -345,7 +429,7 @@
                             <div class="story__block" style="transform: translate(0px, 0px);">
                                 <div class="w-layout-grid content-grid">
                                     <div id="w-node-_558cbe49-47be-6b80-4e52-a6d05b617516-41af1f24">
-                                        <a href="/portfolio/" class="l uc" style="opacity: 1; transform: translate(0px, 100px);">More cases</a></div>
+                                        <a href="/portfolio/" class="l uc" style="  border-bottom: 2px solid #131314;opacity: 1; transform: translate(0px, 100px);">More cases</a></div>
                                 </div>
                             </div>
                         </div>
@@ -354,11 +438,66 @@
                         <div class="w-layout-grid content-grid">
 
 
-                        </div>
+                            <div class=" case-page__cover">
+                                <div class="cover__heading last-page" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd847-d13fd845">
+                                    <h1 class="xxxxl contact-heading">
+                                        <div class="lines" style=" font-family: 'Cormorant Garamond Semibold', sans-serif; display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';">Contact</div>
+                                        <div class="lines" style="font-family: 'Roboto Light', sans-serif;display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">us.</div>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="contact-us-block last-page-block" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd850-d13fd845">
+                                <div id="icon-box">
+                                    <div class="info-block-case">
+                                        <div class="contanct-links">
+                                            <div class="link-email">
+                                                <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                                            </div>
+                                            <div class="link-telephone">
+                                                <a href="tel:+421905455208">+421 905 455 208</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="case-page-icons">
+                                            <div class="size-2x">
+                                                <a href="http://" target="_blank" rel="noopener noreferrer">
+                                                    <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                                                </a>
+                                            </div>
+                                            <div class=" size-2x">
+                                                <a href="http://" target="_blank" rel="noopener noreferrer">
+                                                    <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                                                </a>
+                                            </div>
+                                            <div class=" size-2x">
+                                                <a href="http://" target="_blank" rel="noopener noreferrer">
+                                                    <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="w-node-_684cb3ce-ab9a-0363-e775-88bbe6d21ece-6ebd0a98" class="home__footer-block">
+                                    <div class="info-block-case">
+                                        <h3 class="contact-h3 font-case-page">Canada</h3>
+                                        <a href="#" class="link-address ">228 Nelson's Crescent, <br>BC V3L 3E3 New
+                                Westminster, <br>
+                                Canada</a>
+                                    </div>
+                                    <div class="info-block-case">
+                                        <h3 class="contact-h3 font-case-page">Slovakia</h3>
+                                        <a href="#" class="link-address ">Tallerova 4,<br>
+                                    811 02 Bratislava,<br>Slovakia</a>
+                                    </div>
+                                </div>
+
+                            </div>
                     </section>
+                    </div>
                 </div>
             </div>
-        </div>
     </main>
 </body>
 <script>
