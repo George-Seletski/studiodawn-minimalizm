@@ -4895,7 +4895,7 @@ label {
 }
 
 #w-node-c41386a0-329c-c1ea-2556-aa3ad13fd847-d13fd845 {
-    grid-area: 1 / 2 / 2 / 10;
+    grid-area: 1 / 1 / 4 / 9;
     align-self: end;
 }
 
@@ -4904,7 +4904,7 @@ label {
 }
 
 #w-node-c41386a0-329c-c1ea-2556-aa3ad13fd850-d13fd845 {
-    grid-area: 1 / 8 / 2 / 9;
+    grid-area: 1 / 9 / 1 / 13;
     align-self: end;
 }
 
@@ -4914,7 +4914,7 @@ label {
 }
 
 #w-node-c539f4c8-a56f-3dc3-bfbb-aaeb896079da-d13fd845 {
-    grid-area: 2 / 2 / 3 / 11;
+    grid-area: 4 / 7 / 6 / 13;
     justify-self: start;
 }
 
@@ -4937,7 +4937,8 @@ label {
 }
 
 #w-node-a0231db7-ff6d-a659-cd4a-ccc46ebd0aa7-6ebd0a98 {
-    grid-area: 1 / 9 / 3 / 13;
+    grid-area: 4 / 1 / 6 / 7;
+    justify-self: start;
 }
 
 #w-node-a0231db7-ff6d-a659-cd4a-ccc46ebd0ab2-6ebd0a98 {
@@ -5424,6 +5425,9 @@ label {
 }
 
 @media screen and (max-width: 991px) {
+    .case-page__cover {
+        height: 34vh;
+    }
     #w-node-_88a22dcb-ac90-f2cc-f23d-fed1b5ba843b-62fbbdd9 {
         grid-area: 1 / 8 / 3 / 11;
         justify-self: center;
@@ -5465,15 +5469,16 @@ label {
         align-self: center;
     }
     #w-node-c41386a0-329c-c1ea-2556-aa3ad13fd850-d13fd845 {
-        grid-area: 1 / 2 / 2 / 13;
+        grid-area: 4 / 1 / 6 / 13;
         align-self: start;
+        padding-top: 7em;
     }
     #w-node-c41386a0-329c-c1ea-2556-aa3ad13fd859-d13fd845 {
         grid-area: 2 / 1 / 3 / 7;
         justify-self: start;
     }
     #w-node-c539f4c8-a56f-3dc3-bfbb-aaeb896079da-d13fd845 {
-        grid-area: 2 / 7 / 6 / 13;
+        grid-area: 2 / 1 / 4 / 7;
         justify-self: start;
     }
     #w-node-_684cb3ce-ab9a-0363-e775-88bbe6d21ece-6ebd0a98 {
@@ -5489,7 +5494,7 @@ label {
         justify-self: start;
     }
     #w-node-a0231db7-ff6d-a659-cd4a-ccc46ebd0aa7-6ebd0a98 {
-        grid-area: 4 / 1 / 5 / 10;
+        grid-area: 2 / 7 / 4 / 13;
         align-self: end;
     }
     #w-node-a0231db7-ff6d-a659-cd4a-ccc46ebd0ab2-6ebd0a98 {
@@ -5697,10 +5702,6 @@ label {
     #w-node-_96286ba7-ccbb-01ea-5721-513f68e02a31-d13fd845 {
         grid-area: 2 / 8 / 3 / 13;
         align-self: center;
-    }
-    #w-node-c539f4c8-a56f-3dc3-bfbb-aaeb896079da-d13fd845 {
-        grid-area: 3 / 1 / 6 / 13;
-        justify-self: start;
     }
     #w-node-_684cb3ce-ab9a-0363-e775-88bbe6d21ece-6ebd0a98 {
         grid-area: 1 / 1 / 2 / 13;

@@ -291,7 +291,6 @@
         flex-direction: row;
         align-items: flex-start;
         margin-left: 0;
-        margin-right: 15rem;
     }
     
     .last-page-block {
@@ -357,6 +356,10 @@
             align-items: flex-end;
             width: 100%;
         }
+    }
+    
+    #icon-box {
+        padding: 5em 0;
     }
 </style>
 
@@ -438,13 +441,25 @@
                         <div class="w-layout-grid content-grid">
 
 
-                            <div class=" case-page__cover">
-                                <div class="cover__heading last-page" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd847-d13fd845">
+                            <div class=" case-page__cover" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd847-d13fd845">
+                                <div class="cover__heading last-page">
                                     <h1 class="xxxxl contact-heading">
                                         <div class="lines" style=" font-family: 'Cormorant Garamond Semibold', sans-serif; display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';">Contact</div>
                                         <div class="lines" style="font-family: 'Roboto Light', sans-serif;display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">us.</div>
                                     </h1>
                                 </div>
+
+                            </div>
+                            <div class="info-block-case" id="w-node-c539f4c8-a56f-3dc3-bfbb-aaeb896079da-d13fd845">
+                                <h3 class="contact-h3 font-case-page">Canada</h3>
+                                <a href="#" class="link-address ">228 Nelson's Crescent, <br>BC V3L 3E3 New
+                                    Westminster, <br>
+                                    Canada</a>
+                            </div>
+                            <div class="info-block-case" id="w-node-a0231db7-ff6d-a659-cd4a-ccc46ebd0aa7-6ebd0a98">
+                                <h3 class="contact-h3 font-case-page">Slovakia</h3>
+                                <a href="#" class="link-address ">Tallerova 4,<br>
+                                    811 02 Bratislava,<br>Slovakia</a>
                             </div>
                             <div class="contact-us-block last-page-block" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd850-d13fd845">
                                 <div id="icon-box">
@@ -479,25 +494,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="w-node-_684cb3ce-ab9a-0363-e775-88bbe6d21ece-6ebd0a98" class="home__footer-block">
-                                    <div class="info-block-case">
-                                        <h3 class="contact-h3 font-case-page">Canada</h3>
-                                        <a href="#" class="link-address ">228 Nelson's Crescent, <br>BC V3L 3E3 New
-                                Westminster, <br>
-                                Canada</a>
-                                    </div>
-                                    <div class="info-block-case">
-                                        <h3 class="contact-h3 font-case-page">Slovakia</h3>
-                                        <a href="#" class="link-address ">Tallerova 4,<br>
-                                    811 02 Bratislava,<br>Slovakia</a>
-                                    </div>
-                                </div>
+
 
                             </div>
+
+                        </div>
+
                     </section>
-                    </div>
                 </div>
             </div>
+        </div>
     </main>
 </body>
 <script>
@@ -538,6 +544,7 @@
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
         }
+
 
 
         if ($('.h-scroll').length > 0) {
@@ -779,7 +786,19 @@
 
             }
 
-
+            imagesLoaded($('body'), {
+                background: true
+            }, function() {
+                var tl = gsap.timeline();
+                tl.set(".transition", {
+                    display: 'block',
+                    autoAlpha: 1,
+                });
+                tl.to(".transition", {
+                    duration: 0.3,
+                    autoAlpha: 0,
+                }), '<';
+            });
             if (locoScroll.scroll.direction == 'horizontal') {
                 locoScroll.update();
 
@@ -829,19 +848,7 @@
 
         } // End home page
         ///////////////////////////////////////////////////////////////////////////////
-        imagesLoaded($('body'), {
-            background: true
-        }, function() {
-            var tl = gsap.timeline();
-            tl.set(".transition", {
-                display: 'block',
-                autoAlpha: 1,
-            });
-            tl.to(".transition", {
-                duration: 0.3,
-                autoAlpha: 0,
-            }), '<';
-        });
+
 
         function contentAnimation(scrollContainer, horizontal) {
 
