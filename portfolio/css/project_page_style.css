@@ -710,7 +710,7 @@ textarea.w-select {
 
 @media screen and (max-width: 991px) {
     .w-layout-grid>.case-page__cover {
-        height: fit-content;
+        height: 65vh;
         padding-bottom: 2em;
     }
     .w-container {
