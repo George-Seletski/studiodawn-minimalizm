@@ -8,9 +8,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/project_page_style.css" type="text/css">
 
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/ScrollTriger.js"></script>
-    <script src="../js/gsap.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/ScrollTriger.js"></script>
+    <script src="./js/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 </head>
@@ -363,6 +363,7 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        gsap.registerPlugin(ScrollTrigger);
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
         // Check the current web page width
@@ -643,7 +644,7 @@
 
             }
 
-            console.log(str(locoScroll));
+
             if (locoScroll.scroll.direction == 'horizontal') {
                 locoScroll.update();
 
@@ -693,6 +694,103 @@
 
         } // End home page
         ///////////////////////////////////////////////////////////////////////////////
+        imagesLoaded($('body'), {
+            background: true
+        }, function() {
+            var tl = gsap.timeline();
+            tl.set(".transition", {
+                display: 'block',
+                autoAlpha: 1,
+            });
+            tl.to(".transition", {
+                duration: 0.3,
+                autoAlpha: 0,
+            }), '<';
+        });
+
+        function contentAnimation(scrollContainer, horizontal) {
+
+            $('.lines').each(function(index) {
+                let triggerElement = $(this).parent();
+                let targetElement = $(this);
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        horizontal: horizontal,
+                        scroller: scrollContainer,
+                        start: "0 100%",
+                    }
+                });
+                tl.from(targetElement, {
+                    y: +100,
+                    duration: 0.8,
+                    ease: Power4.easeOut,
+                    opacity: 0,
+                }, 0.1 * index);
+            });
+
+            $('.content-grid .p').each(function(index) {
+                let triggerElement = $(this);
+                let targetElement = $(this);
+
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        horizontal: horizontal,
+                        scroller: scrollContainer,
+                        start: "0 100%",
+                    }
+                });
+                tl.from(targetElement, {
+                    y: +100,
+                    duration: 0.8,
+                    ease: Power4.easeOut,
+                    opacity: 0,
+                }, 0.1 * index);
+
+            });
+
+            $('.content-grid h3').each(function(index) {
+                let triggerElement = $(this);
+                let targetElement = $(this);
+
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        horizontal: horizontal,
+                        scroller: scrollContainer,
+                        start: "0 100%",
+                    }
+                });
+                tl.from(targetElement, {
+                    y: +100,
+                    duration: 0.8,
+                    ease: Power4.easeOut,
+                    opacity: 0,
+                }, 0.1 * index);
+
+            });
+
+            $('.content-grid a:not(.sticker-link)').each(function(index) {
+                let triggerElement = $(this);
+                let targetElement = $(this);
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: triggerElement,
+                        horizontal: horizontal,
+                        scroller: scrollContainer,
+                        start: "0 100%",
+                    }
+                });
+                tl.from(targetElement, {
+                    y: +100,
+                    duration: 0.8,
+                    ease: Power4.easeOut,
+                    opacity: 0,
+                }, 0.1 * index);
+            });
+        }
+
         // Start vertical scroll
 
         if ($('.v-scroll').length > 0) {
