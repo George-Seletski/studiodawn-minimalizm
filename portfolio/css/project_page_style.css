@@ -30,7 +30,6 @@ hgroup,
 main,
 menu,
 nav,
-section,
 summary {
     display: block;
 }
@@ -2209,13 +2208,14 @@ label {
 }
 
 .h-scroll__inview {
-    width: 1765rem;
+    width: 3000rem;
     height: 100vh;
     flex-wrap: wrap;
     align-items: center;
     line-height: 1.25;
     display: block;
     overflow: hidden;
+    border: 1px solid #000;
 }
 
 .content-grid {
