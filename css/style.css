@@ -614,7 +614,7 @@
         display: flex;
         align-items: center;
         margin: 144px;
-        gap: 150px;
+        gap: 75px;
     }
     
     .description {
