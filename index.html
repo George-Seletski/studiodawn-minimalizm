@@ -15,6 +15,103 @@
     <script src="js/gsap.min.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
+<style>
+    /* Import Google font - Poppins */
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    .wrapper {
+        scroll-snap-type: x mandatory;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        width: 100%;
+        flex-direction: row;
+        gap: 10px;
+        padding: 0;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex !important;
+        align-items: flex-start !important;
+    }
+    
+    .wrapper i {
+        top: 50%;
+        height: 44px;
+        width: 44px;
+        color: #343F4F;
+        cursor: pointer;
+        font-size: 1.15rem;
+        position: absolute;
+        text-align: center;
+        line-height: 44px;
+        background: #fff;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.1s linear;
+    }
+    
+    .wrapper i:active {
+        transform: translateY(-50%) scale(0.9);
+    }
+    
+    .wrapper i:hover {
+        background: #f2f2f2;
+    }
+    
+    .wrapper i:first-child {
+        left: 22px;
+        display: none;
+    }
+    
+    .wrapper i:last-child {
+        right: 22px;
+    }
+    
+    .wrapper .carousel {
+        font-size: 0px;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+        display: flex;
+        align-items: flex-start !important;
+    }
+    
+    .carousel.dragging {
+        cursor: grab;
+        scroll-behavior: auto;
+    }
+    
+    .carousel.dragging img {
+        pointer-events: none;
+    }
+    
+    .carousel img {
+        object-fit: cover;
+        user-select: none;
+        margin-left: 14px;
+        width: calc(100%);
+    }
+    
+    .carousel img:first-child {
+        margin-left: 0px;
+    }
+    
+    @media screen and (max-width: 900px) {
+        .carousel img {
+            width: calc(100% / 2);
+        }
+    }
+    
+    @media screen and (max-width: 550px) {
+        .carousel img {
+            width: 100%;
+        }
+    }
+</style>
 
 <body>
     <div class="preloader-container">
@@ -277,7 +374,7 @@
 
         </div>
 
-        <div class="case-gallery">
+        <!--<div class="case-gallery">
             <div class="grid">
                 <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
                 <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
@@ -289,6 +386,32 @@
                 <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
 
             </div>
+        </div>-->
+        <div class="wrapper">
+            <i id="left"><img src="./icons/arrow-left-black.svg"  style="width: 20px; margin:10px;" alt="" srcset=""></i>
+            <div class="carousel">
+                <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
+                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <!--<img src="images/img-2.jpg" alt="img" draggable="false">
+                <img src="images/img-3.jpg" alt="img" draggable="false">
+                <img src="images/img-4.jpg" alt="img" draggable="false">
+                <img src="images/img-5.jpg" alt="img" draggable="false">
+                <img src="images/img-6.jpg" alt="img" draggable="false">
+                <img src="images/img-7.jpg" alt="img" draggable="false">
+                <img src="images/img-8.jpg" alt="img" draggable="false">
+                <img src="images/img-9.jpg" alt="img" draggable="false">-->
+            </div>
+            <i id="right" class="fa-solid fa-angle-right"><img
+                src="./icons/arrow-left-black.svg"
+                alt=""
+                srcset="" style="width: 20px; margin:10px; transform:rotate(180deg);"
+            ></i>
         </div>
         <div class="page-wrapper">
             <div class="text">
@@ -599,6 +722,69 @@
             $('.gif-animation').css('display', 'block');
 
         });
+
+        const carousel = document.querySelector(".carousel"),
+            firstImg = carousel.querySelectorAll("img")[0],
+            arrowIcons = document.querySelectorAll(".wrapper i");
+        let isDragStart = false,
+            isDragging = false,
+            prevPageX, prevScrollLeft, positionDiff;
+        const showHideIcons = () => {
+            // showing and hiding prev/next icon according to carousel scroll left value
+            let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+            arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+            arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+        }
+        arrowIcons.forEach(icon => {
+            icon.addEventListener("click", () => {
+                let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+                // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+                carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+                setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+            });
+        });
+        const autoSlide = () => {
+            // if there is no image left to scroll then return from here
+            if (carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+            positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+            let firstImgWidth = firstImg.clientWidth + 14;
+            // getting difference value that needs to add or reduce from carousel left to take middle img center
+            let valDifference = firstImgWidth - positionDiff;
+            if (carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
+                return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+            }
+            // if user is scrolling to the left
+            carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+        }
+        const dragStart = (e) => {
+            // updatating global variables value on mouse down event
+            isDragStart = true;
+            prevPageX = e.pageX || e.touches[0].pageX;
+            prevScrollLeft = carousel.scrollLeft;
+        }
+        const dragging = (e) => {
+            // scrolling images/carousel to left according to mouse pointer
+            if (!isDragStart) return;
+            e.preventDefault();
+            isDragging = true;
+            carousel.classList.add("dragging");
+            positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+            carousel.scrollLeft = prevScrollLeft - positionDiff;
+            showHideIcons();
+        }
+        const dragStop = () => {
+            isDragStart = false;
+            carousel.classList.remove("dragging");
+            if (!isDragging) return;
+            isDragging = false;
+            autoSlide();
+        }
+        carousel.addEventListener("mousedown", dragStart);
+        carousel.addEventListener("touchstart", dragStart);
+        document.addEventListener("mousemove", dragging);
+        carousel.addEventListener("touchmove", dragging);
+        document.addEventListener("mouseup", dragStop);
+        carousel.addEventListener("touchend", dragStop);
     });
 </script>
 

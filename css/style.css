@@ -658,7 +658,7 @@
         flex-shrink: 0;
         scroll-snap-align: start;
         width: fit-content;
-        width: 20% !important;
+        width: 30% !important;
         object-fit: cover;
     }
     
