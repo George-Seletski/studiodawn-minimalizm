@@ -61,10 +61,6 @@
         height: 100vh;
     }
     
-    div {
-        border: 1px solid #000;
-    }
-    
     h1,
     h2,
     h3,
@@ -907,7 +903,7 @@
     }
     
     #brand {
-        width: 18em;
+        width: 300px;
         display: flex;
     }
     
