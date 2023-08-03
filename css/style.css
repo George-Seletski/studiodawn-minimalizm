@@ -1766,8 +1766,12 @@
     }
     
     @media screen and (max-width: 991px) {
+        .container-text {
+            font-size: 1.5em !important;
+        }
         h1 {
             line-height: 1 !important;
+            font-size: 3em !important;
         }
         .custom-cursor {
             opacity: 0;
