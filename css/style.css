@@ -1468,7 +1468,7 @@
         display: flex;
         gap: 70px;
         align-items: center;
-        margin: 11.25rem;
+        margin: 11.25rem 2em;
         justify-content: center;
     }
     
@@ -1499,7 +1499,6 @@
         background-color: #888;
         transition: transform 5s;
         transition: all 0.5s ease;
-        margin-top: 50px;
     }
     
     .instagram-img:hover {
