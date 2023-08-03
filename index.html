@@ -577,15 +577,7 @@
             });
         });
 
-        $(".close").click(function() {
-            // Close button click code here
-            var video = $('#myVideo');
-            video.attr("src", ""); // Reset the iframe src to stop video playback
-            video.removeClass("show");
-            video.addClass("hide");
-            $('.modal-vid').fadeOut(500);
-        });
-
+        // Move the following two event handlers inside the document ready function
         $(document).keydown(function(e) {
             if (e.keyCode == 27) { // ESC key
                 var video = $('#myVideo');
@@ -593,7 +585,19 @@
                 video.removeClass("show");
                 video.addClass("hide");
                 $('.modal-vid').fadeOut(500);
+                $('.gif-animation').css('display', 'block');
             }
+        });
+
+        $(".close").click(function() {
+            // Close button click code here
+            var video = $('#myVideo');
+            video.attr("src", ""); // Reset the iframe src to stop video playback
+            video.removeClass("show");
+            video.addClass("hide");
+            $('.modal-vid').fadeOut(500);
+            $('.gif-animation').css('display', 'block');
+
         });
     });
 </script>
