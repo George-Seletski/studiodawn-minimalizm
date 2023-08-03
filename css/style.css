@@ -78,6 +78,7 @@
     
     h1 {
         line-height: 1;
+        font-size: 176px !important;
     }
     
     #header-font {
@@ -121,7 +122,7 @@
         display: flex;
         overflow: auto;
         flex-direction: column;
-        margin-top: 6.5em;
+        /*margin-top: 6.5em;*/
     }
     
     .text-header>span {
@@ -453,12 +454,7 @@
         display: block;
         z-index: 0;
         position: relative;
-        font-size: 3em !important;
         width: 100%;
-    }
-    
-    .fnt-small {
-        font-size: 2.4em !important;
     }
     
     .filter-container {
@@ -617,12 +613,8 @@
     .row-container {
         display: flex;
         align-items: center;
-        margin: 9em 9em 9em 9em;
+        margin: 144px;
         gap: 150px;
-    }
-    
-    .row-container>div {
-        margin-right: 35px;
     }
     
     .description {
@@ -1355,6 +1347,7 @@
     }
     
     footer {
+        padding: 4em 0;
         display: flex;
         justify-content: center;
         gap: 150px;
@@ -1362,7 +1355,6 @@
         margin: 0 2em;
         max-width: 100%;
         align-items: center;
-        margin-bottom: 50px;
         border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
     }
     
@@ -1465,11 +1457,11 @@
         font-family: 'Cormorant Garamond Semibold';
         font-size: 50px !important;
         font-weight: 600 !important;
-        margin-bottom: 50px;
+        /*margin-bottom: 50px;*/
         line-height: 60px;
         display: flex;
         text-align: center;
-        margin-left: 60px;
+        /*margin-left: 60px;*/
     }
     
     .instagram-container {
@@ -1536,7 +1528,7 @@
     }
     
     .footer-links {
-        padding-top: 70px;
+        /* padding-top: 70px;*/
     }
     
     .footer-fnt>a {
@@ -1544,7 +1536,7 @@
     }
     
     .language-icon {
-        margin-top: 60px;
+        /*margin-top: 60px;*/
         margin-bottom: 15px;
         display: flex;
         transition: transform 5s;
@@ -1576,7 +1568,7 @@
     }
     
     .licence-container {
-        padding-top: 87px;
+        /*padding-top: 87px;*/
         font-weight: 700;
         font-family: 'Roboto Regular';
         text-transform: uppercase;
