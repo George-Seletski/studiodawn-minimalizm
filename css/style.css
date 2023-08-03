@@ -650,7 +650,7 @@
     }
     
     .grid-image {
-        height: fit-content;
+        height: 30%;
         flex-shrink: 0;
         scroll-snap-align: start;
         width: fit-content;
