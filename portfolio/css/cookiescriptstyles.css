@@ -4,7 +4,7 @@
      opacity: 0.95;
      font-size: 14px;
      font-weight: normal;
-     font-family: 'Open Sans', Arial, 'Trebuchet MS', 'Segoe UI', 'Helvetica', sans-serif;
+     font-family: 'Roboto Regular';
      box-shadow: 1px 2px 8px 0 rgba(0, 0, 0, 0.35);
      color: #ffffff;
      box-sizing: border-box;
@@ -34,7 +34,7 @@
      padding: 0;
      overflow: hidden;
      letter-spacing: 0;
-     font-family: 'Trebuchet MS', 'Arial', sans-serif;
+     font-family: 'Arial', sans-serif;
      font-weight: 100;
      opacity: 0.85;
      z-index: 999999;
@@ -1006,41 +1006,40 @@
      width: 18px;
      height: 18px
  }
- 
- #cookiescript_injected .mdc-switch.mdc-switch--selected:enabled:hover:not(:focus) .mdc-switch__ripple::after,
+ /* #cookiescript_injected .mdc-switch.mdc-switch--selected:enabled:hover:not(:focus) .mdc-switch__ripple::after,
  #cookiescript_injected .mdc-switch.mdc-switch--selected:enabled:hover:not(:focus) .mdc-switch__ripple::before {
-     background-color:
+   
  }
  
  #cookiescript_injected .mdc-switch.mdc-switch--selected:enabled:focus .mdc-switch__ripple::after,
  #cookiescript_injected .mdc-switch.mdc-switch--selected:enabled:focus .mdc-switch__ripple::before {
-     background-color:
+     
  }
  
  #cookiescript_injected .mdc-switch.mdc-switch--selected:enabled:active .mdc-switch__ripple::after,
  #cookiescript_injected .mdc-switch.mdc-switch--selected:enabled:active .mdc-switch__ripple::before {
-     background-color:
- }
+    
+ }*/
  
  #cookiescript_injected .mdc-switch.mdc-switch--unselected:enabled:hover:not(:focus) .mdc-switch__ripple::after,
  #cookiescript_injected .mdc-switch.mdc-switch--unselected:enabled:hover:not(:focus) .mdc-switch__ripple::before,
  #cookiescript_injected_fsd .mdc-switch.mdc-switch--unselected:enabled:hover:not(:focus) .mdc-switch__ripple::after,
  #cookiescript_injected_fsd .mdc-switch.mdc-switch--unselected:enabled:hover:not(:focus) .mdc-switch__ripple::before {
-     background-color: #424242
+     background-color: #424242;
  }
  
  #cookiescript_injected .mdc-switch.mdc-switch--unselected:enabled:focus .mdc-switch__ripple::after,
  #cookiescript_injected .mdc-switch.mdc-switch--unselected:enabled:focus .mdc-switch__ripple::before,
  #cookiescript_injected_fsd .mdc-switch.mdc-switch--unselected:enabled:focus .mdc-switch__ripple::after,
  #cookiescript_injected_fsd .mdc-switch.mdc-switch--unselected:enabled:focus .mdc-switch__ripple::before {
-     background-color: #424242
+     background-color: #424242;
  }
  
  #cookiescript_injected .mdc-switch.mdc-switch--unselected:enabled:active .mdc-switch__ripple::after,
  #cookiescript_injected .mdc-switch.mdc-switch--unselected:enabled:active .mdc-switch__ripple::before,
  #cookiescript_injected_fsd .mdc-switch.mdc-switch--unselected:enabled:active .mdc-switch__ripple::after,
  #cookiescript_injected_fsd .mdc-switch.mdc-switch--unselected:enabled:active .mdc-switch__ripple::before {
-     background-color: #424242
+     background-color: #424242;
  }
  
  #cookiescript_injected .mdc-switch.mdc-switch--selected:enabled:hover:not(:focus).mdc-ripple-surface--hover .mdc-switch__ripple::before,
@@ -1112,22 +1111,22 @@
  }
  
  #cookiescript_injected .mdc-switch:enabled .mdc-switch__track::after {
-     background: ;
+     background: none;
      opacity: 0.3
  }
  
  #cookiescript_injected .mdc-switch:enabled:hover:not(:focus):not(:active) .mdc-switch__track::after {
-     background: ;
+     background: none;
      opacity: 0.3
  }
  
  #cookiescript_injected .mdc-switch:enabled:focus:not(:active) .mdc-switch__track::after {
-     background: ;
+     background: none;
      opacity: 0.3
  }
  
  #cookiescript_injected .mdc-switch:enabled:active .mdc-switch__track::after {
-     background: ;
+     background: none;
      opacity: 0.3
  }
  
@@ -1300,7 +1299,7 @@
  }
  
  #cookiescript_injected {
-     font-family: Mabry;
+     font-family: 'Roboto Regular', sans-serif;
      box-shadow: none;
      border: 2px solid #131314;
      border-radius: 25px;
@@ -1315,4 +1314,45 @@
  #cookiescript_reportlink,
  #cookiescript_cookiescriptlink {
      font-size: 14px;
+ }
+ 
+ @font-face {
+     font-family: 'Cormorant Garamond Semibold';
+     src: url("../fonts/Cormorant-Garamond/CormorantGaramond-SemiBold.ttf") format('truetype');
+     font-weight: 400;
+     font-style: normal;
+     font-display: swap;
+ }
+ 
+ @font-face {
+     font-family: 'Roboto Regular';
+     src: url("../fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+     font-style: normal;
+     font-display: block;
+ }
+ 
+ @font-face {
+     font-family: 'Roboto Bold';
+     src: url("../fonts/Roboto/Roboto-Bold.ttf");
+     font-style: normal;
+     font-display: block;
+ }
+ 
+ @font-face {
+     font-family: 'Roboto Thin';
+     src: url("../fonts/Roboto/Roboto-Thin.ttf") format('truetype');
+     font-style: normal;
+     font-display: block;
+ }
+ 
+ @font-face {
+     font-family: 'Roboto Light';
+     src: url("../fonts/Roboto/Roboto-Light.ttf");
+     font-style: normal;
+     font-display: block;
+ }
+ 
+ @font-face {
+     font-family: 'Cormorant Garamond Light';
+     src: url("../fonts/Cormorant-Garamond/CormorantGaramond-Light.ttf") format('truetype');
  }
