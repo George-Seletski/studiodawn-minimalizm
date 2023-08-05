@@ -333,6 +333,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
             });
 
+
             locoScroll.on("scroll", ScrollTrigger.update);
 
             if (screenWidth > 991) {
@@ -340,12 +341,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 ScrollTrigger.scrollerProxy(scrollContainer, {
                     scrollLeft(value) {
                         if (arguments.length) {
-                            locoScroll.scroll.instance.scroll.x = value + 300;
+                            locoScroll.scroll.instance.scroll.x = value + 100;
+                            console.log(
+                                "value:",
+                                value,
+                                "locoScroll.scroll.instance.scroll.x):",
+                                locoScroll.scroll.instance.scroll.x
+                            );
                         }
-                        return locoScroll.scroll.instance.scroll.x + 300;
+                        console.log("if !arguments.length:\n",
+                            "value:",
+                            value,
+                            "locoScroll.scroll.instance.scroll.x):",
+                            locoScroll.scroll.instance.scroll.x
+                        );
+                        return locoScroll.scroll.instance.scroll.x + 100;
+
                     },
                     getBoundingClientRect() {
-                        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+                        return {
+                            top: 0,
+                            left: 0,
+                            width: window.innerWidth,
+                            height: window.innerHeight
+                        };
+
                     },
                     // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
                     pinType: scrollContainer.style.transform ? "transform" : "fixed"
@@ -354,6 +374,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else {
                 ScrollTrigger.scrollerProxy(scrollContainer, {
                     scrollTop(value) {
+                        console.log(' scrollTop(value):\n ',
+                            "value:",
+                            value,
+
+                        );
+
                         return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
                     },
                     getBoundingClientRect() {
