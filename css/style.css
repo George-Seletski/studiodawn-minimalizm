@@ -255,7 +255,6 @@
     .garamond-font {
         font-family: 'Cormorant Garamond Light', sans-serif !important;
         font-weight: 100;
-        font-size: 1.3em;
     }
     
     .font-30 {
@@ -1377,6 +1376,10 @@
         padding: 0px;
     }
     
+    .team-header-text>h1 {
+        font-size: 2.4em !important;
+    }
+    
     .team-section {
         place-self: auto;
         grid-area: auto / auto / auto / auto;
@@ -1814,6 +1817,7 @@
         }
         .mr-55 {
             margin-right: -21px !important;
+            font-size: 120px;
         }
         .bottom-text-header>span {
             text-align: center;

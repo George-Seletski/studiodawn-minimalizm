@@ -32,6 +32,10 @@
         font-size: 144px !important;
     }
     
+    div {
+        /*border: 1px solid #000;*/
+    }
+    
     article,
     aside,
     figcaption,
@@ -188,7 +192,6 @@
     .team-cardinfo {
         position: relative;
         width: 100%;
-        margin-top: -32px;
         top: auto;
         bottom: 6rem;
         left: 0%;
@@ -231,10 +234,6 @@
         line-height: 1;
         width: 100%;
         height: 100%;
-    }
-    
-    .garamond-font {
-        font-size: 144px !important;
     }
     
     .team-header-text {
@@ -782,14 +781,14 @@
                 }
             });
 
-            const mainGrid = document.querySelector(".team-header-text");
+            const mainGridText = document.querySelector(".team-header-text");
 
             gsap.timeline({
                 scrollTrigger: {
-                    trigger: mainGrid,
+                    trigger: mainGridText,
                     pin: true,
                     start: "top top",
-                    end: "+=3000", // End the animation when the bottom of mainGrid is at the center of the viewport
+                    end: "+=3000", // End the animation when the bottom of mainGridText is at the center of the viewport
                     scrub: true, // Makes the animation follow the scrolling more smoothly
 
                 }
@@ -799,40 +798,13 @@
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
 
-            const mainGrid = document.querySelector(".team-header-text");
+            const mainGridText = document.querySelector(".team-header-text");
             let screenWidth = $(window).width();
-            if (screenWidth < 991) {
-                if (screenWidth > 767) {
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: mainGrid,
-                            pin: true,
-                            start: 'top top',
-                            end: "+=7000", // End the animation when the bottom of mainGrid is at the center of the viewport
-                            scrub: true, // Makes the animation follow the scrolling more smoothly
-                        }
-                    });
-                } else {
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: mainGrid,
-                            pin: true,
+            mainGridText.style = 'opacity: 1 !important;';
+            mainGridText.style = 'transform: translateY(-100%);';
+            const mainGrid = document.querySelector(".main-grid");
+            mainGrid.style = '    margin-top: 60vh;';
 
-                            end: "+=8600", // End the animation when the bottom of mainGrid is at the center of the viewport
-                            scrub: true, // Makes the animation follow the scrolling more smoothly
-                        }
-                    });
-                }
-            }
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: mainGrid,
-                    pin: true,
-                    start: 'bottom bottom',
-                    end: "+=4650", // End the animation when the bottom of mainGrid is at the center of the viewport
-                    scrub: true, // Makes the animation follow the scrolling more smoothly
-                }
-            });
         }
 
         $('.hamburger-menu-wrapper').click(function() {
