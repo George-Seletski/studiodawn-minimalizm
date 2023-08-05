@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 ScrollTrigger.scrollerProxy(scrollContainer, {
                     scrollLeft(value) {
                         if (arguments.length) {
-                            locoScroll.scroll.instance.scroll.x = value + 100;
+                            locoScroll.scroll.instance.scroll.x = value + 1000;
                             console.log(
                                 "value:",
                                 value,
@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                             "locoScroll.scroll.instance.scroll.x):",
                             locoScroll.scroll.instance.scroll.x
                         );
-                        return locoScroll.scroll.instance.scroll.x + 100;
+                        return locoScroll.scroll.instance.scroll.x + 1000;
 
                     },
                     getBoundingClientRect() {
