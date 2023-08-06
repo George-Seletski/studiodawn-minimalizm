@@ -537,8 +537,9 @@
         console.log('width:' + screenWidth + 'em');
         if (!isTouchDevice) {
             const scrollContainer = document.querySelector(".h-scroll__inview");
-            screenWidth = window.innerWidth - 252;
-            scrollContainer.style = 'width:' + screenWidth + 'em';
+            //screenWidth = window.innerWidth - 252;
+            //scrollContainer.style = 'width:' + screenWidth * 1.157 + 'em';
+            scrollContainer.style = 'width:' + (screenWidth + 2) + 'em';
             const customCursor = document.querySelector(".custom-cursor");
             // Add custom cursor functionality for non-touch devices
 
@@ -600,8 +601,6 @@
                 } else {
                     scrollContainer.style = 'width:100%;';
                 }
-            } else {
-                scrollContainer.style = 'width:100%;';
             }
             console.log('width:' + screenWidth + 'em');
         }
