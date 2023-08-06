@@ -408,7 +408,7 @@
     }
     
     .header-wrapper.with-effect {
-        /*background: rgba(114, 114, 114, 0.089);*/
+        background: rgba(114, 114, 114, 0.089);
         backdrop-filter: saturate(180%) blur(10px);
         opacity: 1;
     }
