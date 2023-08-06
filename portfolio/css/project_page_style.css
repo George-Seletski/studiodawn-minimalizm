@@ -2208,7 +2208,6 @@ label {
 }
 
 .h-scroll__inview {
-    width: 3000rem;
     height: 100vh;
     flex-wrap: wrap;
     align-items: center;

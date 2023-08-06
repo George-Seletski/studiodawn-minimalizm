@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/project_page_style.css" type="text/css">
 
     <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./js/main2.js"></script>
+
 
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
@@ -18,13 +18,17 @@
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://unpkg.com/split-type@0.3.0/umd/index.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+
 
 </head>
 <style>
     html {
         font-size: 8px;
         height: 100%;
+    }
+    
+    div {
+        border: 1px solid #000;
     }
     
     @media screen and (min-width: 992px) {
@@ -346,10 +350,15 @@
         text-decoration: none !important;
     }
     
+    @media screen and (max-width: 1400px) {}
+    
     @media screen and (max-width: 479px) {
         .w-layout-grid>.case-page__cover {
-            height: fit-content;
+            height: 60vh;
             padding-bottom: 2em;
+        }
+        .h-extra {
+            height: 25vh !important;
         }
         .info-block-case {
             padding-bottom: 6rem;
@@ -453,10 +462,10 @@
                         </div>
                     </section>
                     <section class="h-scroll__section contain">
-                        <div class="w-layout-grid content-grid">
+                        <div class="w-layout-grid content-grid  ">
 
 
-                            <div class=" case-page__cover" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd847-d13fd845">
+                            <div class=" case-page__cover h-extra" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd847-d13fd845">
                                 <div class="cover__heading last-page">
                                     <h1 class="xxxxl contact-heading">
                                         <div class="lines" style=" font-family: 'Cormorant Garamond Semibold', sans-serif; display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';">Contact</div>
@@ -526,9 +535,12 @@
         gsap.registerPlugin(ScrollTrigger);
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
-
-
+        let screenWidth = window.innerWidth;
+        console.log('width:' + screenWidth + 'em');
         if (!isTouchDevice) {
+            const scrollContainer = document.querySelector(".h-scroll__inview");
+            screenWidth = window.innerWidth - 259;
+            scrollContainer.style = 'width:' + screenWidth + 'em';
             const customCursor = document.querySelector(".custom-cursor");
             // Add custom cursor functionality for non-touch devices
 
@@ -554,8 +566,43 @@
                 });
             });
         } else {
+            const scrollContainer = document.querySelector(".h-scroll__inview");
+
+
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
+
+            let screenWidth = window.innerWidth;
+            // Function to disable vertical scrolling
+            function disableVerticalScroll() {
+                // Prevent the default scroll behavior
+                document.addEventListener("scroll", preventScroll);
+            }
+
+            // Function to re-enable vertical scrolling
+            function enableVerticalScroll() {
+                // Remove the event listener
+                document.removeEventListener("scroll", preventScroll);
+            }
+
+            // Function to prevent the default scroll behavior
+            function preventScroll(event) {
+                event.preventDefault();
+            }
+            if (screenWidth < 1919) {
+
+                const customCursor = document.querySelector(".custom-cursor");
+                const storyBlock = document.querySelector(".story-content");
+                if (screenWidth > 991) {
+                    // Call the disableVerticalScroll function to turn off y scrolling
+                    scrollContainer.style = 'width:' + screenWidth * 2.38 + 'em';
+                    storyBlock.style = 'width:' + screenWidth * 2 + 'em';
+                    disableVerticalScroll();
+                }
+            } else {
+                scrollContainer.style = 'width:100%;';
+            }
+            console.log('width:' + screenWidth + 'em');
         }
 
 
