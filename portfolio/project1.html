@@ -26,9 +26,8 @@
         font-size: 8px;
         height: 100%;
     }
-    /*div {
-        border: 1px solid #000;
-    }*/
+    
+    div {}
     
     @media screen and (min-width: 992px) {
         html {
@@ -538,7 +537,7 @@
         console.log('width:' + screenWidth + 'em');
         if (!isTouchDevice) {
             const scrollContainer = document.querySelector(".h-scroll__inview");
-            screenWidth = window.innerWidth - 259;
+            screenWidth = window.innerWidth - 252;
             scrollContainer.style = 'width:' + screenWidth + 'em';
             const customCursor = document.querySelector(".custom-cursor");
             // Add custom cursor functionality for non-touch devices
@@ -572,6 +571,7 @@
             customCursor.style = `opacity: 0 !important;`;
 
             let screenWidth = window.innerWidth;
+            scrollContainer.style = 'width:' + screenWidth + 'em';
             // Function to disable vertical scrolling
             function disableVerticalScroll() {
                 // Prevent the default scroll behavior
@@ -594,9 +594,11 @@
                 const storyBlock = document.querySelector(".story-content");
                 if (screenWidth > 991) {
                     // Call the disableVerticalScroll function to turn off y scrolling
-                    scrollContainer.style = 'width:' + screenWidth * 2.38 + 'em';
+                    scrollContainer.style = 'width:' + screenWidth * 2.5 + 'em';
                     storyBlock.style = 'width:' + screenWidth * 2 + 'em';
                     disableVerticalScroll();
+                } else {
+                    scrollContainer.style = 'width:100%;';
                 }
             } else {
                 scrollContainer.style = 'width:100%;';
