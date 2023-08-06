@@ -534,12 +534,19 @@
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
         let screenWidth = window.innerWidth;
+        let storyBlock = document.querySelector(".story-content");
         console.log('width:' + screenWidth + 'em');
         if (!isTouchDevice) {
             const scrollContainer = document.querySelector(".h-scroll__inview");
             //screenWidth = window.innerWidth - 252;
             //scrollContainer.style = 'width:' + screenWidth * 1.157 + 'em';
-            scrollContainer.style = 'width:' + (screenWidth + 2) + 'em';
+            if (screenWidth < 1920) {
+                scrollContainer.style = 'width: 1799em';
+            } else {
+                scrollContainer.style = 'width:' + (screenWidth + 2) + 'em';
+            }
+
+
             const customCursor = document.querySelector(".custom-cursor");
             // Add custom cursor functionality for non-touch devices
 
@@ -592,11 +599,11 @@
             if (screenWidth < 1919) {
 
                 const customCursor = document.querySelector(".custom-cursor");
-                const storyBlock = document.querySelector(".story-content");
+
                 if (screenWidth > 991) {
                     // Call the disableVerticalScroll function to turn off y scrolling
-                    scrollContainer.style = 'width:' + screenWidth * 2.5 + 'em';
-                    storyBlock.style = 'width:' + screenWidth * 2 + 'em';
+                    scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
+                    storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
                     disableVerticalScroll();
                 } else {
                     scrollContainer.style = 'width:100%;';
