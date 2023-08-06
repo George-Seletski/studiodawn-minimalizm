@@ -85,6 +85,14 @@
         font-family: 'Cormorant Garamond Light', sans-serif;
     }
     
+    .brands-section-header>h2 {
+        font-size: 5em !important;
+        text-align: left;
+        margin-bottom: 35px;
+        /*font-family: 'Cormorant Garamond Semibold', sans-serif;*/
+        font-family: 'Cormorant Garamond Light', sans-serif;
+    }
+    
     #narrow-block {
         width: 300px !important;
         margin-left: 7.8em !important;
