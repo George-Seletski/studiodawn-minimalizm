@@ -909,10 +909,11 @@
         gap: 5em;
         flex-wrap: wrap;
         width: 100%;
+        margin: 5em 0;
     }
     
     #brand {
-        width: 300px;
+        width: 10em;
         display: flex;
     }
     
