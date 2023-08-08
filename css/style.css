@@ -207,6 +207,7 @@
     .mouse-container {
         display: flex;
         justify-content: center;
+        margin-top: 2em;
     }
     
     .mouse-scroll {
@@ -1319,9 +1320,9 @@
     }
     
     .odd-header {
-        height: 75vh;
+        height: 70vh;
         align-items: flex-end;
-        margin-bottom: 4em;
+        margin-bottom: 8em;
     }
     
     .header-image-description {
