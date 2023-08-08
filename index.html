@@ -48,10 +48,16 @@
         position: absolute;
         text-align: center;
         line-height: 44px;
-        background: #fff;
+        background: #f9f4f4;
         border-radius: 50%;
         transform: translateY(-50%);
         transition: transform 0.1s linear;
+    }
+    
+    i>img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
     }
     
     .wrapper i:active {
@@ -59,7 +65,7 @@
     }
     
     .wrapper i:hover {
-        background: #f2f2f2;
+        background: #fff;
     }
     
     .wrapper i:first-child {
@@ -250,26 +256,18 @@
                         <div class="hamburger-menu-bar-top"></div>
                         <div class="hamburger-menu-bar-bottom"></div>
                     </div>
-                    <div class="header-logo-link w-nav-brand ">
-                        <img src="img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
-                    </div>
+                    <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
+                        <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                    </a>
 
 
                     <div class="icons">
-                        <div class="navbar-icon">
-                            <a href="http://" target="_blank" rel="noopener noreferrer">
-                                <img src="./icons/facebook-svg-large.svg" id="icon" alt="facebook-icon" srcset="">
-                            </a>
-                        </div>
-                        <div class="navbar-icon">
-                            <a href="http://" target="_blank" rel="noopener noreferrer">
-                                <img src="./icons/instagram-svg.svg" id="icon" alt="instagram-icon" srcset="">
-                            </a>
-                        </div>
-                        <div class="navbar-icon">
-                            <a href="http://" target="_blank" rel="noopener noreferrer">
-                                <img src="./icons/behance.svg" id="icon" alt="behance-icon" srcset="">
-                            </a>
+                        <div class="language-icon">
+
+                            <div class="svg-icon">
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -281,7 +279,7 @@
             <div class="header-section-content">
 
                 <h1>
-                    <span class="mb-bottom---10px garamond-font">We create</span>
+                    <span class="mb-bottom---10px garamond-font ">We create</span>
                     <span class="mb-bottom---10px mr-55"> future brands</span>
                 </h1>
 
@@ -480,32 +478,33 @@
             </div>
             <div class="icon-box">
 
-                <div class="language-icon">
-                    <div id="language-icon-circle">
-                        <div class="svg-icon">
-
-                        </div>
-                    </div>
-                </div>
+                <!--<div class="language-icon">
+                                <div id="language-icon-circle">
+                                    <div class="svg-icon">
+            
+                                    </div>
+                                </div>
+                            </div>-->
                 <div class="icons">
                     <div class="wh-30">
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="./icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
                         </a>
                     </div>
                     <div class="wh-30">
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="./icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
                         </a>
                     </div>
                     <div class="wh-30">
                         <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="./icons/behance.svg" id="icon" alt="" srcset="">
+                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
                         </a>
                     </div>
                 </div>
+            </div>
         </footer>
-        </div>
+    </div>
 </body>
 
 <script>
@@ -542,7 +541,7 @@
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
         }
-
+        gsap.registerPlugin();
         // GSAP TimelineMax for animations
         const timeline = gsap.timeline();
 

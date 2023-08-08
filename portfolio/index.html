@@ -13,34 +13,43 @@
 
 </head>
 <style>
-    h1 {
-        line-height: 0.6 !important;
-        font-size: 112px !important;
+    .fnt-small {
+        font-size: 60px;
+        line-height: 50px;
     }
     
-    @media screen and (min-width: 1920px) {
-        h1 {
-            line-height: 1 !important;
+    @media screen and (max-width: 479px) {
+        .fnt-small {
+            font-size: 25px !important;
+            line-height: 50px;
+        }
+        .extra__button>a {
+            font-size: 16px !important;
         }
     }
     
     @media screen and (max-width: 991px) {
-        h1 {
-            line-height: 1 !important;
+        .fnt-small {
+            font-size: 65px;
+            line-height: 50px;
+        }
+        .extra__button>a {
+            font-size: 25px;
         }
     }
     
-    @media screen and (min-width: 991px) {
-        h1 {
-            line-height: 0.6 !important;
-        }
+    .extra__button {
+        font-size: 20px !important;
+        line-height: 35px;
+        font-family: 'Roboto Light';
+        font-weight: 500;
+        transition: all 0.5s ease;
     }
     
-    @media screen and (max-width: 479px) {
-        h1 {
-            line-height: 1 !important;
-            font-size: 36px !important;
-        }
+    .portfolio-container-text {
+        z-index: 0;
+        position: relative;
+        width: 100%;
     }
 </style>
 
@@ -166,30 +175,35 @@
                 </div>
 
             </div>
-            <div class="filter-container">
-                <div id="column">
-                    <ul class="filter-list" id="list-1">
-                        <li class="filter-button active" onclick="handleFilterClick(this, 'all')"><a>All projects</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'product design')"><a>Product design</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'logo & branding')"><a>Logo & Branding</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'graphic design')"><a>Graphic design</a></li>
-                    </ul>
-                </div>
-                <div id="column">
-                    <ul class="filter-list" id="list-2">
-                        <li class="filter-button" onclick="handleFilterClick(this, 'website')"><a>Website</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'eshop')"><a>Eshop</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'print')"><a>Print</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'design')"><a>Design</a></li>
-                    </ul>
-                </div>
-                <div id="column">
-                    <ul class="filter-list" id="list-3">
-                        <li class="filter-button" onclick="handleFilterClick(this, 'marketing')"><a>Marketing</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'compain')"><a>Compain</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'social')"><a>Social</a></li>
-                        <li class="filter-button" onclick="handleFilterClick(this, 'event')"><a>Event</a></li>
-                    </ul>
+            <div class="filter-container-main">
+                <div class="filter-button active extra__button" onclick="handleFilterClick(this, 'all')"><a>All projects</a></div>
+                <div class="filter-container">
+                    <div id="column">
+
+                        <ul class="filter-list" id="list-1">
+                            <li class="filter-button" onclick="handleFilterClick(this, 'marketing')"><a>Marketing</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'product design')"><a>Product design</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'logo & branding')"><a>Logo & Branding</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'graphic design')"><a>Graphic design</a></li>
+                        </ul>
+                    </div>
+                    <div id="column">
+                        <ul class="filter-list" id="list-2">
+
+                            <li class="filter-button" onclick="handleFilterClick(this, 'website')"><a>Website</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'eshop')"><a>Eshop</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'print')"><a>Print</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'design')"><a>Design</a></li>
+                        </ul>
+                    </div>
+                    <div id="column">
+                        <ul class="filter-list" id="list-3">
+
+                            <li class="filter-button" onclick="handleFilterClick(this, 'compain')"><a>Compain</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'social')"><a>Social</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'event')"><a>Event</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -225,13 +239,13 @@
     </div>
     <div class="icon-box">
 
-        <div class="language-icon">
-            <div id="language-icon-circle">
-                <div class="svg-icon">
-
-                </div>
-            </div>
-        </div>
+        <!--<div class="language-icon">
+                        <div id="language-icon-circle">
+                            <div class="svg-icon">
+    
+                            </div>
+                        </div>
+                    </div>-->
         <div class="icons">
             <div class="wh-30">
                 <a href="http://" target="_blank" rel="noopener noreferrer">
@@ -425,7 +439,7 @@
                 textContent.textContent = obj.text;
 
                 var metaContent = document.createElement('p');
-                metaContent.className = "active";
+                metaContent.className = "tag";
                 metaContent.textContent = obj.tag;
                 textContent.appendChild(metaContent);
 
