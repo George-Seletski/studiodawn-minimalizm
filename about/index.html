@@ -289,10 +289,22 @@
             font-size: 92px !important;
         }
         .garamond-font {
-            font-size: 92px !important;
+            font-size: 82px !important;
         }
         .mouse-container {
-            display: none;
+            display: none !important;
+        }
+        .odd-header {
+            height: 70vh;
+            align-items: center;
+            margin: 0;
+        }
+        .header-section-content {
+            font-size: 2em;
+            margin-top: 0px;
+        }
+        .section-block-text {
+            margin: 5em 0;
         }
     }
     
@@ -305,6 +317,9 @@
     @media screen and (max-width: 991px) {
         .main-grid {
             margin-top: 20vh;
+        }
+        .mouse-container {
+            display: none !important;
         }
     }
     
@@ -651,7 +666,7 @@
             </div>
         </div>
 
-        <div class="header-section section-block hv-80">
+        <div class="header-section section-block">
             <div class="header-section-content ">
 
                 <h1>
@@ -817,7 +832,7 @@
             mainGridText.style = 'opacity: 1 !important;';
 
             const mainGrid = document.querySelector(".main-grid");
-            mainGrid.style = '    margin-top:40vh;';
+            mainGrid.style = '    margin-top:30vh;';
 
         }
 

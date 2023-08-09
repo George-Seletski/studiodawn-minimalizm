@@ -640,7 +640,7 @@
     
     .description__content>.description {
         display: block;
-        font-size: 1.5em !important;
+        font-size: 1.5em;
         line-height: 1.75;
         padding-top: 2em;
     }
@@ -1349,7 +1349,7 @@
         font-size: 2em !important;
         margin-left: auto;
         margin-right: auto;
-        height: 100vh !important;
+        height: 100vh;
     }
     
     .section-block>.header-section-content {
@@ -1681,7 +1681,7 @@
         }
         .description__content>.description {
             display: block;
-            font-size: 1.2em !important;
+            font-size: 1.2em;
             line-height: 1.75;
             padding-top: 2em;
         }
@@ -1785,7 +1785,7 @@
         }
         .description__content>.description {
             display: block;
-            font-size: 1em !important;
+            font-size: 1em;
             line-height: 1.75;
             padding-top: 2em;
         }
@@ -1861,6 +1861,7 @@
         }
         .section-block {
             font-size: 1.4em !important;
+            height: 70vh !important;
         }
         .mb-bottom---10px {
             margin-top: 0;
@@ -1982,7 +1983,7 @@
         .contact-h2 {
             padding: 0;
             font-size: 8em;
-            margin-bottom: 0;
+            margin-bottom: 50px;
         }
         .info-block>h3 {
             font-size: 4em;
@@ -1996,8 +1997,11 @@
         }
         .container-header>h1 {
             max-width: 100%;
-            margin-left: 1em;
-            font-size: 2em;
+            margin-left: 0em !important;
+            font-size: 3em !important;
+        }
+        .sub-text {
+            font-size: 1em !important;
         }
         #contact-form-container {
             padding: 4em 0;
@@ -2065,6 +2069,7 @@
         }
         .description__content {
             width: 100%;
+            padding: 0 10px;
         }
         .icons-view {
             height: 100px;
@@ -2102,13 +2107,16 @@
         }
         .description__content>.description {
             display: block;
-            font-size: 1.5em !important;
+            font-size: 1.2em;
             line-height: 1.75;
             padding-top: 2em;
         }
         .wh-30 {
             width: 40px !important;
             height: 40px !important;
+        }
+        .tag {
+            padding-top: 20px;
         }
     }
     
@@ -2273,12 +2281,15 @@
     }
     
     @media screen and (max-width: 479px) {
+        .pb-2 {
+            padding-bottom: 1em;
+        }
         h1 {
             line-height: 1 !important;
             font-size: 50px !important;
         }
         .odd-header {
-            height: 61vh !important;
+            height: 75vh !important;
         }
         .filter-list>li>a {
             font-size: 16px !important;
@@ -2388,7 +2399,7 @@
         }
         .header-cover>img {
             height: auto;
-            padding: 3em 0;
+            padding: 0 0 3em 0;
         }
         .header-image-description>.description {
             display: block;
@@ -2400,10 +2411,11 @@
             margin: 20em 0;
         }
         .team-section {
-            margin-top: 5em;
+            margin-top: 1em;
+            height: 400px;
         }
         .main-grid {
-            margin-top: -20vh !important;
+            margin-top: 0vh !important;
         }
         .team-header-text {
             align-items: center;
@@ -2458,6 +2470,12 @@
             margin-right: auto;
             height: 100vh;
         }
+        .description__content>.description {
+            display: block;
+            font-size: 1em;
+            line-height: 1.75;
+            padding-top: 2em;
+        }
         .filter-container {
             display: flex;
             gap: 0px;
@@ -2471,10 +2489,10 @@
             height: fit-content;
         }
         #grid-view-icon {
-            width: 35px;
+            width: 25px;
         }
         #list-view-icon {
-            width: 39px;
+            width: 31px;
         }
         #list-1 {
             width: 10em;
@@ -2595,7 +2613,7 @@
         }
         .info-block>.icons {
             margin: 0 !important;
-            justify-content: flex-start;
+            justify-content: center;
         }
         .contanct-links>.link-email a,
         .contanct-links>.link-telephone a {
