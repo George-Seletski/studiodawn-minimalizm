@@ -59,6 +59,10 @@
     .row-container {
         margin: 0px 144px !important;
     }
+    
+    .active-button {
+        transform: scale(1.5);
+    }
 </style>
 
 <body>
@@ -164,11 +168,11 @@
     </div>
     <div class="page-wrapper">
         <div class="row-container mg-10">
-            <div class="icons-view">
-                <div id="grid-view-icon" onclick="showGrid()">
+            <div class="icons-view ">
+                <div id="grid-view-icon" class="" onclick="showGrid()">
                     <img src="../icons/more-grid-big-svg.svg" alt="grid-view-icon" srcset="">
                 </div>
-                <div id="list-view-icon" onclick="showList()">
+                <div id="list-view-icon" class="" onclick="showList()">
                     <img src="../icons/list-svg.svg" alt="list-view-icon" srcset="">
                 </div>
 
@@ -458,7 +462,12 @@
     }
 
 
+
     function showList() {
+        var gridIcon = document.querySelector('#grid-view-icon');
+        var listIcon = document.querySelector('#list-view-icon');
+        gridIcon.classList.remove('active-button');
+        listIcon.classList.add('active-button');
         casesList.style.display = "flex";
         casesGrid.style.display = "none";
         ListView = true;
@@ -473,6 +482,10 @@
     }
 
     function showGrid() {
+        var gridIcon = document.querySelector('#grid-view-icon');
+        var listIcon = document.querySelector('#list-view-icon');
+        listIcon.classList.remove('active-button');
+        gridIcon.classList.add('active-button');
         casesList.style.display = "none";
         casesGrid.style.display = "block";
         ListView = false;
