@@ -74,13 +74,7 @@
     
     h1 {
         line-height: 1;
-        font-size: 144px !important;
-    }
-    
-    @media screen and (min-width: 1920px) {
-        h1 {
-            line-height: 1 !important;
-        }
+        font-size: 144px;
     }
     
     @media screen and (max-width: 991px) {
@@ -1236,10 +1230,10 @@
     }
     
     .contact-h2 {
-        font-size: 46px;
+        font-size: 60px;
         text-align: left;
-        margin-bottom: 75px;
-        line-height: 1;
+        margin-top: 60px;
+        margin-bottom: 20px;
     }
     
     .contact-h3 {
@@ -1254,6 +1248,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        padding-top: 40px;
     }
     
     .contanct-links {

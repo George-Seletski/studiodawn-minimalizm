@@ -13,21 +13,42 @@
 
 </head>
 <style>
-    .columns-container {
-        margin-top: 8em;
-    }
-    
     .row-container-info {
         display: flex;
         flex-direction: row;
+        gap: 50px;
     }
     
     body {
         overflow: hidden !important;
     }
     
-    div {
-        border: 1px solid #000;
+    @media screen and (min-width: 1920px) {
+        h1 {
+            font-size: 32px !important;
+        }
+    }
+    
+    .fnt-grt {
+        font-weight: 600;
+        font-size: 86px;
+        font-family: 'Cormorant Garamond Semibold', sans-serif !important;
+    }
+    
+    h1 {
+        font-size: 32px !important;
+    }
+    
+    @media screen and (min-width: 1400px) {
+        .columns-container {
+            gap: 100px;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+    }
+    
+    .sub-text {
+        font-size: 50px;
     }
 </style>
 
@@ -129,9 +150,9 @@
                     <div id="forms">
                         <div class="container-header">
                             <h1>
-                                <span class="container-text garamond-font fw-800">All the world is<br> made of faith,
+                                <span class="container-text fnt-grt">All the world is<br> made of faith,
                                 trust<br></span>
-                                <span class="container-text fw-800">and pixie dust.</span>
+                                <span class="container-text sub-text">and pixie dust.</span>
                             </h1>
                         </div>
 
@@ -184,9 +205,7 @@
                     <div class="row-container-info">
                         <div class="info-block">
                             <h3 class="contact-h3">Canada</h3>
-                            <a href="#" class="link-address">228 Nelson's Crescent,<br>BC V3L 3E3 New
-                        Westminster, <br>
-                        Canada</a>
+                            <a href="#" class="link-address">228 Nelson's Crescent,<br>BC V3L 3E3 New Westminster, <br> Canada</a>
                         </div>
                         <div class="info-block">
                             <h3 class="contact-h3">Slovakia</h3>
