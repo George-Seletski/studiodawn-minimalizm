@@ -33,8 +33,7 @@
         left: 0;
         right: 0;
         margin: auto;
-        display: flex !important;
-        align-items: baseline !important;
+        display: inline-block !important;
         cursor: none;
     }
     
@@ -46,7 +45,6 @@
         cursor: none;
         font-size: 1.15rem;
         position: absolute;
-        text-align: center;
         line-height: 44px;
         background: #f9f4f4;
         border-radius: 50%;
@@ -83,8 +81,7 @@
         overflow: hidden;
         white-space: nowrap;
         scroll-behavior: smooth;
-        display: flex;
-        align-items: center !important;
+        display: inline-block;
     }
     
     .carousel.dragging {
@@ -92,15 +89,15 @@
         scroll-behavior: auto;
     }
     
-    .carousel.dragging img {
+    .carousel.dragging {
         pointer-events: none;
     }
     
-    .carousel img {
+    .grid-image {
         object-fit: cover;
         user-select: none;
-        margin-left: 14px;
-        width: calc(100%);
+        margin-left: 14px !important;
+        width: calc(30%) !important;
     }
     
     .carousel img:first-child {
@@ -114,7 +111,7 @@
     }
     
     @media screen and (max-width: 550px) {
-        .carousel img {
+        .carousel span {
             width: 100%;
         }
     }
@@ -391,14 +388,40 @@
         <div class="wrapper">
             <i id="left"><img src="./icons/arrow-left-black.svg"  style="width: 20px; margin:10px;" alt="" srcset=""></i>
             <div class="carousel">
-                <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
-                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span> <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_3.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span> <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_3.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_3.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
+                <span>
+                    <a href="./portfolio/project1.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
+                </span>
                 <!--<img src="images/img-2.jpg" alt="img" draggable="false">
                 <img src="images/img-3.jpg" alt="img" draggable="false">
                 <img src="images/img-4.jpg" alt="img" draggable="false">
