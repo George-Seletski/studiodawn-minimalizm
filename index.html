@@ -34,7 +34,7 @@
         right: 0;
         margin: auto;
         display: flex !important;
-        align-items: flex-start !important;
+        align-items: baseline !important;
         cursor: none;
     }
     
@@ -84,7 +84,7 @@
         white-space: nowrap;
         scroll-behavior: smooth;
         display: flex;
-        align-items: flex-start !important;
+        align-items: center !important;
     }
     
     .carousel.dragging {
@@ -117,6 +117,10 @@
         .carousel img {
             width: 100%;
         }
+    }
+    
+    .hv-auto {
+        height: auto !important;
     }
 </style>
 
@@ -301,7 +305,7 @@
         </div>
 
         <div class="page-wrapper">
-            <div class="container">
+            <div class="container hv-auto">
                 <div class="text-header">
                     <span>
                         <div class="description">
@@ -314,7 +318,7 @@
                 </div>
 
                 <div class="video-container">
-                    <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="https://player.vimeo.com/video/850727482">
+                    <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="https://player.vimeo.com/video/850727482?autoplay=1&loop=1&autopause=0">
                         <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="https://player.vimeo.com/video/850727482">
                             <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
                         </div>
@@ -408,7 +412,7 @@
             </div>
             <i id="right" class="fa-solid fa-angle-right"><img
                 src="./icons/arrow-left-black.svg"
-                alt=""
+                alt="arrow-left"
                 srcset="" style="width: 20px; margin:10px; transform:rotate(180deg);"
             ></i>
         </div>

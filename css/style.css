@@ -657,7 +657,7 @@
     .row-container {
         display: flex;
         align-items: center;
-        margin: 92px 144px;
+        margin: 144px;
         gap: 75px;
     }
     
@@ -746,7 +746,7 @@
     .text {
         display: flex;
         text-align: center;
-        margin: 10em;
+        margin: 6.5em 10em;
         font-size: 30px;
         align-items: center;
         line-height: 70px;
@@ -754,7 +754,7 @@
     /*video*/
     
     .video-container {
-        margin: 2.5em 25em;
+        margin: 0 25em;
     }
     
     .container {
@@ -774,7 +774,7 @@
         background-color: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(8px);
         position: absolute;
-        top: calc(54vh);
+        top: calc(48vh);
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -943,7 +943,8 @@
         border-top: 2px solid;
         border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
         margin: 0 13em;
-        padding: 50px 0;
+        padding-top: 150px;
+        padding-bottom: 40px;
         display: block;
         gap: 100px;
     }
