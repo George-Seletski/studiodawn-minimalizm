@@ -587,7 +587,7 @@
     .cases-grid {
         column-count: 3;
         column-gap: 10px;
-        margin: 10em 10em;
+        margin: 5em 10em;
         transition: all 0.5s ease;
     }
     
@@ -610,7 +610,7 @@
     }
     
     .cases-list {
-        margin: 10em 10em;
+        margin: 5em 10em;
         display: none;
         flex-direction: column;
         gap: 100px;
