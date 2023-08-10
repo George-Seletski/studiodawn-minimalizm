@@ -227,23 +227,30 @@
         height: 100%;
     }
     
-    .vscroll__section {
+    .v-scroll__section.team {
+        margin-top: -50vh;
         padding-left: 0;
         padding-right: 0;
-        line-height: 1;
-        width: 100%;
-        height: 100%;
+    }
+    
+    .v-scroll__section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        padding: 0rem 6rem;
+        display: flex;
+        position: relative;
     }
     
     .team-header-text {
-        align-items: center;
         position: relative;
         inset: 0px auto auto 0px;
         margin: 0px;
         padding: 0px;
         width: 100%;
         font-family: 'Roboto Thin', sans-serif;
-        transform: translateY(0%);
+        transform: translateY(0%) !important;
+        user-select: none;
     }
     
     .mb-bottom---10px {
@@ -503,11 +510,11 @@
         </div>
 
 
-        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" data-barba="container" data-barba-namespace="home">
+        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" data-barba="container" data-barba-namespace="home" style=" border: 1px solid transparent;">
 
-            <div class="header-section-content  team-section ">
-                <div class="vscroll__section">
-                    <div class="team-header-text">
+            <div class="header-section-content  team-section " style=" border: 1px solid transparent;">
+                <div class="vscroll__section team" style=" border: 1px solid transparent;">
+                    <div class="team-header-text" style=" border: 1px solid transparent;">
                         <h1>
                             <span class="mb-bottom---10px garamond-font">Team</span>
                             <span class="mb-bottom---60px mr-55"> Studio Dawn</span>
@@ -516,7 +523,7 @@
                 </div>
             </div>
 
-            <section class="main-grid row " data-component="HomepageGrid" style="opacity: 1; visibility: inherit;">
+            <section class="main-grid row " data-component="HomepageGrid" style="opacity: 1; visibility: inherit;  border: 1px solid transparent;">
                 <section class="main-grid__column  col-md-6 col-lg-2">
                     <div class="image-container">
                         <div class="team__image-wrap">
@@ -551,7 +558,7 @@
                     </div>
 
                 </section>
-                <section class="main-grid__column  offset-lg-1 col-md-6 col-lg-2">
+                <section class="main-grid__column  offset-lg-1 col-md-6 col-lg-2" style="opacity: 1; visibility: inherit;  border: 1px solid transparent;">
                     <div class="image-container">
                         <div class="team__image-wrap">
                             <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
@@ -584,7 +591,7 @@
                     </div>
 
                 </section>
-                <section class="main-grid__column  offset-lg-1 col-md-6 col-lg-2">
+                <section class="main-grid__column  offset-lg-1 col-md-6 col-lg-2" style="opacity: 1; visibility: inherit;  border: 1px solid transparent;">
                     <div class="image-container">
                         <div class="team__image-wrap">
                             <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
@@ -795,33 +802,42 @@
             });
 
             gsap.registerPlugin(ScrollTrigger);
-            gsap.to('.image-container', {
+
+            // Store a reference to the image container and cards
+            const imageContainer = document.querySelector('.image-container');
+            const card_classes = document.querySelectorAll('.card');
+
+            // Animate the image container
+            gsap.to(imageContainer, {
                 scrollTrigger: {
-                    trigger: '.image-container',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true
+                    trigger: imageContainer,
+                    scrub: true,
+
                 },
                 y: '0%',
                 onComplete: function() {
-                    cards.forEach((card) => {
-                        card.style.transform = 'translateY(0%)'; // Reset the translateY value after the animation completes
+                    card_classes.forEach((i) => {
+                        i.style.transform = 'translateY(0%)'; // Reset the translateY value after the animation completes
                     });
-                }
+                },
             });
 
-            const mainGridText = document.querySelector(".team-header-text");
+            // Store a reference to the team header text
+            const teamHeaderText = $('.team-header-text');
 
+            // Animate the team headline
             gsap.timeline({
                 scrollTrigger: {
-                    trigger: mainGridText,
+                    trigger: teamHeaderText,
+                    scroller: window, // Use the default window as the scroller
+                    scrub: true,
                     pin: true,
-                    start: "top top",
-                    end: "+=3000", // End the animation when the bottom of mainGridText is at the center of the viewport
-                    scrub: true, // Makes the animation follow the scrolling more smoothly
+                    start: "0 25%",
+                    end: "+=3500",
 
-                }
+                },
             });
+
 
         } else {
             const customCursor = document.querySelector(".custom-cursor");

@@ -937,13 +937,13 @@
     .brands-section-header {
         width: auto;
         display: block;
+        border-bottom: 2px solid;
+        border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
     }
     
     .brands-section {
-        border-top: 2px solid;
-        border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
         margin: 0 13em;
-        padding-top: 150px;
+        padding-top: 0px;
         padding-bottom: 40px;
         display: block;
         gap: 100px;
