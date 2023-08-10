@@ -108,11 +108,27 @@
         .carousel img {
             width: calc(100% / 2);
         }
+        .wrapper {
+            margin-top: 1.5em;
+        }
+        .text {
+            margin-top: 3.5em;
+        }
     }
     
     @media screen and (max-width: 550px) {
         .carousel span {
             width: 100%;
+        }
+        #play-button-icon {
+            width: 35px;
+            height: 35px;
+        }
+        .grid-image {
+            object-fit: cover;
+            user-select: none;
+            margin-left: 14px !important;
+            width: calc(50%) !important;
         }
     }
     
@@ -676,6 +692,7 @@
             $(".movie-btn").click(function() {
                 var video = $('#myVideo');
                 var vidUrl = $(this).attr("vidUrl");
+
                 if (vidUrl) {
                     // Update the iframe src attribute with the Vimeo URL
                     video.attr("src", vidUrl);
@@ -684,6 +701,7 @@
                     $('.youTube').addClass("hide");
                     $('.youTube').removeClass("show");
                     $('.gif-animation').css('display', 'none');
+                    $('.play-button').css('display', 'none');
                 }
             });
 
@@ -724,6 +742,7 @@
                 $(".modal-vid").fadeOut(500);
                 $('.youTube, .myVideo').attr('src', '');
                 $('.gif-animation').css('display', 'block');
+                $('.play-button').css('display', 'block');
             });
         });
 
@@ -736,6 +755,7 @@
                 video.addClass("hide");
                 $('.modal-vid').fadeOut(500);
                 $('.gif-animation').css('display', 'block');
+                $('.play-button').css('display', 'block');
             }
         });
 
@@ -747,6 +767,7 @@
             video.addClass("hide");
             $('.modal-vid').fadeOut(500);
             $('.gif-animation').css('display', 'block');
+            $('.play-button').css('display', 'block');
 
         });
 
