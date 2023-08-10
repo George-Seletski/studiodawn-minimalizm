@@ -1004,7 +1004,7 @@
         transition: all 0.5s ease;
         align-items: center;
         text-align: center;
-        background-color: transparent !important;
+        background-color: transparent;
     }
     
     .button:hover {
@@ -2128,7 +2128,7 @@
         .container-default-center {
             flex-direction: column;
             gap: 5em;
-            padding: 4em 0 0 2em;
+            padding: 0em 0 0 2em;
         }
         .nav-list {
             padding: 0;
