@@ -27,8 +27,6 @@
         height: 100%;
     }
     
-    div {}
-    
     @media screen and (min-width: 992px) {
         html {
             font-size: .5208333333vw;
@@ -295,12 +293,6 @@
         font-size: 1.5em;
     }
     
-    .contact-us-block {
-        flex-direction: row;
-        align-items: flex-start;
-        margin-left: 0;
-    }
-    
     .last-page-block {
         height: auto;
         width: 100%;
@@ -351,6 +343,26 @@
     @media screen and (max-width: 1400px) {}
     
     @media screen and (max-width: 479px) {
+        .h-scroll__section {
+            width: 100vw;
+            height: auto;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            display: block;
+            left: 0;
+        }
+        .h-scroll__section.contain {
+            background-color: #fff;
+            align-items: center;
+            padding-top: 3rem;
+        }
+        #icon-box {
+            padding: 1em 0;
+        }
+        .section__flx {
+            display: block !important;
+            margin-bottom: 0px !important;
+        }
         .w-layout-grid>.case-page__cover {
             height: 60vh;
             padding-bottom: 2em;
@@ -359,7 +371,7 @@
             height: 25vh !important;
         }
         .info-block-case {
-            padding-bottom: 6rem;
+            padding-bottom: 2rem;
             text-align: left;
         }
         .case-page-icons {
@@ -382,6 +394,16 @@
     
     #icon-box {
         padding: 5em 0;
+    }
+    
+    .w-fit {
+        width: fit-content !important;
+    }
+    
+    .section__flx {
+        display: flex;
+        gap: 50px;
+        margin-bottom: 50px;
     }
 </style>
 
@@ -460,33 +482,21 @@
                             </div>
                         </div>
                     </section>
-                    <section class="h-scroll__section contain">
-                        <div class="w-layout-grid content-grid  ">
+                    <section class="h-scroll__section contain w-fit" style="padding-left:0;">
+                        <div class="section__flx ">
 
 
-                            <div class=" case-page__cover h-extra" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd847-d13fd845">
-                                <div class="cover__heading last-page">
-                                    <h1 class="xxxxl contact-heading">
+                            <div class=" case-page__cover h-extra w-fit">
+                                <div class="cover__heading last-page w-fit">
+                                    <h1 class="xxxl contact-heading">
                                         <div class="lines" style=" font-family: 'Cormorant Garamond Semibold', sans-serif; display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';">Contact</div>
                                         <div class="lines" style="font-family: 'Roboto Light', sans-serif;display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">us.</div>
                                     </h1>
                                 </div>
-
                             </div>
-                            <div class="info-block-case" id="w-node-c539f4c8-a56f-3dc3-bfbb-aaeb896079da-d13fd845">
-                                <h3 class="contact-h3 font-case-page">Canada</h3>
-                                <a href="#" class="link-address ">228 Nelson's Crescent, <br>BC V3L 3E3 New
-                                    Westminster, <br>
-                                    Canada</a>
-                            </div>
-                            <div class="info-block-case" id="w-node-a0231db7-ff6d-a659-cd4a-ccc46ebd0aa7-6ebd0a98">
-                                <h3 class="contact-h3 font-case-page">Slovakia</h3>
-                                <a href="#" class="link-address ">Tallerova 4,<br>
-                                    811 02 Bratislava,<br>Slovakia</a>
-                            </div>
-                            <div class="contact-us-block last-page-block" id="w-node-c41386a0-329c-c1ea-2556-aa3ad13fd850-d13fd845">
+                            <div class="contact-us-block last-page-block w-fit">
                                 <div id="icon-box">
-                                    <div class="info-block-case">
+                                    <div class="info-block-case" style="padding-top: 2em;">
                                         <div class="contanct-links">
                                             <div class="link-email">
                                                 <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
@@ -520,6 +530,20 @@
 
 
                             </div>
+                        </div>
+                        <div class="section__flx" style="gap:26em;">
+                            <div class="info-block-case w-fit">
+                                <h3 class="contact-h3 font-case-page">Canada</h3>
+                                <a href="#" class="link-address ">228 Nelson's Crescent, <br>BC V3L 3E3 New
+                                    Westminster, <br>
+                                    Canada</a>
+                            </div>
+                            <div class="info-block-case w-fit">
+                                <h3 class="contact-h3 font-case-page">Slovakia</h3>
+                                <a href="#" class="link-address ">Tallerova 4,<br>
+                                    811 02 Bratislava,<br>Slovakia</a>
+                            </div>
+
 
                         </div>
 
@@ -531,32 +555,33 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
+
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
         let screenWidth = window.innerWidth;
         let storyBlock = document.querySelector(".story-content");
         console.log('width:' + screenWidth + 'em');
+
         if (!isTouchDevice) {
             const scrollContainer = document.querySelector(".h-scroll__inview");
-            //screenWidth = window.innerWidth - 252;
-            //scrollContainer.style = 'width:' + screenWidth * 1.157 + 'em';
+
             if (screenWidth < 1920) {
                 scrollContainer.style = 'width: 1930em';
             } else {
-                scrollContainer.style = 'width:' + (screenWidth + 2) + 'em';
+                scrollContainer.style = 'width:' + (screenWidth - 220) + 'em';
             }
 
-
             const customCursor = document.querySelector(".custom-cursor");
+
             // Add custom cursor functionality for non-touch devices
-
-            const links = document.querySelectorAll("a");
-
             document.addEventListener('mousemove', function(event) {
                 customCursor.style.left = `${event.clientX}px`;
                 customCursor.style.top = `${event.clientY}px`;
             });
+
+            const links = document.querySelectorAll("a");
 
             links.forEach((link) => {
                 link.addEventListener("mouseover", () => {
@@ -565,31 +590,28 @@
 
                 link.addEventListener("mouseout", () => {
                     customCursor.classList.remove("custom-cursor--link");
-                    // Add a slight delay to prevent cursor flickering on hover-out
                     setTimeout(() => {
                         customCursor.style.left = `${event.clientX}px`;
                         customCursor.style.top = `${event.clientY}px`;
                     }, 50);
                 });
             });
+
         } else {
             const scrollContainer = document.querySelector(".h-scroll__inview");
-
-
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
 
             let screenWidth = window.innerWidth;
             scrollContainer.style = 'width:' + screenWidth + 'em';
+
             // Function to disable vertical scrolling
             function disableVerticalScroll() {
-                // Prevent the default scroll behavior
                 document.addEventListener("scroll", preventScroll);
             }
 
             // Function to re-enable vertical scrolling
             function enableVerticalScroll() {
-                // Remove the event listener
                 document.removeEventListener("scroll", preventScroll);
             }
 
@@ -597,24 +619,18 @@
             function preventScroll(event) {
                 event.preventDefault();
             }
-            if (screenWidth < 1919) {
 
-                const customCursor = document.querySelector(".custom-cursor");
-
-                if (screenWidth > 991) {
-                    // Call the disableVerticalScroll function to turn off y scrolling
-                    scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
-                    storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
-                    disableVerticalScroll();
-                } else {
-                    scrollContainer.style = 'width:100%;';
-                }
+            if (screenWidth < 1919 && screenWidth > 991) {
+                // Call the disableVerticalScroll function to turn off y scrolling
+                scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
+                storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
+                disableVerticalScroll();
+            } else if (screenWidth < 1919) {
+                scrollContainer.style = 'width:100%;';
             }
+
             console.log('width:' + screenWidth + 'em');
         }
-
-
-
     });
 </script>
 
