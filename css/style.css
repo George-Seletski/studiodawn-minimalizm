@@ -202,6 +202,8 @@
         display: flex;
         justify-content: center;
         margin-top: 2em;
+        opacity: 1;
+        transition: opacity 0.1s;
     }
     
     .mouse-scroll {

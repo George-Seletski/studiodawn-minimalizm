@@ -251,6 +251,8 @@
         font-family: 'Roboto Thin', sans-serif;
         transform: translateY(0%) !important;
         user-select: none;
+        opacity: 1;
+        transition: opacity 0.8s;
     }
     
     .mb-bottom---10px {
@@ -444,8 +446,8 @@
             </h1>
             <div class="mouse-container">
                 <span class="mouse">
-            <span class="mouse-movement">
-            </span>
+                    <span class="mouse-movement">
+                    </span>
                 </span>
                 <div class="mouse-scroll mr-0" href="#">
                     <span class="mouse mr-0">
@@ -516,11 +518,12 @@
         </div>
 
 
-        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" data-barba="container" data-barba-namespace="home" style=" border: 1px solid transparent;">
+        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" data-barba="container" style=" border: 1px solid transparent;">
 
             <div class="header-section-content  team-section " style=" border: 1px solid transparent;">
                 <div class="vscroll__section team" style=" border: 1px solid transparent;">
-                    <div class="team-header-text" style=" border: 1px solid transparent;">
+                    <div class="team-header-text" style=" border: 1px solid transparent; opacity: 1;
+        transition: opacity 0.2s ease;">
                         <h1>
                             <span class="mb-bottom---10px garamond-font">Team</span>
                             <span class="mb-bottom---60px mr-55"> Studio Dawn</span>
@@ -832,17 +835,37 @@
             const teamHeaderText = $('.team-header-text');
 
             // Animate the team headline
-            gsap.timeline({
+            const teamHeader = gsap.timeline({
                 scrollTrigger: {
                     trigger: teamHeaderText,
                     scroller: window, // Use the default window as the scroller
                     scrub: true,
                     pin: true,
                     start: "0 25%",
-                    end: "+=3500",
+                    end: "+=3700",
+                    //markers: true,
 
                 },
             });
+            // Add animations to the timeline
+            teamHeader.to(teamHeaderText, {
+                opacity: 0,
+            }); // Change display to "none"
+
+            // Create a timeline animation
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".mouse-container", // Element to trigger the animation
+                    start: "top 80%", // Start the animation when element is 80% in view
+                    end: "bottom 20%", // End the animation when element is 20% in view
+                    scrub: true // Enable smooth scrubbing effect while scrolling
+                }
+            });
+
+            // Add animations to the timeline
+            tl.to(".mouse-container", {
+                opacity: 0,
+            }); // Change display to "none"
 
 
         } else {
