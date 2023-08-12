@@ -782,6 +782,52 @@
         transform: translate(-50%, -50%);
     }
     
+    .loader-bg .loader {
+        height: 100%;
+        width: 100vh;
+    }
+    
+    .loader-bg .loader .loader-counter h1 {
+        position: fixed;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        color: #000;
+        font-size: 150px;
+    }
+    /*cookie-label*/
+    
+    #cookie-label {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: #333;
+        color: #fff;
+        padding: 15px;
+        text-align: left;
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        width: 250px;
+        margin: 1em;
+        background-color: rgba(0, 0, 0, 0.808);
+    }
+    
+    .cookie-label-text {
+        font-size: 13px;
+    }
+    
+    #cookie-label button {
+        background-color: #D8FF76;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 50px;
+        width: 100%;
+        margin: 1em 0;
+    }
+    
     .tag {
         font-weight: 800;
         font-family: 'Roboto Light';

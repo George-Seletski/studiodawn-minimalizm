@@ -8,7 +8,7 @@
     <title>STUDIODAWN</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <link rel="stylesheet" href="css/preloader.css">
+
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/ScrollTriger.js"></script>
@@ -138,59 +138,10 @@
 </style>
 
 <body>
-    <div class="preloader-container">
-        <div class="preloader">
-            <div class="snowflake">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-
-            </div>
-            <div class="rounded-text rotating">
-                <svg viewBox="0 0 200 200">
-                <path
-                    id="textPath"
-                    d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0"
-                    transform="translate(100,100)"
-                    fill="none"
-                    stroke-width="0"
-                ></path>
-                <g font-size="13.1px">
-                    <text text-anchor="start">
-                        <textPath
-                            class="coloring"
-                            xlink:href="#textPath"
-                            startOffset="0%"
-                        >
-                            
-                            <tspan></tspan>
-                           STUDIODAWN
-                            <tspan>·</tspan>
-                            STUDIODAWN
-                            <tspan>·</tspan>
-                            STUDIODAWN
-                            <tspan>·</tspan>
-                            STUDIODAWN
-                           
-                            
-                     
-                        
-
-                        </textPath>
-                    </text>
-                </g>
-            </svg>
-            </div>
-            <div id="surface" class="bottom">
+    <div class="loader-bg">
+        <div class="loader">
+            <div class="loader-counter">
+                <h1>0</h1>
             </div>
         </div>
     </div>
@@ -202,12 +153,6 @@
 
                 <div class="header-right-col">
                     <nav role="navigation" class="w-nav-menu">
-                        <!--<div class="w-nav-button btn-close-wrppaer">
-
-                           <div class="button-close ">
-                                <img src="./icons/arrow-left-black.svg" alt="" srcset="">
-                            </div>
-                        </div>-->
                         <div class="menu container-default-center">
 
                             <div class="w-container">
@@ -389,19 +334,6 @@
 
         </div>
 
-        <!--<div class="case-gallery">
-            <div class="grid">
-                <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt="">
-                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_3.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_2.png" loading="eager" class="grid-image" id="grid-img" alt="">
-                <img src="./img/inst_1.png" loading="eager" class="grid-image" id="grid-img" alt="">
-
-            </div>
-        </div>-->
         <div class="wrapper">
             <i id="left"><img src="./icons/arrow-left-black.svg"  style="width: 20px; margin:10px;" alt="" srcset=""></i>
             <div class="carousel">
@@ -439,14 +371,6 @@
                 <span>
                     <a href="./portfolio/project2.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
                 </span>
-                <!--<img src="images/img-2.jpg" alt="img" draggable="false">
-                <img src="images/img-3.jpg" alt="img" draggable="false">
-                <img src="images/img-4.jpg" alt="img" draggable="false">
-                <img src="images/img-5.jpg" alt="img" draggable="false">
-                <img src="images/img-6.jpg" alt="img" draggable="false">
-                <img src="images/img-7.jpg" alt="img" draggable="false">
-                <img src="images/img-8.jpg" alt="img" draggable="false">
-                <img src="images/img-9.jpg" alt="img" draggable="false">-->
             </div>
             <i id="right" class="fa-solid fa-angle-right"><img
                 src="./icons/arrow-left-black.svg"
@@ -519,14 +443,6 @@
                 </ul>
             </div>
             <div class="icon-box">
-
-                <!--<div class="language-icon">
-                                <div id="language-icon-circle">
-                                    <div class="svg-icon">
-            
-                                    </div>
-                                </div>
-                            </div>-->
                 <div class="icons">
                     <div class="wh-30">
                         <a href="http://" rel="noopener noreferrer">
@@ -546,17 +462,70 @@
                 </div>
             </div>
         </footer>
+
+        <div class="label" id="cookie-label">
+            <span class="title">
+                <h3>This website uses cookies</h3>
+            </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using our
+                website, you consent to all cookies in accordance with our cookie policy. Read more
+            </span><button id="cookie-close">Got it</button>
+        </div>
     </div>
 </body>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if the device supports touch events
+    $(window).on('load', function() {
+        var counter = 0;
+        var count = 0;
+        var i = setInterval(function() {
+            $(".loader .loader-counter h1").html(count + "%");
+            $(".loader").css("width", count + "%");
+
+            counter++;
+            count++;
+            if (counter == 101) {
+                clearInterval(i);
+                $(".loader").fadeOut(500, function() {
+                    initPage(); // Call the function to initialize other actions after preloader
+                });
+            }
+        }, 50);
+    });
+
+
+
+    function initPage() {
+        const cookieLabel = document.getElementById("cookie-label");
+        const cookieCloseButton = document.getElementById("cookie-close");
+
+        // Check if the user has already accepted the cookies
+        const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+
+        if (!cookiesAccepted) {
+            // Show the cookie label
+            cookieLabel.style.display = "block";
+        }
+
+        // Event listener for the "Got it" button click
+        cookieCloseButton.addEventListener("click", function() {
+            // Hide the cookie label
+            cookieLabel.style.display = "none";
+
+            // Store the information that the user has accepted the cookies
+            localStorage.setItem("cookiesAccepted", "true");
+
+            // Show the cookie label again after a time period (e.g., 1 day)
+            const timePeriodInMilliseconds = 24 * 60 * 60 * 1000; // 1 day
+            setTimeout(function() {
+                cookieLabel.style.display = "block";
+            }, timePeriodInMilliseconds);
+        });
+
+
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
-            // Add custom cursor functionality for non-touch devices
 
             const links = document.querySelectorAll("a");
 
@@ -572,7 +541,6 @@
 
                 link.addEventListener("mouseout", () => {
                     customCursor.classList.remove("custom-cursor--link");
-                    // Add a slight delay to prevent cursor flickering on hover-out
                     setTimeout(() => {
                         customCursor.style.left = `${event.clientX}px`;
                         customCursor.style.top = `${event.clientY}px`;
@@ -587,15 +555,7 @@
         // GSAP TimelineMax for animations
         const timeline = gsap.timeline();
 
-        // Preloader animations
-        timeline.to('.preloader-container', {
-                opacity: 0,
-                duration: 0.5
-            })
-            .to('.preloader-container', {
-                display: 'none',
-                duration: 0
-            });
+
 
         // Show the main content by setting its display property to "block"
         const mainContent = document.getElementById('main-content');
@@ -834,7 +794,7 @@
         carousel.addEventListener("touchmove", dragging);
         document.addEventListener("mouseup", dragStop);
         carousel.addEventListener("touchend", dragStop);
-    });
+    };
 </script>
 
 </html>
