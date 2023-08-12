@@ -1876,6 +1876,9 @@
     }
     
     @media screen and (max-width: 991px) {
+        .portfolio-header {
+            margin-top: 5em;
+        }
         .menu {
             margin-top: 5%;
         }
@@ -1887,7 +1890,7 @@
         }
         h1 {
             line-height: 1 !important;
-            font-size: 120px !important;
+            font-size: 120px;
         }
         .custom-cursor {
             opacity: 0;
