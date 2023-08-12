@@ -92,7 +92,7 @@
     @media screen and (max-width: 479px) {
         h1 {
             line-height: 1 !important;
-            font-size: 36px !important;
+            font-size: 36px;
         }
         .mr-55 {
             font-size: 60px !important;

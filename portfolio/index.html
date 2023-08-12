@@ -43,7 +43,7 @@
             margin: 0px 30px !important;
         }
         .mg-10 {
-            margin: 0 3em !important;
+            margin: 0 2em !important;
         }
         h1 {
             line-height: 1 !important;
@@ -292,6 +292,48 @@
 </footer>
 </div>
 <script>
+    var objects = [{
+        link: "./project2.html",
+        imagePath: "../img/inst_1.png",
+        tag: "product design",
+        name: "ProjectName",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida."
+    }, {
+        link: "./project2.html",
+        imagePath: "../img/inst_2.png",
+        name: "ProjectName",
+        tag: "logo & branding",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. "
+    }, {
+        link: "./project2.html",
+        imagePath: "../img/inst_3.png",
+        name: "ProjectName",
+        tag: "graphic design",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada."
+    }, {
+        link: "./project2.html",
+        imagePath: "../img/inst_2.png",
+        name: "ProjectName",
+        tag: "product design",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu."
+    }];
+    // Enable Grid / List view
+    const casesGrid = document.querySelector(".cases-grid");
+    const casesList = document.querySelector(".cases-list");
+    var ListView = false;
+
+
+    //Filter functionality
+    // Sample array of objects
+
+
+    var Objectag = 'all';
+    var filterButton = document.getElementsByClassName('filter-button')[0];
+    var filter_Button = document.getElementsByClassName('filter-button');
+    let buttonClicked = false;
+
+
+
     $(window).on('load', function() {
         var counter = 0;
         var count = 0;
@@ -355,209 +397,10 @@
             });
         });
 
-        // Disable scroll
-        function disableScroll() {
-            // Get the current scroll position
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-            // Save the current scroll position and add scroll-lock styles
-            window.onscroll = function() {
-                window.scrollTo(scrollLeft, scrollTop);
-            };
-            document.body.classList.add('scroll-lock');
-        }
-
-        // Enable scroll
-        function enableScroll() {
-            window.onscroll = null;
-            document.body.classList.remove('scroll-lock');
-        }
-        // Enable Grid / List view
-        const casesGrid = document.querySelector(".cases-grid");
-        const casesList = document.querySelector(".cases-list");
-        var ListView = false;
-
-
-        //Filter functionality
-        // Sample array of objects
-
-        var objects = [{
-            link: "./project2.html",
-            imagePath: "../img/inst_1.png",
-            tag: "product design",
-            name: "ProjectName",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida."
-        }, {
-            link: "./project2.html",
-            imagePath: "../img/inst_2.png",
-            name: "ProjectName",
-            tag: "logo & branding",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. "
-        }, {
-            link: "./project2.html",
-            imagePath: "../img/inst_3.png",
-            name: "ProjectName",
-            tag: "graphic design",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada."
-        }, {
-            link: "./project2.html",
-            imagePath: "../img/inst_2.png",
-            name: "ProjectName",
-            tag: "product design",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu."
-        }];
-
-        var Objectag = 'all';
-        var filterButton = document.getElementsByClassName('filter-button')[0];
-        var filter_Button = document.getElementsByClassName('filter-button');
-        let buttonClicked = false;
-
-        function handleFilterClick(element, tag) {
-            var filterButtons = document.querySelectorAll('.filter-button');
-
-            filterButtons.forEach(function(button) {
-                button.classList.remove('active');
-            });
-
-            element.classList.add('active');
-
-            filterCards(tag);
-        }
-
-        // Function to filter cards based on the selected tag
-        function filterCards(tag) {
-            var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
-
-                return obj.tag === tag;
-            });
-
-            if (ListView === false) {
-
-                var cardContainer = document.getElementsByClassName('cases-grid')[0]; // Use [0] to access the first element
-                cardContainer.innerHTML = '';
-
-                filteredObjects.forEach(function(obj) {
-                    Objectag = obj.tag;
-                    //console.log('grid', Objectag, obj.tag);
-                    var card = document.createElement('div');
-                    card.className = 'case-grid-item';
-
-                    var link = document.createElement('a');
-                    link.href = obj.link;
-                    link.target = "";
-                    link.rel = "noopener noreferrer";
-
-                    var image = document.createElement('img');
-                    image.src = obj.imagePath;
-                    image.loading = "eager";
-                    image.alt = 'image ' + obj.tag; // Fix the concatenation
-
-                    //image.loading = "lazy";
-
-                    link.appendChild(image);
-                    card.appendChild(link);
-
-                    cardContainer.appendChild(card);
-
-                });
-
-            } else {
-
-                var cardContainer = document.getElementsByClassName('cases-list')[0]; // Use [0] to access the first element
-                cardContainer.innerHTML = '';
-
-                filteredObjects.forEach(function(obj) {
-                    Objectag = obj.tag;
-                    //console.log('list', Objectag, obj.tag);
-                    var card = document.createElement('div');
-                    card.className = 'case-item';
-
-                    var card_image = document.createElement('div');
-                    card_image.className = 'case-list-img';
-
-                    var link = document.createElement('a');
-                    link.href = obj.link;
-                    link.target = "";
-                    link.rel = "noopener noreferrer";
-
-                    var image = document.createElement('img');
-                    image.src = obj.imagePath;
-                    image.alt = 'image ' + obj.tag; // Fix the concatenation
-                    image.loading = "eager";
-
-                    var Div = document.createElement('div');
-                    Div.className = "description__content";
-
-                    var headingContent = document.createElement('span');
-                    headingContent.className = "case__heading";
-                    headingContent.textContent = obj.name;
-
-                    Div.appendChild(headingContent);
-
-                    var textContent = document.createElement('span');
-                    textContent.className = "description";
-                    textContent.textContent = obj.text;
-
-                    var metaContent = document.createElement('p');
-                    metaContent.className = "tag";
-                    metaContent.textContent = obj.tag;
-                    textContent.appendChild(metaContent);
-
-                    Div.appendChild(textContent);
-
-                    link.appendChild(image);
-                    card_image.appendChild(link);
-                    card.appendChild(card_image);
-                    card.appendChild(Div);
-
-                    cardContainer.appendChild(card);
-
-                });
-
-
-            }
-
-        }
 
 
 
-        function showList() {
-            var gridIcon = document.querySelector('#grid-view-icon');
-            var listIcon = document.querySelector('#list-view-icon');
-            gridIcon.classList.remove('active-button');
-            listIcon.classList.add('active-button');
-            casesList.style.display = "flex";
-            casesGrid.style.display = "none";
-            ListView = true;
-            //console.log(Objectag, 'showList');
-            if (buttonClicked === false) {
-                filterCards('all');
-            } else {
-                filterCards(Objectag);
-                Objectag = '';
-            }
 
-        }
-
-        function showGrid() {
-            var gridIcon = document.querySelector('#grid-view-icon');
-            var listIcon = document.querySelector('#list-view-icon');
-            listIcon.classList.remove('active-button');
-            gridIcon.classList.add('active-button');
-            casesList.style.display = "none";
-            casesGrid.style.display = "block";
-            ListView = false;
-            //console.log(Objectag, 'showGrid');
-            if (buttonClicked === false) {
-                filterCards('all');
-            } else {
-                filterCards(Objectag);
-                Objectag = '';
-            }
-
-
-        }
         filterCards('all');
         showGrid();
 
@@ -594,6 +437,168 @@
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
         }
+    };
+
+    // Enable scroll
+    function enableScroll() {
+        window.onscroll = null;
+        document.body.classList.remove('scroll-lock');
+    };
+
+
+    // Disable scroll
+    function disableScroll() {
+        // Get the current scroll position
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        // Save the current scroll position and add scroll-lock styles
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+        document.body.classList.add('scroll-lock');
+    };
+
+    // Function to filter cards based on the selected tag
+    function filterCards(tag) {
+        var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
+
+            return obj.tag === tag;
+        });
+
+        if (ListView === false) {
+
+            var cardContainer = document.getElementsByClassName('cases-grid')[0]; // Use [0] to access the first element
+            cardContainer.innerHTML = '';
+
+            filteredObjects.forEach(function(obj) {
+                Objectag = obj.tag;
+                //console.log('grid', Objectag, obj.tag);
+                var card = document.createElement('div');
+                card.className = 'case-grid-item';
+
+                var link = document.createElement('a');
+                link.href = obj.link;
+                link.target = "";
+                link.rel = "noopener noreferrer";
+
+                var image = document.createElement('img');
+                image.src = obj.imagePath;
+                image.loading = "eager";
+                image.alt = 'image ' + obj.tag; // Fix the concatenation
+
+                //image.loading = "lazy";
+
+                link.appendChild(image);
+                card.appendChild(link);
+
+                cardContainer.appendChild(card);
+
+            });
+
+        } else {
+
+            var cardContainer = document.getElementsByClassName('cases-list')[0]; // Use [0] to access the first element
+            cardContainer.innerHTML = '';
+
+            filteredObjects.forEach(function(obj) {
+                Objectag = obj.tag;
+                //console.log('list', Objectag, obj.tag);
+                var card = document.createElement('div');
+                card.className = 'case-item';
+
+                var card_image = document.createElement('div');
+                card_image.className = 'case-list-img';
+
+                var link = document.createElement('a');
+                link.href = obj.link;
+                link.target = "";
+                link.rel = "noopener noreferrer";
+
+                var image = document.createElement('img');
+                image.src = obj.imagePath;
+                image.alt = 'image ' + obj.tag; // Fix the concatenation
+                image.loading = "eager";
+
+                var Div = document.createElement('div');
+                Div.className = "description__content";
+
+                var headingContent = document.createElement('span');
+                headingContent.className = "case__heading";
+                headingContent.textContent = obj.name;
+
+                Div.appendChild(headingContent);
+
+                var textContent = document.createElement('span');
+                textContent.className = "description";
+                textContent.textContent = obj.text;
+
+                var metaContent = document.createElement('p');
+                metaContent.className = "tag";
+                metaContent.textContent = obj.tag;
+                textContent.appendChild(metaContent);
+
+                Div.appendChild(textContent);
+
+                link.appendChild(image);
+                card_image.appendChild(link);
+                card.appendChild(card_image);
+                card.appendChild(Div);
+
+                cardContainer.appendChild(card);
+
+            });
+
+        }
+    };
+
+    function showList() {
+        var gridIcon = document.querySelector('#grid-view-icon');
+        var listIcon = document.querySelector('#list-view-icon');
+        gridIcon.classList.remove('active-button');
+        listIcon.classList.add('active-button');
+        casesList.style.display = "flex";
+        casesGrid.style.display = "none";
+        ListView = true;
+        //console.log(Objectag, 'showList');
+        if (buttonClicked === false) {
+            filterCards('all');
+        } else {
+            filterCards(Objectag);
+            Objectag = '';
+        }
+
+    };
+
+    function handleFilterClick(element, tag) {
+        var filterButtons = document.querySelectorAll('.filter-button');
+
+        filterButtons.forEach(function(button) {
+            button.classList.remove('active');
+        });
+
+        element.classList.add('active');
+
+        filterCards(tag);
+    };
+
+    function showGrid() {
+        var gridIcon = document.querySelector('#grid-view-icon');
+        var listIcon = document.querySelector('#list-view-icon');
+        listIcon.classList.remove('active-button');
+        gridIcon.classList.add('active-button');
+        casesList.style.display = "none";
+        casesGrid.style.display = "block";
+        ListView = false;
+        //console.log(Objectag, 'showGrid');
+        if (buttonClicked === false) {
+            filterCards('all');
+        } else {
+            filterCards(Objectag);
+            Objectag = '';
+        }
+
+
     };
 </script>
 
