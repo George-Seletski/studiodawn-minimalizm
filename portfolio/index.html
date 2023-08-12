@@ -76,155 +76,164 @@
 </style>
 
 <body>
-    <div class="custom-cursor"></div>
+    <div class="loader-bg">
+        <div class="loader">
+            <div class="loader-counter">
+                <h1>0</h1>
+            </div>
+        </div>
+    </div>
+    <div id="main-content" style="display: none;">
+        <div class="custom-cursor"></div>
 
-    <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
-        <div class="container-default w-container">
+        <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
+            <div class="container-default w-container">
 
-            <div class="header-right-col">
-                <nav role="navigation" class="header-hamburger-desktop-wrapper w-nav-menu ">
-                    <div class="menu container-default-center">
-                        <div class="w-container">
-                            <ul role="list" class="nav-list white">
-                                <li class="nav-item">
-                                    <a href="../" class="nav-link ">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../about" class="nav-link ">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../portfolio/" class="nav-link w--current">Cases</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../contact" class="nav-link">Contact us</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="w-container">
-                            <div class="nav-info-submenu">
-
-                                <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header ">Work Inquiries.</h2>
+                <div class="header-right-col">
+                    <nav role="navigation" class="header-hamburger-desktop-wrapper w-nav-menu ">
+                        <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
+                        <div class="menu container-default-center">
+                            <div class="w-container">
+                                <ul role="list" class="nav-list white">
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
-                                    </li>
-                                </ul>
-                                <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header white">Get in touch.</h2>
-                                    <li class="nav-item">
-                                        <a href="#" class="link-address white">228 Nelson's Crescent New
-                                            Westminster, BC V3L 3E3</a>
+                                        <a href="../" class="nav-link ">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        <a href="../about" class="nav-link ">About</a>
                                     </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                    <li class="nav-item">
+                                        <a href="../portfolio/" class="nav-link w--current">Cases</a>
                                     </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                    <li class="nav-item">
+                                        <a href="../contact" class="nav-link">Contact us</a>
                                     </li>
 
                                 </ul>
                             </div>
+                            <div class="w-container">
+                                <div class="nav-info-submenu">
+
+                                    <ul role="list" class="nav-info">
+                                        <h2 class="nav-info-header ">Work Inquiries.</h2>
+                                        <li class="nav-item">
+                                            <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        </li>
+                                    </ul>
+                                    <ul role="list" class="nav-info">
+                                        <h2 class="nav-info-header white">Get in touch.</h2>
+                                        <li class="nav-item">
+                                            <a href="#" class="link-address white">228 Nelson's Crescent New
+                                            Westminster, BC V3L 3E3</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </nav>
+                </div>
+
+                <div class="header-content-wrapper">
+                    <div class="hamburger-menu-wrapper w-nav-button">
+                        <div class="hamburger-menu-bar-top"></div>
+                        <div class="hamburger-menu-bar-top"></div>
+                        <div class="hamburger-menu-bar-bottom"></div>
+                    </div>
+                    <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
+                        <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                    </a>
+
+
+                    <div class="icons">
+
+                        <div class="wh-30">
+                            <a href="http://" rel="noopener noreferrer">
+                                <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
+                            </a>
                         </div>
                     </div>
-
-
-                </nav>
-            </div>
-
-            <div class="header-content-wrapper">
-                <div class="hamburger-menu-wrapper w-nav-button">
-                    <div class="hamburger-menu-bar-top"></div>
-                    <div class="hamburger-menu-bar-top"></div>
-                    <div class="hamburger-menu-bar-bottom"></div>
                 </div>
-                <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
-                    <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
-                </a>
+            </div>
+        </div>
 
 
-                <div class="icons">
+        <div class="portfolio-header">
+            <div class="portfolio-header-text">
+                <h1>
+                    <span class="portfolio-container-text garamond-font "> This is our work </span>
+                    <br>
+                    <span class="portfolio-container-text fnt-small">Check out by filters</span>
+                </h1>
 
-                    <div class="wh-30">
-                        <a href="http://" rel="noopener noreferrer">
-                            <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
-                        </a>
+
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="row-container mg-10">
+                <div class="icons-view ">
+                    <div id="grid-view-icon" class="" onclick="showGrid()">
+                        <img src="../icons/more-grid-big-svg.svg" alt="grid-view-icon" srcset="">
+                    </div>
+                    <div id="list-view-icon" class="" onclick="showList()">
+                        <img src="../icons/list-svg.svg" alt="list-view-icon" srcset="">
+                    </div>
+
+                </div>
+                <div class="filter-container-main">
+                    <div class="filter-button active extra__button" onclick="handleFilterClick(this, 'all')"><a>All projects</a></div>
+                    <div class="filter-container">
+                        <div id="column">
+
+                            <ul class="filter-list" id="list-1">
+                                <li class="filter-button" onclick="handleFilterClick(this, 'marketing')"><a>Marketing</a></li>
+                                <li class="filter-button" onclick="handleFilterClick(this, 'product design')"><a>Product design</a></li>
+                                <li class="filter-button" onclick="handleFilterClick(this, 'logo & branding')"><a>Logo & Branding</a></li>
+                                <li class="filter-button" onclick="handleFilterClick(this, 'graphic design')"><a>Graphic design</a></li>
+                            </ul>
+                        </div>
+                        <div id="column">
+                            <ul class="filter-list" id="list-2">
+
+                                <li class="filter-button" onclick="handleFilterClick(this, 'website')"><a>Website</a></li>
+                                <li class="filter-button" onclick="handleFilterClick(this, 'eshop')"><a>Eshop</a></li>
+                                <li class="filter-button" onclick="handleFilterClick(this, 'print')"><a>Print</a></li>
+                                <li class="filter-button" onclick="handleFilterClick(this, 'design')"><a>Design</a></li>
+                            </ul>
+                        </div>
+                        <div id="column">
+                            <ul class="filter-list" id="list-3">
+
+                                <li class="filter-button" onclick="handleFilterClick(this, 'compain')"><a>Compain</a></li>
+                                <li class="filter-button" onclick="handleFilterClick(this, 'social')"><a>Social</a></li>
+                                <li class="filter-button" onclick="handleFilterClick(this, 'event')"><a>Event</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="portfolio-header">
-        <div class="portfolio-header-text">
-            <h1>
-                <span class="portfolio-container-text garamond-font "> This is our work </span>
-                <br>
-                <span class="portfolio-container-text fnt-small">Check out by filters</span>
-            </h1>
-
+        <div class="cases-grid">
 
         </div>
-    </div>
-    <div class="page-wrapper">
-        <div class="row-container mg-10">
-            <div class="icons-view ">
-                <div id="grid-view-icon" class="" onclick="showGrid()">
-                    <img src="../icons/more-grid-big-svg.svg" alt="grid-view-icon" srcset="">
-                </div>
-                <div id="list-view-icon" class="" onclick="showList()">
-                    <img src="../icons/list-svg.svg" alt="list-view-icon" srcset="">
-                </div>
-
-            </div>
-            <div class="filter-container-main">
-                <div class="filter-button active extra__button" onclick="handleFilterClick(this, 'all')"><a>All projects</a></div>
-                <div class="filter-container">
-                    <div id="column">
-
-                        <ul class="filter-list" id="list-1">
-                            <li class="filter-button" onclick="handleFilterClick(this, 'marketing')"><a>Marketing</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'product design')"><a>Product design</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'logo & branding')"><a>Logo & Branding</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'graphic design')"><a>Graphic design</a></li>
-                        </ul>
-                    </div>
-                    <div id="column">
-                        <ul class="filter-list" id="list-2">
-
-                            <li class="filter-button" onclick="handleFilterClick(this, 'website')"><a>Website</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'eshop')"><a>Eshop</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'print')"><a>Print</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'design')"><a>Design</a></li>
-                        </ul>
-                    </div>
-                    <div id="column">
-                        <ul class="filter-list" id="list-3">
-
-                            <li class="filter-button" onclick="handleFilterClick(this, 'compain')"><a>Compain</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'social')"><a>Social</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'event')"><a>Event</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="cases-list">
         </div>
-    </div>
-    <div class="cases-grid">
-
-    </div>
-    <div class="cases-list">
-    </div>
 
 
 </body>
@@ -277,274 +286,311 @@
         </div>
     </div>
 </footer>
+</div>
 <script>
-    $(document).ready(function() {
-        $('.hamburger-menu-wrapper').click(function() {
-            var $navMenu = $('.w-nav-menu');
-            $navMenu.toggle();
-            $(this).toggleClass('w--open');
+    $(window).on('load', function() {
+        var counter = 0;
+        var count = 0;
+        var i = setInterval(function() {
+            $(".loader .loader-counter h1").html(count + "%");
+            $(".loader").css("width", count + "%");
 
-            // Disable scroll when menu is open
-            if ($navMenu.is(':visible')) {
-                $('.header-content-wrapper').css('display', 'none');
-                $('.w-nav').css('background-color', '#050a11');
-                $('.container-default').css('padding-top', '0px');
-                disableScroll();
-            } else {
+            counter++;
+            count++;
+            if (counter == 101) {
+                clearInterval(i);
+                $(".loader").fadeOut(500, function() {
+                    initPage(); // Call the function to initialize other actions after preloader
+                });
+            }
+        }, 30);
+    });
+
+    function initPage() {
+        // Show the main content by setting its display property to "block"
+        const mainContent = document.getElementById('main-content');
+        mainContent.style.display = 'block';
+        $(document).ready(function() {
+            $('.hamburger-menu-wrapper').click(function() {
+                var $navMenu = $('.w-nav-menu');
+                $navMenu.toggle();
+                $(this).toggleClass('w--open');
+
+                // Disable scroll when menu is open
+                if ($navMenu.is(':visible')) {
+                    $('.header-content-wrapper').css('display', 'none');
+
+                    $('.container-default').css('padding-top', '0px');
+                    disableScroll();
+                } else {
+                    enableScroll();
+                }
+            });
+            // Event handler for the close button
+            $('.link-back').click(function() {
+                var $navMenu = $('.w-nav-menu');
+                var $hamburgerMenuWrapper = $('.hamburger-menu-wrapper');
+
+                $navMenu.hide();
+                $hamburgerMenuWrapper.removeClass('w--open');
+
+                // Enable scroll and show content
                 enableScroll();
-            }
+                $('.header-content-wrapper').css('display', 'flex');
+                $('.container-default').css('padding-top', 'your-original-padding-value');
+            });
         });
-    });
 
-    $(document).ready(function() {
-        $(window).on("scroll", function() {
-            if ($(window).scrollTop() >= 30) {
-                $(".header-wrapper").addClass("with-effect");
+        $(document).ready(function() {
+            $(window).on("scroll", function() {
+                if ($(window).scrollTop() >= 30) {
+                    $(".header-wrapper").addClass("with-effect");
+                } else {
+                    $(".header-wrapper").removeClass("with-effect");
+                }
+            });
+        });
+
+        // Disable scroll
+        function disableScroll() {
+            // Get the current scroll position
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            // Save the current scroll position and add scroll-lock styles
+            window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+            document.body.classList.add('scroll-lock');
+        }
+
+        // Enable scroll
+        function enableScroll() {
+            window.onscroll = null;
+            document.body.classList.remove('scroll-lock');
+        }
+        // Enable Grid / List view
+        const casesGrid = document.querySelector(".cases-grid");
+        const casesList = document.querySelector(".cases-list");
+        var ListView = false;
+
+
+        //Filter functionality
+        // Sample array of objects
+
+        var objects = [{
+            link: "./project2.html",
+            imagePath: "../img/inst_1.png",
+            tag: "product design",
+            name: "ProjectName",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida."
+        }, {
+            link: "./project2.html",
+            imagePath: "../img/inst_2.png",
+            name: "ProjectName",
+            tag: "logo & branding",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. "
+        }, {
+            link: "./project2.html",
+            imagePath: "../img/inst_3.png",
+            name: "ProjectName",
+            tag: "graphic design",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada."
+        }, {
+            link: "./project2.html",
+            imagePath: "../img/inst_2.png",
+            name: "ProjectName",
+            tag: "product design",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu."
+        }];
+
+        var Objectag = 'all';
+        var filterButton = document.getElementsByClassName('filter-button')[0];
+        var filter_Button = document.getElementsByClassName('filter-button');
+        let buttonClicked = false;
+
+        function handleFilterClick(element, tag) {
+            var filterButtons = document.querySelectorAll('.filter-button');
+
+            filterButtons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            element.classList.add('active');
+
+            filterCards(tag);
+        }
+
+        // Function to filter cards based on the selected tag
+        function filterCards(tag) {
+            var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
+
+                return obj.tag === tag;
+            });
+
+            if (ListView === false) {
+
+                var cardContainer = document.getElementsByClassName('cases-grid')[0]; // Use [0] to access the first element
+                cardContainer.innerHTML = '';
+
+                filteredObjects.forEach(function(obj) {
+                    Objectag = obj.tag;
+                    //console.log('grid', Objectag, obj.tag);
+                    var card = document.createElement('div');
+                    card.className = 'case-grid-item';
+
+                    var link = document.createElement('a');
+                    link.href = obj.link;
+                    link.target = "";
+                    link.rel = "noopener noreferrer";
+
+                    var image = document.createElement('img');
+                    image.src = obj.imagePath;
+                    image.loading = "eager";
+                    image.alt = 'image ' + obj.tag; // Fix the concatenation
+
+                    //image.loading = "lazy";
+
+                    link.appendChild(image);
+                    card.appendChild(link);
+
+                    cardContainer.appendChild(card);
+
+                });
+
             } else {
-                $(".header-wrapper").removeClass("with-effect");
+
+                var cardContainer = document.getElementsByClassName('cases-list')[0]; // Use [0] to access the first element
+                cardContainer.innerHTML = '';
+
+                filteredObjects.forEach(function(obj) {
+                    Objectag = obj.tag;
+                    //console.log('list', Objectag, obj.tag);
+                    var card = document.createElement('div');
+                    card.className = 'case-item';
+
+                    var card_image = document.createElement('div');
+                    card_image.className = 'case-list-img';
+
+                    var link = document.createElement('a');
+                    link.href = obj.link;
+                    link.target = "";
+                    link.rel = "noopener noreferrer";
+
+                    var image = document.createElement('img');
+                    image.src = obj.imagePath;
+                    image.alt = 'image ' + obj.tag; // Fix the concatenation
+                    image.loading = "eager";
+
+                    var Div = document.createElement('div');
+                    Div.className = "description__content";
+
+                    var headingContent = document.createElement('span');
+                    headingContent.className = "case__heading";
+                    headingContent.textContent = obj.name;
+
+                    Div.appendChild(headingContent);
+
+                    var textContent = document.createElement('span');
+                    textContent.className = "description";
+                    textContent.textContent = obj.text;
+
+                    var metaContent = document.createElement('p');
+                    metaContent.className = "tag";
+                    metaContent.textContent = obj.tag;
+                    textContent.appendChild(metaContent);
+
+                    Div.appendChild(textContent);
+
+                    link.appendChild(image);
+                    card_image.appendChild(link);
+                    card.appendChild(card_image);
+                    card.appendChild(Div);
+
+                    cardContainer.appendChild(card);
+
+                });
+
+
             }
-        });
-    });
-
-    // Disable scroll
-    function disableScroll() {
-        // Get the current scroll position
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-        // Save the current scroll position and add scroll-lock styles
-        window.onscroll = function() {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
-        document.body.classList.add('scroll-lock');
-    }
-
-    // Enable scroll
-    function enableScroll() {
-        window.onscroll = null;
-        document.body.classList.remove('scroll-lock');
-    }
-    // Enable Grid / List view
-    const casesGrid = document.querySelector(".cases-grid");
-    const casesList = document.querySelector(".cases-list");
-    var ListView = false;
-
-
-    //Filter functionality
-    // Sample array of objects
-
-    var objects = [{
-        link: "./project2.html",
-        imagePath: "../img/inst_1.png",
-        tag: "product design",
-        name: "ProjectName",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida."
-    }, {
-        link: "./project2.html",
-        imagePath: "../img/inst_2.png",
-        name: "ProjectName",
-        tag: "logo & branding",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. "
-    }, {
-        link: "./project2.html",
-        imagePath: "../img/inst_3.png",
-        name: "ProjectName",
-        tag: "graphic design",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada."
-    }, {
-        link: "./project2.html",
-        imagePath: "../img/inst_2.png",
-        name: "ProjectName",
-        tag: "product design",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu."
-    }];
-
-    var Objectag = 'all';
-    var filterButton = document.getElementsByClassName('filter-button')[0];
-    var filter_Button = document.getElementsByClassName('filter-button');
-    let buttonClicked = false;
-
-    function handleFilterClick(element, tag) {
-        var filterButtons = document.querySelectorAll('.filter-button');
-
-        filterButtons.forEach(function(button) {
-            button.classList.remove('active');
-        });
-
-        element.classList.add('active');
-
-        filterCards(tag);
-    }
-
-    // Function to filter cards based on the selected tag
-    function filterCards(tag) {
-        var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
-
-            return obj.tag === tag;
-        });
-
-        if (ListView === false) {
-
-            var cardContainer = document.getElementsByClassName('cases-grid')[0]; // Use [0] to access the first element
-            cardContainer.innerHTML = '';
-
-            filteredObjects.forEach(function(obj) {
-                Objectag = obj.tag;
-                //console.log('grid', Objectag, obj.tag);
-                var card = document.createElement('div');
-                card.className = 'case-grid-item';
-
-                var link = document.createElement('a');
-                link.href = obj.link;
-                link.target = "";
-                link.rel = "noopener noreferrer";
-
-                var image = document.createElement('img');
-                image.src = obj.imagePath;
-                image.loading = "eager";
-                image.alt = 'image ' + obj.tag; // Fix the concatenation
-
-                //image.loading = "lazy";
-
-                link.appendChild(image);
-                card.appendChild(link);
-
-                cardContainer.appendChild(card);
-
-            });
-
-        } else {
-
-            var cardContainer = document.getElementsByClassName('cases-list')[0]; // Use [0] to access the first element
-            cardContainer.innerHTML = '';
-
-            filteredObjects.forEach(function(obj) {
-                Objectag = obj.tag;
-                //console.log('list', Objectag, obj.tag);
-                var card = document.createElement('div');
-                card.className = 'case-item';
-
-                var card_image = document.createElement('div');
-                card_image.className = 'case-list-img';
-
-                var link = document.createElement('a');
-                link.href = obj.link;
-                link.target = "";
-                link.rel = "noopener noreferrer";
-
-                var image = document.createElement('img');
-                image.src = obj.imagePath;
-                image.alt = 'image ' + obj.tag; // Fix the concatenation
-                image.loading = "eager";
-
-                var Div = document.createElement('div');
-                Div.className = "description__content";
-
-                var headingContent = document.createElement('span');
-                headingContent.className = "case__heading";
-                headingContent.textContent = obj.name;
-
-                Div.appendChild(headingContent);
-
-                var textContent = document.createElement('span');
-                textContent.className = "description";
-                textContent.textContent = obj.text;
-
-                var metaContent = document.createElement('p');
-                metaContent.className = "tag";
-                metaContent.textContent = obj.tag;
-                textContent.appendChild(metaContent);
-
-                Div.appendChild(textContent);
-
-                link.appendChild(image);
-                card_image.appendChild(link);
-                card.appendChild(card_image);
-                card.appendChild(Div);
-
-                cardContainer.appendChild(card);
-
-            });
-
 
         }
 
-    }
 
 
+        function showList() {
+            var gridIcon = document.querySelector('#grid-view-icon');
+            var listIcon = document.querySelector('#list-view-icon');
+            gridIcon.classList.remove('active-button');
+            listIcon.classList.add('active-button');
+            casesList.style.display = "flex";
+            casesGrid.style.display = "none";
+            ListView = true;
+            //console.log(Objectag, 'showList');
+            if (buttonClicked === false) {
+                filterCards('all');
+            } else {
+                filterCards(Objectag);
+                Objectag = '';
+            }
 
-    function showList() {
-        var gridIcon = document.querySelector('#grid-view-icon');
-        var listIcon = document.querySelector('#list-view-icon');
-        gridIcon.classList.remove('active-button');
-        listIcon.classList.add('active-button');
-        casesList.style.display = "flex";
-        casesGrid.style.display = "none";
-        ListView = true;
-        //console.log(Objectag, 'showList');
-        if (buttonClicked === false) {
-            filterCards('all');
-        } else {
-            filterCards(Objectag);
-            Objectag = '';
         }
 
-    }
+        function showGrid() {
+            var gridIcon = document.querySelector('#grid-view-icon');
+            var listIcon = document.querySelector('#list-view-icon');
+            listIcon.classList.remove('active-button');
+            gridIcon.classList.add('active-button');
+            casesList.style.display = "none";
+            casesGrid.style.display = "block";
+            ListView = false;
+            //console.log(Objectag, 'showGrid');
+            if (buttonClicked === false) {
+                filterCards('all');
+            } else {
+                filterCards(Objectag);
+                Objectag = '';
+            }
 
-    function showGrid() {
-        var gridIcon = document.querySelector('#grid-view-icon');
-        var listIcon = document.querySelector('#list-view-icon');
-        listIcon.classList.remove('active-button');
-        gridIcon.classList.add('active-button');
-        casesList.style.display = "none";
-        casesGrid.style.display = "block";
-        ListView = false;
-        //console.log(Objectag, 'showGrid');
-        if (buttonClicked === false) {
-            filterCards('all');
-        } else {
-            filterCards(Objectag);
-            Objectag = '';
+
         }
+        filterCards('all');
+        showGrid();
 
 
-    }
-    filterCards('all');
-    showGrid();
+        // Check if the device supports touch events
+        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
+        if (!isTouchDevice) {
+            const customCursor = document.querySelector(".custom-cursor");
+            // Add custom cursor functionality for non-touch devices
 
-    // Check if the device supports touch events
-    const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+            const links = document.querySelectorAll("a");
 
-    if (!isTouchDevice) {
-        const customCursor = document.querySelector(".custom-cursor");
-        // Add custom cursor functionality for non-touch devices
-
-        const links = document.querySelectorAll("a");
-
-        document.addEventListener('mousemove', function(event) {
-            customCursor.style.left = `${event.clientX}px`;
-            customCursor.style.top = `${event.clientY}px`;
-        });
-
-        links.forEach((link) => {
-            link.addEventListener("mouseover", () => {
-                customCursor.classList.add("custom-cursor--link");
+            document.addEventListener('mousemove', function(event) {
+                customCursor.style.left = `${event.clientX}px`;
+                customCursor.style.top = `${event.clientY}px`;
             });
 
-            link.addEventListener("mouseout", () => {
-                customCursor.classList.remove("custom-cursor--link");
-                // Add a slight delay to prevent cursor flickering on hover-out
-                setTimeout(() => {
-                    customCursor.style.left = `${event.clientX}px`;
-                    customCursor.style.top = `${event.clientY}px`;
-                }, 50);
+            links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    customCursor.classList.add("custom-cursor--link");
+                });
+
+                link.addEventListener("mouseout", () => {
+                    customCursor.classList.remove("custom-cursor--link");
+                    // Add a slight delay to prevent cursor flickering on hover-out
+                    setTimeout(() => {
+                        customCursor.style.left = `${event.clientX}px`;
+                        customCursor.style.top = `${event.clientY}px`;
+                    }, 50);
+                });
             });
-        });
-    } else {
-        const customCursor = document.querySelector(".custom-cursor");
-        customCursor.style = `opacity: 0 !important;`;
-    }
+        } else {
+            const customCursor = document.querySelector(".custom-cursor");
+            customCursor.style = `opacity: 0 !important;`;
+        }
+    };
 </script>
 
 </html>

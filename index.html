@@ -153,6 +153,7 @@
 
                 <div class="header-right-col">
                     <nav role="navigation" class="w-nav-menu">
+                        <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt=""></a>
                         <div class="menu container-default-center">
 
                             <div class="w-container">
@@ -468,7 +469,7 @@
                 <h3>This website uses cookies</h3>
             </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using our
                 website, you consent to all cookies in accordance with our cookie policy. Read more
-            </span><button id="cookie-close">Got it</button>
+            </span><button class="black" id="cookie-close">Got it</button>
         </div>
     </div>
 </body>
@@ -489,7 +490,7 @@
                     initPage(); // Call the function to initialize other actions after preloader
                 });
             }
-        }, 50);
+        }, 40);
     });
 
 
@@ -500,6 +501,9 @@
 
         // Check if the user has already accepted the cookies
         const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+        setTimeout(function() {
+            cookieLabel.style.display = "block";
+        }, 300);
 
         if (!cookiesAccepted) {
             // Show the cookie label

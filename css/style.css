@@ -810,10 +810,12 @@
         width: 250px;
         margin: 1em;
         background-color: rgba(0, 0, 0, 0.808);
+        display: none;
     }
     
     .cookie-label-text {
         font-size: 13px;
+        font-weight: 600;
     }
     
     #cookie-label button {
@@ -826,6 +828,7 @@
         border-radius: 50px;
         width: 100%;
         margin: 1em 0;
+        font-weight: 600;
     }
     
     .tag {
@@ -1066,12 +1069,12 @@
     }
     
     .button:hover {
-        background-color: #000;
+        background-color: #000 !important;
         border-color: transparent;
     }
     
     .button:hover>span {
-        color: #f9f4f4;
+        color: #fff;
     }
     
     .button>span {
@@ -1208,6 +1211,10 @@
     
     .white {
         color: #fff;
+    }
+    
+    .black {
+        color: #0e1010 !important;
     }
     
     .header-section {
@@ -1869,6 +1876,9 @@
     }
     
     @media screen and (max-width: 991px) {
+        .menu {
+            margin-top: 5%;
+        }
         .container-text {
             font-size: 1.5em !important;
         }
@@ -2338,6 +2348,9 @@
     }
     
     @media screen and (max-width: 479px) {
+        .menu {
+            margin-top: -1%;
+        }
         .pb-2 {
             padding-bottom: 1em !important;
         }
@@ -2364,7 +2377,7 @@
         }
         .container-default-center {
             flex-direction: column;
-            gap: 5em;
+            gap: 2.5em;
         }
         .nav-list {
             padding: 0;

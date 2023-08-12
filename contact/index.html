@@ -46,6 +46,10 @@
         font-size: 32px !important;
     }
     
+    .loader-counter>h1 {
+        font-size: 144px !important;
+    }
+    
     @media screen and (min-width: 1400px) {
         .columns-container {
             gap: 100px;
@@ -89,6 +93,7 @@
 </style>
 
 <body>
+
     <div class="custom-cursor"></div>
 
     <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
@@ -96,7 +101,7 @@
 
             <div class="header-right-col">
                 <nav role="navigation" class="w-nav-menu">
-
+                    <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
                     <div class="menu container-default-center">
 
                         <div class="w-container">
@@ -287,43 +292,81 @@
         </div>
     </div>
 
-
+    <div class="label" id="cookie-label">
+        <span class="title">
+        <h3>This website uses cookies</h3>
+    </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using our
+        website, you consent to all cookies in accordance with our cookie policy. Read more
+    </span><button class="black" id="cookie-close">Got it</button>
+    </div>
 
 </body>
 
 <script>
-    // Check if the device supports touch events
-    const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+    document.addEventListener("DOMContentLoaded", function() {
 
-    if (!isTouchDevice) {
-        const customCursor = document.querySelector(".custom-cursor");
-        // Add custom cursor functionality for non-touch devices
 
-        const links = document.querySelectorAll("a");
+        const cookieLabel = document.getElementById("cookie-label");
+        const cookieCloseButton = document.getElementById("cookie-close");
 
-        document.addEventListener('mousemove', function(event) {
-            customCursor.style.left = `${event.clientX}px`;
-            customCursor.style.top = `${event.clientY}px`;
+        // Check if the user has already accepted the cookies
+        const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+        setTimeout(function() {
+            cookieLabel.style.display = "block";
+        }, 6000);
+        if (!cookiesAccepted) {
+            // Show the cookie label
+            cookieLabel.style.display = "block";
+        }
+
+        // Event listener for the "Got it" button click
+        cookieCloseButton.addEventListener("click", function() {
+            // Hide the cookie label
+            cookieLabel.style.display = "none";
+
+            // Store the information that the user has accepted the cookies
+            localStorage.setItem("cookiesAccepted", "true");
+
+            // Show the cookie label again after a time period (e.g., 1 day)
+            const timePeriodInMilliseconds = 24 * 60 * 60 * 1000; // 1 day
+            setTimeout(function() {
+                cookieLabel.style.display = "block";
+            }, timePeriodInMilliseconds);
         });
 
-        links.forEach((link) => {
-            link.addEventListener("mouseover", () => {
-                customCursor.classList.add("custom-cursor--link");
+        // Check if the device supports touch events
+        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+        if (!isTouchDevice) {
+            const customCursor = document.querySelector(".custom-cursor");
+            // Add custom cursor functionality for non-touch devices
+
+            const links = document.querySelectorAll("a");
+
+            document.addEventListener('mousemove', function(event) {
+                customCursor.style.left = `${event.clientX}px`;
+                customCursor.style.top = `${event.clientY}px`;
             });
 
-            link.addEventListener("mouseout", () => {
-                customCursor.classList.remove("custom-cursor--link");
-                // Add a slight delay to prevent cursor flickering on hover-out
-                setTimeout(() => {
-                    customCursor.style.left = `${event.clientX}px`;
-                    customCursor.style.top = `${event.clientY}px`;
-                }, 50);
+            links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    customCursor.classList.add("custom-cursor--link");
+                });
+
+                link.addEventListener("mouseout", () => {
+                    customCursor.classList.remove("custom-cursor--link");
+                    // Add a slight delay to prevent cursor flickering on hover-out
+                    setTimeout(() => {
+                        customCursor.style.left = `${event.clientX}px`;
+                        customCursor.style.top = `${event.clientY}px`;
+                    }, 50);
+                });
             });
-        });
-    } else {
-        const customCursor = document.querySelector(".custom-cursor");
-        customCursor.style = `opacity: 0 !important;`;
-    }
+        } else {
+            const customCursor = document.querySelector(".custom-cursor");
+            customCursor.style = `opacity: 0 !important;`;
+        }
+    });
     $(document).ready(function() {
         $('.hamburger-menu-wrapper').click(function() {
             var $navMenu = $('.w-nav-menu');
@@ -340,8 +383,20 @@
                 enableScroll();
             }
         });
-    });
+        // Event handler for the close button
+        $('.link-back').click(function() {
+            var $navMenu = $('.w-nav-menu');
+            var $hamburgerMenuWrapper = $('.hamburger-menu-wrapper');
 
+            $navMenu.hide();
+            $hamburgerMenuWrapper.removeClass('w--open');
+
+            // Enable scroll and show content
+            enableScroll();
+            $('.header-content-wrapper').css('display', 'flex');
+            $('.container-default').css('padding-top', 'your-original-padding-value');
+        });
+    });
     $(document).ready(function() {
         $(window).on("scroll", function() {
             if ($(window).scrollTop() >= 30) {
