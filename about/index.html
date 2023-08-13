@@ -291,6 +291,9 @@
     }
     
     @media screen and (max-width: 479px) {
+        .main-grid {
+            margin-top: 10vh;
+        }
         h1 {
             font-size: 92px !important;
         }
@@ -322,7 +325,7 @@
     
     @media screen and (max-width: 991px) {
         .main-grid {
-            margin-top: 45vh;
+            margin-top: 20vh;
         }
         .mouse-container {
             display: none !important;
@@ -449,8 +452,8 @@
                 </span>
                 <div class="mouse-scroll mr-0" href="#">
                     <span class="mouse mr-0">
-                <span class="mouse-movement">
-                </span>
+                        <span class="mouse-movement">
+                        </span>
                     </span>
                 </div>
             </div>
@@ -464,7 +467,7 @@
                 <img src="./team/main.png" alt="our team" loading="lazy">
             </div>
             <span class="description">
-            
+
                 <h2>
                     Unlock limitless possibilities with our comprehensive solutions block from trademark management to
                     digital transformation, we offer a wide range of services to elevate your brands success. Harness
@@ -497,9 +500,9 @@
             <div>
                 <h2 id="header-font">Digital</h2>
                 <span class="description">
-                We're all about collective succes. Everyone's an equal in the creative process as we work toward a
-                shared goal - no egos here. We don't make our partners fit into our formula. Instead, we find what
-                works for you.
+                    We're all about collective succes. Everyone's an equal in the creative process as we work toward a
+                    shared goal - no egos here. We don't make our partners fit into our formula. Instead, we find what
+                    works for you.
                 </span>
             </div>
             <div>
@@ -516,7 +519,7 @@
         </div>
 
 
-        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" style=" border: 1px solid transparent; max-width:100%; overflow-x:hidden !important;">
+        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" data-barba="container" style=" border: 1px solid transparent;">
 
             <div class="header-section-content  team-section " style=" border: 1px solid transparent;">
                 <div class="vscroll__section team" style=" border: 1px solid transparent;">
@@ -622,7 +625,7 @@
                     </div>
                     <div class="image-container">
                         <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100vh">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
                         </div>
                         <div class="team-cardinfo">
                             <div class="team__title">
@@ -647,11 +650,6 @@
 
                 <div id="brand">
                     <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
-                </div>
-                <div id="brand">
-
-                    <img src="logo-img/almi_black.svg" alt="" srcset="">
-
                 </div>
                 <div id="brand">
                     <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
@@ -698,8 +696,8 @@
                 <a href="../portfolio/" target="_blank" rel="noopener noreferrer">
                     <div class="button see-cases">
                         <span>
-                        See cases 
-                    </span>
+                            See cases
+                        </span>
 
 
                     </div>
@@ -761,10 +759,11 @@
         </footer>
         <div class="label" id="cookie-label">
             <span class="title">
-                    <h3>This website uses cookies</h3>
-                </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using our
-                    website, you consent to all cookies in accordance with our cookie policy. Read more
-                </span><button class="black" id="cookie-close">Got it</button>
+                <h3>This website uses cookies</h3>
+            </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using
+                our
+                website, you consent to all cookies in accordance with our cookie policy. Read more
+            </span><button class="black" id="cookie-close">Got it</button>
         </div>
 
 </body>
@@ -917,11 +916,11 @@
             customCursor.style = `opacity: 0 !important;`;
 
             const mainGridText = document.querySelector(".team-header-text");
-
+            let screenWidth = $(window).width();
             mainGridText.style = 'opacity: 1 !important;';
 
             const mainGrid = document.querySelector(".main-grid");
-            mainGrid.style = 'transform: translateY(3%);';
+            mainGrid.style = '    margin-top:30vh;';
 
         }
 
