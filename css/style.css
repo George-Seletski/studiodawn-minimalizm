@@ -790,13 +790,18 @@
         width: 100vh;
     }
     
+    .loader-counter>h1 {
+        font-size: 144px !important;
+        font-family: 'Roboto Light', sans-serif;
+        font-weight: 400;
+    }
+    
     .loader-bg .loader .loader-counter h1 {
         position: fixed;
         top: 45%;
         left: 50%;
         transform: translate(-50%, -70%);
         color: #000;
-        font-size: 150px;
     }
     /*cookie-label*/
     
