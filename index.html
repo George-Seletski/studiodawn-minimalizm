@@ -490,7 +490,7 @@
                     initPage(); // Call the function to initialize other actions after preloader
                 });
             }
-        }, 40);
+        }, 30);
     });
 
 
@@ -503,7 +503,7 @@
         const cookiesAccepted = localStorage.getItem("cookiesAccepted");
         setTimeout(function() {
             cookieLabel.style.display = "block";
-        }, 300);
+        }, 6000);
 
         if (!cookiesAccepted) {
             // Show the cookie label
@@ -665,6 +665,7 @@
 
         /*video*/
         $(document).ready(function() {
+            var vimeoPlayer = new Vimeo.Player('myVideo');
             $(".movie-btn").click(function() {
                 var video = $('#myVideo');
                 var vidUrl = $(this).attr("vidUrl");
@@ -678,6 +679,7 @@
                     $('.youTube').removeClass("show");
                     $('.gif-animation').css('display', 'none');
                     $('.play-button').css('display', 'none');
+
                 }
                 $('body').css('overflow', 'hidden');
             });
@@ -711,16 +713,19 @@
             });
 
             $(".close").click(function() {
-                var video = $('#myVideo')[0];
-                if (video) {
-                    video.pause();
-                    video.currentTime = 0;
-                }
+                vimeoPlayer.pause().then(function() {
+                    return vimeoPlayer.setCurrentTime(0);
+                }).catch(function(error) {
+                    console.error("Error pausing or resetting video:", error);
+                });
+
                 $(".modal-vid").fadeOut(500);
                 $('.youTube, .myVideo').attr('src', '');
-                $('.gif-animation').css('display', 'block');
-                $('.play-button').css('display', 'block');
+                $('.gif-animation, .play-button').show();
+
+                $('body').css('overflow', 'auto');
             });
+
         });
 
         // Move the following two event handlers inside the document ready function

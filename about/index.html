@@ -325,7 +325,7 @@
     
     @media screen and (max-width: 991px) {
         .main-grid {
-            margin-top: 20vh;
+            margin-top: 45vh;
         }
         .mouse-container {
             display: none !important;
@@ -519,7 +519,7 @@
         </div>
 
 
-        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" data-barba="container" style=" border: 1px solid transparent;">
+        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" style=" border: 1px solid transparent; max-width:100%; overflow-x:hidden !important;">
 
             <div class="header-section-content  team-section " style=" border: 1px solid transparent;">
                 <div class="vscroll__section team" style=" border: 1px solid transparent;">
@@ -625,7 +625,7 @@
                     </div>
                     <div class="image-container">
                         <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100vh">
                         </div>
                         <div class="team-cardinfo">
                             <div class="team__title">
@@ -650,6 +650,11 @@
 
                 <div id="brand">
                     <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
+                </div>
+                <div id="brand">
+
+                    <img src="logo-img/almi_black.svg" alt="" srcset="">
+
                 </div>
                 <div id="brand">
                     <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
@@ -915,11 +920,11 @@
             customCursor.style = `opacity: 0 !important;`;
 
             const mainGridText = document.querySelector(".team-header-text");
-            let screenWidth = $(window).width();
+
             mainGridText.style = 'opacity: 1 !important;';
 
             const mainGrid = document.querySelector(".main-grid");
-            mainGrid.style = '    margin-top:30vh;';
+            mainGrid.style = 'transform: translateY(0%);';
 
         }
 

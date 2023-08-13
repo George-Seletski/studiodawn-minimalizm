@@ -97,6 +97,9 @@
         .mr-55 {
             font-size: 60px !important;
         }
+        .brands-section-header>h2 {
+            font-size: 4em !important;
+        }
     }
     
     #header-font {
@@ -108,7 +111,7 @@
     }
     
     .brands-section-header>h2 {
-        font-size: 5em !important;
+        font-size: 5em;
         text-align: left;
         margin-bottom: 35px;
         /*font-family: 'Cormorant Garamond Semibold', sans-serif;*/
@@ -1876,6 +1879,15 @@
     }
     
     @media screen and (max-width: 991px) {
+        .form-container {
+            margin-top: 3em;
+        }
+        .brands-section-header {
+            margin: 0 auto;
+            width: auto;
+            display: block;
+            padding: 5em 0 0 7em;
+        }
         .portfolio-header {
             margin-top: 5em;
         }
@@ -2165,12 +2177,16 @@
         .about-main-section {
             margin-top: 30em;
         }
-        #brand {
-            width: 20em;
+        .brands-container {
+            align-items: center;
+            margin: auto;
+            flex-direction: row;
+            gap: 5em;
+            justify-content: center;
         }
         .brands-section {
-            margin: 0 1em;
-            padding: 10em 0 0 0;
+            margin: 0 2em 4em 2em;
+            padding: 0;
         }
         .brands-section-header {
             margin-bottom: 4em !important;
@@ -2482,10 +2498,10 @@
         }
         .team-section {
             margin-top: 1em;
-            height: 400px;
+            height: 250px;
         }
         .main-grid {
-            margin-top: 0vh !important;
+            margin-top: 20vh !important;
         }
         .team-header-text {
             align-items: center;
@@ -2528,7 +2544,7 @@
             margin: 0 auto;
             width: auto;
             display: block;
-            padding: 5em 0 0 0;
+            padding: 5em 2em 0 2em;
         }
         .section-block>.header-section-content {
             font-size: 1.8em !important;

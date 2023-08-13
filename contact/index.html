@@ -68,26 +68,36 @@
     
     @media screen and (max-width: 479px) {
         .contanct-links {
-            text-align: center;
+            text-align: left;
             margin-top: 1em;
             margin-bottom: 1em;
         }
         .info-block>.icons {
             margin: 0 !important;
-            justify-content: center;
+            justify-content: flex-start;
         }
         .sub-text {
             font-size: 28px !important;
         }
         .contact-h2 {
-            margin-bottom: 50px;
-            font-size: 4em !important;
+            margin-bottom: 10px;
+            font-size: 3em !important;
+            line-height: 1;
+        }
+        .row-container-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0px !important;
         }
     }
     
     @media screen and (max-width: 991px) {
         .button {
             margin-bottom: 50px;
+        }
+        .info-block>.icons {
+            margin: 0 !important;
+            justify-content: flex-start !important;
         }
     }
 </style>
