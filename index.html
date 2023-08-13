@@ -135,6 +135,16 @@
     .hv-auto {
         height: auto !important;
     }
+    
+    #lang-item {
+        position: absolute;
+        font-weight: 800 !important;
+        z-index: 99998;
+        border: 1px solid;
+        font-family: 'Roboto Regular';
+        color: #f9f4f4;
+        padding-left: 10px;
+    }
 </style>
 
 <body>
@@ -224,11 +234,13 @@
                     </a>
 
 
-                    <div class="icons">
+                    <div class="icons" id="translate-icon">
 
                         <div class="wh-30">
                             <a href="http://" rel="noopener noreferrer">
+
                                 <img src="./icons/global-svg-black.svg" id="icon" alt="" srcset="">
+                                <span id="lang-item">SK</span>
                             </a>
                         </div>
                     </div>
@@ -293,7 +305,8 @@
                                         </div>
                                     </div>
                                     <!-- The video element -->
-                                    <iframe id="myVideo" class="myVideo hide" src="https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="Iceland_cinematic"></iframe>
+                                    <iframe id="myVideo" class="myVideo hide" src="https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" title="Iceland_cinematic"></iframe>
+
 
 
                                 </div>
@@ -475,6 +488,7 @@
 </body>
 
 <script>
+    gsap.registerPlugin();
     $(window).on('load', function() {
         var counter = 0;
         var count = 0;
@@ -555,7 +569,7 @@
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
         }
-        gsap.registerPlugin();
+
         // GSAP TimelineMax for animations
         const timeline = gsap.timeline();
 
