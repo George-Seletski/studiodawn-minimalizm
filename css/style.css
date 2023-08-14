@@ -674,7 +674,7 @@
         .row-container {
             display: flex;
             align-items: center;
-            margin: 144px;
+            margin: 144px 144px 100px 144px;
             gap: 75px;
         }
         
@@ -769,7 +769,7 @@
         .text {
             display: flex;
             text-align: center;
-            margin: 6.5em 10em;
+            margin: 5.5em 10em;
             font-size: 30px;
             align-items: center;
             line-height: 70px;
