@@ -121,8 +121,8 @@
             width: 100%;
         }
         #play-button-icon {
-            width: 35px;
-            height: 35px;
+            width: 25px;
+            height: 25px;
         }
         .grid-image {
             object-fit: cover;
@@ -133,7 +133,16 @@
     }
     
     .hv-auto {
-        height: auto !important;
+        height: 100vh !important;
+        padding-top: 25px;
+    }
+    
+    @media screen and (max-width:991px) {
+        .hv-auto {
+            height: auto !important;
+            padding-top: 50px;
+            padding-bottom: 5px;
+        }
     }
     /*#lang-item {
         position: absolute;
@@ -280,11 +289,13 @@
 
             <div class="video-container">
                 <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="https://player.vimeo.com/video/850727482?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=0">
-                    <a>
+                    <div class="play-button-container">
+
                         <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="https://player.vimeo.com/video/850727482">
                             <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
                         </div>
-                    </a>
+                    </div>
+
                     <!-- Add the thumbnail image here -->
                     <img class="gif-animation" src="video/video-tmp.gif" data-src="video/video-tmp.gif" alt="video" loading="lazy">
                 </div>
