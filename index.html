@@ -293,7 +293,7 @@
                             </div>
                         </a>
                         <!-- Add the thumbnail image here -->
-                        <img class="gif-animation" src="video/video-tmp.gif" alt="video">
+                        <img class="gif-animation" src="video/video-tmp.gif" data-src="video/video-tmp.gif" alt="video">
                     </div>
 
                     <div class="modal-vid">
@@ -603,7 +603,33 @@
             }
         });
 
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyImages = [].slice.call(document.querySelectorAll("img.gif-animation"));
 
+            if ("IntersectionObserver" in window) {
+                var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("gif-animation");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers without IntersectionObserver support
+                // You can simply load all images immediately in this case
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("gif-animation");
+                });
+            }
+        });
 
         $(document).ready(function() {
             $('.hamburger-menu-wrapper').click(function() {
