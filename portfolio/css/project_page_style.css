@@ -820,6 +820,30 @@ textarea.w-select {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .w-nav {
+        z-index: 1000;
+        background: #fff;
+        position: fixed !important;
+    }
+    .story__block.intro {
+        max-width: 40vw;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+        margin-right: 9rem;
+        padding-top: 21.9rem !important;
+        padding-bottom: 4.7rem;
+        padding-left: 6rem;
+    }
+    .h-scroll__section.contain {
+        background-color: #fff;
+        align-items: center;
+        padding-top: 21.9rem !important;
+        padding-bottom: 6rem;
+    }
+}
+
 @media screen and (max-width: 479px) {
     .contact-h3 {
         font-family: 'Cormorant Garamond Light', sans-serif;
@@ -1758,7 +1782,7 @@ textarea.w-select {
 
 .w-nav {
     z-index: 1000;
-    background: #ddd;
+    background: #fff;
     position: relative;
 }
 
@@ -1798,7 +1822,7 @@ textarea.w-select {
 
 .w-nav-menu {
     float: right;
-    position: relative;
+    position: fixed;
 }
 
 [data-nav-menu-open] {

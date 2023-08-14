@@ -135,8 +135,7 @@
     .hv-auto {
         height: auto !important;
     }
-    
-    #lang-item {
+    /*#lang-item {
         position: absolute;
         font-weight: 800 !important;
         z-index: 99998;
@@ -144,7 +143,7 @@
         font-family: 'Roboto Regular';
         color: #f9f4f4;
         padding-left: 10px;
-    }
+    }*/
 </style>
 
 <body>
@@ -207,9 +206,9 @@
                                         <li class="nav-item ">
                                             <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
                                         </li>
-                                        <li class="nav-item ">
+                                        <!--<li class="nav-item ">
                                             <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
-                                        </li>
+                                        </li>-->
                                         <li class="nav-item ">
                                             <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
                                         </li>
@@ -240,7 +239,7 @@
                             <a href="http://" rel="noopener noreferrer">
 
                                 <img src="./icons/global-svg-black.svg" id="icon" alt="" srcset="">
-                                <span id="lang-item">SK</span>
+                                <!--<span id="lang-item">SK</span>-->
                             </a>
                         </div>
                     </div>
@@ -288,9 +287,11 @@
 
                 <div class="video-container">
                     <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="https://player.vimeo.com/video/850727482?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=0">
-                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="https://player.vimeo.com/video/850727482">
-                            <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
-                        </div>
+                        <a href="#">
+                            <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="https://player.vimeo.com/video/850727482">
+                                <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
+                            </div>
+                        </a>
                         <!-- Add the thumbnail image here -->
                         <img class="gif-animation" src="video/video-tmp.gif" alt="video">
                     </div>
@@ -300,9 +301,11 @@
                             <div class="wide-screen">
                                 <div class="vid-holder">
                                     <div class="close" vidUrl="#">
-                                        <div class="remove-circle">
-                                            <img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thumbnail" class="remove" />
-                                        </div>
+                                        <a href="#">
+                                            <div class="remove-circle">
+                                                <img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thumbnail" class="remove" />
+                                            </div>
+                                        </a>
                                     </div>
                                     <!-- The video element -->
                                     <iframe id="myVideo" class="myVideo hide" src="https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" title="Iceland_cinematic"
@@ -429,9 +432,15 @@
                         </span>
                 </div>
                 <div class="instagram-images">
-                    <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img1"></div>
-                    <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img2"></div>
-                    <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img3"></div>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img1"></div>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img2"></div>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img3"></div>
+                    </a>
                 </div>
 
             </div>
@@ -482,14 +491,14 @@
             <span class="title">
                 <h3>This website uses cookies</h3>
             </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using our
-                website, you consent to all cookies in accordance with our cookie policy. Read more
+                website, you consent to all cookies in accordance with our cookie policy. 
             </span><button class="black" id="cookie-close">Got it</button>
         </div>
     </div>
 </body>
 
 <script>
-    gsap.registerPlugin();
+    gsap.registerPlugin(ScrollTrigger);
     $(window).on('load', function() {
         var counter = 0;
         var count = 0;
@@ -545,13 +554,13 @@
 
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
-
             const links = document.querySelectorAll("a");
 
             document.addEventListener('mousemove', function(event) {
                 customCursor.style.left = `${event.clientX}px`;
                 customCursor.style.top = `${event.clientY}px`;
             });
+
 
             links.forEach((link) => {
                 link.addEventListener("mouseover", () => {
@@ -586,7 +595,7 @@
             opacity: 0,
             duration: 1,
             scrollTrigger: {
-                duration: 100,
+                duration: 1,
                 trigger: mainContent,
                 start: 'top center+=100', // Start the animation 100 pixels below the center of the viewport
                 end: 'bottom center', // End the animation when the bottom of the main content reaches the center of the viewport

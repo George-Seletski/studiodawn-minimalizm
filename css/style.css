@@ -118,6 +118,12 @@
         font-family: 'Cormorant Garamond Light', sans-serif;
     }
     
+    .prevent-select {
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
     #narrow-block {
         width: 300px !important;
         margin-left: 7.8em !important;
@@ -448,14 +454,19 @@
     }
     
     .header-wrapper.with-effect {
-        /*background: rgba(114, 114, 114, 0.089);*/
-        backdrop-filter: saturate(180%) blur(10px);
         opacity: 1;
+        /* Modern browsers with backdrop-filter support */
+        backdrop-filter: saturate(180%) blur(10px);
+        -webkit-backdrop-filter: saturate(180%) blur(10px);
+        /* Safari support */
     }
     
     .blur {
-        backdrop-filter: blur(7px);
         opacity: 0.7;
+        /* Modern browsers with backdrop-filter support */
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+        /* Safari support */
     }
     
     .header-content-wrapper {
@@ -650,7 +661,8 @@
         padding-top: 2em;
     }
     
-    .case-item:hover .case-list-img {
+    .g-image:hover,
+    .case-list-img:hover {
         opacity: 0.8;
     }
     
@@ -705,6 +717,12 @@
         width: fit-content;
         width: 30% !important;
         object-fit: cover;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+    }
+    
+    .grid-image:hover {
+        opacity: 0.8;
     }
     
     .first {
@@ -779,6 +797,7 @@
         justify-content: center;
         background-color: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         position: absolute;
         top: calc(48vh);
         left: 50%;
@@ -1766,8 +1785,24 @@
     }
     
     @media screen and (max-width: 1400px) {
+        .bottom-content {
+            width: fit-content;
+            margin-top: 3em;
+        }
+        .columns-container {
+            gap: 0;
+        }
+        .form-group .form-control {
+            margin-bottom: 30px;
+        }
         .contact-section {
             height: 100vh !important;
+            padding: 0 2em;
+        }
+        .info-block {
+            padding-bottom: 50px;
+            padding-top: 40px;
+            padding-right: 30px;
         }
         .nav-link {
             font-size: 4em;
@@ -1783,7 +1818,7 @@
         .container-header>h1 {
             max-width: 100%;
             margin-left: 1em;
-            font-size: 1.5em;
+            font-size: 25px !important;
         }
         #contact-form-container {
             width: 80%;
@@ -1797,9 +1832,7 @@
             margin-right: 2em;
         }
         .contact-h2 {
-            font-size: 2.8em;
-            margin-bottom: 1.4em;
-            padding-top: 0.5em;
+            font-size: 60px !important;
         }
         .info-block>* {
             font-size: 2em;
@@ -1899,6 +1932,10 @@
         .menu {
             margin-top: 5%;
         }
+        .header-content-wrapper,
+        .header-logo {
+            padding: 0;
+        }
         .container-text {
             font-size: 1.5em !important;
         }
@@ -1930,7 +1967,7 @@
             left: 0;
         }
         .w-nav-menu {
-            overflow: scroll !important;
+            overflow: hidden !important;
         }
         .w-container {
             margin-left: 0;
@@ -2212,6 +2249,9 @@
     }
     
     @media screen and (max-width: 767px) {
+        .w-nav-menu {
+            overflow: hidden !important;
+        }
         .custom-cursor {
             opacity: 0;
             background-color: unset;
@@ -2372,6 +2412,13 @@
     }
     
     @media screen and (max-width: 479px) {
+        .header-content-wrapper,
+        .header-logo {
+            padding: 5px 0;
+        }
+        .w-nav-menu {
+            overflow: scroll !important;
+        }
         .menu {
             margin-top: -1%;
         }
@@ -2643,7 +2690,7 @@
         }
         .container-header {
             max-width: 100%;
-            margin: 0;
+            margin: 0 0 2.5em 0;
         }
         .container-header>h1 {
             font-size: 1.2em !important;

@@ -260,6 +260,16 @@
         display: block;
         margin-top: 35px;
     }
+    
+    .mb-bottom---10px {
+        margin-bottom: 0px;
+        display: block;
+        margin-top: 70px;
+    }
+    
+    .mr-55 {
+        margin-right: 0px !important;
+    }
     /*Media Queries*/
     
     @media (min-width: 576px) {
@@ -291,6 +301,9 @@
     }
     
     @media screen and (max-width: 479px) {
+        .main {
+            margin-top: 49px;
+        }
         .main-grid {
             margin-top: 10vh;
         }
@@ -324,6 +337,9 @@
     }
     
     @media screen and (max-width: 991px) {
+        .mb-bottom---10px {
+            margin-top: 10px;
+        }
         .main-grid {
             margin-top: 20vh;
         }
@@ -399,9 +415,7 @@
                                     <li class="nav-item ">
                                         <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
                                     </li>
-                                    <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
-                                    </li>
+
                                     <li class="nav-item ">
                                         <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
                                     </li>
@@ -762,7 +776,7 @@
                 <h3>This website uses cookies</h3>
             </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using
                 our
-                website, you consent to all cookies in accordance with our cookie policy. Read more
+                website, you consent to all cookies in accordance with our cookie policy.
             </span><button class="black" id="cookie-close">Got it</button>
         </div>
 
@@ -901,7 +915,8 @@
                     trigger: ".mouse-container", // Element to trigger the animation
                     start: "top 80%", // Start the animation when element is 80% in view
                     end: "bottom 20%", // End the animation when element is 20% in view
-                    scrub: true // Enable smooth scrubbing effect while scrolling
+                    scrub: true,
+                    duration: 1, // Enable smooth scrubbing effect while scrolling
                 }
             });
 
