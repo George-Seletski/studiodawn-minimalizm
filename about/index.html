@@ -281,6 +281,31 @@
         }
     }
     
+    @media (max-width: 1400px) {
+        .main-grid {
+            margin-top: 100vh !important;
+        }
+        .main-grid__column {
+            height: 250vh;
+        }
+        .brands-section {
+            margin: 0 3em;
+            gap: 100px;
+        }
+        .header-section-content>h1 {
+            font-size: unset;
+        }
+        .row-container {
+            margin: 3em;
+        }
+        #section-title {
+            font-size: 4em;
+        }
+        .section-block {
+            height: 85vh !important;
+        }
+    }
+    
     @media (min-width: 992px) {
         .col-lg-2 {
             -webkit-box-flex: 0;
@@ -293,6 +318,9 @@
         }
         .fnt-great {
             font-size: 1.8em;
+        }
+        .section-block {
+            height: 100vh !important;
         }
     }
     
@@ -351,6 +379,20 @@
         }
         .w-nav[data-collapse="all"] .w-nav-menu {
             min-height: 104vh !important;
+        }
+        #main-title {
+            font-size: 3em !important;
+        }
+        .odd-header {
+            height: 70vh;
+            align-items: flex-end;
+            margin-bottom: 0;
+        }
+        .main-grid {
+            margin-top: 45vh !important;
+        }
+        #discover-h1 {
+            font-size: 2.6em !important;
         }
     }
     
@@ -455,7 +497,7 @@
     <div class="header-section odd-header">
         <div class="header-section-content">
 
-            <h1>
+            <h1 id="main-title">
                 <span class="mb-bottom---10px garamond-font">Not your typical</span>
                 <span class="mb-bottom---10px mr-55">agency.</span>
             </h1>
@@ -493,7 +535,7 @@
         <div class="header-section  section-block-text">
             <div class="header-section-content">
 
-                <h1>
+                <h1 id="section-title">
                     <span class="mb-bottom---10px garamond-font">Assembled or in parts?</span>
                     <span class="mb-bottom---60px font-60 fw-500">Whichever suits you <br> best of course.</span>
                 </h1>
@@ -700,7 +742,7 @@
         <div class="header-section section-block">
             <div class="header-section-content ">
 
-                <h1>
+                <h1 id="discover-h1">
                     <span class="mb-bottom---10px garamond-font fnt-great">Discover</span>
                     <span class="mb-bottom---10px mr-55">our work.</span>
                 </h1>

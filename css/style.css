@@ -1840,7 +1840,7 @@
                 margin-right: 2em;
             }
             .contact-h2 {
-                font-size: 60px !important;
+                font-size: 60px;
             }
             .info-block>* {
                 font-size: 2em;
@@ -1852,6 +1852,11 @@
             .contanct-links {
                 padding-top: 0.5em;
             }
+            .section-block-text {
+                font-size: 8px;
+                margin: 21em auto;
+                height: fit-content !important;
+            }
             .play-button {
                 top: calc(54vh);
             }
@@ -1862,16 +1867,23 @@
                 margin: 2.5em 12em;
             }
             .row-container {
-                margin: 4em 7em;
+                margin: 7em;
                 gap: 50px;
             }
+            .wrapper {
+                margin: 7em 0;
+            }
+            .mouse-container {
+                display: none;
+            }
             .text {
-                margin: 3em 6em;
+                margin: 6.5em 3em;
             }
             .instagram-container {
-                margin: 12em 8em;
+                margin: 4em 5em;
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 30px;
             }
             .instagram-text-contianer {
                 width: fit-content;
@@ -1896,6 +1908,9 @@
             .header-cover>img {
                 height: 72vh;
                 padding: 4em 0;
+            }
+            #ig-description {
+                font-size: 20px;
             }
             .description__content>.description {
                 display: block;
@@ -1926,13 +1941,13 @@
         
         @media screen and (max-width: 991px) {
             .form-container {
-                margin-top: 3em;
+                margin-top: 6em;
             }
             .brands-section-header {
                 margin: 0 auto;
                 width: auto;
                 display: block;
-                padding: 5em 0 0 7em;
+                padding: 0em 0 0 3em;
             }
             .portfolio-header {
                 margin-top: 5em;
@@ -2051,14 +2066,14 @@
                 margin-bottom: 120px;
             }
             .instagram-text-contianer>span {
-                width: 500px;
+                width: 100%;
                 font-size: 18.7px;
-                padding: 0 0px;
+                padding: 0 3em 0 0;
             }
             .instagram-container {
                 flex-direction: column;
                 height: auto;
-                margin: 7.25em 3em;
+                margin: 5.25em 3em;
             }
             .instagram-images {
                 flex-direction: row;
@@ -2108,6 +2123,7 @@
             #contact-links {
                 height: 100%;
                 gap: 4em;
+                margin-top: 2em;
             }
             .info-block>.icons {
                 justify-content: flex-start;
@@ -2119,9 +2135,6 @@
             }
             .info-block>h3 {
                 font-size: 4em;
-            }
-            .info-block>a {
-                font-size: 2em;
             }
             .container-header {
                 font-size: 1.4em !important;
@@ -2156,7 +2169,7 @@
             }
             .contanct-links {
                 text-align: left;
-                margin-top: 4em;
+                margin-top: 2em;
             }
             #contact-form-container {
                 width: 100%;
@@ -2717,8 +2730,8 @@
             }
             .columns-container {
                 flex-direction: column;
-                margin-left: 4em;
-                margin-right: 4em;
+                margin-left: 2em;
+                margin-right: 2em;
                 position: relative;
                 gap: 2em;
                 margin-top: 7em;
