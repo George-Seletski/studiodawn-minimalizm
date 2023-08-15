@@ -1245,17 +1245,17 @@
             mainContent.style.display = 'block';
 
             const scrollContainer = document.querySelector(".h-scroll__inview");
-            console.log(window.innerWidth, window.innerHeight);
+        console.log(window.innerWidth, window.innerHeight);
             if (screenWidth < 1920) {
                 scrollContainer.style = 'width: 1745em !important';
-
-                 if (screenWidth > 1400) {
-                    scrollContainer.style = 'width:' + (screenWidth - 500) + 'em';
-                    console.log('width:' + (screenWidth + 500) + 'em');
-                } 
             } else {
+
+
+                if (screenWidth > 2559) {
+                    scrollContainer.style = 'width:' + (screenWidth - 100) + 'em';
+                } else {
                     scrollContainer.style = 'width:' + (screenWidth - 320) + 'em';
-                
+                }
             }
 
             const customCursor = document.querySelector(".custom-cursor");
@@ -1312,6 +1312,10 @@
                 disableVerticalScroll();
             } else if (screenWidth < 1919) {
                 scrollContainer.style = 'width:100%;';
+                if (screenWidth > 1400){
+                    scrollContainer.style = 'width:' + screenWidth * 1.93 + 'em';
+                    storyBlock.style = 'width:' + screenWidth * 1.6 + 'em';
+                }
             }
 
             console.log('width:' + screenWidth + 'em');
