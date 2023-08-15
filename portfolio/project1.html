@@ -1249,14 +1249,12 @@
             if (screenWidth < 1920) {
                 scrollContainer.style = 'width: 1745em !important';
             } else {
-               
 
-                  if (screenWidth > 2500) {
-                    scrollContainer.style = 'width:' + (screenWidth+300) + 'em';
-                    console.log('width:' + (screenWidth) + 'em');
-                      console.log('width:' + (window.innerHeight) + 'em');
-                }else{
-                     scrollContainer.style = 'width:' + (screenWidth - 320) + 'em';
+
+                if (screenWidth > 2560) {
+                    scrollContainer.style = 'width:' + (screenWidth - 100) + 'em';
+                } else {
+                    scrollContainer.style = 'width:' + (screenWidth - 320) + 'em';
                 }
             }
 
