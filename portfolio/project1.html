@@ -22,10 +22,6 @@
 
 </head>
 <style>
-    div {
-        border: 1px solid #000;
-    }
-    
     .header-wrapper {
         background-color: transparent;
         position: fixed;
@@ -1252,9 +1248,9 @@
         console.log(window.innerWidth, window.innerHeight);
 
            if (screenWidth < 1920) {
-                scrollContainer.style = 'width: 1850em !important';
+                scrollContainer.style = 'width: 1750em !important';
             } else {
-                scrollContainer.style = 'width:' + (screenWidth - 220) + 'em';
+                scrollContainer.style = 'width:' + (screenWidth - 320) + 'em';
             }
 
             const customCursor = document.querySelector(".custom-cursor");
