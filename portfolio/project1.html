@@ -1248,16 +1248,14 @@
             console.log(window.innerWidth, window.innerHeight);
             if (screenWidth < 1920) {
                 scrollContainer.style = 'width: 1745em !important';
-            } else {
-                console.log('screenWidth < 2559', window.innerWidth, window.innerHeight, (screenWidth) + 'em');
 
-                if (screenWidth > 1400) {
-                    scrollContainer.style = 'width:' + (screenWidth - 100) + 'em';
-                      console.log('screenWidth > 2559',window.innerWidth, window.innerHeight, (screenWidth - 500) + 'em');
-                } else {
+                 if (screenWidth > 1400) {
+                    scrollContainer.style = 'width:' + (screenWidth - 500) + 'em';
+                    console.log('width:' + (screenWidth + 500) + 'em');
+                } 
+            } else {
                     scrollContainer.style = 'width:' + (screenWidth - 320) + 'em';
-                    console.log('screenWidth < 2559', window.innerWidth, window.innerHeight, (screenWidth - 320) + 'em');
-                }
+                
             }
 
             const customCursor = document.querySelector(".custom-cursor");
@@ -1311,10 +1309,6 @@
                 // Call the disableVerticalScroll function to turn off y scrolling
                 scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
                 storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
-                 if (screenWidth < 1919 && screenWidth > 1400) {
-                    scrollContainer.style = 'width:' + screenWidth * 1.7 + 'em';
-                     storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
-                 }
                 disableVerticalScroll();
             } else if (screenWidth < 1919) {
                 scrollContainer.style = 'width:100%;';
