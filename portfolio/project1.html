@@ -1250,16 +1250,11 @@
 
             const scrollContainer = document.querySelector(".h-scroll__inview");
         console.log(window.innerWidth, window.innerHeight);
-            if (screenWidth < 1920) {
-                scrollContainer.style = 'width: 1745em !important';
+
+           if (screenWidth < 1920) {
+                scrollContainer.style = 'width: 1850em !important';
             } else {
-
-
-                if (screenWidth > 2559) {
-                    scrollContainer.style = 'width:' + (screenWidth - 100) + 'em';
-                } else {
-                    scrollContainer.style = 'width:' + (screenWidth - 320) + 'em';
-                }
+                scrollContainer.style = 'width:' + (screenWidth - 220) + 'em';
             }
 
             const customCursor = document.querySelector(".custom-cursor");
@@ -1309,21 +1304,17 @@
                 event.preventDefault();
             }
 
+            
             if (screenWidth < 1919 && screenWidth > 991) {
                 // Call the disableVerticalScroll function to turn off y scrolling
                 scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
                 storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
-                storyBlock.style = 'height:' + window.innerHeight * 0.9 + 'em';
-                 console.log('width:' + screenWidth * 1.83 + 'em', 'width:' + screenWidth * 1.5 + 'em');
                 disableVerticalScroll();
             } else if (screenWidth < 1919) {
                 scrollContainer.style = 'width:100%;';
-                if (screenWidth > 1400){
-                    scrollContainer.style = 'width:' + screenWidth * 1.93 + 'em';
-                    storyBlock.style = 'width:' + screenWidth * 1.6 + 'em';
-                     console.log('width:' + screenWidth * 1.93 + 'em', 'width:' + screenWidth * 1.6 + 'em' );
-                }
             }
+
+            console.log('width:' + screenWidth + 'em');
 
             console.log('width:' + screenWidth + 'em');
             console.log('width:' + screenWidth * 1.83 + 'em');
