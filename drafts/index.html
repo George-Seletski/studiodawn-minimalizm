@@ -135,15 +135,18 @@
     .hv-auto {
         height: auto !important;
     }
-    /*#lang-item {
-        position: absolute;
-        font-weight: 800 !important;
-        z-index: 99998;
-        border: 1px solid;
-        font-family: 'Roboto Regular';
-        color: #f9f4f4;
-        padding-left: 10px;
-    }*/
+    
+    .icons {
+        position: relative;
+    }
+    
+    .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown-content.show {
+        display: block;
+    }
 </style>
 
 <body>
@@ -168,16 +171,16 @@
                             <div class="w-container">
                                 <ul role="list" class="nav-list white">
                                     <li class="nav-item">
-                                        <a href="../" class="nav-link w--current">Home</a>
+                                        <a href="../" class="nav-link w--current" data-translate="nav-link-1">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="about" class="nav-link">About</a>
+                                        <a href="about" class="nav-link" data-translate="nav-link-2">About</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="portfolio" class="nav-link">Cases</a>
+                                        <a href="portfolio" class="nav-link" data-translate="nav-link-3">Cases</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact" class="nav-link">Contact us</a>
+                                        <a href="contact" class="nav-link" data-translate="nav-link-4">Contact us</a>
                                     </li>
 
                                 </ul>
@@ -186,13 +189,13 @@
                                 <div class="nav-info-submenu">
 
                                     <ul role="list" class="nav-info">
-                                        <h2 class="nav-info-header ">Work Inquiries.</h2>
+                                        <h2 class="nav-info-header " data-translate="nav-work-inq">Work Inquiries.</h2>
                                         <li class="nav-item">
                                             <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
                                         </li>
                                     </ul>
                                     <ul role="list" class="nav-info">
-                                        <h2 class="nav-info-header white">Get in touch.</h2>
+                                        <h2 class="nav-info-header white" data-translate="nav-intouch">Get in touch.</h2>
                                         <li class="nav-item">
                                             <a href="#" class="link-address white">228 Nelson's Crescent New
                                             Westminster, BC V3L 3E3</a>
@@ -234,13 +237,15 @@
 
 
                     <div class="icons" id="translate-icon">
-
                         <div class="wh-30">
-                            <a href="http://" rel="noopener noreferrer">
-
-                                <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
-                                <!--<span id="lang-item">SK</span>-->
+                            <a href="javascript:void(0);">
+                                <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="" srcset="">
                             </a>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                                <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                                <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -251,8 +256,8 @@
             <div class="header-section-content">
 
                 <h1>
-                    <span class="mb-bottom---10px garamond-font ">We create</span>
-                    <span class="mb-bottom---10px mr-55"> future brands</span>
+                    <span class="mb-bottom---10px garamond-font " data-translate="main-h1-1">We create</span>
+                    <span class="mb-bottom---10px mr-55" data-translate="main-h1-1"> future brands</span>
                 </h1>
 
             </div>
@@ -518,6 +523,7 @@
 
 
 
+
     function initPage() {
         const cookieLabel = document.getElementById("cookie-label");
         const cookieCloseButton = document.getElementById("cookie-close");
@@ -588,21 +594,67 @@
         const mainContent = document.getElementById('main-content');
         mainContent.style.display = 'block';
 
-        // ScrollTrigger for scroll-based animations (if needed)
-        // Example: fade-in animation for the main content
-        gsap.from(mainContent, {
-            opacity: 0,
-            duration: 1,
-            scrollTrigger: {
-                duration: 100,
-                trigger: mainContent,
-                start: 'top center+=100', // Start the animation 100 pixels below the center of the viewport
-                end: 'bottom center', // End the animation when the bottom of the main content reaches the center of the viewport
-                toggleActions: 'play none none reverse', // Play the animation when the main content is in the viewport, reverse when it exits
+
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        translateIcon.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
+
+        // Close the dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+
+            if (!event.target.matches(".translate-icon-global")) {
+                console.log('translate-icon-globa clicked');
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                }
             }
         });
 
+        // Load translations from an external JSON file
+        fetch("lng.json")
+            .then(response => response.json())
+            .then(translations => {
+                console.log("Translations:", translations);
+                const defaultLanguage = 'en'; // Set the default language
 
+                // Update content with default language translations
+                const languageElements = document.querySelectorAll("[data-translate]");
+                languageElements.forEach(element => {
+                    const elementTag = element.getAttribute("data-translate");
+                    if (translations[defaultLanguage][elementTag]) {
+                        element.textContent = translations[defaultLanguage][elementTag];
+                    }
+                });
+
+                // Extract available language tags from the translations object
+                const availableLanguages = Object.keys(translations);
+
+                const languageSwitcher = document.getElementById("translate-icon");
+                const dropdownItems = languageSwitcher.querySelectorAll(".dropdown-item");
+
+                // Create event listeners for each language
+                dropdownItems.forEach(item => {
+                    const selectedLang = item.getAttribute("data-lang");
+                    if (availableLanguages.includes(selectedLang)) {
+                        item.addEventListener("click", () => {
+                            console.log("Language switcher clicked");
+                            console.log("Selected language:", selectedLang);
+
+                            // Update other elements with language tags
+                            languageElements.forEach(element => {
+                                const elementTag = element.getAttribute("data-translate");
+                                if (translations[selectedLang][elementTag]) {
+                                    element.textContent = translations[selectedLang][elementTag];
+                                }
+                            });
+                        });
+                    }
+                });
+            })
+            .catch(error => console.error("Error loading translations:", error));
 
         $(document).ready(function() {
             $('.hamburger-menu-wrapper').click(function() {
@@ -663,181 +715,7 @@
             window.onscroll = null;
             document.body.classList.remove('scroll-lock');
         }
-        // GSAP animation
-        const revealAnimation = gsap.timeline();
 
-        // Set initial state (fully transparent)
-        revealAnimation.set(".header-section-content h1 span", {
-            opacity: 0
-        });
-
-        // Define the animation
-        revealAnimation.from(".garamond-font", {
-                opacity: 0,
-                y: 20,
-                duration: 1,
-                delay: 1
-            })
-            .from(".mr-55", {
-                opacity: 0,
-                y: 20,
-                duration: 1
-            }, "-=0.7");
-
-
-
-        /*video*/
-        $(document).ready(function() {
-            var vimeoPlayer = new Vimeo.Player('myVideo');
-            $(".movie-btn").click(function() {
-                var video = $('#myVideo');
-                var vidUrl = $(this).attr("vidUrl");
-
-                if (vidUrl) {
-                    // Update the iframe src attribute with the Vimeo URL
-                    video.attr("src", vidUrl);
-                    video.removeClass("hide");
-                    video.addClass("show");
-                    $('.youTube').addClass("hide");
-                    $('.youTube').removeClass("show");
-                    $('.gif-animation').css('display', 'none');
-                    $('.play-button').css('display', 'none');
-
-                }
-                $('body').css('overflow', 'hidden');
-            });
-
-            $(".widescreen-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                $(".widescreen-img").addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
-
-            $(".standard-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                $(".standard-img").addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
-
-            $(".sixteen-nine-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                $(".sixteen-nine").addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
-
-            $(".pal-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                $(".pal").addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
-
-            $(".close").click(function() {
-                vimeoPlayer.pause().then(function() {
-                    return vimeoPlayer.setCurrentTime(0);
-                }).catch(function(error) {
-                    console.error("Error pausing or resetting video:", error);
-                });
-
-                $(".modal-vid").fadeOut(500);
-                $('.youTube, .myVideo').attr('src', '');
-                $('.gif-animation, .play-button').show();
-
-                $('body').css('overflow', 'auto');
-            });
-
-        });
-
-        // Move the following two event handlers inside the document ready function
-        $(document).keydown(function(e) {
-            if (e.keyCode == 27) { // ESC key
-                var video = $('#myVideo');
-                video.attr("src", ""); // Reset the iframe src to stop video playback
-                video.removeClass("show");
-                video.addClass("hide");
-                $('.modal-vid').fadeOut(500);
-                $('.gif-animation').css('display', 'block');
-                $('.play-button').css('display', 'block');
-            }
-        });
-
-        $(".close").click(function() {
-            // Close button click code here
-            var video = $('#myVideo');
-            video.attr("src", ""); // Reset the iframe src to stop video playback
-            video.removeClass("show");
-            video.addClass("hide");
-            $('.modal-vid').fadeOut(500);
-            $('.gif-animation').css('display', 'block');
-            $('.play-button').css('display', 'block');
-
-        });
-
-        const carousel = document.querySelector(".carousel"),
-            firstImg = carousel.querySelectorAll("img")[0],
-            arrowIcons = document.querySelectorAll(".wrapper i");
-        let isDragStart = false,
-            isDragging = false,
-            prevPageX, prevScrollLeft, positionDiff;
-        const showHideIcons = () => {
-            // showing and hiding prev/next icon according to carousel scroll left value
-            let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
-            arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-            arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
-        }
-        arrowIcons.forEach(icon => {
-            icon.addEventListener("click", () => {
-                let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
-                // if clicked icon is left, reduce width value from the carousel scroll left else add to it
-                carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-                setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
-            });
-        });
-        const autoSlide = () => {
-            // if there is no image left to scroll then return from here
-            if (carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
-            positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
-            let firstImgWidth = firstImg.clientWidth + 14;
-            // getting difference value that needs to add or reduce from carousel left to take middle img center
-            let valDifference = firstImgWidth - positionDiff;
-            if (carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
-                return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-            }
-            // if user is scrolling to the left
-            carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-        }
-        const dragStart = (e) => {
-            // updatating global variables value on mouse down event
-            isDragStart = true;
-            prevPageX = e.pageX || e.touches[0].pageX;
-            prevScrollLeft = carousel.scrollLeft;
-        }
-        const dragging = (e) => {
-            // scrolling images/carousel to left according to mouse pointer
-            if (!isDragStart) return;
-            e.preventDefault();
-            isDragging = true;
-            carousel.classList.add("dragging");
-            positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-            carousel.scrollLeft = prevScrollLeft - positionDiff;
-            showHideIcons();
-        }
-        const dragStop = () => {
-            isDragStart = false;
-            carousel.classList.remove("dragging");
-            if (!isDragging) return;
-            isDragging = false;
-            autoSlide();
-        }
-        carousel.addEventListener("mousedown", dragStart);
-        carousel.addEventListener("touchstart", dragStart);
-        document.addEventListener("mousemove", dragging);
-        carousel.addEventListener("touchmove", dragging);
-        document.addEventListener("mouseup", dragStop);
-        carousel.addEventListener("touchend", dragStop);
     };
 </script>
 

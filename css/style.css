@@ -525,7 +525,6 @@
         }
         
         .filter-button.active {
-            /* Transition properties */
             transition-timing-function: ease-in-out;
         }
         
@@ -578,27 +577,6 @@
             margin-left: auto;
             width: fit-content;
         }
-        /*
-.cases-grid {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    list-style: none;
-    padding: 0;
-    grid-auto-columns: auto;
-    grid-auto-rows: auto;
-    margin: 0 10em;
-    justify-items: stretch;
-    transition: all 0.5s ease;
-}
-
-.case-grid-item {
-    display: block;
-    height: auto;
-    max-width: 100%;
-    overflow: hidden;
-    transition: all 0.5s ease;
-}*/
         
         .cases-grid {
             column-count: 3;
@@ -743,28 +721,6 @@
                 opacity: 1;
             }
         }
-        /*.grid {
-    width: 100%;
-    grid-column-gap: 24px;
-    grid-row-gap: 24px;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: column;
-    display: grid;
-}
-
-#grid-img {
-    grid-area: span 1 / span 2 / span 1 / span 2;
-}
-
-.grid-image {
-    width: 100%;
-    vertical-align: middle;
-    max-width: 100%;
-    object-fit: cover;
-    display: block;
-}*/
         
         .text {
             display: flex;
@@ -829,6 +785,24 @@
             left: 50%;
             transform: translate(-50%, -70%);
             color: #000;
+        }
+        /*drop-menu*/
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: fit-content;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 2em;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .dropdown-item {
+            font-weight: 400;
+            font-family: 'Roboto Regular', sans-serif !important;
         }
         /*cookie-label*/
         

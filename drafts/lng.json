@@ -1,0 +1,35 @@
+{
+    "en": {
+        "nav-link-1": "Home",
+        "nav-link-2": "About",
+        "nav-link-3": "Cases",
+        "nav-link-4": "Contact us",
+        "nav-work-inq": "Work Inquiries.",
+        "nav-intouch": "Get in touch.",
+        "main-h1-1": "We create",
+        "main-h1-2": "future brands",
+        "description": "This is a language switcher example."
+    },
+    "fr": {
+        "nav-link-1": "Accueil",
+        "nav-link-2": "À propos",
+        "nav-link-3": "Projets",
+        "nav-link-4": "Contactez-nous",
+        "nav-work-inq": "Demandes de travail.",
+        "nav-intouch": "Restons en contact.",
+        "main-h1-1": "Nous créons",
+        "main-h1-2": "des marques d'avenir",
+        "description": "Ceci est un exemple de sélecteur de langue."
+    },
+    "de": {
+        "nav-link-1": "Startseite",
+        "nav-link-2": "Über uns",
+        "nav-link-3": "Projekte",
+        "nav-link-4": "Kontakt",
+        "nav-work-inq": "Arbeitsanfragen.",
+        "nav-intouch": "Kontakt halten.",
+        "main-h1-1": "Wir erschaffen",
+        "main-h1-2": "zukünftige Marken",
+        "description": "Dies ist ein Beispiel für einen Sprachumschalter."
+    }
+}

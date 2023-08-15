@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
 
-
-    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/all_functions.js"></script>
     <script src="js/ScrollTriger.js"></script>
-    <script src="js/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
     <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <style>
@@ -156,15 +157,20 @@
             text-align: left;
         }
     }
-    /*#lang-item {
-        position: absolute;
-        font-weight: 800 !important;
-        z-index: 99998;
-        border: 1px solid;
-        font-family: 'Roboto Regular';
-        color: #f9f4f4;
-        padding-left: 10px;
-    }*/
+    
+    .icons {
+        position: relative;
+    }
+    
+    .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown-content.show {
+        display: block;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+    }
 </style>
 
 <body>
@@ -176,22 +182,22 @@
 
             <div class="header-right-col">
                 <nav role="navigation" class="w-nav-menu">
-                    <a class="link-back white"><img src="./icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt=""></a>
+                    <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt=""></a>
                     <div class="menu container-default-center">
 
                         <div class="w-container">
                             <ul role="list" class="nav-list white">
                                 <li class="nav-item">
-                                    <a href="./" class="nav-link w--current">Home</a>
+                                    <a href="../" class="nav-link w--current" data-translate="nav-link-1">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="about" class="nav-link">About</a>
+                                    <a href="about" class="nav-link" data-translate="nav-link-2">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="portfolio" class="nav-link">Cases</a>
+                                    <a href="portfolio" class="nav-link" data-translate="nav-link-3">Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact" class="nav-link">Contact us</a>
+                                    <a href="contact" class="nav-link" data-translate="nav-link-4">Contact us</a>
                                 </li>
 
                             </ul>
@@ -200,16 +206,16 @@
                             <div class="nav-info-submenu">
 
                                 <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header ">Work Inquiries.</h2>
+                                    <h2 class="nav-info-header " data-translate="nav-work-inq">Work Inquiries.</h2>
                                     <li class="nav-item">
                                         <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
                                     </li>
                                 </ul>
                                 <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header white">Get in touch.</h2>
+                                    <h2 class="nav-info-header white" data-translate="nav-intouch">Get in touch.</h2>
                                     <li class="nav-item">
                                         <a href="#" class="link-address white">228 Nelson's Crescent New
-                                            Westminster, BC V3L 3E3</a>
+                                                        Westminster, BC V3L 3E3</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
@@ -220,9 +226,7 @@
                                     <li class="nav-item ">
                                         <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
                                     </li>
-                                    <!--<li class="nav-item ">
-                                            <a href="tel:+421905455208" class="link-telephone white"> Russia: +7 (963) 945-64-98</a>
-                                        </li>-->
+
                                     <li class="nav-item ">
                                         <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
                                     </li>
@@ -244,17 +248,20 @@
                 </div>
                 <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
                     <img src="./img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+
                 </a>
 
 
                 <div class="icons" id="translate-icon">
-
                     <div class="wh-30">
-                        <a href="http://" rel="noopener noreferrer">
-
-                            <img src="./icons/global-svg-black.svg" id="icon" alt="" srcset="">
-                            <!--<span id="lang-item">SK</span>-->
+                        <a href="javascript:void(0);">
+                            <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
                         </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                            <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                            <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -265,8 +272,8 @@
         <div class="header-section-content">
 
             <h1>
-                <span class="mb-bottom---10px garamond-font ">We create</span>
-                <span class="mb-bottom---10px mr-55"> future brands</span>
+                <span class="mb-bottom---10px garamond-font " data-translate="main-h1-1">We create</span>
+                <span class="mb-bottom---10px mr-55" data-translate="main-h1-2"> future brands</span>
             </h1>
 
         </div>
@@ -290,7 +297,7 @@
         <div class="container hv-auto">
             <div class="text-header">
                 <span>
-                        <div class="description">
+                        <div class="description" data-translate="text-video-section">
                             Unlock limitless possibilities with our comprehensive solutions block from trademark management to
                             digital transformation, we offer a wide range of services to elevate your brands success. Harness
                             the power of our solutions and propel your business to
@@ -340,29 +347,25 @@
     </div>
     <div class="row-container">
         <div>
-            <h2 id="header-font">The what</h2>
-            <span class="description">
-                    From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                    creativity to clients doing right by the world. We turn compeling ideas into commercial success
-                    stories through the power of brand in all its forms.
+            <h2 id="header-font" data-translate="header-h2-1">The what</h2>
+            <span class="description" data-translate="description-w-1">
+                From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to
+                clients doing right by the world. We turn compelling ideas into commercial success stories through the power of the
+                brand in all its forms.
                 </span>
         </div>
         <div>
-            <h2 id="header-font">The how</h2>
-            <span class="description">
-                    We're all about collective succes. Everyone's an equal in the creative process as we work toward a
-                    shared goal - no egos here. We don't make our partners fit into our formula. Instead, we find what
-                    works for you.
+            <h2 id="header-font" data-translate="header-h2-2">The how</h2>
+            <span class="description" data-translate="description-w-2">
+                We're all about collective success. Everyone's an equal in the creative process as we work toward a shared goal - no
+                egos here. We don't make our partners fit into our formula. Instead, we find what works for you.
                 </span>
         </div>
         <div>
-            <h2 id="header-font">The why</h2>
-            <span class="description">
-                    From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                    creativity
-                    to clients doing right by the world. We turn compeling ideas into commercial success stories through
-                    the power
-                    of brand.
+            <h2 id="header-font" data-translate="header-h2-3">The why</h2>
+            <span class="description" data-translate="description-w-3">
+From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to
+clients doing right by the world. We turn compelling ideas into commercial success stories through brand power.
                 </span>
         </div>
 
@@ -415,13 +418,12 @@
     <div class="page-wrapper">
         <div class="text">
             <h2>
-                <span class="garamond-font">We work with clients to create immersive worlds &mdash; brands that draw you into their orbit, make an impact & gain a cult following. 
-                    Just ask 
-                        <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer"> Microsoft</a>,
+                <span class="garamond-font"><span data-translate="text-1">We work with clients to create immersive worlds &mdash; brands that draw you into their orbit, make an impact & gain a cult following. Just ask </span>
+                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer"> Microsoft</a>,
                 <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">P.E Notion</a>,
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Verve Super</a>, 
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Worn For Good</a> and
-                <a href="https://"  id="brand-name" target="_blank" rel="noopener noreferrer">Beaty Bites.</a>
+                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Verve Super</a>,
+                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Worn For Good</a> <span data-translate="text-2">and</span>
+                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Beaty Bites.</a>
                 </span>
             </h2>
         </div>
@@ -431,12 +433,12 @@
                 <h2 id="header-font">Instagram</h2>
 
                 <span>
-                    <p class="description" id="ig-description">
+                    <p class="description" id="ig-description" data-translate="inst-text-1">
                         We don't just design brands for pleasing aesthetic, we bring purposeful business to life and
                         grant them longevity in the game.
                     </p>
                     <br>
-                    <p class="description" id="ig-description">
+                    <p class="description" id="ig-description" data-translate="inst-text-2">
                         Follow us to stay updated with syudio happenings and projects in the works.
                     </p>
                     <p>
@@ -515,40 +517,13 @@
 
 <script>
     gsap.registerPlugin(ScrollTrigger);
-
     initPage();
 
-
     function initPage() {
-        const cookieLabel = document.getElementById("cookie-label");
-        const cookieCloseButton = document.getElementById("cookie-close");
+        cookieFunction();
 
-        // Check if the user has already accepted the cookies
-        const cookiesAccepted = localStorage.getItem("cookiesAccepted");
-        setTimeout(function() {
-            cookieLabel.style.display = "block";
-        }, 6000);
-
-        if (!cookiesAccepted) {
-            // Show the cookie label
-            cookieLabel.style.display = "block";
-        }
-
-        // Event listener for the "Got it" button click
-        cookieCloseButton.addEventListener("click", function() {
-            // Hide the cookie label
-            cookieLabel.style.display = "none";
-
-            // Store the information that the user has accepted the cookies
-            localStorage.setItem("cookiesAccepted", "true");
-
-            // Show the cookie label again after a time period (e.g., 1 day)
-            const timePeriodInMilliseconds = 24 * 60 * 60 * 1000; // 1 day
-            setTimeout(function() {
-                cookieLabel.style.display = "block";
-            }, timePeriodInMilliseconds);
-        });
-
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
 
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
@@ -582,8 +557,6 @@
 
         // GSAP TimelineMax for animations
         const timeline = gsap.timeline();
-
-
 
         // Show the main content by setting its display property to "block"
         const mainContent = document.getElementById('main-content');
@@ -629,6 +602,22 @@
                     lazyImage.classList.remove("gif-animation");
                 });
             }
+            console.log(translateIcon); // Check if translateIcon is found
+            console.log(dropdownContent); // Check if dropdownContent is found
+            translateIcon.addEventListener("click", function() {
+                dropdownContent.classList.toggle("show");
+            });
+
+            // Close the dropdown when clicking outside
+            window.addEventListener("click", function(event) {
+
+                if (!event.target.matches(".translate-icon-global")) {
+                    console.log('translate-icon-globa clicked');
+                    if (dropdownContent.classList.contains("show")) {
+                        dropdownContent.classList.remove("show");
+                    }
+                }
+            });
         });
 
         $(document).ready(function() {
@@ -713,15 +702,14 @@
 
 
 
-        /*video*/
         $(document).ready(function() {
             var vimeoPlayer = new Vimeo.Player('myVideo');
+
             $(".movie-btn").click(function() {
                 var video = $('#myVideo');
                 var vidUrl = $(this).attr("vidUrl");
 
                 if (vidUrl) {
-                    // Update the iframe src attribute with the Vimeo URL
                     video.attr("src", vidUrl);
                     video.removeClass("hide");
                     video.addClass("show");
@@ -729,36 +717,25 @@
                     $('.youTube').removeClass("show");
                     $('.gif-animation').css('display', 'none');
                     $('.play-button').css('display', 'none');
-
                 }
                 $('body').css('overflow', 'hidden');
             });
 
-            $(".widescreen-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                $(".widescreen-img").addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
+            function resetVideo() {
+                var video = $('#myVideo');
+                video.attr("src", "");
+                video.removeClass("show");
+                video.addClass("hide");
+                $('.modal-vid').fadeOut(500);
+                $('.gif-animation').css('display', 'block');
+                $('.play-button').css('display', 'block');
+            }
 
-            $(".standard-btn").click(function() {
+            $(".widescreen-btn, .standard-btn, .sixteen-nine-btn, .pal-btn").click(function() {
                 $(".modal-vid").fadeIn(500);
                 $(".vid-holder img").removeClass("show");
-                $(".standard-img").addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
-
-            $(".sixteen-nine-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                $(".sixteen-nine").addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
-
-            $(".pal-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                $(".pal").addClass("show");
+                var className = $(this).data("class");
+                $("." + className).addClass("show");
                 $('.gif-animation').css('display', 'none');
             });
 
@@ -769,39 +746,17 @@
                     console.error("Error pausing or resetting video:", error);
                 });
 
-                $(".modal-vid").fadeOut(500);
-                $('.youTube, .myVideo').attr('src', '');
-                $('.gif-animation, .play-button').show();
-
+                resetVideo();
                 $('body').css('overflow', 'auto');
             });
 
+            $(document).keydown(function(e) {
+                if (e.keyCode == 27) { // ESC key
+                    resetVideo();
+                }
+            });
         });
 
-        // Move the following two event handlers inside the document ready function
-        $(document).keydown(function(e) {
-            if (e.keyCode == 27) { // ESC key
-                var video = $('#myVideo');
-                video.attr("src", ""); // Reset the iframe src to stop video playback
-                video.removeClass("show");
-                video.addClass("hide");
-                $('.modal-vid').fadeOut(500);
-                $('.gif-animation').css('display', 'block');
-                $('.play-button').css('display', 'block');
-            }
-        });
-
-        $(".close").click(function() {
-            // Close button click code here
-            var video = $('#myVideo');
-            video.attr("src", ""); // Reset the iframe src to stop video playback
-            video.removeClass("show");
-            video.addClass("hide");
-            $('.modal-vid').fadeOut(500);
-            $('.gif-animation').css('display', 'block');
-            $('.play-button').css('display', 'block');
-
-        });
 
         const carousel = document.querySelector(".carousel"),
             firstImg = carousel.querySelectorAll("img")[0],
@@ -865,6 +820,10 @@
         carousel.addEventListener("touchmove", dragging);
         document.addEventListener("mouseup", dragStop);
         carousel.addEventListener("touchend", dragStop);
+
+
+        setupLanguageSwitcher();
+
     };
 </script>
 

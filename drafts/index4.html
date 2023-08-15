@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher Example</title>
+
+    <!-- You can link your CSS file here -->
+    <style>
+        .dropdown-content {
+            display: block;
+        }
+        
+        .icons {
+            position: relative;
+        }
+        
+        .icons:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icons" id="translate-icon">
+        <div class="wh-30">
+            <a href="#" rel="noopener noreferrer">
+                <img src="../icons/global-svg-black.svg" id="icon" alt="">
+            </a>
+            <div class="dropdown-content">
+                <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <h1 id="title" data-translate="main-h1-1">Welcome</h1>
+        <p id="description" data-translate="description">This is a language switcher example.</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // Load translations from an external JSON file
+            fetch("lng.json")
+                .then(response => response.json())
+                .then(translations => {
+                    console.log("Translations:", translations);
+                    const defaultLanguage = 'en'; // Set the default language
+
+                    // Update content with default language translations
+                    const languageElements = document.querySelectorAll("[data-translate]");
+                    languageElements.forEach(element => {
+                        const elementTag = element.getAttribute("data-translate");
+                        if (translations[defaultLanguage][elementTag]) {
+                            element.textContent = translations[defaultLanguage][elementTag];
+                        }
+                    });
+
+                    // Extract available language tags from the translations object
+                    const availableLanguages = Object.keys(translations);
+
+                    const languageSwitcher = document.getElementById("translate-icon");
+                    const dropdownItems = languageSwitcher.querySelectorAll(".dropdown-item");
+
+                    // Create event listeners for each language
+                    dropdownItems.forEach(item => {
+                        const selectedLang = item.getAttribute("data-lang");
+                        if (availableLanguages.includes(selectedLang)) {
+                            item.addEventListener("click", () => {
+                                console.log("Language switcher clicked");
+                                console.log("Selected language:", selectedLang);
+
+                                // Update other elements with language tags
+                                languageElements.forEach(element => {
+                                    const elementTag = element.getAttribute("data-translate");
+                                    if (translations[selectedLang][elementTag]) {
+                                        element.textContent = translations[selectedLang][elementTag];
+                                    }
+                                });
+                            });
+                        }
+                    });
+                })
+                .catch(error => console.error("Error loading translations:", error));
+        });
+    </script>
+</body>
+
+</html>
