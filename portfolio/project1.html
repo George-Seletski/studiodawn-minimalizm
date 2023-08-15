@@ -1311,6 +1311,10 @@
                 // Call the disableVerticalScroll function to turn off y scrolling
                 scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
                 storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
+                 if (screenWidth < 1919 && screenWidth > 1400) {
+                    scrollContainer.style = 'width:' + screenWidth * 1.7 + 'em';
+                     storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
+                 }
                 disableVerticalScroll();
             } else if (screenWidth < 1919) {
                 scrollContainer.style = 'width:100%;';
