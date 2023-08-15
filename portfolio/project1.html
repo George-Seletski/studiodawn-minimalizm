@@ -1251,8 +1251,8 @@
             } else {
 
 
-                if (screenWidth > 2559) {
-                    scrollContainer.style = 'width:' + (screenWidth - 50) + 'em';
+                if (screenWidth > 1950) {
+                    scrollContainer.style = 'width:' + (screenWidth - 0) + 'em';
                 } else {
                     scrollContainer.style = 'width:' + (screenWidth - 320) + 'em';
                 }
@@ -1310,11 +1310,9 @@
                 scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
                 storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
                 disableVerticalScroll();
-            } else {if (screenWidth < 1919) {
+            } else if (screenWidth < 1919) {
                 scrollContainer.style = 'width:100%;';
-            }else{
-                 storyBlock.style = 'width:' + screenWidth * 1.6 + 'em';
-            }}
+            }
 
             console.log('width:' + screenWidth + 'em');
             console.log('width:' + screenWidth * 1.83 + 'em');
