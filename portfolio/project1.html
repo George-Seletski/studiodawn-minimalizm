@@ -1310,9 +1310,11 @@
                 scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
                 storyBlock.style = 'width:' + screenWidth * 1.5 + 'em';
                 disableVerticalScroll();
-            } else if (screenWidth < 1919) {
+            } else {if (screenWidth < 1919) {
                 scrollContainer.style = 'width:100%;';
-            }
+            }else{
+                 storyBlock.style = 'width:' + screenWidth * 1.6 + 'em';
+            }}
 
             console.log('width:' + screenWidth + 'em');
             console.log('width:' + screenWidth * 1.83 + 'em');
