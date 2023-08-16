@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>STUDIODAWN</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
@@ -135,7 +136,16 @@
         padding-top: 25px;
     }
     
-    @media screen and (max-width:991px) {
+    @media screen and (max-width: 991px) {
+        h1 {
+            line-height: 1 !important;
+            font-size: 1.2em !important;
+        }
+        .garamond-font {
+            font-family: 'Cormorant Garamond Light', sans-serif !important;
+            font-weight: 100;
+            font-size: 2em !important;
+        }
         .hv-auto {
             height: auto !important;
             padding-top: 50px;
@@ -153,7 +163,7 @@
         .text {
             font-size: 20px;
             line-height: 50px;
-            margin: 4em 2em;
+            margin: 4em 2em 6em 2em;
             text-align: left;
         }
     }
@@ -273,7 +283,7 @@
 
             <h1>
                 <span class="mb-bottom---10px garamond-font " data-translate="main-h1-1">We create</span>
-                <span class="mb-bottom---10px mr-55" data-translate="main-h1-2"> future brands</span>
+                <span class="mb-bottom---10px mr-55 roboto-light-fnt " data-translate="main-h1-2"> future brands</span>
             </h1>
 
         </div>
@@ -451,13 +461,13 @@ clients doing right by the world. We turn compelling ideas into commercial succe
             </div>
             <div class="instagram-images">
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img1"></div>
+                    <div loading="eager" class="instagram-img img1"></div>
                 </a>
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img2"></div>
+                    <div loading="eager" class="instagram-img img2"></div>
                 </a>
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1954px) 57vw, 1114px" class="instagram-img img3"></div>
+                    <div loading="eager" class="instagram-img img3"></div>
                 </a>
             </div>
 
@@ -728,7 +738,7 @@ clients doing right by the world. We turn compelling ideas into commercial succe
                 video.addClass("hide");
                 $('.modal-vid').fadeOut(500);
                 $('.gif-animation').css('display', 'block');
-                $('.play-button').css('display', 'block');
+                $('.play-button').css('display', 'flex');
             }
 
             $(".widescreen-btn, .standard-btn, .sixteen-nine-btn, .pal-btn").click(function() {
