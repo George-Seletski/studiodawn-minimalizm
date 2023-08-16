@@ -1028,7 +1028,7 @@ img {
 }
 
 .brands-section {
-    margin: 0 13em;
+    margin: 10em 13em;
     padding-top: 0px;
     padding-bottom: 40px;
     display: block;
@@ -1038,10 +1038,9 @@ img {
 .brands-container {
     flex-direction: row;
     display: flex;
-    gap: 5em;
+    gap: 4.5em;
     flex-wrap: wrap;
     width: 100%;
-    margin: 5em 0;
 }
 
 #brand {
@@ -2272,10 +2271,9 @@ footer {
         margin-top: 30em;
     }
     .brands-container {
-        align-items: center;
         margin: auto;
         flex-direction: row;
-        gap: 5em;
+        gap: 4em;
         justify-content: center;
     }
     .brands-section {

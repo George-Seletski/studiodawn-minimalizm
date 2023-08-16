@@ -3,11 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
     <title>STUDIODAWN</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="stylesheet" href="../css/normalize.css" type="text/css">
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+        type="text/css"
+    >
+    <link
+        rel="stylesheet"
+        href="../css/normalize.css"
+        type="text/css"
+    >
 
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/gsap.min.js"></script>
@@ -15,28 +29,28 @@
 </head>
 <style>
     *,
-     :after,
-     :before {
+    :after,
+    :before {
         -webkit-box-sizing: border-box;
         box-sizing: border-box
     }
-    
+
     html {
         font-family: sans-serif;
         line-height: 1.15;
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
     }
-    
+
     article,
     aside,
     figcaption,
     figure,
     main,
     section {
-        display: block;
+        display: block
     }
-    
+
     body {
         margin: 0;
         font-size: 1rem;
@@ -45,66 +59,74 @@
         text-align: left;
         background-color: #f9f4f4;
     }
-    
+
     .main {
         position: relative;
         min-height: 100vh;
         display: block;
         width: 100%;
     }
-    
+
     h1 {
         font-size: 144px;
     }
-    
+
     @media screen and (max-width: 1199px) {
         .no-gl .main {
             padding-bottom: 5vmin !important;
         }
     }
-    
+
     @media screen and (min-width: 769px) {
         .main {
             padding-top: 62px
         }
     }
-    
+
     @media screen and (max-width: 991px) {
         .main-grid {
             justify-content: center !important;
         }
+
         .image-container {
             margin: 0px !important;
         }
+
         .main-grid__column:first-child {
             margin-top: 0 !important;
         }
+
         .main-grid__column:nth-child(2) {
             margin-top: 0 !important;
         }
+
         .main-grid__column:nth-child(3) {
             margin-top: 0 !important;
         }
+
         .fnt-great {
             font-size: 1.4em;
         }
     }
-    
+
     @media (max-width: 478px) {
         .image-container {
             margin: 0px !important;
         }
+
         .main-grid__column:first-child {
             margin-top: 0 !important;
         }
+
         .main-grid__column:nth-child(2) {
             margin-top: 0 !important;
         }
+
         .main-grid__column:nth-child(3) {
             margin-top: 0 !important;
         }
     }
-    
+
     @media (-o-min-device-pixel-ratio: 2/1) and (min-width:1201px),
     (-webkit-min-device-pixel-ratio:2) and (min-width:1201px),
     (min-resolution:2dppx) and (min-width:1201px),
@@ -113,29 +135,29 @@
             padding-top: 70px
         }
     }
-    
+
     .no-gl .hero-title--home {
         margin-top: 0px;
     }
-    
+
     .hero-title__svg {
         margin-top: 29px;
         margin-left: -20px;
         width: calc(100% + 20px);
     }
-    
+
     .main-grid {
-        padding-bottom: 0;
+        padding-bottom: 20vmin;
         -webkit-box-pack: center;
         justify-content: center;
         background-color: transparent;
         padding: 0 25px;
-        margin-top: 40vh;
+        margin-top: 100vh;
         will-change: transform;
         position: relative;
         justify-content: space-between;
     }
-    
+
     .row {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -143,34 +165,37 @@
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
-    
+
     .main-grid__column:first-child {
         margin-top: -65px;
         background-color: transparent;
     }
-    
+
     .main-grid__column:nth-child(2) {
         margin-top: -294px;
         background-color: transparent;
     }
-    
+
     .main-grid__column:nth-child(3) {
         margin-top: 27px;
         background-color: transparent;
     }
+
     /* Add space between each main-grid__column (section) */
-    
+
     .main-grid__column {
-        margin-bottom: 0px;
+        margin-bottom: 20px;
         /* Adjust this value to control the space between sections */
     }
-    
+
+    /* Optional: Add space between each image container within the main-grid__column */
+
     .image-container {
         margin-bottom: 250px;
         display: block;
         transition: transform 0.3s ease;
     }
-    
+
     .team__title {
         text-align: center;
         text-transform: uppercase;
@@ -178,7 +203,7 @@
         padding-right: 6px;
         line-height: 1em;
     }
-    
+
     #team-img {
         transition: transform 0.5s;
         display: block;
@@ -187,7 +212,7 @@
         -o-object-fit: cover;
         object-fit: cover;
     }
-    
+
     .team-cardinfo {
         position: relative;
         width: 100%;
@@ -196,8 +221,9 @@
         left: 0%;
         right: auto;
     }
+
     /*Title*/
-    
+
     .about-main-section {
         z-index: 0;
         justify-content: center;
@@ -210,7 +236,7 @@
         /*height: 1600px;*/
         width: 100%;
     }
-    
+
     .team-section {
         z-index: auto;
         float: none;
@@ -225,13 +251,13 @@
         width: 100%;
         height: 100%;
     }
-    
+
     .v-scroll__section.team {
         margin-top: -50vh;
         padding-left: 0;
         padding-right: 0;
     }
-    
+
     .v-scroll__section {
         flex-direction: column;
         justify-content: center;
@@ -240,7 +266,7 @@
         display: flex;
         position: relative;
     }
-    
+
     .team-header-text {
         position: relative;
         inset: 0px auto auto 0px;
@@ -253,30 +279,25 @@
         opacity: 1;
         transition: opacity 0.8s;
     }
-    
-    .image-container {
-        margin-bottom: 0px;
-        display: block;
-        transition: transform 0.3s ease;
-    }
-    
+
     .mb-bottom---10px {
         margin-bottom: 10px;
         display: block;
         margin-top: 35px;
     }
-    
+
     .mb-bottom---10px {
         margin-bottom: 0px;
         display: block;
         margin-top: 70px;
     }
-    
+
     .mr-55 {
         margin-right: 0px !important;
     }
+
     /*Media Queries*/
-    
+
     @media (min-width: 576px) {
         .col-md-6 {
             -webkit-box-flex: 0;
@@ -285,35 +306,38 @@
             max-width: 75%
         }
     }
-    
+
     @media (max-width: 1400px) {
-        .image-container {
-            margin-bottom: 200px;
-        }
         .main-grid {
             margin-top: 100vh !important;
         }
+
         .main-grid__column {
             height: 250vh;
         }
+
         .brands-section {
             margin: 0 3em;
             gap: 100px;
         }
+
         .header-section-content>h1 {
             font-size: unset;
         }
+
         .row-container {
             margin: 3em;
         }
+
         #section-title {
             font-size: 4em;
         }
+
         .section-block {
             height: 85vh !important;
         }
     }
-    
+
     @media (min-width: 992px) {
         .col-lg-2 {
             -webkit-box-flex: 0;
@@ -321,117 +345,142 @@
             flex: 0 0 25%;
             max-width: 25%;
         }
+
         .offset-lg-1 {
             margin-left: 12.5%;
         }
+
         .fnt-great {
             font-size: 1.8em;
         }
+
         .section-block {
             height: 100vh !important;
         }
     }
-    
+
     .pb-2 {
         padding-bottom: 0em;
     }
-    
+
     @media screen and (max-width: 479px) {
         .section-block {
             height: 90vh !important;
         }
+
         .brands-section-header {
             margin: 0 auto;
             width: auto;
             display: block;
             padding: 0 !important;
         }
+
         .main {
             margin-top: 49px;
         }
+
         .main-grid {
             margin-top: 10vh;
         }
+
         .main-grid__column {
             height: 100%;
         }
+
         h1 {
             font-size: 92px !important;
         }
+
         .garamond-font {
             font-size: 82px !important;
         }
+
         .mouse-container {
             display: none !important;
         }
+
         .odd-header {
             height: 70vh;
             align-items: center;
             margin: 0;
         }
+
         .header-section-content {
             font-size: 2em;
             margin-top: 0px;
         }
+
         .section-block-text {
             margin: 5em 0;
         }
     }
-    
+
     @media screen and (max-width: 769px) {
         .main-grid {
             margin-top: 10vh;
         }
+
         #discover-h1 {
             font-size: 1.7em !important;
         }
+
         .pb-2 {
             padding-bottom: 20px;
         }
+
         .brands-section-header>h2 {
             margin-bottom: 0;
         }
     }
-    
+
     @media screen and (max-width: 991px) {
         #discover-text {
             font-size: 3em !important;
         }
+
         .mb-bottom---10px {
             margin-top: 10px;
         }
+
         .main-grid {
             margin-top: 20vh;
         }
+
         .mouse-container {
             display: none !important;
         }
+
         .w-nav-menu {
             width: 108vw !important;
         }
+
         .w-nav[data-collapse="all"] .w-nav-menu {
             min-height: 104vh !important;
         }
+
         #main-title {
             font-size: 3em !important;
         }
+
         .odd-header {
             height: 70vh;
             align-items: flex-end;
             margin-bottom: 0;
         }
+
         .main-grid {
-            margin-top: 15vh !important;
+            margin-top: 45vh !important;
         }
+
         #discover-h1 {
             font-size: 2.6em;
         }
     }
-    
+
     #brand-logo {
         width: 100%;
     }
-    
+
     .hv-80 {
         height: 80vh !important;
     }
@@ -441,26 +490,52 @@
 
     <div class="custom-cursor"></div>
 
-    <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
+    <div
+        class="header-wrapper w-nav"
+        data-duration="400"
+        data-collapse="all"
+    >
         <div class="container-default w-container">
 
             <div class="header-right-col">
-                <nav role="navigation" class="header-hamburger-desktop-wrapper w-nav-menu ">
-                    <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
+                <nav
+                    role="navigation"
+                    class="header-hamburger-desktop-wrapper w-nav-menu "
+                >
+                    <a class="link-back white"><img
+                            src="../icons/arrow-right-up-light.svg"
+                            style=" width: 30px;transform: rotate(270deg);"
+                            alt="arrow-left-up"
+                        ></a>
                     <div class="menu container-default-center">
                         <div class="w-container">
-                            <ul role="list" class="nav-list white">
+                            <ul
+                                role="list"
+                                class="nav-list white"
+                            >
                                 <li class="nav-item">
-                                    <a href="../" class="nav-link ">Home</a>
+                                    <a
+                                        href="../"
+                                        class="nav-link "
+                                    >Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../about" class="nav-link w--current">About</a>
+                                    <a
+                                        href="../about"
+                                        class="nav-link w--current"
+                                    >About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../portfolio" class="nav-link">Cases</a>
+                                    <a
+                                        href="../portfolio"
+                                        class="nav-link"
+                                    >Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../contact" class="nav-link">Contact us</a>
+                                    <a
+                                        href="../contact"
+                                        class="nav-link"
+                                    >Contact us</a>
                                 </li>
 
                             </ul>
@@ -468,30 +543,54 @@
                         <div class="w-container">
                             <div class="nav-info-submenu">
 
-                                <ul role="list" class="nav-info">
+                                <ul
+                                    role="list"
+                                    class="nav-info"
+                                >
                                     <h2 class="nav-info-header ">Work Inquiries.</h2>
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        <a
+                                            href="mailto:hello@dawnstudio.com"
+                                            class="link-email white"
+                                        >hello@dawnstudio.com</a>
                                     </li>
                                 </ul>
-                                <ul role="list" class="nav-info">
+                                <ul
+                                    role="list"
+                                    class="nav-info"
+                                >
                                     <h2 class="nav-info-header white">Get in touch.</h2>
                                     <li class="nav-item">
-                                        <a href="#" class="link-address white">228 Nelson's Crescent New
+                                        <a
+                                            href="#"
+                                            class="link-address white"
+                                        >228 Nelson's Crescent New
                                             Westminster, BC V3L 3E3</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        <a
+                                            href="mailto:hello@dawnstudio.com"
+                                            class="link-email white"
+                                        >hello@dawnstudio.com</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Slovakia: +421-905-455-208</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Europe: +33-6-84-13-30-45</a>
                                     </li>
 
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Canada: +1 (604) 786-6046</a>
                                     </li>
 
                                 </ul>
@@ -509,16 +608,33 @@
                     <div class="hamburger-menu-bar-top"></div>
                     <div class="hamburger-menu-bar-bottom"></div>
                 </div>
-                <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
-                    <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                <a
+                    href="../"
+                    aria-current="page"
+                    class="header-logo-link w-nav-brand w--current "
+                >
+                    <img
+                        src="../img/logo-black.png"
+                        alt="STUDIODAWN"
+                        class="header-logo"
+                        lazy="loading"
+                    >
                 </a>
 
 
                 <div class="icons">
 
                     <div class="wh-30">
-                        <a href="http://" rel="noopener noreferrer">
-                            <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
+                        <a
+                            href="http://"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="../icons/global-svg-black.svg"
+                                id="icon"
+                                alt=""
+                                srcset=""
+                            >
                         </a>
                     </div>
                 </div>
@@ -538,7 +654,10 @@
                     <span class="mouse-movement">
                     </span>
                 </span>
-                <div class="mouse-scroll mr-0" href="#">
+                <div
+                    class="mouse-scroll mr-0"
+                    href="#"
+                >
                     <span class="mouse mr-0">
                         <span class="mouse-movement">
                         </span>
@@ -552,7 +671,11 @@
     <div class="page-wrapper">
         <div class="header-image-description">
             <div class="header-cover">
-                <img src="./team/main.png" alt="our team" loading="lazy">
+                <img
+                    src="./team/main.png"
+                    alt="our team"
+                    loading="lazy"
+                >
             </div>
             <span class="description">
 
@@ -607,14 +730,52 @@
         </div>
 
 
-        <main data-bg="#ffffff" data-txt="#000000" data-invert="" id="main" class="main" data-barba="container" style=" border: 1px solid transparent;">
+        <main
+            data-bg="#ffffff"
+            data-txt="#000000"
+            data-invert=""
+            id="main"
+            class="main"
+            data-barba="container"
+            style=" border: 1px solid transparent;"
+        >
 
+            <div
+                class="header-section-content  team-section "
+                style=" border: 1px solid transparent;"
+            >
+                <div
+                    class="vscroll__section team"
+                    style=" border: 1px solid transparent;"
+                >
+                    <div
+                        class="team-header-text"
+                        style=" border: 1px solid transparent; opacity: 1;
+        transition: opacity 0.2s ease;"
+                    >
+                        <h1>
+                            <span class="mb-bottom---10px garamond-font">Team</span>
+                            <span class="mb-bottom---60px mr-55"> Studio Dawn</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
 
-            <section class="main-grid row " data-component="HomepageGrid" style="opacity: 1; visibility: inherit;  border: 1px solid transparent;">
+            <section
+                class="main-grid row "
+                data-component="HomepageGrid"
+                style="opacity: 1; visibility: inherit;  border: 1px solid transparent;"
+            >
                 <section class="main-grid__column  col-md-6 col-lg-2">
                     <div class="image-container">
                         <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
                         </div>
                         <div class="team-cardinfo">
                             <div class="team__title">
@@ -625,7 +786,13 @@
 
                     <div class="image-container">
                         <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
                         </div>
                         <div class="team-cardinfo">
                             <div class="team__title">
@@ -635,40 +802,13 @@
                     </div>
                     <div class="image-container">
                         <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                        </div>
-                        <div class="team-cardinfo">
-                            <div class="team__title">
-                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
-                <section class="main-grid__column  offset-lg-1 col-md-6 col-lg-2" style="opacity: 1; visibility: inherit;  border: 1px solid transparent;">
-                    <div class="image-container">
-                        <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                        </div>
-                        <div class="team-cardinfo">
-                            <div class="team__title">
-                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-container">
-                        <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
-                        </div>
-                        <div class="team-cardinfo">
-                            <div class="team__title">
-                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
-                            </div>
-                        </div>
-                    </div>
-                    <div class="image-container">
-                        <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
                         </div>
                         <div class="team-cardinfo">
                             <div class="team__title">
@@ -678,10 +818,73 @@
                     </div>
 
                 </section>
-                <section class="main-grid__column  offset-lg-1 col-md-6 col-lg-2" style="opacity: 1; visibility: inherit;  border: 1px solid transparent;">
+                <section
+                    class="main-grid__column  offset-lg-1 col-md-6 col-lg-2"
+                    style="opacity: 1; visibility: inherit;  border: 1px solid transparent;"
+                >
                     <div class="image-container">
                         <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
+                        </div>
+                        <div class="team-cardinfo">
+                            <div class="team__title">
+                                Daniel Zackrisson<br>HEAD OF DIGITAL MARKETING & CONTENT
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section
+                    class="main-grid__column  offset-lg-1 col-md-6 col-lg-2"
+                    style="opacity: 1; visibility: inherit;  border: 1px solid transparent;"
+                >
+                    <div class="image-container">
+                        <div class="team__image-wrap">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
                         </div>
                         <div class="team-cardinfo">
                             <div class="team__title">
@@ -692,7 +895,13 @@
 
                     <div class="image-container">
                         <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
                         </div>
                         <div class="team-cardinfo">
                             <div class="team__title">
@@ -702,7 +911,13 @@
                     </div>
                     <div class="image-container">
                         <div class="team__image-wrap">
-                            <img id="team-img" src="./team/photo-team-01.png" alt="photo tema #1" lazy="loading" sizes="100hv">
+                            <img
+                                id="team-img"
+                                src="./team/photo-team-01.png"
+                                alt="photo tema #1"
+                                lazy="loading"
+                                sizes="100hv"
+                            >
                         </div>
                         <div class="team-cardinfo">
                             <div class="team__title">
@@ -724,38 +939,71 @@
                 <h2>Customers</h2>
             </div>
             <div class="brands-container">
+
                 <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
+                    <img
+                        src="logo-img/abb-logo-black-and-white.png"
+                        id='brand-logo'
+                        alt=""
+                        srcset=""
+                    >
                 </div>
                 <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
-                </div>
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
-                </div>
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
+                    <img
+                        src="logo-img/abb-logo-black-and-white.png"
+                        id='brand-logo'
+                        alt=""
+                        srcset=""
+                    >
                 </div>
                 <div id="brand">
 
-                    <img src="logo-img/almi_black.svg" alt="" srcset="">
+                    <img
+                        src="logo-img/almi_black.svg"
+                        alt=""
+                        srcset=""
+                    >
 
                 </div>
                 <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
+                    <img
+                        src="logo-img/abb-logo-black-and-white.png"
+                        id='brand-logo'
+                        alt=""
+                        srcset=""
+                    >
                 </div>
                 <div id="brand">
-                    <img src="logo-img/almi_black.svg" alt="" srcset="">
+                    <img
+                        src="logo-img/almi_black.svg"
+                        alt=""
+                        srcset=""
+                    >
                 </div>
                 <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
+                    <img
+                        src="logo-img/abb-logo-black-and-white.png"
+                        id='brand-logo'
+                        alt=""
+                        srcset=""
+                    >
                 </div>
                 <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
+                    <img
+                        src="logo-img/abb-logo-black-and-white.png"
+                        id='brand-logo'
+                        alt=""
+                        srcset=""
+                    >
                 </div>
 
                 <div id="brand">
-                    <img src="logo-img/almi_black.svg" id='brand-logo' alt="" srcset=""></a>
+                    <img
+                        src="logo-img/almi_black.svg"
+                        id='brand-logo'
+                        alt=""
+                        srcset=""
+                    ></a>
                 </div>
 
 
@@ -769,13 +1017,20 @@
             <div class="header-section-content ">
 
                 <h1 id="discover-h1">
-                    <span class="mb-bottom---10px garamond-font fnt-great" id="discover-text">Discover</span>
+                    <span
+                        class="mb-bottom---10px garamond-font fnt-great"
+                        id="discover-text"
+                    >Discover</span>
                     <span class="mb-bottom---10px mr-55">our work.</span>
                 </h1>
 
             </div>
             <div class="bottom-text-header pb-2">
-                <a href="../portfolio/" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="../portfolio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <div class="button see-cases">
                         <span>
                             See cases
@@ -806,9 +1061,21 @@
             </div>
             <div class="licence-container">
                 <ul class="licence-container-list">
-                    <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
-                    <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
-                    <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
+                    <li> <a
+                            href="https://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Privacy</a> </li>
+                    <li><a
+                            href="https://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Conditions</a></li>
+                    <li><a
+                            href="https://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Human Rights</a></li>
                 </ul>
             </div>
             <div class="icon-box">
@@ -822,30 +1089,63 @@
                 </div>-->
                 <div class="icons">
                     <div class="wh-30">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                        <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="../icons/facebook-svg-large.svg"
+                                id="icon"
+                                alt=""
+                                srcset=""
+                            >
                         </a>
                     </div>
                     <div class="wh-30">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                        <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="../icons/instagram-svg.svg"
+                                id="icon"
+                                alt=""
+                                srcset=""
+                            >
                         </a>
                     </div>
                     <div class="wh-30">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                        <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="../icons/behance.svg"
+                                id="icon"
+                                alt=""
+                                srcset=""
+                            >
                         </a>
                     </div>
                 </div>
             </div>
         </footer>
-        <div class="label" id="cookie-label">
+        <div
+            class="label"
+            id="cookie-label"
+        >
             <span class="title">
                 <h3>This website uses cookies</h3>
             </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using
                 our
                 website, you consent to all cookies in accordance with our cookie policy.
-            </span><button class="black" id="cookie-close">Got it</button>
+            </span><button
+                class="black"
+                id="cookie-close"
+            >Got it</button>
         </div>
 
 </body>
@@ -956,13 +1256,54 @@
                 },
             });
 
+            // Store a reference to the team header text
+            const teamHeaderText = $('.team-header-text');
+
+            // Animate the team headline
+            const teamHeader = gsap.timeline({
+                scrollTrigger: {
+                    trigger: teamHeaderText,
+                    scroller: window, // Use the default window as the scroller
+                    scrub: true,
+                    pin: true,
+                    start: "0 25%",
+                    end: "+=3700",
+                    //markers: true,
+
+                },
+            });
+            // Add animations to the timeline
+            teamHeader.to(teamHeaderText, {
+                opacity: 0,
+            }); // Change display to "none"
+
+            // Create a timeline animation
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".mouse-container", // Element to trigger the animation
+                    start: "top 80%", // Start the animation when element is 80% in view
+                    end: "bottom 20%", // End the animation when element is 20% in view
+                    scrub: true,
+                    duration: 1, // Enable smooth scrubbing effect while scrolling
+                }
+            });
+
+            // Add animations to the timeline
+            tl.to(".mouse-container", {
+                opacity: 0,
+            }); // Change display to "none"
 
 
         } else {
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
 
+            const mainGridText = document.querySelector(".team-header-text");
+            let screenWidth = $(window).width();
+            mainGridText.style = 'opacity: 1 !important;';
 
+            const mainGrid = document.querySelector(".main-grid");
+            mainGrid.style = '    margin-top:30vh;';
 
         }
 
