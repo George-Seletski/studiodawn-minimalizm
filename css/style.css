@@ -1,16 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@font-face {
+    font-family: 'Roboto Thin';
+    src: url("../fonts/Roboto/Roboto-Thin.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url("../fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+}
+
 @font-face {
     font-family: 'Cormorant Garamond Light';
     src: url("../fonts/Cormorant-Garamond/CormorantGaramond-Light.ttf") format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'Cormorant Garamond Semibold';
     src: url("../fonts/Cormorant-Garamond/CormorantGaramond-SemiBold.ttf") format('truetype');
-    font-weight: normal;
-    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
 }
 
 * {
