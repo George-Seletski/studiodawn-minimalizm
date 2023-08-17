@@ -399,7 +399,7 @@
     
     @media screen and (max-width: 991px) {
         #discover-text {
-            font-size: 3em !important;
+            font-size: 2em !important;
         }
         .mb-bottom---10px {
             margin-top: 10px;
@@ -417,7 +417,7 @@
             min-height: 104vh !important;
         }
         #main-title {
-            font-size: 3em !important;
+            font-size: 2em !important;
         }
         .odd-header {
             height: 70vh;
@@ -855,9 +855,24 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 
-        clickToTransalte();
-        setupLanguageSwitcher();
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
+        console.log(translateIcon); // Check if translateIcon is found
+        console.log(dropdownContent); // Check if dropdownContent is found
+        translateIcon.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
 
+        // Close the dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+
+            if (!event.target.matches(".translate-icon-global")) {
+                console.log('translate-icon-globa clicked');
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                }
+            }
+        });
 
 
 
@@ -1029,7 +1044,7 @@
 
 
 
-
+        setupLanguageSwitcher();
     });
 </script>
 

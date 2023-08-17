@@ -217,7 +217,7 @@ h1 {
 .mouse-container {
     display: flex;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 1em;
     opacity: 1;
     transition: opacity 0.1s;
 }
