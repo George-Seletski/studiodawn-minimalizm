@@ -2669,7 +2669,7 @@ footer {
         align-items: center;
         margin: auto;
         flex-direction: row;
-        gap: 5em;
+        gap: 4em;
     }
     #brand {
         width: 100px;
@@ -2681,14 +2681,14 @@ footer {
         padding: 5em 2em 0 2em;
     }
     .section-block>.header-section-content {
-        font-size: 1.8em !important;
+        font-size: 1.2em !important;
         margin-top: 0;
     }
     .section-block {
         font-size: 1.7em !important;
         margin-left: auto;
         margin-right: auto;
-        height: 100vh;
+        height: 100vh !important;
     }
     .description__content>.description {
         display: block;
