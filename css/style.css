@@ -1058,11 +1058,22 @@ img {
     line-height: 70px;
 }
 
+.dropdown-content {
+    display: none;
+}
+
+.dropdown-content.show {
+    display: block;
+    transition: transform 5s;
+    transition: all 0.5s ease;
+}
+
 .icons {
     display: flex;
     flex-direction: row;
     gap: 15px;
     align-items: center;
+    position: relative;
     /*padding-right: 2.3em;*/
 }
 
@@ -1795,6 +1806,11 @@ footer {
 }
 
 @media screen and (max-width: 1400px) {
+    .roboto-light-fnt {
+        font-family: 'Roboto Thin', sans-serif;
+        font-weight: 400 !important;
+        padding-top: 0px;
+    }
     #cookie-label {
         position: fixed;
         bottom: 0;

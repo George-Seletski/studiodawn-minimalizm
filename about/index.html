@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDIODAWN</title>
+    <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
+    <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/normalize.css" type="text/css">
 
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/gsap.min.js"></script>
+    <script src="../js/all_functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="../js/ScrollTriger.js"></script>
+    <script src="../js/all_functions.js"></script>
 </head>
 <style>
     *,
@@ -511,15 +515,20 @@
                 </div>
                 <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
                     <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+
                 </a>
 
 
-                <div class="icons">
-
+                <div class="icons" id="translate-icon">
                     <div class="wh-30">
-                        <a href="http://" rel="noopener noreferrer">
-                            <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
+                        <a href="javascript:void(0);">
+                            <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
                         </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                            <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                            <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -530,8 +539,8 @@
         <div class="header-section-content">
 
             <h1 id="main-title">
-                <span class="mb-bottom---10px garamond-font">Not your typical</span>
-                <span class="mb-bottom---10px mr-55 roboto-light-fnt">agency.</span>
+                <span class="mb-bottom---10px garamond-font" data-translate="about-main-h1-1">Not your typical</span>
+                <span class="mb-bottom---10px mr-55 roboto-light-fnt" data-translate="about-main-h1-2">agency.</span>
             </h1>
             <div class="mouse-container">
                 <span class="mouse">
@@ -853,36 +862,12 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 
-
+        clickToTransalte();
+        setupLanguageSwitcher();
+        cookieFunction();
         const cookieLabel = document.getElementById("cookie-label");
         const cookieCloseButton = document.getElementById("cookie-close");
 
-
-        // Check if the user has already accepted the cookies
-        const cookiesAccepted = localStorage.getItem("cookiesAccepted");
-        setTimeout(function() {
-            cookieLabel.style.display = "block";
-        }, 240000);
-
-        if (!cookiesAccepted) {
-            // Show the cookie label
-            cookieLabel.style.display = "block";
-        }
-
-        // Event listener for the "Got it" button click
-        cookieCloseButton.addEventListener("click", function() {
-            // Hide the cookie label
-            cookieLabel.style.display = "none";
-
-            // Store the information that the user has accepted the cookies
-            localStorage.setItem("cookiesAccepted", "true");
-
-            // Show the cookie label again after a time period (e.g., 1 day)
-            const timePeriodInMilliseconds = 24 * 60 * 60 * 1000; // 1 day
-            setTimeout(function() {
-                cookieLabel.style.display = "block";
-            }, timePeriodInMilliseconds);
-        });
 
 
 

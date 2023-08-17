@@ -16,7 +16,9 @@
         "description-w-2": "We're all about collective success. Everyone's an equal in the creative process as we work toward a shared goal - no egos here. We don't make our partners fit into our formula. Instead, we find what works for you.",
         "description-w-3": "From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to clients doing right by the world. We turn compelling ideas into commercial success stories through brand power.",
         "text-1": "We work with clients to create immersive worlds — brands that draw you into their orbit, make an impact & gain a cult following. Just ask",
-        "text-2": "and"
+        "text-2": "and",
+        "about-main-h1-1": "Not your typical",
+        "about-main-h1-2": "agency."
 
     },
     "fr": {
@@ -34,7 +36,9 @@
         "header-h2-3": "Le pourquoi",
         "description-w-1": "De la stratégie à la narration, de l'expérience de la marque au design qui repousse les limites, nous appliquons une créativité non conventionnelle à des clients qui font du bien au monde. Nous transformons des idées convaincantes en réussites commerciales grâce au pouvoir de la marque sous toutes ses formes",
         "description-w-2": " Nous sommes tous attachés à la réussite collective. Tout le monde est sur un pied d'égalité dans le processus créatif, car nous travaillons à la réalisation d'un objectif commun - pas d'égo ici. Nous n'obligeons pas nos partenaires à s'adapter à notre formule. Au lieu de cela, nous trouvons ce qui fonctionne pour vous",
-        "description-w-3": "De la stratégie à la narration, de l'expérience de la marque au design qui repousse les limites, nous appliquons une créativité non conventionnelle à des clients qui font du bien au monde. Nous transformons des idées convaincantes en réussites commerciales grâce au pouvoir de la marque."
+        "description-w-3": "De la stratégie à la narration, de l'expérience de la marque au design qui repousse les limites, nous appliquons une créativité non conventionnelle à des clients qui font du bien au monde. Nous transformons des idées convaincantes en réussites commerciales grâce au pouvoir de la marque.",
+        "about-main-h1-1": "Pas comme les autres",
+        "about-main-h1-2": "agence."
     },
     "de": {
         "nav-link-1": "Startseite",
@@ -51,6 +55,8 @@
         "header-h2-3": "Das warum",
         "description-w-1": "Von der Strategie bis zum Storytelling, von der Markenerfahrung bis zum grenzüberschreitenden Design - wir setzen unkonventionelle Kreativität für Kunden ein, die der Welt Gutes tun. Wir verwandeln überzeugende Ideen in kommerzielle Erfolgsgeschichten durch die Kraft der Marke in all ihren Formen.",
         "description-w-2": "Bei uns geht es um kollektiven Erfolg. Jeder ist im kreativen Prozess gleichberechtigt, da wir auf ein gemeinsames Ziel hinarbeiten - hier gibt es keine Egos. Wir zwingen unsere Partner nicht, in unsere Formel zu passen. Stattdessen finden wir das, was für Sie funktioniert.",
-        "description-w-3": "Von der Strategie bis zum Storytelling, von der Markenerfahrung bis zum grenzüberschreitenden Design setzen wir unkonventionelle Kreativität für Kunden ein, die der Welt Gutes tun. Wir verwandeln überzeugende Ideen in kommerzielle Erfolgsgeschichten durch Markenpower."
+        "description-w-3": "Von der Strategie bis zum Storytelling, von der Markenerfahrung bis zum grenzüberschreitenden Design setzen wir unkonventionelle Kreativität für Kunden ein, die der Welt Gutes tun. Wir verwandeln überzeugende Ideen in kommerzielle Erfolgsgeschichten durch Markenpower.",
+        "about-main-h1-1": "Nicht Ihr typisches",
+        "about-main-h1-2": "Agentur."
     }
 }

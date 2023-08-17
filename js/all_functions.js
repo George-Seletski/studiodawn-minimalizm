@@ -1,13 +1,27 @@
 function setupLanguageSwitcher() {
-    // Load translations from an external JSON file
+    const defaultLanguage = "en"; // Set the default language
+    let langChanged = false;
+    let language = '';
+
+    const languageElements = document.querySelectorAll("[data-translate]");
+    const languageSwitcher = document.getElementById("translate-icon");
+    const dropdownItems = languageSwitcher.querySelectorAll(".dropdown-item");
+
+    const alternativeFilePath = "fallback_lng.json"; // Define the alternative file path
+
     fetch("lng.json")
+        .then((response) => {
+            if (!response.ok) {
+                // If the response is not OK, try fetching the alternative file
+                return fetch('../lng.json');
+            }
+            return response;
+        })
         .then((response) => response.json())
         .then((translations) => {
             console.log("Translations:", translations);
-            const defaultLanguage = "en"; // Set the default language
 
             // Update content with default language translations
-            const languageElements = document.querySelectorAll("[data-translate]");
             languageElements.forEach((element) => {
                 const elementTag = element.getAttribute("data-translate");
                 if (translations[defaultLanguage][elementTag]) {
@@ -15,21 +29,17 @@ function setupLanguageSwitcher() {
                 }
             });
 
-            // Extract available language tags from the translations object
             const availableLanguages = Object.keys(translations);
 
-            const languageSwitcher = document.getElementById("translate-icon");
-            const dropdownItems = languageSwitcher.querySelectorAll(".dropdown-item");
-
-            // Create event listeners for each language
             dropdownItems.forEach((item) => {
                 const selectedLang = item.getAttribute("data-lang");
                 if (availableLanguages.includes(selectedLang)) {
                     item.addEventListener("click", () => {
+                        langChanged = true;
+                        language = selectedLang;
                         console.log("Language switcher clicked");
                         console.log("Selected language:", selectedLang);
 
-                        // Update other elements with language tags
                         languageElements.forEach((element) => {
                             const elementTag = element.getAttribute("data-translate");
                             if (translations[selectedLang][elementTag]) {
