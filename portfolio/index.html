@@ -108,16 +108,16 @@
                         <div class="w-container">
                             <ul role="list" class="nav-list white">
                                 <li class="nav-item">
-                                    <a href="../" class="nav-link ">Home</a>
+                                    <a href="../" class="nav-link" data-translate="nav-link-1">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../about" class="nav-link ">About</a>
+                                    <a href="../about" class="nav-link" data-translate="nav-link-2">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../portfolio/" class="nav-link w--current">Cases</a>
+                                    <a href="../portfolio/" class="nav-link w--current" data-translate="nav-link-3">Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../contact" class="nav-link">Contact us</a>
+                                    <a href="../contact" class="nav-link" data-translate="nav-link-4">Contact us</a>
                                 </li>
 
                             </ul>
@@ -126,13 +126,13 @@
                             <div class="nav-info-submenu">
 
                                 <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header ">Work Inquiries.</h2>
+                                    <h2 class="nav-info-header " data-translate="nav-work-inq">Work Inquiries.</h2>
                                     <li class="nav-item">
                                         <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
                                     </li>
                                 </ul>
                                 <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header white">Get in touch.</h2>
+                                    <h2 class="nav-info-header white" data-translate="nav-intouch">Get in touch.</h2>
                                     <li class="nav-item">
                                         <a href="#" class="link-address white">228 Nelson's Crescent New
                                             Westminster, BC V3L 3E3</a>
@@ -171,12 +171,16 @@
                 </a>
 
 
-                <div class="icons">
-
+                <div class="icons" id="translate-icon">
                     <div class="wh-30">
-                        <a href="http://" rel="noopener noreferrer">
-                            <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
+                        <a href="javascript:void(0);">
+                            <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
                         </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                            <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                            <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -246,57 +250,57 @@
     </div>
 
 
-</body>
-<footer>
-    <div class="text-header">
-        <div class="footer-header">
-            <h2>Get in touch</h2>
-        </div>
-    </div>
-    <div class="footer-links">
-        <div class="footer-fnt link-email">
-            <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
-        </div>
-        <div class="footer-fnt link-email">
-            <a href="tel:+421905455208">+421 905 455 208</a>
-        </div>
-    </div>
-    <div class="licence-container">
-        <ul class="licence-container-list">
-            <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
-            <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
-            <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
-        </ul>
-    </div>
-    <div class="icon-box">
 
-        <!--<div class="language-icon">
+    <footer>
+        <div class="text-header">
+            <div class="footer-header">
+                <h2>Get in touch</h2>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="footer-fnt link-email">
+                <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+            </div>
+            <div class="footer-fnt link-email">
+                <a href="tel:+421905455208">+421 905 455 208</a>
+            </div>
+        </div>
+        <div class="licence-container">
+            <ul class="licence-container-list">
+                <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
+                <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
+                <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
+            </ul>
+        </div>
+        <div class="icon-box">
+
+            <!--<div class="language-icon">
                         <div id="language-icon-circle">
                             <div class="svg-icon">
     
                             </div>
                         </div>
                     </div>-->
-        <div class="icons">
-            <div class="wh-30">
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
-                </a>
-            </div>
-            <div class="wh-30">
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
-                </a>
-            </div>
-            <div class="wh-30">
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <img src="../icons/behance.svg" id="icon" alt="" srcset="">
-                </a>
+            <div class="icons">
+                <div class="wh-30">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                    </a>
+                </div>
+                <div class="wh-30">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                    </a>
+                </div>
+                <div class="wh-30">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
+</body>
 <script>
     var objects = [{
         link: "./project1.html",
@@ -340,6 +344,9 @@
 
 
     document.addEventListener("DOMContentLoaded", function() {
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
         const customCursor = document.querySelector(".custom-cursor");
@@ -368,6 +375,21 @@
             });
         }
 
+        translateIcon.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
+
+        // Close the dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+
+            if (!event.target.matches(".translate-icon-global")) {
+                console.log('translate-icon-globa clicked');
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                }
+            }
+        });
+        setupLanguageSwitcher();
 
         $(document).ready(function() {
             $('.hamburger-menu-wrapper').click(function() {

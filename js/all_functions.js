@@ -96,13 +96,13 @@ function cookieFunction() {
         // Store the information that the user has accepted the cookies
         localStorage.setItem("cookiesAccepted", "true");
     });
+
+    // Call the clearCookiesAccepted function after a specified time (e.g., 24 hours)
+    const clearAfterTime = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    setTimeout(clearCookiesAccepted, clearAfterTime);
 }
 
 // Function to remove the cookiesAccepted item from localStorage
 function clearCookiesAccepted() {
     localStorage.removeItem("cookiesAccepted");
 }
-
-// Call the clearCookiesAccepted function after a specified time (e.g., 24 hours)
-const clearAfterTime = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-setTimeout(clearCookiesAccepted, clearAfterTime);

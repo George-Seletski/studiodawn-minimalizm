@@ -141,16 +141,16 @@
                         <div class="w-container">
                             <ul role="list" class="nav-list white">
                                 <li class="nav-item">
-                                    <a href="../" class="nav-link">Home</a>
+                                    <a href="../" class="nav-link" data-translate="nav-link-1">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../about" class="nav-link">About</a>
+                                    <a href="../about" class="nav-link" data-translate="nav-link-2">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../portfolio" class="nav-link">Cases</a>
+                                    <a href="../portfolio" class="nav-link" data-translate="nav-link-3">Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../contact/" class="nav-link w--current">Contact us</a>
+                                    <a href="../contact/" class="nav-link w--current" data-translate="nav-link-4">Contact us</a>
                                 </li>
                             </ul>
                         </div>
@@ -203,12 +203,16 @@
                 </a>
 
 
-                <div class="icons">
-
+                <div class="icons" id="translate-icon">
                     <div class="wh-30">
-                        <a href="http://" rel="noopener noreferrer">
-                            <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
+                        <a href="javascript:void(0);">
+                            <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
                         </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                            <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                            <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -329,9 +333,24 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
 
+        translateIcon.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
 
+        // Close the dropdown when clicking outside
+        window.addEventListener("click", function(event) {
 
+            if (!event.target.matches(".translate-icon-global")) {
+                console.log('translate-icon-globa clicked');
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                }
+            }
+        });
+        setupLanguageSwitcher();
 
 
         // Check if the device supports touch events
