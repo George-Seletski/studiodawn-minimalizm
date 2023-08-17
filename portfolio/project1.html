@@ -1170,12 +1170,7 @@
                 </div>
             </div>
         </main>
-        <div class="label" id="cookie-label" style="display: none;">
-            <span class="title">
-            <h3>This website uses cookies</h3>
-        </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using our
-            website, you consent to all cookies in accordance with our cookie policy. 
-        </div>
+
     </div>
 </body>
 <script>
@@ -1246,9 +1241,9 @@
             mainContent.style.display = 'block';
 
             const scrollContainer = document.querySelector(".h-scroll__inview");
-        console.log(window.innerWidth, window.innerHeight);
+            console.log(window.innerWidth, window.innerHeight);
 
-           if (screenWidth < 1920) {
+            if (screenWidth < 1920) {
                 scrollContainer.style = 'width: 1900em !important';
             } else {
                 scrollContainer.style = 'width:' + (screenWidth - 320) + 'em';
@@ -1301,7 +1296,7 @@
                 event.preventDefault();
             }
 
-            
+
             if (screenWidth < 1919 && screenWidth > 991) {
                 // Call the disableVerticalScroll function to turn off y scrolling
                 scrollContainer.style = 'width:' + screenWidth * 1.83 + 'em';
@@ -1315,7 +1310,7 @@
 
             console.log('width:' + screenWidth + 'em');
             console.log('width:' + screenWidth * 1.83 + 'em');
-             console.log('width:' + screenWidth * 1.5 + 'em');
+            console.log('width:' + screenWidth * 1.5 + 'em');
         }
 
         $(document).ready(function() {

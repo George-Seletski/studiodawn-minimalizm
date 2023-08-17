@@ -76,10 +76,6 @@ function cookieFunction() {
         // Store the information that the user has accepted the cookies
         localStorage.setItem("cookiesAccepted", "true");
 
-        // Show the cookie label again after a time period (e.g., 1 day)
-        const timePeriodInMilliseconds = 24 * 60 * 60 * 1000; // 1 day
-        setTimeout(function() {
-            cookieLabel.style.display = "block";
-        }, timePeriodInMilliseconds);
+
     });
 }

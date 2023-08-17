@@ -324,13 +324,6 @@
         </div>
     </div>
 
-    <div class="label" id="cookie-label">
-        <span class="title">
-        <h3>This website uses cookies</h3>
-    </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using our
-        website, you consent to all cookies in accordance with our cookie policy. 
-    </span><button class="black" id="cookie-close">Got it</button>
-    </div>
 
 </body>
 
@@ -338,33 +331,8 @@
     document.addEventListener("DOMContentLoaded", function() {
 
 
-        const cookieLabel = document.getElementById("cookie-label");
-        const cookieCloseButton = document.getElementById("cookie-close");
 
-        // Check if the user has already accepted the cookies
-        const cookiesAccepted = localStorage.getItem("cookiesAccepted");
-        setTimeout(function() {
-            cookieLabel.style.display = "block";
-        }, 6000);
-        if (!cookiesAccepted) {
-            // Show the cookie label
-            cookieLabel.style.display = "block";
-        }
 
-        // Event listener for the "Got it" button click
-        cookieCloseButton.addEventListener("click", function() {
-            // Hide the cookie label
-            cookieLabel.style.display = "none";
-
-            // Store the information that the user has accepted the cookies
-            localStorage.setItem("cookiesAccepted", "true");
-
-            // Show the cookie label again after a time period (e.g., 1 day)
-            const timePeriodInMilliseconds = 24 * 60 * 60 * 1000; // 1 day
-            setTimeout(function() {
-                cookieLabel.style.display = "block";
-            }, timePeriodInMilliseconds);
-        });
 
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
