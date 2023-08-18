@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/project_page_style.css" type="text/css">
     <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
     <link href="../img/320x320px_fb_logo_studiodawn2_round.jpg" rel="apple-touch-icon">
-    <script src="./js/jquery-3.6.0.min.js"></script>
 
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="../js/all_functions.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
@@ -24,6 +25,37 @@
 
 </head>
 <style>
+    /*drop-menu*/
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 35px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 1em;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    
+    .dropdown-item {
+        font-weight: 400;
+        font-family: 'Roboto Regular', sans-serif !important;
+        font-size: 20px !important;
+    }
+    
+    .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown-content.show {
+        display: block;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+    }
+    
     .header-wrapper {
         background-color: transparent;
         position: fixed;
@@ -66,8 +98,8 @@
     
     .container-default {
         color: #dcddeb;
-        padding-left: 22px;
-        padding-right: 15px;
+        padding-left: 15px;
+        padding-right: 5px;
     }
     
     .w-container {
@@ -317,16 +349,20 @@
         object-position: center;
     }
     
-    .header-content-wrapper>.icons {
-        padding-right: 2.3em;
-    }
-    
     .icons {
         display: flex;
         flex-direction: row;
         gap: 15px;
         align-items: center;
         /*padding-right: 2.3em;*/
+    }
+    
+    .icons>div {
+        gap: 20px;
+        display: block;
+        width: 100%;
+        border-radius: 4.6655px;
+        background-color: transparent !important;
     }
     
     #icon {
@@ -1011,12 +1047,16 @@
                     </a>
 
 
-                    <div class="icons">
-
+                    <div class="icons" id="translate-icon">
                         <div class="wh-30">
-                            <a href="http://" rel="noopener noreferrer">
-                                <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
+                            <a href="javascript:void(0);">
+                                <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
                             </a>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                                <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                                <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1029,7 +1069,7 @@
                     <section class="h-scroll__section intro-section">
                         <div class="w-layout-grid content-grid study__intro">
                             <div id="w-node-_94154434-1036-a7d8-10b7-6abab97b5db8-41af1f24" class="case-page__cover">
-                                <img src="./02 Lesenie/logo.jpg" loading="eager" alt="" class="case__coverimg">
+                                <img src="./02 Lesenie/logo.jpg" loading="eager" alt="cover project" class="case__coverimg">
                             </div>
                             <div id="w-node-_1cec452e-7cf8-af20-6a1a-b55ad5757c48-41af1f24" class="story__block intro">
                                 <h2 class="p uc" style="opacity: 1; transform: translate(0px, 0px);">Reqiro</h2>
@@ -1056,56 +1096,56 @@
                                 </div>-->
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/logo-3.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/logo-3.jpg 500w, ./02 Lesenie/little_jpg/logo-3.jpg 800w, ./02 Lesenie/little_jpg/logo-3.jpg 1080w, ./02 Lesenie/logo-3.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/logo-3.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/logo-3.jpg 500w, ./02 Lesenie/little_jpg/logo-3.jpg 800w, ./02 Lesenie/little_jpg/logo-3.jpg 1080w, ./02 Lesenie/logo-3.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/portfolio.jpgg" loading="eager" srcset="./02 Lesenie/little_jpg/portfolio.jpg 500w, ./02 Lesenie/little_jpg/portfolio.jpgg 800w, ./02 Lesenie/little_jpg/portfolio.jpg 1080w, ./02 Lesenie/portfolio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/portfolio.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/portfolio.jpg 500w, ./02 Lesenie/little_jpg/portfolio.jpg 800w, ./02 Lesenie/little_jpg/portfolio.jpg 1080w, ./02 Lesenie/portfolio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/mikina.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/mikina.jpg 500w, ./02 Lesenie/little_jpg/mikina.jpg 800w, ./02 Lesenie/little_jpg/mikina.jpg 1080w, ./02 Lesenie/mikina.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/mikina.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/mikina.jpg 500w, ./02 Lesenie/little_jpg/mikina.jpg 800w, ./02 Lesenie/little_jpg/mikina.jpg 1080w, ./02 Lesenie/mikina.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/tricko.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/tricko.jpg 500w, ./02 Lesenie/little_jpg/tricko.jpg 800w, ./02 Lesenie/little_jpg/tricko.jpg 1080w, ./02 Lesenie/tricko.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/tricko.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/tricko.jpg 500w, ./02 Lesenie/little_jpg/tricko.jpg 800w, ./02 Lesenie/little_jpg/tricko.jpg 1080w, ./02 Lesenie/tricko.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/vizitky.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/vizitky.jpg 500w, ./02 Lesenie/little_jpg/vizitky.jpg 800w, ./02 Lesenie/little_jpg/vizitky.jpg 1080w, ./02 Lesenie/vizitky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/vizitky.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/vizitky.jpg 500w, ./02 Lesenie/little_jpg/vizitky.jpg 800w, ./02 Lesenie/little_jpg/vizitky.jpg 1080w, ./02 Lesenie/vizitky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/vizitky2.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/vizitky2.jpg 500w, ./02 Lesenie/little_jpg/vizitky2.jpg 800w, ./02 Lesenie/little_jpg/vizitky2.jpg 1080w, ./02 Lesenie/vizitky2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/vizitky2.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/vizitky2.jpg 500w, ./02 Lesenie/little_jpg/vizitky2.jpg 800w, ./02 Lesenie/little_jpg/vizitky2.jpg 1080w, ./02 Lesenie/vizitky2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
 
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/web-mobil.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/web-mobil.jpg 500w, ./02 Lesenie/little_jpg/web-mobil.jpg 800w, ./02 Lesenie/little_jpg/web-mobil.jpg 1080w, ./02 Lesenie/web-mobil.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/web-mobil.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/web-mobil.jpg 500w, ./02 Lesenie/little_jpg/web-mobil.jpg 800w, ./02 Lesenie/little_jpg/web-mobil.jpg 1080w, ./02 Lesenie/web-mobil.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/web.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/web.jpg 500w, ./02 Lesenie/little_jpg/web.jpg 800w, ./02 Lesenie/little_jpg/web.jpg 1080w, ./02 Lesenie/web.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/web.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/web.jpg 500w, ./02 Lesenie/little_jpg/web.jpg 800w, ./02 Lesenie/little_jpg/web.jpg 1080w, ./02 Lesenie/web.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/socky.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/socky.jpg 500w, ./02 Lesenie/little_jpg/socky.jpg 800w, ./02 Lesenie/little_jpg/socky.jpg 1080w, ./02 Lesenie/socky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/socky.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/socky.jpg 500w, ./02 Lesenie/little_jpg/socky.jpg 800w, ./02 Lesenie/little_jpg/socky.jpg 1080w, ./02 Lesenie/socky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/tablet.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/tablet.jpg 500w, ./02 Lesenie/little_jpg/tablet.jpg 800w, ./02 Lesenie/little_jpg/tablet.jpg 1080w, ./02 Lesenie/tablet.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/tablet.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/tablet.jpg 500w, ./02 Lesenie/little_jpg/tablet.jpg 800w, ./02 Lesenie/little_jpg/tablet.jpg 1080w, ./02 Lesenie/tablet.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/tablet-2.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/tablet-2.jpg 500w, ./02 Lesenie/little_jpg/tablet-2.jpg 800w, ./02 Lesenie/little_jpg/tablet-2.jpg 1080w, ./02 Lesenie/tablet-2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/tablet-2.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/tablet-2.jpg 500w, ./02 Lesenie/little_jpg/tablet-2.jpg 800w, ./02 Lesenie/little_jpg/tablet-2.jpg 1080w, ./02 Lesenie/tablet-2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/portfolio2.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/portfolio2.jpg 500w, ./02 Lesenie/little_jpg/portfolio2.jpg 800w, ./02 Lesenie/little_jpg/portfolio2.jpg 1080w, ./02 Lesenie/portfolio2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/portfolio2.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/portfolio2.jpg 500w, ./02 Lesenie/little_jpg/portfolio2.jpg 800w, ./02 Lesenie/little_jpg/portfolio2.jpg 1080w, ./02 Lesenie/portfolio2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./02 Lesenie/portfolio.jpg" loading="eager" srcset="./02 Lesenie/little_jpg/portfolio.jpg 500w, ./02 Lesenie/little_jpg/portfolio.jpg 800w, ./02 Lesenie/little_jpg/portfolio.jpg 1080w, ./02 Lesenie/portfolio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                <img src="./02 Lesenie/portfolio.jpg" loading="lazy" srcset="./02 Lesenie/little_jpg/portfolio.jpg 500w, ./02 Lesenie/little_jpg/portfolio.jpg 800w, ./02 Lesenie/little_jpg/portfolio.jpg 1080w, ./02 Lesenie/portfolio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
 
@@ -1192,11 +1232,11 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-
-
-
         // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
+
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
 
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
@@ -1213,6 +1253,26 @@
         const horizontalContentWidth = (sections.length - 1) * window.innerWidth;
         //console.log(horizontalContentWidth, sections.length, window.innerWidth, container.offsetWidth, 'horizontalContentWidth - container.offsetWidth:', horizontalContentWidth - container.offsetWidth);
         console.log((sections.length - 1) * window.innerWidth);
+
+        translateIcon.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
+
+        // Close the dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+
+            if (!event.target.matches(".translate-icon-global")) {
+                console.log('translate-icon-globa clicked');
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                }
+            }
+        });
+        setupLanguageSwitcher();
+
+
+
+
 
         // Vertical scrolling for mobile and tablet devices
         if (window.innerWidth > 991) {
@@ -1240,7 +1300,7 @@
             if (screenWidth < 1919) {
                 scrollContainer.style = 'width: 1700em !important';
             } else {
-                scrollContainer.style = 'width:' + (screenWidth - 400) + 'em';
+                scrollContainer.style = 'width:' + (screenWidth - 300) + 'em';
             }
 
             const customCursor = document.querySelector(".custom-cursor");
@@ -1271,6 +1331,7 @@
             const scrollContainer = document.querySelector(".h-scroll__inview");
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
+
 
             let screenWidth = window.innerWidth;
             scrollContainer.style = 'width:' + screenWidth + 'em';
