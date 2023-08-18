@@ -1343,13 +1343,24 @@ img {
 
 .form-group .form-control {
     -webkit-box-shadow: none;
-    border-bottom: 1px;
+    border-bottom: 2px solid rgb(99, 98, 98);
     border-style: none none solid none;
     border-radius: 0;
-    border-color: #000;
     background-color: #f9f4f4;
     margin-bottom: 50px;
     line-height: 30px;
+    transition: all 0.3s ease;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #000;
+    outline: none;
 }
 
 textarea:focus,
