@@ -211,7 +211,7 @@
 
             </div>
             <div class="filter-container-main">
-                <div class="filter-button active extra__button" onclick="handleFilterClick(this, 'all')"><a>All projects</a></div>
+                <div class="filter-button active extra__button" style="border-bottom: 2px solid #000;" onclick="handleFilterClick(this, 'all')"><a>All projects</a></div>
                 <div class="filter-container">
                     <div id="column">
 
@@ -305,13 +305,13 @@
 <script>
     var objects = [{
         link: "./project_1.html",
-        imagePath: "./01 Kukla/little_jpg/bb2.jpg",
+        imagePath: "./01_Kukla/little_jpg/bb2.jpg",
         tag: "product design",
         name: "ProjectName",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida."
     }, {
         link: "./project_2.html",
-        imagePath: "./02 Lesenie/little_jpg/logo.jpg",
+        imagePath: "./02_Lesenie/little_jpg/logo.jpg",
         name: "ProjectName",
         tag: "logo & branding",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. "
@@ -482,7 +482,7 @@
                 var image = document.createElement('img');
                 image.className = 'g-image';
                 image.src = obj.imagePath;
-                image.loading = "lazy";
+                image.loading = "ease";
                 image.alt = 'image ' + obj.tag; // Fix the concatenation
 
                 //image.loading = "lazy";

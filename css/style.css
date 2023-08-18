@@ -618,6 +618,22 @@ img {
 .case-grid-item>img {
     grid-row: 1 / -1;
     grid-column: 1;
+    animation: showup 7s ease-in-out;
+}
+
+@keyframes showup {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .case-grid-item:hover {
@@ -637,8 +653,13 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    padding: 7px 0 0 7px;
+    padding: 0px;
     transition: all 0.5s ease;
+}
+
+.case-list-img>a {
+    font-size: unset;
+    line-height: 0;
 }
 
 .case-item {
@@ -2503,6 +2524,9 @@ footer {
 }
 
 @media screen and (max-width: 479px) {
+    .portfolio-header {
+        margin-top: 5em;
+    }
     .header-content-wrapper,
     .header-logo {
         padding: 5px 0;
@@ -2739,7 +2763,7 @@ footer {
         /* margin: 10em 10em; */
     }
     .cases-list {
-        margin: 2em;
+        margin: 2em 1em;
     }
     .case-item {
         flex-direction: column;
