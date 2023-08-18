@@ -480,7 +480,7 @@
 
                 var image = document.createElement('img');
                 image.className = 'g-image';
-                image.src = obj.imagePath;
+                image.src = obj.imagePath + '800w';
                 image.loading = "lazy";
                 image.alt = 'image ' + obj.tag; // Fix the concatenation
 
@@ -513,7 +513,7 @@
 
                 var image = document.createElement('img');
                 image.className = 'list-image';
-                image.src = obj.imagePath;
+                image.src = obj.imagePath + '800w';
                 image.alt = 'image ' + obj.tag; // Fix the concatenation
                 image.loading = "lazy";
 
