@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="../css/normalize.css" type="text/css">
     <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
     <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
-
+    <script src="../js/ScrollTriger.js" async></script>
     <script src="../js/all_functions.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="../js/ScrollTriger.js"></script>
+
 
 </head>
 <style>
@@ -31,6 +31,9 @@
         .extra__button>a {
             font-size: 16px !important;
         }
+        h1 {
+            margin-bottom: .5em !important;
+        }
     }
     
     @media screen and (max-width: 1400px) {
@@ -44,12 +47,18 @@
     }
     
     @media screen and (max-width: 991px) {
+        .extra__button {
+            border: transparent !important;
+        }
+        h1 {
+            margin: 0 0 0.76em 0 !important;
+        }
         .fnt-small {
             font-size: 65px;
             line-height: 50px;
         }
         .extra__button>a {
-            font-size: 25px;
+            font-size: 25px !important;
         }
         .row-container {
             margin: 0 !important;
@@ -66,7 +75,7 @@
         }
     }
     
-    .extra__button {
+    .extra__button>a {
         font-size: 20px !important;
         line-height: 35px;
         font-family: 'Roboto Light';
@@ -211,7 +220,7 @@
 
             </div>
             <div class="filter-container-main">
-                <div class="filter-button active extra__button" style="border-bottom: 2px solid #000;" onclick="handleFilterClick(this, 'all')"><a>All projects</a></div>
+                <div class="filter-button active extra__button" onclick="handleFilterClick(this, 'all')"><a>All projects</a></div>
                 <div class="filter-container">
                     <div id="column">
 
@@ -255,7 +264,7 @@
     <footer>
         <div class="text-header">
             <div class="footer-header">
-                <h2>Get in touch</h2>
+                <h2 data-translate="footer-h2">Get in touch</h2>
             </div>
         </div>
         <div class="footer-links">
@@ -268,9 +277,9 @@
         </div>
         <div class="licence-container">
             <ul class="licence-container-list">
-                <li> <a href="https://" target="_blank" rel="noopener noreferrer">Privacy</a> </li>
-                <li><a href="https://" target="_blank" rel="noopener noreferrer">Conditions</a></li>
-                <li><a href="https://" target="_blank" rel="noopener noreferrer">Human Rights</a></li>
+                <li id="licence-item"> <a href="https://" target="_blank" rel="noopener noreferrer" data-translate="footer-li-text-1">Privacy</a> </li>
+                <li id="licence-item"><a href="https://" target="_blank" rel="noopener noreferrer" data-translate="footer-li-text-2">Conditions</a></li>
+                <li id="licence-item"><a href="https://" target="_blank" rel="noopener noreferrer" data-translate="footer-li-text-3">Human Rights</a></li>
             </ul>
         </div>
         <div class="icon-box">

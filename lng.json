@@ -19,9 +19,18 @@
         "text-2": "and",
         "inst-text-1": "We don't just design brands for pleasing aesthetic, we bring purposeful business to life and grant them longevity in the game.",
         "inst-text-2": "Follow us to stay updated with syudio happenings and projects in the works.",
+        "footer-h2": "Get in touch",
+        "footer-li-text-1": "Privacy",
+        "footer-li-text-2": "Conditions",
+        "footer-li-text-3": "Human Rights",
+        "cookie-header": "This website uses cookies",
+        "cookie-text": "This website uses cookies to improve the user experience. By using our website, you consent to all cookies in accordance with our cookie policy.",
+        "cookie-btn-text": "Got it",
         "about-main-h1-1": "Not your typical",
-        "about-main-h1-2": "agency."
-
+        "about-main-h1-2": "agency.",
+        "about-main-h2": "Unlock limitless possibilities with our comprehensive solutions block from trademark management to digital transformation, we offer a wide range of services to elevate your brand's success. Harness the power of our solutions and propel your business to new heights in the ever-evolving digital landscape.",
+        "about-title-1": "Assembled or in parts?",
+        "about-title-2": "Whichever suits you best of course."
     },
     "fr": {
         "nav-link-1": "Accueil",
@@ -43,8 +52,17 @@
         "text-2": "et",
         "inst-text-1": "Nous ne nous contentons pas de concevoir des marques à l'esthétique agréable, nous donnons vie à des entreprises à but précis et leur assurons une longévité dans le jeu",
         "inst-text-2": "Follow us to stay updated with syudio happenings and projects in the works",
+        "footer-h2": "Prenez contact",
+        "footer-li-text-1": "Vie privée",
+        "footer-li-text-2": "Conditions",
+        "footer-li-text-3": "Droits de l'homme",
+        "cookie-header": "Ce site web utilise des cookies",
+        "cookie-text": "Ce site web utilise des cookies pour améliorer l'expérience de l'utilisateur. En utilisant notre site web, vous acceptez tous les cookies conformément à notre politique en matière de cookies",
+        "cookie-btn-text": "Compris",
         "about-main-h1-1": "Pas comme les autres",
-        "about-main-h1-2": "agence."
+        "about-main-h1-2": "agence.",
+        "about-title-1": "Assemblé ou en pièces détachées?",
+        "about-title-2": "Selon ce qui vous convient le mieux, bien sûr."
     },
     "de": {
         "nav-link-1": "Startseite",

@@ -82,6 +82,9 @@ h1 {
         margin-top: 2em;
     }
     h1 {
+        line-height: 1 !important;
+    }
+    #discover-h1 {
         line-height: 0.6 !important;
     }
     .instagram-img {
@@ -1069,7 +1072,7 @@ img {
 }
 
 .brands-section {
-    margin: 17em 10em 5em 10em;
+    margin: 13em 10em 5em 10em;
     padding-top: 0px;
     padding-bottom: 40px;
     display: block;
