@@ -541,12 +541,27 @@ clients doing right by the world. We turn compelling ideas into commercial succe
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
             const links = document.querySelectorAll("a");
+            const buttonElements = document.querySelectorAll("button");
 
             document.addEventListener('mousemove', function(event) {
                 customCursor.style.left = `${event.clientX}px`;
                 customCursor.style.top = `${event.clientY}px`;
             });
 
+            buttonElements.forEach((element) => {
+                element.addEventListener("mouseover", () => {
+                    customCursor.classList.add("cursor-custom-disappear");
+                });
+
+                element.addEventListener("mouseout", () => {
+                    customCursor.classList.remove("cursor-custom-disappear");
+                    // Add a slight delay to prevent cursor flickering on hover-out
+                    setTimeout(() => {
+                        customCursor.style.left = `${event.clientX}px`;
+                        customCursor.style.top = `${event.clientY}px`;
+                    }, 50);
+                });
+            });
 
             links.forEach((link) => {
                 link.addEventListener("mouseover", () => {

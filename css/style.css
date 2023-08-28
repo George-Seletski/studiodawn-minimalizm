@@ -1807,6 +1807,10 @@ footer {
     scale: 1;
 }
 
+#cookie-close:hover {
+    cursor: pointer;
+}
+
 .cursor-custom-disappear {
     opacity: 0 !important;
     display: none !important;
