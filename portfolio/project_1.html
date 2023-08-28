@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="STUDIODAWN | KUKLA" property="og:title">
-    <meta content="STUDIODAWN | KUKLA" property="twitter:title">
-    <title>STUDIODAWN | KUKLA</title>
+    <meta content="STUDIODAWN | LESENIE" property="og:title">
+    <meta content="STUDIODAWN | LESENIE" property="twitter:title">
+    <title>STUDIODAWN | LESENIE</title>
     <link rel="stylesheet" href="css/project_page_style.css" type="text/css">
     <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
     <link href="../img/320x320px_fb_logo_studiodawn2_round.jpg" rel="apple-touch-icon">
@@ -20,11 +20,42 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://unpkg.com/split-type@0.3.0/umd/index.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
 
 
 </head>
 <style>
+    /*drop-menu*/
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 35px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 1em;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    
+    .dropdown-item {
+        font-weight: 400;
+        font-family: 'Roboto Regular', sans-serif !important;
+        font-size: 20px !important;
+    }
+    
+    .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown-content.show {
+        display: block;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+    }
+    
     .header-wrapper {
         background-color: transparent;
         position: fixed;
@@ -35,7 +66,6 @@
         z-index: 99;
         display: block;
         max-width: 100%;
-        width: fit-content !important;
     }
     
     .blur {
@@ -68,8 +98,8 @@
     
     .container-default {
         color: #dcddeb;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 15px;
+        padding-right: 5px;
     }
     
     .w-container {
@@ -319,16 +349,20 @@
         object-position: center;
     }
     
-    .header-content-wrapper>.icons {
-        padding-right: 2.3em;
-    }
-    
     .icons {
         display: flex;
         flex-direction: row;
         gap: 15px;
         align-items: center;
         /*padding-right: 2.3em;*/
+    }
+    
+    .icons>div {
+        gap: 20px;
+        display: block;
+        width: 100%;
+        border-radius: 4.6655px;
+        background-color: transparent !important;
     }
     
     #icon {
@@ -1008,12 +1042,12 @@
                         <div class="hamburger-menu-bar-top"></div>
                         <div class="hamburger-menu-bar-bottom"></div>
                     </div>
-                    <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current " style="display: none;">
+                    <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
                         <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
                     </a>
 
 
-                    <div class="icons" id="translate-icon" style="display: none;">
+                    <div class="icons" id="translate-icon">
                         <div class="wh-30">
                             <a href="javascript:void(0);">
                                 <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
@@ -1025,8 +1059,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -1037,7 +1069,7 @@
                     <section class="h-scroll__section intro-section">
                         <div class="w-layout-grid content-grid study__intro">
                             <div id="w-node-_94154434-1036-a7d8-10b7-6abab97b5db8-41af1f24" class="case-page__cover">
-                                <img src="./01_Kukla/bb2-sq.jpg" loading="eager" alt="" class="case__coverimg">
+                                <img src="./01_Kukla/bb2-sq.jpg" loading="eager" alt="cover project" class="case__coverimg">
                             </div>
                             <div id="w-node-_1cec452e-7cf8-af20-6a1a-b55ad5757c48-41af1f24" class="story__block intro">
                                 <h2 class="p uc" style="opacity: 1; transform: translate(0px, 0px);">Reqiro</h2>
@@ -1058,62 +1090,62 @@
                                 <img src="./01_Kukla/design-manual.jpg" loading="eager" srcset="./01_Kukla/little_jpg/design-manual.jpg 500w, ./01_Kukla/little_jpg/design-manual.jpg 800w, ./01_Kukla/little_jpg/design-manual.jpg 1080w, ./01_Kukla/design-manual.jpg 1600w, ./01_Kukla/little_jpg/design-manual.jpg 1920w"
                                     sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 100vw" alt="Placeholder image" class="vid-placeholder">
                                 <!--<div class="story__video w-embed w-iframe">
-                                    <iframe loading="" src="https://player.vimeo.com/video/746522806?h=cbdbdcdccd?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203" frameborder="0" webkitallowfullscreen=""
-                                        mozallowfullscreen="" allowfullscreen="" data-ready="true">
-                                    </iframe>
-                                </div>-->
+                                                    <iframe loading="" src="https://player.vimeo.com/video/746522806?h=cbdbdcdccd?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203" frameborder="0" webkitallowfullscreen=""
+                                                        mozallowfullscreen="" allowfullscreen="" data-ready="true">
+                                                    </iframe>
+                                                </div>-->
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
                                 <img src="./01_Kukla/portfolio.jpg" loading="eager" srcset="./01_Kukla/little_jpg/portfolio.jpg 500w, ./01_Kukla/little_jpg/portfolio.jpg 800w, ./01_Kukla/little_jpg/portfolio.jpg 1080w, ./01_Kukla/portfolio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/logio.jpg" loading="eager" srcset="./01_Kukla/little_jpg/logio.jpg 500w, ./01_Kukla/little_jpg/logio.jpg 800w, ./01_Kukla/little_jpg/logio.jpg 1080w, ./01_Kukla/logio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                <img src="./01_Kukla/logio.jpg" loading="lazy" srcset="./01_Kukla/little_jpg/logio.jpg 500w, ./01_Kukla/little_jpg/logio.jpg 800w, ./01_Kukla/little_jpg/logio.jpg 1080w, ./01_Kukla/logio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/mikina.jpg" loading="eager" srcset="./01_Kukla/little_jpg/mikina.jpg 500w, ./01_Kukla/little_jpg/mikina.jpg 800w, ./01_Kukla/little_jpg/mikina.jpg 1080w, ./01_Kukla/mikina.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                <img src="./01_Kukla/mikina.jpg" srcset="./01_Kukla/little_jpg/mikina.jpg 500w, ./01_Kukla/little_jpg/mikina.jpg 800w, ./01_Kukla/little_jpg/mikina.jpg 1080w, ./01_Kukla/mikina.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/notysky.jpg" loading="eager" srcset="./01_Kukla/little_jpg/notysky.jpg 500w, ./01_Kukla/little_jpg/notysky.jpg 800w, ./01_Kukla/little_jpg/notysky.jpg 1080w, ./01_Kukla/notysky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                <img src="./01_Kukla/notysky.jpg" loading="lazy" srcset="./01_Kukla/little_jpg/notysky.jpg 500w, ./01_Kukla/little_jpg/notysky.jpg 800w, ./01_Kukla/little_jpg/notysky.jpg 1080w, ./01_Kukla/notysky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/plechovky.jpg" loading="eager" srcset="./01_Kukla/little_jpg/plechovky.jpg 500w, ./01_Kukla/little_jpg/plechovky.jpg 800w, ./01_Kukla/little_jpg/little_jpg/plechovky.jpg 1080w, ./01_Kukla/plechovky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                <img src="./01_Kukla/plechovky.jpg" srcset="./01_Kukla/little_jpg/plechovky.jpg 500w, ./01_Kukla/little_jpg/plechovky.jpg 800w, ./01_Kukla/little_jpg/little_jpg/plechovky.jpg 1080w, ./01_Kukla/plechovky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/plechovka-2.jpg" loading="eager" srcset="./01_Kukla/little_jpg/plechovka-2.jpg 500w, ./01_Kukla/little_jpg/plechovka-2.jpg 800w, ../01_Kukla/little_jpg/plechovka-2.jpg 1080w, ./01_Kukla/plechovka-2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
-                            </div>
-
-                            <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/web-mobil.jpg" loading="eager" srcset="./01_Kukla/little_jpg/web-mobil.jpg 500w, ./01_Kukla/little_jpg/web-mobil.jpg 800w, ./01_Kukla/little_jpg/web-mobil.jpg 1080w, ./01_Kukla/web-mobil.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                <img src="./01_Kukla/plechovka-2.jpg" loading="lazy" srcset="./01_Kukla/little_jpg/plechovka-2.jpg 500w, ./01_Kukla/little_jpg/plechovka-2.jpg 800w, ../01_Kukla/little_jpg/plechovka-2.jpg 1080w, ./01_Kukla/plechovka-2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/web-tablet.jpg" loading="eager" srcset="./01_Kukla/little_jpg/web-tablet.jpg 500w, ./01_Kukla/little_jpg/web-tablet.jpg 800w, ./01_Kukla/little_jpg/web-tablet.jpg 1080w, ./01_Kukla/web-tablet.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                <img src="./01_Kukla/web-mobil.jpg" srcset="./01_Kukla/little_jpg/web-mobil.jpg 500w, ./01_Kukla/little_jpg/web-mobil.jpg 800w, ./01_Kukla/little_jpg/web-mobil.jpg 1080w, ./01_Kukla/web-mobil.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="./01_Kukla/web-tablet.jpg" srcset="./01_Kukla/little_jpg/web-tablet.jpg 500w, ./01_Kukla/little_jpg/web-tablet.jpg 800w, ./01_Kukla/little_jpg/web-tablet.jpg 1080w, ./01_Kukla/web-tablet.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
                                 <img src="./01_Kukla/socky-01.jpg" loading="eager" srcset="./01_Kukla/little_jpg/socky-01.jpg 500w, ./01_Kukla/little_jpg/socky-01.jpg 800w, ./01_Kukla/little_jpg/socky-01.jpg 1080w, ./01_Kukla/socky-01.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
                                 <img src="./01_Kukla/plechovka-3.jpg" loading="eager" srcset="./01_Kukla/little_jpg/plechovka-3.jpg 500w, ./01_Kukla/little_jpg/plechovka-3.jpg.jpg 800w, ./01_Kukla/little_jpg/plechovka-3.jpg.jpg 1080w, ./01_Kukla/plechovka-3.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
                                 <img src="./01_Kukla/plechovka.jpg" loading="eager" srcset="./01_Kukla/little_jpg/plechovka.jpg 500w, ./01_Kukla/little_jpg/plechovka.jpg.jpg 800w, ./01_Kukla/little_jpg/plechovka.jpg.jpg 1080w, ./01_Kukla/plechovka.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img lazyload">
                             </div>
 
 
                             <div class="story__block" style="transform: translate(0px, 0px);">
                                 <div class="w-layout-grid content-grid">
                                     <div id="w-node-_558cbe49-47be-6b80-4e52-a6d05b617516-41af1f24">
-                                        <a href="/studiodawn-minimalizm/portfolio/" class="l uc" style="  border-bottom: 2px solid #131314;opacity: 1; transform: translate(0px, 100px);">More cases</a></div>
+                                        <a href="/studiodawn-minimalizm/portfolio/" class="l uc" style="  border-bottom: 2px solid #131314;opacity: 1; transform: translate(0px, 100px);">More cases</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1193,11 +1225,11 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-
-
-
         // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
+
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
 
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
@@ -1214,6 +1246,26 @@
         const horizontalContentWidth = (sections.length - 1) * window.innerWidth;
         //console.log(horizontalContentWidth, sections.length, window.innerWidth, container.offsetWidth, 'horizontalContentWidth - container.offsetWidth:', horizontalContentWidth - container.offsetWidth);
         console.log((sections.length - 1) * window.innerWidth);
+
+        translateIcon.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
+
+        // Close the dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+
+            if (!event.target.matches(".translate-icon-global")) {
+                console.log('translate-icon-globa clicked');
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                }
+            }
+        });
+        setupLanguageSwitcher();
+
+
+
+
 
         // Vertical scrolling for mobile and tablet devices
         if (window.innerWidth > 991) {
@@ -1233,13 +1285,14 @@
         }
 
         if (!isTouchDevice) {
-
+            let images = document.querySelectorAll(".study__img");
+            lazyload(images);
 
             const scrollContainer = document.querySelector(".h-scroll__inview");
             console.log(window.innerWidth, window.innerHeight);
 
             if (screenWidth < 1919) {
-                scrollContainer.style = 'width: 1520em !important';
+                scrollContainer.style = 'width: 1760em !important';
             } else {
                 scrollContainer.style = 'width:' + (screenWidth - 511) + 'em';
             }
@@ -1272,6 +1325,7 @@
             const scrollContainer = document.querySelector(".h-scroll__inview");
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
+
 
             let screenWidth = window.innerWidth;
             scrollContainer.style = 'width:' + screenWidth + 'em';
@@ -1367,7 +1421,6 @@
             window.onscroll = null;
             document.body.classList.remove('scroll-lock');
         }
-        setupLanguageSwitcher();
     });
 </script>
 
