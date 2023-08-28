@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="../css/normalize.css" type="text/css">
     <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
     <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
-    <script src="../js/ScrollTriger.js" async></script>
-    <script src="../js/all_functions.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-
 
 </head>
 <style>
@@ -117,16 +112,16 @@
                         <div class="w-container">
                             <ul role="list" class="nav-list white">
                                 <li class="nav-item">
-                                    <a href="../" class="nav-link" data-translate="nav-link-1">Home</a>
+                                    <a href="../" class="nav-link" data-translate="nav-link-1" rel="preload" as="fetch">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../about" class="nav-link" data-translate="nav-link-2">About</a>
+                                    <a href="../about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../portfolio/" class="nav-link w--current" data-translate="nav-link-3">Cases</a>
+                                    <a href="../portfolio/" class="nav-link w--current" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../contact" class="nav-link" data-translate="nav-link-4">Contact us</a>
+                                    <a href="../contact" class="nav-link" data-translate="nav-link-4" rel="preload" as="fetch">Contact us</a>
                                 </li>
 
                             </ul>
@@ -256,10 +251,8 @@
 
     </div>
     <div class="cases-list">
-        <img src="./01 Kukla/bb2.jpg" alt="" srcset="">
+
     </div>
-
-
 
     <footer>
         <div class="text-header">
@@ -310,6 +303,10 @@
             </div>
         </div>
     </footer>
+    <script src="../js/ScrollTriger.js" async></script>
+    <script src="../js/all_functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </body>
 <script>
     var objects = [{
@@ -487,6 +484,9 @@
                 var link = document.createElement('a');
                 link.href = obj.link;
                 link.rel = "noopener noreferrer";
+                link.setAttribute('rel', 'preload');
+                link.setAttribute('as', 'fetch');
+                link.setAttribute('href', obj.link); // Preload the linked page
 
                 var image = document.createElement('img');
                 image.className = 'g-image';
@@ -520,6 +520,9 @@
                 var link = document.createElement('a');
                 link.href = obj.link;
                 link.rel = "noopener noreferrer";
+                link.setAttribute('rel', 'preload');
+                link.setAttribute('as', 'fetch');
+                link.setAttribute('href', obj.link); // Preload the linked page
 
                 var image = document.createElement('img');
                 image.className = 'list-image';

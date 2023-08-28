@@ -1807,6 +1807,12 @@ footer {
     scale: 1;
 }
 
+.cursor-custom-disappear {
+    opacity: 0 !important;
+    display: none !important;
+    scale: 0 !important;
+}
+
 .contact-section {
     z-index: 0;
     justify-content: center;
@@ -1846,6 +1852,10 @@ footer {
 }
 
 @media screen and (min-width:1400px) {
+    input:hover,
+    textarea:hover {
+        cursor: text;
+    }
     .columns-container {
         gap: 30px;
         margin-left: 2em;
