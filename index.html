@@ -729,51 +729,44 @@ clients doing right by the world. We turn compelling ideas into commercial succe
 
 
         $(document).ready(function() {
-            var vimeoPlayer = new Vimeo.Player('myVideo');
+            var vimeoPlayer;
+
+            // Initialize the Vimeo player when the document is ready
+            vimeoPlayer = new Vimeo.Player('myVideo');
+
+            vimeoPlayer.on('ready', function() {
+                // Video is ready to be played
+                console.log("Vimeo player is ready");
+            });
 
             $(".movie-btn").click(function() {
-                var video = $('#myVideo');
                 var vidUrl = $(this).attr("vidUrl");
 
                 if (vidUrl) {
-                    video.attr("src", vidUrl);
-                    video.removeClass("hide");
-                    video.addClass("show");
-                    $('.youTube').addClass("hide");
-                    $('.youTube').removeClass("show");
-                    $('.gif-animation').css('display', 'none');
-                    $('.play-button').css('display', 'none');
+                    // Load the video by setting the video ID
+                    vimeoPlayer.loadVideo(vidUrl).then(function() {
+                        // Video loaded successfully
+                        $('.modal-vid').fadeIn(500);
+                        $('body').css('overflow', 'hidden');
+                    }).catch(function(error) {
+                        console.error("Error loading video:", error);
+                    });
                 }
-                $('body').css('overflow', 'hidden');
             });
 
             function resetVideo() {
-                var video = $('#myVideo');
-                video.attr("src", "");
-                video.removeClass("show");
-                video.addClass("hide");
-                $('.modal-vid').fadeOut(500);
-                $('.gif-animation').css('display', 'block');
-                $('.play-button').css('display', 'flex');
-            }
-
-            $(".widescreen-btn, .standard-btn, .sixteen-nine-btn, .pal-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                var className = $(this).data("class");
-                $("." + className).addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
-
-            $(".close").click(function() {
                 vimeoPlayer.pause().then(function() {
                     return vimeoPlayer.setCurrentTime(0);
                 }).catch(function(error) {
                     console.error("Error pausing or resetting video:", error);
                 });
 
-                resetVideo();
+                $('.modal-vid').fadeOut(500);
                 $('body').css('overflow', 'auto');
+            }
+
+            $(".close").click(function() {
+                resetVideo();
             });
 
             $(document).keydown(function(e) {
@@ -782,6 +775,7 @@ clients doing right by the world. We turn compelling ideas into commercial succe
                 }
             });
         });
+
 
 
         const carousel = document.querySelector(".carousel"),
