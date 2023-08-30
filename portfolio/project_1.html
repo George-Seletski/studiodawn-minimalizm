@@ -1234,7 +1234,7 @@
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
         let screenWidth = window.innerWidth;
         let storyBlock = document.querySelector(".story-content");
-        //console.log('width:' + screenWidth + 'em');
+        console.log('width:' + screenWidth + 'em');
 
 
         const sections = document.querySelectorAll('.h-scroll__section');
@@ -1268,9 +1268,10 @@
 
         // Vertical scrolling for mobile and tablet devices
         if (window.innerWidth > 991) {
+
             // Horizontal scrolling
             gsap.to(horizontalScroll, {
-                xPercent: -44 * (sections.length - 1),
+                xPercent: -43 * (sections.length - 1),
                 ease: 'none',
                 scrollTrigger: {
                     trigger: container,
@@ -1281,6 +1282,8 @@
                     scrub: 1,
                 },
             });
+
+
         }
 
         if (!isTouchDevice) {
@@ -1291,9 +1294,12 @@
             console.log(window.innerWidth, window.innerHeight);
 
             if (screenWidth < 1919) {
-                scrollContainer.style = 'width: 1520em !important';
+                scrollContainer.style = 'width: 1550em !important';
+
             } else {
-                scrollContainer.style = 'width:' + (screenWidth - 511) + 'em';
+
+                scrollContainer.style = 'width:' + (screenWidth - 589) + 'em';
+
             }
 
             const customCursor = document.querySelector(".custom-cursor");
@@ -1354,11 +1360,7 @@
                 scrollContainer.style = 'width:100%;';
             }
 
-            console.log('width:' + screenWidth + 'em');
 
-            console.log('width:' + screenWidth + 'em');
-            console.log('width:' + screenWidth * 1.83 + 'em');
-            console.log('width:' + screenWidth * 1.5 + 'em');
         }
 
         $(document).ready(function() {
