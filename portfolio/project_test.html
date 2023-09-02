@@ -1293,7 +1293,7 @@
             // Adjust scroll container width based on screen width
             console.log(screenWidth);
             if (screenWidth < 1919) {
-                container.style = "width: 1560em !important";
+                container.style = "width: 1580em !important";
             } else {
                 container.style = "width:" + (screenWidth - 589) + "em";
             }
@@ -1335,7 +1335,7 @@
             // Adjust scroll container and story block width for specific screen widths
             if (screenWidth < 1919 && screenWidth > 991) {
                 container.style = "width:" + screenWidth + "em";
-                storyBlock.style = "width:" + (screenWidth + 5) + "em";
+                storyBlock.style = "width:" + screenWidth * 0.5 + "em";
                 disableVerticalScroll();
             } else if (screenWidth < 1919) {
                 container.style = "width:100%;";
