@@ -3,20 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>STUDIODAWN</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <link href="./img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
-    <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+        type="text/css"
+    >
+    <link
+        rel="stylesheet"
+        href="css/normalize.css"
+        type="text/css"
+    >
+    <link
+        href="./img/fb_logo_studiodawn_square.jpg"
+        rel="shortcut icon"
+        type="image/x-icon"
+    >
+    <link
+        href="../img/320x320px_fb_logo_studiodawn2_round.png"
+        rel="apple-touch-icon"
+    >
+    <script src="js/all_functions.js"></script>
+    <script src="js/ScrollTriger.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <style>
     /* Import Google font - Poppins */
-    
+
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
     .wrapper {
         scroll-snap-type: x mandatory;
         -ms-overflow-style: none;
@@ -34,7 +61,7 @@
         display: inline-block !important;
         cursor: none;
     }
-    
+
     .wrapper i {
         top: 50%;
         height: 44px;
@@ -49,30 +76,30 @@
         transform: translateY(-50%);
         transition: transform 0.1s linear;
     }
-    
+
     i>img {
         display: block;
         margin: 0 auto;
         width: 100%;
     }
-    
+
     .wrapper i:active {
         transform: translateY(-50%) scale(0.9);
     }
-    
+
     .wrapper i:hover {
         background: #fff;
     }
-    
+
     .wrapper i:first-child {
         left: 22px;
         display: none;
     }
-    
+
     .wrapper i:last-child {
         right: 22px;
     }
-    
+
     .wrapper .carousel {
         font-size: 0px;
         cursor: none;
@@ -81,44 +108,47 @@
         scroll-behavior: smooth;
         display: inline-block;
     }
-    
+
     .carousel.dragging {
         cursor: none;
         scroll-behavior: auto;
     }
-    
+
     .carousel.dragging {
         pointer-events: none;
     }
-    
+
     .grid-image {
         object-fit: cover;
         user-select: none;
         margin-left: 14px !important;
         width: calc(30%) !important;
     }
-    
+
     .carousel img:first-child {
         margin-left: 0px;
     }
-    
+
     @media screen and (max-width: 900px) {
         .carousel img {
             width: calc(100% / 2);
         }
+
         .wrapper {
             margin-top: 1.5em;
         }
     }
-    
+
     @media screen and (max-width: 550px) {
         .carousel span {
             width: 100%;
         }
+
         #play-button-icon {
             width: 25px;
             height: 25px;
         }
+
         .grid-image {
             object-fit: cover;
             user-select: none;
@@ -126,36 +156,41 @@
             width: calc(50%) !important;
         }
     }
-    
+
     .hv-auto {
         height: 100vh !important;
         padding-top: 25px;
     }
-    
+
     @media screen and (max-width: 991px) {
         h1 {
             line-height: 1 !important;
             font-size: 1.2em !important;
         }
+
         .garamond-font {
             font-family: 'Cormorant Garamond Light', sans-serif !important;
             font-weight: 100;
             font-size: 2em !important;
         }
+
         .hv-auto {
             height: auto !important;
             padding-top: 50px;
             padding-bottom: 5px;
         }
+
         .grid-image {
             object-fit: cover;
             user-select: none;
             margin-left: 14px !important;
             width: calc(50%) !important;
         }
+
         .wrapper {
             margin: 4em 0 !important;
         }
+
         .text {
             font-size: 10px;
             line-height: 50px;
@@ -163,15 +198,15 @@
             text-align: left;
         }
     }
-    
+
     .icons {
         position: relative;
     }
-    
+
     .dropdown-content {
         display: none;
     }
-    
+
     .dropdown-content.show {
         display: block;
         transition: transform 5s;
@@ -183,27 +218,57 @@
 
     <div class="custom-cursor"></div>
 
-    <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
+    <div
+        class="header-wrapper w-nav"
+        data-duration="400"
+        data-collapse="all"
+    >
         <div class="container-default w-container">
 
             <div class="header-right-col">
-                <nav role="navigation" class="w-nav-menu">
-                    <a class="link-back white"><img src="icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt=""></a>
+                <nav
+                    role="navigation"
+                    class="w-nav-menu"
+                >
+                    <a class="link-back white"><img
+                            src="icons/arrow-right-up-light.svg"
+                            style=" width: 30px;transform: rotate(270deg);"
+                            alt=""
+                        ></a>
                     <div class="menu container-default-center">
 
                         <div class="w-container">
-                            <ul role="list" class="nav-list white">
+                            <ul
+                                role="list"
+                                class="nav-list white"
+                            >
                                 <li class="nav-item">
-                                    <a href="../" class="nav-link w--current" data-translate="nav-link-1" rel="preload" as="fetch">Home</a>
+                                    <a
+                                        href="../"
+                                        class="nav-link w--current"
+                                        data-translate="nav-link-1"
+                                    >Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
+                                    <a
+                                        href="about"
+                                        class="nav-link"
+                                        data-translate="nav-link-2"
+                                    >About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="portfolio" class="nav-link" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
+                                    <a
+                                        href="portfolio"
+                                        class="nav-link"
+                                        data-translate="nav-link-3"
+                                    >Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact" class="nav-link" data-translate="nav-link-4" rel="preload" as="fetch">Contact us</a>
+                                    <a
+                                        href="contact"
+                                        class="nav-link"
+                                        data-translate="nav-link-4"
+                                    >Contact us</a>
                                 </li>
 
                             </ul>
@@ -211,30 +276,60 @@
                         <div class="w-container">
                             <div class="nav-info-submenu">
 
-                                <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header " data-translate="nav-work-inq">Work Inquiries.</h2>
+                                <ul
+                                    role="list"
+                                    class="nav-info"
+                                >
+                                    <h2
+                                        class="nav-info-header "
+                                        data-translate="nav-work-inq"
+                                    >Work Inquiries.</h2>
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        <a
+                                            href="mailto:hello@dawnstudio.com"
+                                            class="link-email white"
+                                        >hello@dawnstudio.com</a>
                                     </li>
                                 </ul>
-                                <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header white" data-translate="nav-intouch">Get in touch.</h2>
+                                <ul
+                                    role="list"
+                                    class="nav-info"
+                                >
+                                    <h2
+                                        class="nav-info-header white"
+                                        data-translate="nav-intouch"
+                                    >Get in touch.</h2>
                                     <li class="nav-item">
-                                        <a href="#" class="link-address white">228 Nelson's Crescent New
-                                                        Westminster, BC V3L 3E3</a>
+                                        <a
+                                            href="#"
+                                            class="link-address white"
+                                        >228 Nelson's Crescent New
+                                            Westminster, BC V3L 3E3</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        <a
+                                            href="mailto:hello@dawnstudio.com"
+                                            class="link-email white"
+                                        >hello@dawnstudio.com</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Slovakia: +421-905-455-208</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Europe: +33-6-84-13-30-45</a>
                                     </li>
 
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Canada: +1 (604) 786-6046</a>
                                     </li>
 
                                 </ul>
@@ -252,21 +347,53 @@
                     <div class="hamburger-menu-bar-top"></div>
                     <div class="hamburger-menu-bar-bottom"></div>
                 </div>
-                <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
-                    <img src="./img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                <a
+                    href="../"
+                    aria-current="page"
+                    class="header-logo-link w-nav-brand w--current "
+                >
+                    <img
+                        src="./img/logo-black.png"
+                        alt="STUDIODAWN"
+                        class="header-logo"
+                        lazy="loading"
+                    >
 
                 </a>
 
 
-                <div class="icons" id="translate-icon">
+                <div
+                    class="icons"
+                    id="translate-icon"
+                >
                     <div class="wh-30">
                         <a href="javascript:void(0);">
-                            <img src="icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
+                            <img
+                                src="icons/global-svg-black.svg"
+                                id="icon"
+                                class="translate-icon-global"
+                                alt="language-icon"
+                            >
                         </a>
                         <div class="dropdown-content">
-                            <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
-                            <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
-                            <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                            <a
+                                class="dropdown-item"
+                                id="enTranslator"
+                                href="javascript:void(0);"
+                                data-lang="en"
+                            >EN</a>
+                            <a
+                                class="dropdown-item"
+                                id="frTranslator"
+                                href="javascript:void(0);"
+                                data-lang="fr"
+                            >FR</a>
+                            <a
+                                class="dropdown-item"
+                                id="deTranslator"
+                                href="javascript:void(0);"
+                                data-lang="de"
+                            >DE</a>
                         </div>
                     </div>
                 </div>
@@ -278,8 +405,14 @@
         <div class="header-section-content">
 
             <h1>
-                <span class="mb-bottom---10px garamond-font " data-translate="main-h1-1">We create</span>
-                <span class="mb-bottom---10px mr-55 roboto-light-fnt " data-translate="main-h1-2"> future brands</span>
+                <span
+                    class="mb-bottom---10px garamond-font "
+                    data-translate="main-h1-1"
+                >We create</span>
+                <span
+                    class="mb-bottom---10px mr-55 roboto-light-fnt "
+                    data-translate="main-h1-2"
+                > future brands</span>
             </h1>
 
         </div>
@@ -287,58 +420,106 @@
             <!--<span class="bottom-text-title">CREATE YOURS NOW</span>
                 <span><img id="arrow-down"src="./icons/arrow-left-black.svg" alt=""></span>-->
             <span class="mouse">
+                <span class="mouse-movement">
+                </span>
+            </span>
+            <div
+                class="mouse-scroll"
+                href="#"
+            >
+                <span class="mouse">
                     <span class="mouse-movement">
                     </span>
-            </span>
-            <div class="mouse-scroll" href="#">
-                <span class="mouse">
-                        <span class="mouse-movement">
-                        </span>
                 </span>
             </div>
         </div>
     </div>
 
-    <div class="page-wrapper" id="s">
+    <div
+        class="page-wrapper"
+        id="s"
+    >
         <div class="container hv-auto">
             <div class="text-header">
                 <span>
-                        <div class="description" data-translate="text-video-section">
-                            Unlock limitless possibilities with our comprehensive solutions block from trademark management to
-                            digital transformation, we offer a wide range of services to elevate your brands success. Harness
-                            the power of our solutions and propel your business to
-                            new heights in the ever-evolving digital landscape.
-                        </div>
+                    <div
+                        class="description"
+                        data-translate="text-video-section"
+                    >
+                        Unlock limitless possibilities with our comprehensive solutions block from trademark management
+                        to
+                        digital transformation, we offer a wide range of services to elevate your brands success.
+                        Harness
+                        the power of our solutions and propel your business to
+                        new heights in the ever-evolving digital landscape.
+                    </div>
                 </span>
             </div>
 
             <div class="video-container">
-                <div class="movie-btn movie-btn sixteen-nine-btn" vidUrl="https://player.vimeo.com/video/850727482?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=0">
+                <div
+                    class="movie-btn movie-btn sixteen-nine-btn"
+                    vidUrl="https://player.vimeo.com/video/850727482?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=0"
+                >
                     <div class="play-button-container">
 
-                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidUrl="https://player.vimeo.com/video/850727482">
-                            <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
+                        <div
+                            class="movie-btn movie-btn sixteen-nine-btn play-button"
+                            vidUrl="https://player.vimeo.com/video/850727482"
+                        >
+                            <img
+                                id="play-button-icon"
+                                src="./icons/play-svg.svg"
+                                alt="play video"
+                            >
                         </div>
                     </div>
 
                     <!-- Add the thumbnail image here -->
-                    <img class="gif-animation" src="video/video-tmp.gif" data-src="video/video-tmp.gif" alt="video" loading="lazy">
+                    <img
+                        class="gif-animation"
+                        src="video/video-tmp.gif"
+                        data-src="video/video-tmp.gif"
+                        alt="video"
+                        loading="lazy"
+                    >
                 </div>
 
                 <div class="modal-vid">
                     <div class="movie-box">
                         <div class="wide-screen">
                             <div class="vid-holder">
-                                <div class="close" vidUrl="/">
+                                <div
+                                    class="close"
+                                    vidUrl="/"
+                                >
                                     <a href="#s">
                                         <div class="remove-circle">
-                                            <img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thumbnail" class="remove" />
+                                            <img
+                                                src="./icons/close_white_24dp.svg"
+                                                loading="eager"
+                                                width="75"
+                                                alt="video thumbnail"
+                                                class="remove"
+                                            />
                                         </div>
                                     </a>
                                 </div>
                                 <!-- The video element -->
-                                <iframe id="myVideo" class="myVideo hide" src="https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" title="Iceland_cinematic"
-                                    loading="lazy" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
+                                <iframe
+                                    id="myVideo"
+                                    class="myVideo hide"
+                                    src="https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                    frameborder="0"
+                                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                                    title="Iceland_cinematic"
+                                    loading="lazy"
+                                    frameborder="0"
+                                    webkitallowfullscreen=""
+                                    mozallowfullscreen=""
+                                    allowfullscreen=""
+                                    data-ready="true"
+                                ></iframe>
 
 
 
@@ -353,83 +534,214 @@
     </div>
     <div class="row-container">
         <div>
-            <h2 id="header-font" data-translate="header-h2-1">The what</h2>
-            <span class="description" data-translate="description-w-1">
-                From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to
-                clients doing right by the world. We turn compelling ideas into commercial success stories through the power of the
+            <h2
+                id="header-font"
+                data-translate="header-h2-1"
+            >The what</h2>
+            <span
+                class="description"
+                data-translate="description-w-1"
+            >
+                From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
+                creativity to
+                clients doing right by the world. We turn compelling ideas into commercial success stories through the
+                power of the
                 brand in all its forms.
-                </span>
+            </span>
         </div>
         <div>
-            <h2 id="header-font" data-translate="header-h2-2">The how</h2>
-            <span class="description" data-translate="description-w-2">
-                We're all about collective success. Everyone's an equal in the creative process as we work toward a shared goal - no
+            <h2
+                id="header-font"
+                data-translate="header-h2-2"
+            >The how</h2>
+            <span
+                class="description"
+                data-translate="description-w-2"
+            >
+                We're all about collective success. Everyone's an equal in the creative process as we work toward a
+                shared goal - no
                 egos here. We don't make our partners fit into our formula. Instead, we find what works for you.
-                </span>
+            </span>
         </div>
         <div>
-            <h2 id="header-font" data-translate="header-h2-3">The why</h2>
-            <span class="description" data-translate="description-w-3">
-From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to
-clients doing right by the world. We turn compelling ideas into commercial success stories through brand power.
-                </span>
+            <h2
+                id="header-font"
+                data-translate="header-h2-3"
+            >The why</h2>
+            <span
+                class="description"
+                data-translate="description-w-3"
+            >
+                From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
+                creativity to
+                clients doing right by the world. We turn compelling ideas into commercial success stories through brand
+                power.
+            </span>
         </div>
 
     </div>
 
     <div class="wrapper">
-        <i id="left"><img src="./icons/arrow-left-black.svg"  style="width: 20px; margin:10px;" alt="" srcset=""></i>
+        <i id="left"><img
+                src="./icons/arrow-left-black.svg"
+                style="width: 20px; margin:10px;"
+                alt=""
+                srcset=""
+            ></i>
         <div class="carousel">
             <span>
-                    <a href="./portfolio/project_1.html"> <img src="./portfolio/01_Kukla/little_jpg/bb2.jpg" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project1.html"> <img
+                        src="./img/inst_1.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project_2.html"> <img src="./portfolio/02_Lesenie/little_jpg/logo.jpg" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span> <span>
-                    <a href="./portfolio/project_1.html"> <img src="./img/inst_3.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span> <span>
-                    <a href="./portfolio/project_2.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_2.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span> <span>
+                <a href="./portfolio/project-test.html"> <img
+                        src="./img/inst_3.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span> <span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_2.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project2.html"> <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_1.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project2.html"> <img src="./img/inst_3.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_3.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project2.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_2.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project2.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_2.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project2.html"> <img src="./img/inst_1.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_1.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project2.html"> <img src="./img/inst_3.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_3.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project2.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_2.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
             <span>
-                    <a href="./portfolio/project2.html"> <img src="./img/inst_2.png" loading="eager" class="grid-image first" id="grid-img" alt=""></a>
-                </span>
+                <a href="./portfolio/project2.html"> <img
+                        src="./img/inst_2.png"
+                        loading="eager"
+                        class="grid-image first"
+                        id="grid-img"
+                        alt=""
+                    ></a>
+            </span>
         </div>
-        <i id="right" class="fa-solid fa-angle-right"><img
+        <i
+            id="right"
+            class="fa-solid fa-angle-right"
+        ><img
                 src="./icons/arrow-left-black.svg"
                 alt="arrow-left"
-                srcset="" style="width: 20px; margin:10px; transform:rotate(180deg);"
+                srcset=""
+                style="width: 20px; margin:10px; transform:rotate(180deg);"
             ></i>
     </div>
     <div class="page-wrapper">
         <div class="text">
             <h2>
-                <span class="garamond-font"><span data-translate="text-1">We work with clients to create immersive worlds — brands that draw you into their orbit, make an impact & gain a cult following. Just ask </span>
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer"> Microsoft</a>,
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">P.E Notion</a>,
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Verve Super</a>,
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Worn For Good</a> <span data-translate="text-2">and</span>
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Beaty Bites.</a>
+                <span class="garamond-font"><span data-translate="text-1">We work with clients to create immersive
+                        worlds — brands that draw you into their orbit, make an impact & gain a cult following. Just ask
+                    </span>
+                    <a
+                        href="https://"
+                        id="brand-name"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    > Microsoft</a>,
+                    <a
+                        href="https://"
+                        id="brand-name"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >P.E Notion</a>,
+                    <a
+                        href="https://"
+                        id="brand-name"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Verve Super</a>,
+                    <a
+                        href="https://"
+                        id="brand-name"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Worn For Good</a> <span data-translate="text-2">and</span>
+                    <a
+                        href="https://"
+                        id="brand-name"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Beaty Bites.</a>
                 </span>
             </h2>
         </div>
@@ -439,31 +751,64 @@ clients doing right by the world. We turn compelling ideas into commercial succe
                 <h2 id="header-font">Instagram</h2>
 
                 <span>
-                    <p class="description" id="ig-description" data-translate="inst-text-1">
+                    <p
+                        class="description"
+                        id="ig-description"
+                        data-translate="inst-text-1"
+                    >
                         We don't just design brands for pleasing aesthetic, we bring purposeful business to life and
                         grant them longevity in the game.
                     </p>
                     <br>
-                    <p class="description" id="ig-description" data-translate="inst-text-2">
+                    <p
+                        class="description"
+                        id="ig-description"
+                        data-translate="inst-text-2"
+                    >
                         Follow us to stay updated with syudio happenings and projects in the works.
                     </p>
                     <p>
-                  <br>
-                </p>
+                        <br>
+                    </p>
                 </span>
                 <span class="instgram-link">
-                        <a href="https://" target="_blank" rel="noopener noreferrer">@studiodawn</a>
-                        </span>
+                    <a
+                        href="https://"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >@studiodawn</a>
+                </span>
             </div>
             <div class="instagram-images">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" class="instagram-img img1"></div>
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div
+                        loading="eager"
+                        class="instagram-img img1"
+                    ></div>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" class="instagram-img img2"></div>
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div
+                        loading="eager"
+                        class="instagram-img img2"
+                    ></div>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" class="instagram-img img3"></div>
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div
+                        loading="eager"
+                        class="instagram-img img3"
+                    ></div>
                 </a>
             </div>
 
@@ -472,7 +817,7 @@ clients doing right by the world. We turn compelling ideas into commercial succe
     <footer>
         <div class="text-header">
             <div class="footer-header">
-                <h2 data-translate="footer-h2">Get in touch</h2>
+                <h2>Get in touch</h2>
             </div>
         </div>
         <div class="footer-links">
@@ -485,45 +830,82 @@ clients doing right by the world. We turn compelling ideas into commercial succe
         </div>
         <div class="licence-container">
             <ul class="licence-container-list">
-                <li id="licence-item"> <a href="https://" target="_blank" rel="noopener noreferrer" data-translate="footer-li-text-1">Privacy</a> </li>
-                <li id="licence-item"><a href="https://" target="_blank" rel="noopener noreferrer" data-translate="footer-li-text-2">Conditions</a></li>
-                <li id="licence-item"><a href="https://" target="_blank" rel="noopener noreferrer" data-translate="footer-li-text-3">Human Rights</a></li>
+                <li id="licence-item"> <a
+                        href="https://"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Privacy</a> </li>
+                <li id="licence-item"><a
+                        href="https://"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Conditions</a></li>
+                <li id="licence-item"><a
+                        href="https://"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Human Rights</a></li>
             </ul>
         </div>
         <div class="icon-box">
             <div class="icons">
                 <div class="wh-30">
-                    <a href="http://" rel="noopener noreferrer">
-                        <img src="./icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                    <a
+                        href="http://"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="./icons/facebook-svg-large.svg"
+                            id="icon"
+                            alt=""
+                            srcset=""
+                        >
                     </a>
                 </div>
                 <div class="wh-30">
-                    <a href="http://" rel="noopener noreferrer">
-                        <img src="./icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                    <a
+                        href="http://"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="./icons/instagram-svg.svg"
+                            id="icon"
+                            alt=""
+                            srcset=""
+                        >
                     </a>
                 </div>
                 <div class="wh-30">
-                    <a href="http://" rel="noopener noreferrer">
-                        <img src="./icons/behance.svg" id="icon" alt="" srcset="">
+                    <a
+                        href="http://"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="./icons/behance.svg"
+                            id="icon"
+                            alt=""
+                            srcset=""
+                        >
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <div class="label" id="cookie-label">
+    <div
+        class="label"
+        id="cookie-label"
+    >
         <span class="title">
-                <h3 data-translate="cookie-header">This website uses cookies</h3>
-            </span>
-        <span class="cookie-label-text" data-translate="cookie-text">This website uses cookies to improve the user experience. By using our website, you consent to all cookies in accordance with our cookie policy. 
-            </span>
-        <button class="black" id="cookie-close" data-translate="cookie-btn-text">Got it</button>
+            <h3>This website uses cookies</h3>
+        </span> <span class="cookie-label-text"> This website uses cookies to improve the user experience. By using our
+            website, you consent to all cookies in accordance with our cookie policy.
+        </span><button
+            class="black"
+            id="cookie-close"
+        >Got it</button>
     </div>
-    <script src="js/all_functions.js"></script>
-    <script src="js/ScrollTriger.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
+
 </body>
 
 <script>
@@ -541,27 +923,12 @@ clients doing right by the world. We turn compelling ideas into commercial succe
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
             const links = document.querySelectorAll("a");
-            const buttonElements = document.querySelectorAll("button");
 
-            document.addEventListener('mousemove', function(event) {
+            document.addEventListener('mousemove', function (event) {
                 customCursor.style.left = `${event.clientX}px`;
                 customCursor.style.top = `${event.clientY}px`;
             });
 
-            buttonElements.forEach((element) => {
-                element.addEventListener("mouseover", () => {
-                    customCursor.classList.add("cursor-custom-disappear");
-                });
-
-                element.addEventListener("mouseout", () => {
-                    customCursor.classList.remove("cursor-custom-disappear");
-                    // Add a slight delay to prevent cursor flickering on hover-out
-                    setTimeout(() => {
-                        customCursor.style.left = `${event.clientX}px`;
-                        customCursor.style.top = `${event.clientY}px`;
-                    }, 50);
-                });
-            });
 
             links.forEach((link) => {
                 link.addEventListener("mouseover", () => {
@@ -602,12 +969,12 @@ clients doing right by the world. We turn compelling ideas into commercial succe
             }
         });
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var lazyImages = [].slice.call(document.querySelectorAll("img.gif-animation"));
 
             if ("IntersectionObserver" in window) {
-                var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
+                var lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             var lazyImage = entry.target;
                             lazyImage.src = lazyImage.dataset.src;
@@ -617,25 +984,25 @@ clients doing right by the world. We turn compelling ideas into commercial succe
                     });
                 });
 
-                lazyImages.forEach(function(lazyImage) {
+                lazyImages.forEach(function (lazyImage) {
                     lazyImageObserver.observe(lazyImage);
                 });
             } else {
                 // Fallback for browsers without IntersectionObserver support
                 // You can simply load all images immediately in this case
-                lazyImages.forEach(function(lazyImage) {
+                lazyImages.forEach(function (lazyImage) {
                     lazyImage.src = lazyImage.dataset.src;
                     lazyImage.classList.remove("gif-animation");
                 });
             }
             console.log(translateIcon); // Check if translateIcon is found
             console.log(dropdownContent); // Check if dropdownContent is found
-            translateIcon.addEventListener("click", function() {
+            translateIcon.addEventListener("click", function () {
                 dropdownContent.classList.toggle("show");
             });
 
             // Close the dropdown when clicking outside
-            window.addEventListener("click", function(event) {
+            window.addEventListener("click", function (event) {
 
                 if (!event.target.matches(".translate-icon-global")) {
                     console.log('translate-icon-globa clicked');
@@ -646,8 +1013,8 @@ clients doing right by the world. We turn compelling ideas into commercial succe
             });
         });
 
-        $(document).ready(function() {
-            $('.hamburger-menu-wrapper').click(function() {
+        $(document).ready(function () {
+            $('.hamburger-menu-wrapper').click(function () {
                 var $navMenu = $('.w-nav-menu');
                 $navMenu.toggle();
                 $(this).toggleClass('w--open');
@@ -663,7 +1030,7 @@ clients doing right by the world. We turn compelling ideas into commercial succe
                 }
             });
             // Event handler for the close button
-            $('.link-back').click(function() {
+            $('.link-back').click(function () {
                 var $navMenu = $('.w-nav-menu');
                 var $hamburgerMenuWrapper = $('.hamburger-menu-wrapper');
 
@@ -677,8 +1044,8 @@ clients doing right by the world. We turn compelling ideas into commercial succe
             });
         });
 
-        $(document).ready(function() {
-            $(window).on("scroll", function() {
+        $(document).ready(function () {
+            $(window).on("scroll", function () {
                 if ($(window).scrollTop() >= 30) {
                     $(".header-wrapper").addClass("with-effect");
                 } else {
@@ -694,7 +1061,7 @@ clients doing right by the world. We turn compelling ideas into commercial succe
             var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
             // Save the current scroll position and add scroll-lock styles
-            window.onscroll = function() {
+            window.onscroll = function () {
                 window.scrollTo(scrollLeft, scrollTop);
             };
             document.body.classList.add('scroll-lock');
@@ -715,11 +1082,11 @@ clients doing right by the world. We turn compelling ideas into commercial succe
 
         // Define the animation
         revealAnimation.from(".garamond-font", {
-                opacity: 0,
-                y: 20,
-                duration: 1,
-                delay: 1
-            })
+            opacity: 0,
+            y: 20,
+            duration: 1,
+            delay: 1
+        })
             .from(".mr-55", {
                 opacity: 0,
                 y: 20,
@@ -728,54 +1095,60 @@ clients doing right by the world. We turn compelling ideas into commercial succe
 
 
 
-        $(document).ready(function() {
-            var vimeoPlayer;
+        $(document).ready(function () {
+            var vimeoPlayer = new Vimeo.Player('myVideo');
 
-            // Initialize the Vimeo player when the document is ready
-            vimeoPlayer = new Vimeo.Player('myVideo');
-
-            vimeoPlayer.on('ready', function() {
-                // Video is ready to be played
-                console.log("Vimeo player is ready");
-            });
-
-            $(".movie-btn").click(function() {
+            $(".movie-btn").click(function () {
+                var video = $('#myVideo');
                 var vidUrl = $(this).attr("vidUrl");
 
                 if (vidUrl) {
-                    // Load the video by setting the video ID
-                    vimeoPlayer.loadVideo(vidUrl).then(function() {
-                        // Video loaded successfully
-                        $('.modal-vid').fadeIn(500);
-                        $('body').css('overflow', 'hidden');
-                    }).catch(function(error) {
-                        console.error("Error loading video:", error);
-                    });
+                    video.attr("src", vidUrl);
+                    video.removeClass("hide");
+                    video.addClass("show");
+                    $('.youTube').addClass("hide");
+                    $('.youTube').removeClass("show");
+                    $('.gif-animation').css('display', 'none');
+                    $('.play-button').css('display', 'none');
                 }
+                $('body').css('overflow', 'hidden');
             });
 
             function resetVideo() {
-                vimeoPlayer.pause().then(function() {
+                var video = $('#myVideo');
+                video.attr("src", "");
+                video.removeClass("show");
+                video.addClass("hide");
+                $('.modal-vid').fadeOut(500);
+                $('.gif-animation').css('display', 'block');
+                $('.play-button').css('display', 'flex');
+            }
+
+            $(".widescreen-btn, .standard-btn, .sixteen-nine-btn, .pal-btn").click(function () {
+                $(".modal-vid").fadeIn(500);
+                $(".vid-holder img").removeClass("show");
+                var className = $(this).data("class");
+                $("." + className).addClass("show");
+                $('.gif-animation').css('display', 'none');
+            });
+
+            $(".close").click(function () {
+                vimeoPlayer.pause().then(function () {
                     return vimeoPlayer.setCurrentTime(0);
-                }).catch(function(error) {
+                }).catch(function (error) {
                     console.error("Error pausing or resetting video:", error);
                 });
 
-                $('.modal-vid').fadeOut(500);
-                $('body').css('overflow', 'auto');
-            }
-
-            $(".close").click(function() {
                 resetVideo();
+                $('body').css('overflow', 'auto');
             });
 
-            $(document).keydown(function(e) {
+            $(document).keydown(function (e) {
                 if (e.keyCode == 27) { // ESC key
                     resetVideo();
                 }
             });
         });
-
 
 
         const carousel = document.querySelector(".carousel"),
