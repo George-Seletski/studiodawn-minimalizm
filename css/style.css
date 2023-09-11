@@ -2068,7 +2068,7 @@ footer {
         margin: 0 1em 1em 0 !important;
     }
     .form-container {
-        margin-top: 6em;
+        margin-top: 0em;
     }
     .brands-section-header {
         margin: 0 auto;
@@ -2248,8 +2248,8 @@ footer {
     }
     #contact-links {
         height: 100%;
-        gap: 4em;
-        margin-top: 2em;
+        gap: 2em;
+        margin-top: 0em;
     }
     .info-block>.icons {
         justify-content: flex-start;

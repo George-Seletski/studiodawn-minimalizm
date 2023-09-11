@@ -195,9 +195,9 @@
     <div class="portfolio-header">
         <div class="portfolio-header-text">
             <h1>
-                <span class="portfolio-container-text garamond-font" id="header-top"> This is our work </span>
+                <span class="portfolio-container-text garamond-font" id="header-top" data-translate="portfolio-header"> This is our work </span>
 
-                <span class="portfolio-container-text fnt-small">Check out by filters</span>
+                <span class="portfolio-container-text fnt-small" data-translate="portfolio-subheader">Check out by filters</span>
             </h1>
 
 
@@ -215,14 +215,14 @@
 
             </div>
             <div class="filter-container-main">
-                <div class="filter-button active extra__button" onclick="handleFilterClick(this, 'all')"><a>All projects</a></div>
+                <div class="filter-button active extra__button" onclick="handleFilterClick(this, 'all')"><a data-translate="main-filter">All projects</a></div>
                 <div class="filter-container">
                     <div id="column">
 
                         <ul class="filter-list" id="list-1">
                             <li class="filter-button" onclick="handleFilterClick(this, 'marketing')"><a>Marketing</a></li>
                             <li class="filter-button" onclick="handleFilterClick(this, 'product design')"><a>Product design</a></li>
-                            <li class="filter-button" onclick="handleFilterClick(this, 'logo & branding')"><a>Logo & Branding</a></li>
+                            <li class="filter-button" onclick="handleFilterClick(this, 'logo branding')"><a>Logo & Branding</a></li>
                             <li class="filter-button" onclick="handleFilterClick(this, 'graphic design')"><a>Graphic design</a></li>
                         </ul>
                     </div>
@@ -304,7 +304,7 @@
         </div>
     </footer>
     <script src="../js/ScrollTriger.js" async></script>
-    <script src="../js/all_functions.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </body>
@@ -314,31 +314,39 @@
         imagePath: "./01_Kukla/little_jpg/bb2.jpg",
         tag: "product design",
         name: "ProjectName",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida."
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida.",
+        textFR: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Le porteur, ayant une forme de faucibus tristique, ne possède pas une courbe élémentaire, et la rutrum n'a pas de désir pour un tortor. Interdum et les familles de malesuada, avant tout, dans les faucibus. Le congue vulputate est euismod. Non sapien non ligula. Proin suscipit mollis gravida.",
+        textDE: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Der Träger, der die Form eines tristen Wasserhahns hat, besitzt keine grundlegende Biegung, und die Rutrum hat keinen Wunsch nach einem Tortor. Interdum und die Familien von Malesuada, vor allem in den Wasserhähnen. Der Congue Vulputate ist euismod. Nicht sapien, nicht ligula. Proin suscipit mollis FRFRFRFRR."
     }, {
         link: "./project_2.html",
         imagePath: "./02_Lesenie/little_jpg/logo.jpg",
         name: "ProjectName",
         tag: "logo & branding",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. "
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida.",
+        textFR: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Le porteur, ayant une forme de faucibus tristique, ne possède pas une courbe élémentaire, et la rutrum n'a pas de désir pour un tortor. Interdum et les familles de malesuada, avant tout, dans les faucibus. Le congue vulputate est euismod. Non sapien non ligula. Proin suscipit mollis FRFRFRFRR",
+        textDE: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Der Träger, der die Form eines tristen Wasserhahns hat, besitzt keine grundlegende Biegung, und die Rutrum hat keinen Wunsch nach einem Tortor. Interdum und die Familien von Malesuada, vor allem in den Wasserhähnen. Der Congue Vulputate ist euismod. Nicht sapien, nicht ligula. Proin suscipit mollis GEGEGEGGEG."
     }, {
         link: "./project1.html",
         imagePath: "../img/inst_3.png",
         name: "ProjectName",
         tag: "graphic design",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada."
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida.",
+        textFR: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Le porteur, ayant une forme de faucibus tristique, ne possède pas une courbe élémentaire, et la rutrum n'a pas de désir pour un tortor. Interdum et les familles de malesuada, avant tout, dans les faucibus. Le congue vulputate est euismod. Non sapien non ligula. Proin suscipit mollis FRFRFRFRR.",
+        textDE: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Der Träger, der die Form eines tristen Wasserhahns hat, besitzt keine grundlegende Biegung, und die Rutrum hat keinen Wunsch nach einem Tortor. Interdum und die Familien von Malesuada, vor allem in den Wasserhähnen. Der Congue Vulputate ist euismod. Nicht sapien, nicht ligula. Proin suscipit mollis GEGEGEGGEG."
     }, {
         link: "./project1.html",
         imagePath: "../img/inst_2.png",
         name: "ProjectName",
         tag: "product design",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu."
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida.",
+
     }, {
         link: "./project_test.html",
         imagePath: "./04_Villa/little_jpg/logo.jpg",
         name: "ProjectName",
         tag: "design",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu."
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor, ligula eu faucibus tristique, felis neque elementum arcu, eu rutrum nulla nibh quis tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue vulputate euismod.Sed non sapien ligula.Proin suscipit mollis gravida.",
+
     }];
     // Enable Grid / List view
     const casesGrid = document.querySelector(".cases-grid");
@@ -354,6 +362,7 @@
     var filterButton = document.getElementsByClassName('filter-button')[0];
     var filter_Button = document.getElementsByClassName('filter-button');
     let buttonClicked = false;
+    let Language;
 
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -402,7 +411,7 @@
                 }
             }
         });
-        setupLanguageSwitcher();
+        Language = setupLanguageSwitcher();
 
         $(document).ready(function() {
             $('.hamburger-menu-wrapper').click(function() {
@@ -447,6 +456,8 @@
         filterCards('all');
         showGrid();
 
+
+
     });
 
     // Enable scroll
@@ -470,20 +481,19 @@
     };
 
     // Function to filter cards based on the selected tag
-    function filterCards(tag) {
+    function filterCards(tag, lng) {
         var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
-
             return obj.tag === tag;
         });
 
         if (ListView === false) {
-
-            var cardContainer = document.getElementsByClassName('cases-grid')[0]; // Use [0] to access the first element
+            var cardContainer = document.querySelector('.cases-grid'); // Use querySelector to select by class
             cardContainer.innerHTML = '';
 
             filteredObjects.forEach(function(obj) {
-                Objectag = obj.tag;
-                //console.log('grid', Objectag, obj.tag);
+                // Declare Objectag as a local variable using 'let'
+                let Objectag = obj.tag;
+
                 var card = document.createElement('div');
                 card.className = 'case-grid-item';
 
@@ -497,26 +507,23 @@
                 var image = document.createElement('img');
                 image.className = 'g-image';
                 image.src = obj.imagePath;
-                image.loading = "ease";
-                image.alt = 'image ' + obj.tag; // Fix the concatenation
-
-                //image.loading = "lazy";
+                image.loading = "lazy";
+                image.alt = 'image ' + Objectag; // Use the local Objectag variable
 
                 link.appendChild(image);
                 card.appendChild(link);
 
                 cardContainer.appendChild(card);
-
             });
-
         } else {
-
-            var cardContainer = document.getElementsByClassName('cases-list')[0]; // Use [0] to access the first element
+            var cardContainer = document.querySelector('.cases-list'); // Use querySelector to select by class
             cardContainer.innerHTML = '';
-
+            let i = 0;
             filteredObjects.forEach(function(obj) {
-                Objectag = obj.tag;
-                //console.log('list', Objectag, obj.tag);
+                i += 1;
+                // Declare Objectag as a local variable using 'let'
+                let Objectag = obj.tag;
+
                 var card = document.createElement('div');
                 card.className = 'case-item';
 
@@ -533,7 +540,7 @@
                 var image = document.createElement('img');
                 image.className = 'list-image';
                 image.src = obj.imagePath;
-                image.alt = 'image ' + obj.tag; // Fix the concatenation
+                image.alt = 'image ' + Objectag; // Use the local Objectag variable
                 image.loading = "lazy";
 
                 var Div = document.createElement('div');
@@ -549,9 +556,10 @@
                 textContent.className = "description";
                 textContent.textContent = obj.text;
 
+
                 var metaContent = document.createElement('p');
                 metaContent.className = "tag";
-                metaContent.textContent = obj.tag;
+                metaContent.textContent = Objectag; // Use the local Objectag variable
                 textContent.appendChild(metaContent);
 
                 Div.appendChild(textContent);
@@ -562,11 +570,10 @@
                 card.appendChild(Div);
 
                 cardContainer.appendChild(card);
-
             });
-
         }
-    };
+    }
+
 
     function showList() {
         var gridIcon = document.querySelector('#grid-view-icon');
@@ -650,11 +657,91 @@
         if (buttonClicked === false) {
             filterCards('all');
         } else {
-            filterCards(Objectag);
+            filterCards(Objectag, Language);
             Objectag = '';
         }
 
     };
+
+    function setupLanguageSwitcher() {
+        const defaultLanguage = "en"; // Set the default language
+        let langChanged = false;
+        let language = localStorage.getItem("selectedLanguage") || defaultLanguage;
+        let translations; // Define translations object
+
+        const languageElements = document.querySelectorAll("[data-translate]");
+        const languageSwitcher = document.getElementById("translate-icon");
+        const dropdownItems = languageSwitcher.querySelectorAll(".dropdown-item");
+
+        const alternativeFilePath = "../lng.json"; // Define the alternative file path
+
+        function updateContent(selectedLang) {
+            return new Promise((resolve, reject) => {
+                fetch("lng.json")
+                    .then((response) => {
+                        if (!response.ok) {
+                            // If the response is not OK, try fetching the alternative file
+                            return fetch(alternativeFilePath);
+                        }
+                        return response;
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        translations = data; // Store translations object
+
+                        console.log("Translations:", translations);
+
+                        languageElements.forEach((element) => {
+                            const elementTag = element.getAttribute("data-translate");
+                            if (translations[selectedLang][elementTag]) {
+                                element.textContent = translations[selectedLang][elementTag];
+                            }
+                        });
+
+                        langChanged = true;
+                        language = selectedLang;
+                        localStorage.setItem("selectedLanguage", selectedLang);
+
+                        resolve(); // Resolve the promise
+                    })
+                    .catch((error) => {
+                        console.error("Error loading translations:", error);
+                        reject(error); // Reject the promise
+                    });
+            });
+        }
+
+        // Update content with the stored language or default language translations
+        updateContent(language)
+            .then(() => {
+                const availableLanguages = Object.keys(translations); // Use translations object
+
+                dropdownItems.forEach((item) => {
+                    const selectedLang = item.getAttribute("data-lang");
+                    if (availableLanguages.includes(selectedLang)) {
+                        item.addEventListener("click", () => {
+                            if (!langChanged || language !== selectedLang) {
+                                console.log("Language switcher clicked");
+                                console.log("Selected language:", selectedLang);
+                                Language = selectedLang;
+                                filterCards(Objectag, Language);
+                                updateContent(selectedLang)
+                                    .then(() => {
+                                        // Update content here if needed after the language change
+                                    })
+                                    .catch((error) =>
+                                        console.error("Error updating content:", error)
+                                    );
+                            }
+                        });
+                    }
+                });
+            })
+            .catch((error) =>
+                console.error("Error setting up language switcher:", error)
+            );
+
+    }
 </script>
 
 </html>

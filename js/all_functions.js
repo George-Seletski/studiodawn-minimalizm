@@ -58,7 +58,7 @@ function setupLanguageSwitcher() {
                         if (!langChanged || language !== selectedLang) {
                             console.log("Language switcher clicked");
                             console.log("Selected language:", selectedLang);
-
+                            lang = selectedLang;
                             updateContent(selectedLang)
                                 .then(() => {
                                     // Update content here if needed after the language change
@@ -74,6 +74,7 @@ function setupLanguageSwitcher() {
         .catch((error) =>
             console.error("Error setting up language switcher:", error)
         );
+
 }
 
 function cookieFunction() {
