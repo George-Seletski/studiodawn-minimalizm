@@ -43,8 +43,10 @@
         "about-btn-text": " See cases",
         "portfolio-header": "This is our work",
         "portfolio-subheader": "Check out by filters",
-        "main-filter": "All projects"
-
+        "main-filter": "All projects",
+        "text-header-conditions": "Terms of use",
+        "text-header-human-r": "Human Rights",
+        "text-header-privacy": "Privacy"
 
 
 
@@ -92,8 +94,11 @@
         "about-descover-text-2": "notre travail",
         "about-btn-text": "Voir les affaires",
         "portfolio-header": "Voici notre travail",
-        "portfolio-subheader": "Check out by filters",
-        "main-filter": "Tous les projets"
+        "portfolio-subheader": "Vérifier par filtres",
+        "main-filter": "Tous les projets",
+        "text-header-conditions": "Conditions d'utilisation",
+        "text-header-human-r": "Droits de l'homme",
+        "text-header-privacy": "Vie privée"
 
     },
     "de": {
@@ -137,7 +142,11 @@
         "about-btn-text": "Fälle sehen",
         "portfolio-header": "Das ist unsere Arbeit",
         "portfolio-subheader": "Überprüfen durch Filter",
-        "main-filter": "Alle Projekte"
+        "main-filter": "Alle Projekte",
+        "text-header-conditions": "Nutzungsbedingungen",
+        "text-header-human-r": "Menschenrechte",
+        "text-header-privacy": "Datenschutz"
+
 
     }
 }

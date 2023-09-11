@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIODAWN</title>
+    <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
+    <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css">
+
+
+</head>
+<style>
+    *,
+     :after,
+     :before {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box
+    }
+    
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+    
+    .text-block-list>li {
+        list-style-type: disc;
+    }
+    
+    article,
+    aside,
+    figcaption,
+    figure,
+    main,
+    section,
+    span,
+    div {
+        display: block;
+        /*border: 1px solid rgba(0, 0, 0, 0.199);*/
+    }
+    
+    body {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+        background-color: #f9f4f4;
+    }
+    
+    h1 {
+        font-size: 144px;
+    }
+    
+    @media screen and (max-width: 991px) {
+        .fnt-great {
+            font-size: 1.4em;
+        }
+        .plain_text-header-text>h1 {
+            font-size: 5em !important;
+        }
+        .plain_text-header-text {
+            display: flex;
+            flex-direction: column;
+            margin: 0 4em !important;
+        }
+        .text-block {
+            margin: 0 4em !important;
+        }
+        .col-left {
+            padding-right: 5em !important;
+            padding-left: 0em !important;
+        }
+    }
+    
+    @media (max-width: 478px) {
+        .text-block {
+            flex-direction: column;
+            margin: 0 2em !important;
+        }
+        .plain_text-header-text {
+            margin: 0 2em !important;
+        }
+    }
+    
+    @media (max-width: 1200px) {
+        .plain_text-header-text>h1 {
+            line-height: 0.6 !important;
+            font-size: 98px !important;
+        }
+    }
+    
+    .plain_text-header {
+        display: block;
+        margin-top: 4em;
+    }
+    
+    .plain_text-header-text {
+        display: flex;
+        flex-direction: column;
+        margin: 0 10em;
+    }
+    
+    .plain_text-container-text {
+        display: block;
+        z-index: 0;
+        position: relative;
+        width: 100%;
+    }
+    
+    .text-block {
+        display: flex;
+        margin: 0 10em;
+    }
+    
+    .col-left {
+        padding-right: 10em;
+        padding-left: 0;
+    }
+    
+    .col-right {
+        padding-top: 1.6em;
+    }
+    
+    .text-block-header {
+        font-size: 4em;
+    }
+    
+    .text-body {
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+    
+    .text-link {
+        font-family: 'Roboto Thin', sans-serif;
+        font-weight: 900;
+        font-size: 1em !important;
+    }
+    
+    .text-link:hover {
+        text-decoration: underline;
+        color: #000;
+    }
+</style>
+
+<body>
+
+    <div class="custom-cursor"></div>
+
+    <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
+        <div class="container-default w-container">
+
+            <div class="header-right-col">
+                <nav role="navigation" class="header-hamburger-desktop-wrapper w-nav-menu ">
+                    <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
+                    <div class="menu container-default-center">
+                        <div class="w-container">
+                            <ul role="list" class="nav-list white">
+                                <li class="nav-item">
+                                    <a href="./" class="nav-link" data-translate="nav-link-1" rel="preload" as="fetch">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./about" class="nav-link w--current" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./portfolio/" class="nav-link" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./contact" class="nav-link" data-translate="nav-link-4" rel="preload" as="fetch">Contact us</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="w-container">
+                            <div class="nav-info-submenu">
+
+                                <ul role="list" class="nav-info">
+                                    <h2 class="nav-info-header ">Work Inquiries.</h2>
+                                    <li class="nav-item">
+                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                    </li>
+                                </ul>
+                                <ul role="list" class="nav-info">
+                                    <h2 class="nav-info-header white">Get in touch.</h2>
+                                    <li class="nav-item">
+                                        <a href="#" class="link-address white">228 Nelson's Crescent New
+                                            Westminster, BC V3L 3E3</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
+                                    </li>
+
+                                    <li class="nav-item ">
+                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </nav>
+            </div>
+
+            <div class="header-content-wrapper">
+                <div class="hamburger-menu-wrapper w-nav-button">
+                    <div class="hamburger-menu-bar-top"></div>
+                    <div class="hamburger-menu-bar-top"></div>
+                    <div class="hamburger-menu-bar-bottom"></div>
+                </div>
+                <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
+                    <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+
+                </a>
+
+
+                <div class="icons" id="translate-icon">
+                    <div class="wh-30">
+                        <a href="javascript:void(0);">
+                            <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                            <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                            <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="plain_text-header">
+        <div class="plain_text-header-text">
+            <h1>
+                <span class="plain_text-container-text garamond-font" id="header-top" data-translate="text-header-privacy">Privacy</span>
+            </h1>
+
+
+        </div>
+    </div>
+
+
+    <div class="page-wrapper">
+        <div class="text-block">
+            <div class="col-left">
+                <h2 class="text-block-header">Header</h2>
+            </div>
+
+            <div class="col-right">
+                <span class="text-body">
+                    In partnership with our clients, we strive to have an agile approach to the creative process that is rooted in the
+                    importance of mitigating our impact on the planet whilst supporting them to carve out a narrative that rings true to
+                    their unique brand values and market positioning.
+                    
+                    Through our Smack Bang brand values, commitments, processes, supply chain and devotion to our goals, we can effect
+                    positive change and we are grateful to be in the position to do so.
+                </span>
+                <span class="text-body">
+                <ol class="text-block-list">
+                    <li>Header1</li>
+                    <li>Header1</li>
+                    <li>Header1</li>
+                    <li>Header1</li>
+                    <li>Header1</li>
+                </ol>
+                Through our Smack Bang brand values, commitments, processes, supply chain and devotion to our goals, we can effect positive change and we are grateful to be in the position to do so.
+
+                </span>
+                <span class="text-body">
+                    <a
+                        href="http://"
+                        class="text-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Through our Smack Bang brand values, commitments, processes, supply chain and devotion to our goals, we can effect
+                        positive change and we are grateful to be in the position to do so.</a>
+                </span>
+            </div>
+
+        </div>
+
+
+        <footer>
+            <div class="text-header">
+                <div class="footer-header">
+                    <h2 data-translate="footer-h2">Get in touch</h2>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-fnt link-email">
+                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                </div>
+                <div class="footer-fnt link-email">
+                    <a href="tel:+421905455208">+421 905 455 208</a>
+                </div>
+            </div>
+            <div class="licence-container">
+                <ul class="licence-container-list">
+                    <li id="licence-item"> <a href="#" rel="noopener noreferrer" data-translate="footer-li-text-1">Privacy</a> </li>
+                    <li id="licence-item"><a href="./conditions_index.html" rel="noopener noreferrer" data-translate="footer-li-text-2">Conditions</a></li>
+                    <li id="licence-item"><a href="./human_rughts_index.html" rel="noopener noreferrer" data-translate="footer-li-text-3">Human Rights</a></li>
+                </ul>
+            </div>
+            <div class="icon-box">
+
+                <!--<div class="language-icon">
+                    <div id="language-icon-circle">
+                        <div class="svg-icon">
+
+                        </div>
+                    </div>
+                </div>-->
+                <div class="icons">
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/all_functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="./js/ScrollTriger.js"></script>
+    <script src="./js/all_functions.js"></script>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
+        console.log(translateIcon); // Check if translateIcon is found
+        console.log(dropdownContent); // Check if dropdownContent is found
+        translateIcon.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
+
+        // Close the dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+
+            if (!event.target.matches(".translate-icon-global")) {
+                console.log('translate-icon-globa clicked');
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                }
+            }
+        });
+
+
+
+
+        // Check if the device supports touch events
+        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+        if (!isTouchDevice) {
+            const customCursor = document.querySelector(".custom-cursor");
+            // Add custom cursor functionality for non-touch devices
+
+            const links = document.querySelectorAll("a");
+
+            document.addEventListener('mousemove', function(event) {
+                customCursor.style.left = `${event.clientX}px`;
+                customCursor.style.top = `${event.clientY}px`;
+            });
+
+            links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    customCursor.classList.add("custom-cursor--link");
+                });
+
+                link.addEventListener("mouseout", (event) => {
+                    customCursor.classList.remove("custom-cursor--link");
+                    // Add a slight delay to prevent cursor flickering on hover-out
+                    setTimeout(() => {
+                        customCursor.style.left = `${event.clientX}px`;
+                        customCursor.style.top = `${event.clientY}px`;
+                    }, 10);
+                });
+            });
+
+
+
+
+
+
+        } else {
+            const customCursor = document.querySelector(".custom-cursor");
+            customCursor.style = `opacity: 0 !important;`;
+
+
+
+        }
+
+        $(document).ready(function() {
+            $('.hamburger-menu-wrapper').click(function() {
+                var $navMenu = $('.w-nav-menu');
+                $navMenu.toggle();
+                $(this).toggleClass('w--open');
+
+                // Disable scroll when menu is open
+                if ($navMenu.is(':visible')) {
+                    $('.header-content-wrapper').css('display', 'none');
+
+                    $('.container-default').css('padding-top', '0px');
+                    disableScroll();
+                } else {
+                    enableScroll();
+                }
+            });
+            // Event handler for the close button
+            $('.link-back').click(function() {
+                var $navMenu = $('.w-nav-menu');
+                var $hamburgerMenuWrapper = $('.hamburger-menu-wrapper');
+
+                $navMenu.hide();
+                $hamburgerMenuWrapper.removeClass('w--open');
+
+                // Enable scroll and show content
+                enableScroll();
+                $('.header-content-wrapper').css('display', 'flex');
+                $('.container-default').css('padding-top', 'your-original-padding-value');
+            });
+        });
+
+        $(window).on("scroll", function() {
+            if ($(window).scrollTop() >= 30) {
+                $(".header-wrapper").addClass("with-effect");
+            } else {
+                $(".header-wrapper").removeClass("with-effect");
+            }
+        });
+
+        // Disable scroll
+        function disableScroll() {
+            // Get the current scroll position
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            // Save the current scroll position and add scroll-lock styles
+            window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+            document.body.classList.add('scroll-lock');
+        }
+
+        // Enable scroll
+        function enableScroll() {
+            window.onscroll = null;
+            document.body.classList.remove('scroll-lock');
+        }
+        gsap.registerPlugin(ScrollTrigger);
+        // GSAP animation
+        const revealAnimation = gsap.timeline();
+
+        // Set initial state (fully transparent)
+        revealAnimation.set(".header-section-content h1 span", {
+            opacity: 0
+        });
+
+
+
+        setupLanguageSwitcher();
+    });
+</script>
+
+</html>
