@@ -1274,15 +1274,14 @@
         if (window.innerWidth > 991) {
             // Horizontal scrolling
             gsap.to(horizontalScroll, {
-                xPercent: -44 * (sections.length - 1),
-                ease: 'none',
+                x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+                ease: "none",
                 scrollTrigger: {
                     trigger: container,
+                    invalidateOnRefresh: true,
                     pin: true,
-                    start: 'top top',
-                    end: () => `+=${container.offsetWidth}`,
-
-                    scrub: 1,
+                    scrub: 3,
+                    end: () => "+=" + container.offsetWidth
                 },
             });
         }
