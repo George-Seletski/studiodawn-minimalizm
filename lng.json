@@ -46,7 +46,10 @@
         "main-filter": "All projects",
         "text-header-conditions": "Terms of use",
         "text-header-human-r": "Human Rights",
-        "text-header-privacy": "Privacy"
+        "text-header-privacy": "Privacy",
+        "Contact": "Contact",
+        "us": "us",
+        "project-intro": "Reqiro - formerly Planning &amp; Logistics, is a leading project management consultancy to clients in the power/energy, infrastructure/train and industrial sectors. As the business evolved and more offerings were developed, the identity and brand strategy needed to reflect the new scope of services while positioning them as an attractive partner for both client and consultant in a competitive market. Working closely with the client, we developed a new vision, brand platform, tone of voice and visual identity that represents Reqiro's values and focus on team spirit and skills development."
 
 
 
@@ -98,7 +101,10 @@
         "main-filter": "Tous les projets",
         "text-header-conditions": "Conditions d'utilisation",
         "text-header-human-r": "Droits de l'homme",
-        "text-header-privacy": "Vie privée"
+        "text-header-privacy": "Vie privée",
+        "Contact": "Contactez",
+        "us": "nous",
+        "project-intro": "Reqiro - anciennement Planning &amp ; Logistics, est une société de conseil en gestion de projet de premier plan pour les clients des secteurs de l'électricité/énergie, de l'infrastructure/du train et de l'industrie. Avec l'évolution de l'entreprise et le développement de nouvelles offres, l'identité et la stratégie de marque devaient refléter la nouvelle gamme de services tout en positionnant Reqiro comme un partenaire attrayant pour le client et le consultant sur un marché concurrentiel. En étroite collaboration avec le client, nous avons développé une nouvelle vision, une plateforme de marque, un ton de voix et une identité visuelle qui représentent les valeurs de Reqiro et l'accent mis sur l'esprit d'équipe et le développement des compétences"
 
     },
     "de": {
@@ -145,8 +151,10 @@
         "main-filter": "Alle Projekte",
         "text-header-conditions": "Nutzungsbedingungen",
         "text-header-human-r": "Menschenrechte",
-        "text-header-privacy": "Datenschutz"
-
+        "text-header-privacy": "Datenschutz",
+        "Contact": "Kontaktieren ",
+        "us": "Sie uns",
+        "project-intro": "Reqiro - ehemals Planning &amp; Logistics, ist ein führendes Projektmanagement-Beratungsunternehmen für Kunden aus den Bereichen Strom/Energie, Infrastruktur/Bahn und Industrie. Als sich das Unternehmen weiterentwickelte und weitere Angebote entwickelt wurden, mussten die Identität und die Markenstrategie den neuen Leistungsumfang widerspiegeln und das Unternehmen gleichzeitig als attraktiven Partner für Kunden und Berater in einem wettbewerbsintensiven Markt positionieren. In enger Zusammenarbeit mit dem Kunden entwickelten wir eine neue Vision, eine Markenplattform, einen Tonfall und eine visuelle Identität, die Reqiros Werte und den Fokus auf Teamgeist und Kompetenzentwicklung repräsentieren."
 
     }
 }
