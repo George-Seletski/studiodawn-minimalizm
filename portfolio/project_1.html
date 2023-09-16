@@ -5,49 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="STUDIODAWN | LESENIE" property="og:title">
-    <meta content="STUDIODAWN | LESENIE" property="twitter:title">
-    <title>STUDIODAWN | LESENIE</title>
+    <meta content="STUDIODAWN | KUKLA" property="og:title">
+    <meta content="STUDIODAWN | KUKLA" property="twitter:title">
+    <title>STUDIODAWN | KUKLA</title>
     <link rel="stylesheet" href="css/project_page_style.css" type="text/css">
     <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
-    <link href="../img/320x320px_fb_logo_studiodawn2_round.jpg" rel="apple-touch-icon">
+    <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
+    <script src="./js/jquery-3.6.0.min.js"></script>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/split-type@0.3.0/umd/index.min.js"></script>
 
 
 
 </head>
 <style>
-    /*drop-menu*/
-    
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        width: 35px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        right: 1em;
-        text-align: center;
-        border-radius: 5px;
-        padding: 5px;
-    }
-    
-    .dropdown-item {
-        font-weight: 400;
-        font-family: 'Roboto Regular', sans-serif !important;
-        font-size: 20px !important;
-    }
-    
-    .dropdown-content {
-        display: none;
-    }
-    
-    .dropdown-content.show {
-        display: block;
-        transition: transform 5s;
-        transition: all 0.5s ease;
-    }
-    
     .header-wrapper {
         background-color: transparent;
         position: fixed;
@@ -90,8 +66,8 @@
     
     .container-default {
         color: #dcddeb;
-        padding-left: 15px;
-        padding-right: 5px;
+        padding-left: 22px;
+        padding-right: 15px;
     }
     
     .w-container {
@@ -341,20 +317,16 @@
         object-position: center;
     }
     
+    .header-content-wrapper>.icons {
+        padding-right: 2.3em;
+    }
+    
     .icons {
         display: flex;
         flex-direction: row;
         gap: 15px;
         align-items: center;
         /*padding-right: 2.3em;*/
-    }
-    
-    .icons>div {
-        gap: 20px;
-        display: block;
-        width: 100%;
-        border-radius: 4.6655px;
-        background-color: transparent !important;
     }
     
     #icon {
@@ -859,7 +831,7 @@
         .h-scroll__section.contain {
             background-color: #fff;
             align-items: center;
-            padding-top: 0rem !important;
+            padding-top: 5rem !important;
             padding-bottom: 6rem;
         }
         .story__block.intro {
@@ -921,7 +893,7 @@
             text-align: left;
         }
         .h-scroll__section.contain.w-fit {
-            height: auto;
+            height: 97vh;
         }
     }
     
@@ -1039,16 +1011,12 @@
                     </a>
 
 
-                    <div class="icons" id="translate-icon">
+                    <div class="icons">
+
                         <div class="wh-30">
-                            <a href="javascript:void(0);">
-                                <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
+                            <a href="http://" rel="noopener noreferrer">
+                                <img src="../icons/global-svg-black.svg" id="icon" alt="" srcset="">
                             </a>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
-                                <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
-                                <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1061,7 +1029,7 @@
                     <section class="h-scroll__section intro-section">
                         <div class="w-layout-grid content-grid study__intro">
                             <div id="w-node-_94154434-1036-a7d8-10b7-6abab97b5db8-41af1f24" class="case-page__cover">
-                                <img src="./01_Kukla/bb2-sq.jpg" loading="lazy" alt="cover project" class="case__coverimg">
+                                <img src="./01 Kukla/bb2-sq.png" loading="eager" alt="" class="case__coverimg">
                             </div>
                             <div id="w-node-_1cec452e-7cf8-af20-6a1a-b55ad5757c48-41af1f24" class="story__block intro">
                                 <h2 class="p uc" style="opacity: 1; transform: translate(0px, 0px);">Reqiro</h2>
@@ -1069,9 +1037,9 @@
                                     <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">Leading People</div>
                                     <div class="lines" style="display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">and projects</div>
                                 </h1>
-                                <p class="p" style="font-family: 'Roboto Light'; font-weight:500;opacity: 1; transform: translate(0px, 0px);" data-translate="project-intro">Reqiro - formerly Planning Logistics, is a leading project management consultancy to clients in the power/energy, infrastructure/train and industrial sectors. As the business evolved and more offerings were developed, the
-                                    identity and brand strategy needed to reflect the new scope of services while positioning them as an attractive partner for both client and consultant in a competitive market. Working closely with the client, we developed
-                                    a new vision, brand platform, tone of voice and visual identity that represents Reqiro's values and focus on team spirit and skills development.</p>
+                                <p class="p" style="font-family: 'Roboto Light'; font-weight:500;opacity: 1; transform: translate(0px, 0px);">Reqiro - formerly Planning &amp; Logistics, is a leading project management consultancy to clients in the power/energy, infrastructure/train and industrial sectors. As the business evolved and more offerings were developed,
+                                    the identity and brand strategy needed to reflect the new scope of services while positioning them as an attractive partner for both client and consultant in a competitive market. Working closely with the client, we
+                                    developed a new vision, brand platform, tone of voice and visual identity that represents Reqiro's values and focus on team spirit and skills development.</p>
                                 <p class="cases-page__meta">Brand platform, Visual identity</p>
                             </div>
                         </div>
@@ -1079,66 +1047,68 @@
                     <section class="h-scroll__section story-content">
                         <div class="story__wrap">
                             <div class="story__block" style="transform: translate(0px, 0px);">
-
+                                <img src="./01 Kukla/design-manual.png" loading="eager" srcset="./01 Kukla/design-manual.png 500w, ./01 Kukla/design-manual.png 800w, ./01 Kukla/design-manual.png 1080w, ./01 Kukla/design-manual.png 1600w, ./01 Kukla/design-manual.png 1920w" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, 100vw"
+                                    alt="Placeholder image" class="vid-placeholder">
                                 <!--<div class="story__video w-embed w-iframe">
-                                                    <iframe loading="" src="https://player.vimeo.com/video/746522806?h=cbdbdcdccd?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203" frameborder="0" webkitallowfullscreen=""
-                                                        mozallowfullscreen="" allowfullscreen="" data-ready="true">
-                                                    </iframe>
-                                                </div>-->
-                                <img src="./01_Kukla/little_jpg/design-manual.jpg" loading="eager" srcset="./01_Kukla/little_jpg/design-manual.jpg 500w, ./01_Kukla/little_jpg/design-manual.jpg 800w, ./01_Kukla/little_jpg/design-manual.jpg 1080w, ./01_Kukla/little_jpg/design-manual.jpg 1504w"
-                                    id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
+                                    <iframe loading="" src="https://player.vimeo.com/video/746522806?h=cbdbdcdccd?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=1" width="360" height="203" frameborder="0" webkitallowfullscreen=""
+                                        mozallowfullscreen="" allowfullscreen="" data-ready="true">
+                                    </iframe>
+                                </div>-->
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/portfolio.jpg" loading="lazy" srcset="./01_Kukla/little_jpg/portfolio.jpg 500w, ./01_Kukla/little_jpg/portfolio.jpg 800w, ./01_Kukla/little_jpg/portfolio.jpg 1080w, ./01_Kukla/portfolio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
+                                <img src="./01 Kukla/portfolio.png" loading="eager" srcset="./01 Kukla/portfolio.png 500w, ./01 Kukla/portfolio.png 800w, ./01 Kukla/portfolio.png 1080w, ./01 Kukla/portfolio.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/logio.jpg" loading="lazy" srcset="./01_Kukla/little_jpg/logio.jpg 500w, ./01_Kukla/little_jpg/logio.jpg 800w, ./01_Kukla/little_jpg/logio.jpg 1080w, ./01_Kukla/logio.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
+                                <img src="./01 Kukla/logio.png" loading="eager" srcset="./01 Kukla/logio.png 500w, ./01 Kukla/logio.png 800w, ./01 Kukla/logio.png 1080w, ./01 Kukla/logio.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/mikina.jpg" srcset="./01_Kukla/little_jpg/mikina.jpg 500w, ./01_Kukla/little_jpg/mikina.jpg 800w, ./01_Kukla/little_jpg/mikina.jpg 1080w, ./01_Kukla/mikina.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
+                                <img src="./01 Kukla/mikina.png" loading="eager" srcset="./01 Kukla/mikina.png 500w, ./01 Kukla/mikina.png 800w, ./01 Kukla/mikina.png 1080w, ./01 Kukla/mikina.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="../01_Kukla/little_jpg/notysky.jpg" loading="eager" srcset="./01_Kukla/little_jpg/notysky.jpg 500w, ./01_Kukla/little_jpg/notysky.jpg 800w, ./01_Kukla/little_jpg/notysky.jpg 1080w, ./01_Kukla/notysky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
+                                <img src="./01 Kukla/notysky.png" loading="eager" srcset="./01 Kukla/notysky.png 500w, ./01 Kukla/notysky.png 800w, ./01 Kukla/notysky.png 1080w, ./01 Kukla/notysky.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/plechovky.jpg" srcset="./01_Kukla/little_jpg/plechovky.jpg 500w, ./01_Kukla/little_jpg/plechovky.jpg 800w, ./01_Kukla/little_jpg/little_jpg/plechovky.jpg 1080w, ./01_Kukla/plechovky.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
+                                <img src="./01 Kukla/plechovky.png" loading="eager" srcset="./01 Kukla/plechovky.png 500w, ./01 Kukla/plechovky.png 800w, ./01 Kukla/plechovky.png 1080w, ./01 Kukla/plechovky.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
                             </div>
                             <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/plechovka-2.jpg" loading="lazy" srcset="./01_Kukla/little_jpg/plechovka-2.jpg 500w, ./01_Kukla/little_jpg/plechovka-2.jpg 800w, ../01_Kukla/little_jpg/plechovka-2.jpg 1080w, ./01_Kukla/plechovka-2.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
-                            </div>
-                            <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/web-mobil.jpg" srcset="./01_Kukla/little_jpg/web-mobil.jpg 500w, ./01_Kukla/little_jpg/web-mobil.jpg 800w, ./01_Kukla/little_jpg/web-mobil.jpg 1080w, ./01_Kukla/web-mobil.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
-                            </div>
-                            <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/web-tablet.jpg" loading="eager" srcset="./01_Kukla/little_jpg/web-tablet.jpg 500w, ./01_Kukla/little_jpg/web-tablet.jpg 800w, ./01_Kukla/little_jpg/web-tablet.jpg 1080w, ./01_Kukla/web-tablet.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
-                            </div>
-                            <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/socky-01.jpg" loading="lazy" srcset="./01_Kukla/little_jpg/socky-01.jpg 500w, ./01_Kukla/little_jpg/socky-01.jpg 800w, ./01_Kukla/little_jpg/socky-01.jpg 1080w, ./01_Kukla/socky-01.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
-                            </div>
-                            <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/plechovka-3.jpg" loading="eager" srcset="./01_Kukla/little_jpg/plechovka-3.jpg 500w, ./01_Kukla/little_jpg/plechovka-3.jpg.jpg 800w, ./01_Kukla/little_jpg/plechovka-3.jpg.jpg 1080w, ./01_Kukla/plechovka-3.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
-                            </div>
-                            <div class="story__block" style="transform: translate(0px, 0px);">
-                                <img src="./01_Kukla/little_jpg/plechovka.jpg" loading="lazy" srcset="./01_Kukla/little_jpg/plechovka.jpg 500w, ./01_Kukla/little_jpg/plechovka.jpg.jpg 800w, ./01_Kukla/little_jpg/plechovka.jpg.jpg 1080w, ./01_Kukla/plechovka.jpg 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
-                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img ">
+                                <img src="./01 Kukla/plechovka-2.png" loading="eager" srcset="./01 Kukla/plechovka-2.png 500w, ./01 Kukla/plechovka-2.png 800w, ../01 Kukla/plechovka-2.png 1080w, ./01 Kukla/plechovka-2.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
                             </div>
 
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="./01 Kukla/web-mobil.png" loading="eager" srcset="./01 Kukla/web-mobil.png 500w, ./01 Kukla/web-mobil.png 800w, ./01 Kukla/web-mobil.png 1080w, ./01 Kukla/web-mobil.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="./01 Kukla/web-tablet.png" loading="eager" srcset="./01 Kukla/web-tablet.png 500w, ./01 Kukla/web-tablet.png 800w, ./01 Kukla/web-tablet.png 1080w, ./01 Kukla/web-tablet.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="./01 Kukla/socky-01.png" loading="eager" srcset="./01 Kukla/socky-01.png 500w, ./01 Kukla/socky-01.png 800w, ./01 Kukla/socky-01.png 1080w, ./01 Kukla/socky-01.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="./01 Kukla/plechovka-3.png" loading="eager" srcset="./01 Kukla/plechovka-3.png 500w, ./01 Kukla/plechovka-3.png.png 800w, ./01 Kukla/plechovka-3.png.png 1080w, ./01 Kukla/plechovka-3.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="./01 Kukla/plechovka.png" loading="eager" srcset="./01 Kukla/plechovka.png 500w, ./01 Kukla/plechovka.png.png 800w, ./01 Kukla/plechovka.png.png 1080w, ./01 Kukla/plechovka.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px" alt="" class="study__img">
+                            </div>
+                            <div class="story__block" style="transform: translate(0px, 0px);">
+                                <img src="./01 Kukla/" loading="eager" srcset="./01 Kukla/plechovka.png 500w, ./01 Kukla/plechovka.png.png 800w, ./01 Kukla/plechovka.png.png 1080w, ./01 Kukla/plechovka.png 1504w" id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24" sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt="" class="study__img">
+                            </div>
 
                             <div class="story__block" style="transform: translate(0px, 0px);">
                                 <div class="w-layout-grid content-grid">
                                     <div id="w-node-_558cbe49-47be-6b80-4e52-a6d05b617516-41af1f24">
-                                        <a href="/studiodawn-minimalizm/portfolio/" class="l uc" style="  border-bottom: 2px solid #131314;opacity: 1; transform: translate(0px, 100px);">More cases</a>
-                                    </div>
+                                        <a href="/studiodawn-minimalizm/portfolio/" class="l uc" style="  border-bottom: 2px solid #131314;opacity: 1; transform: translate(0px, 100px);">More cases</a></div>
                                 </div>
                             </div>
                         </div>
@@ -1150,8 +1120,8 @@
                             <div class=" case-page__cover h-extra w-fit">
                                 <div class="cover__heading last-page w-fit">
                                     <h1 class="xxxl contact-heading">
-                                        <div class="lines" style=" font-family: 'Cormorant Garamond Semibold', sans-serif; display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';" data-translate="Contact">Contact</div>
-                                        <div class="lines" style="font-family: 'Roboto Light', sans-serif;display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);" data-translate="us">us.</div>
+                                        <div class="lines" style=" font-family: 'Cormorant Garamond Semibold', sans-serif; display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';">Contact</div>
+                                        <div class="lines" style="font-family: 'Roboto Light', sans-serif;display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);">us.</div>
                                     </h1>
                                 </div>
                             </div>
@@ -1213,34 +1183,23 @@
             </div>
         </div>
     </main>
-    <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="../js/all_functions.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-
 
 
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+
+
+
         // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
 
-        const translateIcon = document.querySelector(".translate-icon-global");
-        const dropdownContent = document.querySelector(".dropdown-content");
-
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+        let screenWidth = window.innerWidth;
+        let storyBlock = document.querySelector(".story-content");
+        //console.log('width:' + screenWidth + 'em');
 
-        // Use const for screenWidth instead of let as it doesn't change
-        const screenWidth = window.innerWidth;
-
-        // Use querySelector instead of querySelectorAll for a single element
-        const storyBlock = document.querySelector(".story-content");
-
-        // Use template literals for string interpolation
-        console.log(`width: ${screenWidth}em`);
 
         const sections = document.querySelectorAll('.h-scroll__section');
         const horizontalScroll = document.querySelector('.h-scroll__inview');
@@ -1248,50 +1207,52 @@
 
         // Calculate the total width of the horizontal content
         const horizontalContentWidth = (sections.length - 1) * window.innerWidth;
-        console.log(horizontalContentWidth);
-
-        translateIcon.addEventListener("click", function() {
-            dropdownContent.classList.toggle("show");
-        });
-
-        // Close the dropdown when clicking outside
-        window.addEventListener("click", function(event) {
-            if (!event.target.matches(".translate-icon-global") && dropdownContent.classList.contains("show")) {
-                dropdownContent.classList.remove("show");
-            }
-        });
-
-        setupLanguageSwitcher();
+        //console.log(horizontalContentWidth, sections.length, window.innerWidth, container.offsetWidth, 'horizontalContentWidth - container.offsetWidth:', horizontalContentWidth - container.offsetWidth);
+        console.log((sections.length - 1) * window.innerWidth);
 
         // Vertical scrolling for mobile and tablet devices
         if (window.innerWidth > 991) {
-            // Horizontal scrolling
-            gsap.to(horizontalScroll, {
-                xPercent: -43 * (sections.length - 1),
-                ease: 'none',
-                delay: 100,
-                scrollTrigger: {
-                    trigger: container,
-                    invalidateOnRefresh: true,
-                    pin: true,
-                    start: 'top top',
-                    end: () => `+=${container.offsetWidth}`,
+            if (window.innerWidth < 1920) {
+                // Horizontal scrolling
+                gsap.to(horizontalScroll, {
+                    xPercent: -38 * (sections.length - 1),
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: container,
+                        pin: true,
+                        start: 'top top',
+                        end: () => `+=${container.offsetWidth}`,
 
-                    scrub: 1,
-                },
-            });
+                        scrub: 1,
+                    },
+                });
+            } else {
+                // Horizontal scrolling
+                gsap.to(horizontalScroll, {
+                    xPercent: -43 * (sections.length - 1),
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: container,
+                        pin: true,
+                        start: 'top top',
+                        end: () => `+=${container.offsetWidth}`,
+
+                        scrub: 1,
+                    },
+                });
+            }
         }
 
         if (!isTouchDevice) {
-            const images = document.querySelectorAll(".study__img");
+
 
             const scrollContainer = document.querySelector(".h-scroll__inview");
             console.log(window.innerWidth, window.innerHeight);
 
             if (screenWidth < 1919) {
-                scrollContainer.style.width = '1450em !important';
+                scrollContainer.style = 'width: 1500em !important';
             } else {
-                scrollContainer.style.width = `${screenWidth - 589}em`;
+                scrollContainer.style = 'width:' + (screenWidth - 575) + 'em';
             }
 
             const customCursor = document.querySelector(".custom-cursor");
@@ -1317,10 +1278,14 @@
                     }, 30);
                 });
             });
+
         } else {
             const scrollContainer = document.querySelector(".h-scroll__inview");
             const customCursor = document.querySelector(".custom-cursor");
-            customCursor.style.opacity = '0 !important';
+            customCursor.style = `opacity: 0 !important;`;
+
+            let screenWidth = window.innerWidth;
+            scrollContainer.style = 'width:' + screenWidth + 'em';
 
             // Function to disable vertical scrolling
             function disableVerticalScroll() {
@@ -1337,14 +1302,21 @@
                 event.preventDefault();
             }
 
+
             if (screenWidth < 1919 && screenWidth > 991) {
                 // Call the disableVerticalScroll function to turn off y scrolling
-                scrollContainer.style.width = `${screenWidth}em`;
-                storyBlock.style.width = `${screenWidth}em`;
+                scrollContainer.style = 'width:' + screenWidth + 'em';
+                storyBlock.style = 'width:' + screenWidth * 0.5 + 'em';
                 disableVerticalScroll();
             } else if (screenWidth < 1919) {
-                scrollContainer.style.width = '100%';
+                scrollContainer.style = 'width:100%;';
             }
+
+            console.log('width:' + screenWidth + 'em');
+
+            console.log('width:' + screenWidth + 'em');
+            console.log('width:' + screenWidth * 1.83 + 'em');
+            console.log('width:' + screenWidth * 1.5 + 'em');
         }
 
         $(document).ready(function() {
@@ -1356,13 +1328,13 @@
                 // Disable scroll when menu is open
                 if ($navMenu.is(':visible')) {
                     $('.header-content-wrapper').css('display', 'none');
+
                     $('.container-default').css('padding-top', '0px');
                     disableScroll();
                 } else {
                     enableScroll();
                 }
             });
-
             // Event handler for the close button
             $('.link-back').click(function() {
                 var $navMenu = $('.w-nav-menu');
@@ -1396,6 +1368,364 @@
 
             // Save the current scroll position and add scroll-lock styles
             window.onscroll = function() {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+            document.body.classList.add('scroll-lock');
+        }
+
+        // Enable scroll
+        function enableScroll() {
+            window.onscroll = null;
+            document.body.classList.remove('scroll-lock');
+        }
+    });
+</script>
+
+</html>                     >
+                                <img
+                                    src="./01 Kukla/plechovka.png"
+                                    loading="eager"
+                                    srcset="./01 Kukla/plechovka.png 500w, ./01 Kukla/plechovka.png.png 800w, ./01 Kukla/plechovka.png.png 1080w, ./01 Kukla/plechovka.png 1504w"
+                                    id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt=""
+                                    class="study__img"
+                                >
+                            </div>
+                            <div
+                                class="story__block"
+                                style="transform: translate(0px, 0px);"
+                            >
+                                <img
+                                    src="./01 Kukla/"
+                                    loading="eager"
+                                    srcset="./01 Kukla/plechovka.png 500w, ./01 Kukla/plechovka.png.png 800w, ./01 Kukla/plechovka.png.png 1080w, ./01 Kukla/plechovka.png 1504w"
+                                    id="w-node-f2264b9f-9d85-e162-f108-05c4b5be8c17-41af1f24"
+                                    sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 92vw, (max-width: 1534px) 98vw, 1504px"
+                                    alt=""
+                                    class="study__img"
+                                >
+                            </div>
+
+                            <div
+                                class="story__block"
+                                style="transform: translate(0px, 0px);"
+                            >
+                                <div class="w-layout-grid content-grid">
+                                    <div id="w-node-_558cbe49-47be-6b80-4e52-a6d05b617516-41af1f24">
+                                        <a
+                                            href="/studiodawn-minimalizm/portfolio/"
+                                            class="l uc"
+                                            style="  border-bottom: 2px solid #131314;opacity: 1; transform: translate(0px, 100px);"
+                                        >More cases</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section
+                        class="h-scroll__section contain w-fit"
+                        style="padding-left:0;"
+                    >
+                        <div class="section__flx ">
+
+
+                            <div class=" case-page__cover h-extra w-fit">
+                                <div class="cover__heading last-page w-fit">
+                                    <h1 class="xxxl contact-heading">
+                                        <div
+                                            class="lines"
+                                            style=" font-family: 'Cormorant Garamond Semibold', sans-serif; display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);  font-family: 'Cormorant Garamond Semibold';"
+                                        >Contact</div>
+                                        <div
+                                            class="lines"
+                                            style="font-family: 'Roboto Light', sans-serif;display: block; text-align: left; width: 100%; opacity: 1; transform: translate(0px, 0px);"
+                                        >us.</div>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="contact-us-block last-page-block w-fit">
+                                <div id="icon-box">
+                                    <div
+                                        class="info-block-case"
+                                        style="padding-top: 2em;"
+                                    >
+                                        <div class="contanct-links">
+                                            <div class="link-email">
+                                                <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                                            </div>
+                                            <div class="link-telephone">
+                                                <a href="tel:+421905455208">+421 905 455 208</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="case-page-icons">
+                                            <div class="size-2x">
+                                                <a
+                                                    href="http://"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    <img
+                                                        src="../icons/facebook-svg-large.svg"
+                                                        id="icon"
+                                                        alt=""
+                                                        srcset=""
+                                                    >
+                                                </a>
+                                            </div>
+                                            <div class=" size-2x">
+                                                <a
+                                                    href="http://"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    <img
+                                                        src="../icons/instagram-svg.svg"
+                                                        id="icon"
+                                                        alt=""
+                                                        srcset=""
+                                                    >
+                                                </a>
+                                            </div>
+                                            <div class=" size-2x">
+                                                <a
+                                                    href="http://"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    <img
+                                                        src="../icons/behance.svg"
+                                                        id="icon"
+                                                        alt=""
+                                                        srcset=""
+                                                    >
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div
+                            class="section__flx"
+                            style="justify-content:flex-end;"
+                        >
+                            <div class="info-block-case w-fit">
+                                <h3 class="contact-h3 font-case-page">Canada</h3>
+                                <a
+                                    href="https://goo.gl/maps/YhsRrfmUDQrqFK8d7"
+                                    class="link-address "
+                                >228 Nelson's Crescent, <br>BC V3L 3E3 New
+                                    Westminster, <br>
+                                    Canada</a>
+                            </div>
+                            <div class="info-block-case w-fit">
+                                <h3 class="contact-h3 font-case-page">Slovakia</h3>
+                                <a
+                                    href="https://goo.gl/maps/68tgaaguMsgvmjUe6"
+                                    class="link-address "
+                                >Tallerova 4,<br>
+                                    811 02 Bratislava,<br>Slovakia</a>
+                            </div>
+
+
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Check if the device supports touch events
+        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+        let screenWidth = window.innerWidth;
+        let storyBlock = document.querySelector(".story-content");
+        //console.log('width:' + screenWidth + 'em');
+
+
+        const sections = document.querySelectorAll('.h-scroll__section');
+        const horizontalScroll = document.querySelector('.h-scroll__inview');
+        const container = document.querySelector('.h-scroll__inner');
+
+        // Calculate the total width of the horizontal content
+        const horizontalContentWidth = (sections.length - 1) * window.innerWidth;
+        //console.log(horizontalContentWidth, sections.length, window.innerWidth, container.offsetWidth, 'horizontalContentWidth - container.offsetWidth:', horizontalContentWidth - container.offsetWidth);
+        console.log((sections.length - 1) * window.innerWidth);
+
+        // Vertical scrolling for mobile and tablet devices
+        if (window.innerWidth > 991) {
+            if (window.innerWidth < 1920) {
+                // Horizontal scrolling
+                gsap.to(horizontalScroll, {
+                    xPercent: -38 * (sections.length - 1),
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: container,
+                        pin: true,
+                        start: 'top top',
+                        end: () => `+=${container.offsetWidth}`,
+
+                        scrub: 1,
+                    },
+                });
+            } else {
+                // Horizontal scrolling
+                gsap.to(horizontalScroll, {
+                    xPercent: -43 * (sections.length - 1),
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: container,
+                        pin: true,
+                        start: 'top top',
+                        end: () => `+=${container.offsetWidth}`,
+
+                        scrub: 1,
+                    },
+                });
+            }
+        }
+
+        if (!isTouchDevice) {
+
+
+            const scrollContainer = document.querySelector(".h-scroll__inview");
+            console.log(window.innerWidth, window.innerHeight);
+
+            if (screenWidth < 1919) {
+                scrollContainer.style = 'width: 1500em !important';
+            } else {
+                scrollContainer.style = 'width:' + (screenWidth - 575) + 'em';
+            }
+
+            const customCursor = document.querySelector(".custom-cursor");
+
+            // Add custom cursor functionality for non-touch devices
+            document.addEventListener('mousemove', function (event) {
+                customCursor.style.left = `${event.clientX}px`;
+                customCursor.style.top = `${event.clientY}px`;
+            });
+
+            const links = document.querySelectorAll("a");
+
+            links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    customCursor.classList.add("custom-cursor--link");
+                });
+
+                link.addEventListener("mouseout", () => {
+                    customCursor.classList.remove("custom-cursor--link");
+                    setTimeout(() => {
+                        customCursor.style.left = `${event.clientX}px`;
+                        customCursor.style.top = `${event.clientY}px`;
+                    }, 30);
+                });
+            });
+
+        } else {
+            const scrollContainer = document.querySelector(".h-scroll__inview");
+            const customCursor = document.querySelector(".custom-cursor");
+            customCursor.style = `opacity: 0 !important;`;
+
+            let screenWidth = window.innerWidth;
+            scrollContainer.style = 'width:' + screenWidth + 'em';
+
+            // Function to disable vertical scrolling
+            function disableVerticalScroll() {
+                document.addEventListener("scroll", preventScroll);
+            }
+
+            // Function to re-enable vertical scrolling
+            function enableVerticalScroll() {
+                document.removeEventListener("scroll", preventScroll);
+            }
+
+            // Function to prevent the default scroll behavior
+            function preventScroll(event) {
+                event.preventDefault();
+            }
+
+
+            if (screenWidth < 1919 && screenWidth > 991) {
+                // Call the disableVerticalScroll function to turn off y scrolling
+                scrollContainer.style = 'width:' + screenWidth + 'em';
+                storyBlock.style = 'width:' + screenWidth * 0.5 + 'em';
+                disableVerticalScroll();
+            } else if (screenWidth < 1919) {
+                scrollContainer.style = 'width:100%;';
+            }
+
+            console.log('width:' + screenWidth + 'em');
+
+            console.log('width:' + screenWidth + 'em');
+            console.log('width:' + screenWidth * 1.83 + 'em');
+            console.log('width:' + screenWidth * 1.5 + 'em');
+        }
+
+        $(document).ready(function () {
+            $('.hamburger-menu-wrapper').click(function () {
+                var $navMenu = $('.w-nav-menu');
+                $navMenu.toggle();
+                $(this).toggleClass('w--open');
+
+                // Disable scroll when menu is open
+                if ($navMenu.is(':visible')) {
+                    $('.header-content-wrapper').css('display', 'none');
+
+                    $('.container-default').css('padding-top', '0px');
+                    disableScroll();
+                } else {
+                    enableScroll();
+                }
+            });
+            // Event handler for the close button
+            $('.link-back').click(function () {
+                var $navMenu = $('.w-nav-menu');
+                var $hamburgerMenuWrapper = $('.hamburger-menu-wrapper');
+
+                $navMenu.hide();
+                $hamburgerMenuWrapper.removeClass('w--open');
+
+                // Enable scroll and show content
+                enableScroll();
+                $('.header-content-wrapper').css('display', 'flex');
+                $('.container-default').css('padding-top', 'your-original-padding-value');
+            });
+        });
+
+        $(document).ready(function () {
+            $(window).on("scroll", function () {
+                if ($(window).scrollTop() >= 30) {
+                    $(".header-wrapper").addClass("with-effect");
+                } else {
+                    $(".header-wrapper").removeClass("with-effect");
+                }
+            });
+        });
+
+        // Disable scroll
+        function disableScroll() {
+            // Get the current scroll position
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            // Save the current scroll position and add scroll-lock styles
+            window.onscroll = function () {
                 window.scrollTo(scrollLeft, scrollTop);
             };
             document.body.classList.add('scroll-lock');
