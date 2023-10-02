@@ -2144,7 +2144,7 @@ label {
 }
 
 .h-scroll__inner {
-    width: 100vw;
+    width: 100vw !important;
     height: 100vh;
     display: block;
 }
@@ -2237,6 +2237,7 @@ label {
     line-height: 1.25;
     display: block;
     overflow: hidden;
+    width: 3000em;
 }
 
 .content-grid {
@@ -3908,6 +3909,18 @@ label {
 .div-block-24 {
     width: 50%;
     padding-left: 10px;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 991px) {
+    .h-scroll__inview {
+        height: 100vh;
+        flex-wrap: wrap;
+        align-items: center;
+        line-height: 1.25;
+        display: block;
+        overflow: hidden;
+        width: 2050em;
+    }
 }
 
 @media screen and (max-width: 991px) {
