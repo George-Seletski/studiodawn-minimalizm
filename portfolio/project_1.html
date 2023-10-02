@@ -1266,9 +1266,10 @@
             console.log(window.innerWidth, window.innerHeight);
 
             if (screenWidth < 1919) {
-                scrollContainer.style.width = '1450em !important';
+
+                scrollContainer.style.width = `${screenWidth - 560}em`;
             } else {
-                scrollContainer.style.width = `${screenWidth-500}em`;
+                scrollContainer.style.width = `${screenWidth-580}em`;
 
             }
 

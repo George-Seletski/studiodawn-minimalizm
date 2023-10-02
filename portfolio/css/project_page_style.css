@@ -3911,7 +3911,7 @@ label {
     padding-left: 10px;
 }
 
-@media screen and (max-width: 1200px) and (min-width: 991px) {
+@media screen and (max-width: 1200px) {
     .h-scroll__inview {
         height: 100vh;
         flex-wrap: wrap;
@@ -3919,7 +3919,7 @@ label {
         line-height: 1.25;
         display: block;
         overflow: hidden;
-        width: 2050em;
+        width: 2050em !important;
     }
 }
 
