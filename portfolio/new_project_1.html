@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIODAWN</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css">
+    <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
+    <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
+
+</head>
+<style>
+    @font-face {
+        font-family: 'GeneralSans-Light';
+        src: url('./fonts/GeneralSans/GeneralSans-Light.woff2') format('woff2'), url('./fonts/GeneralSans/GeneralSans-Light.woff') format('woff'), url('./fonts/GeneralSans/GeneralSans-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-display: swap;
+        font-style: normal;
+    }
+    
+    .fnt-small {
+        font-size: 60px;
+        line-height: 50px;
+    }
+    
+    @media screen and (max-width: 479px) {}
+    
+    @media screen and (max-width: 1400px) {}
+    
+    @media screen and (max-width: 991px) {
+        h1 {
+            line-height: 1 !important;
+            font-size: 150px !important;
+        }
+        .project-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center !important;
+        }
+        .project-header>h1 {
+            font-family: 'Roboto Thin';
+            text-transform: uppercase;
+            text-align: right;
+            font-size: 250px !important;
+            color: #fff;
+            font-weight: 100;
+            margin-top: 60% !important;
+            margin-left: 0;
+            margin-right: 0 !important;
+        }
+        #image-bg-1 {
+            display: block;
+            width: 100vw;
+            height: auto !important;
+            text-align: center;
+            user-select: none;
+        }
+        .col-3 {
+            display: flex;
+            align-items: flex-start;
+            margin: 144px 144px 100px 144px!important;
+            flex-direction: column !important;
+            gap: 10em !important;
+            width: fit-content;
+            padding: 0 2em;
+        }
+        .pr-description {
+            width: fit-content !important;
+        }
+        .pr-text {
+            width: 90%;
+            font-size: 18px !important;
+            line-height: normal;
+        }
+        #pr-desc-header {
+            font-family: 'Cormorant Garamond Semibold', sans-serif;
+            font-size: 45px !important;
+            font-weight: 600 !important;
+            line-height: normal;
+        }
+        .col-2 {
+            display: flex;
+            align-items: flex-start;
+            margin: 144px 144px 100px 144px;
+            flex-direction: column !important;
+            gap: 15em;
+        }
+        .story-text {
+            font-size: 24px !important;
+            font-family: 'Roboto Thin';
+            line-height: 1;
+            font-weight: 900;
+        }
+        .contact-container {
+            display: flex;
+            flex-direction: column !important;
+            margin: 0 2em !important;
+            align-items: center;
+            padding: 100px 0px !important;
+        }
+        .contact-container-col {
+            display: block;
+            width: 100% !important;
+        }
+        .contact-container-header {
+            padding: 100px 144px !important;
+            font-size: 44px;
+            line-height: normal;
+            font-family: 'Cormorant Garamond Semibold';
+        }
+        .link-item {
+            text-align: center !important;
+            padding: 0;
+            width: 100% !important;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        #contact-cont {
+            width: 100%;
+            padding: 0 144px !important;
+        }
+    }
+    
+    h1 {
+        font-size: 120px;
+    }
+    
+    .image-container {
+        display: block;
+        margin: 0 auto;
+        height: auto;
+        width: auto;
+        position: relative;
+    }
+    
+    .image-container-2 {
+        display: flex;
+        margin: 0 auto;
+        height: auto;
+        width: auto;
+        position: relative;
+    }
+    
+    #image-bg-1 {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        user-select: none;
+    }
+    
+    .project-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+    
+    .project-header>h1 {
+        font-family: 'Roboto Thin';
+        text-transform: uppercase;
+        text-align: right;
+        font-size: 450px;
+        color: #fff;
+        font-weight: 100;
+        margin-top: 47%;
+        margin-left: 0;
+        margin-right: 0;
+        /* Remove margin to ensure the h1 doesn't add extra space */
+    }
+    
+    .col-3 {
+        display: flex;
+        align-items: flex-start;
+        margin: 144px 104px 100px 144px;
+        flex-direction: row;
+        gap: 15em;
+        position: relative;
+    }
+    
+    .col-2 {
+        display: flex;
+        align-items: flex-start;
+        margin: 144px 144px 100px 144px;
+        flex-direction: row;
+        gap: 15em;
+    }
+    
+    .pr-name {
+        display: inline-block;
+    }
+    
+    .pr-name>h2 {
+        font-size: 80px !important;
+        font-weight: 600 !important;
+        text-align: left;
+        margin: 0;
+        padding: 0px 0 0 0;
+    }
+    
+    .sub-col-3 {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .pr-description {
+        width: 100%;
+    }
+    
+    .pr-scope,
+    .pr-location {
+        display: block;
+        width: 50%;
+        padding-top: 6em;
+        font-size: 14px;
+    }
+    
+    #project-scope-header,
+    #pr-location-header {
+        text-transform: uppercase;
+        margin: 0;
+        padding-bottom: 10px;
+        font-size: 18px;
+    }
+    
+    #pr-desc-header {
+        font-family: 'Cormorant Garamond Semibold', sans-serif;
+        font-size: 50px !important;
+        font-weight: 600 !important;
+        line-height: normal;
+    }
+    
+    .pr-scope-list,
+    .pr-location-title {
+        font-family: 'Roboto Light';
+    }
+    
+    .pr-text {
+        font-family: 'Roboto Regular';
+        font-size: 16px;
+    }
+    
+    .story-header {}
+    
+    .story-header>h2 {
+        font-size: 50px;
+        line-height: normal;
+        font-family: 'Cormorant Garamond Semibold';
+        font-weight: 400;
+    }
+    
+    .story-container {}
+    
+    .story-text-header>h3 {
+        font-size: 45px;
+        line-height: normal;
+        font-family: 'Cormorant Garamond Semibold';
+    }
+    
+    .story-text {
+        font-size: 20px;
+        font-family: 'Roboto Thin';
+        line-height: normal;
+        font-weight: 900;
+    }
+    
+    .pr-text-item {
+        padding-top: 32px;
+    }
+    
+    .pr-scope-list {
+        padding-left: 20px;
+    }
+    
+    .pr-scope-list>li {
+        list-style-type: disc;
+    }
+    
+    .contact-container {
+        display: flex;
+        flex-direction: row;
+        margin: 144px 144px 100px 144px;
+    }
+    
+    .contact-container-col {
+        display: block;
+        width: 50%;
+    }
+    
+    .link-list {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .link-item {
+        text-align: left;
+        padding: 0;
+        width: 40%;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .contact-container {
+        padding-top: 2em;
+    }
+    
+    .contact-container-header {
+        padding: 100px 0;
+        font-size: 44px;
+        line-height: normal;
+        font-family: 'Cormorant Garamond Semibold';
+    }
+    
+    .contact-container-link {
+        padding: 0;
+        display: inline-block;
+    }
+    
+    .contact-container-link>a {
+        font-family: 'GeneralSans-Light';
+        font-size: 54px;
+        margin: 0;
+        display: inline;
+        position: relative;
+        text-decoration: none;
+    }
+    
+    .contact-container-link>a {
+        font-family: 'GeneralSans-Light';
+        font-size: 54px;
+        margin: 0;
+        display: inline;
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        transition: color 0.3s;
+    }
+    
+    .contact-container-link>a:hover {
+        color: #9D988C;
+    }
+    
+    .contact-container-link>a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        height: 2px;
+        background-color: #000;
+    }
+    
+    .contact-container-link>a:hover::after {
+        transform: scaleX(1);
+        background-color: #9D988C;
+        /* Show the underline on hover with scaleX(1) */
+    }
+</style>
+
+<body>
+
+    <div class="custom-cursor"></div>
+
+    <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
+        <div class="container-default w-container">
+
+            <div class="header-right-col">
+                <nav role="navigation" class="header-hamburger-desktop-wrapper w-nav-menu ">
+                    <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
+                    <div class="menu container-default-center">
+                        <div class="w-container">
+                            <ul role="list" class="nav-list white">
+                                <li class="nav-item">
+                                    <a href="../" class="nav-link" data-translate="nav-link-1" rel="preload" as="fetch">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../portfolio/" class="nav-link w--current" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../contact" class="nav-link" data-translate="nav-link-4" rel="preload" as="fetch">Contact us</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="w-container">
+                            <div class="nav-info-submenu">
+
+                                <ul role="list" class="nav-info">
+                                    <h2 class="nav-info-header " data-translate="nav-work-inq">Work Inquiries.</h2>
+                                    <li class="nav-item">
+                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                    </li>
+                                </ul>
+                                <ul role="list" class="nav-info">
+                                    <h2 class="nav-info-header white" data-translate="nav-intouch">Get in touch.</h2>
+                                    <li class="nav-item">
+                                        <a href="#" class="link-address white">228 Nelson's Crescent New
+                                            Westminster, BC V3L 3E3</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
+                                    </li>
+
+                                    <li class="nav-item ">
+                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </nav>
+            </div>
+
+            <div class="header-content-wrapper">
+                <div class="hamburger-menu-wrapper w-nav-button">
+                    <div class="hamburger-menu-bar-top"></div>
+                    <div class="hamburger-menu-bar-top"></div>
+                    <div class="hamburger-menu-bar-bottom"></div>
+                </div>
+                <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
+                    <img src="../img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                </a>
+
+
+                <div class="icons" id="translate-icon">
+                    <div class="wh-30">
+                        <a href="javascript:void(0);">
+                            <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
+                        </a>
+                        <div class="dropdown-content">
+                            <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
+                            <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
+                            <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="page-wrapper">
+        <div class="image-container">
+            <img id="image-bg-1" src="./01_Kukla/bb2.jpg" loading="eager" alt="cover project" srcset="">
+
+            <div class="project-header">
+                <h1>Kukla</h1>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="pr-name">
+                <h2>Kukla</h2>
+            </div>
+            <div class="pr-description">
+                <h2 id="pr-desc-header">A new frontier in piercing</h2>
+                <div class="sub-col-3">
+                    <div class="pr-scope">
+                        <h3 id="project-scope-header">
+                            Project-scope:
+                        </h3>
+                        <ul class="pr-scope-list">
+                            <li>Branding</li>
+                        </ul>
+                    </div>
+                    <div class="pr-location">
+                        <h3 id="pr-location-header">
+                            Location:
+                        </h3>
+                        <span class="pr-location-title">Gold Coast, Australia</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pr-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid explicabo unde voluptatibus, similique ullam. Veniam distinctio non modi natus consequatur? Autem provident totam debitis adipisci eum perferendis aliquid dolores.
+                </p>
+                <p class="pr-text-item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid explicabo unde voluptatibus, similique ullam. Veniam distinctio non modi natus consequatur? Autem provident totam debitis adipisci eum perferendis aliquid dolores.
+                </p>
+                <p class="pr-text-item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid explicabo unde voluptatibus, similique ullam. Veniam distinctio non modi natus consequatur? Autem provident totam debitis adipisci eum perferendis aliquid dolores.
+                </p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img id="image-bg-1" oading="lazy" src="./01_Kukla/logio.jpg" alt="" srcset="">
+
+        </div>
+        <div class="col-2">
+            <div class="story-header">
+                <h2>Kukla elevates your everyday with adornment that steps up your signature look with a sartorial statement. It’s the bold you. The brave you. The you you’ve been building up to be.</h2>
+            </div>
+            <div class="story-container">
+                <div class="story-text-header">
+                    <h3>Who is Kukla?</h3>
+                </div>
+                <div class="story-text">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
+                    experience that encourages self expression for a life fully actualised. They believe fully and fiercely that style is not tantamount to fashion; True style is a mindset, an attitude. Walk into Kukla and walk out feeling empowered to
+                    be authentically you, however that looks.</div>
+            </div>
+        </div>
+        <div class="image-container-2">
+            <div class="image-col">
+                <img loading="lazy" src="./01_Kukla/plechovka-2.jpg" alt="#" srcset="">
+            </div>
+            <div class="image-col">
+                <img loading="lazy" src="./01_Kukla/plechovka-3.jpg" alt="#" srcset="">
+            </div>
+        </div>
+        <div class="image-container">
+            <img id="image-bg-1" loading="lazy" src="./01_Kukla/plechovka.jpg" alt="#" srcset="">
+
+        </div>
+        <div class="contact-container">
+            <div class="contact-container-col">
+                <div class="link-container">
+                    <ul class="link-list">
+                        <li class="link-item">
+                            <a href="#" onclick='window.scrollTo({top: 0, behavior: "smooth"});'>back to top</a>
+                        </li>
+                        <li class="link-item">
+                            <a href="/portfolio/">back to portfolio</a>
+                        </li>
+                        <li class="link-item">
+                            <a href="">next project</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-container-header">
+                    <h2>Enjoy what you observe in this work? Searching for a creative partner?
+                        <span class='contact-container-link'><a  href="../contact/" rel="noopener noreferrer">Shall we talk?</a></span>
+                    </h2>
+                </div>
+            </div>
+            <div class="contact-container-col">
+                <div id="contact-cont">
+                    <div id="icon-box">
+                        <div class="info-block-case" style="user-select: text;">
+                            <div class="contanct-links">
+                                <div class="link-email">
+                                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                                </div>
+                                <div class="link-telephone">
+                                    <a href="tel:+421905455208">+421 905 455 208</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <footer>
+            <div class="text-header">
+                <div class="footer-header">
+                    <h2 data-translate="footer-h2">Get in touch</h2>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-fnt link-email">
+                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                </div>
+                <div class="footer-fnt link-email">
+                    <a href="tel:+421905455208">+421 905 455 208</a>
+                </div>
+            </div>
+            <div class="licence-container">
+                <ul class="licence-container-list">
+                    <li id="licence-item"> <a href="../privacy_index.html" rel="noopener noreferrer" data-translate="footer-li-text-1">Privacy</a> </li>
+                    <li id="licence-item"><a href="../conditions_index.html" rel="noopener noreferrer" data-translate="footer-li-text-2">Conditions</a></li>
+                    <li id="licence-item"><a href="../human_rughts_index.html" rel="noopener noreferrer" data-translate="footer-li-text-3">Human Rights</a></li>
+                </ul>
+            </div>
+            <div class="icon-box">
+
+                <!--<div class="language-icon">
+                        <div id="language-icon-circle">
+                            <div class="svg-icon">
+    
+                            </div>
+                        </div>
+                    </div>-->
+                <div class="icons">
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="../js/ScrollTriger.js" async></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const translateIcon = document.querySelector(".translate-icon-global");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        // Check if the device supports touch events
+        const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+        const customCursor = document.querySelector(".custom-cursor");
+        if (!isTouchDevice) {
+            customCursor.style = `opacity: 1 !important;`;
+            const links = document.querySelectorAll("a");
+
+            document.addEventListener('mousemove', function(event) {
+                customCursor.style.left = `${event.clientX}px`;
+                customCursor.style.top = `${event.clientY}px`;
+            });
+
+            links.forEach((link) => {
+                link.addEventListener("mouseover", () => {
+                    customCursor.classList.add("custom-cursor--link");
+                });
+
+                link.addEventListener("mouseout", (event) => { // Capture the event object
+                    customCursor.classList.remove("custom-cursor--link");
+                    // Add a slight delay to prevent cursor flickering on hover-out
+                    setTimeout(() => {
+                        customCursor.style.left = `${event.clientX}px`; // Use the captured event object here
+                        customCursor.style.top = `${event.clientY}px`; // Use the captured event object here
+                    }, 50);
+                });
+            });
+        }
+
+        translateIcon.addEventListener("click", function() {
+            dropdownContent.classList.toggle("show");
+        });
+
+        // Close the dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+
+            if (!event.target.matches(".translate-icon-global")) {
+                console.log('translate-icon-globa clicked');
+                if (dropdownContent.classList.contains("show")) {
+                    dropdownContent.classList.remove("show");
+                }
+            }
+        });
+        Language = setupLanguageSwitcher();
+
+        $(document).ready(function() {
+            $('.hamburger-menu-wrapper').click(function() {
+                var $navMenu = $('.w-nav-menu');
+                $navMenu.toggle();
+                $(this).toggleClass('w--open');
+
+                // Disable scroll when menu is open
+                if ($navMenu.is(':visible')) {
+                    $('.header-content-wrapper').css('display', 'none');
+
+                    $('.container-default').css('padding-top', '0px');
+                    disableScroll();
+                } else {
+                    enableScroll();
+                }
+            });
+            // Event handler for the close button
+            $('.link-back').click(function() {
+                var $navMenu = $('.w-nav-menu');
+                var $hamburgerMenuWrapper = $('.hamburger-menu-wrapper');
+
+                $navMenu.hide();
+                $hamburgerMenuWrapper.removeClass('w--open');
+
+                // Enable scroll and show content
+                enableScroll();
+                $('.header-content-wrapper').css('display', 'flex');
+                $('.container-default').css('padding-top', 'your-original-padding-value');
+            });
+            $(window).on("scroll", function() {
+                if ($(window).scrollTop() >= 30) {
+                    $(".header-wrapper").addClass("with-effect");
+                } else {
+                    $(".header-wrapper").removeClass("with-effect");
+                }
+            });
+        });
+
+
+
+
+    });
+
+    // Enable scroll
+    function enableScroll() {
+        window.onscroll = null;
+        document.body.classList.remove('scroll-lock');
+    };
+
+
+    // Disable scroll
+    function disableScroll() {
+        // Get the current scroll position
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        // Save the current scroll position and add scroll-lock styles
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+        document.body.classList.add('scroll-lock');
+    };
+
+
+
+
+
+
+    // Function to add event listeners to links
+    function setupLinkEventListeners(links) {
+        const customCursor = document.querySelector(".custom-cursor");
+        links.forEach((link) => {
+            link.addEventListener("mouseover", () => {
+                customCursor.classList.add("custom-cursor--link");
+            });
+
+            link.addEventListener("mouseout", (event) => {
+                customCursor.classList.remove("custom-cursor--link");
+                setTimeout(() => {
+                    customCursor.style.left = `${event.clientX}px`;
+                    customCursor.style.top = `${event.clientY}px`;
+                }, 50);
+            });
+
+            activeLinks.push(link); // Store the active links
+        });
+    }
+
+    // Function to remove event listeners from links
+    function removeLinkEventListeners() {
+        const customCursor = document.querySelector(".custom-cursor");
+        activeLinks.forEach((link) => {
+            link.removeEventListener("mouseover", () => {
+                customCursor.classList.add("custom-cursor--link");
+            });
+
+            link.removeEventListener("mouseout", (event) => {
+                customCursor.classList.remove("custom-cursor--link");
+                setTimeout(() => {
+                    customCursor.style.left = `${event.clientX}px`;
+                    customCursor.style.top = `${event.clientY}px`;
+                }, 50);
+            });
+        });
+
+        activeLinks = []; // Clear the active links array
+    }
+
+
+
+    function setupLanguageSwitcher() {
+        const defaultLanguage = "en"; // Set the default language
+        let langChanged = false;
+        let language = localStorage.getItem("selectedLanguage") || defaultLanguage;
+        let translations; // Define translations object
+
+        const languageElements = document.querySelectorAll("[data-translate]");
+        const languageSwitcher = document.getElementById("translate-icon");
+        const dropdownItems = languageSwitcher.querySelectorAll(".dropdown-item");
+
+        const alternativeFilePath = "../lng.json"; // Define the alternative file path
+
+        function updateContent(selectedLang) {
+            return new Promise((resolve, reject) => {
+                fetch("lng.json")
+                    .then((response) => {
+                        if (!response.ok) {
+                            // If the response is not OK, try fetching the alternative file
+                            return fetch(alternativeFilePath);
+                        }
+                        return response;
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        translations = data; // Store translations object
+
+                        console.log("Translations:", translations);
+
+                        languageElements.forEach((element) => {
+                            const elementTag = element.getAttribute("data-translate");
+                            if (translations[selectedLang][elementTag]) {
+                                element.textContent = translations[selectedLang][elementTag];
+                            }
+                        });
+
+                        langChanged = true;
+                        language = selectedLang;
+                        localStorage.setItem("selectedLanguage", selectedLang);
+
+                        resolve(); // Resolve the promise
+                    })
+                    .catch((error) => {
+                        console.error("Error loading translations:", error);
+                        reject(error); // Reject the promise
+                    });
+            });
+        }
+
+        // Update content with the stored language or default language translations
+        updateContent(language)
+            .then(() => {
+                const availableLanguages = Object.keys(translations); // Use translations object
+
+                dropdownItems.forEach((item) => {
+                    const selectedLang = item.getAttribute("data-lang");
+                    if (availableLanguages.includes(selectedLang)) {
+                        item.addEventListener("click", () => {
+                            if (!langChanged || language !== selectedLang) {
+                                console.log("Language switcher clicked");
+                                console.log("Selected language:", selectedLang);
+                                Language = selectedLang;
+                                filterCards(Objectag, Language);
+                                updateContent(selectedLang)
+                                    .then(() => {
+                                        // Update content here if needed after the language change
+                                    })
+                                    .catch((error) =>
+                                        console.error("Error updating content:", error)
+                                    );
+                            }
+                        });
+                    }
+                });
+            })
+            .catch((error) =>
+                console.error("Error setting up language switcher:", error)
+            );
+
+    }
+</script>
+
+</html>
