@@ -21,6 +21,18 @@
         font-style: normal;
     }
     
+    .header-wrapper {
+        background-color: #f9f4f413;
+        position: fixed;
+        top: 0%;
+        bottom: auto;
+        left: 0%;
+        right: 0%;
+        z-index: 99;
+        display: block;
+        max-width: 100%;
+    }
+    
     div {
         /*border: 1px solid;*/
     }
@@ -30,7 +42,100 @@
         line-height: 50px;
     }
     
-    @media screen and (max-width: 479px) {}
+    @media screen and (max-width: 479px) {
+        .project-header>h1 {
+            font-family: 'Roboto Thin';
+            text-transform: uppercase;
+            text-align: right;
+            font-size: 130px !important;
+            color: #fff;
+            font-weight: 100;
+            margin-top: 49%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .color-container {
+            display: block;
+            border-radius: 4px;
+            margin: 0 100px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            height: 140px !important;
+        }
+        .color-label {
+            width: 100px !important;
+            height: 100px !important;
+            margin-bottom: 10px;
+        }
+        #listed-core-items {
+            display: flex;
+            align-items: flex-start;
+            margin: 0 2em !important;
+            flex-direction: column !important;
+            gap: 0em !important;
+            width: fit-content;
+            padding: 0 2em;
+        }
+        .inst-col-3 {
+            display: flex;
+            flex-direction: column !important;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000;
+            padding: 100px 0;
+            width: 100%;
+            gap: 2em;
+        }
+        .col-3 {
+            display: flex;
+            align-items: flex-start;
+            margin: 4em 2em !important;
+            flex-direction: column !important;
+            gap: 6em !important;
+            width: fit-content;
+            padding: 0 2em;
+        }
+        .col-2 {
+            display: flex;
+            align-items: flex-start;
+            margin: 144px 2em !important;
+            flex-direction: column !important;
+            gap: 15em;
+        }
+        .story-header>h2 {
+            font-size: 40px !important;
+            line-height: normal;
+            font-family: 'Cormorant Garamond Semibold';
+            font-weight: 400;
+        }
+        .story-text-header>h3 {
+            font-size: 60px !important;
+            line-height: normal;
+            font-family: 'Cormorant Garamond Semibold';
+            margin-bottom: 50px;
+        }
+        .link-list {
+            display: flex;
+            flex-direction: column !important;
+        }
+        .link-item {
+            text-align: left;
+            padding: 0;
+            width: 100%;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .contact-container-header {
+            padding: 60px 0 !important;
+            margin: 0 14px;
+            font-size: 24px !important;
+            line-height: normal;
+            font-family: 'Cormorant Garamond Semibold';
+        }
+        .contact-container-link {
+            padding: 30px 0 !important;
+            display: inline-block;
+        }
+    }
     
     @media screen and (max-width: 1400px) {}
     
@@ -53,7 +158,7 @@
             font-family: 'Roboto Thin';
             text-transform: uppercase;
             text-align: right;
-            font-size: 250px !important;
+            font-size: 250px;
             color: #fff;
             font-weight: 100;
             margin-top: 60% !important;
@@ -70,9 +175,9 @@
         .col-3 {
             display: flex;
             align-items: flex-start;
-            margin: 144px 144px 100px 144px !important;
+            margin: 144px 144px 100px 144px;
             flex-direction: column !important;
-            gap: 10em !important;
+            gap: 10em;
             width: fit-content;
             padding: 0 2em;
         }
@@ -115,17 +220,19 @@
             width: 100% !important;
         }
         .contact-container-header {
-            padding: 90px 144px !important;
-            font-size: 34px !important;
+            padding: 90px 144px;
+            font-size: 34px;
             line-height: normal;
             font-family: 'Cormorant Garamond Semibold';
         }
         .link-item {
-            text-align: center !important;
+            text-align: center;
             padding: 0;
             width: 100% !important;
             font-weight: 600;
             text-transform: uppercase;
+            margin: 0 2em;
+            padding: 5px 0 !important;
         }
         #contact-cont {
             width: 100%;
@@ -137,7 +244,7 @@
         }
         .card {
             position: relative;
-            width: 280px !important;
+            width: 280px;
             min-height: 400px;
             background: rgb(255, 255, 255);
             box-shadow: 15px 15px 60px rgba(0, 0, 0, 0.01);
@@ -165,13 +272,12 @@
         #listed-core-items {
             display: flex;
             align-items: flex-start;
-            margin: 144px !important;
+            margin: 144px;
             flex-direction: column !important;
             gap: 0em !important;
             width: fit-content;
             padding: 0 2em;
         }
-        .project-video-container>img {}
     }
     
     h1 {
@@ -745,7 +851,7 @@
                 <h1>Kukla</h1>
             </div>
         </section>
-        <section class="col-3">
+        <section class="col-3" id="project-info">
             <div class="pr-name">
                 <h2>Kukla</h2>
             </div>
@@ -809,7 +915,7 @@
             <img id="image-bg-1" loading="lazy" src="https://zupimages.net/up/23/41/pmxo.jpg" alt="#" srcset="">
 
         </section>
-        <section class="inst-col-3">
+        <section class="inst-col-3" id="project-instag">
 
             <div class="card">
 
