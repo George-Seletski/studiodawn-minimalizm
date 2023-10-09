@@ -601,7 +601,7 @@
     .buttons img {
         max-width: 24px;
         max-height: 24px;
-        cursor: pointer;
+        padding: 0 24px;
     }
     
     .buttons .left img {
@@ -635,10 +635,6 @@
         content: '\2807';
         font-size: 25px;
         color: #4d4d4d;
-    }
-    
-    .icon:hover {
-        opacity: 0.7;
     }
     /*color cards*/
     
@@ -745,7 +741,9 @@
         font-size: 18px;
     }
     
-    .listed-core-items {}
+    .icon:hover {
+        pointer-events: none;
+    }
 </style>
 
 <body>
@@ -845,7 +843,7 @@
 
     <div class="page-wrapper">
         <section class="image-container">
-            <img id="image-bg-1" src="https://zupimages.net/up/23/41/tr18.jpg" loading="eager" alt="cover project" srcset="https://zupimages.net/up/23/41/tr18.jpg 500w, https://zupimages.net/up/23/41/tr18.jpg 800w, https://zupimages.net/up/23/41/tr18.jpg 1080w, https://zupimages.net/up/23/41/tr18.jpg 1200w">
+            <img id="image-bg-1" src="https://zupimages.net/up/23/41/8u11.jpg" loading="eager" alt="cover project" srcset="https://zupimages.net/up/23/41/8u11.jpg 500w, https://zupimages.net/up/23/41/8u11.jpg 800w, https://zupimages.net/up/23/41/8u11.jpg 1080w, https://zupimages.net/up/23/41/8u11.jpg 1200w">
 
             <div class="project-header">
                 <h1>Kukla</h1>
@@ -1465,6 +1463,9 @@
             );
 
     }
+</script>
+
+</html> }); }) .catch((error) => console.error("Error setting up language switcher:", error) ); }
 </script>
 
 </html>
