@@ -1353,7 +1353,7 @@
         window.addEventListener("click", function(event) {
 
             if (!event.target.matches(".translate-icon-global")) {
-                console.log('translate-icon-globa clicked');
+
                 if (dropdownContent.classList.contains("show")) {
                     dropdownContent.classList.remove("show");
                 }
@@ -1497,7 +1497,7 @@
                     .then((data) => {
                         translations = data; // Store translations object
 
-                        console.log("Translations:", translations);
+
 
                         languageElements.forEach((element) => {
                             const elementTag = element.getAttribute("data-translate");
@@ -1513,7 +1513,7 @@
                         resolve(); // Resolve the promise
                     })
                     .catch((error) => {
-                        console.error("Error loading translations:", error);
+
                         reject(error); // Reject the promise
                     });
             });
@@ -1529,30 +1529,24 @@
                     if (availableLanguages.includes(selectedLang)) {
                         item.addEventListener("click", () => {
                             if (!langChanged || language !== selectedLang) {
-                                console.log("Language switcher clicked");
-                                console.log("Selected language:", selectedLang);
+
                                 Language = selectedLang;
                                 filterCards(Objectag, Language);
                                 updateContent(selectedLang)
                                     .then(() => {
                                         // Update content here if needed after the language change
                                     })
-                                    .catch((error) =>
-                                        console.error("Error updating content:", error)
-                                    );
+
                             }
                         });
                     }
                 });
             })
-            .catch((error) =>
-                console.error("Error setting up language switcher:", error)
-            );
+
 
     }
 </script>
 
-</html> }); }) .catch((error) => console.error("Error setting up language switcher:", error) ); }
-</script>
+
 
 </html>

@@ -363,8 +363,7 @@
 
         const translateIcon = document.querySelector(".translate-icon-global");
         const dropdownContent = document.querySelector(".dropdown-content");
-        console.log(translateIcon); // Check if translateIcon is found
-        console.log(dropdownContent); // Check if dropdownContent is found
+
         translateIcon.addEventListener("click", function() {
             dropdownContent.classList.toggle("show");
         });
@@ -373,7 +372,7 @@
         window.addEventListener("click", function(event) {
 
             if (!event.target.matches(".translate-icon-global")) {
-                console.log('translate-icon-globa clicked');
+
                 if (dropdownContent.classList.contains("show")) {
                     dropdownContent.classList.remove("show");
                 }
