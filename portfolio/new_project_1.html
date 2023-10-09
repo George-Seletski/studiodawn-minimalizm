@@ -132,6 +132,46 @@
             padding: 0 144px !important;
             display: none;
         }
+        .inst-col-3 {
+            padding: 144px 0 !important;
+        }
+        .card {
+            position: relative;
+            width: 280px !important;
+            min-height: 400px;
+            background: rgb(255, 255, 255);
+            box-shadow: 15px 15px 60px rgba(0, 0, 0, 0.01);
+            padding: 10px 5px;
+            margin: 0 20px !important;
+            border-radius: 10px;
+        }
+        .color-pallete-col {
+            display: flex;
+            flex-direction: row !important;
+            align-items: center;
+            justify-content: center;
+            margin: 144px 100px;
+            margin-right: 0px;
+            margin-bottom: 144px;
+            margin-left: 0px;
+        }
+        .color-container {
+            display: block;
+            border-radius: 4px;
+            margin: 0px !important;
+            box-shadow: none !important;
+            height: 240px;
+        }
+        #listed-core-items {
+            display: flex;
+            align-items: flex-start;
+            margin: 144px !important;
+            flex-direction: column !important;
+            gap: 0em !important;
+            width: fit-content;
+            padding: 0 2em;
+        }
+        .project-video-container>img {}
     }
     
     h1 {
@@ -373,6 +413,233 @@
         background-color: #9D988C;
         /* Show the underline on hover with scaleX(1) */
     }
+    
+    .inst-col-3 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #000;
+        padding: 100px 0;
+        width: 100%;
+    }
+    /*instagram card css*/
+    
+    .card {
+        position: relative;
+        width: 360px;
+        min-height: 400px;
+        background: rgb(255, 255, 255);
+        box-shadow: 15px 15px 60px rgba(0, 0, 0, 0.01);
+        padding: 10px 5px;
+        margin: 144px;
+        border-radius: 10px;
+    }
+    
+    .card .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .card .top .userDetails {
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .card .top .userDetails .profile_img {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 8px;
+    }
+    
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .card .top .userDetails h3 {
+        font-size: 16px;
+        color: #4d4d4d;
+        font-weight: 900;
+        line-height: 1em;
+        font-family: 'GeneralSans-Light';
+    }
+    
+    .card .top .userDetails h3 span {
+        font-size: 0.7em;
+        padding-top: 20px;
+    }
+    
+    .imgBox {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        margin: 10px 0 15px;
+    }
+    
+    .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 230px;
+    }
+    
+    .buttons img {
+        max-width: 24px;
+        max-height: 24px;
+        cursor: pointer;
+    }
+    
+    .buttons .left img {
+        margin-right: 8px;
+        ;
+    }
+    
+    .likes {
+        font-weight: 500;
+        margin-top: 5px;
+        font-size: 16px;
+        color: #4d4d4d;
+    }
+    
+    .message {
+        font-weight: 500;
+        margin-top: 10px;
+        font-size: 16px;
+        color: #4d4d4d;
+        font-family: 'GeneralSans-Light';
+        font-weight: 700;
+    }
+    
+    .message b {
+        color: #262626;
+        font-family: 'Roboto Regular';
+        font-weight: 900;
+    }
+    
+    .settings:after {
+        content: '\2807';
+        font-size: 25px;
+        color: #4d4d4d;
+    }
+    
+    .icon:hover {
+        opacity: 0.7;
+    }
+    /*color cards*/
+    
+    .color-pallete-col {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 144px 0;
+    }
+    
+    .color-container {
+        display: block;
+        border-radius: 4px;
+        margin: 0 100px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        height: 240px;
+    }
+    
+    .color-label {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    
+    #white-color {
+        background-color: #fff;
+    }
+    
+    #black-color {
+        background-color: #000;
+    }
+    
+    #red-color {
+        background-color: rgb(255, 0, 0);
+    }
+    
+    #grey-color {
+        background-color: #262626;
+    }
+    
+    .color-name {
+        padding: 10px;
+        font-weight: 500;
+        font-family: 'Roboto Regular';
+    }
+    /*video*/
+    
+    .video-section {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        padding: 144px 0;
+    }
+    
+    .project-video-container {}
+    
+    .galley-grid-rows {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+    }
+    
+    .img-item:nth-child(1) {
+        width: 50%;
+    }
+    
+    .img-item:nth-child(2) {
+        width: 50%;
+    }
+    
+    .img-item:nth-child(3) {
+        width: 50%;
+    }
+    
+    .img-item:nth-child(4) {
+        width: 50%;
+    }
+    
+    .img-item:nth-child(5) {
+        width: 30%;
+    }
+    
+    .img-item:nth-child(6) {
+        width: 30%;
+    }
+    
+    .img-item:nth-child(7) {
+        width: 30%;
+    }
+    
+    .number {
+        line-height: 1.2;
+        font-family: 'Roboto Thin';
+        font-size: 50px !important;
+    }
+    
+    .number-item-text {
+        line-height: 1.2;
+        font-weight: 900;
+        font-family: 'Cormorant Garamond Semibold';
+        font-size: 18px;
+    }
+    
+    .listed-core-items {}
 </style>
 
 <body>
@@ -471,14 +738,14 @@
 
 
     <div class="page-wrapper">
-        <div class="image-container">
-            <img id="image-bg-1" src="./01_Kukla/bb2.jpg" loading="eager" alt="cover project" srcset="">
+        <section class="image-container">
+            <img id="image-bg-1" src="https://zupimages.net/up/23/41/tr18.jpg" loading="eager" alt="cover project" srcset="https://zupimages.net/up/23/41/tr18.jpg 500w, https://zupimages.net/up/23/41/tr18.jpg 800w, https://zupimages.net/up/23/41/tr18.jpg 1080w, https://zupimages.net/up/23/41/tr18.jpg 1200w">
 
             <div class="project-header">
                 <h1>Kukla</h1>
             </div>
-        </div>
-        <div class="col-3">
+        </section>
+        <section class="col-3">
             <div class="pr-name">
                 <h2>Kukla</h2>
             </div>
@@ -512,12 +779,12 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid explicabo unde voluptatibus, similique ullam. Veniam distinctio non modi natus consequatur? Autem provident totam debitis adipisci eum perferendis aliquid dolores.
                 </p>
             </div>
-        </div>
-        <div class="image-container">
-            <img id="image-bg-1" oading="lazy" src="./01_Kukla/logio.jpg" alt="" srcset="">
+        </section>
+        <section class="image-container">
+            <img id="image-bg-1" loading="eager" src="https://zupimages.net/up/23/41/wjho.jpg" alt="image-1" srcset="https://zupimages.net/up/23/41/wjho.jpg 500w, https://zupimages.net/up/23/41/wjho.jpg 800w, https://zupimages.net/up/23/41/wjho.jpg 1080w, https://zupimages.net/up/23/41/wjho.jpg 1200w">
 
-        </div>
-        <div class="col-2">
+        </section>
+        <section class="col-2">
             <div class="story-header">
                 <h2>Kukla elevates your everyday with adornment that steps up your signature look with a sartorial statement. It’s the bold you. The brave you. The you you’ve been building up to be.</h2>
             </div>
@@ -529,20 +796,198 @@
                     experience that encourages self expression for a life fully actualised. They believe fully and fiercely that style is not tantamount to fashion; True style is a mindset, an attitude. Walk into Kukla and walk out feeling empowered to
                     be authentically you, however that looks.</div>
             </div>
-        </div>
-        <div class="image-container-2">
+        </section>
+        <section class="image-container-2">
             <div class="image-col">
                 <img loading="lazy" src="./01_Kukla/plechovka-2.jpg" alt="#" srcset="">
             </div>
             <div class="image-col">
                 <img loading="lazy" src="./01_Kukla/plechovka-3.jpg" alt="#" srcset="">
             </div>
-        </div>
-        <div class="image-container">
+        </section>
+        <section class="image-container">
             <img id="image-bg-1" loading="lazy" src="./01_Kukla/plechovka.jpg" alt="#" srcset="">
 
-        </div>
-        <div class="contact-container">
+        </section>
+        <section class="inst-col-3">
+
+            <div class="card">
+
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="https://zupimages.net/up/23/41/1jov.jpg" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
+            </div>
+            <div class="card">
+
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="https://zupimages.net/up/23/41/1jov.jpg" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
+            </div>
+            <div class="card">
+
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="https://zupimages.net/up/23/41/1jov.jpg" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
+            </div>
+
+        </section>
+        <section class="color-pallete-col">
+            <div class="color-container">
+                <div class="color-label" id="white-color"></div>
+                <span class="color-name">#FFFFFFF</span>
+            </div>
+            <div class="color-container">
+                <div class="color-label" id="black-color"></div>
+                <span class="color-name">#000000</span>
+            </div>
+            <div class="color-container">
+                <div class="color-label" id="red-color"></div>
+                <span class="color-name">#FFFFFFF</span>
+            </div>
+            <div class="color-container">
+                <div class="color-label" id="grey-color"></div>
+                <span class="color-name">#262626</span>
+            </div>
+        </section>
+        <section class="video-section">
+            <div class="project-video-container">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif" srcset="https://mir-s3-cdn-cf.behance.net/project_modules/disp/85a12d179646327.64fdafa3cc988.gif 600w,https://mir-s3-cdn-cf.behance.net/project_modules/fs/85a12d179646327.64fdafa3cc988.gif 1920w,https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/85a12d179646327.64fdafa3cc988.gif 1200w,https://mir-s3-cdn-cf.behance.net/project_modules/1400/85a12d179646327.64fdafa3cc988.gif 1400w,https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif 1400w,"
+                    sizes="(max-width: 1400px) 100vw, 1400px">
+
+
+            </div>
+        </section>
+        <section class="col-3" id="listed-core-items">
+            <div class="numbered-item">
+                <span class="number">
+                    <h1>01</h1>
+                </span>
+                <span class="number-item-text">
+                    <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity for
+                    Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst honouring the
+                    precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
+                </span>
+            </div>
+            <div class="numbered-item">
+                <span class="number">
+                    <h1>02</h1>
+                </span>
+                <span class="number-item-text">
+                    <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity
+                        for
+                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst
+                        honouring the
+                        precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
+                </span>
+            </div>
+            <div class="numbered-item">
+                <span class="number">
+                    <h1>03</h1>
+                </span>
+                <span class="number-item-text">
+                    <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity
+                        for
+                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst
+                        honouring the
+                        precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
+                </span>
+            </div>
+        </section>
+        <!--<div class="galley-grid-rows">
+            <div class="img-item">
+                <img loading="lazy" src="./01_Kukla/portfolio.jpg" alt="#" srcset="">
+            </div>
+            <div class="img-item">
+                <img loading="lazy" src="./01_Kukla/mikina.jpg" alt="#" srcset="">
+            </div>
+            <div class="img-item">
+                <img loading="lazy" src="./01_Kukla/notysky.jpg" alt="#" srcset="">
+            </div>
+
+            <div class="img-item">
+                <img loading="lazy" src="./01_Kukla/portfolio.jpg" alt="#" srcset="">
+            </div>
+            <div class="img-item">
+                <img loading="lazy" src="./01_Kukla/web-mobil.jpg" alt="#" srcset="">
+            </div>
+            <div class="img-item">
+                <img loading="lazy" src="./01_Kukla/web-tablet.jpg" alt="#" srcset="">
+            </div>
+            <div class="img-item">
+                <img loading="lazy" src="./01_Kukla/plechovka-2.jpg" alt="#" srcset="">
+            </div>
+
+        </div>-->
+        <section class="contact-container">
             <div class="contact-container-col">
                 <div class="link-container">
                     <ul class="link-list">
@@ -583,62 +1028,64 @@
 
             </div>
 
+        </section>
+
+    </div>
+
+
+    <footer>
+        <div class="text-header">
+            <div class="footer-header">
+                <h2 data-translate="footer-h2">Get in touch</h2>
+            </div>
         </div>
-
-
-        <footer>
-            <div class="text-header">
-                <div class="footer-header">
-                    <h2 data-translate="footer-h2">Get in touch</h2>
-                </div>
+        <div class="footer-links">
+            <div class="footer-fnt link-email">
+                <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
             </div>
-            <div class="footer-links">
-                <div class="footer-fnt link-email">
-                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
-                </div>
-                <div class="footer-fnt link-email">
-                    <a href="tel:+421905455208">+421 905 455 208</a>
-                </div>
+            <div class="footer-fnt link-email">
+                <a href="tel:+421905455208">+421 905 455 208</a>
             </div>
-            <div class="licence-container">
-                <ul class="licence-container-list">
-                    <li id="licence-item"> <a href="../privacy_index.html" rel="noopener noreferrer" data-translate="footer-li-text-1">Privacy</a> </li>
-                    <li id="licence-item"><a href="../conditions_index.html" rel="noopener noreferrer" data-translate="footer-li-text-2">Conditions</a></li>
-                    <li id="licence-item"><a href="../human_rughts_index.html" rel="noopener noreferrer" data-translate="footer-li-text-3">Human Rights</a></li>
-                </ul>
-            </div>
-            <div class="icon-box">
+        </div>
+        <div class="licence-container">
+            <ul class="licence-container-list">
+                <li id="licence-item"> <a href="../privacy_index.html" rel="noopener noreferrer" data-translate="footer-li-text-1">Privacy</a> </li>
+                <li id="licence-item"><a href="../conditions_index.html" rel="noopener noreferrer" data-translate="footer-li-text-2">Conditions</a></li>
+                <li id="licence-item"><a href="../human_rughts_index.html" rel="noopener noreferrer" data-translate="footer-li-text-3">Human Rights</a></li>
+            </ul>
+        </div>
+        <div class="icon-box">
 
-                <!--<div class="language-icon">
+            <!--<div class="language-icon">
                         <div id="language-icon-circle">
                             <div class="svg-icon">
     
                             </div>
                         </div>
                     </div>-->
-                <div class="icons">
-                    <div class="wh-30">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
-                        </a>
-                    </div>
-                    <div class="wh-30">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
-                        </a>
-                    </div>
-                    <div class="wh-30">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
-                        </a>
-                    </div>
+            <div class="icons">
+                <div class="wh-30">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                    </a>
+                </div>
+                <div class="wh-30">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                    </a>
+                </div>
+                <div class="wh-30">
+                    <a href="http://" target="_blank" rel="noopener noreferrer">
+                        <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                    </a>
                 </div>
             </div>
-        </footer>
-        <script src="../js/ScrollTriger.js" async></script>
+        </div>
+    </footer>
+    <script src="../js/ScrollTriger.js" async></script>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>\
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>\
 
 
 </body>
