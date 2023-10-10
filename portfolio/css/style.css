@@ -481,6 +481,7 @@ img {
 }
 
 .header-wrapper.with-effect {
+    background-color: transparent !important;
     opacity: 1;
     /* Modern browsers with backdrop-filter support */
     backdrop-filter: saturate(180%) blur(10px);
