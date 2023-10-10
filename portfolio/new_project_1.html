@@ -33,10 +33,6 @@
         max-width: 100%;
     }
     
-    div {
-        /*border: 1px solid;*/
-    }
-    
     .fnt-small {
         font-size: 60px;
         line-height: 50px;
@@ -411,7 +407,7 @@
     
     .image-container-2 {
         display: flex;
-        margin: 0 auto;
+        margin: -10px !important;
         height: auto;
         width: auto;
         position: relative;
@@ -861,6 +857,11 @@
     .icon:hover {
         pointer-events: none;
     }
+    
+    .image-col {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 </style>
 
 <body>
@@ -1020,14 +1021,26 @@
         </section>
         <section class="image-container-2">
             <div class="image-col">
-                <img loading="lazy" src="./01_Kukla/sq_jpg/logio.jpg" alt="#" srcset="">
+                <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
             </div>
             <div class="image-col">
-                <img loading="lazy" src="./01_Kukla/sq_jpg/notysky.jpg" alt="#" srcset="">
+                <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
             </div>
         </section>
         <section class="image-container">
             <img id="image-bg-1" loading="lazy" src="https://zupimages.net/up/23/41/pmxo.jpg" alt="#" srcset="">
+
+        </section>
+        <section class="image-container-2">
+            <div class="image-col" style="margin-right: -10px !important;">
+                <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
+            </div>
+            <div class="image-col" style="margin-left: -10px !important;">
+                <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
+            </div>
+        </section>
+        <section class="image-container">
+            <img id="image-bg-1" loading="lazy" src="./01_Kukla/desky-a-vizitky.jpg" alt="#" srcset="">
 
         </section>
         <section class="inst-col-3" id="project-instag">
