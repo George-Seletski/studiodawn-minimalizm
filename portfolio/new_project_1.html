@@ -37,6 +37,10 @@
         font-size: 60px;
         line-height: 50px;
     }
+    /*div,
+    section {
+        border: 1px solid;
+    }*/
     
     @media screen and (max-width: 479px) {
         .image-container-2 {
@@ -256,6 +260,45 @@
     }
     
     @media screen and (max-width: 991px) {
+        .container-paragraph {
+            display: flex;
+            margin: 192px 0 !important;
+            flex-direction: row;
+            justify-content: baseline !important;
+        }
+        .story-text-paragraph {
+            font-size: 28px !important;
+            font-family: 'Cormorant Garamond Semibold';
+            line-height: 1.1;
+            font-weight: 600;
+            width: 50%;
+        }
+        .image-item {
+            margin-right: 0px !important;
+            margin-bottom: -10px !important;
+        }
+        .text-bold {
+            width: auto;
+            padding: 0 1em 0 1em !important;
+            font-size: 28px !important;
+        }
+        .image-container-2 {
+            display: flex;
+            margin: 0px !important;
+            height: auto;
+            width: auto;
+            position: relative;
+            flex-direction: column !important;
+        }
+        .text-img {
+            flex-direction: column !important;
+        }
+        .img-col-right {
+            margin-top: 144px !important;
+            margin-left: 64px !important;
+            margin-right: 64px !important;
+            margin-bottom: 0px !important;
+        }
         h1 {
             line-height: 1 !important;
             font-size: 150px !important;
@@ -489,13 +532,14 @@
     .container-paragraph {
         display: flex;
         align-items: flex-start;
-        margin: 192px 0;
+        padding: 192px 0;
         justify-content: center;
         flex-direction: row;
     }
     
     .story-text-paragraph {
-        font-size: 36px;
+        color: #fff;
+        font-size: 60px;
         font-family: 'Cormorant Garamond Semibold';
         line-height: 1.1;
         font-weight: 600;
@@ -677,7 +721,7 @@
         align-items: center;
         justify-content: space-between;
         background-color: #000;
-        padding: 100px 0;
+        padding: 100px 192px;
         width: 100%;
     }
     /*instagram card css*/
@@ -685,11 +729,11 @@
     .card {
         position: relative;
         width: 360px;
-        min-height: 400px;
+        min-height: 500px;
         background: rgb(255, 255, 255);
         box-shadow: 15px 15px 60px rgba(0, 0, 0, 0.01);
         padding: 10px 5px;
-        margin: 144px;
+        margin: 124px 30px;
         border-radius: 10px;
     }
     
@@ -738,7 +782,7 @@
     .imgBox {
         position: relative;
         width: 100%;
-        height: 320px;
+        height: 390px;
         margin: 10px 0 15px;
     }
     
@@ -897,12 +941,33 @@
     }
     
     .image-col {
-        margin: 0 !important;
-        padding: 0 !important;
+        margin: 0;
+        padding: 0;
     }
     
     .bg-dark {
         background-color: #222222;
+    }
+    
+    .img-square {}
+    
+    .text-img {
+        margin: 0 !important;
+    }
+    
+    .text-highlight {
+        font-size: 50px;
+    }
+    
+    .text-bold {
+        font-size: 36px;
+        font-family: 'Cormorant Garamond Semibold';
+        line-height: 1.1;
+        font-weight: 600;
+    }
+    
+    .image-item {
+        margin-right: -10px;
     }
 </style>
 
@@ -1048,203 +1113,211 @@
             <img id="image-large-1" loading="lazy" src="https://zupimages.net/up/23/41/wjho.jpg" alt="image-1" srcset="https://zupimages.net/up/23/41/wjho.jpg 500w, https://zupimages.net/up/23/41/wjho.jpg 800w, https://zupimages.net/up/23/41/wjho.jpg 1080w, https://zupimages.net/up/23/41/wjho.jpg 1200w">
 
         </section>
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="container-paragraph">
+
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="container-paragraph text-img">
+            <div class="col-2 img-col-right">
+                <img id="image-col" loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
+            </div>
+            <div class="col-2 text-bold">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
+                experience that encourages self expression for a life fully actualised. .</div>
+
+        </section>
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container-2 bg-dark">
+            <div class="image-col">
+                <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
+            </div>
+            <div class="image-col">
+                <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
+            </div>
+        </section>
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="container-paragraph" style=" background-color: rgb(148, 148, 79);">
 
             <div class="story-text-paragraph">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
                 experience that encourages self expression for a life fully actualised. .</div>
-    </div>
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container-2 bg-dark">
-        <div class="image-col">
-            <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
-        </div>
-        <div class="image-col">
-            <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
-        </div>
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
-        <img id="image-large-1" loading="lazy" src="./01_Kukla/webp/portfolio.webp" alt="#" srcset="">
 
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-2">
-        <div class="story-header">
-            <h2>Kukla elevates your everyday with adornment that steps up your signature look with a sartorial statement. It’s the bold you. The brave you. The you you’ve been building up to be.</h2>
-        </div>
-        <div class="story-container">
-            <div class="story-text-header">
-                <h3>Who is Kukla?</h3>
+        </section>
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
+            <img id="image-large-1" loading="lazy" src="./01_Kukla/webp/portfolio.webp" alt="#" srcset="">
+
+        </section>
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-2">
+            <div class="story-header">
+                <h2>Kukla elevates your everyday with adornment that steps up your signature look with a sartorial statement. It’s the bold you. The brave you. The you you’ve been building up to be.</h2>
             </div>
-            <div class="story-text">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
-                experience that encourages self expression for a life fully actualised. They believe fully and fiercely that style is not tantamount to fashion; True style is a mindset, an attitude. Walk into Kukla and walk out feeling empowered to be
-                authentically you, however that looks.</div>
-        </div>
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container-2">
-        <div class="image-col" style="margin-right: -10px !important;">
-            <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
-        </div>
-        <div class="image-col" style="margin-left: -10px !important;">
-            <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
-        </div>
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
-        <img id="image-large-1" loading="lazy" src="./01_Kukla/desky-a-vizitky.jpg" alt="#" srcset="">
+            <div class="story-container">
+                <div class="story-text-header">
+                    <h3>Who is Kukla?</h3>
+                </div>
+                <div class="story-text">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
+                    experience that encourages self expression for a life fully actualised. They believe fully and fiercely that style is not tantamount to fashion; True style is a mindset, an attitude. Walk into Kukla and walk out feeling empowered to
+                    be authentically you, however that looks.</div>
+            </div>
+        </section>
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container-2">
+            <div class="image-col image-item">
+                <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
+            </div>
+            <div class="image-col image-item" style="margin-left: -10px !important;">
+                <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
+            </div>
+        </section>
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
+            <img id="image-large-1" loading="lazy" src="./01_Kukla/desky-a-vizitky.jpg" alt="#" srcset="">
 
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="inst-col-3" id="project-instag">
+        </section>
 
-        <div class="card">
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="inst-col-3" id="project-instag">
 
-            <div class="top">
-                <div class="userDetails">
-                    <div class="profile_img">
-                        <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+            <div class="card">
+
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
                     </div>
-                    <!-- Main Title -->
-                    <h3>studiodawn<br>
-                        <!--<span>Khao Lak, Thailande</span>-->
-                    </h3>
-                </div>
-                <div>
-                    <!-- Settings Dot -->
-                    <div class="settings"></div>
-                </div>
-            </div>
-            <div class="imgBox">
-                <!-- Main Image -->
-                <a href="http://">
-                    <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
-                </a>
-            </div>
-
-
-            <!-- Description -->
-            <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
-
-        </div>
-        <div class="card">
-
-            <div class="top">
-                <div class="userDetails">
-                    <div class="profile_img">
-                        <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
                     </div>
-                    <!-- Main Title -->
-                    <h3>studiodawn<br>
-                        <!--<span>Khao Lak, Thailande</span>-->
-                    </h3>
                 </div>
-                <div>
-                    <!-- Settings Dot -->
-                    <div class="settings"></div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
+                    </a>
                 </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
             </div>
-            <div class="imgBox">
-                <!-- Main Image -->
-                <a href="http://">
-                    <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
-                </a>
-            </div>
+            <div class="card">
 
-
-            <!-- Description -->
-            <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
-
-        </div>
-        <div class="card">
-
-            <div class="top">
-                <div class="userDetails">
-                    <div class="profile_img">
-                        <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
                     </div>
-                    <!-- Main Title -->
-                    <h3>studiodawn<br>
-                        <!--<span>Khao Lak, Thailande</span>-->
-                    </h3>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
                 </div>
-                <div>
-                    <!-- Settings Dot -->
-                    <div class="settings"></div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
+                    </a>
                 </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
             </div>
-            <div class="imgBox">
-                <!-- Main Image -->
-                <a href="http://">
-                    <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
-                </a>
+            <div class="card">
+
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
             </div>
 
-
-            <!-- Description -->
-            <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
-
-        </div>
-
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="color-pallete-col">
-        <div class="color-container">
-            <div class="color-label" id="white-color"></div>
-            <span class="color-name">#FFFFFFF</span>
-        </div>
-        <div class="color-container">
-            <div class="color-label" id="black-color"></div>
-            <span class="color-name">#000000</span>
-        </div>
-        <div class="color-container">
-            <div class="color-label" id="red-color"></div>
-            <span class="color-name">#FFFFFFF</span>
-        </div>
-        <div class="color-container">
-            <div class="color-label" id="grey-color"></div>
-            <span class="color-name">#262626</span>
-        </div>
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="video-section data-scroll data-scroll-speed=" 1 " data-scroll-target="#grid2 " data-scroll-direction="horizontal "">
-        <div class="project-video-container">
-            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif" srcset="https://mir-s3-cdn-cf.behance.net/project_modules/disp/85a12d179646327.64fdafa3cc988.gif 600w,https://mir-s3-cdn-cf.behance.net/project_modules/fs/85a12d179646327.64fdafa3cc988.gif 1920w,https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/85a12d179646327.64fdafa3cc988.gif 1200w,https://mir-s3-cdn-cf.behance.net/project_modules/1400/85a12d179646327.64fdafa3cc988.gif 1400w,https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif 1400w,"
-                sizes="(max-width: 1400px) 100vw, 1400px">
-
-
-        </div>
-    </section>
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-3" id="listed-core-items">
-        <div class="numbered-item">
-            <span class="number">
+        </section>
+        <!--<section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="color-pallete-col">
+            <div class="color-container">
+                <div class="color-label" id="white-color"></div>
+                <span class="color-name">#FFFFFFF</span>
+            </div>
+            <div class="color-container">
+                <div class="color-label" id="black-color"></div>
+                <span class="color-name">#000000</span>
+            </div>
+            <div class="color-container">
+                <div class="color-label" id="red-color"></div>
+                <span class="color-name">#FFFFFFF</span>
+            </div>
+            <div class="color-container">
+                <div class="color-label" id="grey-color"></div>
+                <span class="color-name">#262626</span>
+            </div>
+        </section>-->
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="video-section data-scroll data-scroll-speed=" 1 " data-scroll-target="#grid2 " data-scroll-direction="horizontal "">
+            <div class="project-video-container">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif" srcset="https://mir-s3-cdn-cf.behance.net/project_modules/disp/85a12d179646327.64fdafa3cc988.gif 600w,https://mir-s3-cdn-cf.behance.net/project_modules/fs/85a12d179646327.64fdafa3cc988.gif 1920w,https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/85a12d179646327.64fdafa3cc988.gif 1200w,https://mir-s3-cdn-cf.behance.net/project_modules/1400/85a12d179646327.64fdafa3cc988.gif 1400w,https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif 1400w,"
+                    sizes="(max-width: 1400px) 100vw, 1400px">
+            </div>
+        </section>
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-3" id="listed-core-items">
+            <div class="numbered-item">
+                <span class="number">
                     <h1>01</h1>
                 </span>
-            <span class="number-item-text">
+                <span class="number-item-text">
                     <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity for
                     Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst honouring the
                     precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
                 </span>
-        </div>
-        <div class="numbered-item">
-            <span class="number">
+            </div>
+            <div class="numbered-item">
+                <span class="number">
                     <h1>02</h1>
                 </span>
-            <span class="number-item-text">
+                <span class="number-item-text">
                     <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity
                         for
                         Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst
                         honouring the
                         precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
                 </span>
-        </div>
-        <div class="numbered-item">
-            <span class="number">
+            </div>
+            <div class="numbered-item">
+                <span class="number">
                     <h1>03</h1>
                 </span>
-            <span class="number-item-text">
+                <span class="number-item-text">
                     <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity
                         for
                         Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst
                         honouring the
                         precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
                 </span>
-        </div>
-    </section>
-    <!--<div class="galley-grid-rows">
+            </div>
+        </section>
+        <!--<div class="galley-grid-rows">
             <div class="img-item">
                 <img loading="lazy" src="./01_Kukla/portfolio.jpg" alt="#" srcset="">
             </div>
@@ -1269,48 +1342,48 @@
             </div>
 
         </div>-->
-    <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="contact-container">
-        <div class="contact-container-col">
-            <div class="link-container">
-                <ul class="link-list">
-                    <li class="link-item">
-                        <a href="#" id="backToTopBtn">back to top</a>
-                    </li>
-                    <li class="link-item">
-                        <a href="/portfolio/">back to portfolio</a>
-                    </li>
-                    <li class="link-item">
-                        <a href="">next project</a>
-                    </li>
-                </ul>
-            </div>
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="contact-container">
+            <div class="contact-container-col">
+                <div class="link-container">
+                    <ul class="link-list">
+                        <li class="link-item">
+                            <a href="#" id="backToTopBtn">back to top</a>
+                        </li>
+                        <li class="link-item">
+                            <a href="/portfolio/">back to portfolio</a>
+                        </li>
+                        <li class="link-item">
+                            <a href="">next project</a>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="contact-container-header">
-                <h2>Enjoy what you observe in this work? Searching for a creative partner?
-                    <span class='contact-container-link'><a  href="../contact/" rel="noopener noreferrer">Shall we talk?</a></span>
-                </h2>
-            </div>
-        </div>
-        <div class="contact-container-col">
-            <div id="contact-cont">
-                <div id="icon-box">
-                    <div class="info-block-case" style="user-select: text;">
-                        <div class="contanct-links">
-                            <div class="link-email">
-                                <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
-                            </div>
-                            <div class="link-telephone">
-                                <a href="tel:+421905455208">+421 905 455 208</a>
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="contact-container-header">
+                    <h2>Enjoy what you observe in this work? Searching for a creative partner?
+                        <span class='contact-container-link'><a  href="../contact/" rel="noopener noreferrer">Shall we talk?</a></span>
+                    </h2>
                 </div>
             </div>
+            <div class="contact-container-col">
+                <div id="contact-cont">
+                    <div id="icon-box">
+                        <div class="info-block-case" style="user-select: text;">
+                            <div class="contanct-links">
+                                <div class="link-email">
+                                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                                </div>
+                                <div class="link-telephone">
+                                    <a href="tel:+421905455208">+421 905 455 208</a>
+                                </div>
+                            </div>
 
-        </div>
+                        </div>
+                    </div>
+                </div>
 
-    </section>
+            </div>
+
+        </section>
 
     </div>
 
