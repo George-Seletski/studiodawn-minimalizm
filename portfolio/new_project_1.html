@@ -37,12 +37,17 @@
         font-size: 60px;
         line-height: 50px;
     }
-    /*div,
-    section {
-        border: 1px solid;
-    }*/
     
     @media screen and (max-width: 479px) {
+        .container-paragraph.hv-105 {
+            margin: 0 !important;
+        }
+        .story-container {
+            margin: 92px 0 !important;
+        }
+        .col-2.story-box {
+            margin-top: 80px !important;
+        }
         .image-container-2 {
             display: flex;
             margin: -6px !important;
@@ -67,6 +72,18 @@
             margin: 0 100px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             height: 140px !important;
+        }
+        .col-2.img-col-right {
+            margin: 80px 0px 80px 0px!important;
+        }
+        .col-2.box-text-colors {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+        .col-2.box-text-colors>.text-bold {
+            width: auto;
+            padding: 0 1em 0 1em !important;
+            font-size: 18px !important;
         }
         .color-label {
             width: 87px !important;
@@ -294,10 +311,12 @@
             flex-direction: column !important;
         }
         .img-col-right {
-            margin-top: 144px !important;
-            margin-left: 64px !important;
-            margin-right: 64px !important;
-            margin-bottom: 0px !important;
+            margin: 192px 80px 0px 80px;
+        }
+        .box-text-colors {
+            margin-top: 80px !important;
+            max-width: 100% !important;
+            gap: 80px !important;
         }
         h1 {
             line-height: 1 !important;
@@ -370,7 +389,7 @@
             gap: 15em;
         }
         .story-text {
-            font-size: 24px !important;
+            font-size: 18px !important;
             font-family: 'Roboto Thin';
             line-height: 1;
             font-weight: 900;
@@ -524,7 +543,7 @@
     .col-2 {
         display: flex;
         align-items: flex-start;
-        margin: 192px 144px;
+        margin: 192px 80px;
         flex-direction: row;
         gap: 15em;
     }
@@ -834,25 +853,17 @@
     }
     /*color cards*/
     
-    .color-pallete-col {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 192px 0;
-    }
-    
     .color-container {
         display: block;
         border-radius: 4px;
-        margin: 0 100px;
+        margin: 0 10px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        height: 240px;
+        height: 140px;
     }
     
     .color-label {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
         margin-bottom: 10px;
     }
     
@@ -889,40 +900,6 @@
     }
     
     .project-video-container {}
-    
-    .galley-grid-rows {
-        display: flex;
-        flex-flow: row wrap;
-        width: 100%;
-    }
-    
-    .img-item:nth-child(1) {
-        width: 50%;
-    }
-    
-    .img-item:nth-child(2) {
-        width: 50%;
-    }
-    
-    .img-item:nth-child(3) {
-        width: 50%;
-    }
-    
-    .img-item:nth-child(4) {
-        width: 50%;
-    }
-    
-    .img-item:nth-child(5) {
-        width: 30%;
-    }
-    
-    .img-item:nth-child(6) {
-        width: 30%;
-    }
-    
-    .img-item:nth-child(7) {
-        width: 30%;
-    }
     
     .number {
         line-height: 1.2;
@@ -969,6 +946,25 @@
     
     .image-item {
         margin-right: -10px;
+    }
+    
+    .hv-105 {
+        height: 105vh;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .box-text-colors {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+    }
+    
+    .color-pallete {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 </style>
 
@@ -1075,6 +1071,7 @@
                 <h1>Kukla</h1>
             </div>
         </section>
+
         <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-3" id="project-info">
             <div class="pr-name">
                 <h2>Kukla</h2>
@@ -1110,6 +1107,7 @@
                 </p>
             </div>
         </section>
+
         <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
             <img id="image-large-1" loading="lazy" src="https://zupimages.net/up/23/41/wjho.jpg" alt="image-1" srcset="https://zupimages.net/up/23/41/wjho.jpg 500w, https://zupimages.net/up/23/41/wjho.jpg 800w, https://zupimages.net/up/23/41/wjho.jpg 1080w, https://zupimages.net/up/23/41/wjho.jpg 1200w">
 
@@ -1119,19 +1117,28 @@
             <div class="col-2 img-col-right">
                 <img id="image-col" loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
             </div>
-            <div class="col-2 text-bold">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
-                experience that encourages self expression for a life fully actualised. .</div>
+            <div class="col-2 box-text-colors">
+                <div class="text-bold">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
+                    experience that encourages self expression for a life fully actualised.</div>
+                <div class="color-pallete">
+                    <div class="color-container">
+                        <div class="color-label" id="white-color"></div>
+                        <span class="color-name">#FFFFFFF</span>
+                    </div>
+                    <div class="color-container">
+                        <div class="color-label" id="black-color"></div>
+                        <span class="color-name">#000000</span>
+                    </div>
+                    <div class="color-container">
+                        <div class="color-label" id="red-color"></div>
+                        <span class="color-name">#FFFFFFF</span>
+                    </div>
+                    <div class="color-container">
+                        <div class="color-label" id="grey-color"></div>
+                        <span class="color-name">#262626</span>
+                    </div>
+                </div>
 
-        </section>
-
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="container-paragraph text-img">
-            <div class="col-2 img-col-right">
-                <img id="image-col" loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
-            </div>
-            <div class="col-2 text-bold">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
-                experience that encourages self expression for a life fully actualised.
-
-            </div>
 
         </section>
 
@@ -1143,17 +1150,20 @@
                 <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
             </div>
         </section>
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="container-paragraph" style=" background-color: rgb(167, 167, 61);">
 
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="container-paragraph hv-105" style=" background-color: rgb(167, 167, 61);">
             <div class="story-text-paragraph">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
                 experience that encourages self expression for a life fully actualised.</div>
 
+
         </section>
+
         <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
             <img id="image-large-1" loading="lazy" src="./01_Kukla/webp/portfolio.webp" alt="#" srcset="">
 
         </section>
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-2">
+
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-2 story-box">
             <div class="story-header">
                 <h2>Kukla elevates your everyday with adornment that steps up your signature look with a sartorial statement. It’s the bold you. The brave you. The you you’ve been building up to be.</h2>
             </div>
@@ -1166,6 +1176,7 @@
                     be authentically you, however that looks.</div>
             </div>
         </section>
+
         <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container-2">
             <div class="image-col image-item">
                 <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
@@ -1174,6 +1185,7 @@
                 <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
             </div>
         </section>
+
         <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
             <img id="image-large-1" loading="lazy" src="./01_Kukla/desky-a-vizitky.jpg" alt="#" srcset="">
 
@@ -1270,24 +1282,8 @@
             </div>
 
         </section>
-        <!--<section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="color-pallete-col">
-            <div class="color-container">
-                <div class="color-label" id="white-color"></div>
-                <span class="color-name">#FFFFFFF</span>
-            </div>
-            <div class="color-container">
-                <div class="color-label" id="black-color"></div>
-                <span class="color-name">#000000</span>
-            </div>
-            <div class="color-container">
-                <div class="color-label" id="red-color"></div>
-                <span class="color-name">#FFFFFFF</span>
-            </div>
-            <div class="color-container">
-                <div class="color-label" id="grey-color"></div>
-                <span class="color-name">#262626</span>
-            </div>
-        </section>-->
+
+
         <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="video-section data-scroll data-scroll-speed=" 1 " data-scroll-target="#grid2 " data-scroll-direction="horizontal "">
             <div class="project-video-container">
                 <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif" srcset="https://mir-s3-cdn-cf.behance.net/project_modules/disp/85a12d179646327.64fdafa3cc988.gif 600w,https://mir-s3-cdn-cf.behance.net/project_modules/fs/85a12d179646327.64fdafa3cc988.gif 1920w,https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/85a12d179646327.64fdafa3cc988.gif 1200w,https://mir-s3-cdn-cf.behance.net/project_modules/1400/85a12d179646327.64fdafa3cc988.gif 1400w,https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif 1400w,"
@@ -1330,31 +1326,8 @@
                 </span>
             </div>
         </section>
-        <!--<div class="galley-grid-rows">
-            <div class="img-item">
-                <img loading="lazy" src="./01_Kukla/portfolio.jpg" alt="#" srcset="">
-            </div>
-            <div class="img-item">
-                <img loading="lazy" src="./01_Kukla/mikina.jpg" alt="#" srcset="">
-            </div>
-            <div class="img-item">
-                <img loading="lazy" src="./01_Kukla/notysky.jpg" alt="#" srcset="">
-            </div>
 
-            <div class="img-item">
-                <img loading="lazy" src="./01_Kukla/portfolio.jpg" alt="#" srcset="">
-            </div>
-            <div class="img-item">
-                <img loading="lazy" src="./01_Kukla/web-mobil.jpg" alt="#" srcset="">
-            </div>
-            <div class="img-item">
-                <img loading="lazy" src="./01_Kukla/web-tablet.jpg" alt="#" srcset="">
-            </div>
-            <div class="img-item">
-                <img loading="lazy" src="./01_Kukla/plechovka-2.jpg" alt="#" srcset="">
-            </div>
 
-        </div>-->
         <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="contact-container">
             <div class="contact-container-col">
                 <div class="link-container">
@@ -1398,64 +1371,64 @@
 
         </section>
 
-    </div>
+        </div>
 
 
-    <footer>
-        <div class="text-header">
-            <div class="footer-header">
-                <h2 data-translate="footer-h2">Get in touch</h2>
+        <footer>
+            <div class="text-header">
+                <div class="footer-header">
+                    <h2 data-translate="footer-h2">Get in touch</h2>
+                </div>
             </div>
-        </div>
-        <div class="footer-links">
-            <div class="footer-fnt link-email">
-                <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+            <div class="footer-links">
+                <div class="footer-fnt link-email">
+                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                </div>
+                <div class="footer-fnt link-email">
+                    <a href="tel:+421905455208">+421 905 455 208</a>
+                </div>
             </div>
-            <div class="footer-fnt link-email">
-                <a href="tel:+421905455208">+421 905 455 208</a>
+            <div class="licence-container">
+                <ul class="licence-container-list">
+                    <li id="licence-item"> <a href="../privacy_index.html" rel="noopener noreferrer" data-translate="footer-li-text-1">Privacy</a> </li>
+                    <li id="licence-item"><a href="../conditions_index.html" rel="noopener noreferrer" data-translate="footer-li-text-2">Conditions</a></li>
+                    <li id="licence-item"><a href="../human_rughts_index.html" rel="noopener noreferrer" data-translate="footer-li-text-3">Human Rights</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="licence-container">
-            <ul class="licence-container-list">
-                <li id="licence-item"> <a href="../privacy_index.html" rel="noopener noreferrer" data-translate="footer-li-text-1">Privacy</a> </li>
-                <li id="licence-item"><a href="../conditions_index.html" rel="noopener noreferrer" data-translate="footer-li-text-2">Conditions</a></li>
-                <li id="licence-item"><a href="../human_rughts_index.html" rel="noopener noreferrer" data-translate="footer-li-text-3">Human Rights</a></li>
-            </ul>
-        </div>
-        <div class="icon-box">
+            <div class="icon-box">
 
-            <!--<div class="language-icon">
+                <!--<div class="language-icon">
                         <div id="language-icon-circle">
                             <div class="svg-icon">
     
                             </div>
                         </div>
                     </div>-->
-            <div class="icons">
-                <div class="wh-30">
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                        <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
-                    </a>
-                </div>
-                <div class="wh-30">
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                        <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
-                    </a>
-                </div>
-                <div class="wh-30">
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                        <img src="../icons/behance.svg" id="icon" alt="" srcset="">
-                    </a>
+                <div class="icons">
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="wh-30">
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <script src="../js/ScrollTriger.js" async></script>
+        </footer>
+        <script src="../js/ScrollTriger.js" async></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
 </body>
 <script>
