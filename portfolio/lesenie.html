@@ -38,6 +38,10 @@
         line-height: 50px;
     }
     
+    .story-box {
+        gap: 25em !important;
+    }
+    
     @media screen and (max-width: 479px) {
         .container-paragraph.hv-105 {
             margin: 0 !important;
@@ -74,7 +78,7 @@
             height: 140px !important;
         }
         .col-2.img-col-right {
-            margin: 80px 0px 80px 0px!important;
+            margin: 80px 0px 80px 0px !important;
         }
         .col-2.box-text-colors {
             margin-top: 0px !important;
@@ -277,6 +281,9 @@
     }
     
     @media screen and (max-width: 991px) {
+        .story-box {
+            gap: 5em !important;
+        }
         .container-paragraph {
             display: flex;
             margin: 192px 0 !important;
@@ -372,14 +379,14 @@
         }
         .pr-text {
             width: 90%;
-            font-size: 18px !important;
-            line-height: normal;
+            font-size: 14px !important;
+            line-height: 1.4;
         }
         #pr-desc-header {
             font-family: 'Cormorant Garamond Semibold', sans-serif;
             font-size: 45px !important;
             font-weight: 600 !important;
-            line-height: normal;
+            line-height: 1;
         }
         .col-2 {
             display: flex;
@@ -389,7 +396,7 @@
             gap: 15em;
         }
         .story-text {
-            font-size: 18px !important;
+            font-size: 16px !important;
             font-family: 'Roboto Thin';
             line-height: 1;
             font-weight: 900;
@@ -522,7 +529,7 @@
         font-family: 'Roboto Thin';
         text-transform: uppercase;
         text-align: right;
-        font-size: 450px;
+        font-size: 430px;
         color: #fff;
         font-weight: 100;
         margin-top: 47%;
@@ -545,7 +552,7 @@
         align-items: flex-start;
         margin: 192px 80px;
         flex-direction: row;
-        gap: 15em;
+        gap: 10em;
     }
     
     .container-paragraph {
@@ -628,7 +635,9 @@
         font-weight: 400;
     }
     
-    .story-container {}
+    .story-text-header {
+        margin-bottom: 2em;
+    }
     
     .story-text-header>h3 {
         font-size: 45px;
@@ -639,7 +648,7 @@
     .story-text {
         font-size: 20px;
         font-family: 'Roboto Thin';
-        line-height: normal;
+        line-height: 1.5;
         font-weight: 900;
     }
     
@@ -741,7 +750,7 @@
         align-items: center;
         justify-content: space-between;
         background-color: #000;
-        padding: 100px 192px;
+        padding: 100px 192px 100px 192px;
         width: 100%;
     }
     /*instagram card css*/
@@ -988,7 +997,7 @@
                                     <a href="../about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../portfolio/" class="nav-link w--current" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
+                                    <a href="../portfolio/" class="nav-link " data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../contact" class="nav-link" data-translate="nav-link-4" rel="preload" as="fetch">Contact us</a>
@@ -1064,15 +1073,15 @@
 
 
     <div class="page-wrapper">
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container">
-            <img id="image-bg-1" src="./01_Kukla/webp/bb2.webp" loading="eager" alt="cover project" srcset="https://zupimages.net/up/23/41/8u11.jpg 500w, https://zupimages.net/up/23/41/8u11.jpg 800w, https://zupimages.net/up/23/41/8u11.jpg 1080w, https://zupimages.net/up/23/41/8u11.jpg 1200w">
+        <section class="image-container" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+            <img id="image-bg-1" src="./02_Lesenie/webp/logo-2.webp" loading="eager" alt="cover project" srcset="./02_Lesenie/webp/logo-2.webp 500w, ./02_Lesenie/webp/logo-2.webp 800w, ./02_Lesenie/webp/logo-2.webp 1080w, ./02_Lesenie/webp/logo-2.webp 1200w">
 
             <div class="project-header">
-                <h1>Kukla</h1>
+                <h1>Lessenie</h1>
             </div>
         </section>
 
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-3" id="project-info">
+        <section class="col-3" id="project-info" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
             <div class="pr-name">
                 <h2>Kukla</h2>
             </div>
@@ -1107,15 +1116,9 @@
                 </p>
             </div>
         </section>
-
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
-            <img id="image-large-1" loading="lazy" src="https://zupimages.net/up/23/41/wjho.jpg" alt="image-1" srcset="https://zupimages.net/up/23/41/wjho.jpg 500w, https://zupimages.net/up/23/41/wjho.jpg 800w, https://zupimages.net/up/23/41/wjho.jpg 1080w, https://zupimages.net/up/23/41/wjho.jpg 1200w">
-
-        </section>
-
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="container-paragraph text-img">
+        <section class="container-paragraph text-img" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
             <div class="col-2 img-col-right">
-                <img id="image-col" loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
+                <img id="image-col" loading="lazy" src="./02_Lesenie/webp/vizitky.webp" alt="#" srcset="">
             </div>
             <div class="col-2 box-text-colors">
                 <div class="text-bold">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
@@ -1141,29 +1144,35 @@
 
 
         </section>
+        <section class="image-container img-lg-1" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+            <img id="image-large-1" loading="eager" src="./02_Lesenie/webp/logo-2.webp" alt="image-1" srcset="./02_Lesenie/webp/logo-2.webp 500w, ./02_Lesenie/webp/logo-2.webp 800w, ./02_Lesenie/webp/logo-2.webp 1080w, ./02_Lesenie/webp/logo-2.webp 1200w">
 
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container-2 bg-dark">
+        </section>
+
+
+
+        <section class="image-container-2 bg-dark" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
             <div class="image-col">
-                <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
+                <img id="image-col" loading="lazy" src="./02_Lesenie/webp/tablet-2.webp" alt="#" srcset="">
             </div>
             <div class="image-col">
-                <img loading="lazy" src="./01_Kukla/sq_jpg/plechovka.webp" alt="#" srcset="">
+                <img id="image-col" loading="lazy" src="./02_Lesenie/webp/tablet.webp" alt="#" srcset="">
             </div>
         </section>
 
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="container-paragraph hv-105" style=" background-color: rgb(167, 167, 61);">
+        <!--<section class="container-paragraph hv-105" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" style=" background-color: rgb(167, 167, 61);">
             <div class="story-text-paragraph">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
                 experience that encourages self expression for a life fully actualised.</div>
 
 
+        </section>-->
+
+        <section class="image-container img-lg-1" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+            <img id="image-large-1" loading="lazy" src="./02_Lesenie/webp/vizitky2.webp" alt="#" srcset="">
+
         </section>
 
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
-            <img id="image-large-1" loading="lazy" src="./01_Kukla/webp/portfolio.webp" alt="#" srcset="">
-
-        </section>
-
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-2 story-box">
+        <!--<section class="col-2 story-box" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
             <div class="story-header">
                 <h2>Kukla elevates your everyday with adornment that steps up your signature look with a sartorial statement. It’s the bold you. The brave you. The you you’ve been building up to be.</h2>
             </div>
@@ -1172,133 +1181,132 @@
                     <h3>Who is Kukla?</h3>
                 </div>
                 <div class="story-text">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
-                    experience that encourages self expression for a life fully actualised. They believe fully and fiercely that style is not tantamount to fashion; True style is a mindset, an attitude. Walk into Kukla and walk out feeling empowered to
-                    be authentically you, however that looks.</div>
+                    experience that encourages self expression for a life fully actualised. </div>
             </div>
-        </section>
+        </section>-->
 
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container-2">
+        <section class="image-container-2" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
             <div class="image-col image-item">
-                <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
+                <img id="image-col" loading="lazy" src="./02_Lesenie/webp/socky.webp" alt="#" srcset="">
             </div>
             <div class="image-col image-item" style="margin-left: -10px !important;">
-                <img loading="lazy" src="./01_Kukla/sq_jpg/socky-01.webp" alt="#" srcset="">
+                <img id="image-col" loading="lazy" src="./02_Lesenie/webp/socky.webp" alt="#" srcset="">
             </div>
         </section>
 
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="image-container img-lg-1">
-            <img id="image-large-1" loading="lazy" src="./01_Kukla/desky-a-vizitky.jpg" alt="#" srcset="">
+        <section class="image-container img-lg-1" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+            <img id="image-large-1" loading="lazy" src="./02_Lesenie/webp/web.webp" alt="#" srcset="">
 
         </section>
-
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="inst-col-3" id="project-instag">
-
-            <div class="card">
-
-                <div class="top">
-                    <div class="userDetails">
-                        <div class="profile_img">
-                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
-                        </div>
-                        <!-- Main Title -->
-                        <h3>studiodawn<br>
-                            <!--<span>Khao Lak, Thailande</span>-->
-                        </h3>
-                    </div>
-                    <div>
-                        <!-- Settings Dot -->
-                        <div class="settings"></div>
-                    </div>
-                </div>
-                <div class="imgBox">
-                    <!-- Main Image -->
-                    <a href="http://">
-                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
-                    </a>
-                </div>
-
-
-                <!-- Description -->
-                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
-
-            </div>
-            <div class="card">
-
-                <div class="top">
-                    <div class="userDetails">
-                        <div class="profile_img">
-                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
-                        </div>
-                        <!-- Main Title -->
-                        <h3>studiodawn<br>
-                            <!--<span>Khao Lak, Thailande</span>-->
-                        </h3>
-                    </div>
-                    <div>
-                        <!-- Settings Dot -->
-                        <div class="settings"></div>
-                    </div>
-                </div>
-                <div class="imgBox">
-                    <!-- Main Image -->
-                    <a href="http://">
-                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
-                    </a>
-                </div>
-
-
-                <!-- Description -->
-                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
-
-            </div>
-            <div class="card">
-
-                <div class="top">
-                    <div class="userDetails">
-                        <div class="profile_img">
-                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
-                        </div>
-                        <!-- Main Title -->
-                        <h3>studiodawn<br>
-                            <!--<span>Khao Lak, Thailande</span>-->
-                        </h3>
-                    </div>
-                    <div>
-                        <!-- Settings Dot -->
-                        <div class="settings"></div>
-                    </div>
-                </div>
-                <div class="imgBox">
-                    <!-- Main Image -->
-                    <a href="http://">
-                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
-                    </a>
-                </div>
-
-
-                <!-- Description -->
-                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
-
-            </div>
-
-        </section>
-
-
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="video-section data-scroll data-scroll-speed=" 1 " data-scroll-target="#grid2 " data-scroll-direction="horizontal "">
+        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="video-section data-scroll data-scroll-speed=" 1 " data-scroll-target=" #grid2 " data-scroll-direction=" horizontal "">
             <div class="project-video-container">
                 <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif" srcset="https://mir-s3-cdn-cf.behance.net/project_modules/disp/85a12d179646327.64fdafa3cc988.gif 600w,https://mir-s3-cdn-cf.behance.net/project_modules/fs/85a12d179646327.64fdafa3cc988.gif 1920w,https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/85a12d179646327.64fdafa3cc988.gif 1200w,https://mir-s3-cdn-cf.behance.net/project_modules/1400/85a12d179646327.64fdafa3cc988.gif 1400w,https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/85a12d179646327.64fdafa3cc988.gif 1400w,"
                     sizes="(max-width: 1400px) 100vw, 1400px">
             </div>
         </section>
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="col-3" id="listed-core-items">
+
+        <section class="inst-col-3" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" id="project-instag">
+
+            <div class="card">
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./02_Lesenie/webp/logo.webp" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
+            </div>
+            <div class="card">
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./02_Lesenie/webp/logo.webp" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
+            </div>
+            <div class="card">
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./02_Lesenie/webp/logo.webp" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
+            </div>
+
+        </section>
+
+
+
+        <!--<section class="col-3" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" id="listed-core-items">
             <div class="numbered-item">
                 <span class="number">
                     <h1>01</h1>
                 </span>
                 <span class="number-item-text">
-                    <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity for
-                    Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst honouring the
-                    precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
+                    <h2>Our creative team then took the reins to translate the new strategy into a creative and
+                        compelling identity for
+                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and
+                        play whilst honouring the
+                        precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
                 </span>
             </div>
             <div class="numbered-item">
@@ -1306,9 +1314,11 @@
                     <h1>02</h1>
                 </span>
                 <span class="number-item-text">
-                    <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity
+                    <h2>Our creative team then took the reins to translate the new strategy into a creative and
+                        compelling identity
                         for
-                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst
+                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and
+                        play whilst
                         honouring the
                         precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
                 </span>
@@ -1318,17 +1328,19 @@
                     <h1>03</h1>
                 </span>
                 <span class="number-item-text">
-                    <h2>Our creative team then took the reins to translate the new strategy into a creative and compelling identity
+                    <h2>Our creative team then took the reins to translate the new strategy into a creative and
+                        compelling identity
                         for
-                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and play whilst
+                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and
+                        play whilst
                         honouring the
                         precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
                 </span>
             </div>
-        </section>
+        </section>-->
 
 
-        <section data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" class="contact-container">
+        <section class="contact-container" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
             <div class="contact-container-col">
                 <div class="link-container">
                     <ul class="link-list">
@@ -1336,7 +1348,7 @@
                             <a href="#" id="backToTopBtn">back to top</a>
                         </li>
                         <li class="link-item">
-                            <a href="/portfolio/">back to portfolio</a>
+                            <a href="/portfolio/">portfolio</a>
                         </li>
                         <li class="link-item">
                             <a href="">next project</a>
@@ -1346,7 +1358,10 @@
 
                 <div class="contact-container-header">
                     <h2>Enjoy what you observe in this work? Searching for a creative partner?
-                        <span class='contact-container-link'><a  href="../contact/" rel="noopener noreferrer">Shall we talk?</a></span>
+                        <span class='contact-container-link'><a
+                                href="../contact/"
+                                rel="noopener noreferrer"
+                            >Shall we talk?</a></span>
                     </h2>
                 </div>
             </div>
@@ -1560,7 +1575,8 @@
         });
         // Call the function for both image containers
         createImageRevealAnimation(".image-container-2");
-        createImageRevealAnimation(".img-lg-1");
+
+        createImageRevealAnimation(".image-col");
 
 
         // Add animation to reveal the image container
@@ -1607,7 +1623,7 @@
         // Initial styles (set opacity to 0 and initial position)
         gsap.set(images, {
             opacity: 0,
-            y: 0
+            x: 0, // You can adjust this if you want to animate in a different direction
         });
 
         // Create a timeline for the animation
@@ -1616,8 +1632,8 @@
         // Add animation to reveal the images
         revealImageTimeline.to(images, {
             opacity: 1,
-            x: 0,
-            duration: 1,
+            x: 0, // Adjust this value for horizontal animation
+            duration: 0.4,
             ease: "power2.inOut",
         });
 
