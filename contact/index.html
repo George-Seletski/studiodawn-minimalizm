@@ -231,7 +231,7 @@
         <div class="contact-section">
 
             <div class="columns-container">
-                <form class='form-container' action="https://formsubmit.co/patrik@studiodawn.com" method="POST">
+                <form class='form-container' id="myForm" action="https://formsubmit.co/patrik@studiodawn.com" method="POST">
                     <input type="hidden" name="_subject" value="New submission!">
                     <div id="forms">
                         <div class="container-header">
@@ -364,6 +364,20 @@
         });
         setupLanguageSwitcher();
 
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Check if the captcha is completed
+            const response = grecaptcha.getResponse(); // Use the appropriate function for your captcha service
+
+            if (response.length === 0) {
+                // Captcha is not completed
+                alert("Please complete the captcha.");
+            } else {
+                // Captcha is completed, perform the redirect
+                window.location.href = "index.html"; // Replace with your desired success page URL
+            }
+        });
 
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
