@@ -112,7 +112,8 @@ h1 {
 #header-font {
     font-size: 45px;
     text-align: left;
-    margin-bottom: 35px;
+    line-height: 25px;
+    padding-bottom: 2em;
     /*font-family: 'Cormorant Garamond Semibold', sans-serif;*/
     font-family: 'Cormorant Garamond Light', sans-serif;
 }
@@ -182,7 +183,10 @@ h1 {
     margin: 2em 2em 0 2em;
 }
 
-.bottom-text-title {}
+.bottom-text-title {
+    padding-bottom: 1em;
+    font-size: 14px;
+}
 
 #arrow-down {
     width: 30px;
@@ -701,11 +705,11 @@ img {
     display: flex;
     align-items: center;
     margin: 144px 144px 100px 144px;
-    gap: 75px;
+    gap: 100px;
 }
 
 .description {
-    font-size: 16px;
+    font-size: 1em;
     font-family: 'Roboto Thin' !important;
     font-weight: 900;
     line-height: 28px;
@@ -774,9 +778,9 @@ img {
 
 .text {
     display: flex;
-    text-align: center;
-    margin: 5.5em 10em;
-    font-size: 30px;
+    text-align: left;
+    margin: 5.5em 7em;
+    font-size: 1.8em;
     align-items: center;
     line-height: 70px;
 }
@@ -1105,7 +1109,7 @@ img {
     font-family: 'Roboto Thin', sans-serif;
     font-weight: 900;
     letter-spacing: 1.5px;
-    font-size: 50px !important;
+    font-size: 1.2em !important;
     line-height: 70px;
 }
 
