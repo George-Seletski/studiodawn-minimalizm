@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Roboto Thin';
+    font-family: 'General-Sans Light';
     src: url("../fonts/Roboto/Roboto-Thin.ttf") format('truetype');
 }
 
@@ -24,13 +24,18 @@
 }
 
 @font-face {
-    font-family: 'Roboto Light';
+    font-family: 'General-Sans ExtraLight';
     src: url("../fonts/Roboto/Roboto-Light.ttf") format('truetype');
 }
 
 @font-face {
-    font-family: 'Font-Sans Regular';
-    src: url("../fonts/Neur_Haas_Grotesk_Light/FreeSans.ttf") format('truetype');
+    font-family: 'General-Sans Light';
+    src: url("../fonts/GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Light.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'General-Sans ExtraLight';
+    src: url("../fonts/GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Extralight.ttf") format('truetype');
 }
 
 * {
@@ -49,7 +54,7 @@ html {
 }
 
 body {
-    font-family: 'Roboto Thin', sans-serif;
+    font-family: 'General-Sans Light', sans-serif;
     width: 100%;
     height: 100%;
     transition: var(--transition);
@@ -143,7 +148,7 @@ h1 {
     margin-bottom: .3em;
     /*font-family: 'Cormorant Garamond Semibold', sans-serif;*/
     font-weight: 100;
-    font-family: 'Roboto Thin', sans-serif;
+    font-family: 'General-Sans Light', sans-serif;
 }
 
 .prevent-select {
@@ -357,7 +362,7 @@ img {
 }
 
 .roboto-light-fnt {
-    font-family: 'Roboto Thin', sans-serif;
+    font-family: 'General-Sans Light', sans-serif;
     font-weight: 400 !important;
     padding-top: 40px;
 }
@@ -585,7 +590,7 @@ img {
 
 .active {
     font-weight: 800;
-    font-family: 'Roboto Light';
+    font-family: 'General-Sans ExtraLight';
     font-size: 20px;
 }
 
@@ -610,7 +615,7 @@ img {
 .filter-list>li>a {
     font-size: 20px !important;
     line-height: 35px;
-    font-family: 'Roboto Light';
+    font-family: 'General-Sans ExtraLight';
     font-weight: 500;
     transition: all 0.5s ease;
 }
@@ -730,7 +735,7 @@ img {
 
 .description {
     font-size: 16px;
-    font-family: 'Roboto Thin' !important;
+    font-family: 'General-Sans Light' !important;
     font-weight: 900;
     line-height: 28px;
 }
@@ -851,7 +856,7 @@ img {
 
 .loader-counter>h1 {
     font-size: 144px !important;
-    font-family: 'Roboto Light', sans-serif;
+    font-family: 'General-Sans ExtraLight', sans-serif;
     font-weight: 400;
 }
 
@@ -924,7 +929,7 @@ img {
 
 .tag {
     font-weight: 800;
-    font-family: 'Roboto Light', sans-serif;
+    font-family: 'General-Sans ExtraLight', sans-serif;
     font-size: 20px;
     padding-top: 40px;
 }
@@ -1102,7 +1107,7 @@ img {
     padding-bottom: 40px;
     display: block;
     gap: 100px;
-    font-family: 'Font-Sans Regular' !important;
+    font-family: 'General-Sans Light' !important;
 }
 
 .brands-container {
@@ -1128,7 +1133,7 @@ img {
 
 #brand-name {
     text-decoration: underline;
-    font-family: 'Roboto Thin', sans-serif;
+    font-family: 'General-Sans Light', sans-serif;
     font-weight: 900;
     letter-spacing: 1.5px;
     font-size: 1.2em !important;
@@ -1320,7 +1325,8 @@ img {
     font-size: 18px;
     text-decoration: none;
     transition: all 0.3s;
-    font-weight: 200;
+    font-weight: 100 !important;
+    font-family: 'General-Sans ExtraLight', sans-serif;
 }
 
 .white {
@@ -1839,7 +1845,7 @@ footer {
     transition-property: transform, scale, opacity;
     transition-duration: 250ms;
     transition-timing-function: ease-in-out;
-    scale: 0.2;
+    scale: 0.3;
     z-index: 99999;
 }
 
@@ -1944,7 +1950,7 @@ footer {
         font-size: 2em !important;
     }
     .roboto-light-fnt {
-        font-family: 'Roboto Thin', sans-serif;
+        font-family: 'General-Sans Light', sans-serif;
         font-weight: 400 !important;
         padding-top: 0px;
     }
@@ -2104,7 +2110,7 @@ footer {
     .filter-list>li>a {
         font-size: 20px !important;
         line-height: 30px;
-        font-family: 'Roboto Light', sans-serif;
+        font-family: 'General-Sans ExtraLight', sans-serif;
         transition: all 0.5s ease;
     }
     .icons-view {
@@ -2124,7 +2130,7 @@ footer {
 @media screen and (max-width: 1919px) {
     .description {
         font-size: 12px;
-        font-family: 'Roboto Thin' !important;
+        font-family: 'General-Sans Light' !important;
         font-weight: 900;
         line-height: 20px;
     }
@@ -2417,7 +2423,7 @@ footer {
     .filter-list>li>a {
         font-size: 25px !important;
         line-height: 40px;
-        font-family: 'Roboto Light', sans-serif;
+        font-family: 'General-Sans ExtraLight', sans-serif;
         transition: all 0.5s ease;
     }
     .filter-container {

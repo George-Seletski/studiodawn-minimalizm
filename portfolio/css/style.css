@@ -1259,7 +1259,7 @@ img {
 }
 
 .nav-link {
-    font-weight: 700;
+    font-weight: 100 !important;
     margin-bottom: 25px;
     padding-bottom: 10px;
     line-height: 45px;
