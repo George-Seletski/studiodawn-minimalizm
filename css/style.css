@@ -20,12 +20,17 @@
 
 @font-face {
     font-family: 'Roboto Bold';
-    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    src: url("../fonts/Roboto/Roboto-Bold.ttf") format('truetype');
 }
 
 @font-face {
     font-family: 'Roboto Light';
-    src: url("../fonts/Roboto/Roboto-Light.ttf");
+    src: url("../fonts/Roboto/Roboto-Light.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Font-Sans Regular';
+    src: url("../fonts/Neur_Haas_Grotesk_Light/FreeSans.ttf") format('truetype');
 }
 
 * {
@@ -109,21 +114,36 @@ h1 {
     }
 }
 
+.container-center-block {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    margin: 0px 144px;
+    padding: 0;
+}
+
+.mb-100 {
+    margin-bottom: 100px !important;
+}
+
 #header-font {
     font-size: 45px;
     text-align: left;
-    line-height: 25px;
+    line-height: 1;
     padding-bottom: 2em;
-    /*font-family: 'Cormorant Garamond Semibold', sans-serif;*/
-    font-family: 'Cormorant Garamond Light', sans-serif;
+    text-transform: capitalize;
+    /*font-family: 'Font-Sans Regular', sans-serif;*/
+    font-family: 'Cormorant Garamond Semibold', sans-serif;
+    /*font-family: 'Cormorant Garamond Light', sans-serif;*/
 }
 
 .brands-section-header>h2 {
-    font-size: 5em;
+    font-size: 3em;
     text-align: left;
-    margin-bottom: 35px;
+    margin-bottom: .3em;
     /*font-family: 'Cormorant Garamond Semibold', sans-serif;*/
-    font-family: 'Cormorant Garamond Light', sans-serif;
+    font-weight: 100;
+    font-family: 'Roboto Thin', sans-serif;
 }
 
 .prevent-select {
@@ -145,7 +165,7 @@ h1 {
 }
 
 .bottom-text-header {
-    position: absolute;
+    position: relative;
     bottom: 0;
     display: flex;
     overflow: auto;
@@ -704,12 +724,12 @@ img {
 .row-container {
     display: flex;
     align-items: center;
-    margin: 144px 144px 100px 144px;
-    gap: 100px;
+    margin: 144px 144px 244px 144px;
+    gap: 144px;
 }
 
 .description {
-    font-size: 1em;
+    font-size: 16px;
     font-family: 'Roboto Thin' !important;
     font-weight: 900;
     line-height: 28px;
@@ -779,7 +799,7 @@ img {
 .text {
     display: flex;
     text-align: left;
-    margin: 5.5em 7em;
+    margin: 10em 15em;
     font-size: 1.8em;
     align-items: center;
     line-height: 70px;
@@ -1069,10 +1089,11 @@ img {
 }
 
 .brands-section-header {
+    text-transform: lowercase;
     width: auto;
     display: block;
     border-bottom: 2px solid;
-    border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;
+    /*border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;*/
 }
 
 .brands-section {
@@ -1081,6 +1102,7 @@ img {
     padding-bottom: 40px;
     display: block;
     gap: 100px;
+    font-family: 'Font-Sans Regular' !important;
 }
 
 .brands-container {
@@ -1126,7 +1148,6 @@ img {
 .icons {
     display: flex;
     flex-direction: row;
-    gap: 15px;
     align-items: center;
     position: relative;
     /*padding-right: 2.3em;*/
@@ -1463,12 +1484,8 @@ textarea {
 }
 
 .wh-30 {
-    width: 40px !important;
-    height: 40px !important;
-}
-
-.icon>.wh-30 {
-    margin-right: 2em;
+    width: 30px !important;
+    height: 30px !important;
 }
 
 .icons>div {
@@ -1499,9 +1516,9 @@ textarea {
 
 .header-image-description>.description {
     display: block;
-    margin: 0 0 0 25em;
-    width: 800px;
-    font-size: 14px !important;
+    padding: 0 10em;
+    width: 100%;
+    font-size: .8em !important;
     line-height: 40px;
     position: relative;
 }
@@ -1512,21 +1529,20 @@ textarea {
 }
 
 .header-cover>img {
-    height: 100vh;
-    padding: 2em 0 8em 0;
+    width: 100%;
+    padding: 20em;
 }
 
 .section-block {
-    font-size: 2em !important;
+    font-size: 1.5em !important;
     margin-left: auto;
     margin-right: auto;
-    height: 100vh;
 }
 
 .section-block>.header-section-content {
     line-height: 150px !important;
-    padding-bottom: 2em;
-    font-size: 3.8em !important;
+    padding-bottom: 0em;
+    font-size: 2.5em !important;
 }
 
 .section-block-text {
@@ -1709,7 +1725,7 @@ footer {
     display: flex;
     gap: 70px;
     align-items: center;
-    margin: 11.25rem 2em;
+    margin: 15rem 2em;
     justify-content: center;
 }
 
@@ -1805,6 +1821,44 @@ footer {
     transition-timing-function: ease-in-out;
     scale: 0.3;
     z-index: 99999;
+}
+
+.custom-cursor {
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+    border-radius: 50%;
+    background-color: white;
+    transition-property: transform, scale, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    scale: 0.2;
+    z-index: 99999;
+}
+
+.custom-cursor::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    width: 80px;
+    /* Adjust as needed to create a 15px border effect */
+    height: 80px;
+    /* Adjust as needed to create a 15px border effect */
+    border: 2px solid #333;
+    /* Replace #your-border-color with your desired border color */
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .custom-cursor--link {
@@ -2064,6 +2118,49 @@ footer {
         justify-content: center;
         gap: 50px;
         margin-left: 0em;
+    }
+}
+
+@media screen and (max-width: 1919px) {
+    .description {
+        font-size: 12px;
+        font-family: 'Roboto Thin' !important;
+        font-weight: 900;
+        line-height: 20px;
+    }
+    .row-container {
+        display: flex;
+        align-items: center;
+        margin: 144px 144px 144px 144px;
+        gap: 100px;
+    }
+    .video-container {
+        margin: 25px 150px 0 150px;
+        border-color: transparent !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .hv-auto {
+        height: 100vh !important;
+        padding-top: 0px;
+    }
+    #header-font {
+        font-size: 35px;
+        text-align: left;
+        line-height: 25px;
+        padding-bottom: 2em;
+        /* font-family: 'Cormorant Garamond Semibold', sans-serif; */
+        font-family: 'Cormorant Garamond Light', sans-serif;
+    }
+    .text {
+        display: flex;
+        text-align: left;
+        margin: 5.5em 7em;
+        font-size: 1.5em;
+        align-items: center;
+        line-height: 45px;
     }
 }
 

@@ -312,9 +312,6 @@
         #section-title {
             font-size: 4em;
         }
-        .section-block {
-            height: 85vh !important;
-        }
     }
     
     @media (min-width: 992px) {
@@ -330,9 +327,6 @@
         .fnt-great {
             font-size: 1.8em;
         }
-        .section-block {
-            height: 100vh !important;
-        }
     }
     
     .pb-2 {
@@ -340,9 +334,6 @@
     }
     
     @media screen and (max-width: 479px) {
-        .section-block {
-            height: 94vh !important;
-        }
         .brands-section-header {
             margin: 0 auto;
             width: auto;
@@ -380,6 +371,12 @@
         .section-block-text {
             margin: 5em 0;
         }
+    }
+    
+    .section-block {
+        height: 100% !important;
+        display: flex;
+        flex-direction: column;
     }
     
     @media screen and (max-width: 769px) {
@@ -521,41 +518,33 @@
 
                 <div class="icons" id="translate-icon">
                     <div class="wh-30">
-                        <a href="javascript:void(0);">
-                            <img src="../icons/global-svg-black.svg" id="icon" class="translate-icon-global" alt="language-icon">
-                        </a>
-                        <div class="dropdown-content">
-                            <a class="dropdown-item" id="enTranslator" href="javascript:void(0);" data-lang="en">EN</a>
-                            <a class="dropdown-item" id="frTranslator" href="javascript:void(0);" data-lang="fr">FR</a>
-                            <a class="dropdown-item" id="deTranslator" href="javascript:void(0);" data-lang="de">DE</a>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="header-section odd-header">
+    <div class="header-section ">
         <div class="header-section-content">
 
             <h1 id="main-title">
                 <span class="mb-bottom---10px garamond-font" data-translate="about-main-h1-1">Not your typical</span>
                 <span class="mb-bottom---10px mr-55 roboto-light-fnt" data-translate="about-main-h1-2">agency.</span>
             </h1>
-            <div class="mouse-container">
-                <span class="mouse">
-                    <span class="mouse-movement">
-                    </span>
-                </span>
-                <div class="mouse-scroll mr-0" href="#">
-                    <span class="mouse mr-0">
-                        <span class="mouse-movement">
-                        </span>
-                    </span>
-                </div>
-            </div>
-        </div>
 
+        </div>
+        <div class="bottom-text-header">
+            <span class="bottom-text-title">CREATE YOURS NOW</span>
+            <!--<span><img id="arrow-down"src="./icons/arrow-left-black.svg" alt=""></span>
+            <span class="mouse">
+                    <span class="mouse-movement"></span>
+            </span>
+            <div class="mouse-scroll" href="#">
+                <span class="mouse">
+                        <span class="mouse-movement"></span>
+                </span>-->
+        </div>
     </div>
 
     <div class="page-wrapper">
@@ -573,7 +562,7 @@
                 </h2>
             </span>
         </div>
-        <div class="header-section  section-block-text">
+        <!--<div class="header-section  section-block-text">
             <div class="header-section-content">
 
                 <h1 id="section-title" style="margin: 0 1.5em;">
@@ -583,33 +572,29 @@
 
             </div>
 
-        </div>
+        </div>-->
 
         <div class="row-container">
             <div>
-                <h2 id="header-font" data-translate="about-header-h2-1">Trademark</h2>
+                <h2 id="header-font">Trademark</h2>
                 <span class="description" data-translate="about-description-1">
                     From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                    creativity to clients doing right by the world. We turn compeling ideas into commercial success
-                    stories through the power of brand in all its forms.
+                    creativity to
+                    clients doing right by the world.
                 </span>
             </div>
             <div>
-                <h2 id="header-font" data-translate="about-header-h2-2">Digital</h2>
+                <h2 id="header-font">Digital</h2>
                 <span class="description" data-translate="about-description-2">
-                    We're all about collective succes. Everyone's an equal in the creative process as we work toward a
-                    shared goal - no egos here. We don't make our partners fit into our formula. Instead, we find what
-                    works for you.
+                We're all about collective success. Everyone's an equal in the creative process as we work toward a shared goal - no
+                egos here. We don't make our partners fit into our formula. Instead, we find what works for you.
                 </span>
             </div>
             <div>
-                <h2 id="header-font" data-translate="about-header-h2-3">Contents</h2>
+                <h2 id="header-font">Contents</h2>
                 <span class="description" data-translate="about-description-3">
-                    From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                    creativity
-                    to clients doing right by the world. We turn compeling ideas into commercial success stories through
-                    the power
-                    of brand.
+                    From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to
+                    clients doing right by the world. We turn compelling ideas into commercial success stories through brand power.
                 </span>
             </div>
 
@@ -618,8 +603,8 @@
 
 
         <div class="brands-section">
-            <div class="brands-section-header">
-                <h2 data-translate="about-customer-h2">Customers</h2>
+            <div class="brands-section-header ">
+                <h2 data-translate="about-customer-h2">customers</h2>
             </div>
             <div class="brands-container">
                 <div id="brand">
@@ -668,12 +653,12 @@
 
                 <h1 id="discover-h1">
                     <span class="mb-bottom---10px garamond-font fnt-great" id="discover-text" data-translate="about-descover-text-1">Discover</span>
-                    <span class="mb-bottom---10px mr-55" data-translate="about-descover-text-2">our work.</span>
+                    <span class="mb-bottom---10px  mr-55" data-translate="about-descover-text-2">our work.</span>
                 </h1>
 
             </div>
-            <div class="bottom-text-header pb-2">
-                <a href="../portfolio/" target="_blank" rel="noopener noreferrer">
+            <div class="bottom-text-header pb-2 ">
+                <a href="../portfolio/" rel="noopener noreferrer">
                     <div class="button see-cases">
                         <span data-translate="about-btn-text">
                             See cases
@@ -748,24 +733,6 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 
-        const translateIcon = document.querySelector(".translate-icon-global");
-        const dropdownContent = document.querySelector(".dropdown-content");
-        console.log(translateIcon); // Check if translateIcon is found
-        console.log(dropdownContent); // Check if dropdownContent is found
-        translateIcon.addEventListener("click", function() {
-            dropdownContent.classList.toggle("show");
-        });
-
-        // Close the dropdown when clicking outside
-        window.addEventListener("click", function(event) {
-
-            if (!event.target.matches(".translate-icon-global")) {
-                console.log('translate-icon-globa clicked');
-                if (dropdownContent.classList.contains("show")) {
-                    dropdownContent.classList.remove("show");
-                }
-            }
-        });
 
 
 
@@ -873,29 +840,7 @@
         // GSAP animation
         const revealAnimation = gsap.timeline();
 
-        // Set initial state (fully transparent)
-        revealAnimation.set(".header-section-content h1 span", {
-            opacity: 0
-        });
 
-        // Define the animation
-        revealAnimation.from(".garamond-font", {
-            opacity: 0,
-            y: 20,
-            duration: 0.9,
-            delay: 1
-        }).from(".mr-55", {
-            opacity: 0,
-            y: 20,
-            duration: 0.8
-        }, "-=0.5");
-
-        revealAnimation.from(".fw-500", {
-            opacity: 0,
-            y: 20,
-            duration: 0.9,
-            delay: 1
-        }, "-=0.5")
 
 
 
