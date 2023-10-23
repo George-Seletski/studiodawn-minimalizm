@@ -165,7 +165,7 @@ h1 {
 }
 
 .bottom-text-header {
-    position: relative;
+    position: absolute;
     bottom: 0;
     display: flex;
     overflow: auto;
