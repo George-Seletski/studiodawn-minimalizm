@@ -601,8 +601,8 @@
     .filter-list>li>a {
         font-size: 20px !important;
         line-height: 35px;
-        font-family: 'General-Sans ExtraLight';
-        font-weight: 500;
+        font-family: 'Roboto Thin';
+        font-weight: 600;
         transition: all 0.5s ease;
     }
     
