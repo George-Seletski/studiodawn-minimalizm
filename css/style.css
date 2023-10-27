@@ -1594,6 +1594,11 @@
         /*border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;*/
     }
     
+    .svg-title {
+        width: 100%;
+        max-width: 100vw;
+    }
+    
     .footer-fnt>a {
         color: #fff;
     }
