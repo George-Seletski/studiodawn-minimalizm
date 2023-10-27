@@ -1691,12 +1691,12 @@ footer {
     break-inside: avoid;
 }
 
-.footer-header {
+.footer-header>span {
     font-family: 'Cormorant Garamond Semibold', sans-serif;
-    font-size: 50px !important;
+    font-size: 350px !important;
     font-weight: 600 !important;
     /*margin-bottom: 50px;*/
-    line-height: 60px;
+    line-height: normal;
     display: flex;
     text-align: center;
     /*margin-left: 60px;*/
