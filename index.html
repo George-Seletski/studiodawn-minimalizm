@@ -12,10 +12,10 @@
     <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
     <script src="js/all_functions.js"></script>
     <script src="js/ScrollTriger.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/gsap.min.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js"></script>
+
 </head>
 <style>
     /* Import Google font - Poppins */
@@ -226,9 +226,7 @@
                 <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
                     <img src="./img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
                 </a>
-                <div class="icons" id="translate-icon">
 
-                </div>
             </div>
         </div>
     </div>
@@ -594,57 +592,58 @@
         </div>
     </div>
     <footer>
-        <div class="footer-block">
-            <div class="nav-item">
-                <a class="nav-link gara-fnt" href="../privacy_index.html" rel="noopener noreferrer">Get in touch</a>
-            </div>
-
-
-            <div class="footer-link-block">
-
-                <div class="footer-navbar">
-                    <ul class="footer-navbar-list">
-                        <li id="footer-navbar-item"> <a href="../privacy_index.html" rel="noopener noreferrer">Home</a> </li>
-                        <li id="footer-navbar-item"><a href="../conditions_index.html" rel="noopener noreferrer">About</a></li>
-                        <li id="footer-navbar-item"><a href="../human_rughts_index.html" rel="noopener noreferrer">Cases</a></li>
-                        <li id="footer-navbar-item"><a href="../human_rughts_index.html" rel="noopener noreferrer">Contact</a></li>
-                    </ul>
+        <div class="footer-wrapper">
+            <div class="footer-block">
+                <div class="footer-link-item">
+                    <a class="nav-link gara-fnt" href="../privacy_index.html" rel="noopener noreferrer">Get in touch</a>
                 </div>
-                <div class="footer-navbar">
-                    <ul class="footer-navbar-social-list">
-                        <li id="footer-navbar-socitem"> <a href="../privacy_index.html" rel="noopener noreferrer">Behance<span class="iblock">→</span></a> </li>
-                        <li id="footer-navbar-socitem"><a href="../conditions_index.html" rel="noopener noreferrer">Instagram<span class="iblock">→</span></a></li>
-                        <li id="footer-navbar-socitem"><a href="../human_rughts_index.html" rel="noopener noreferrer">Facebook<span class="iblock">→</span></a></li>
 
-                    </ul>
+
+                <div class="footer-link-block">
+
+                    <div class="footer-navbar">
+                        <ul class="footer-navbar-list">
+                            <li id="footer-navbar-item"> <a href="../privacy_index.html" rel="noopener noreferrer">Home</a> </li>
+                            <li id="footer-navbar-item"><a href="../conditions_index.html" rel="noopener noreferrer">About</a></li>
+                            <li id="footer-navbar-item"><a href="../human_rughts_index.html" rel="noopener noreferrer">Cases</a></li>
+                            <li id="footer-navbar-item"><a href="../human_rughts_index.html" rel="noopener noreferrer">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-navbar">
+                        <ul class="footer-navbar-social-list">
+                            <li id="footer-navbar-socitem"> <a href="../privacy_index.html" rel="noopener noreferrer">Behance<span class="iblock">→</span></a> </li>
+                            <li id="footer-navbar-socitem"><a href="../conditions_index.html" rel="noopener noreferrer">Instagram<span class="iblock">→</span></a></li>
+                            <li id="footer-navbar-socitem"><a href="../human_rughts_index.html" rel="noopener noreferrer">Facebook<span class="iblock">→</span></a></li>
+
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
 
-            <!--<div class="footer-fnt link-email">
+                <!--<div class="footer-fnt link-email">
                 <a href="tel:+421905455208">+421 905 455 208</a>
             </div>-->
-        </div>
-        <div class="footer-block">
-            <div class="footer-header-block">
-
-                <ul class="country-list">
-                    <li><span>Vancover—Canada<span></span></span>
-                    </li>
-                    <li><span>Bratislava—Slovakia </span></li>
-                </ul>
-
             </div>
-            <div class="footer-link-block">
-                <div class="footer-fnt link-email">
-                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+            <div class="footer-block">
+                <div class="footer-header-block">
+
+                    <ul class="country-list">
+                        <li><span>Vancover—Canada<span></span></span>
+                        </li>
+                        <li><span>Bratislava—Slovakia </span></li>
+                    </ul>
+
                 </div>
-                <div class="footer-fnt footer-link">
-                    <span>©2023 </span><a href="mailto:hello@studiodawn.com">legal</a>
+                <div class="footer-link-block">
+                    <div class="footer-fnt link-email">
+                        <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                    </div>
+                    <div class="footer-fnt footer-link">
+                        <span>©2023 </span><a href="mailto:hello@studiodawn.com">legal</a>
+                    </div>
                 </div>
             </div>
         </div>
-
         <scroll-object class="block rel mask in-view" aria-hidden="true">
             <a href="/" class="block rel" aria-label="Back to Home">
                 <svg class="svg-title" width="1906.795" height="194.107" viewBox="0 0 1906.795 194.107" xmlns="http://www.w3.org/2000/svg">
