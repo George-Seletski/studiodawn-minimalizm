@@ -135,7 +135,7 @@
     }
     
     .hv-auto {
-        height: 100vh !important;
+        height: fit-content;
         padding-top: 25px;
     }
     
@@ -158,65 +158,66 @@
     <div class="custom-cursor"></div>
     <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
         <div class="container-default w-container">
+
             <div class="header-right-col">
                 <nav role="navigation" class="w-nav-menu">
-                    <a class="link-back white">
-                        <img src="icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="">
-                    </a>
+                    <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
                     <div class="menu container-default-center">
+
                         <div class="w-container">
                             <ul role="list" class="nav-list white">
                                 <li class="nav-item">
-                                    <a href="../" class="nav-link w--current" data-translate="nav-link-1">Home</a>
+                                    <a href="../" class="nav-link" data-translate="nav-link-1" rel="preload" as="fetch">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="about" class="nav-link" data-translate="nav-link-2">About</a>
+                                    <a href="../about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="portfolio" class="nav-link" data-translate="nav-link-3">Cases</a>
+                                    <a href="../portfolio" class="nav-link" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact" class="nav-link" data-translate="nav-link-4">Contact</a>
+                                    <a href="../contact/" class="nav-link w--current" data-translate="nav-link-4" rel="preload" as="fetch">Contact</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="w-container">
                             <div class="nav-info-submenu">
+
                                 <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header " data-translate="nav-work-inq">Work Inquiries.</h2>
+                                    <h2 class="nav-info-header ">Work Inquiries.</h2>
                                     <li class="nav-item">
                                         <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
                                     </li>
                                 </ul>
                                 <ul role="list" class="nav-info">
-                                    <h2 class="nav-info-header white" data-translate="nav-intouch">Get in touch.</h2>
+                                    <h2 class="nav-info-header white">Get in touch.</h2>
                                     <li class="nav-item">
-                                        <a href="#" class="link-address white">
-                                            228 Nelson's Crescent New
-                                            Westminster, BC V3L 3E3
-                                        </a>
+                                        <a href="#" class="link-address white">228 Nelson's Crescent New
+                                            Westminster, BC V3L 3E3</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white">
-                                            Slovakia: +421-905-455-208</a>
+                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white">
-                                            Europe: +33-6-84-13-30-45</a>
+                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
                                     </li>
+
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white">
-                                            Canada: +1 (604) 786-6046</a>
+                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
                                     </li>
+
                                 </ul>
                             </div>
+
                         </div>
+
                     </div>
                 </nav>
             </div>
+
             <div class="header-content-wrapper">
                 <div class="hamburger-menu-wrapper w-nav-button">
                     <div class="hamburger-menu-bar-top"></div>
@@ -224,8 +225,11 @@
                     <div class="hamburger-menu-bar-bottom"></div>
                 </div>
                 <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
-                    <img src="./img/logo-black.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                    <img src="../img/320x320px_fb_logo_studiodawn2_round.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+
                 </a>
+
+
 
             </div>
         </div>
@@ -255,10 +259,8 @@
         <div class="container hv-auto">
             <div class="text-header">
                 <span>
-                    <div
-                        class="description"
-                        data-translate="text-video-section"
-                    >
+                    <div class="description"
+                        data-translate="text-video-section">
                         Unlock limitless possibilities with our comprehensive solutions block from trademark management
                         to
                         digital transformation, we offer a wide range of services to elevate your brands success.
@@ -593,7 +595,7 @@
     </div>
     <footer>
         <div class="footer-wrapper">
-            <div class="footer-block">
+            <div class="footer-block" id="ft-block-1">
                 <div class="footer-link-item">
                     <a class="nav-link gara-fnt" href="../privacy_index.html" rel="noopener noreferrer">Get in touch</a>
                 </div>
@@ -603,17 +605,17 @@
 
                     <div class="footer-navbar">
                         <ul class="footer-navbar-list">
-                            <li id="footer-navbar-item"> <a href="../privacy_index.html" rel="noopener noreferrer">Home</a> </li>
-                            <li id="footer-navbar-item"><a href="../conditions_index.html" rel="noopener noreferrer">About</a></li>
-                            <li id="footer-navbar-item"><a href="../human_rughts_index.html" rel="noopener noreferrer">Cases</a></li>
-                            <li id="footer-navbar-item"><a href="../human_rughts_index.html" rel="noopener noreferrer">Contact</a></li>
+                            <li id="footer-navbar-item"> <a href="/" rel="noopener noreferrer">Home</a> </li>
+                            <li id="footer-navbar-item"><a href="./about/" rel="noopener noreferrer">About</a></li>
+                            <li id="footer-navbar-item"><a href="./portfolio/" rel="noopener noreferrer">Cases</a></li>
+                            <li id="footer-navbar-item"><a href="./contact/" rel="noopener noreferrer">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-navbar">
                         <ul class="footer-navbar-social-list">
-                            <li id="footer-navbar-socitem"> <a href="../privacy_index.html" rel="noopener noreferrer">Behance<span class="iblock">→</span></a> </li>
-                            <li id="footer-navbar-socitem"><a href="../conditions_index.html" rel="noopener noreferrer">Instagram<span class="iblock">→</span></a></li>
-                            <li id="footer-navbar-socitem"><a href="../human_rughts_index.html" rel="noopener noreferrer">Facebook<span class="iblock">→</span></a></li>
+                            <li id="footer-navbar-socitem"> <a href="#" rel="noopener noreferrer">Behance<span class="iblock">→</span></a> </li>
+                            <li id="footer-navbar-socitem"><a href="#" rel="noopener noreferrer">Instagram<span class="iblock">→</span></a></li>
+                            <li id="footer-navbar-socitem"><a href="#" rel="noopener noreferrer">Facebook<span class="iblock">→</span></a></li>
 
                         </ul>
                     </div>
@@ -624,7 +626,7 @@
                 <a href="tel:+421905455208">+421 905 455 208</a>
             </div>-->
             </div>
-            <div class="footer-block">
+            <div class="footer-block" id="ft-block-2">
                 <div class="footer-header-block">
 
                     <ul class="country-list">

@@ -1445,11 +1445,6 @@
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
         const customCursor = document.querySelector(".custom-cursor");
 
-        const translateIcon = document.querySelector(".translate-icon-global");
-        const dropdownContent = document.querySelector(".dropdown-content");
-
-
-
         $(document).ready(function() {
             var $backToTop = $('#backToTopBtn');
             var offset = 300; // browser window scroll (in pixels) after which the "back to top" link is shown
@@ -1487,7 +1482,6 @@
         });
 
 
-
         if (!isTouchDevice) {
             customCursor.style = `opacity: 1 !important;`;
             const links = document.querySelectorAll("a");
@@ -1513,21 +1507,6 @@
             });
         }
 
-        translateIcon.addEventListener("click", function() {
-            dropdownContent.classList.toggle("show");
-        });
-
-        // Close the dropdown when clicking outside
-        window.addEventListener("click", function(event) {
-
-            if (!event.target.matches(".translate-icon-global")) {
-
-                if (dropdownContent.classList.contains("show")) {
-                    dropdownContent.classList.remove("show");
-                }
-            }
-        });
-        Language = setupLanguageSwitcher();
 
         $(document).ready(function() {
             $('.hamburger-menu-wrapper').click(function() {
@@ -1641,7 +1620,6 @@
         });
     }
 
-
     // Disable scroll
     function disableScroll() {
         // Get the current scroll position
@@ -1693,81 +1671,6 @@
         });
 
         activeLinks = []; // Clear the active links array
-    }
-
-    function setupLanguageSwitcher() {
-        const defaultLanguage = "en"; // Set the default language
-        let langChanged = false;
-        let language = localStorage.getItem("selectedLanguage") || defaultLanguage;
-        let translations; // Define translations object
-
-        const languageElements = document.querySelectorAll("[data-translate]");
-        const languageSwitcher = document.getElementById("translate-icon");
-        const dropdownItems = languageSwitcher.querySelectorAll(".dropdown-item");
-
-        const alternativeFilePath = "../lng.json"; // Define the alternative file path
-
-        function updateContent(selectedLang) {
-            return new Promise((resolve, reject) => {
-                fetch("lng.json")
-                    .then((response) => {
-                        if (!response.ok) {
-                            // If the response is not OK, try fetching the alternative file
-                            return fetch(alternativeFilePath);
-                        }
-                        return response;
-                    })
-                    .then((response) => response.json())
-                    .then((data) => {
-                        translations = data; // Store translations object
-
-
-
-                        languageElements.forEach((element) => {
-                            const elementTag = element.getAttribute("data-translate");
-                            if (translations[selectedLang][elementTag]) {
-                                element.textContent = translations[selectedLang][elementTag];
-                            }
-                        });
-
-                        langChanged = true;
-                        language = selectedLang;
-                        localStorage.setItem("selectedLanguage", selectedLang);
-
-                        resolve(); // Resolve the promise
-                    })
-                    .catch((error) => {
-
-                        reject(error); // Reject the promise
-                    });
-            });
-        }
-
-        // Update content with the stored language or default language translations
-        updateContent(language)
-            .then(() => {
-                const availableLanguages = Object.keys(translations); // Use translations object
-
-                dropdownItems.forEach((item) => {
-                    const selectedLang = item.getAttribute("data-lang");
-                    if (availableLanguages.includes(selectedLang)) {
-                        item.addEventListener("click", () => {
-                            if (!langChanged || language !== selectedLang) {
-
-                                Language = selectedLang;
-                                filterCards(Objectag, Language);
-                                updateContent(selectedLang)
-                                    .then(() => {
-                                        // Update content here if needed after the language change
-                                    })
-
-                            }
-                        });
-                    }
-                });
-            })
-
-
     }
 </script>
 
