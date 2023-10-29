@@ -20,8 +20,8 @@
     
     .row-container-info {
         display: flex;
-        flex-direction: row;
-        gap: 50px;
+        flex-direction: column;
+        gap: 0px;
     }
     
     body {
@@ -29,6 +29,13 @@
     }
     
     @media screen and (min-width: 1920px) {
+        .info-block {
+            padding-bottom: 0px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+        }
         h1 {
             font-size: 32px !important;
         }
@@ -238,7 +245,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 2em 20em;
+        padding: 2em 22em;
     }
     
     @media screen and (max-width: 991px) {
