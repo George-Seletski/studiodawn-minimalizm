@@ -702,6 +702,10 @@
         padding-top: 1.5em;
     }
     
+    .description>ul>li {
+        padding-bottom: 2px;
+    }
+    
     .description__content>.description {
         display: block;
         font-size: 1.5em;
