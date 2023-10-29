@@ -1815,7 +1815,7 @@
         text-decoration: none;
         font-style: normal;
         font-weight: 600;
-        font-size: 32px;
+        font-size: 20px;
         line-height: normal;
     }
     
@@ -1828,7 +1828,7 @@
     
     #footer-navbar-item>a {
         color: #000;
-        font-size: 25px;
+        font-size: 18px;
         line-height: 1.5 !important;
     }
     
@@ -1847,7 +1847,7 @@
     }
     
     .footer-fnt>a {
-        font-size: 32px !important;
+        font-size: 18px !important;
     }
     
     .footer-link-block {
@@ -1869,7 +1869,7 @@
     
     #footer-navbar-socitem>a {
         color: #000;
-        font-size: 25px;
+        font-size: 18px;
         line-height: 1.5 !important;
     }
     
@@ -2032,7 +2032,7 @@
             padding-top: 10px;
         }
         .footer-fnt>a {
-            font-size: 30px !important;
+            font-size: 18px !important;
         }
         input:hover,
         textarea:hover {
