@@ -14,6 +14,13 @@
 
 </head>
 <style>
+    /* Base styles for larger screens (above 1920px) */
+    
+    .doc-item>a {
+        font-family: 'Roboto Regular';
+        font-size: 2em;
+    }
+    
     .container-text {
         line-height: 0.9em !important;
     }
@@ -27,10 +34,26 @@
     body {
         overflow: scroll;
     }
+    /* Media Query for screens with a maximum width of 1920px */
+    
+    @media screen and (max-width: 1920px) {
+        .doc-item>a {
+            font-size: 1.5em !important;
+        }
+        .docs-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 2rem;
+            margin-right: 6em;
+        }
+    }
+    /* Media Query for screens with a minimum width of 1920px */
     
     @media screen and (min-width: 1920px) {
         .info-block {
-            padding-bottom: 0px;
+            padding-bottom: 0;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -39,7 +62,16 @@
         h1 {
             font-size: 32px !important;
         }
+        .docs-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 2rem;
+            margin-right: 24em;
+        }
     }
+    /* Media Query for screens with a minimum width of 991px */
     
     @media screen and (min-width: 991px) {
         .fnt-grt {
@@ -52,6 +84,7 @@
             margin-top: 2em;
         }
     }
+    /* Base styles for all screens */
     
     .fnt-grt {
         font-weight: 600;
@@ -66,6 +99,7 @@
     .loader-counter>h1 {
         font-size: 144px !important;
     }
+    /* Media Query for screens with a minimum width of 1400px */
     
     @media screen and (min-width: 1400px) {
         .columns-container {
@@ -80,6 +114,7 @@
         font-size: 50px;
         margin-top: 0.4em;
     }
+    /* Media Query for screens with a maximum width of 479px */
     
     @media screen and (max-width: 479px) {
         .contanct-links {
@@ -118,6 +153,7 @@
             font-size: 1.2em !important;
         }
     }
+    /* Media Query for screens with a maximum width of 991px */
     
     @media screen and (max-width: 991px) {
         .button {
@@ -143,7 +179,7 @@
     }
     
     .contact__header__cover {
-        position: absolute!important;
+        position: absolute !important;
         left: 0;
         right: 0;
         width: 100%;
@@ -153,19 +189,10 @@
     
     .contact__header__content {
         position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         height: 100%;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
         align-items: flex-start;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
         flex-direction: column;
         color: #fff;
         z-index: 1;
@@ -173,7 +200,7 @@
     
     .row {
         box-sizing: border-box;
-        width: 1440px;
+        width: 100%;
         padding-left: 80px;
         padding-right: 80px;
         max-width: 100%;
@@ -187,7 +214,7 @@
     
     .title--1,
     .title--2 {
-        line-height: .95em;
+        line-height: 0.95em;
         font-weight: 700;
         -ms-user-select: none;
         user-select: none;
@@ -215,7 +242,7 @@
     
     .arrow {
         display: inline-block;
-        rotate: 90deg;
+        transform: rotate(90deg);
         font-size: 4rem;
         padding: 2em;
     }
@@ -226,27 +253,14 @@
         left: 0;
         width: 100%;
         height: 100%;
-        -o-object-fit: cover;
         object-fit: cover;
         z-index: 1;
-        -webkit-transition-timing-function: cubic-bezier(.25, .25, .75, .75), cubic-bezier(.25, .25, .75, .75);
-        transition-timing-function: cubic-bezier(.25, .25, .75, .75), cubic-bezier(.25, .25, .75, .75);
-        -webkit-transition-property: opacity, -webkit-transform;
-        transition-property: opacity, -webkit-transform;
+        transition-timing-function: cubic-bezier(.25, .25, .75, .75);
         transition-property: transform, opacity;
-        transition-property: transform, opacity, -webkit-transform;
-        -webkit-transition-duration: 7s, 1s;
         transition-duration: 7s, 1s;
         will-change: transform, opacity;
     }
-    
-    .docs-section {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2em 22em;
-    }
+    /* Media Query for screens with a maximum width of 991px */
     
     @media screen and (max-width: 991px) {
         .docs-section {
@@ -257,20 +271,18 @@
             padding: 2em 6em;
         }
     }
+    /* Media Query for screens with a maximum width of 479px */
     
     @media screen and (max-width: 479px) {
         .docs-section {
+            gap: 10px;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
             padding: 2em 3em;
             flex-direction: column;
+            margin: 0;
         }
-    }
-    
-    .doc-item>a {
-        font-family: 'Roboto Regular';
-        font-size: 2em;
     }
 </style>
 

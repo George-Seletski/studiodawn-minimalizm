@@ -648,6 +648,14 @@
         animation: showup 7s ease-in-out;
     }
     
+    .image-container,
+    .image-container.img-lg-1,
+    .image-col,
+    .image-col.image-item,
+    .project-video-container {
+        background-color: #000;
+    }
+    
     @keyframes showup {
         0% {
             opacity: 0;
