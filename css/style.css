@@ -130,6 +130,44 @@
         padding: 0;
     }
     
+    .fnt-sml {
+        font-size: 16px !important;
+    }
+    
+    .link-anim {
+        position: relative;
+        color: #000;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.667em;
+        transition: color 0.3s;
+    }
+    
+    .link-anim::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        transform: scaleX(0);
+        transform-origin: top left;
+        transition: transform 0.3s ease;
+    }
+    
+    .link-anim:hover {
+        color: #999;
+        /* Change the link color on hover */
+    }
+    
+    .link-anim:hover::before {
+        transform: scaleX(1);
+        /* Expand the underline on hover */
+    }
+    
     .mb-100 {
         margin-bottom: 100px !important;
     }
@@ -1093,7 +1131,7 @@
     }
     
     .brands-section {
-        margin: 13em 10em 5em 10em;
+        margin: 10rem 241px 5rem 241px;
         padding-top: 0px;
         padding-bottom: 40px;
         display: block;
@@ -1168,7 +1206,6 @@
         border: 2px solid #000;
         border-radius: 100px;
         padding: 10px 30px;
-        margin-bottom: 100px;
         transition: transform 5s;
         transition: all 0.5s ease;
         align-items: center;
@@ -1339,7 +1376,10 @@
     
     .form-container {
         display: flex;
-        height: 100%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        padding-top: 6em;
     }
     
     #contact-form-container {
@@ -1347,6 +1387,14 @@
         display: flex;
         flex-direction: column;
         margin-top: 5em;
+    }
+    
+    #contact-links {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 90vh;
     }
     
     .form-control {
@@ -1407,13 +1455,6 @@
     
     .columns-container>div {
         padding: 50px;
-    }
-    
-    .contact-h2 {
-        font-size: 60px;
-        text-align: left;
-        margin-top: 60px;
-        margin-bottom: 20px;
     }
     
     .contact-h3 {
@@ -1502,12 +1543,16 @@
     }
     
     .header-image-description>.description {
-        display: block;
-        padding: 0 10em;
-        width: 100%;
-        font-size: .8em !important;
+        display: flex;
+        flex-direction: column;
+        padding-left: 40%;
+        align-items: flex-end;
+        margin: 60px 241px;
+        font-size: 11px !important;
         line-height: 40px;
         position: relative;
+        gap: 2em;
+        font-weight: 600;
     }
     
     .header-cover {
@@ -1615,8 +1660,9 @@
     }
     
     .svg-title {
-        width: 100%;
+        width: 90%;
         max-width: 100vw;
+        margin: 0px 80px;
     }
     
     .footer-fnt>a {
@@ -2125,7 +2171,7 @@
             margin-bottom: 30px;
         }
         .contact-section {
-            height: 100vh !important;
+            height: 100vh;
             padding: 0 2em;
         }
         .info-block {
@@ -2556,6 +2602,7 @@
             padding: 0;
             font-size: 8em;
             margin-bottom: 50px;
+            margin-right: 50px;
         }
         .info-block>h3 {
             font-size: 4em;

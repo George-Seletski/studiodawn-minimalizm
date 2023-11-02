@@ -27,8 +27,10 @@
     
     .row-container-info {
         display: flex;
-        flex-direction: column;
-        gap: 0px;
+        flex-direction: row;
+        gap: 120px;
+        padding: 120px 241px;
+        align-items: baseline;
     }
     
     body {
@@ -77,6 +79,10 @@
     }
     /* Media Query for screens with a minimum width of 991px */
     
+    .columns-container {
+        flex-direction: column;
+    }
+    
     @media screen and (min-width: 991px) {
         .fnt-grt {
             font-size: 60px !important;
@@ -106,11 +112,24 @@
     /* Media Query for screens with a minimum width of 1400px */
     
     @media screen and (min-width: 1400px) {
+        .contact-h2 {
+            font-size: 120px;
+            text-align: center;
+            padding: 0px 0px 60px 0px;
+        }
         .columns-container {
-            gap: 100px;
+            gap: 20px;
             margin-left: 2em;
             margin-right: 2em;
-            margin-top: 10em !important;
+            margin-top: 6em !important;
+        }
+    }
+    
+    @media screen and (max-width: 1400px) {
+        .contact-h2 {
+            font-size: 120px;
+            text-align: center;
+            padding: 140px 0px;
         }
     }
     
@@ -134,7 +153,7 @@
             font-size: 28px !important;
         }
         .contact-h2 {
-            margin-bottom: 10px;
+            padding-bottom: 10px;
             font-size: 3em !important;
             line-height: 1;
         }
@@ -160,11 +179,17 @@
     /* Media Query for screens with a maximum width of 991px */
     
     @media screen and (max-width: 991px) {
+        .mob-column>div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
         .button {
             margin-bottom: 50px;
         }
         .info-block>.icons {
-            margin: 0 !important;
+            margin: 22px 0 !important;
             justify-content: flex-start !important;
         }
         .contact-h2 {
@@ -173,6 +198,18 @@
         .row-container-info {
             display: flex;
             margin: 2em 0 0 0;
+        }
+        .row-container-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2em !important;
+            padding-bottom: 22px;
+            align-items: baseline;
+        }
+        .contact-h2 {
+            font-size: 120px;
+            text-align: center;
+            padding: 120px 0px 40px 0px !important;
         }
     }
     
@@ -277,6 +314,10 @@
     }
     /* Media Query for screens with a maximum width of 479px */
     
+    .page-wrapper {
+        height: fit-content;
+    }
+    
     @media screen and (max-width: 479px) {
         .docs-section {
             gap: 10px;
@@ -287,6 +328,52 @@
             flex-direction: column;
             margin: 0;
         }
+        .arrow {
+            display: inline-block;
+            transform: rotate(90deg);
+            font-size: 4rem;
+            padding: 1em;
+        }
+    }
+    
+    @media screen and (max-width: 1200px) and (min-width: 1000px) {
+        .contact-section {
+            height: fit-content;
+            padding: 0 2em;
+        }
+        .columns-container {
+            margin: 4em 0;
+        }
+        .row-container-info {
+            display: flex;
+            flex-direction: row;
+            gap: 2em;
+            padding-bottom: 0px;
+            align-items: baseline;
+        }
+        .contact-h2 {
+            font-size: 120px;
+            text-align: center;
+            padding: 20px 0px 120px 0;
+        }
+        #contact-links {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 0em;
+        }
+        .info-block {
+            padding-bottom: 10px;
+            padding-top: 20px;
+            padding-right: 30px;
+            height: 300px;
+        }
+    }
+    
+    .active {
+        opacity: 1;
+        /* Active image has full opacity */
     }
 </style>
 
@@ -375,20 +462,20 @@
     <header class="contact__header">
         <div class="carousel-scale contact__header__cover" data-intersection-uuid="f57c9590-7520-11ee-bc4c-13ed8ad6092e" style="opacity: 1;">
             <img data-object-fit="cover" src="https://images.prismic.io/84paris/20924747a81484aee0dd9297bae1c8086358abf0_contact2.jpg?auto=compress,format" role="presentation" class="next">
-            <!--<img data-object-fit="cover" src="https://images.prismic.io/84paris/9c5c8341d29372efb57aed2c81b8419f62025e11_contact3.jpg?auto=compress,format" role="presentation" class="">
+            <img data-object-fit="cover" src="https://images.prismic.io/84paris/9c5c8341d29372efb57aed2c81b8419f62025e11_contact3.jpg?auto=compress,format" role="presentation" class="">
             <img data-object-fit="cover" src="https://images.prismic.io/84paris/b638b13d466e5fa0218c091bf1b08937003a171b_contact4.jpg?auto=compress,format" role="presentation" class="prev">
-            <img data-object-fit="cover" src="https://images.prismic.io/84paris/5fb76fcebe0786de6b1938f6f5ef47182fe6b51b_contact1.jpg?auto=compress,format" role="presentation" class="active">--></div>
+            <img data-object-fit="cover" src="https://images.prismic.io/84paris/5fb76fcebe0786de6b1938f6f5ef47182fe6b51b_contact1.jpg?auto=compress,format" role="presentation" class="active"></div>
         <div class="contact__header__content row">
             <h1 data-splitted="words" class="title title--1">Let's talk.</h1>
             <div data-splitted="lines" class="decotitle decotitle--1">
                 <p>Vancover-Canada<br>Bratislava-Slovakia<br><span class="arrow">→</span>
-                    <!--+33(0)1 71 19 72 72<br>15,18-20 rue de la Forge Royale<br>75011 Paris.</p>-->
+
             </div>
         </div>
     </header>
     <div class="page-wrapper">
 
-        <div class="contact-section" style="height: 100vh;">
+        <div class="contact-section">
 
             <div class="columns-container">
                 <form class='form-container' id="myForm" action="https://formsubmit.co/patrik@studiodawn.com" method="POST">
@@ -447,49 +534,53 @@
                 </form>
                 <div id="contact-links">
 
-                    <h2 class="contact-h2" id="studio-title">Our Studio</h2>
+                    <div>
+                        <h2 class="contact-h2" id="studio-title">More info</h2>
+                    </div>
                     <div class="row-container-info">
                         <div class="info-block">
                             <h3 class="contact-h3">Canada</h3>
-                            <a href="https://goo.gl/maps/YhsRrfmUDQrqFK8d7" class="link-address" id="contact-lnk">228 Nelson's Crescent,<br>BC V3L 3E3 New Westminster, <br> Canada</a>
+                            <a href="https://goo.gl/maps/YhsRrfmUDQrqFK8d7" class="link-address " id="contact-lnk">228 Nelson's Crescent,<br>BC V3L 3E3 New Westminster, <br> Canada</a>
                         </div>
                         <div class="info-block">
                             <h3 class="contact-h3">Slovakia</h3>
                             <a href="https://goo.gl/maps/68tgaaguMsgvmjUe6" class="link-address" id="contact-lnk">Tallerova 4,<br>
                                 811 02 Bratislava,<br>Slovakia</a>
                         </div>
-                    </div>
-                    <div id="icon-box">
-                        <div class="info-block">
-                            <div class="contanct-links">
-                                <div class="link-email">
-                                    <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+
+                        <div id="icon-box">
+                            <div class="info-block mob-column">
+                                <div class="contanct-links">
+                                    <div class="link-email">
+                                        <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                                    </div>
+                                    <div class="link-telephone">
+                                        <a href="tel:+421905455208">+421 905 455 208</a>
+                                    </div>
                                 </div>
-                                <div class="link-telephone">
-                                    <a href="tel:+421905455208">+421 905 455 208</a>
-                                </div>
-                            </div>
-                            <div class="icons">
-                                <div class="size-2x">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                                        <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
-                                    </a>
-                                </div>
-                                <div class=" size-2x">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                                        <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
-                                    </a>
-                                </div>
-                                <div class=" size-2x">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                                        <img src="../icons/behance.svg" id="icon" alt="" srcset="">
-                                    </a>
+                                <div class="icons">
+                                    <div class="size-2x">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                                            <img src="../icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                                        </a>
+                                    </div>
+                                    <div class=" size-2x">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                                            <img src="../icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                                        </a>
+                                    </div>
+                                    <div class=" size-2x">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                                            <img src="../icons/behance.svg" id="icon" alt="" srcset="">
+                                        </a>
+                                    </div>
+
                                 </div>
 
                             </div>
-
                         </div>
                     </div>
+
                 </div>
 
             </div>
@@ -510,6 +601,26 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+
+        const images = document.querySelectorAll('.carousel-scale img');
+        let currentIndex = 0;
+
+        // Function to change the active image with GSAP parallax effect
+        function changeImage() {
+            const tl = gsap.timeline();
+            tl.to(images[currentIndex], {
+                opacity: 0,
+                duration: 0.5
+            }); // Hide the current image
+            currentIndex = (currentIndex + 1) % images.length;
+            tl.to(images[currentIndex], {
+                opacity: 1,
+                duration: 0.5
+            }); // Show the next image
+        }
+
+        // Start the image change loop
+        setInterval(changeImage, 5000); // Change image every 5 seconds
 
 
 

@@ -37,6 +37,10 @@
         display: block;
     }
     
+    #description-right-side {
+        grid-area: 5 / 6 / 7 / 13;
+    }
+    
     body {
         margin: 0;
         font-size: 1rem;
@@ -45,6 +49,9 @@
         text-align: left;
         background-color: #f9f4f4;
     }
+    /*div {
+        border: 1px solid;
+    }*/
     
     .main {
         position: relative;
@@ -172,23 +179,6 @@
         margin-bottom: 250px;
         display: block;
         transition: transform 0.3s ease;
-    }
-    
-    .team__title {
-        text-align: center;
-        text-transform: uppercase;
-        padding-left: 1rem;
-        padding-right: 6px;
-        line-height: 1em;
-    }
-    
-    #team-img {
-        transition: transform 0.5s;
-        display: block;
-        width: 100%;
-        height: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
     }
     
     .team-cardinfo {
@@ -440,6 +430,10 @@
     .hv-80 {
         height: 80vh !important;
     }
+    
+    #grow {
+        transform: scale(0.8);
+    }
 </style>
 
 <body>
@@ -534,7 +528,7 @@
 
         </div>
         <div class="bottom-text-header">
-            <span class="bottom-text-title">CREATE YOURS NOW</span>
+            <span class="bottom-text-title"><a class="link-anim fnt-sml" href="./contact/">CREATE YOURS NOW</a></span>
             <!--<span><img id="arrow-down"src="./icons/arrow-left-black.svg" alt=""></span>
             <span class="mouse">
                     <span class="mouse-movement"></span>
@@ -550,12 +544,19 @@
         <div class="header-image-description">
             <div class="header-cover">
                 <!--<img src="team/main.png" alt="our team" loading="lazy">-->
-                <img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg" loading="lazy" width="1981" id="w-node-_5f284e8c-206a-ea46-b07b-3aae1f5b6261-5a137a7b" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-500.jpeg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-800.jpeg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1080.jpeg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1600.jpeg 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg 1640w"
-                    sizes="100vw" alt="" class="image-wrap__img">
+                <img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg" loading="lazy" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-500.jpeg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-800.jpeg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1080.jpeg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1600.jpeg 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg 1640w"
+                    alt="header-img" id="grow">
             </div>
+
             <span class="description">
 
-                <h2 data-translate="about-main-h2">
+                <h2 data-translate="about-main-h2" id="img-description">
+                    Unlock limitless possibilities with our comprehensive solutions block from trademark management to
+                    digital transformation, we offer a wide range of services to elevate your brands success. Harness
+                    the power of our solutions and propel your business to
+                    new heights in the ever-evolving digital landscape.
+                </h2>
+                <h2 data-translate="about-main-h2" id="img-description">
                     Unlock limitless possibilities with our comprehensive solutions block from trademark management to
                     digital transformation, we offer a wide range of services to elevate your brands success. Harness
                     the power of our solutions and propel your business to
@@ -848,10 +849,6 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
 
-
-
-
-
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
@@ -882,15 +879,9 @@
             });
 
 
-
-
-
-
         } else {
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
-
-
 
         }
 
@@ -952,14 +943,21 @@
             document.body.classList.remove('scroll-lock');
         }
         gsap.registerPlugin(ScrollTrigger);
-        // GSAP animation
-        const revealAnimation = gsap.timeline();
 
+        const growTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#grow",
+                scrub: 1,
+                start: "top center",
+                end: "+=400",
+                ease: "power1.out"
+            }
+        });
+        growTl.to("#grow", {
+            duration: 1.5,
+            scale: 1
+        });
 
-
-
-
-        setupLanguageSwitcher();
     });
 </script>
 

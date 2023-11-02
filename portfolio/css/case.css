@@ -291,6 +291,11 @@
  }
  
  @media screen and (max-width: 991px) {
+     .title--1 {
+         font-size: 15rem !important;
+         font-family: 'Roboto Thin';
+         text-transform: uppercase;
+     }
      .inst-col-3 {
          display: flex;
          flex-direction: column !important;
@@ -555,6 +560,70 @@
      justify-content: right;
  }
  
+ .contact__header {
+     position: relative;
+     height: 100vh;
+     background-color: #000;
+ }
+ 
+ .contact__header__cover {
+     position: absolute !important;
+     left: 0;
+     right: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 0;
+ }
+ 
+ .contact__header__content {
+     position: relative;
+     display: flex;
+     height: 100%;
+     align-items: flex-end;
+     justify-content: flex-end;
+     flex-direction: column;
+     color: #fff;
+     z-index: 1;
+ }
+ 
+ .contact__header__content .title {
+     margin-bottom: 0vh;
+ }
+ 
+ .title--1,
+ .title--2 {
+     line-height: 0.95em;
+     font-weight: 400;
+     -ms-user-select: none;
+     user-select: none;
+ }
+ 
+ .title--1 {
+     font-size: 20rem !important;
+     font-family: 'Roboto Thin';
+     text-transform: uppercase;
+ }
+ 
+ .decotitle--1 {
+     font-size: 1.6rem;
+     line-height: 1.2em;
+     font-weight: 700;
+ }
+ 
+ .carousel-scale img {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     z-index: 1;
+     transition-timing-function: cubic-bezier(.25, .25, .75, .75);
+     transition-property: transform, opacity;
+     transition-duration: 7s, 1s;
+     will-change: transform, opacity;
+ }
+ 
  .project-header>h1 {
      font-family: 'Roboto Thin';
      text-transform: uppercase;
@@ -571,7 +640,7 @@
  .col-3 {
      display: flex;
      align-items: flex-start;
-     margin: 192px 100px 50px 100px;
+     margin: 70px 100px 70px 100px;
      flex-direction: row;
      gap: 15em;
      position: relative;
@@ -714,7 +783,7 @@
  }
  
  .contact-container {
-     padding-top: 2em;
+     padding-top: 0em;
  }
  
  .contact-container-link {
@@ -944,7 +1013,7 @@
          line-height: 1.2;
          font-weight: 900;
          font-family: 'Cormorant Garamond Semibold';
-         font-size: 12px;
+         font-size: 14px;
      }
      .contact-container {
          display: flex;
@@ -981,7 +1050,7 @@
      .contact-container {
          display: flex;
          flex-direction: row;
-         margin: 192px 100px;
+         margin: 0px 100px;
      }
      .contact-container-header {
          padding: 100px 0;
