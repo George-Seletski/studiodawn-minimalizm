@@ -101,11 +101,8 @@
             line-height: 0.6 !important;
         }
         .instagram-img {
-            width: 273px !important;
-            height: 273px !important;
-        }
-        #cookie-label {
-            margin: 0 1em 1em 1em !important;
+            width: 273px;
+            height: 273px;
         }
     }
     
@@ -920,42 +917,61 @@
         font-family: 'Roboto Regular', sans-serif !important;
     }
     /*cookie-label*/
+    /* Styling for the modal */
     
-    #cookie-label {
+    .cookie-modal {
+        display: none;
         position: fixed;
         bottom: 0;
-        left: 50%;
-        /* Center horizontally */
-        transform: translateX(-50%);
-        /* Center horizontally */
-        background-color: #333;
-        color: #fff;
-        padding: 15px;
-        text-align: left;
-        box-shadow: 0px -2px 5px rgb(117, 110, 110);
-        border-radius: 10px;
-        width: 250px;
-        background-color: #888;
-        display: none;
-    }
-    
-    .cookie-label-text {
-        font-size: 16px;
-        font-weight: 600;
-    }
-    
-    #cookie-label>button {
-        background-color: #D8FF76;
-        color: #000;
-        border: none;
-        padding: 8px 16px;
-        font-size: 18px;
-        cursor: pointer;
-        border-radius: 50px;
+        left: 0;
         width: 100%;
-        margin: 1em 0;
-        font-weight: 700;
-        letter-spacing: 1px;
+        background: #f7ebeba9;
+        color: #000;
+        padding: 5px;
+        text-align: left;
+        opacity: 1;
+    }
+    
+    .cookie-content {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 53px;
+        align-items: center;
+        font-family: 'Roboto Regular', sans-serif !important;
+    }
+    
+    .cookie-buttons {
+        display: flex;
+        gap: 14px;
+    }
+    
+    button {
+        padding: 5px 15px;
+        background: #000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        align-items: center;
+    }
+    
+    button:hover {
+        background: #333333;
+    }
+    /* Styling for the close button */
+    
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #fff;
+        cursor: pointer;
+    }
+    
+    .close-button:hover {
+        color: #ccc;
     }
     
     .tag {
@@ -2028,6 +2044,10 @@
             font-weight: 600;
             color: #000;
         }
+        .instagram-img {
+            width: 300px;
+            height: 300px;
+        }
     }
     
     @media screen and (min-width:1921px) {
@@ -2134,6 +2154,10 @@
     }
     
     @media screen and (max-width: 1400px) {
+        .instagram-img {
+            width: 200px !important;
+            height: 200px !important;
+        }
         .header-section-content>#discover-h1 {
             font-size: 2em !important;
         }
@@ -2141,20 +2165,6 @@
             font-family: 'Roboto Thin', sans-serif;
             font-weight: 400 !important;
             padding-top: 0px;
-        }
-        #cookie-label {
-            position: fixed;
-            bottom: 0;
-            background-color: #333;
-            color: #fff;
-            padding: 15px;
-            text-align: left;
-            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            width: 250px;
-            margin: 0 7em 1em 0;
-            background-color: rgba(0, 0, 0, 0.808);
-            display: none;
         }
         h1 {
             line-height: 0.6 !important;

@@ -78,29 +78,44 @@ function setupLanguageSwitcher() {
 }
 
 function cookieFunction() {
-    const cookieLabel = document.getElementById("cookie-label");
-    const cookieCloseButton = document.getElementById("cookie-close");
+    const cookieModal = document.querySelector(".cookie-modal");
+    const acceptCookiesButton = document.getElementById("accept-cookies");
+    const declineCookiesButton = document.getElementById("decline-cookies");
 
-    // Check if the user has already accepted the cookies
-    const cookiesAccepted = localStorage.getItem("cookiesAccepted");
-
-    // Show the cookie label if the user has not accepted cookies
-    if (!cookiesAccepted) {
-        cookieLabel.style.display = "block";
-    }
-
-    // Event listener for the "Got it" button click
-    cookieCloseButton.addEventListener("click", function() {
-        // Hide the cookie label
-        cookieLabel.style.display = "none";
-
-        // Store the information that the user has accepted the cookies
-        localStorage.setItem("cookiesAccepted", "true");
+    // Initially set the modal outside of the viewport
+    gsap.set(cookieModal, {
+        y: "100%",
     });
 
-    // Call the clearCookiesAccepted function after a specified time (e.g., 24 hours)
-    const clearAfterTime = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-    setTimeout(clearCookiesAccepted, clearAfterTime);
+    // Show the cookie modal with a reveal animation
+    gsap.to(cookieModal, {
+        duration: 0.5,
+        y: 0,
+        onComplete: function() {
+            cookieModal.style.display = "block";
+        },
+    });
+
+    acceptCookiesButton.addEventListener("click", function() {
+        localStorage.setItem("cookieAccepted", "true");
+        hideModal();
+    });
+
+    declineCookiesButton.addEventListener("click", function() {
+        localStorage.setItem("cookieAccepted", "false");
+        hideModal();
+    });
+
+    function hideModal() {
+        gsap.to(cookieModal, {
+            duration: 0.5,
+            opacity: 0,
+            y: "100%",
+            onComplete: function() {
+                cookieModal.style.display = "none";
+            },
+        });
+    }
 }
 
 // Function to remove the cookiesAccepted item from localStorage
