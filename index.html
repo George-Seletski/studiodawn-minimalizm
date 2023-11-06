@@ -311,7 +311,7 @@
                     <div class="hamburger-menu-bar-top"></div>
                     <div class="hamburger-menu-bar-bottom"></div>
                 </div>
-                <a href="/" aria-current="page" class="header-logo-link w-nav-brand w--current ">
+                <a href="/studiodawn-minimalizm/" aria-current="page" class="header-logo-link w-nav-brand w--current ">
                     <img src="./img/320x320px_fb_logo_studiodawn2_round.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
 
                 </a>
@@ -683,7 +683,7 @@
 
                     <div class="footer-navbar">
                         <ul class="footer-navbar-list">
-                            <li id="footer-navbar-item"> <a href="/" rel="noopener noreferrer" class="link-anim">Home</a> </li>
+                            <li id="footer-navbar-item"> <a href="/studiodawn-minimalizm/" rel="noopener noreferrer" class="link-anim">Home</a> </li>
                             <li id="footer-navbar-item"><a href="./about/" rel="noopener noreferrer" class="link-anim">About</a></li>
                             <li id="footer-navbar-item"><a href="./portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
                             <li id="footer-navbar-item"><a href="./contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>
@@ -725,7 +725,7 @@
             </div>
         </div>
         <scroll-object class="block rel mask in-view" aria-hidden="true">
-            <a href="/" class="block rel" aria-label="Back to Home">
+            <a href="/studiodawn-minimalizm/" class="block rel" aria-label="Back to Home">
                 <svg class="svg-title-2" width="1906.795" height="194.107" viewBox="0 0 1906.795 194.107" xmlns="http://www.w3.org/2000/svg">
                     <g
                         id="svgGroup"
@@ -802,7 +802,7 @@
 
 </body>
 <script>
- gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
     let preloaderAnimationCompleted = false;
 
     // You can set the loading duration in seconds
@@ -815,7 +815,7 @@
             duration: loadingDuration, // Match the duration with loading duration
             opacity: 0,
             y: "100%",
-            onComplete: function () {
+            onComplete: function() {
                 paths.forEach((path) => (path.style.display = "none"));
                 const headerWrapper = document.querySelector(".header-wrapper.w-nav");
                 headerWrapper.classList.add("loaded");
@@ -853,21 +853,21 @@
         if (index < 6) {
             tl.to(
                 path, {
-                duration: loadingDuration / 6, // Divide the duration evenly
-                y: "0%",
-                autoAlpha: 1,
-                ease: "power2.out",
-            },
+                    duration: loadingDuration / 6, // Divide the duration evenly
+                    y: "0%",
+                    autoAlpha: 1,
+                    ease: "power2.out",
+                },
                 "start"
             ); // Use a label 'start' for simultaneous animation
         } else {
             tl.to(
                 path, {
-                duration: loadingDuration / 6, // Divide the duration evenly
-                y: "0%",
-                autoAlpha: 1,
-                ease: "power2.out",
-            },
+                    duration: loadingDuration / 6, // Divide the duration evenly
+                    y: "0%",
+                    autoAlpha: 1,
+                    ease: "power2.out",
+                },
                 `path-${index}`
             );
         }
@@ -894,13 +894,14 @@
     }
 
     // Check if the page should be displayed when the page is fully loaded
-    window.onload = function () {
+    window.onload = function() {
         showPageIfPreloaderCompleted();
     };
 
     setTimeout(initPage, 1200);
+
     function initPage() {
-       
+
         cookieFunction();
         var w = window.innerWidth;
         var h = window.innerHeight;
@@ -947,7 +948,7 @@
         // GSAP TimelineMax for animations
         const timeline = gsap.timeline();
 
-      
+
 
         document.addEventListener("DOMContentLoaded", function() {
             var lazyImages = [].slice.call(document.querySelectorAll("img.gif-animation"));
@@ -982,7 +983,7 @@
 
 
         $(document).ready(function() {
-          
+
             $('.hamburger-menu-wrapper').click(function() {
                 var $navMenu = $('.w-nav-menu');
                 $navMenu.toggle();

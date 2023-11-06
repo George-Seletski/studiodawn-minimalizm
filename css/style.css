@@ -44,9 +44,6 @@
         box-sizing: border-box;
         cursor: none;
     }
-    /* div {
-        border: 1px solid #476161;
-    }*/
     
     html {
         -ms-text-size-adjust: 100%;
@@ -2838,6 +2835,15 @@
     }
     
     @media screen and (max-width: 768px) {
+        .cookie-content {
+            flex-direction: column;
+            gap: 2em;
+            margin: 0 auto;
+            display: flex;
+            padding: 15px 10px;
+            align-items: center;
+            font-family: 'Roboto Regular', sans-serif !important;
+        }
         .w-nav-menu,
         .header-wrapper {
             width: 100vw;
@@ -3009,7 +3015,7 @@
     
     @media screen and (max-width: 479px) {
         .gif-animation {
-            height: 700px;
+            width: 100vw;
         }
         .video-text-block {
             display: flex;
