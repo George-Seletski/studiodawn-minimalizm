@@ -2363,7 +2363,7 @@
             padding: 4em 0;
         }
         #ig-description {
-            font-size: 20px;
+            font-size: 14px;
         }
         .description__content>.description {
             display: block;
@@ -2460,7 +2460,7 @@
             margin: 0px 80px;
         }
         #video-text-description {
-            font-size: 16px;
+            font-size: 14px;
             width: 100%;
             line-height: 1;
             padding: 2em;
@@ -2835,6 +2835,25 @@
     }
     
     @media screen and (max-width: 768px) {
+        .header-cover {
+            padding-top: 4rem;
+        }
+        .header-image-description>.description {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 15px;
+            align-items: flex-end;
+            margin: 60px 241px;
+            font-size: 11px !important;
+            position: relative;
+            gap: 2em;
+            font-weight: 600;
+        }
+        .header-image-description>.description>h2 {
+            font-size: 16px;
+            line-height: 20px;
+            padding-bottom: 30px;
+        }
         .cookie-content {
             flex-direction: column;
             gap: 2em;
@@ -2881,7 +2900,7 @@
         }
         .video-container {
             padding: 0 0em !important;
-            margin: 8rem 0rem !important;
+            margin: 1rem 0rem !important;
         }
         .row-container {
             flex-direction: column;
