@@ -74,8 +74,9 @@ function setupLanguageSwitcher() {
         .catch((error) =>
             console.error("Error setting up language switcher:", error)
         );
-
 }
+
+
 
 function cookieFunction() {
     const cookieModal = document.querySelector(".cookie-modal");

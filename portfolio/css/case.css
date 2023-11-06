@@ -640,7 +640,7 @@
  .col-3 {
      display: flex;
      align-items: flex-start;
-     margin: 70px 100px 70px 100px;
+     margin: 144px 100px 240px 100px;
      flex-direction: row;
      gap: 15em;
      position: relative;
@@ -1019,8 +1019,8 @@
          display: flex;
          flex-direction: row;
          max-width: 100%;
-         gap: 5rem;
-         align-items: baseline;
+         gap: 25rem;
+         padding-bottom: 100px;
      }
      .contact-container-header {
          padding: 100px 0;
@@ -1030,10 +1030,10 @@
      }
      .contanct-links>.link-email>a,
      .contanct-links>.link-telephone>a {
-         font-size: 50px !important;
+         font-size: 35px !important;
      }
      .link-item>a {
-         font-size: 26px;
+         font-size: 20px;
      }
      .story-header>h2 {
          font-size: 44px;
@@ -1042,7 +1042,8 @@
          font-weight: 400;
      }
      .col-2.story-box {
-         gap: 5rem !important;
+         gap: 30rem !important;
+         margin: 240px 80px;
      }
  }
  
@@ -1050,7 +1051,7 @@
      .contact-container {
          display: flex;
          flex-direction: row;
-         margin: 0px 100px;
+         margin: 240px 100px;
      }
      .contact-container-header {
          padding: 100px 0;
@@ -1060,7 +1061,7 @@
      }
      .contact-container-header {
          padding: 100px 0;
-         font-size: 44px;
+         font-size: 24px;
          line-height: normal;
          font-family: 'Cormorant Garamond Semibold';
      }
