@@ -22,6 +22,11 @@
     }
     
     @media screen and (max-width: 479px) {
+        #header-top {
+            font-size: 100px !important;
+            line-height: 1;
+            padding-top: 7rem;
+        }
         .fnt-small {
             font-size: 25px !important;
             line-height: 50px;
@@ -36,11 +41,17 @@
     
     @media screen and (max-width: 1400px) {
         #header-top {
-            font-size: 100px !important;
+            font-size: 200px;
             line-height: 1;
         }
         h1 {
             margin-bottom: 4.5em;
+        }
+        .portfolio-container-text {
+            z-index: 0;
+            position: relative;
+            width: 100%;
+            display: inherit !important;
         }
     }
     
@@ -52,8 +63,10 @@
             margin: 0 0 0.76em 0 !important;
         }
         .fnt-small {
-            font-size: 65px;
+            font-size: 35px;
             line-height: 50px;
+            padding-left: 0px;
+            padding-top: 30px;
         }
         .extra__button>a {
             font-size: 25px !important;
@@ -374,7 +387,7 @@
                     </ul>
 
                 </div>
-                <div class="footer-link-block">
+                <div class="footer-link-block no-gap">
                     <div class="footer-fnt link-email">
                         <a class="link-anim" href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
                     </div>

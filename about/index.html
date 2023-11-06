@@ -113,6 +113,17 @@
     }
     
     @media (max-width: 478px) {
+        .footer-wrapper {
+            height: fit-content;
+            width: 100%;
+            padding: 4em 0 0 0 !important;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 4em;
+            justify-content: space-between;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+        }
         .image-container {
             margin: 0px !important;
         }
@@ -396,7 +407,7 @@
         position: relative;
     }
     
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: 991px) and (min-width: 768px) {
         .footer-wrapper {
             height: fit-content;
             width: 100%;
@@ -426,17 +437,6 @@
     }
     
     @media screen and (max-width: 991px) {
-        .footer-wrapper {
-            height: fit-content;
-            width: 100%;
-            padding: 4em 0 0em 0 !important;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            gap: 4em;
-            justify-content: space-between;
-            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
-        }
         #large-video {
             display: block;
         }
@@ -544,6 +544,7 @@
     }
     
     .button {
+        background: transparent !important;
         border: 1px solid #696767;
         opacity: 1;
         backdrop-filter: saturate(180%) blur(10px);
@@ -900,7 +901,7 @@
             </div>
             <div class="bottom-text-header pb-2 ">
                 <a href="../portfolio/" rel="noopener noreferrer">
-                    <div class="button see-cases">
+                    <div class="button see-cases" style=" border: none;">
                         <span data-translate="about-btn-text" id="see-cases-btn">
                             See cases
                         </span>
@@ -958,7 +959,7 @@
                         </ul>
 
                     </div>
-                    <div class="footer-link-block">
+                    <div class="footer-link-block no-gap">
                         <div class="footer-fnt link-email">
                             <a href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
                         </div>

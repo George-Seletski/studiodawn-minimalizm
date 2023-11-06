@@ -2139,10 +2139,10 @@
         .text {
             display: flex;
             text-align: left;
-            margin: 10em 15rem;
-            font-size: 1.8em;
+            margin: 10em 15em 10em 7.5rem;
+            font-size: 2em;
             align-items: center;
-            line-height: 50px;
+            line-height: normal;
         }
         #brand-name {
             text-decoration: underline;
@@ -2206,6 +2206,20 @@
             font-weight: 800;
             font-family: "Roboto Light", sans-serif;
             font-size: 20px;
+        }
+    }
+    
+    @media screen and (max-width: 991px) and (min-width: 768px) {
+        .footer-wrapper {
+            height: fit-content;
+            width: 100%;
+            padding: 4em 0 13em 0 !important;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 4em;
+            justify-content: space-between;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
         }
     }
     
@@ -2326,7 +2340,7 @@
             gap: 50px;
         }
         .wrapper {
-            margin: 7em 0;
+            margin: 0;
         }
         .mouse-container {
             display: none;
@@ -2447,7 +2461,14 @@
         }
     }
     
+    .no-gap {
+        gap: 0 !important;
+    }
+    
     @media screen and (max-width: 991px) {
+        .footer-fnt.footer-link>span {
+            padding-left: 4.75em;
+        }
         .footer-link-block {
             display: flex;
             flex-direction: column;
@@ -2497,7 +2518,7 @@
             display: flex;
             align-items: center;
             justify-content: baseline;
-            margin: 0 2em;
+            margin: 0 3em;
             padding: 0;
         }
         footer {
@@ -2835,6 +2856,9 @@
     }
     
     @media screen and (max-width: 768px) {
+        .footer-fnt.footer-link>span {
+            padding-left: 0;
+        }
         .header-cover {
             padding-top: 4rem;
         }
@@ -3184,7 +3208,7 @@
             gap: 100px;
         }
         .text {
-            margin: 5em 1em;
+            margin: 5em 2em;
         }
         .instagram-container {
             display: flex;
@@ -3268,7 +3292,7 @@
             gap: 4em;
         }
         #brand {
-            width: 100px;
+            width: 151px;
         }
         .brands-section-header {
             margin: 0 auto;
