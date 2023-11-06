@@ -238,6 +238,10 @@
         display: block;
     }
     
+    .page-wrapper.p2.loaded {
+        display: block;
+    }
+    
     .bottom-text-header {
         position: absolute;
         bottom: 0;
