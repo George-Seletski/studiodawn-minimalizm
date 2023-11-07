@@ -130,7 +130,7 @@
     
     .gif-animation {
         width: 562px;
-        height: 888px;
+        height: 780px;
     }
     
     .fnt-sml {
@@ -2084,6 +2084,7 @@
     }
     
     .video-container {
+        height: 100vh;
         border-color: transparent !important;
         display: flex;
         justify-content: center;
@@ -2091,6 +2092,7 @@
         position: relative;
         max-width: 50%;
         padding: 15rem;
+        margin-top: 8em;
     }
     
     @media screen and (max-width:1921px) {
@@ -2206,6 +2208,14 @@
             font-weight: 800;
             font-family: "Roboto Light", sans-serif;
             font-size: 20px;
+        }
+    }
+    
+    @media screen and (min-width: 1400px) {
+        .footer-link-block {
+            display: flex;
+            flex-direction: row;
+            gap: 4em !important;
         }
     }
     
@@ -2472,7 +2482,7 @@
         .footer-link-block {
             display: flex;
             flex-direction: column;
-            gap: 4em;
+            gap: 0;
         }
         .svg-title-1,
         .svg-title-2 {

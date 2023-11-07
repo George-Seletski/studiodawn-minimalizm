@@ -387,7 +387,7 @@
                     </ul>
 
                 </div>
-                <div class="footer-link-block no-gap">
+                <div class="footer-link-block ">
                     <div class="footer-fnt link-email">
                         <a class="link-anim" href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
                     </div>
@@ -456,6 +456,10 @@
         </scroll-object>
 
     </footer>
+
+
+
+
     <script src="../js/ScrollTriger.js" async></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -538,6 +542,8 @@
 
     gsap.registerPlugin(ScrollTrigger);
     let preloaderAnimationCompleted = false;
+
+
 
     // You can set the loading duration in seconds
     const loadingDuration = 1; // Adjust this value as needed
@@ -748,6 +754,7 @@
                 link.href = obj.link;
                 link.rel = "noopener noreferrer";
                 link.setAttribute('rel', 'preload');
+                link.className = 'parallax-container';
                 link.setAttribute('as', 'fetch');
                 link.setAttribute('href', obj.link); // Preload the linked page
 
