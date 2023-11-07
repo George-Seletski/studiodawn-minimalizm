@@ -330,7 +330,7 @@
             </h1>
         </div>
         <div class="bottom-text-header">
-            <span class="bottom-text-title"><a class="link-anim fnt-sml" href="./contact/">CREATE YOURS NOW</a></span>
+            <span class="bottom-text-title"><a class="link-anim fnt-sml" href="https://george-seletski.github.io/studiodawn-minimalizm/contact/">CREATE YOURS NOW</a></span>
             <!--<span><img id="arrow-down"src="./icons/arrow-left-black.svg" alt=""></span>
             <span class="mouse">
                     <span class="mouse-movement"></span>
@@ -798,7 +798,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
 
 </body>
 <script>
@@ -902,49 +902,44 @@
 
     function initPage() {
 
-        cookieFunction();
-        var w = window.innerWidth;
-        var h = window.innerHeight;
 
 
-        console.log("Browser width: " + w + ", height: " + h + ".");
-
-
-
+       // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
         if (!isTouchDevice) {
             const customCursor = document.querySelector(".custom-cursor");
+            // Add custom cursor functionality for non-touch devices
+
             const links = document.querySelectorAll("a");
 
-            document.addEventListener('mousemove', function(event) {
-                customCursor.style.left = `${event.clientX
-                    }px`;
-                customCursor.style.top = `${event.clientY
-                    }px`;
+            document.addEventListener('mousemove', function (event) {
+                customCursor.style.left = `${event.clientX}px`;
+                customCursor.style.top = `${event.clientY}px`;
             });
-
 
             links.forEach((link) => {
                 link.addEventListener("mouseover", () => {
                     customCursor.classList.add("custom-cursor--link");
                 });
 
-                link.addEventListener("mouseout", () => {
+                link.addEventListener("mouseout", (event) => {
                     customCursor.classList.remove("custom-cursor--link");
+                    // Add a slight delay to prevent cursor flickering on hover-out
                     setTimeout(() => {
-                        customCursor.style.left = `${event.clientX
-                            }px`;
-                        customCursor.style.top = `${event.clientY
-                            }px`;
-                    }, 50);
+                        customCursor.style.left = `${event.clientX}px`;
+                        customCursor.style.top = `${event.clientY}px`;
+                    }, 10);
                 });
             });
+
+
         } else {
             const customCursor = document.querySelector(".custom-cursor");
             customCursor.style = `opacity: 0 !important;`;
-        }
 
+        }
+        cookieFunction();
         // GSAP TimelineMax for animations
         const timeline = gsap.timeline();
 
