@@ -83,19 +83,24 @@ function cookieFunction() {
     const acceptCookiesButton = document.getElementById("accept-cookies");
     const declineCookiesButton = document.getElementById("decline-cookies");
 
-    // Initially set the modal outside of the viewport
-    gsap.set(cookieModal, {
-        y: "100%",
-    });
+    // Check if the user has already accepted cookies
+    const cookieAccepted = localStorage.getItem("cookieAccepted");
 
-    // Show the cookie modal with a reveal animation
-    gsap.to(cookieModal, {
-        duration: 0.5,
-        y: 0,
-        onComplete: function() {
-            cookieModal.style.display = "block";
-        },
-    });
+    if (cookieAccepted !== "true") {
+        // Initially set the modal outside of the viewport
+        gsap.set(cookieModal, {
+            y: "100%",
+        });
+
+        // Show the cookie modal with a reveal animation
+        gsap.to(cookieModal, {
+            duration: 0.5,
+            y: 0,
+            onComplete: function() {
+                cookieModal.style.display = "block";
+            },
+        });
+    }
 
     acceptCookiesButton.addEventListener("click", function() {
         localStorage.setItem("cookieAccepted", "true");
@@ -118,6 +123,7 @@ function cookieFunction() {
         });
     }
 }
+
 
 // Function to remove the cookiesAccepted item from localStorage
 function clearCookiesAccepted() {
