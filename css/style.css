@@ -2068,6 +2068,11 @@
         scale: 0 !important;
     }
     
+    .browse-instagram {
+        width: 40px;
+        margin: 10px;
+    }
+    
     .contact-section {
         z-index: 0;
         justify-content: center;
