@@ -44,6 +44,9 @@
         box-sizing: border-box;
         cursor: none;
     }
+    /*div {
+        border: 1px solid gold;
+    }*/
     
     html {
         -ms-text-size-adjust: 100%;
