@@ -6,6 +6,16 @@
      font-style: normal;
  }
  
+ @font-face {
+     font-family: 'General-Sans Light';
+     src: url("../fonts/GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Light.ttf") format('truetype');
+ }
+ 
+ @font-face {
+     font-family: 'General-Sans ExtraLight';
+     src: url("../fonts/GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Extralight.ttf") format('truetype');
+ }
+ 
  .header-wrapper {
      background-color: #f9f4f413;
      position: fixed;
@@ -1010,9 +1020,9 @@
          margin: 192px;
      }
      .number-item-text {
-         line-height: 1.2;
-         font-weight: 900;
-         font-family: 'Cormorant Garamond Semibold';
+         line-height: normal;
+         font-weight: 400;
+         font-family: 'General-Sans Light';
          font-size: 14px;
      }
      .contact-container {
@@ -1044,6 +1054,40 @@
      .col-2.story-box {
          gap: 30rem !important;
          margin: 240px 80px;
+     }
+ }
+ 
+ @media screen and (min-width: 1400px) and (max-width: 1919px) {
+     .col-3 {
+         display: flex;
+         align-items: flex-start;
+         margin: 144px 100px 144px 100px;
+         flex-direction: row;
+         gap: 3em;
+         position: relative;
+     }
+     .col-2 {
+         gap: 2em;
+     }
+     .text-bold {
+         font-size: 31px !important;
+         font-family: 'Cormorant Garamond Semibold';
+         line-height: 1;
+         font-weight: 600;
+     }
+     .col-2.story-box {
+         gap: 15rem !important;
+         margin: 240px 80px;
+     }
+     .contact-container {
+         display: flex;
+         flex-direction: row;
+         max-width: 100%;
+         gap: 5rem;
+         padding-bottom: 100px;
+     }
+     .link-container {
+         margin-top: 14px;
      }
  }
  

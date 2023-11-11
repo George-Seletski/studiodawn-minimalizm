@@ -45,7 +45,7 @@
         cursor: none;
     }
     /*div {
-        border: 1px solid gold;
+        border: 1px solid rgb(86, 189, 158);
     }*/
     
     html {
@@ -104,6 +104,11 @@
             width: 273px;
             height: 273px;
         }
+    }
+    
+    #discover-h1 {
+        align-items: center;
+        margin: 1.6700000000000017em 0 !important;
     }
     
     @media screen and (max-width: 479px) {
@@ -417,7 +422,7 @@
     
     .garamond-font {
         font-family: 'Cormorant Garamond Light', sans-serif !important;
-        font-weight: 100;
+        font-weight: 400;
     }
     
     .roboto-light-fnt {
@@ -1690,7 +1695,7 @@
     }
     
     footer {
-        height: 99vh;
+        height: 99vh !important;
         width: 100%;
         border: 0;
         background-color: #fff;
@@ -1711,7 +1716,7 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 0em;
+        gap: 6em;
         justify-content: space-between;
         padding-right: 5rem;
         padding-left: 5rem;
@@ -2110,10 +2115,10 @@
     @media screen and (max-width:1921px) and (min-width:1440px) {
         .mb-bottom---10px.mr-55.roboto-light-fnt {
             margin: 0 !important;
-            padding-top: 20px !important;
+            padding-top: 0px !important;
         }
         #main-title {
-            font-size: 1.6em !important;
+            font-size: 1.3em !important;
         }
         .text-video {
             padding: 0;
@@ -2207,7 +2212,7 @@
             border: 0;
             background-color: #f9f4f4;
             color: #000 !important;
-            gap: 15em;
+            gap: 6em;
             display: flex;
         }
         .gara-fnt {
@@ -2468,7 +2473,7 @@
         #video-text-description {
             font-size: 25px;
             width: 400px;
-            line-height: 1;
+            line-height: normal;
         }
         .description {
             font-size: 14px;

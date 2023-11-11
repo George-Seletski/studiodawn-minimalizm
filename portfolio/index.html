@@ -39,6 +39,10 @@
         }
     }
     
+    footer {
+        gap: 6em;
+    }
+    
     @media screen and (max-width: 1400px) {
         #header-top {
             font-size: 200px;
@@ -118,7 +122,7 @@
     }
     
     .footer-loaded {
-        display: block;
+        display: flex;
     }
     
     @media screen and (min-width:1920px) {
@@ -129,7 +133,7 @@
             align-items: center;
             display: flex;
             flex-direction: column;
-            gap: 14em;
+            gap: 6em;
             justify-content: space-between;
             padding-right: 5rem;
             padding-left: 5rem;
@@ -346,9 +350,9 @@
 
     <footer>
         <div class="footer-wrapper">
-            <div class="footer-block">
+            <div class="footer-block" id="ft-block-1">
                 <div class="footer-link-item">
-                    <a class="nav-link gara-fnt" href="../privacy_index.html" rel="noopener noreferrer">Get in touch</a>
+                    <a class="nav-link gara-fnt" href="./privacy_index.html" rel="noopener noreferrer">Get in touch</a>
                 </div>
 
 
@@ -356,28 +360,20 @@
 
                     <div class="footer-navbar">
                         <ul class="footer-navbar-list">
-                            <li id="footer-navbar-item"> <a href="../" class="link-anim" rel="noopener noreferrer">Home</a> </li>
-                            <li id="footer-navbar-item"><a href="/studiodawn-minimalizm/" class="link-anim" rel="noopener noreferrer">About</a></li>
-                            <li id="footer-navbar-item"><a href="../portfolio/" class="link-anim" rel="noopener noreferrer">Cases</a></li>
-                            <li id="footer-navbar-item"><a href="../contact/" class="link-anim" rel="noopener noreferrer">Contact</a></li>
+                            <li id="footer-navbar-item"> <a href="/studiodawn-minimalizm/" rel="noopener noreferrer" class="link-anim">Home</a> </li>
+                            <li id="footer-navbar-item"> <a href="#" rel="noopener noreferrer" class="link-anim">ExtraLink</a> </li>
+                            <li id="footer-navbar-item"><a href="./about/" rel="noopener noreferrer" class="link-anim">About</a></li>
+                            <li id="footer-navbar-item"><a href="./portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
+                            <li id="footer-navbar-item"><a href="./contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="footer-navbar">
-                        <ul class="footer-navbar-social-list">
-                            <li id="footer-navbar-socitem"> <a href="../privacy_index.html" class="link-anim" rel="noopener noreferrer">Behance<span class="iblock">→</span></a> </li>
-                            <li id="footer-navbar-socitem"><a href="../conditions_index.html" class="link-anim" rel="noopener noreferrer">Instagram<span class="iblock">→</span></a></li>
-                            <li id="footer-navbar-socitem"><a href="../human_rughts_index.html" class="link-anim" rel="noopener noreferrer">Facebook<span class="iblock">→</span></a></li>
 
-                        </ul>
-                    </div>
                 </div>
 
 
-                <!--<div class="footer-fnt link-email">
-                            <a href="tel:+421905455208">+421 905 455 208</a>
-                        </div>-->
+
             </div>
-            <div class="footer-block">
+            <div class="footer-block" id="ft-block-2">
                 <div class="footer-header-block">
 
                     <ul class="country-list">
@@ -389,7 +385,7 @@
                 </div>
                 <div class="footer-link-block ">
                     <div class="footer-fnt link-email">
-                        <a class="link-anim" href="mailto:hello@studiodawn.com">hello@studiodawn.com</a>
+                        <a href="mailto:hello@studiodawn.com" class="link-anim">hello@studiodawn.com</a>
                     </div>
                     <div class="footer-fnt footer-link">
                         <span>©2023 </span><a href="mailto:hello@studiodawn.com" class="link-anim">legal</a>
@@ -456,10 +452,6 @@
         </scroll-object>
 
     </footer>
-
-
-
-
     <script src="../js/ScrollTriger.js" async></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

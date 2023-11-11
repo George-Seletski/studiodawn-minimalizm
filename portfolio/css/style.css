@@ -25,17 +25,17 @@
     
     @font-face {
         font-family: 'General-Sans ExtraLight';
-        src: url("./fonts/Roboto/Roboto-Light.ttf") format('truetype');
+        src: url("../fonts/Roboto/Roboto-Light.ttf") format('truetype');
     }
     
     @font-face {
         font-family: 'General-Sans Light';
-        src: url("./fonts/GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Light.ttf") format('truetype');
+        src: url("../fonts/GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Light.ttf") format('truetype');
     }
     
     @font-face {
         font-family: 'General-Sans ExtraLight';
-        src: url("/fonts/GeneralSans/GeneralSans-Extralight.ttf") format('truetype');
+        src: url("../fonts/GeneralSans_Complete/Fonts/WEB/fonts/GeneralSans-Extralight.ttf") format('truetype');
     }
     
     * {
@@ -44,8 +44,8 @@
         box-sizing: border-box;
         cursor: none;
     }
-    /* div {
-        border: 1px solid #476161;
+    /*div {
+        border: 1px solid rgb(86, 189, 158);
     }*/
     
     html {
@@ -106,6 +106,11 @@
         }
     }
     
+    #discover-h1 {
+        align-items: center;
+        margin: 1.6700000000000017em 0 !important;
+    }
+    
     @media screen and (max-width: 479px) {
         h1 {
             line-height: 1 !important;
@@ -133,7 +138,7 @@
     
     .gif-animation {
         width: 562px;
-        height: 888px;
+        height: 780px;
     }
     
     .fnt-sml {
@@ -235,6 +240,10 @@
     }
     
     .page-wrapper.loaded {
+        display: block;
+    }
+    
+    .page-wrapper.p2.loaded {
         display: block;
     }
     
@@ -413,7 +422,7 @@
     
     .garamond-font {
         font-family: 'Cormorant Garamond Light', sans-serif !important;
-        font-weight: 100;
+        font-weight: 400;
     }
     
     .roboto-light-fnt {
@@ -1019,6 +1028,12 @@
         font-family: 'General-Sans ExtraLight', sans-serif;
         font-size: 20px;
         padding-top: 40px;
+        padding: 12px 24px;
+        border-radius: 150px;
+        background-color: #000;
+        color: #fff;
+        width: fit-content;
+        margin-top: 2em;
     }
     
     #play-button-icon {
@@ -1616,7 +1631,7 @@
     
     .header-cover>img {
         width: 100%;
-        padding: 0em;
+        padding: 2em;
     }
     
     .section-block {
@@ -1686,7 +1701,7 @@
     }
     
     footer {
-        height: 99vh;
+        height: 99vh !important;
         width: 100%;
         border: 0;
         background-color: #fff;
@@ -1707,7 +1722,7 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 5em;
+        gap: 6em;
         justify-content: space-between;
         padding-right: 5rem;
         padding-left: 5rem;
@@ -1724,6 +1739,10 @@
         width: 90%;
         max-width: 100%;
         margin: 0px 80px;
+    }
+    
+    #ft-block-1 {
+        border-top: 2px solid #000;
     }
     
     .footer-fnt>a {
@@ -2067,6 +2086,11 @@
         scale: 0 !important;
     }
     
+    .browse-instagram {
+        width: 40px;
+        margin: 10px;
+    }
+    
     .contact-section {
         z-index: 0;
         justify-content: center;
@@ -2083,6 +2107,7 @@
     }
     
     .video-container {
+        height: 100vh;
         border-color: transparent !important;
         display: flex;
         justify-content: center;
@@ -2090,6 +2115,26 @@
         position: relative;
         max-width: 50%;
         padding: 15rem;
+        margin-top: 8em;
+    }
+    
+    @media screen and (max-width:1921px) and (min-width:1440px) {
+        .mb-bottom---10px.mr-55.roboto-light-fnt {
+            margin: 0 !important;
+            padding-top: 0px !important;
+        }
+        #main-title {
+            font-size: 1.3em !important;
+        }
+        .text-video {
+            padding: 0;
+        }
+        .video-text-block {
+            height: 100vh;
+        }
+        .footer-block {
+            padding: 4em 0 0 0 !important;
+        }
     }
     
     @media screen and (max-width:1921px) {
@@ -2135,13 +2180,16 @@
     }
     
     @media screen and (min-width:1400px) {
+        #small-video {
+            display: none;
+        }
         .text {
             display: flex;
             text-align: left;
-            margin: 10em 15rem;
-            font-size: 1.8em;
+            margin: 10em 3em 10em 6rem;
+            font-size: 2em;
             align-items: center;
-            line-height: 50px;
+            line-height: normal;
         }
         #brand-name {
             text-decoration: underline;
@@ -2170,7 +2218,7 @@
             border: 0;
             background-color: #f9f4f4;
             color: #000 !important;
-            gap: 15em;
+            gap: 6em;
             display: flex;
         }
         .gara-fnt {
@@ -2208,7 +2256,35 @@
         }
     }
     
+    @media screen and (min-width: 1400px) {
+        .footer-link-block {
+            display: flex;
+            flex-direction: row;
+            gap: 4em !important;
+        }
+    }
+    
+    @media screen and (max-width: 991px) and (min-width: 768px) {
+        .footer-wrapper {
+            height: fit-content;
+            width: 100%;
+            padding: 4em 0 13em 0 !important;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 4em;
+            justify-content: space-between;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+        }
+    }
+    
     @media screen and (max-width: 1400px) {
+        #small-video {
+            display: block;
+        }
+        #large-video {
+            display: none;
+        }
         #header-font-video-text {
             font-size: 45px !important;
             text-align: left;
@@ -2325,7 +2401,7 @@
             gap: 50px;
         }
         .wrapper {
-            margin: 7em 0;
+            margin: 0;
         }
         .mouse-container {
             display: none;
@@ -2362,7 +2438,7 @@
             padding: 4em 0;
         }
         #ig-description {
-            font-size: 20px;
+            font-size: 14px;
         }
         .description__content>.description {
             display: block;
@@ -2457,7 +2533,7 @@
         .footer-link-block {
             display: flex;
             flex-direction: column;
-            gap: 4em;
+            gap: 0;
         }
         .svg-title-1,
         .svg-title-2 {
@@ -2466,7 +2542,7 @@
             margin: 0px 80px;
         }
         #video-text-description {
-            font-size: 16px;
+            font-size: 14px;
             width: 100%;
             line-height: 1;
             padding: 2em;
@@ -2503,7 +2579,7 @@
             display: flex;
             align-items: center;
             justify-content: baseline;
-            margin: 0 2em;
+            margin: 0 3em;
             padding: 0;
         }
         footer {
@@ -2755,10 +2831,10 @@
             gap: 2em !important;
         }
         .filter-list>li>a {
-            font-size: 20px !important;
+            font-size: 25px !important;
             line-height: 40px;
+            font-family: 'General-Sans ExtraLight', sans-serif;
             transition: all 0.5s ease;
-            font-family: 'Roboto Thin';
         }
         .filter-container {
             margin: 0;
@@ -2788,7 +2864,7 @@
         }
         /*About*/
         .header-cover>img {
-            height: 50vh;
+            height: 60vh;
             padding: 4em 0;
         }
         .header-image-description>.description {
@@ -2840,21 +2916,38 @@
         }
     }
     
-    @media screen and (max-width: 991px) and (min-width: 768px) {
-        .footer-wrapper {
-            height: fit-content;
-            width: 100%;
-            padding: 4em 0 18em 0 !important;
-            align-items: center;
+    @media screen and (max-width: 768px) {
+        .footer-fnt.footer-link>span {
+            padding-left: 0;
+        }
+        .header-cover {
+            padding-top: 4rem;
+        }
+        .header-image-description>.description {
             display: flex;
             flex-direction: column;
-            gap: 4em;
-            justify-content: space-between;
-            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+            padding: 2rem 15px;
+            align-items: flex-end;
+            margin: 60px 241px;
+            font-size: 11px !important;
+            position: relative;
+            gap: 2em;
+            font-weight: 600;
         }
-    }
-    
-    @media screen and (max-width: 768px) {
+        .header-image-description>.description>h2 {
+            font-size: 16px;
+            line-height: 20px;
+            padding-bottom: 30px;
+        }
+        .cookie-content {
+            flex-direction: column;
+            gap: 2em;
+            margin: 0 auto;
+            display: flex;
+            padding: 15px 10px;
+            align-items: center;
+            font-family: 'Roboto Regular', sans-serif !important;
+        }
         .w-nav-menu,
         .header-wrapper {
             width: 100vw;
@@ -2892,7 +2985,7 @@
         }
         .video-container {
             padding: 0 0em !important;
-            margin: 8rem 0rem !important;
+            margin: 1rem 0rem !important;
         }
         .row-container {
             flex-direction: column;
@@ -3026,7 +3119,7 @@
     
     @media screen and (max-width: 479px) {
         .gif-animation {
-            height: 700px;
+            width: 100vw;
         }
         .video-text-block {
             display: flex;
@@ -3042,6 +3135,9 @@
         }
         footer {
             height: fit-content;
+        }
+        .svg-title-2 {
+            height: 50px;
         }
         .footer-link-item {
             padding-bottom: 16px;
@@ -3176,7 +3272,7 @@
             gap: 100px;
         }
         .text {
-            margin: 5em 1em;
+            margin: 5em 2em;
         }
         .instagram-container {
             display: flex;
@@ -3260,7 +3356,7 @@
             gap: 4em;
         }
         #brand {
-            width: 100px;
+            width: 151px;
         }
         .brands-section-header {
             margin: 0 auto;
