@@ -24,6 +24,15 @@
         border: 1px solid #657080;
     }*/
     
+    .icons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        /* padding-right: 2.3em; */
+        justify-content: space-between;
+    }
+    
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
     .wrapper {
         scroll-snap-type: x mandatory;
@@ -170,6 +179,9 @@
     }
     
     @media screen and (max-width: 991px) {
+        #main-title>.garamond-font {
+            font-size: 1.8em;
+        }
         .grid-image {
             object-fit: cover;
             user-select: none;
@@ -389,7 +401,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <!-- The video element -->
+                             
                                 <iframe id="myVideo"  class="myVideo hide" src="https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" title="Iceland_cinematic"
                                     loading="lazy" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
                             </div>
@@ -409,7 +421,7 @@
 
             </span>
             <span class="description">
-                <ul>
+                <ul class="ul-description">
                     <br>
                     <li>- clients doing right by the world.</li>
                     <li>- clients doing right by the world.</li>
@@ -428,7 +440,7 @@
 
             </span>
             <span class="description">
-                <ul>
+                <ul class="ul-description">
                 <br>
                     <li>- clients doing right by the world.</li>
                     <li>- clients doing right by the world.</li>
@@ -445,10 +457,9 @@
                 shared goal - no
                 egos here. We find what works for you.
 
-
             </span>
             <span class="description">
-                <ul >
+                <ul class="ul-description">
                     <br>
                     <li>- clients doing right by the world.</li>
                     <li>- clients doing right by the world.</li>
@@ -664,13 +675,36 @@
                         <br>
                     </p>
                 </span>
-                <span class="instgram-link">
+                <!--<span class="instgram-link">
                     <a
                         href="https://"
                         target="_blank"
                         rel="noopener noreferrer"
                     >@studiodawn</a>
-                </span>
+                </span>-->
+                 <div class="icons">
+                                    <div class="size-2x">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                                            <img src="./icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
+                                        </a>
+                                    </div>
+                                    <div class=" size-2x">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                                            <img src="./icons/instagram-svg.svg" id="icon" alt="" srcset="">
+                                        </a>
+                                    </div>
+                                    <div class=" size-2x">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                                            <img src="./icons/whatsapp-svg.svg" id="icon" alt="" srcset="">
+                                        </a>
+                                    </div>
+                                     <div class=" size-2x">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                                            <img src="./icons/behance.svg" id="icon" alt="" srcset="">
+                                        </a>
+                                    </div>
+
+                                </div>
 
             </div>
             <div class="instagram-images">
@@ -697,6 +731,7 @@
                         >
                     </div>
                 </a>
+                
             </div>
         </div>
     </div>
@@ -713,7 +748,7 @@
                     <div class="footer-navbar">
                         <ul class="footer-navbar-list">
                             <li id="footer-navbar-item"> <a href="/studiodawn-minimalizm/" rel="noopener noreferrer" class="link-anim">Home</a> </li>
-                            <li id="footer-navbar-item"> <a href="#" rel="noopener noreferrer" class="link-anim">ExtraLink</a> </li>
+                            <li id="footer-navbar-item"> <a href="./rental/index.html" rel="noopener noreferrer" class="link-anim">Rental</a> </li>
                             <li id="footer-navbar-item"><a href="./about/" rel="noopener noreferrer" class="link-anim">About</a></li>
                             <li id="footer-navbar-item"><a href="./portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
                             <li id="footer-navbar-item"><a href="./contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>

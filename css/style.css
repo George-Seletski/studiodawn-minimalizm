@@ -180,7 +180,7 @@
     }
     
     .mb-100 {
-        margin-bottom: 100px !important;
+        margin-bottom: 50px !important;
     }
     
     #header-font-video-text {
@@ -198,7 +198,7 @@
         font-size: 45px;
         text-align: left;
         line-height: 1;
-        padding-bottom: 2em;
+        padding-bottom: 1em;
         text-transform: capitalize;
         /*font-family: 'Font-Sans Regular', sans-serif;*/
         font-family: 'Cormorant Garamond Semibold', sans-serif;
@@ -2139,8 +2139,35 @@
             color: #000;
         }
         .instagram-img {
-            width: 300px;
-            height: 300px;
+            width: 260px;
+            height: 260px;
+        }
+    }
+    
+    @media screen and (min-width:1920px) {
+        .footer-wrapper {
+            height: 100vh;
+            width: 100%;
+            padding: 4em 0 7em 0;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 16em !important;
+            justify-content: space-between;
+            padding-right: 5rem;
+            padding-left: 5rem;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+        }
+        footer {
+            flex-direction: column;
+            margin: 0;
+            height: fit-content;
+            width: 100%;
+            border: 0;
+            background-color: #f9f4f4;
+            color: #000 !important;
+            gap: 6em !important;
+            display: flex;
         }
     }
     
@@ -2302,8 +2329,8 @@
             padding: 9rem !important;
         }
         .instagram-img {
-            width: 200px !important;
-            height: 200px !important;
+            width: 220px !important;
+            height: 220px !important;
         }
         .header-section-content>#discover-h1 {
             font-size: 2em !important;
@@ -2432,7 +2459,8 @@
             padding: 4em 0;
         }
         #ig-description {
-            font-size: 14px;
+            font-size: 18px;
+            line-height: normal !important;
         }
         .description__content>.description {
             display: block;
@@ -2536,7 +2564,7 @@
             margin: 0px 80px;
         }
         #video-text-description {
-            font-size: 14px;
+            font-size: 16px;
             width: 100%;
             line-height: 1;
             padding: 2em;
@@ -2588,7 +2616,8 @@
         .footer-wrapper {
             height: fit-content;
             width: 100%;
-            padding: 4em 0 26em 0 !important;
+            /*padding: 4em 0 26em 0 !important;*/
+            padding: 4em 0 18em 0 !important;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -2697,7 +2726,7 @@
             flex-direction: column;
             align-items: flex-start;
             text-align: left;
-            margin: 73px 32px;
+            margin: 73px 32px 32px 32px;
             gap: 73px;
         }
         #header-font {
@@ -2705,12 +2734,13 @@
             padding-bottom: 56px;
         }
         .description {
-            font-size: 14px;
+            font-size: 18px;
             line-height: 1;
         }
-        .description>ul>li {
-            font-size: 14px;
-            padding-bottom: 5px;
+        .ul-description>li {
+            font-size: 18px;
+            padding-bottom: 15px;
+            line-height: 1.5;
         }
         .row-container>div {
             max-width: 100%;
@@ -2727,7 +2757,12 @@
         .instagram-text-contianer>span {
             width: 100%;
             font-size: 18.7px;
-            padding: 0 3em 0 0;
+            padding: 3em 10em 0em 0;
+        }
+        .instagram-text-contianer>.icons {
+            justify-content: flex-start;
+            gap: 5em;
+            padding: 2em 0;
         }
         .instagram-container {
             flex-direction: column;

@@ -93,8 +93,8 @@
     .extra__button>a {
         font-size: 20px !important;
         line-height: 35px;
-        font-family: 'Roboto Light';
-        font-weight: 500;
+        font-family: 'Roboto Thin';
+        font-weight: 600;
         transition: all 0.5s ease;
     }
     
@@ -123,17 +123,18 @@
     
     .footer-loaded {
         display: flex;
+        flex-direction: column;
     }
     
     @media screen and (min-width:1920px) {
         .footer-wrapper {
-            height: fit-content;
+            height: 100vh;
             width: 100%;
-            padding: 8em 0 14em 0;
+            padding: 4em 0 7em 0;
             align-items: center;
             display: flex;
             flex-direction: column;
-            gap: 6em;
+            gap: 16em !important;
             justify-content: space-between;
             padding-right: 5rem;
             padding-left: 5rem;
@@ -308,7 +309,7 @@
 
             </div>
             <div class="filter-container-main">
-                <div class="filter-button active extra__button" onclick="handleFilterClick(this, 'all')"><a data-translate="main-filter">All projects</a></div>
+                <div class="filter-button extra__button active" onclick="handleFilterClick(this, 'all')"><a data-translate="main-filter">All projects</a></div>
                 <div class="filter-container">
                     <div id="column">
 
@@ -730,7 +731,7 @@
         var filteredObjects = tag === 'all' ? objects : objects.filter(function(obj) {
             return obj.tag === tag;
         });
-
+        console.log(tag);
         if (ListView === false) {
             var cardContainer = document.querySelector('.cases-grid'); // Use querySelector to select by class
             cardContainer.innerHTML = '';
@@ -831,6 +832,8 @@
 
 
     function showList() {
+        removeActiveClass(Objectag);
+        var activeButton = document.querySelector('.filter-button.extra__button');
         var gridIcon = document.querySelector('#grid-view-icon');
         var listIcon = document.querySelector('#list-view-icon');
         gridIcon.classList.remove('active-button');
@@ -840,9 +843,11 @@
         ListView = true;
         //console.log(Objectag, 'showList');
         if (buttonClicked === false) {
+            activeButton.classList.add('active');
             filterCards('all');
         } else {
             filterCards(Objectag);
+            console.log('Objectag', Objectag);
             Objectag = '';
         }
 
@@ -888,19 +893,29 @@
         activeLinks = []; // Clear the active links array
     }
 
+    function removeActiveClass(tag) {
+        var activeButton = document.querySelector('.filter-button.active');
+
+        if (activeButton) {
+            activeButton.classList.remove('active');
+            filterCards(tag);
+        }
+    }
+
     function handleFilterClick(element, tag) {
-        var filterButtons = document.querySelectorAll('.filter-button');
+        // Remove 'active' class from the previously active filter button
+        removeActiveClass(tag);
 
-        filterButtons.forEach(function(button) {
-            button.classList.remove('active');
-        });
-
+        // Add 'active' class to the clicked element
         element.classList.add('active');
 
+        // Other code related to filterCards(tag);
         filterCards(tag);
-    };
+    }
+
 
     function showGrid() {
+        var activeButton = document.querySelector('.filter-button.extra__button');
         var gridIcon = document.querySelector('#grid-view-icon');
         var listIcon = document.querySelector('#list-view-icon');
         listIcon.classList.remove('active-button');
@@ -908,11 +923,15 @@
         casesList.style.display = "none";
         casesGrid.style.display = "block";
         ListView = false;
+
+        removeActiveClass(Objectag);
         //console.log(Objectag, 'showGrid');
         if (buttonClicked === false) {
+            activeButton.classList.add('active');
             filterCards('all');
         } else {
             filterCards(Objectag, Language);
+            console.log('Objectag', Objectag);
             Objectag = '';
         }
 
