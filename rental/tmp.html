@@ -3,221 +3,78 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
     <title>STUDIODAWN</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <link href="./img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
-    <link href="./img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
-    <script src="js/all_functions.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/ScrollTriger.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <link rel="stylesheet" href="./css/preloader.css">
-
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+        type="text/css"
+    >
+    <link
+        rel="stylesheet"
+        href="../css/normalize.css"
+        type="text/css"
+    >
+    <link
+        href="../img/fb_logo_studiodawn_square.jpg"
+        rel="shortcut icon"
+        type="image/x-icon"
+    >
+    <link
+        href="../img/320x320px_fb_logo_studiodawn2_round.png"
+        rel="apple-touch-icon"
+    >
+    <script src="../js/gsap.min.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/ScrollTriger.js"></script>
+    <link
+        rel="stylesheet"
+        href="../css/preloader.css"
+    >
+    <link
+        rel="stylesheet"
+        href="./css/style_rental.css"
+    >
 </head>
 <style>
-    /* Import Google font - Poppins */
-    /*div {
-        border: 1px solid #657080;
+    /*section {
+        border: 1px solid green;
+    }
+    
+    div {
+        border: 1px solid blue;
+    }
+    
+    span {
+        border: 1px solid gray;
     }*/
-    
-    .icons {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: relative;
-        /* padding-right: 2.3em; */
-        justify-content: space-between;
-    }
-    
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-    .wrapper {
-        scroll-snap-type: x mandatory;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        width: 100%;
-        flex-direction: row;
-        gap: 10px;
-        padding: 0;
-        position: relative;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        display: inline-block !important;
-        cursor: none;
-    }
-    
-    .mb-bottom---10px.mr-55.roboto-light-fnt {
-        letter-spacing: -5px;
-    }
-    
-    #main-title {
-        padding-top: 50px;
-    }
-    
-    @media screen and (max-width:1921px) and (min-width:1441px) {
-        #main-title {
-            font-size: 2em !important;
-        }
-    }
-    
-    @media screen and (max-width:1440px) and (min-width:1200px) {
-        #main-title {
-            font-size: 1.6em !important;
-        }
-    }
-    
-    .wrapper i {
-        top: 50%;
-        height: 44px;
-        width: 44px;
-        color: #343F4F;
-        cursor: none;
-        font-size: 1.15rem;
-        position: absolute;
-        line-height: 44px;
-        background: #f9f4f4;
-        border-radius: 50%;
-        transform: translateY(-50%);
-        transition: transform 0.1s linear;
-    }
-    
-    i>img {
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-    }
-    
-    .wrapper i:active {
-        transform: translateY(-50%) scale(0.9);
-    }
-    
-    .wrapper i:hover {
-        background: #fff;
-    }
-    
-    .wrapper i:first-child {
-        left: 22px;
-        display: none;
-    }
-    
-    .wrapper i:last-child {
-        right: 22px;
-    }
-    
-    .wrapper .carousel {
-        font-size: 0;
-        cursor: none;
-        overflow: hidden;
-        white-space: nowrap;
-        scroll-behavior: smooth;
-        display: inline-block;
-        margin-top: 100px;
-    }
-    
-    .carousel.dragging {
-        cursor: none;
-        scroll-behavior: auto;
-    }
-    
-    .carousel.dragging {
-        pointer-events: none;
-    }
-    
-    .grid-image {
-        object-fit: cover;
-        user-select: none;
-        margin-left: 14px !important;
-        width: calc(30%) !important;
-    }
-    
-    .carousel img:first-child {
-        margin-left: 0;
-    }
-    
-    @media screen and(max-width: 900px) {
-        .carousel img {
-            width: calc(100% / 2);
-        }
-        .wrapper {
-            margin-top: 1.5em;
-        }
-    }
-    
-    @media screen and(max-width: 550px) {
-        .carousel span {
-            width: 100%;
-        }
-        #play-button-icon {
-            width: 25px;
-            height: 25px;
-        }
-        .grid-image {
-            object-fit: cover;
-            user-select: none;
-            margin-left: 14px !important;
-            width: calc(50%) !important;
-        }
-    }
-    
-    .hv-auto {
-        height: fit-content;
-        padding-top: 25px;
-    }
-    
-    .icons {
-        position: relative;
-    }
-    
-    .dropdown-content {
-        display: none;
-    }
-    
-    .dropdown-content.show {
-        display: block;
-        transition: transform 5s;
-        transition: all 0.5s ease;
-    }
-    
-    @media screen and (max-width: 991px) {
-        #main-title>.garamond-font {
-            font-size: 1.8em;
-        }
-        .grid-image {
-            object-fit: cover;
-            user-select: none;
-            margin-left: 14px !important;
-            width: calc(45%) !important;
-        }
-        .wrapper i {
-            top: 60%;
-            height: 44px;
-            width: 44px;
-            color: #343F4F;
-            cursor: none;
-            font-size: 1.15rem;
-            position: absolute;
-            line-height: 44px;
-            background: #f9f4f4;
-            border-radius: 50%;
-            transform: translateY(-50%);
-            transition: transform 0.1s linear;
-        }
-    }
 </style>
 
 <body>
-    <div class="custom-cursor"></div>
     <div id="preloader">
         <div class="loader">
-            <scroll-object class="block rel mask in-view" aria-hidden="true">
-                <a class="block rel" aria-label="Back to Home">
-                    <svg class="svg-title-1" width="1906.795" height="194.107" viewBox="0 0 1906.795 194.107" xmlns="http://www.w3.org/2000/svg">
+            <scroll-object
+                class="block rel mask in-view"
+                aria-hidden="true"
+            >
+                <a
+                    class="block rel"
+                    aria-label="Back to Home"
+                >
+                    <svg
+                        class="svg-title-1"
+                        width="1906.795"
+                        height="194.107"
+                        viewBox="0 0 1906.795 194.107"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
                         <g
                             id="svgGroup"
                             stroke-linecap="round"
@@ -275,57 +132,121 @@
         </div>
     </div>
 
-    <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
+    <div class="custom-cursor"></div>
+
+    <div
+        class="header-wrapper w-nav"
+        data-duration="400"
+        data-collapse="all"
+    >
         <div class="container-default w-container">
 
             <div class="header-right-col">
-                <nav role="navigation" class="w-nav-menu">
-                    <a class="link-back white"><img src="icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
+                <nav
+                    role="navigation"
+                    class="w-nav-menu"
+                >
+                    <a class="link-back white"><img
+                            src="../icons/arrow-right-up-light.svg"
+                            style=" width: 30px;transform: rotate(270deg);"
+                            alt="arrow-left-up"
+                        ></a>
                     <div class="menu container-default-center">
 
                         <div class="w-container">
-                            <ul role="list" class="nav-list white">
+                            <ul
+                                role="list"
+                                class="nav-list white"
+                            >
                                 <li class="nav-item">
-                                    <a href="/studiodawn-minimalizm/" class="nav-link w--current" data-translate="nav-link-1" rel="preload" as="fetch">Home</a>
+                                    <a
+                                        href="../"
+                                        class="nav-link"
+                                        data-translate="nav-link-1"
+                                        rel="preload"
+                                        as="fetch"
+                                    >Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
+                                    <a
+                                        href="../about"
+                                        class="nav-link"
+                                        data-translate="nav-link-2"
+                                        rel="preload"
+                                        as="fetch"
+                                    >About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./portfolio" class="nav-link" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
+                                    <a
+                                        href="../portfolio"
+                                        class="nav-link"
+                                        data-translate="nav-link-3"
+                                        rel="preload"
+                                        as="fetch"
+                                    >Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./contact/" class="nav-link " data-translate="nav-link-4" rel="preload" as="fetch">Contact</a>
+                                    <a
+                                        href="../contact/"
+                                        class="nav-link w--current"
+                                        data-translate="nav-link-4"
+                                        rel="preload"
+                                        as="fetch"
+                                    >Contact</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="w-container">
                             <div class="nav-info-submenu">
 
-                                <ul role="list" class="nav-info">
+                                <ul
+                                    role="list"
+                                    class="nav-info"
+                                >
                                     <h2 class="nav-info-header ">Work Inquiries.</h2>
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        <a
+                                            href="mailto:hello@dawnstudio.com"
+                                            class="link-email white"
+                                        >hello@dawnstudio.com</a>
                                     </li>
                                 </ul>
-                                <ul role="list" class="nav-info">
+                                <ul
+                                    role="list"
+                                    class="nav-info"
+                                >
                                     <h2 class="nav-info-header white">Get in touch.</h2>
                                     <li class="nav-item">
-                                        <a href="#" class="link-address white">228 Nelson's Crescent New
+                                        <a
+                                            href="#"
+                                            class="link-address white"
+                                        >228 Nelson's Crescent New
                                             Westminster, BC V3L 3E3</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
+                                        <a
+                                            href="mailto:hello@dawnstudio.com"
+                                            class="link-email white"
+                                        >hello@dawnstudio.com</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Slovakia: +421-905-455-208</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Slovakia: +421-905-455-208</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Europe: +33-6-84-13-30-45</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Europe: +33-6-84-13-30-45</a>
                                     </li>
 
                                     <li class="nav-item ">
-                                        <a href="tel:+421905455208" class="link-telephone white"> Canada: +1 (604) 786-6046</a>
+                                        <a
+                                            href="tel:+421905455208"
+                                            class="link-telephone white"
+                                        > Canada: +1 (604) 786-6046</a>
                                     </li>
 
                                 </ul>
@@ -343,8 +264,17 @@
                     <div class="hamburger-menu-bar-top"></div>
                     <div class="hamburger-menu-bar-bottom"></div>
                 </div>
-                <a href="/studiodawn-minimalizm/" aria-current="page" class="header-logo-link w-nav-brand w--current ">
-                    <img src="./img/320x320px_fb_logo_studiodawn2_round.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                <a
+                    href="../"
+                    aria-current="page"
+                    class="header-logo-link w-nav-brand w--current "
+                >
+                    <img
+                        src="../img/320x320px_fb_logo_studiodawn2_round.png"
+                        alt="STUDIODAWN"
+                        class="header-logo"
+                        lazy="loading"
+                    >
 
                 </a>
 
@@ -353,399 +283,180 @@
             </div>
         </div>
     </div>
-    <div class="header-section">
-        <div class="header-section-content">
-            <h1 id="main-title">
-                <span class="garamond-font" data-translate="main-h1-1">We create</span>
-                <span class="mb-bottom---10px mr-55 roboto-light-fnt " data-translate="main-h1-2">
-                    future brands</span>
-            </h1>
-        </div>
-        <div class="bottom-text-header">
-            <span class="bottom-text-title"><a class="link-anim fnt-sml" href="https://george-seletski.github.io/studiodawn-minimalizm/contact/">CREATE YOURS NOW</a></span>
-            <!--<span><img id="arrow-down"src="./icons/arrow-left-black.svg" alt=""></span>
-            <span class="mouse">
-                    <span class="mouse-movement"></span>
-            </span>
-            <div class="mouse-scroll" href="#">
-                <span class="mouse">
-                        <span class="mouse-movement"></span>
-                </span>-->
-        </div>
-    </div>
+    <header class="contact__header">
+        <div
+            class="carousel-scale contact__header__cover"
+            data-intersection-uuid="f57c9590-7520-11ee-bc4c-13ed8ad6092e"
+            style="opacity: 1;"
+        >
 
-    <div class="page-wrapper">
-        <div class="container  video-text-block">
-            <div class="text-video">
-                <span>
-                    <h1  id="header-font-video-text">We’re Smack Bang, an <br>independent creative <br>agency stoking the <br>fires of obsession.</h1>
-                    <div class="description" id="video-text-description" data-translate="text-video-section">
-                        Harness
-                        the power of our solutions and propel your business to
-                        new heights in the ever - evolving digital landscape.
-                    </div>
-                </span>
+            <img
+                data-object-fit="cover"
+                srcset="./img/damir-babacic-UCfTPw4nyr0-unsplash.jpg?auto=compress,format 600w, ./img/damir-babacic-UCfTPw4nyr0-unsplash.jpg?auto=compress,format 300w"
+                src="./img/damir-babacic-UCfTPw4nyr0-unsplash.jpg?auto=compress,format"
+                role="presentation"
+                loading="lazy"
+            >
+
+        </div>
+        <div class="contact__header__content row">
+
+            <h1
+                data-splitted="words"
+                class="title title--1"
+            >Use our gear!</h1>
+            <div
+                data-splitted="lines"
+                class="decotitle decotitle--1"
+            >
+                <p>Find the right camera <br>for your needs<br></span>
+
             </div>
-            <div class="video-container">
-                <div class="movie-btn movie-btn sixteen-nine-btn" vidurl="https://player.vimeo.com/video/850727482?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=0">
-                    <div class="play-button-container">
-                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidurl="https://player.vimeo.com/video/850727482">
-                            <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
-                        </div>
+        </div>
+    </header>
+    <div class="page-wrapper">
+        <div class="grid-container">
+            <!--<div class="grid-rental-item">
+                <img src="./img/DJI RS2.jpg" alt="Card Image" class="grid-rental-item-image">
+                <div class="info-container">
+                    <div class="item-info">
+                        <p><span id="bold">Sony FE </span> 24-70mm</p>
+                        <p>f/2.8 GM</p>
                     </div>
-                    <!-- Add the thumbnail image here -->
-                    <video class="gif-animation" src="video/pexels-tony-schnagl.mp4" data-src="video/pexels-tony-schnagl.mp4" autoplay loop playsinline muted>
-                </div>
-                <div class="modal-vid" style=" cursor: pointer !important;">
-                    <div class="movie-box"  style="cursor: pointer !important;">
-                        <div class="wide-screen"  style="cursor: pointer !important;">
-                            <div class="vid-holder" style="cursor: pointer !important;">
-                                <div class="close" vidurl="/">
-                                    <a href="#s">
-                                        <div class="remove-circle" style=" cursor: pointer !important;">
-                                            <img src="./icons/close_white_24dp.svg" loading="eager" width="75" alt="video thumbnail" class="remove" style=" cursor: pointer !important;">
-                                        </div>
-                                    </a>
-                                </div>
-                             
-                                <iframe id="myVideo"  class="myVideo hide" src="https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" title="Iceland_cinematic"
-                                    loading="lazy" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-ready="true"></iframe>
+                    <div class="item-info row">
+                        <div id="price">
+                            <p>&euro;40.00</p>
+                        </div>
+                        <div id="quantity">
+                            <div class="counter">
+                                <div class="counter-plus"><img src="./icons/incriment-icon-s5F.svg" alt="" srcset=""></div>
+                                <div class="counter-value">1</div>
+                                <div class="counter-minus"><img src="./icons/decrement-icon-kiW.svg" alt="" srcset=""></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="row-container mb-100">
-        <div>
-            <h2 id="header-font" data-translate="header-h2-1">The what</h2>
-            <span class="description">
-                From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                creativity to
-                clients doing right by the world.
-
-            </span>
-            <span class="description">
-                <ul class="ul-description">
-                    <br>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                </ul>
-            </span>
-        </div>
-        <div>
-            <h2 id="header-font" data-translate="header-h2-2">The how</h2>
-            <span class="description" data-translate="description-w-2">
-                We're all about collective success. Everyone's an equal in the creative process as we work toward a
-                shared goal - no
-                egos here. We find what works for you.
-
-            </span>
-            <span class="description">
-                <ul class="ul-description">
-                <br>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                </ul>
-            </span>
-        </div>
-        <div>
-            <h2 id="header-font" data-translate="header-h2-3">The why</h2>
-            <span class="description" data-translate="description-w-3">
-                We're all about collective success. Everyone's an equal in the creative process as we work toward a
-                shared goal - no
-                egos here. We find what works for you.
-
-            </span>
-            <span class="description">
-                <ul class="ul-description">
-                    <br>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                    <li>- clients doing right by the world.</li>
-                </ul>
-            </span>
-        </div>
-
-    </div>
-    <div class="container-center-block">
-
-        <div class="font-text-button">
-            <a href="/portfolio/" class="link-anim" rel="noopener noreferrer">
-                See cases
-      
-        </a>
-        </div>
-    </div>
-    <div class="wrapper">
-        <i id="left"  style="z-index:999;">
-            <img
-                src="./icons/arrow-left-black.svg"
-                style="width: 20px; margin:10px;"
-                alt=""
-                srcset=""
-               
-            >
-        </i>
-        <div class="carousel">
-            <span>
-                <a href="./portfolio/project1.html">
-                    <img
-                        src="./img/inst_1.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_2.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project-test.html">
-                    <img
-                        src="./img/inst_3.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_2.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_1.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_3.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_2.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_2.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_1.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_3.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_2.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-            <span>
-                <a href="./portfolio/project2.html">
-                    <img
-                        src="./img/inst_2.png"
-                        loading="eager"
-                        class="grid-image first"
-                        id="grid-img"
-                        alt=""
-                    >
-                </a>
-            </span>
-        </div>
-        <i id="right" style="z-index:999;">
-            <img
-                src="./icons/arrow-left-black.svg"
-                alt="arrow-left"
-                srcset=""
-                style="width: 20px; margin:10px; transform:rotate(180deg);"
-            >
-        </i>
-    </div>
-    <div class="page-wrapper p2">
-        <div class="text">
-            <h2>
-                <span class="garamond-font">
-                    <span data-translate="text-1">
-                        We work with clients to create immersive
-                        worlds — brands that draw you into their orbit, make an impact & gain a cult following. Just ask
-                    </span>
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">
-                        Microsoft</a> ,
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">P.E Notion</a> ,
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Verve Super</a> ,
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Worn For Good</a>
-                <span data-translate="text-2">and</span>
-                <a href="https://" id="brand-name" target="_blank" rel="noopener noreferrer">Beaty Bites.</a>
-                </span>
-            </h2>
-        </div>
-        <div class="instagram-container">
-            <div class="instagram-text-contianer">
-                <h2 id="header-font">Instagram</h2>
-                <span>
-                    <p
-                        class="description"
-                        id="ig-description"
-                        data-translate="inst-text-1"
-                    >
-                        We don't just design brands for pleasing aesthetic, we bring purposeful business to life and
-                        grant them longevity in the game.
-                    </p>
-                    <br>
-                    <p
-                        class="description"
-                        id="ig-description"
-                        data-translate="inst-text-2"
-                    >
-                        Follow us to stay updated with syudio happenings and projects in the works.
-                    </p>
-                    <p>
-                        <br>
-                    </p>
-                </span>
-                <!--<span class="instgram-link">
-                    <a
-                        href="https://"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >@studiodawn</a>
-                </span>-->
-                 <div class="icons">
-                                    <div class="size-2x">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                                            <img src="./icons/facebook-svg-large.svg" id="icon" alt="" srcset="">
-                                        </a>
-                                    </div>
-                                    <div class=" size-2x">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                                            <img src="./icons/instagram-svg.svg" id="icon" alt="" srcset="">
-                                        </a>
-                                    </div>
-                                    <div class=" size-2x">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                                            <img src="./icons/whatsapp-svg.svg" id="icon" alt="" srcset="">
-                                        </a>
-                                    </div>
-                                     <div class=" size-2x">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                                            <img src="./icons/behance.svg" id="icon" alt="" srcset="">
-                                        </a>
-                                    </div>
-
-                                </div>
-
-            </div>
-            <div class="instagram-images">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" class="instagram-img img1">
-                        <img src="./icons/browsers-svg.svg" alt="browse-inst" srcset="" class="browse-instagram">
+            </div>-->
+            <div class="grid-rental-item">
+                <img
+                    src="./img/forza 500 kit.png"
+                    alt="Card Image"
+                    class="grid-rental-item-image"
+                >
+                <div class="info-container">
+                    <div class="item-info">
+                        <p><span id="bold">Sony FE </span> 24-70mm</p>
+                        <p>f/2.8 GM</p>
                     </div>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" class="instagram-img img2">
-                        <img
-                            src="./icons/browsers-svg.svg"
-                            alt="browse-inst"
-                            srcset="" class="browse-instagram"
-                        >
+                    <div class="item-info row">
+                        <div id="price">
+                            <p>&euro;40.00</p>
+                        </div>
+                        <!--<section class="productFullDetail-section">
+                            <span class="productFullDetail-quantityTitle">Quantity:</span>
+                            <div class="productFullDetail-quantityRoot">
+                                <label class="quantity-label"></label>
+                                <button aria-label="Decrease Quantity" class="quantity-button_decrement quantity-button" disabled="" type="button">
+                                    <img src="./icons/decrement-icon-kiW.svg" alt="Icon" class="quantity-button-img">
+                                </button>
+                                <span class="fieldIcons-root" style="--iconsBefore: 0; --iconsAfter: 0;">
+                                    <span class="fieldIcons-input">
+                                    <input aria-label="Item Quantity" inputmode="numeric" min="1" pattern="[0-9]*" class="quantity-input textInput-input field-input" id="5cb6c2b2-e542-4b17-ac27-159b2a483db6" name="quantity" value="1">
+                                </span>
+
+                                </span>
+                                <p class="message-root"></p>
+                                <button aria-label="Increase Quantity" class="quantity-button_increment quantity-button" type="button">
+                                    <img src="./icons/incriment-icon-s5F.svg" alt="Icon" class="quantity-button-img">
+                                </button>
+                            </div>
+                        </section>-->
                     </div>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <div loading="eager" class="instagram-img img3">
-                        <img
-                            src="./icons/browsers-svg.svg"
-                            alt="browse-inst"
-                            srcset="" class="browse-instagram"
-                        >
-                    </div>
-                </a>
-                
+                </div>
             </div>
+            <div class="grid-rental-item">
+                <img
+                    src="./img/forza 500 kit.png"
+                    alt="Card Image"
+                    class="grid-rental-item-image"
+                >
+                <div class="info-container">
+                    <div class="item-info">
+                        <p><span id="bold">Sony FE </span> 24-70mm</p>
+                        <p>f/2.8 GM</p>
+                    </div>
+                    <div class="item-info row">
+                        <div id="price">
+                            <p>&euro;40.00</p>
+                        </div>
+                        <section class="productFullDetail-section">
+                            <span class="productFullDetail-quantityTitle">Quantity:</span>
+                            <div class="productFullDetail-quantityRoot">
+                                <label class="quantity-label"></label>
+                                <button
+                                    aria-label="Decrease Quantity"
+                                    class="quantity-button_decrement quantity-button"
+                                    disabled=""
+                                    type="button"
+                                >
+                                    <img
+                                        src="./icons/decrement-icon-kiW.svg"
+                                        alt="Icon"
+                                        class="quantity-button-img"
+                                    >
+                                </button>
+                                <span
+                                    class="fieldIcons-root"
+                                    style="--iconsBefore: 0; --iconsAfter: 0;"
+                                >
+                                    <span class="fieldIcons-input">
+                                        <input
+                                            aria-label="Item Quantity"
+                                            inputmode="numeric"
+                                            min="1"
+                                            pattern="[0-9]*"
+                                            class="quantity-input textInput-input field-input"
+                                            id="5cb6c2b2-e542-4b17-ac27-159b2a483db6"
+                                            name="quantity"
+                                            value="1"
+                                        >
+                                    </span>
+
+                                </span>
+                                <p class="message-root"></p>
+                                <button
+                                    aria-label="Increase Quantity"
+                                    class="quantity-button_increment quantity-button"
+                                    type="button"
+                                >
+                                    <img
+                                        src="./icons/incriment-icon-s5F.svg"
+                                        alt="Icon"
+                                        class="quantity-button-img"
+                                    >
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
+
     </div>
     <footer>
         <div class="footer-wrapper">
-            <div class="footer-block" id="ft-block-1">
+            <div
+                class="footer-block"
+                id="ft-block-1"
+            >
                 <div class="footer-link-item">
-                    <a class="nav-link gara-fnt" href="./privacy_index.html" rel="noopener noreferrer">Get in touch</a>
+                    <a
+                        class="nav-link gara-fnt"
+                        href="./privacy_index.html"
+                        rel="noopener noreferrer"
+                    >Get in touch</a>
                 </div>
 
 
@@ -753,20 +464,43 @@
 
                     <div class="footer-navbar">
                         <ul class="footer-navbar-list">
-                            <li id="footer-navbar-item"> <a href="/studiodawn-minimalizm/" rel="noopener noreferrer" class="link-anim">Home</a> </li>
-                            <li id="footer-navbar-item"> <a href="./rental/index.html" rel="noopener noreferrer" class="link-anim">Rental</a> </li>
-                            <li id="footer-navbar-item"><a href="./about/" rel="noopener noreferrer" class="link-anim">About</a></li>
-                            <li id="footer-navbar-item"><a href="./portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
-                            <li id="footer-navbar-item"><a href="./contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>
+                            <li id="footer-navbar-item"> <a
+                                    href="/studiodawn-minimalizm/"
+                                    rel="noopener noreferrer"
+                                    class="link-anim"
+                                >Home</a> </li>
+                            <li id="footer-navbar-item"> <a
+                                    href="#"
+                                    rel="noopener noreferrer"
+                                    class="link-anim"
+                                >ExtraLink</a> </li>
+                            <li id="footer-navbar-item"><a
+                                    href="./about/"
+                                    rel="noopener noreferrer"
+                                    class="link-anim"
+                                >About</a></li>
+                            <li id="footer-navbar-item"><a
+                                    href="./portfolio/"
+                                    rel="noopener noreferrer"
+                                    class="link-anim"
+                                >Cases</a></li>
+                            <li id="footer-navbar-item"><a
+                                    href="./contact/"
+                                    rel="noopener noreferrer"
+                                    class="link-anim"
+                                >Contact</a></li>
                         </ul>
                     </div>
-                    
+
                 </div>
 
 
-              
+
             </div>
-            <div class="footer-block" id="ft-block-2">
+            <div
+                class="footer-block"
+                id="ft-block-2"
+            >
                 <div class="footer-header-block">
 
                     <ul class="country-list">
@@ -778,17 +512,36 @@
                 </div>
                 <div class="footer-link-block ">
                     <div class="footer-fnt link-email">
-                        <a href="mailto:hello@studiodawn.com" class="link-anim">hello@studiodawn.com</a>
+                        <a
+                            href="mailto:hello@studiodawn.com"
+                            class="link-anim"
+                        >hello@studiodawn.com</a>
                     </div>
                     <div class="footer-fnt footer-link">
-                        <span>©2023 </span><a href="mailto:hello@studiodawn.com" class="link-anim">legal</a>
+                        <span>©2023 </span><a
+                            href="mailto:hello@studiodawn.com"
+                            class="link-anim"
+                        >legal</a>
                     </div>
                 </div>
             </div>
         </div>
-        <scroll-object class="block rel mask in-view" aria-hidden="true">
-            <a href="/studiodawn-minimalizm/" class="block rel" aria-label="Back to Home">
-                <svg class="svg-title-2" width="1906.795" height="194.107" viewBox="0 0 1906.795 194.107" xmlns="http://www.w3.org/2000/svg">
+        <scroll-object
+            class="block rel mask in-view"
+            aria-hidden="true"
+        >
+            <a
+                href="/studiodawn-minimalizm/"
+                class="block rel"
+                aria-label="Back to Home"
+            >
+                <svg
+                    class="svg-title-2"
+                    width="1906.795"
+                    height="194.107"
+                    viewBox="0 0 1906.795 194.107"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
                     <g
                         id="svgGroup"
                         stroke-linecap="round"
@@ -845,25 +598,18 @@
         </scroll-object>
 
     </footer>
-    <!-- Cookie Modal -->
-    <div class="cookie-modal">
-        <div class="cookie-content">
-            <div class="col">
-                <p>This website uses cookies to improve the user experience. By using our website, you consent to all cookies in accordance with our cookie policy.<br> 
-                    <a class="link-cookie-label link-anim" href="./cookie_page.html">Cookie settings</a></p>
-            </div>
-            <div class="col">
-                <div class="cookie-buttons">
-                    <button id="accept-cookies">Accept</button>
-                    <button id="decline-cookies">Decline</button>
-                </div>
-                <div class="col">
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <script
+        src="../js/all_functions.js"
+        async
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script
+        src="../js/ScrollTriger.js"
+        async
+    ></script>
 </body>
+
 <script>
     gsap.registerPlugin(ScrollTrigger);
     let preloaderAnimationCompleted = false;
@@ -878,20 +624,15 @@
             duration: loadingDuration, // Match the duration with loading duration
             opacity: 0,
             y: "100%",
-            onComplete: function() {
+            onComplete: function () {
                 paths.forEach((path) => (path.style.display = "none"));
                 const headerWrapper = document.querySelector(".header-wrapper.w-nav");
                 headerWrapper.classList.add("loaded");
                 const pageWrapper = document.querySelector(".page-wrapper");
                 pageWrapper.classList.add("loaded");
-                const pageWrapper2 = document.querySelector(".page-wrapper.p2");
-                pageWrapper2.classList.add("loaded");
-                const headerSection = document.querySelector(".header-section");
+                const headerSection = document.querySelector(".contact__header");
                 headerSection.classList.add("loaded");
-                const rowMb100 = document.querySelector(".row-container.mb-100");
-                rowMb100.classList.add("loaded");
-                const containerCenterB = document.querySelector(".container-center-block");
-                containerCenterB.classList.add("loaded");
+
                 // Set the flag to true when the preloader animations are completed
                 preloaderAnimationCompleted = true;
 
@@ -916,21 +657,21 @@
         if (index < 6) {
             tl.to(
                 path, {
-                    duration: loadingDuration / 6, // Divide the duration evenly
-                    y: "0%",
-                    autoAlpha: 1,
-                    ease: "power2.out",
-                },
+                duration: loadingDuration / 6, // Divide the duration evenly
+                y: "0%",
+                autoAlpha: 1,
+                ease: "power2.out",
+            },
                 "start"
             ); // Use a label 'start' for simultaneous animation
         } else {
             tl.to(
                 path, {
-                    duration: loadingDuration / 6, // Divide the duration evenly
-                    y: "0%",
-                    autoAlpha: 1,
-                    ease: "power2.out",
-                },
+                duration: loadingDuration / 6, // Divide the duration evenly
+                y: "0%",
+                autoAlpha: 1,
+                ease: "power2.out",
+            },
                 `path-${index}`
             );
         }
@@ -957,297 +698,113 @@
     }
 
     // Check if the page should be displayed when the page is fully loaded
-    window.onload = function() {
+    window.onload = function () {
         showPageIfPreloaderCompleted();
     };
 
-    setTimeout(initPage, 1200);
-
-    function initPage() {
 
 
 
-       // Check if the device supports touch events
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const customCursor = document.querySelector(".custom-cursor");
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
         if (!isTouchDevice) {
-            const customCursor = document.querySelector(".custom-cursor");
-            // Add custom cursor functionality for non-touch devices
-
             const links = document.querySelectorAll("a");
+            const inputElements = document.querySelectorAll("input, textarea");
 
             document.addEventListener('mousemove', function (event) {
                 customCursor.style.left = `${event.clientX}px`;
                 customCursor.style.top = `${event.clientY}px`;
             });
 
+            function addCustomCursorClass(event) {
+                customCursor.classList.add("custom-cursor--link");
+                setTimeout(() => {
+                    customCursor.style.left = `${event.clientX}px`;
+                    customCursor.style.top = `${event.clientY}px`;
+                }, 50);
+            }
+
+            function removeCustomCursorClass() {
+                customCursor.classList.remove("custom-cursor--link");
+            }
+
             links.forEach((link) => {
-                link.addEventListener("mouseover", () => {
-                    customCursor.classList.add("custom-cursor--link");
-                });
-
-                link.addEventListener("mouseout", (event) => {
-                    customCursor.classList.remove("custom-cursor--link");
-                    // Add a slight delay to prevent cursor flickering on hover-out
-                    setTimeout(() => {
-                        customCursor.style.left = `${event.clientX}px`;
-                        customCursor.style.top = `${event.clientY}px`;
-                    }, 10);
-                });
+                link.addEventListener("mouseover", addCustomCursorClass);
+                link.addEventListener("mouseout", removeCustomCursorClass);
             });
 
-
+            inputElements.forEach((element) => {
+                element.addEventListener("mouseover", addCustomCursorClass);
+                element.addEventListener("mouseout", removeCustomCursorClass);
+            });
         } else {
-            const customCursor = document.querySelector(".custom-cursor");
-            customCursor.style = `opacity: 0 !important;`;
-
+            customCursor.style.opacity = '0';
         }
-        cookieFunction();
-        // GSAP TimelineMax for animations
-        const timeline = gsap.timeline();
+    });
 
 
 
-        document.addEventListener("DOMContentLoaded", function() {
-            var lazyImages = [].slice.call(document.querySelectorAll("img.gif-animation"));
+    $(document).ready(function () {
+        $('.hamburger-menu-wrapper').click(function () {
+            const $navMenu = $('.w-nav-menu');
+            const $headerContentWrapper = $('.header-content-wrapper');
+            const $containerDefault = $('.container-default');
 
-            if ("IntersectionObserver" in window) {
-                var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            var lazyImage = entry.target;
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.classList.remove("gif-animation");
-                            lazyImageObserver.unobserve(lazyImage);
-                        }
-                    });
-                });
+            $navMenu.toggle();
+            $(this).toggleClass('w--open');
 
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImageObserver.observe(lazyImage);
-                });
+            if ($navMenu.is(':visible')) {
+                $headerContentWrapper.css('display', 'none');
+                $containerDefault.css('padding-top', '0px');
+                disableScroll();
             } else {
-                // Fallback for browsers without IntersectionObserver support
-                // You can simply load all images immediately in this case
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.remove("gif-animation");
-                });
-            }
-
-
-        });
-
-
-
-        $(document).ready(function() {
-
-            $('.hamburger-menu-wrapper').click(function() {
-                var $navMenu = $('.w-nav-menu');
-                $navMenu.toggle();
-                $(this).toggleClass('w--open');
-
-                // Disable scroll when menu is open
-                if ($navMenu.is(':visible')) {
-                    $('.header-content-wrapper').css('display', 'none');
-
-                    $('.container-default').css('padding-top', '0px');
-                    disableScroll();
-                } else {
-                    enableScroll();
-                }
-            });
-            // Event handler for the close button
-            $('.link-back').click(function() {
-                var $navMenu = $('.w-nav-menu');
-                var $hamburgerMenuWrapper = $('.hamburger-menu-wrapper');
-
-                $navMenu.hide();
-                $hamburgerMenuWrapper.removeClass('w--open');
-
-                // Enable scroll and show content
                 enableScroll();
-                $('.header-content-wrapper').css('display', 'flex');
-                $('.container-default').css('padding-top', 'your-original-padding-value');
-            });
-        });
-
-        $(document).ready(function() {
-            $(window).on("scroll", function() {
-                if ($(window).scrollTop() >= 30) {
-                    $(".header-wrapper").addClass("with-effect");
-                } else {
-                    $(".header-wrapper").removeClass("with-effect");
-                }
-            });
-        });
-
-        // Disable scroll
-        function disableScroll() { // Get the current scroll position
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-            // Save the current scroll position and add scroll-lock styles
-            window.onscroll = function() {
-                window.scrollTo(scrollLeft, scrollTop);
-            };
-            document.body.classList.add('scroll-lock');
-        }
-
-        // Enable scroll
-        function enableScroll() {
-            window.onscroll = null;
-            document.body.classList.remove('scroll-lock');
-        }
-        // GSAP animation
-        const revealAnimation = gsap.timeline();
-
-        // Set initial state (fully transparent)
-        revealAnimation.set(".header-section-content h1 span", {
-            opacity: 0
-        });
-
-        // Define the animation
-        revealAnimation.from(".garamond-font", {
-            opacity: 0,
-            y: 20,
-            duration: 1,
-            delay: 1
-        }).from(".mr-55", {
-            opacity: 0,
-            y: 20,
-            duration: 1
-        }, "-=0.7");
-
-
-        $(document).ready(function() {
-            var vimeoPlayer = new Vimeo.Player('myVideo');
-
-            $(".movie-btn").click(function() {
-                var video = $('#myVideo');
-                var vidUrl = $(this).attr("vidUrl");
-
-                if (vidUrl) {
-                    video.attr("src", vidUrl);
-                    video.removeClass("hide");
-                    video.addClass("show");
-                    $('.youTube').addClass("hide");
-                     $('.custom-cursor').css('display', 'none');
-                    $('.youTube').removeClass("show");
-                    $('.gif-animation').css('display', 'none');
-                    $('.play-button').css('display', 'none');
-                }
-                $('body').css('overflow', 'hidden');
-            });
-
-            function resetVideo() {
-                var video = $('#myVideo');
-                video.attr("src", "");
-                video.removeClass("show");
-                video.addClass("hide");
-                $('.modal-vid').fadeOut(500);
-                $('.gif-animation').css('display', 'block');
-                 $('.custom-cursor').css('display', 'block');
-                $('.play-button').css('display', 'flex');
             }
-
-            $(".widescreen-btn, .standard-btn, .sixteen-nine-btn, .pal-btn").click(function() {
-                $(".modal-vid").fadeIn(500);
-                $(".vid-holder img").removeClass("show");
-                var className = $(this).data("class");
-                $("." + className).addClass("show");
-                $('.gif-animation').css('display', 'none');
-            });
-
-            $(".close").click(function() {
-                vimeoPlayer.pause().then(function() {
-                    return vimeoPlayer.setCurrentTime(0);
-                }).catch(function(error) {
-                    console.error("Error pausing or resetting video:", error);
-                });
-
-                resetVideo();
-                $('body').css('overflow', 'auto');
-            });
-
-            $(document).keydown(function(e) {
-                if (e.keyCode == 27) { // ESC key
-                    resetVideo();
-                }
-            });
         });
 
+        $('.link-back').click(function () {
+            const $navMenu = $('.w-nav-menu');
+            const $hamburgerMenuWrapper = $('.hamburger-menu-wrapper');
+            const $headerContentWrapper = $('.header-content-wrapper');
+            const $containerDefault = $('.container-default');
 
-        const carousel = document.querySelector(".carousel"),
-            firstImg = carousel.querySelectorAll("img")[0],
-            arrowIcons = document.querySelectorAll(".wrapper i");
-        let isDragStart = false,
-            isDragging = false,
-            prevPageX,
-            prevScrollLeft,
-            positionDiff;
-        const showHideIcons = () => { // showing and hiding prev/next icon according to carousel scroll left value
-            let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
-            arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-            arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
-        }
-        arrowIcons.forEach(icon => {
-            icon.addEventListener("click", () => {
-                let firstImgWidth = firstImg.clientWidth + 14;
-                // getting first img width & adding 14 margin value
-                // if clicked icon is left, reduce width value from the carousel scroll left else add to it
-                carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-                setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
-            });
+            $navMenu.hide();
+            $hamburgerMenuWrapper.removeClass('w--open');
+
+            enableScroll();
+            $headerContentWrapper.css('display', 'flex');
+            $containerDefault.css('padding-top', 'your-original-padding-value');
         });
-        const autoSlide = () => { // if there is no image left to scroll then return from here
-            if (carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
-            positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
-            let firstImgWidth = firstImg.clientWidth + 14;
-            // getting difference value that needs to add or reduce from carousel left to take middle img center
-            let valDifference = firstImgWidth - positionDiff;
-            if (carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
-                return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    });
+
+    $(document).ready(function () {
+        $(window).on("scroll", function () {
+            const $headerWrapper = $(".header-wrapper");
+            if ($(window).scrollTop() >= 30) {
+                $headerWrapper.addClass("with-effect");
+            } else {
+                $headerWrapper.removeClass("with-effect");
             }
-            // if user is scrolling to the left
-            carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-        }
-        const dragStart = (e) => { // updatating global variables value on mouse down event
-            isDragStart = true;
-            prevPageX = e.pageX || e.touches[0].pageX;
-            prevScrollLeft = carousel.scrollLeft;
-        }
-        const dragging = (e) => { // scrolling images/carousel to left according to mouse pointer
-            if (!isDragStart)
-                return;
+        });
+    });
 
-            e.preventDefault();
-            isDragging = true;
-            carousel.classList.add("dragging");
-            positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-            carousel.scrollLeft = prevScrollLeft - positionDiff;
-            showHideIcons();
-        }
-        const dragStop = () => {
-            isDragStart = false;
-            carousel.classList.remove("dragging");
-            if (!isDragging)
-                return;
+    function disableScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-            isDragging = false;
-            autoSlide();
-        }
-        carousel.addEventListener("mousedown", dragStart);
-        carousel.addEventListener("touchstart", dragStart);
-        document.addEventListener("mousemove", dragging);
-        carousel.addEventListener("touchmove", dragging);
-        document.addEventListener("mouseup", dragStop);
-        carousel.addEventListener("touchend", dragStop);
+        window.onscroll = function () {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+        document.body.classList.add('scroll-lock');
+    }
 
-
-        //setupLanguageSwitcher();
-
-    };
+    function enableScroll() {
+        window.onscroll = null;
+        document.body.classList.remove('scroll-lock');
+    }
 </script>
 
 </html>

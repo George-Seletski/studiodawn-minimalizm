@@ -444,6 +444,18 @@
         }
     }
     
+    @media screen and (max-width:1921px) and (min-width:1441px) {
+        #main-title {
+            font-size: 1.6em !important;
+        }
+    }
+    
+    @media screen and (max-width:1440px) and (min-width:1200px) {
+        #main-title {
+            font-size: 1.2em !important;
+        }
+    }
+    
     @media screen and (max-width: 991px) {
         #large-video {
             display: block;
@@ -566,6 +578,62 @@
         opacity: 1;
         backdrop-filter: saturate(180%) blur(10px);
         -webkit-backdrop-filter: saturate(180%) blur(10px);
+    }
+    
+    @media screen and (min-width: 2000px) {
+        .description {
+            font-size: 1.6em !important;
+            font-family: 'General-Sans Light' !important;
+            font-weight: 900;
+            line-height: normal !important;
+        }
+        #header-font {
+            font-size: 4rem !important;
+            text-align: left;
+            line-height: 1;
+            padding-bottom: 1em;
+            text-transform: capitalize;
+            /* font-family: 'Font-Sans Regular', sans-serif; */
+            font-family: 'Cormorant Garamond Semibold', sans-serif;
+            /* font-family: 'Cormorant Garamond Light', sans-serif; */
+        }
+        #see-cases-btn {
+            color: #fff;
+            font-size: 2em !important;
+        }
+        .button {
+            padding: 20px 60px;
+        }
+        .footer-wrapper {
+            height: 100vh;
+            width: 100%;
+            padding: 4em 12rem 12em 12rem;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8em !important;
+            justify-content: space-between;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+        }
+        .link-email,
+        .link-address,
+        .link-telephone {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.4em;
+            line-height: 1.5;
+        }
+        .footer-link>span {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 2.7em !important;
+            line-height: normal;
+        }
+        .footer-fnt.footer-link>.link-anim {
+            font-size: 2.7em !important;
+        }
     }
 </style>
 
@@ -851,10 +919,10 @@
                 </h1>
 
             </div>
-            <div class="bottom-text-header pb-2 ">
+            <div class="bottom-text-header pb-2 " style=" cursor:pointer;">
                 <a href="../portfolio/" rel="noopener noreferrer">
-                    <div class="button see-cases" style=" border: none;">
-                        <span data-translate="about-btn-text" id="see-cases-btn">
+                    <div class="button see-cases" style=" border: none; cursor:pointer;">
+                        <span data-translate="about-btn-text" id="see-cases-btn" style=" cursor:pointer;">
                             See cases
                         </span>
 

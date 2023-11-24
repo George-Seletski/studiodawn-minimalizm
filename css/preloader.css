@@ -1,11 +1,23 @@
     #preloader {
         background-color: transparent;
         position: fixed;
-        bottom: 0;
+        bottom: -8px;
         left: 0;
         width: 100%;
         z-index: 999;
         display: block;
         overflow: hidden !important;
         transition: all 1.4s 1.7s cubic-bezier(.43, .195, .02, 1);
+    }
+    
+    @media screen and (min-width:1920px) {
+        #preloader {
+            bottom: -12px;
+        }
+    }
+    
+    @media screen and (min-width:2000px) {
+        #preloader {
+            bottom: -6px !important;
+        }
     }

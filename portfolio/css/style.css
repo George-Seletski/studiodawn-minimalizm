@@ -660,16 +660,16 @@
         justify-content: space-between;
     }
     
-    .active {
-        font-weight: 800;
-        font-family: 'General-Sans ExtraLight';
-        font-size: 20px;
-    }
-    
     .active>a {
         font-weight: 500 !important;
         font-size: 20px !important;
         font-family: 'Roboto Regular' !important;
+    }
+    
+    .active {
+        font-weight: 800;
+        font-family: 'Roboto Thin';
+        font-size: 20px;
     }
     
     #list-1 {
