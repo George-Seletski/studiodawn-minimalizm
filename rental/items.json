@@ -1,0 +1,102 @@
+{
+    "cameras": [{
+            "name": "Sony A7III",
+            "count": 2,
+            "price": 50,
+            "image": "#"
+        },
+        {
+            "name": "Sony a7s3",
+            "count": 1,
+            "price": 75,
+            "image": "#"
+        }
+    ],
+    "lightboxes": [{
+            "name": "Nanlite forza 500",
+            "count": 2,
+            "price": 90,
+            "image": "#"
+        },
+        {
+            "name": "Nanlite forza 300b",
+            "count": 1,
+            "price": 35,
+            "image": "#"
+        },
+        {
+            "name": "Nanlite forza 60b",
+            "count": 1,
+            "price": 20,
+            "image": "#"
+        },
+        {
+            "name": "Nanlite parabolic softbox",
+            "count": 1,
+            "price": 130,
+            "image": "#"
+        },
+        {
+            "name": "Nanlite parabolic softbox",
+            "count": 1,
+            "price": 95,
+            "image": "#"
+        },
+        {
+            "name": "Nanlite parabolic softbox",
+            "count": 1,
+            "price": 70,
+            "image": "#"
+        }
+    ],
+    "sound": [{
+        "name": "RODE Wireless GO II",
+        "count": 1,
+        "price": 30,
+        "image": "#"
+    }],
+    "lens": [{
+            "name": "Sony FE 24-70mm f/2.8 GM ",
+            "count": 1,
+            "price": 40,
+            "image": "#"
+        },
+        {
+            "name": "Sony FE 85mm f/1,8 ",
+            "count": 1,
+            "price": 25,
+            "image": "#"
+        },
+        {
+            "name": "Sony 55mm F1.8 ZA Sonnar T",
+            "count": 1,
+            "price": 25,
+            "image": "#"
+        },
+        {
+            "name": "Samyang AF 14 mm f/2,8 Sony FE",
+            "count": 1,
+            "price": 25,
+            "image": "#"
+        },
+        {
+            "name": "TAMRON 70-180 mm f/2,8 Di III VXD",
+            "count": 1,
+            "price": 25,
+            "image": "#"
+        }
+    ],
+    "stabilizators": [{
+            "name": "DJI Ronin RS2",
+            "count": 1,
+            "price": 40,
+            "image": "#"
+        },
+        {
+            "name": "DJI Ronin RS3",
+            "count": 1,
+            "price": 35,
+            "image": "#"
+        }
+    ]
+}

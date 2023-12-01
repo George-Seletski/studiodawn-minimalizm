@@ -10,14 +10,35 @@
         transition: all 1.4s 1.7s cubic-bezier(.43, .195, .02, 1);
     }
     
+    @media screen and (min-width:1400px)and (max-width:1919px) {
+        #preloader {
+            bottom: -7px;
+        }
+        .svg-title-1 {
+            width: 90%;
+            max-width: 100%;
+            margin: -25px 80px;
+        }
+    }
+    
     @media screen and (min-width:1920px) {
         #preloader {
             bottom: -12px;
+        }
+        .svg-title-1 {
+            width: 90%;
+            max-width: 100%;
+            margin: -8px 80px;
         }
     }
     
     @media screen and (min-width:2000px) {
         #preloader {
-            bottom: -6px !important;
+            bottom: -4px !important;
+        }
+        .svg-title-1 {
+            width: 90%;
+            max-width: 100%;
+            margin: 0px 80px;
         }
     }

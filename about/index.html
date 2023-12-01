@@ -19,6 +19,12 @@
 <style>
     #img-description {
         line-height: normal;
+        position: relative;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        margin: 0;
+        max-width: 100%;
     }
     
     *,
@@ -511,6 +517,8 @@
     
     #grow {
         transform: scale(0.8);
+        position: absolute;
+        z-index: 0;
     }
     
     .video-background {
@@ -570,6 +578,7 @@
     #see-cases-btn {
         color: #fff;
         font-size: 20px !important;
+        font-weight: 700;
     }
     
     .button {
@@ -800,9 +809,7 @@
                 <!--<img src="team/main.png" alt="our team" loading="lazy">-->
                 <img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg" loading="lazy" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-500.jpeg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-800.jpeg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1080.jpeg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1600.jpeg 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg 1640w"
                     alt="header-img" id="grow">
-            </div>
-
-            <span class="description">
+                <span class="header-cover-title">
 
                 <h2 data-translate="about-main-h2" id="img-description">
                     Unlock limitless possibilities with our comprehensive solutions block from trademark management to
@@ -817,6 +824,8 @@
                     new heights in the ever-evolving digital landscape.
                 </h2>
             </span>
+            </div>
+
         </div>
 
         <div class="row-container mb-100">
@@ -987,10 +996,10 @@
                         <div class="footer-navbar">
                             <ul class="footer-navbar-list">
                                 <li id="footer-navbar-item"> <a href="/studiodawn-minimalizm/" rel="noopener noreferrer" class="link-anim">Home</a> </li>
-                                <li id="footer-navbar-item"> <a href="#" rel="noopener noreferrer" class="link-anim">ExtraLink</a> </li>
+                                <li id="footer-navbar-item"> <a href="../rental/" rel="noopener noreferrer" class="link-anim">Rental</a> </li>
                                 <li id="footer-navbar-item"><a href="./about/" rel="noopener noreferrer" class="link-anim">About</a></li>
-                                <li id="footer-navbar-item"><a href="./portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
-                                <li id="footer-navbar-item"><a href="./contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>
+                                <li id="footer-navbar-item"><a href="../portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
+                                <li id="footer-navbar-item"><a href="../contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>
                             </ul>
                         </div>
 

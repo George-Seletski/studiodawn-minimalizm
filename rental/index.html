@@ -190,159 +190,19 @@
         </div>
     </header>
     <div class="page-wrapper">
-        <div class="grid-container">
-            <div class="grid-rental-item">
-                <img src="./img/DJI RS2.jpg" alt="Card Image" class="grid-rental-item-image">
-                <div class="info-container">
-                    <div class="item-info">
-                        <p><span id="bold">Sony FE </span> 24-70mm</p>
-                        <p>f/2.8 GM</p>
-                    </div>
-                    <div class="item-info row">
-                        <div id="price">
-                            <p>&euro;40.00</p>
-                        </div>
-                        <div class="check-container">
-                            <div class="form-group">
-                                <input type="checkbox" id="thorCheckbox1" class="checkbox-input" />
-                                <label for="thorCheckbox1" class="checkbox-label"></label>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
+        <div class="gear-filters-container">
+            <div class="gfilter-header">
+                <h2>Sort by filters:</h2>
             </div>
 
-
-            <div class="grid-rental-item">
-                <img src="./img/Forza-300b_1ok.jpg" alt="Card Image" class="grid-rental-item-image">
-                <div class="info-container">
-                    <div class="item-info">
-                        <p><span id="bold">Sony FE </span> 24-70mm</p>
-                        <p>f/2.8 GM</p>
-                    </div>
-                    <div class="item-info row">
-                        <div id="price">
-                            <p>&euro;40.00</p>
-                        </div>
-                        <div class="check-container">
-                            <div class="form-group">
-                                <input type="checkbox" id="thorCheckbox2" class="checkbox-input" />
-                                <label for="thorCheckbox2" class="checkbox-label"></label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-rental-item">
-                <img src="./img/Forza-300b_1ok.jpg" alt="Card Image" class="grid-rental-item-image">
-                <div class="info-container">
-                    <div class="item-info">
-                        <p><span id="bold">Sony FE </span> 24-70mm</p>
-                        <p>f/2.8 GM</p>
-                    </div>
-                    <div class="item-info row">
-                        <div id="price">
-                            <p>&euro;40.00</p>
-                        </div>
-                        <div class="check-container">
-                            <div class="form-group">
-                                <input type="checkbox" id="thorCheckbox3" class="checkbox-input" />
-                                <label for="thorCheckbox3" class="checkbox-label"></label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-rental-item">
-                <img src="./img/Forza-300b_1ok.jpg" alt="Card Image" class="grid-rental-item-image">
-                <div class="info-container">
-                    <div class="item-info">
-                        <p><span id="bold">Sony FE </span> 24-70mm</p>
-                        <p>f/2.8 GM</p>
-                    </div>
-                    <div class="item-info row">
-                        <div id="price">
-                            <p>&euro;40.00</p>
-                        </div>
-                        <div class="check-container">
-                            <div class="form-group">
-                                <input type="checkbox" id="thorCheckbox4" class="checkbox-input" />
-                                <label for="thorCheckbox4" class="checkbox-label"></label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-rental-item">
-                <img src="./img/Forza-300b_1ok.jpg" alt="Card Image" class="grid-rental-item-image">
-                <div class="info-container">
-                    <div class="item-info">
-                        <p><span id="bold">Sony FE </span> 24-70mm</p>
-                        <p>f/2.8 GM</p>
-                    </div>
-                    <div class="item-info row">
-                        <div id="price">
-                            <p>&euro;40.00</p>
-                        </div>
-                        <div class="check-container">
-                            <div class="form-group">
-                                <input type="checkbox" id="thorCheckbox5" class="checkbox-input" />
-                                <label for="thorCheckbox5" class="checkbox-label"></label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-rental-item">
-                <img src="./img/Forza-300b_1ok.jpg" alt="Card Image" class="grid-rental-item-image">
-                <div class="info-container">
-                    <div class="item-info">
-                        <p><span id="bold">Sony FE </span> 24-70mm</p>
-                        <p>f/2.8 GM</p>
-                    </div>
-                    <div class="item-info row">
-                        <div id="price">
-                            <p>&euro;40.00</p>
-                        </div>
-                        <div class="check-container">
-                            <div class="form-group">
-                                <input type="checkbox" id="thorCheckbox6" class="checkbox-input" />
-                                <label for="thorCheckbox6" class="checkbox-label"></label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="grid-rental-item">
-                <img src="./img/Forza-300b_2ok.jpg" alt="Card Image" class="grid-rental-item-image">
-                <div class="info-container">
-                    <div class="item-info">
-                        <p><span id="bold">Sony FE </span> 24-70mm</p>
-                        <p>f/2.8 GM</p>
-                    </div>
-                    <div class="item-info row">
-                        <div id="price">
-                            <p>&euro;40.00</p>
-                        </div>
-                        <div class="check-container">
-                            <div class="form-group">
-                                <input type="checkbox" id="thorCheckbox7" class="checkbox-input" />
-                                <label for="thorCheckbox7" class="checkbox-label"></label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
+            <div class="gfliter-item active-filter" id="all-gear" onclick="handleFilterClick(this, 'all')">All gear</div>
+            <div class="gfliter-item " id="cameras-gear" onclick="handleFilterClick(this, 'cameras')">Cameras</div>
+            <div class="gfliter-item " id="sound-gear" onclick="handleFilterClick(this, 'sound')">Sound</div>
+            <div class="gfliter-item " id="light-gear" onclick="handleFilterClick(this, 'light')">Light</div>
+            <div class="gfliter-item " id="lens-gear" onclick="handleFilterClick(this, 'lens')">Lens</div>
+        </div>
+        <div class="grid-container" id="cards-container">
 
         </div>
         <div class="contact-section">
@@ -422,7 +282,7 @@
                     <div class="footer-navbar">
                         <ul class="footer-navbar-list">
                             <li id="footer-navbar-item"> <a href="/studiodawn-minimalizm/" rel="noopener noreferrer" class="link-anim">Home</a> </li>
-                            <li id="footer-navbar-item"> <a href="#" rel="noopener noreferrer" class="link-anim">ExtraLink</a> </li>
+                            <li id="footer-navbar-item"> <a href="#" rel="noopener noreferrer" class="link-anim">Rental</a> </li>
                             <li id="footer-navbar-item"><a href="./about/" rel="noopener noreferrer" class="link-anim">About</a></li>
                             <li id="footer-navbar-item"><a href="./portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
                             <li id="footer-navbar-item"><a href="./contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>
@@ -611,16 +471,13 @@
         showPageIfPreloaderCompleted();
     };
 
-
-
-
     document.addEventListener("DOMContentLoaded", function() {
-
         const customCursor = document.querySelector(".custom-cursor");
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
         if (!isTouchDevice) {
             const links = document.querySelectorAll("a");
+            const filters = document.querySelectorAll(".gfliter-item");
             const inputElements = document.querySelectorAll("input, textarea");
 
             document.addEventListener('mousemove', function(event) {
@@ -645,6 +502,11 @@
                 link.addEventListener("mouseout", removeCustomCursorClass);
             });
 
+            filters.forEach((filter) => {
+                filter.addEventListener("mouseover", addCustomCursorClass);
+                filter.addEventListener("mouseout", removeCustomCursorClass);
+            });
+
             inputElements.forEach((element) => {
                 element.addEventListener("mouseover", addCustomCursorClass);
                 element.addEventListener("mouseout", removeCustomCursorClass);
@@ -652,7 +514,152 @@
         } else {
             customCursor.style.opacity = '0';
         }
+        // Your JSON data
+        const data = {
+            "cameras": [{
+                "name": "Sony A7III",
+                "count": 2,
+                "price": 50,
+                "image": "sony_a7_iii.jpg"
+            }, {
+                "name": "Sony a7s3",
+                "count": 1,
+                "price": 75,
+                "image": "sony_a7_sIII.jpg"
+            }],
+            "lightboxes": [{
+                "name": "Nanlite forza 500",
+                "count": 2,
+                "price": 90,
+                "image": "forza_500_kit_2.jpg"
+            }, {
+                "name": "Nanlite forza 300b",
+                "count": 1,
+                "price": 35,
+                "image": "Forza-300b_1ok.jpg"
+            }, {
+                "name": "Nanlite forza 60b",
+                "count": 1,
+                "price": 20,
+                "image": "Forza-60b_2.jpg"
+            }, {
+                "name": "Nanlite parabolic softbox",
+                "count": 2,
+                "price": 130,
+                "image": "softbox_120.jpg"
+            }, {
+                "name": "Nanlite parabolic softbox",
+                "count": 1,
+                "price": 95,
+                "image": "softbox_90.jpg"
+            }, {
+                "name": "Nanlite parabolic softbox",
+                "count": 1,
+                "price": 70,
+                "image": "softbox_60.jpg"
+            }],
+            "sound": [{
+                "name": "RODE Wireless GO II",
+                "count": 1,
+                "price": 30,
+                "image": "Rode_mics.jpg"
+            }],
+            "lens": [{
+                "name": "Sony FE 24-70mm f/2.8 GM ",
+                "count": 1,
+                "price": 40,
+                "image": "Sony_24-70.jpg"
+            }, {
+                "name": "Sony FE 85mm f/1,8 ",
+                "count": 1,
+                "price": 25,
+                "image": "Sony_85_mm.jpg"
+            }, {
+                "name": "Sony 55mm F1.8 ZA Sonnar T",
+                "count": 1,
+                "price": 25,
+                "image": "Sony_55_mm.jpg"
+            }, {
+                "name": "Samyang AF 14 mm f/2,8 Sony FE",
+                "count": 1,
+                "price": 25,
+                "image": "Samyang_14mm.jpg"
+            }, {
+                "name": "TAMRON 70-180 mm f/2,8 Di III VXD",
+                "count": 1,
+                "price": 25,
+                "image": "Tamron_70-180.jpg"
+            }],
+            "stabilizators": [{
+                "name": "DJI Ronin RS2",
+                "count": 1,
+                "price": 40,
+                "image": "dji-rs-2.jpg"
+            }, {
+                "name": "DJI Ronin RS3",
+                "count": 1,
+                "price": 35,
+                "image": "Ronin_rs3.jpg"
+            }]
+        };
+        const selectedProducts = [];
+
+        function createCard(item) {
+            const card = document.createElement('div');
+            card.classList.add('grid-rental-item');
+
+
+            card.innerHTML = `
+        <img src="./img/opt_img/${item.image}" alt="Card Image" class="grid-rental-item-image">
+        <div class="info-container">
+            <div class="item-info row">
+                <div id="name-item">
+                    <p><span id="name">${item.name}</span></p>
+                </div>
+                <div id="count">
+                    <p><span id="count-value">(${item.count} </span>items)</p>
+                </div>
+            </div>
+            <div class="item-info row">
+                <div id="price">
+                    <p>&euro;${item.price.toFixed(2)}</p>
+                </div>
+                <div class="counter-container">
+                    <button class="decreaseBtn">-</button>
+                    <input type="text" id="counterValue" value="0" readonly="">
+                    <button class="increaseBtn">+</button>
+                </div>
+            </div>
+            <div class="item-info">
+
+                <div class="button-container">
+
+                    <button class="addToCartBtn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>`;
+
+
+
+            return card;
+        }
+
+        function renderCategory(category, containerId) {
+            const container = document.getElementById(containerId);
+            let i = 0;
+            data[category].forEach(item => {
+                i++;
+                const card = createCard(item, i);
+                container.appendChild(card);
+            });
+        }
+
+        for (const category in data) {
+            renderCategory(category, 'cards-container');
+        }
     });
+
 
 
 
@@ -710,9 +717,24 @@
         document.body.classList.add('scroll-lock');
     }
 
+
+
     function enableScroll() {
         window.onscroll = null;
         document.body.classList.remove('scroll-lock');
+    }
+
+    function handleFilterClick(element, filter) {
+        // Remove "active" class from all filter items
+        var filterItems = document.querySelectorAll('.gfliter-item');
+        filterItems.forEach(function(item) {
+            item.classList.remove('active-filter');
+        });
+
+        // Add "active" class to the clicked filter item
+        element.classList.add('active-filter');
+
+
     }
 </script>
 

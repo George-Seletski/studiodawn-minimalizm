@@ -1463,7 +1463,7 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        height: 90vh;
+        height: 100vh;
     }
     
     .form-control {
@@ -1611,20 +1611,28 @@
         overflow-x: hidden;
     }
     
-    .header-image-description>.description {
+    .header-cover-title {
         display: flex;
         flex-direction: column;
-        padding-left: 40%;
         align-items: flex-end;
-        margin: 60px 241px;
+        margin: 60px;
+        padding: 25px 25px 25px 25px;
         font-size: 11px !important;
-        position: relative;
+        position: absolute;
         gap: 2em;
         font-weight: 600;
+        z-index: 99;
+        bottom: 0;
+        right: 0;
+        color: #fff;
+        width: 40%;
+        background-color: rgba(122, 104, 104, 0.137);
     }
     
     .header-cover {
         position: relative;
+        overflow: hidden;
+        height: 1080px;
     }
     
     .header-cover>img {
@@ -1702,7 +1710,7 @@
         height: 99vh !important;
         width: 100%;
         border: 0;
-        background-color: #fff;
+        background-color: #f9f4f4;
         color: #000 !important;
         gap: 15em;
         display: block;
@@ -2168,11 +2176,11 @@
         text-transform: uppercase;
     }
     
-    @media screen and (max-width:1920px) {
+    @media screen and (max-width:1910px) {
         .svg-title-2 {
             width: 82.33%;
             max-width: 100%;
-            margin: 0px 9em;
+            margin: 0px 100px;
         }
         .button>span {
             font-size: 20px;
@@ -2183,6 +2191,27 @@
         .instagram-img {
             width: 260px;
             height: 260px;
+        }
+        .footer-wrapper {
+            height: fit-content;
+            width: 100%;
+            padding: 4em 0 26em 0;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 26em;
+            justify-content: space-between;
+            padding-right: 5rem;
+            padding-left: 5rem;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+        }
+    }
+    
+    @media screen and (max-width:1920px) {
+        .svg-title-2 {
+            width: 82.33%;
+            max-width: 100%;
+            margin: 0px 170px;
         }
     }
     
@@ -2431,7 +2460,7 @@
             border: 0;
             background-color: #f9f4f4;
             color: #000 !important;
-            gap: 6em;
+            gap: 0px;
             display: flex;
         }
         .gara-fnt {
@@ -2644,11 +2673,24 @@
             font-size: 20px;
         }
         #footer-navbar-item>a {
-            font-size: 26px !important;
+            font-size: 20px !important;
         }
         .header-cover>img {
-            height: 72vh;
             padding: 4em 0;
+        }
+        .header-cover {
+            position: relative;
+            overflow: hidden;
+            height: 796px;
+        }
+        .header-cover-title {
+            margin: 55px 0px;
+            width: 60%;
+            border-radius: 14px 0px 0px 0px;
+            background-color: rgba(122, 104, 104, 0.322);
+        }
+        #img-description {
+            letter-spacing: 2px;
         }
         #ig-description {
             font-size: 18px;
@@ -2696,18 +2738,29 @@
             line-height: normal;
         }
         .description {
-            font-size: 14px;
-            line-height: 20px;
+            font-size: 28px;
+            line-height: normal;
+        }
+        #header-font {
+            font-size: 85px;
+            text-align: left;
+            line-height: 1;
+            padding-bottom: 1em;
+            text-transform: capitalize;
+            /* font-family: 'Font-Sans Regular', sans-serif; */
+            font-family: 'Cormorant Garamond Semibold', sans-serif;
+            /* font-family: 'Cormorant Garamond Light', sans-serif; */
         }
         .row-container>div {
             width: 100%;
-            max-width: 400px;
+            max-width: 800px;
         }
         .row-container {
             display: flex;
             align-items: center;
             margin: 144px 8rem 244px 8rem;
             gap: 144px;
+            flex-direction: column;
         }
         .container-center-block {
             display: flex;
@@ -2726,13 +2779,54 @@
             display: flex;
             border: 2px solid #000;
             border-radius: 100px;
-            padding: 6px 30px;
+            padding: 20px 60px;
             margin-bottom: 100px;
             transition: transform 5s;
             transition: all 0.5s ease;
             align-items: center;
             text-align: center;
             background-color: transparent;
+        }
+        #see-cases-btn {
+            color: #fff;
+            font-size: 30px !important;
+            letter-spacing: 2px;
+        }
+        .video-text-block {
+            display: flex;
+            flex-direction: column;
+            margin: 8rem 0;
+            justify-content: unset;
+            align-items: unset;
+            width: 100%;
+        }
+        .text-video {
+            top: 0;
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 15rem 144px 15rem 144px;
+        }
+        .video-container {
+            border-color: transparent !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            max-width: 50%;
+            padding: 0rem 0rem 8rem 0em !important;
+        }
+        #ig-description {
+            font-size: 22px;
+            line-height: normal !important;
+        }
+        .instagram-text-contianer>span {
+            padding-bottom: 2em;
+        }
+        .icons {
+            padding: 2em 0 4em 0;
         }
     }
     
@@ -3374,7 +3468,7 @@
             align-items: center;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 15em;
             justify-content: space-between;
             /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
         }
