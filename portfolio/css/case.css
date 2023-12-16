@@ -523,7 +523,37 @@
  }
  
  .link-container {
-     margin-top: 20px;
+     margin: 20px auto;
+     /* Set auto for centering the container horizontally */
+     width: 60%;
+     /* Set a width to limit the container size */
+ }
+ 
+ .link-list {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     /* Remove default margin to ensure items are centered */
+ }
+ 
+ .link-item {
+     text-align: left;
+     padding: 10px;
+     /* Add padding for better spacing */
+     font-weight: 600;
+     text-transform: uppercase;
+     margin-right: 10px;
+     /* Adjust the spacing between items as needed */
+ }
+ /* Optional: Style the links */
+ 
+ .link-item a {
+     text-decoration: none;
+     color: #000;
+     /* Set your desired text color */
  }
  
  .image-container {
@@ -777,19 +807,6 @@
  .contact-container-col {
      display: block;
      width: 50%;
- }
- 
- .link-list {
-     display: flex;
-     flex-direction: row;
- }
- 
- .link-item {
-     text-align: left;
-     padding: 0;
-     width: 40%;
-     font-weight: 600;
-     text-transform: uppercase;
  }
  
  .contact-container {
@@ -1095,7 +1112,7 @@
      .contact-container {
          display: flex;
          flex-direction: row;
-         margin: 240px 100px;
+         margin: 100px;
      }
      .contact-container-header {
          padding: 100px 0;
