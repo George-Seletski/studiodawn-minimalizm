@@ -180,7 +180,7 @@
     }
     
     .mb-100 {
-        margin-bottom: 50px !important;
+        margin-bottom: 100px !important;
     }
     
     #header-font-video-text {
@@ -999,7 +999,7 @@
     
     button {
         padding: 5px 15px;
-        background: #000;
+        background-color: #000;
         color: #fff;
         border: none;
         cursor: pointer;
@@ -1151,10 +1151,11 @@
     .hamburger-menu-bar-top {
         width: 5px;
         height: 5px;
-        background-color: #000;
+        background-color: #0000002f;
         border-radius: 20px;
         margin-top: 4px;
         margin-bottom: 0px;
+        mix-blend-mode: difference;
     }
     
     .button-close {
@@ -1485,6 +1486,7 @@
         margin-bottom: 50px;
         line-height: 30px;
         transition: all 0.3s ease;
+        padding-top: 10px;
     }
     
     .form-control {
@@ -1626,7 +1628,11 @@
         right: 0;
         color: #fff;
         width: 40%;
-        background-color: rgba(122, 104, 104, 0.137);
+        /*background-color: rgba(122, 104, 104, 0.137);*/
+        background: rgba(69, 67, 67, 0.4);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.3px);
+        -webkit-backdrop-filter: blur(6.3px);
     }
     
     .header-cover {
@@ -2049,26 +2055,6 @@
         z-index: 99999;
     }
     
-    .custom-cursor {
-        position: fixed;
-        opacity: 1;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        mix-blend-mode: difference;
-        width: 50px;
-        height: 50px;
-        margin-left: -25px;
-        margin-top: -25px;
-        border-radius: 50%;
-        background-color: white;
-        transition-property: transform, scale, opacity;
-        transition-duration: 250ms;
-        transition-timing-function: ease-in-out;
-        scale: 0.3;
-        z-index: 99999;
-    }
-    
     .custom-cursor::before {
         content: "";
         position: absolute;
@@ -2256,13 +2242,12 @@
     @media screen and (min-width:1921px) {
         .button>span {
             font-size: 20px;
-            text-transform: uppercase;
             font-weight: 600;
             color: #000;
         }
         .play-button {
             top: calc(40vh);
-            padding: 6em;
+            padding: 4em;
         }
         #play-buttton-icon {
             width: 60px;
@@ -2277,13 +2262,39 @@
     }
     
     @media screen and (min-width:2000px) {
+        .video-text-block {
+            display: flex;
+            flex-direction: row;
+            margin: 0rem 0;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .row-container {
+            display: flex;
+            align-items: center;
+            margin: 0px 15rem 244px 15rem;
+            gap: 144px;
+        }
+        .gif-animation {
+            width: 579px;
+            height: 976px;
+        }
         .svg-title-2 {
             width: 90%;
             max-width: 100%;
             margin: 20px 80px;
         }
+        #header-font {
+            font-size: 75px;
+            text-align: left;
+            line-height: 1;
+            padding-bottom: 1em;
+            text-transform: capitalize;
+            font-family: "Cormorant Garamond Semibold", sans-serif;
+        }
         .description {
-            font-size: 16px;
+            font-size: 26px;
             font-family: 'General-Sans Light' !important;
             font-weight: 900;
             line-height: normal !important;
@@ -2291,10 +2302,16 @@
         .video-container {
             margin: 2.5em 0em !important;
         }
+        #brand-name {
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            font-size: 1em !important;
+            line-height: 70px;
+        }
         .text {
             display: flex;
             text-align: left;
-            margin: 10em 3em 10em 6rem;
+            margin: 10em 8em;
             font-size: 3em !important;
             align-items: center;
             line-height: normal;
@@ -2731,6 +2748,27 @@
         }
     }
     
+    #see-cases-btn {
+        color: #fff;
+        font-size: 2rem !important;
+        letter-spacing: 2px;
+        padding: 15px 25px;
+    }
+    
+    @media screen and (min-width: 1920px) {
+        .footer-wrapper {
+            height: 100vh;
+            width: 100%;
+            padding: 6em 12rem 9em 12rem;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 6em !important;
+            justify-content: space-between;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+        }
+    }
+    
     @media screen and (max-width: 1919px) {
         #video-text-description {
             font-size: 25px;
@@ -2939,6 +2977,10 @@
         h1 {
             line-height: 1 !important;
             font-size: 120px;
+        }
+        .title--1 {
+            font-size: 10rem !important;
+            font-family: 'Cormorant Garamond Semibold', sans-serif;
         }
         .custom-cursor {
             opacity: 0;
@@ -3781,8 +3823,9 @@
             margin-bottom: 0em;
         }
         .container-text {
-            font-size: 1.6em !important;
+            font-size: 4rem !important;
             width: fit-content;
+            line-height: normal;
         }
         .info-block {
             padding-bottom: 1em;

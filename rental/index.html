@@ -191,17 +191,18 @@
     </header>
     <div class="page-wrapper">
 
-        <div class="gear-filters-container">
+        <!--<div class="gear-filters-container">
             <div class="gfilter-header">
                 <h2>Sort by filters:</h2>
             </div>
 
-            <div class="gfliter-item active-filter" id="all-gear" onclick="handleFilterClick(this, 'all')">All gear</div>
-            <div class="gfliter-item " id="cameras-gear" onclick="handleFilterClick(this, 'cameras')">Cameras</div>
-            <div class="gfliter-item " id="sound-gear" onclick="handleFilterClick(this, 'sound')">Sound</div>
-            <div class="gfliter-item " id="light-gear" onclick="handleFilterClick(this, 'light')">Light</div>
-            <div class="gfliter-item " id="lens-gear" onclick="handleFilterClick(this, 'lens')">Lens</div>
-        </div>
+            <div class="gfliter-item active-filter" id="all-gear" onclick="handleFilterClick('all')">All gear</div>
+            <div class="gfliter-item" id="cameras-gear" onclick="handleFilterClick('cameras')">Cameras</div>
+            <div class="gfliter-item" id="sound-gear" onclick="handleFilterClick('sound')">Sound</div>
+            <div class="gfliter-item" id="light-gear" onclick="handleFilterClick('light')">Light</div>
+            <div class="gfliter-item" id="lens-gear" onclick="handleFilterClick('lens')">Lens</div>
+        </div>-->
+
         <div class="grid-container" id="cards-container">
 
         </div>
@@ -240,7 +241,7 @@
                                 </div>
                             </div>
                              <div class="form-group"><label class="form-label" id="gearMessageLabel" for="gearMessage"></label>
-                                <textarea rows="1" cols="60" name="message" class="form-control" id="gearMessage" placeholder="Your selected gear" tabindex="5" required></textarea>
+                                <textarea rows="2" cols="60" name="message" class="form-control" id="gearMessage" placeholder="Your selected gear" tabindex="5" required></textarea>
                             </div>
                             <div class="form-group"><label class="form-label" id="messageLabel" for="message"></label>
                                 <textarea rows="1" cols="60" name="message" class="form-control" id="message" placeholder="Message" tabindex="5" required></textarea>
@@ -251,8 +252,8 @@
                         <div class="bottom-content" style="background-color: transparent; cursor:pointer;">
 
                             <a >
-                                <button class="button" style="background-color: transparent; " type="submit">
-                            <span style=" cursor:pointer;">
+                                <button class="button"  type="submit">
+                            <span style=" cursor:pointer;" id="button-r-submit">
                                 Submit
                             </span>
 
@@ -283,9 +284,9 @@
                         <ul class="footer-navbar-list">
                             <li id="footer-navbar-item"> <a href="/studiodawn-minimalizm/" rel="noopener noreferrer" class="link-anim">Home</a> </li>
                             <li id="footer-navbar-item"> <a href="#" rel="noopener noreferrer" class="link-anim">Rental</a> </li>
-                            <li id="footer-navbar-item"><a href="./about/" rel="noopener noreferrer" class="link-anim">About</a></li>
-                            <li id="footer-navbar-item"><a href="./portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
-                            <li id="footer-navbar-item"><a href="./contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>
+                            <li id="footer-navbar-item"><a href="../about/" rel="noopener noreferrer" class="link-anim">About</a></li>
+                            <li id="footer-navbar-item"><a href="../portfolio/" rel="noopener noreferrer" class="link-anim">Cases</a></li>
+                            <li id="footer-navbar-item"><a href="../contact/" rel="noopener noreferrer" class="link-anim">Contact</a></li>
                         </ul>
                     </div>
 
@@ -514,99 +515,51 @@
         } else {
             customCursor.style.opacity = '0';
         }
-        // Your JSON data
-        const data = {
-            "cameras": [{
-                "name": "Sony A7III",
-                "count": 2,
-                "price": 50,
-                "image": "sony_a7_iii.jpg"
-            }, {
-                "name": "Sony a7s3",
-                "count": 1,
-                "price": 75,
-                "image": "sony_a7_sIII.jpg"
-            }],
-            "lightboxes": [{
-                "name": "Nanlite forza 500",
-                "count": 2,
-                "price": 90,
-                "image": "forza_500_kit_2.jpg"
-            }, {
-                "name": "Nanlite forza 300b",
-                "count": 1,
-                "price": 35,
-                "image": "Forza-300b_1ok.jpg"
-            }, {
-                "name": "Nanlite forza 60b",
-                "count": 1,
-                "price": 20,
-                "image": "Forza-60b_2.jpg"
-            }, {
-                "name": "Nanlite parabolic softbox",
-                "count": 2,
-                "price": 130,
-                "image": "softbox_120.jpg"
-            }, {
-                "name": "Nanlite parabolic softbox",
-                "count": 1,
-                "price": 95,
-                "image": "softbox_90.jpg"
-            }, {
-                "name": "Nanlite parabolic softbox",
-                "count": 1,
-                "price": 70,
-                "image": "softbox_60.jpg"
-            }],
-            "sound": [{
-                "name": "RODE Wireless GO II",
-                "count": 1,
-                "price": 30,
-                "image": "Rode_mics.jpg"
-            }],
-            "lens": [{
-                "name": "Sony FE 24-70mm f/2.8 GM ",
-                "count": 1,
-                "price": 40,
-                "image": "Sony_24-70.jpg"
-            }, {
-                "name": "Sony FE 85mm f/1,8 ",
-                "count": 1,
-                "price": 25,
-                "image": "Sony_85_mm.jpg"
-            }, {
-                "name": "Sony 55mm F1.8 ZA Sonnar T",
-                "count": 1,
-                "price": 25,
-                "image": "Sony_55_mm.jpg"
-            }, {
-                "name": "Samyang AF 14 mm f/2,8 Sony FE",
-                "count": 1,
-                "price": 25,
-                "image": "Samyang_14mm.jpg"
-            }, {
-                "name": "TAMRON 70-180 mm f/2,8 Di III VXD",
-                "count": 1,
-                "price": 25,
-                "image": "Tamron_70-180.jpg"
-            }],
-            "stabilizators": [{
-                "name": "DJI Ronin RS2",
-                "count": 1,
-                "price": 40,
-                "image": "dji-rs-2.jpg"
-            }, {
-                "name": "DJI Ronin RS3",
-                "count": 1,
-                "price": 35,
-                "image": "Ronin_rs3.jpg"
-            }]
-        };
+        const dataDb = '{"cameras":[{"name":"Sony A7III","count":2,"price":50,"image":"sony_a7_iii.jpg"},{"name":"Sony a7s3","count":1,"price":75,"image":"sony_a7_sIII.jpg"}],"lightboxes":[{"name":"Nanlite forza 500","count":2,"price":90,"image":"forza_500_kit_2.jpg"},{"name":"Nanlite forza 300b","count":1,"price":35,"image":"Forza-300b_1ok.jpg"},{"name":"Nanlite forza 60b","count":1,"price":20,"image":"Forza-60b_2.jpg"},{"name":"Nanlite parabolic softbox","count":2,"price":130,"image":"softbox_120.jpg"},{"name":"Nanlite parabolic softbox","count":1,"price":95,"image":"softbox_90.jpg"},{"name":"Nanlite parabolic softbox","count":1,"price":70,"image":"softbox_60.jpg"}],"sound":[{"name":"RODE Wireless GO II","count":1,"price":30,"image":"Rode_mics.jpg"}],"lens":[{"name":"Sony FE 24-70mm f/2.8 GM ","count":1,"price":40,"image":"Sony_24-70.jpg"},{"name":"Sony FE 85mm f/1,8 ","count":1,"price":25,"image":"Sony_85_mm.jpg"},{"name":"Sony 55mm F1.8 ZA Sonnar T","count":1,"price":25,"image":"Sony_55_mm.jpg"},{"name":"Samyang AF 14 mm f/2,8 Sony FE","count":1,"price":25,"image":"Samyang_14mm.jpg"},{"name":"TAMRON 70-180 mm f/2,8 Di III VXD","count":1,"price":25,"image":"Tamron_70-180.jpg"}],"stabilizators":[{"name":"DJI Ronin RS2","count":1,"price":40,"image":"dji-rs-2.jpg"},{"name":"DJI Ronin RS3","count":1,"price":35,"image":"Ronin_rs3.jpg"}]}';
+        const data = JSON.parse(dataDb);
+        const data_active = JSON.parse(dataDb);
+
         const selectedProducts = [];
+
+        function removeFromData(name, count) {
+            // Iterate through each category in data_active
+            for (const category in data_active) {
+                // Find the index of the item with the specified name
+                const index = data_active[category].findIndex(item => item.name === name);
+
+                // If the item is found, update the count or remove it if count is 0
+                if (index !== -1) {
+                    if (count === 0) {
+                        // Remove the item if the count is 0
+                        data_active[category].splice(index, 1);
+                    } else {
+                        // Update the count if count is greater than 0
+                        data_active[category][index].count = count;
+                    }
+                    break; // Stop iterating after updating/removing the item
+                }
+            }
+        }
+
+        function getCountByName(name) {
+            // Iterate through each category in data_active
+            for (const category in data_active) {
+                // Iterate through each item in the current category
+                for (const item of data_active[category]) {
+                    // Check if the current item's name matches the target name
+                    if (item.name === name) {
+                        return item.count; // Return the count value if the name is found
+                    }
+                }
+            }
+
+            return null; // Return null if the name is not found
+        }
 
         function createCard(item) {
             const card = document.createElement('div');
             card.classList.add('grid-rental-item');
+            card.setAttribute('id', item.name);
 
 
             card.innerHTML = `
@@ -614,15 +567,15 @@
         <div class="info-container">
             <div class="item-info row">
                 <div id="name-item">
-                    <p><span id="name">${item.name}</span></p>
+                    <p><span id="name-item">${item.name}</span></p>
                 </div>
-                <div id="count">
+                <div id="count-item">
                     <p><span id="count-value">(${item.count} </span>items)</p>
                 </div>
             </div>
             <div class="item-info row">
-                <div id="price">
-                    <p>&euro;${item.price.toFixed(2)}</p>
+                <div id="price-item">
+                    <p>&euro; ${item.price.toFixed(2)}</p>
                 </div>
                 <div class="counter-container">
                     <button class="decreaseBtn">-</button>
@@ -634,7 +587,7 @@
 
                 <div class="button-container">
 
-                    <button class="addToCartBtn">Add to Cart</button>
+                    <button class="addToCartBtn">Add to Order</button>
                 </div>
             </div>
         </div>
@@ -644,26 +597,166 @@
 
             return card;
         }
+        // Merge renderCategory functions
+        function renderCategory(category, containerId) {
+            const container = document.getElementById(containerId);
+            let i = 0;
+
+            data_active[category].forEach(item => {
+                // Check if the count is not zero before creating and appending the card
+                if (item.count !== 0) {
+                    i++;
+                    const card = createCard(item, i);
+                    card.setAttribute('data-category', category);
+                    container.appendChild(card);
+                }
+            });
+        }
+
+        // Call renderCategory for each category
+        for (const category in data_active) {
+            renderCategory(category, 'cards-container');
+        }
+
+        // Update handleFilterClick to correctly filter cards
+        /*function handleFilterClick(filter) {
+            // Remove the 'active-filter' class from all filters
+            const filters = document.querySelectorAll('.gfilter-item');
+            filters.forEach(filterItem => {
+                filterItem.classList.remove('active-filter');
+            });
+
+            // Add the 'active-filter' class to the clicked filter
+            document.getElementById(filter + '-gear').classList.add('active-filter');
+
+            // Show or hide cards based on the filter
+            const cards = document.querySelectorAll('.grid-rental-item');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (filter === 'all' || cardCategory === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }*/
 
         function renderCategory(category, containerId) {
             const container = document.getElementById(containerId);
             let i = 0;
-            data[category].forEach(item => {
-                i++;
-                const card = createCard(item, i);
-                container.appendChild(card);
+
+            data_active[category].forEach(item => {
+                // Check if the count is not zero before creating and appending the card
+                if (item.count !== 0) {
+                    i++;
+                    const card = createCard(item, i);
+                    card.setAttribute('data-category', category);
+                    container.appendChild(card);
+                }
             });
         }
 
-        for (const category in data) {
+        for (const category in data_active) {
             renderCategory(category, 'cards-container');
         }
+
+        // Attach event listeners to filter items
+        const filterItems = document.querySelectorAll('.gfilter-item');
+        filterItems.forEach(filterItem => {
+            filterItem.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                handleFilterClick(filter);
+            });
+        });
+
+
+        console.log('#0 stage \n data JSON:', data, '\n data_active JSON:', data_active)
+
+        // Get all the elements with the class "grid-rental-item"
+        var rentalItems = document.querySelectorAll('.grid-rental-item');
+
+        // Loop through each item
+        rentalItems.forEach(function(item) {
+            var item_name = item.id;
+
+            var increaseBtn = item.querySelector('.increaseBtn');
+            var decreaseBtn = item.querySelector('.decreaseBtn');
+            var counterValue = item.querySelector('#counterValue');
+            var addToCartBtn = item.querySelector('.addToCartBtn');
+            var countValue = item.querySelector('#count-value');
+
+            // Initial count value
+            var count = 0;
+
+
+            // Increase button click event
+            increaseBtn.addEventListener('click', function() {
+                amountOfItem = getCountByName(item_name);
+                console.log(amountOfItem);
+                if (count < amountOfItem) {
+                    count++;
+                    counterValue.value = count;
+                    //updateItemCount();
+                    console.log(item_name, count)
+                }
+            });
+
+            // Decrease button click event
+            decreaseBtn.addEventListener('click', function() {
+                if (count > 0) {
+                    count--;
+                    counterValue.value = count;
+                    //updateItemCount();
+                }
+            });
+
+            // Add to cart button click event
+            addToCartBtn.addEventListener('click', function() {
+                // Push the selected item and count to the array
+                selectedProducts.push({
+                    name: item.querySelector('#name-item').textContent,
+                    count: count
+                });
+                // Remove the selected item from data_active
+                removeFromData(item.querySelector('#name-item').textContent, amountOfItem - count);
+
+                // Update the textarea with selected items
+                updateTextarea();
+
+                //console.log(selectedProducts);
+
+                // Optionally, you can display an alert
+                //alert('Item added to cart: ' + count + ' ' + item.querySelector('#name-item').textContent);
+            });
+
+            function updateTextarea() {
+                console.log('data\n', data, 'data_active\n', data_active)
+                var textarea = document.getElementById('gearMessage');
+                var textareaValue = '';
+
+                selectedProducts.forEach(function(product) {
+                    var countWithoutSpacesAndNewline = String(product.count).replace(/[\s\n]/g, '');
+                    var nameWithoutSpacesAndNewline = String(product.name).replace(/[\s\n]/g, '');
+
+                    textareaValue += countWithoutSpacesAndNewline + 'X ' + nameWithoutSpacesAndNewline + ';\n';
+
+                });
+
+                // Update the textarea value
+                textarea.value = textareaValue;
+            }
+            // Function to update the item count display
+            function updateItemCount() {
+                countValue.textContent = '(' + count + ' ';
+            }
+        });
+
     });
 
 
 
 
-    $(document).ready(function() {
+    /*$(document).ready(function() {
         $('.hamburger-menu-wrapper').click(function() {
             const $navMenu = $('.w-nav-menu');
             const $headerContentWrapper = $('.header-content-wrapper');
@@ -735,7 +828,7 @@
         element.classList.add('active-filter');
 
 
-    }
+    }*/
 </script>
 
 </html>

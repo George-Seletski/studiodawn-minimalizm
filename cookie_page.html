@@ -57,6 +57,24 @@
     }
     
     @media screen and (max-width: 991px) {
+        .plain_text-header-text>h1 {
+            line-height: 1 !important;
+            font-size: 80px !important;
+        }
+        .text-block-header {
+            font-size: 3em;
+        }
+        .text-body {
+            font-size: 1em !important;
+            font-weight: 600;
+        }
+        .submit-button {
+            margin-top: 6rem;
+            width: fit-content;
+        }
+        #see-cases-btn {
+            font-weight: 500 !important;
+        }
         .fnt-great {
             font-size: 1.4em;
         }
@@ -79,18 +97,33 @@
     
     @media (max-width: 478px) {
         .text-block {
+            display: flex;
             flex-direction: column;
-            margin: 0 2em !important;
+            margin: 2em !important;
         }
         .plain_text-header-text {
             margin: 0 2em !important;
+        }
+        .footer-wrapper {
+            height: fit-content;
+            width: 100%;
+            padding: 2em 0 2em 0 !important;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0 !important;
+            justify-content: space-between;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
         }
     }
     
     @media (max-width: 1200px) {
         .plain_text-header-text>h1 {
             line-height: 1 !important;
-            font-size: 98px !important;
+            font-size: 80px !important;
+        }
+        .text-block-header {
+            font-size: 2em !important;
         }
     }
     
@@ -213,6 +246,27 @@
         align-items: center;
         margin-bottom: 80px;
         /* Add margin-bottom */
+    }
+    
+    .button {
+        display: flex;
+        border: 2px solid #000;
+        border-radius: 100px;
+        padding: 0px;
+        text-transform: capitalize;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+        align-items: center;
+        text-align: center;
+        background-color: transparent;
+    }
+    
+    #see-cases-btn {
+        color: #fff;
+        font-size: 1.2rem !important;
+        letter-spacing: 2px;
+        padding: 15px 30px;
+        font-weight: 600;
     }
     
     .modal-content {

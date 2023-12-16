@@ -1,0 +1,87 @@
+{
+    "cameras": [{
+        "name": "Sony A7III",
+        "count": 2,
+        "price": 50,
+        "image": "sony_a7_iii.jpg"
+    }, {
+        "name": "Sony a7s3",
+        "count": 1,
+        "price": 75,
+        "image": "sony_a7_sIII.jpg"
+    }],
+    "lightboxes": [{
+        "name": "Nanlite forza 500",
+        "count": 2,
+        "price": 90,
+        "image": "forza_500_kit_2.jpg"
+    }, {
+        "name": "Nanlite forza 300b",
+        "count": 1,
+        "price": 35,
+        "image": "Forza-300b_1ok.jpg"
+    }, {
+        "name": "Nanlite forza 60b",
+        "count": 1,
+        "price": 20,
+        "image": "Forza-60b_2.jpg"
+    }, {
+        "name": "Nanlite parabolic softbox",
+        "count": 2,
+        "price": 130,
+        "image": "softbox_120.jpg"
+    }, {
+        "name": "Nanlite parabolic softbox",
+        "count": 1,
+        "price": 95,
+        "image": "softbox_90.jpg"
+    }, {
+        "name": "Nanlite parabolic softbox",
+        "count": 1,
+        "price": 70,
+        "image": "softbox_60.jpg"
+    }],
+    "sound": [{
+        "name": "RODE Wireless GO II",
+        "count": 1,
+        "price": 30,
+        "image": "Rode_mics.jpg"
+    }],
+    "lens": [{
+        "name": "Sony FE 24-70mm f/2.8 GM ",
+        "count": 1,
+        "price": 40,
+        "image": "Sony_24-70.jpg"
+    }, {
+        "name": "Sony FE 85mm f/1,8 ",
+        "count": 1,
+        "price": 25,
+        "image": "Sony_85_mm.jpg"
+    }, {
+        "name": "Sony 55mm F1.8 ZA Sonnar T",
+        "count": 1,
+        "price": 25,
+        "image": "Sony_55_mm.jpg"
+    }, {
+        "name": "Samyang AF 14 mm f/2,8 Sony FE",
+        "count": 1,
+        "price": 25,
+        "image": "Samyang_14mm.jpg"
+    }, {
+        "name": "TAMRON 70-180 mm f/2,8 Di III VXD",
+        "count": 1,
+        "price": 25,
+        "image": "Tamron_70-180.jpg"
+    }],
+    "stabilizators": [{
+        "name": "DJI Ronin RS2",
+        "count": 1,
+        "price": 40,
+        "image": "dji-rs-2.jpg"
+    }, {
+        "name": "DJI Ronin RS3",
+        "count": 1,
+        "price": 35,
+        "image": "Ronin_rs3.jpg"
+    }]
+}
