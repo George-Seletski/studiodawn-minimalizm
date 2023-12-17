@@ -6,28 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDIODAWN</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="stylesheet" href="../css/normalize.css" type="text/css">
-    <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
-    <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
-    <script src="../js/gsap.min.js"></script>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/ScrollTriger.js"></script>
-    <link rel="stylesheet" href="../css/preloader.css">
-    <link rel="stylesheet" href="./css/style_rental.css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="./css/normalize.css" type="text/css">
+    <link href="./img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
+    <link href="./img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/ScrollTriger.js"></script>
+    <link rel="stylesheet" href="./css/preloader.css">
+
+
 </head>
 <style>
-    /* section {
-        border: 1px solid green;
-    }
-    
-    div {
-        border: 1px solid blue;
-    }
-    
-    span {
-        border: 1px solid gray;
+    /* 
+    * {
+        border: 1px solid;
     }*/
+    
+    .header__content {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .header {
+        height: fit-content;
+        max-width: 100%;
+    }
+    
+    .title--1,
+    .title--2 {
+        line-height: 0.95em;
+        font-weight: 400;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    .title--1 {
+        font-size: 20rem !important;
+        font-family: 'Cormorant Garamond Semibold', sans-serif !important;
+        text-transform: uppercase;
+    }
+    
+    .decotitle--1 {
+        font-size: 1.6rem;
+        line-height: 1.2em;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
 
 <body>
@@ -100,7 +128,7 @@
 
             <div class="header-right-col">
                 <nav role="navigation" class="w-nav-menu">
-                    <a class="link-back white"><img src="../icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
+                    <a class="link-back white"><img src="./icons/arrow-right-up-light.svg" style=" width: 30px;transform: rotate(270deg);" alt="arrow-left-up"></a>
                     <div class="menu container-default-center">
 
                         <div class="w-container">
@@ -109,13 +137,13 @@
                                     <a href="../" class="nav-link" data-translate="nav-link-1" rel="preload" as="fetch">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
+                                    <a href="./about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../portfolio" class="nav-link" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
+                                    <a href="./portfolio" class="nav-link" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../contact/" class="nav-link" data-translate="nav-link-4" rel="preload" as="fetch">Contact</a>
+                                    <a href="./contact/" class="nav-link" data-translate="nav-link-4" rel="preload" as="fetch">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -132,7 +160,7 @@
                                     <h2 class="nav-info-header white">Get in touch.</h2>
                                     <li class="nav-item">
                                         <a href="#" class="link-address white">228 Nelson's Crescent New
- Westminster, BC V3L 3E3</a>
+                                            Westminster, BC V3L 3E3</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
@@ -163,8 +191,8 @@
                     <div class="hamburger-menu-bar-top"></div>
                     <div class="hamburger-menu-bar-bottom"></div>
                 </div>
-                <a href="../" aria-current="page" class="header-logo-link w-nav-brand w--current ">
-                    <img src="../img/320x320px_fb_logo_studiodawn2_round.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
+                <a href="./" aria-current="page" class="header-logo-link w-nav-brand w--current ">
+                    <img src="./img/320x320px_fb_logo_studiodawn2_round.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
 
                 </a>
 
@@ -173,103 +201,20 @@
             </div>
         </div>
     </div>
-    <header class="contact__header">
-        <div class="carousel-scale contact__header__cover" data-intersection-uuid="f57c9590-7520-11ee-bc4c-13ed8ad6092e" style="opacity: 1;">
 
-            <img data-object-fit="cover" srcset="./img/damir-babacic-UCfTPw4nyr0-unsplash.jpg?auto=compress,format 600w, ./img/damir-babacic-UCfTPw4nyr0-unsplash.jpg?auto=compress,format 300w" src="./img/damir-babacic-UCfTPw4nyr0-unsplash.jpg?auto=compress,format"
-                role="presentation" loading="lazy">
+    <header class="header">
+
+        <div class="header__content">
+
+            <h1 data-splitted="words" class="title title--1 ">404</h1>
 
         </div>
-        <div class="contact__header__content row">
+        <div data-splitted="lines" class="decotitle decotitle--1">
+            <p>Oops! That page can’t be found.</span>
 
-            <h1 data-splitted="words" class="title title--1">Use our gear!</h1>
-            <div data-splitted="lines" class="decotitle decotitle--1">
-                <p>Find the right gear <br>for your needs<br></span>
-
-            </div>
         </div>
     </header>
-    <div class="page-wrapper">
 
-        <!--<div class="gear-filters-container">
-            <div class="gfilter-header">
-                <h2>Sort by filters:</h2>
-            </div>
-
-            <div class="gfliter-item active-filter" id="all-gear" onclick="handleFilterClick('all')">All gear</div>
-            <div class="gfliter-item" id="cameras-gear" onclick="handleFilterClick('cameras')">Cameras</div>
-            <div class="gfliter-item" id="sound-gear" onclick="handleFilterClick('sound')">Sound</div>
-            <div class="gfliter-item" id="light-gear" onclick="handleFilterClick('light')">Light</div>
-            <div class="gfliter-item" id="lens-gear" onclick="handleFilterClick('lens')">Lens</div>
-        </div>-->
-
-        <div class="grid-container" id="cards-container">
-
-        </div>
-        <div class="contact-section">
-
-            <div class="columns-container">
-                <form class='form-container' id="myForm" action="https://formsubmit.co/patrik@studiodawn.com" method="POST">
-                    <input type="hidden" name="_subject" value="New submission!">
-                    <div id="forms">
-                        <div class="container-header">
-                            <h1>
-                                <span class="container-text fnt-grt">Write us for rental
-                            </h1>
-                        </div>
-
-                        <div id="contact-form-container">
-                            <div class="two-columns">
-                                <div class="form-group">
-
-                                    <label class="form-label" id="nameLabel" for="name"></label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" tabindex="1" required>
-
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label" id="emailLabel" for="email"></label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" tabindex="2" required>
-                                </div>
-                            </div>
-                            <div class="two-columns">
-                                <div class="form-group">
-                                    <label class="form-label" id="phoneLabel" for="phone"></label>
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" tabindex="3" required>
-                                </div>
-                                <div class="form-group"><label class="form-label" id="companyLabel" for="company"></label>
-                                    <input type="text" class="form-control" id="company" name="company" placeholder="Company" tabindex="4" required>
-                                </div>
-                            </div>
-                             <div class="form-group"><label class="form-label" id="gearMessageLabel" for="gearMessage"></label>
-                                <textarea rows="2" cols="60" name="message" class="form-control" id="gearMessage" placeholder="Your selected gear" tabindex="5" required></textarea>
-                            </div>
-                            <div class="form-group"><label class="form-label" id="messageLabel" for="message"></label>
-                                <textarea rows="1" cols="60" name="message" class="form-control" id="message" placeholder="Message" tabindex="5" required></textarea>
-                            </div>
-                            
-                        </div>
-
-                        <div class="bottom-content" style="background-color: transparent; cursor:pointer;">
-
-                            <a >
-                                <button class="button"  type="submit">
-                            <span style=" cursor:pointer;" id="button-r-submit">
-                                Submit
-                            </span>
-
-
-                                </button>
-                                </a>
-
-                        </div>
-
-                    </div>
-                </form>
-
-            </div>
-
-        </div>
-    </div>
     <footer>
         <div class="footer-wrapper">
             <div class="footer-block" id="ft-block-1">
@@ -398,10 +343,7 @@
                 paths.forEach((path) => (path.style.display = "none"));
                 const headerWrapper = document.querySelector(".header-wrapper.w-nav");
                 headerWrapper.classList.add("loaded");
-                const pageWrapper = document.querySelector(".page-wrapper");
-                pageWrapper.classList.add("loaded");
-                const headerSection = document.querySelector(".contact__header");
-                headerSection.classList.add("loaded");
+
 
                 // Set the flag to true when the preloader animations are completed
                 preloaderAnimationCompleted = true;
@@ -515,245 +457,8 @@
         } else {
             customCursor.style.opacity = '0';
         }
-        const dataDb = '{"cameras":[{"name":"Sony A7III","count":2,"price":50,"image":"sony_a7_iii.jpg"},{"name":"Sony a7s3","count":1,"price":75,"image":"sony_a7_sIII.jpg"}],"lightboxes":[{"name":"Nanlite forza 500","count":2,"price":90,"image":"forza_500_kit_2.jpg"},{"name":"Nanlite forza 300b","count":1,"price":35,"image":"Forza-300b_1ok.jpg"},{"name":"Nanlite forza 60b","count":1,"price":20,"image":"Forza-60b_2.jpg"},{"name":"Nanlite parabolic softbox","count":2,"price":130,"image":"softbox_120.jpg"},{"name":"Nanlite parabolic softbox","count":1,"price":95,"image":"softbox_90.jpg"},{"name":"Nanlite parabolic softbox","count":1,"price":70,"image":"softbox_60.jpg"}],"sound":[{"name":"RODE Wireless GO II","count":1,"price":30,"image":"Rode_mics.jpg"}],"lens":[{"name":"Sony FE 24-70mm f/2.8 GM ","count":1,"price":40,"image":"Sony_24-70.jpg"},{"name":"Sony FE 85mm f/1,8 ","count":1,"price":25,"image":"Sony_85_mm.jpg"},{"name":"Sony 55mm F1.8 ZA Sonnar T","count":1,"price":25,"image":"Sony_55_mm.jpg"},{"name":"Samyang AF 14 mm f/2,8 Sony FE","count":1,"price":25,"image":"Samyang_14mm.jpg"},{"name":"TAMRON 70-180 mm f/2,8 Di III VXD","count":1,"price":25,"image":"Tamron_70-180.jpg"}],"stabilizators":[{"name":"DJI Ronin RS2","count":1,"price":40,"image":"dji-rs-2.jpg"},{"name":"DJI Ronin RS3","count":1,"price":35,"image":"Ronin_rs3.jpg"}]}';
-        const data = JSON.parse(dataDb);
-        const data_active = JSON.parse(dataDb);
-
-        const selectedProducts = [];
-
-        function removeFromData(name, count) {
-            // Iterate through each category in data_active
-            for (const category in data_active) {
-                // Find the index of the item with the specified name
-                const index = data_active[category].findIndex(item => item.name === name);
-
-                // If the item is found, update the count or remove it if count is 0
-                if (index !== -1) {
-                    if (count === 0) {
-                        // Remove the item if the count is 0
-                        data_active[category].splice(index, 1);
-                    } else {
-                        // Update the count if count is greater than 0
-                        data_active[category][index].count = count;
-                    }
-                    break; // Stop iterating after updating/removing the item
-                }
-            }
-        }
-
-        function getCountByName(name) {
-            // Iterate through each category in data_active
-            for (const category in data_active) {
-                // Iterate through each item in the current category
-                for (const item of data_active[category]) {
-                    // Check if the current item's name matches the target name
-                    if (item.name === name) {
-                        return item.count; // Return the count value if the name is found
-                    }
-                }
-            }
-
-            return null; // Return null if the name is not found
-        }
-
-        function createCard(item) {
-            const card = document.createElement('div');
-            card.classList.add('grid-rental-item');
-            card.setAttribute('id', item.name);
-
-
-            card.innerHTML = `
-        <img src="./img/opt_img/${item.image}" alt="Card Image" class="grid-rental-item-image">
-        <div class="info-container">
-            <div class="item-info row">
-                <div id="name-item">
-                    <p><span id="name-item">${item.name}</span></p>
-                </div>
-                <div id="count-item">
-                    <p><span id="count-value">(${item.count} </span>items)</p>
-                </div>
-            </div>
-            <div class="item-info row">
-                <div id="price-item">
-                    <p>&euro; ${item.price.toFixed(2)}</p>
-                </div>
-                <div class="counter-container">
-                    <button class="decreaseBtn">-</button>
-                    <input type="text" id="counterValue" value="0" readonly="">
-                    <button class="increaseBtn">+</button>
-                </div>
-            </div>
-            <div class="item-info">
-
-                <div class="button-container">
-
-                    <button class="addToCartBtn">Add to Order</button>
-                </div>
-            </div>
-        </div>
-    </div>`;
-
-
-
-            return card;
-        }
-        // Merge renderCategory functions
-        function renderCategory(category, containerId) {
-            const container = document.getElementById(containerId);
-            let i = 0;
-
-            data_active[category].forEach(item => {
-                // Check if the count is not zero before creating and appending the card
-                if (item.count !== 0) {
-                    i++;
-                    const card = createCard(item, i);
-                    card.setAttribute('data-category', category);
-                    container.appendChild(card);
-                }
-            });
-        }
-
-        // Call renderCategory for each category
-        for (const category in data_active) {
-            renderCategory(category, 'cards-container');
-        }
-
-        // Update handleFilterClick to correctly filter cards
-        /*function handleFilterClick(filter) {
-            // Remove the 'active-filter' class from all filters
-            const filters = document.querySelectorAll('.gfilter-item');
-            filters.forEach(filterItem => {
-                filterItem.classList.remove('active-filter');
-            });
-
-            // Add the 'active-filter' class to the clicked filter
-            document.getElementById(filter + '-gear').classList.add('active-filter');
-
-            // Show or hide cards based on the filter
-            const cards = document.querySelectorAll('.grid-rental-item');
-            cards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                if (filter === 'all' || cardCategory === filter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }*/
-
-        function renderCategory(category, containerId) {
-            const container = document.getElementById(containerId);
-            let i = 0;
-
-            data_active[category].forEach(item => {
-                // Check if the count is not zero before creating and appending the card
-                if (item.count !== 0) {
-                    i++;
-                    const card = createCard(item, i);
-                    card.setAttribute('data-category', category);
-                    container.appendChild(card);
-                }
-            });
-        }
-
-        for (const category in data_active) {
-            renderCategory(category, 'cards-container');
-        }
-
-        // Attach event listeners to filter items
-        const filterItems = document.querySelectorAll('.gfilter-item');
-        filterItems.forEach(filterItem => {
-            filterItem.addEventListener('click', function() {
-                const filter = this.getAttribute('data-filter');
-                handleFilterClick(filter);
-            });
-        });
-
-
-        console.log('#0 stage \n data JSON:', data, '\n data_active JSON:', data_active)
-
-        // Get all the elements with the class "grid-rental-item"
-        var rentalItems = document.querySelectorAll('.grid-rental-item');
-
-        // Loop through each item
-        rentalItems.forEach(function(item) {
-            var item_name = item.id;
-
-            var increaseBtn = item.querySelector('.increaseBtn');
-            var decreaseBtn = item.querySelector('.decreaseBtn');
-            var counterValue = item.querySelector('#counterValue');
-            var addToCartBtn = item.querySelector('.addToCartBtn');
-            var countValue = item.querySelector('#count-value');
-
-            // Initial count value
-            var count = 0;
-
-
-            // Increase button click event
-            increaseBtn.addEventListener('click', function() {
-                amountOfItem = getCountByName(item_name);
-                console.log(amountOfItem);
-                if (count < amountOfItem) {
-                    count++;
-                    counterValue.value = count;
-                    //updateItemCount();
-                    console.log(item_name, count)
-                }
-            });
-
-            // Decrease button click event
-            decreaseBtn.addEventListener('click', function() {
-                if (count > 0) {
-                    count--;
-                    counterValue.value = count;
-                    //updateItemCount();
-                }
-            });
-
-            // Add to cart button click event
-            addToCartBtn.addEventListener('click', function() {
-                // Push the selected item and count to the array
-                selectedProducts.push({
-                    name: item.querySelector('#name-item').textContent,
-                    count: count
-                });
-                // Remove the selected item from data_active
-                removeFromData(item.querySelector('#name-item').textContent, amountOfItem - count);
-
-                // Update the textarea with selected items
-                updateTextarea();
-
-                //console.log(selectedProducts);
-
-                // Optionally, you can display an alert
-                //alert('Item added to cart: ' + count + ' ' + item.querySelector('#name-item').textContent);
-            });
-
-            function updateTextarea() {
-                console.log('data\n', data, 'data_active\n', data_active)
-                var textarea = document.getElementById('gearMessage');
-                var textareaValue = '';
-
-                selectedProducts.forEach(function(product) {
-                    var countWithoutSpacesAndNewline = String(product.count).replace(/[\s\n]/g, '');
-                    var nameWithoutSpacesAndNewline = String(product.name).replace(/[\s\n]/g, '');
-
-                    textareaValue += countWithoutSpacesAndNewline + 'X ' + nameWithoutSpacesAndNewline + ';\n';
-
-                });
-
-                // Update the textarea value
-                textarea.value = textareaValue;
-            }
-            // Function to update the item count display
-            function updateItemCount() {
-                countValue.textContent = '(' + count + ' ';
-            }
-        });
 
     });
-
-
 
 
     $(document).ready(function() {
@@ -809,8 +514,6 @@
         };
         document.body.classList.add('scroll-lock');
     }
-
-
 
     function enableScroll() {
         window.onscroll = null;
