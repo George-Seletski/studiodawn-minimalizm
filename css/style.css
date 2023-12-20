@@ -180,7 +180,7 @@
     }
     
     .mb-100 {
-        margin-bottom: 100px !important;
+        margin-bottom: 50px !important;
     }
     
     #header-font-video-text {
@@ -999,7 +999,7 @@
     
     button {
         padding: 5px 15px;
-        background-color: #000;
+        background: #000;
         color: #fff;
         border: none;
         cursor: pointer;
@@ -1151,11 +1151,10 @@
     .hamburger-menu-bar-top {
         width: 5px;
         height: 5px;
-        background-color: #0000002f;
+        background-color: #000;
         border-radius: 20px;
         margin-top: 4px;
         margin-bottom: 0px;
-        mix-blend-mode: difference;
     }
     
     .button-close {
@@ -1464,7 +1463,7 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        height: 100vh;
+        height: 90vh;
     }
     
     .form-control {
@@ -1486,7 +1485,6 @@
         margin-bottom: 50px;
         line-height: 30px;
         transition: all 0.3s ease;
-        padding-top: 10px;
     }
     
     .form-control {
@@ -1613,32 +1611,20 @@
         overflow-x: hidden;
     }
     
-    .header-cover-title {
+    .header-image-description>.description {
         display: flex;
         flex-direction: column;
+        padding-left: 40%;
         align-items: flex-end;
-        margin: 60px;
-        padding: 25px 25px 25px 25px;
+        margin: 60px 241px;
         font-size: 11px !important;
-        position: absolute;
+        position: relative;
         gap: 2em;
         font-weight: 600;
-        z-index: 99;
-        bottom: 0;
-        right: 0;
-        color: #fff;
-        width: 40%;
-        /*background-color: rgba(122, 104, 104, 0.137);*/
-        background: rgba(69, 67, 67, 0.4);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(6.3px);
-        -webkit-backdrop-filter: blur(6.3px);
     }
     
     .header-cover {
         position: relative;
-        overflow: hidden;
-        height: 1080px;
     }
     
     .header-cover>img {
@@ -1716,7 +1702,7 @@
         height: 99vh !important;
         width: 100%;
         border: 0;
-        background-color: #f9f4f4;
+        background-color: #fff;
         color: #000 !important;
         gap: 15em;
         display: block;
@@ -2055,6 +2041,26 @@
         z-index: 99999;
     }
     
+    .custom-cursor {
+        position: fixed;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        mix-blend-mode: difference;
+        width: 50px;
+        height: 50px;
+        margin-left: -25px;
+        margin-top: -25px;
+        border-radius: 50%;
+        background-color: white;
+        transition-property: transform, scale, opacity;
+        transition-duration: 250ms;
+        transition-timing-function: ease-in-out;
+        scale: 0.3;
+        z-index: 99999;
+    }
+    
     .custom-cursor::before {
         content: "";
         position: absolute;
@@ -2152,7 +2158,7 @@
             height: 100vh;
         }
         .footer-block {
-            padding: 4em 0 0 0!important;
+            padding: 4em 0 0 0 !important;
         }
     }
     
@@ -2162,11 +2168,11 @@
         text-transform: uppercase;
     }
     
-    @media screen and (max-width:1910px) {
+    @media screen and (max-width:1920px) {
         .svg-title-2 {
             width: 82.33%;
             max-width: 100%;
-            margin: 0px 100px;
+            margin: 0px 9em;
         }
         .button>span {
             font-size: 20px;
@@ -2177,27 +2183,6 @@
         .instagram-img {
             width: 260px;
             height: 260px;
-        }
-        .footer-wrapper {
-            height: fit-content;
-            width: 100%;
-            padding: 4em 0 26em 0;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            gap: 26em;
-            justify-content: space-between;
-            padding-right: 5rem;
-            padding-left: 5rem;
-            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
-        }
-    }
-    
-    @media screen and (max-width:1920px) {
-        .svg-title-2 {
-            width: 82.33%;
-            max-width: 100%;
-            margin: 0px 170px;
         }
     }
     
@@ -2242,12 +2227,13 @@
     @media screen and (min-width:1921px) {
         .button>span {
             font-size: 20px;
+            text-transform: uppercase;
             font-weight: 600;
             color: #000;
         }
         .play-button {
             top: calc(40vh);
-            padding: 4em;
+            padding: 6em;
         }
         #play-buttton-icon {
             width: 60px;
@@ -2262,39 +2248,13 @@
     }
     
     @media screen and (min-width:2000px) {
-        .video-text-block {
-            display: flex;
-            flex-direction: row;
-            margin: 0rem 0;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        .row-container {
-            display: flex;
-            align-items: center;
-            margin: 0px 15rem 244px 15rem;
-            gap: 144px;
-        }
-        .gif-animation {
-            width: 579px;
-            height: 976px;
-        }
         .svg-title-2 {
             width: 90%;
             max-width: 100%;
             margin: 20px 80px;
         }
-        #header-font {
-            font-size: 75px;
-            text-align: left;
-            line-height: 1;
-            padding-bottom: 1em;
-            text-transform: capitalize;
-            font-family: "Cormorant Garamond Semibold", sans-serif;
-        }
         .description {
-            font-size: 26px;
+            font-size: 16px;
             font-family: 'General-Sans Light' !important;
             font-weight: 900;
             line-height: normal !important;
@@ -2302,16 +2262,10 @@
         .video-container {
             margin: 2.5em 0em !important;
         }
-        #brand-name {
-            font-weight: 900;
-            letter-spacing: 1.5px;
-            font-size: 1em !important;
-            line-height: 70px;
-        }
         .text {
             display: flex;
             text-align: left;
-            margin: 10em 8em;
+            margin: 10em 3em 10em 6rem;
             font-size: 3em !important;
             align-items: center;
             line-height: normal;
@@ -2477,7 +2431,7 @@
             border: 0;
             background-color: #f9f4f4;
             color: #000 !important;
-            gap: 0px;
+            gap: 6em;
             display: flex;
         }
         .gara-fnt {
@@ -2690,24 +2644,11 @@
             font-size: 20px;
         }
         #footer-navbar-item>a {
-            font-size: 20px !important;
+            font-size: 26px !important;
         }
         .header-cover>img {
+            height: 72vh;
             padding: 4em 0;
-        }
-        .header-cover {
-            position: relative;
-            overflow: hidden;
-            height: 796px;
-        }
-        .header-cover-title {
-            margin: 55px 0px;
-            width: 60%;
-            border-radius: 14px 0px 0px 0px;
-            background-color: rgba(122, 104, 104, 0.322);
-        }
-        #img-description {
-            letter-spacing: 2px;
         }
         #ig-description {
             font-size: 18px;
@@ -2748,27 +2689,6 @@
         }
     }
     
-    #see-cases-btn {
-        color: #fff;
-        font-size: 2rem !important;
-        letter-spacing: 2px;
-        padding: 15px 25px;
-    }
-    
-    @media screen and (min-width: 1920px) {
-        .footer-wrapper {
-            height: 100vh;
-            width: 100%;
-            padding: 6em 12rem 9em 12rem;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            gap: 6em !important;
-            justify-content: space-between;
-            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
-        }
-    }
-    
     @media screen and (max-width: 1919px) {
         #video-text-description {
             font-size: 25px;
@@ -2776,29 +2696,18 @@
             line-height: normal;
         }
         .description {
-            font-size: 28px;
-            line-height: normal;
-        }
-        #header-font {
-            font-size: 85px;
-            text-align: left;
-            line-height: 1;
-            padding-bottom: 1em;
-            text-transform: capitalize;
-            /* font-family: 'Font-Sans Regular', sans-serif; */
-            font-family: 'Cormorant Garamond Semibold', sans-serif;
-            /* font-family: 'Cormorant Garamond Light', sans-serif; */
+            font-size: 14px;
+            line-height: 20px;
         }
         .row-container>div {
             width: 100%;
-            max-width: 800px;
+            max-width: 400px;
         }
         .row-container {
             display: flex;
             align-items: center;
             margin: 144px 8rem 244px 8rem;
             gap: 144px;
-            flex-direction: column;
         }
         .container-center-block {
             display: flex;
@@ -2817,54 +2726,13 @@
             display: flex;
             border: 2px solid #000;
             border-radius: 100px;
-            padding: 20px 60px;
+            padding: 6px 30px;
             margin-bottom: 100px;
             transition: transform 5s;
             transition: all 0.5s ease;
             align-items: center;
             text-align: center;
             background-color: transparent;
-        }
-        #see-cases-btn {
-            color: #fff;
-            font-size: 30px !important;
-            letter-spacing: 2px;
-        }
-        .video-text-block {
-            display: flex;
-            flex-direction: column;
-            margin: 8rem 0;
-            justify-content: unset;
-            align-items: unset;
-            width: 100%;
-        }
-        .text-video {
-            top: 0;
-            display: flex;
-            overflow: hidden;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-end;
-            padding: 15rem 144px 15rem 144px;
-        }
-        .video-container {
-            border-color: transparent !important;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            max-width: 50%;
-            padding: 0rem 0rem 8rem 0em !important;
-        }
-        #ig-description {
-            font-size: 22px;
-            line-height: normal !important;
-        }
-        .instagram-text-contianer>span {
-            padding-bottom: 2em;
-        }
-        .icons {
-            padding: 2em 0 4em 0;
         }
     }
     
@@ -2977,10 +2845,6 @@
         h1 {
             line-height: 1 !important;
             font-size: 120px;
-        }
-        .title--1 {
-            font-size: 10rem !important;
-            font-family: 'Cormorant Garamond Semibold', sans-serif;
         }
         .custom-cursor {
             opacity: 0;
@@ -3475,6 +3339,11 @@
     }
     
     @media screen and (max-width: 479px) {
+        .instagram-text-contianer>.icons {
+            justify-content: flex-start;
+            gap: 3em;
+            padding: 2em;
+        }
         .gif-animation {
             width: 100vw;
         }
@@ -3510,7 +3379,7 @@
             align-items: center;
             display: flex;
             flex-direction: column;
-            gap: 15em;
+            gap: 15px;
             justify-content: space-between;
             /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
         }
@@ -3641,8 +3510,13 @@
         .instagram-text-contianer {
             width: auto;
         }
+        .instagram-text-contianer>#header-font {
+            font-size: 65px;
+            padding: 0 30px;
+        }
         .instagram-text-contianer>span {
-            width: 340px;
+            width: 100%;
+            padding: 2em;
         }
         .instagram-images {
             flex-direction: column;
@@ -3796,8 +3670,8 @@
             margin-bottom: 40px;
         }
         .instagram-img {
-            width: 350px !important;
-            height: 350px !important;
+            width: 300px !important;
+            height: 300px !important;
         }
         /*Contact*/
         #forms {
@@ -3823,9 +3697,8 @@
             margin-bottom: 0em;
         }
         .container-text {
-            font-size: 4rem !important;
+            font-size: 1.6em !important;
             width: fit-content;
-            line-height: normal;
         }
         .info-block {
             padding-bottom: 1em;
