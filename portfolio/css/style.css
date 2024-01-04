@@ -112,6 +112,20 @@
     }
     
     @media screen and (max-width: 479px) {
+        .footer-wrapper {
+            height: fit-content;
+            width: 100%;
+            padding: 2em 0 2em 0 !important;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: space-between;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+        }
+        .footer-loaded {
+            display: block;
+        }
         h1 {
             line-height: 1 !important;
             font-size: 36px;
@@ -394,6 +408,10 @@
         text-decoration: none;
         transition: all 0.3s;
         color: #000;
+    }
+    
+    .nav-link.gara-fnt:hover {
+        color: #000000ad;
     }
     
     a:hover {
@@ -2162,6 +2180,10 @@
         /* .header-logo {
             width: 200px !important;
         }*/
+    }
+    
+    .nav-link.gara-fnt {
+        background-image: linear-gradient(90deg, #000 0%, rgba(20, 18, 18, 0.685), rgba(75, 68, 68, 0.801) 35%, rgba(129, 110, 110, 0.247) 75%, #b6a9a94b 100%);
     }
     
     @media screen and (min-width:1400px) {

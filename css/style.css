@@ -401,6 +401,10 @@
         color: #9D988C;
     }
     
+    .nav-link.gara-fnt:hover {
+        color: #000000ad;
+    }
+    
     ul {
         margin-top: 0;
     }
@@ -2726,7 +2730,7 @@
             display: flex;
             border: 2px solid #000;
             border-radius: 100px;
-            padding: 6px 30px;
+            padding: 29px 66px;
             margin-bottom: 100px;
             transition: transform 5s;
             transition: all 0.5s ease;
@@ -2995,7 +2999,7 @@
             padding: 0;
             font-size: 8em;
             margin-bottom: 50px;
-            margin-right: 50px;
+            /*margin-right: 50px;*/
         }
         .info-block>h3 {
             font-size: 4em;
@@ -3427,7 +3431,7 @@
         }
         h1 {
             line-height: 1 !important;
-            font-size: 50px !important;
+            font-size: 90px !important;
         }
         .odd-header {
             height: 75vh !important;

@@ -152,6 +152,17 @@
     /* Media Query for screens with a maximum width of 479px */
     
     @media screen and (max-width: 479px) {
+        .footer-wrapper {
+            height: fit-content;
+            width: 100%;
+            padding: 2em 0 2em 0 !important;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: space-between;
+            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+        }
         .contanct-links {
             text-align: left;
             margin-top: 1em;
@@ -263,8 +274,8 @@
     .row {
         box-sizing: border-box;
         width: 100%;
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 40px;
+        padding-right: 40px;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -345,7 +356,7 @@
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-            padding: 2em 3em;
+            padding: 2em 4em;
             flex-direction: column;
             margin: 0;
         }
@@ -357,7 +368,7 @@
         }
     }
     
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: 991px) and (min-width: 480px) {
         .button {
             display: flex;
             border: 2px solid #000;
