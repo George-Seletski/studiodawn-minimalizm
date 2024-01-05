@@ -340,7 +340,7 @@
          font-family: 'Cormorant Garamond Semibold';
          line-height: 1.5;
          font-weight: 600;
-         width: 100%;
+         width: 100% !important;
      }
      .image-item {
          margin-right: 0px !important;
@@ -639,7 +639,7 @@
  }
  
  .title--1 {
-     font-size: 20rem !important;
+     font-size: 20rem;
      font-family: 'Roboto Thin';
      text-transform: uppercase;
  }
