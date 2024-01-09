@@ -2203,14 +2203,14 @@
             margin-top: 8em;
         }
         .footer-wrapper {
-            height: 100vh !important;
+            height: 100vh;
             width: 100%;
             padding: 6em 12rem 9em 12rem;
             align-items: center;
             display: flex;
             flex-direction: column;
             gap: 8em !important;
-            justify-content: space-between;
+            justify-content: space-evenly;
             /*padding-right: 5rem;
             padding-left: 5rem;*/
             /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
@@ -2225,6 +2225,7 @@
             color: #000 !important;
             gap: 6em !important;
             display: flex;
+            justify-content: flex-end;
         }
     }
     
