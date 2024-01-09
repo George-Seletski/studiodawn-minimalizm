@@ -1703,10 +1703,9 @@
     }
     
     footer {
-        height: 99vh !important;
+        height: 100vh !important;
         width: 100%;
         border: 0;
-        background-color: #fff;
         color: #000 !important;
         gap: 15em;
         display: block;
@@ -2190,7 +2189,12 @@
         }
     }
     
-    @media screen and (min-width:1920px) {
+    @media screen and (min-width:1921px) {
+        .menu {
+            margin-top: 15%;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
         .video-container {
             height: 100vh;
             border-color: transparent !important;
@@ -2203,7 +2207,7 @@
             margin-top: 8em;
         }
         .footer-wrapper {
-            height: 100vh;
+            height: fit-content;
             width: 100%;
             padding: 6em 12rem 9em 12rem;
             align-items: center;
