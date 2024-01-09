@@ -1717,17 +1717,17 @@
     }
     
     .footer-wrapper {
-        height: 50vh;
+        height: 70vh;
         width: 100%;
-        padding: 4em 0 7em 0;
+        padding: 4em 0 28em 0;
         align-items: center;
         display: flex;
         flex-direction: column;
-        /* gap: 6em;*/
+        gap: 14em;
         justify-content: space-between;
         padding-right: 5rem;
         padding-left: 5rem;
-        /*border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;*/
+        /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
     }
     
     .svg-title-1 {
