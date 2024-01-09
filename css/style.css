@@ -3192,7 +3192,10 @@
         .svg-title-2 {
             width: 85%;
             max-width: 100%;
-            margin: 0px 30px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 50%;
+            margin-bottom: 0px;
         }
         .w-nav-menu {
             overflow: hidden !important;
