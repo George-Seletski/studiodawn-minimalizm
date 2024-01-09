@@ -1580,8 +1580,8 @@
     }
     
     .size-2x {
-        width: 45px !important;
-        height: 45px !important;
+        width: 32px !important;
+        height: 32px !important;
     }
     
     .wh-30 {
@@ -2203,9 +2203,9 @@
             margin-top: 8em;
         }
         .footer-wrapper {
-            height: 100vh;
+            height: 100vh !important;
             width: 100%;
-            padding: 4em 12rem 9em 12rem;
+            padding: 6em 12rem 9em 12rem;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -2927,10 +2927,10 @@
         }
         #header-font {
             text-align: left;
-            padding-bottom: 56px;
+            padding-bottom: 16px;
         }
         .description {
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1;
         }
         .ul-description>li {

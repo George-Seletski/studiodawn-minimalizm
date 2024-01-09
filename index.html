@@ -15,6 +15,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/ScrollTriger.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
+
     <link rel="stylesheet" href="./css/preloader.css">
 
 </head>
@@ -25,6 +26,7 @@
     }*/
     
     .icons {
+        width: 200px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -387,14 +389,14 @@
                 </span>
             </div>
             <div class="video-container">
-                <div class="movie-btn movie-btn sixteen-nine-btn" vidurl="https://player.vimeo.com/video/850727482?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=0">
+                <div class="movie-btn movie-btn sixteen-nine-btn" vidurl="https://player.vimeo.com/video/898782145?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=0">
                     <div class="play-button-container">
-                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidurl="https://player.vimeo.com/video/850727482">
+                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidurl="https://player.vimeo.com/video/898782145">
                             <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
                         </div>
                     </div>
                     <!-- Add the thumbnail image here -->
-                    <video class="gif-animation" src="video/pexels-tony-schnagl.mp4" data-src="video/pexels-tony-schnagl.mp4" autoplay loop playsinline muted>
+                    <video class="gif-animation" src="video/SR_9x16_1080x1920 - Trim.mp4" data-src="video/SR_9x16_1080x1920 - Trim.mp4" autoplay loop playsinline muted>
                 </div>
                 <div class="modal-vid" style=" cursor: pointer !important;">
                     <div class="movie-box"  style="cursor: pointer !important;">
@@ -965,7 +967,11 @@
 
     function initPage() {
 
-
+        // Replace VIDEO_ID with your actual Vimeo video ID
+        var player = new Vimeo.Player('myVideo', {
+            url: 'https://player.vimeo.com/video/850727482?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+            controls: false, // Set controls to false to hide them
+        });
 
        // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;

@@ -37,6 +37,10 @@
      gap: 25em !important;
  }
  
+ #pr_logo {
+     width: 65%;
+ }
+ 
  @media screen and (max-width: 479px) {
      .col-2.box-img-label {
          margin: 40px !important;
@@ -1007,9 +1011,10 @@
  }
  
  .color-name {
-     padding: 10px;
+     display: flex;
      font-weight: 500;
      font-family: 'Roboto Regular';
+     justify-content: center;
  }
  /*video*/
  
