@@ -2172,7 +2172,8 @@
     }
     
     @media screen and (max-width:1920px) {
-        .svg-title-2 {
+        .svg-title-2,
+        .svg-title-1 {
             width: 93.333%;
             max-width: 100%;
             margin: 0px 4em;
