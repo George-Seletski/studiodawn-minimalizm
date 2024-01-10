@@ -209,7 +209,7 @@
         <div class="contact-section">
 
             <div class="columns-container">
-                <form class='form-container' id="myForm" action="https://formsubmit.co/patrik@studiodawn.com" method="POST">
+                <form class='form-container' id="myForm" action="https://formsubmit.co/george.seletski.1224@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="New submission!">
                     <div id="forms">
                         <div class="container-header">
@@ -234,18 +234,17 @@
                             <div class="two-columns">
                                 <div class="form-group">
                                     <label class="form-label" id="phoneLabel" for="phone"></label>
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" tabindex="3" required>
-                                </div>
+                                     <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" tabindex="3" required>
+
+                                    </div>
                                 <div class="form-group"><label class="form-label" id="companyLabel" for="company"></label>
                                     <input type="text" class="form-control" id="company" name="company" placeholder="Company" tabindex="4" required>
                                 </div>
                             </div>
                              <div class="form-group"><label class="form-label" id="gearMessageLabel" for="gearMessage"></label>
-                                <textarea rows="2" cols="60" name="message" class="form-control" id="gearMessage" placeholder="Your selected gear" tabindex="5" required></textarea>
+                                <textarea rows="10" cols="60" name="message" class="form-control" id="gearMessage" placeholder="Your selected gear" tabindex="5" required></textarea>
                             </div>
-                            <div class="form-group"><label class="form-label" id="messageLabel" for="message"></label>
-                                <textarea rows="1" cols="60" name="message" class="form-control" id="message" placeholder="Message" tabindex="5" required></textarea>
-                            </div>
+                           
                             
                         </div>
 
@@ -640,6 +639,15 @@
                 }
             });
         }*/
+        function removeConsecutiveSpaces(inputString) {
+            // Remove leading and trailing spaces
+            var trimmedString = inputString.trim();
+
+            // Use a regular expression to replace consecutive spaces with a single space
+            var resultString = trimmedString.replace(/\s+/g, ' ');
+
+            return resultString;
+        }
 
         function renderCategory(category, containerId) {
             const container = document.getElementById(containerId);
@@ -712,33 +720,45 @@
 
             // Add to cart button click event
             addToCartBtn.addEventListener('click', function() {
-                // Push the selected item and count to the array
-                selectedProducts.push({
-                    name: item.querySelector('#name-item').textContent,
-                    count: count
-                });
-                // Remove the selected item from data_active
-                removeFromData(item.querySelector('#name-item').textContent, amountOfItem - count);
+                // Get the product name and count
+                const productName = removeConsecutiveSpaces(item.querySelector('#name-item').textContent);
+                const productCount = count;
 
-                // Update the textarea with selected items
-                updateTextarea();
+                // Check if the product is already in the cart
+                const existingProductIndex = selectedProducts.findIndex(product => product.name === productName);
 
-                //console.log(selectedProducts);
+                if (existingProductIndex === -1) {
 
-                // Optionally, you can display an alert
-                //alert('Item added to cart: ' + count + ' ' + item.querySelector('#name-item').textContent);
+                    // If the product is not in the cart, add it
+                    selectedProducts.push({
+                        name: productName,
+                        count: productCount
+                    });
+                    // Remove the selected item from data_active
+                    removeFromData(productName, amountOfItem - productCount);
+
+                    // Update the textarea with selected items
+                    updateTextarea();
+
+                    // Optionally, you can display an alert
+                    alert('Item added to cart: ' + productCount + ' ' + productName);
+                }
+
+
             });
+
+
 
             function updateTextarea() {
                 console.log('data\n', data, 'data_active\n', data_active)
                 var textarea = document.getElementById('gearMessage');
-                var textareaValue = '';
+                var textareaValue = 'Selected gear \n';
 
                 selectedProducts.forEach(function(product) {
                     var countWithoutSpacesAndNewline = String(product.count).replace(/[\s\n]/g, '');
                     var nameWithoutSpacesAndNewline = String(product.name).replace(/[\s\n]/g, '');
 
-                    textareaValue += countWithoutSpacesAndNewline + 'X ' + nameWithoutSpacesAndNewline + ';\n';
+                    textareaValue += countWithoutSpacesAndNewline + 'X ' + nameWithoutSpacesAndNewline + '\n';
 
                 });
 
