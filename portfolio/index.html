@@ -565,7 +565,7 @@
 
 
     function hidePreloader() {
-        gsap.to(paths, {
+        /*gsap.to(paths, {
             duration: loadingDuration, // Match the duration with loading duration
             opacity: 0,
             y: "100%",
@@ -584,7 +584,7 @@
                 // Check if the page should be displayed
                 showPageIfPreloaderCompleted();
             },
-        });
+        });*/
     }
 
 
@@ -647,7 +647,7 @@
         showPageIfPreloaderCompleted();
     };
 
-    setTimeout(initPage, 1200);
+    //setTimeout(initPage, 1200);
 
     function initPage() {
         filterCards('all');
