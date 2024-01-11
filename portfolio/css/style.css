@@ -1736,6 +1736,7 @@
         width: 90%;
         max-width: 100%;
         margin: 0px 80px;
+        height: fit-content;
     }
     
     .svg-title-2 {
@@ -2584,9 +2585,9 @@
         }
         .svg-title-1,
         .svg-title-2 {
-            width: 80%;
+            width: 93.333%;
             max-width: 100%;
-            margin: 0px 80px;
+            margin: 0px 4em;
         }
         #video-text-description {
             font-size: 14px;
