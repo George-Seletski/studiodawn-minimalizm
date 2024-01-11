@@ -40,8 +40,14 @@
  #pr_logo {
      width: 65%;
  }
+
+ 
  
  @media screen and (max-width: 479px) {
+    #pr_logo {
+        width: 100%;
+        padding-right: 100px;
+    }
      .col-2.box-img-label {
          margin: 40px !important;
      }
@@ -74,7 +80,7 @@
          margin: 92px 0 !important;
      }
      .col-2.story-box {
-         margin-top: 80px !important;
+         padding-top: 80px !important;
      }
      .image-container-2 {
          display: flex;
@@ -102,7 +108,7 @@
          height: 140px !important;
      }
      .col-2.img-col-right {
-         margin: 80px 0px 80px 0px !important;
+        /* margin: 80px 0px 80px 0px !important;*/
      }
      .col-2.box-text-colors {
          margin-top: 0px !important;
@@ -121,7 +127,8 @@
      #listed-core-items {
          display: flex;
          align-items: flex-start;
-         margin: 0 2em !important;
+         margin: 0 !important;
+         padding: 0 2em !important;
          flex-direction: column !important;
          gap: 0em !important;
          width: fit-content;
@@ -133,6 +140,8 @@
          margin: 50px 3em !important;
          align-items: center;
          padding: 0 !important;
+         background-color: #fff;
+         
      }
      .inst-col-3 {
          display: flex;
@@ -147,7 +156,7 @@
      .col-3 {
          display: flex;
          align-items: flex-start;
-         margin: 4em 2em !important;
+         padding: 4em 2em !important;
          flex-direction: column !important;
          gap: 6em !important;
          width: fit-content;
@@ -167,7 +176,9 @@
      .col-2 {
          display: flex;
          align-items: flex-start;
-         margin: 144px 2em !important;
+         margin: 0 0 !important;
+         padding-right:2em !important;
+         padding-left:2em !important;
          flex-direction: column !important;
          gap: 5em !important;
      }
@@ -297,13 +308,14 @@
      #project-info {
          display: flex;
          align-items: flex-start;
-         margin: 144px 2em !important;
+         /*margin: 144px 2em !important;*/
          flex-direction: row;
          gap: 5em !important;
          position: relative;
      }
  }
- 
+
+
  @media screen and (max-width: 991px) {
      .title--1 {
          font-size: 15rem !important;
@@ -417,7 +429,7 @@
      .col-3 {
          display: flex;
          align-items: flex-start;
-         margin: 144px 144px 100px 144px;
+         padding: 144px 144px 100px 144px;
          flex-direction: column !important;
          gap: 10em;
          width: fit-content;
@@ -440,7 +452,7 @@
      .col-2 {
          display: flex;
          align-items: flex-start;
-         margin: 92px 2em !important;
+         padding: 62px 2em !important;
          flex-direction: column !important;
          gap: 15em;
      }
@@ -567,7 +579,27 @@
      width: auto;
      position: relative;
  }
- 
+
+ .video-container {
+    /* Center the video element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* You may adjust this based on your layout */
+}
+
+#main-video {
+    /* Add any other styles you need for the video element */
+    width: 100%; /* Make the video element fill its container */
+    height: auto; /* Maintain the aspect ratio of the video */
+}
+.video-header{
+    display: none;
+}
+.video-header.loaded{
+    display: block;
+}
+
  .image-container-2 {
      display: flex;
      margin: 0px !important;
@@ -585,9 +617,11 @@
  }
  
  #image-large-1 {
-     display: block;
-     width: 100vw;
-     height: 100vh;
+    vertical-align: middle;
+
+     display: inline-block;
+     width: 100%;
+     height: auto;
      text-align: center;
      user-select: none;
      margin: -10px 0 !important;
@@ -684,16 +718,18 @@
  .col-3 {
      display: flex;
      align-items: flex-start;
-     margin: 144px 100px 240px 100px;
+     padding: 144px 100px 240px 100px;
      flex-direction: row;
      gap: 15em;
      position: relative;
+     
  }
  
  .col-2 {
      display: flex;
      align-items: flex-start;
-     margin: 192px 80px;
+     padding: 192px 80px;
+     margin:0px;
      flex-direction: row;
      gap: 15em;
  }
@@ -1003,7 +1039,7 @@
  }
  
  #red-color {
-     background-color: rgb(255, 0, 0);
+     background-color:#ff4c19 ;
  }
  
  #grey-color {
@@ -1074,8 +1110,9 @@
          font-weight: 400;
      }
      .col-2.story-box {
-         gap: 30rem !important;
-         margin: 240px 80px;
+         gap: 4rem !important;
+         padding: 240px 80px;
+         margin:0px;
      }
  }
  
@@ -1083,7 +1120,7 @@
      .col-3 {
          display: flex;
          align-items: flex-start;
-         margin: 144px 100px 144px 100px;
+         padding: 144px 100px 144px 100px;
          flex-direction: row;
          gap: 3em;
          position: relative;
@@ -1099,7 +1136,8 @@
      }
      .col-2.story-box {
          gap: 15rem !important;
-         margin: 240px 80px;
+         padding: 240px 80px;
+         margin:0;
      }
      .contact-container {
          display: flex;
@@ -1140,12 +1178,15 @@
  .image-col {
      margin: 0;
      padding: 0;
+     
  }
  
  .bg-dark {
      background-color: #222222;
  }
- 
+ img{
+    object-fit: cover;
+ }
  .img-square {}
  
  .text-img {
