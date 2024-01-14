@@ -2964,6 +2964,29 @@
         }
     }
     
+    @media screen and (max-width:1920px) {
+        .svg-title-1 {
+            width: 93.333%;
+            max-width: 100%;
+            margin: 0px 80px;
+        }
+        .svg-title-2 {
+            width: 93.333%;
+            max-width: 100%;
+            margin: 0px 4em;
+        }
+        .button>span {
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #000;
+        }
+        .instagram-img {
+            width: 260px;
+            height: 260px;
+        }
+    }
+    
     @media screen and (min-width:1920px) {
         .footer-wrapper {
             height: 100vh;
