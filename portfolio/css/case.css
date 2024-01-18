@@ -524,6 +524,8 @@
          height: 240px;
      }
      #listed-core-items {
+         background-color: #f9f4f4;
+         color: #000 !important;
          display: flex;
          align-items: flex-start;
          margin: 80px 144px;
