@@ -1,0 +1,59 @@
+:is(vimeo-embed) {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--video-embed-bdrs, 0.25em);
+    display: grid;
+    inline-size: 50%;
+    position: relative;
+}
+
+.vimeo-button {
+    padding: 20px 0px 40px 0px;
+    width: 60px;
+    background-color: rgba(128, 128, 128, 0.63);
+}
+
+#vimeo-video-icon {}
+
+ :is(vimeo-embed) button {
+    background-color: var(--button-bgc, #F00);
+    block-size: var(--button-h, 60px);
+    border: 0;
+    border-radius: var(--button-bdrs, 50%);
+    display: grid;
+    inline-size: var(--button-w, 75px);
+    opacity: var(--button-op, 0.8);
+    position: absolute;
+    place-self: center;
+    transition: all .2s ease-in;
+}
+
+ :is(vimeo-embed) button::before {
+    aspect-ratio: 1;
+    background: #FFF;
+    block-size: 1.5em;
+    clip-path: polygon(20% 0%, 20% 100%, 100% 50%);
+    content: '';
+    place-self: center;
+}
+
+ :is(vimeo-embed) :is(iframe, img) {
+    block-size: 100%;
+    border: 0;
+    border-radius: inherit;
+    inline-size: 100%;
+    inset: 0;
+    object-fit: cover;
+    position: absolute;
+}
+
+ :is(vimeo-embed) iframe:not([src=""])+button {
+    display: none;
+}
+
+ :is(vimeo-embed button) {
+    --button-bgc: #00adef;
+}
+
+ :is(vimeo-embed):hover button {
+    --button-op: 1;
+}
