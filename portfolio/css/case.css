@@ -730,7 +730,7 @@
  .col-3 {
      display: flex;
      align-items: flex-start;
-     padding: 144px 100px 240px 100px;
+     padding: 144px 100px 85px 100px;
      flex-direction: row;
      gap: 15em;
      position: relative;
@@ -811,7 +811,7 @@
  
  .pr-scope-list,
  .pr-location-title {
-     font-family: 'Roboto Light';
+     font-family: 'Roboto Regular';
  }
  
  .pr-text {

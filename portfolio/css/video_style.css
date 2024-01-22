@@ -48,8 +48,11 @@
     --button-op: 1;
 }
 
-#vimeo-video-cover {
-    border-radius: 8px;
+#vimeo-video-cover,
+iframe {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
 }
 
  :is(vimeo-embed) :is(iframe, img) {
