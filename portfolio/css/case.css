@@ -45,6 +45,11 @@
      border-radius: 14px;
  }
  
+ .project-video-container>iframe {
+     border-radius: 14px;
+     width: 1440px !important;
+ }
+ 
  @media screen and (max-width: 479px) {
      #pr_logo {
          width: 100%;
@@ -1036,8 +1041,8 @@
  }
  
  .color-label {
-     width: 100px;
-     height: 100px;
+     width: calc(100vw/20);
+     height: calc(100vw/20);
      margin-bottom: 10px;
  }
  
@@ -1159,6 +1164,10 @@
      .link-container {
          margin-top: 14px;
      }
+ }
+ 
+ #image-col {
+     width: calc(100vw/2);
  }
  
  @media screen and (min-width: 1920px) {
