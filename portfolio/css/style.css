@@ -2286,6 +2286,10 @@
     }
     
     @media screen and (max-width: 1400px) {
+        .portfolio-container-text.garamond-font {
+            font-size: 120px;
+            line-height: 1;
+        }
         #small-video {
             display: block;
         }
