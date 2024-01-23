@@ -639,9 +639,14 @@
     }
     
     #grow {
+        max-width: 100%;
         transform: scale(0.8);
-        position: absolute;
         z-index: 0;
+        height: auto;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        /* Center the image */
     }
     
     .video-background {
@@ -1007,7 +1012,8 @@
             <div class="header-cover">
                 <!--<img src="team/main.png" alt="our team" loading="lazy">-->
                 <img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg" loading="lazy" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-500.jpeg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-800.jpeg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1080.jpeg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1600.jpeg 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg 1640w"
-                    alt="header-img" id="grow">
+                    alt="header-img" id="grow" />
+
                 <span class="header-cover-title">
 
                 <h2 data-translate="about-main-h2" id="img-description">
