@@ -3547,36 +3547,6 @@
         /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
     }
     
-    @media screen and (min-width:1920px) {
-        .footer-wrapper {
-            height: 100vh;
-            width: 100%;
-            padding: 4em 12rem 9em 12rem;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            gap: 8em !important;
-            justify-content: space-between;
-            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
-        }
-        footer {
-            flex-direction: column;
-            margin: 0;
-            height: fit-content;
-            width: 100%;
-            border: 0;
-            background-color: #f9f4f4;
-            color: #000 !important;
-            gap: 6em !important;
-            display: flex;
-        }
-        .svg-title-2 {
-            width: 82.33%;
-            max-width: 100%;
-            margin: 0px 9em;
-        }
-    }
-    
     @media screen and (max-width: 768px) {
         .footer-fnt.footer-link>span {
             padding-left: 0;
