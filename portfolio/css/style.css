@@ -2498,7 +2498,7 @@
             height: 260px;
         }
         .footer-wrapper {
-            height: fit-content;
+            height: 100vh !important;
             width: 100%;
             padding: 4em 0 26em 0;
             align-items: center;
