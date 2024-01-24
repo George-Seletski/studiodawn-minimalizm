@@ -6,847 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDIODAWN</title>
-    <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
-    <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/normalize.css" type="text/css">
-
-    <script src="../js/gsap.min.js"></script>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/ScrollTriger.js"></script>
-    <link rel="stylesheet" href="../css/preloader.css">
+    <link href="../img/fb_logo_studiodawn_square.jpg" rel="shortcut icon" type="image/x-icon">
+    <link href="../img/320x320px_fb_logo_studiodawn2_round.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="./css/case.css">
+    <link rel="stylesheet" href="./css/preloader.css">
+    <link rel="stylesheet" href="./css/video_style.css">
 </head>
 <style>
-    #img-description {
-        line-height: normal;
-        position: relative;
-        z-index: 1;
-        bottom: 0;
-        right: 0;
-        margin: 0;
-        max-width: 100%;
+    .image-container,
+    .image-container-2 {
+        line-height: 0px;
     }
-    
-    *,
-     :after,
-     :before {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box
-    }
-    
-    html {
-        font-family: sans-serif;
-        line-height: 1.15;
-        -webkit-text-size-adjust: 100%;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
-    }
-    
-    article,
-    aside,
-    figcaption,
-    figure,
-    main,
-    section {
-        display: block;
-    }
-    
-    #description-right-side {
-        grid-area: 5 / 6 / 7 / 13;
-    }
-    
-    body {
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        background-color: #f9f4f4;
-    }
-    /*div {
-        border: 1px solid;
-    }*/
-    
-    .main {
-        position: relative;
-        min-height: 100vh;
-        display: block;
-        width: 100%;
-    }
-    
-    h1 {
-        font-size: 144px;
-    }
-    
-    @media screen and (max-width: 1199px) {
-        .no-gl .main {
-            padding-bottom: 5vmin !important;
-        }
-    }
-    
-    @media screen and (min-width: 1920px) {
-        .header-cover {
-            position: relative;
-            overflow: hidden;
-            height: 1080px;
-        }
-        #large-video {
-            display: block;
-        }
-        #small-video {
-            display: none;
-        }
-        .video-text-block {
-            display: flex;
-            flex-direction: row;
-            margin: 0rem 0;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        .row-container {
-            display: flex;
-            align-items: center;
-            margin: 15rem 15rem 15rem 15rem;
-            gap: 144px;
-        }
-    }
-    
-    @media screen and (min-width: 769px) {
-        .main {
-            padding-top: 62px
-        }
-    }
-    /*.header-section-content {
-        background: transparent !important;
-        border: none;
-        opacity: 1;
-        padding: 10px 0px;
-        backdrop-filter: saturate(180%) blur(5px);
-        -webkit-backdrop-filter: saturate(180%) blur(5px);
-    }*/
     
     @media screen and (max-width: 991px) {
-        .header-section-content>#discover-h1 {
-            font-size: 1.5em !important;
-        }
-        .main-grid {
-            justify-content: center !important;
-        }
-        .image-container {
-            margin: 0px !important;
-        }
-        .main-grid__column:first-child {
-            margin-top: 0 !important;
-        }
-        .main-grid__column:nth-child(2) {
-            margin-top: 0 !important;
-        }
-        .main-grid__column:nth-child(3) {
-            margin-top: 0 !important;
-        }
-        .fnt-great {
-            font-size: 1.4em;
-        }
-    }
-    
-    @media (max-width: 478px) {
-        .footer-wrapper {
-            height: fit-content;
-            width: 100%;
-            padding: 4em 0 0 0 !important;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            gap: 4em;
-            justify-content: space-between;
-            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
-        }
-        .image-container {
-            margin: 0px !important;
-        }
-        .main-grid__column:first-child {
-            margin-top: 0 !important;
-        }
-        .main-grid__column:nth-child(2) {
-            margin-top: 0 !important;
-        }
-        .main-grid__column:nth-child(3) {
-            margin-top: 0 !important;
-        }
-    }
-    
-    @media (-o-min-device-pixel-ratio: 2/1) and (min-width:1201px),
-    (-webkit-min-device-pixel-ratio:2) and (min-width:1201px),
-    (min-resolution:2dppx) and (min-width:1201px),
-    (min-resolution:192dpi) and (min-width:1201px) {
-        .main {
-            padding-top: 70px
-        }
-    }
-    
-    .no-gl .hero-title--home {
-        margin-top: 0px;
-    }
-    
-    .hero-title__svg {
-        margin-top: 29px;
-        margin-left: -20px;
-        width: calc(100% + 20px);
-    }
-    
-    .main-grid {
-        padding-bottom: 0;
-        -webkit-box-pack: center;
-        justify-content: center;
-        background-color: transparent;
-        padding: 0 25px;
-        margin-top: 40vh;
-        will-change: transform;
-        position: relative;
-        justify-content: space-between;
-    }
-    
-    #discover-subtext {
-        padding-top: 50px !important;
-    }
-    
-    .row {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-    
-    .main-grid__column:first-child {
-        margin-top: -65px;
-        background-color: transparent;
-    }
-    
-    .main-grid__column:nth-child(2) {
-        margin-top: -294px;
-        background-color: transparent;
-    }
-    
-    .main-grid__column:nth-child(3) {
-        margin-top: 27px;
-        background-color: transparent;
-    }
-    /* Add space between each main-grid__column (section) */
-    
-    .main-grid__column {
-        margin-bottom: 0px;
-        /* Adjust this value to control the space between sections */
-    }
-    
-    .image-container {
-        margin-bottom: 250px;
-        display: block;
-        transition: transform 0.3s ease;
-    }
-    
-    .team-cardinfo {
-        position: relative;
-        width: 100%;
-        top: auto;
-        bottom: 6rem;
-        left: 0%;
-        right: auto;
-    }
-    /*Title*/
-    
-    .about-main-section {
-        z-index: 0;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        position: relative;
-        background-color: #f9f4f4;
-        margin-top: 70em;
-        margin-bottom: 15em;
-        /*height: 1600px;*/
-        width: 100%;
-    }
-    
-    .team-section {
-        z-index: auto;
-        float: none;
-        display: block;
-        margin: 0;
-        inset: auto;
-        position: absolute;
-        overflow: visible;
-        box-sizing: border-box;
-        padding: 0px;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .v-scroll__section.team {
-        margin-top: -50vh;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    
-    .v-scroll__section {
-        flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
-        padding: 0rem 6rem;
-        display: flex;
-        position: relative;
-    }
-    
-    .team-header-text {
-        position: relative;
-        inset: 0px auto auto 0px;
-        margin: 0px;
-        padding: 0px;
-        width: 100%;
-        font-family: 'Roboto Thin', sans-serif;
-        transform: translateY(0%) !important;
-        user-select: none;
-        opacity: 1;
-        transition: opacity 0.8s;
-    }
-    
-    .image-container {
-        margin-bottom: 0px;
-        display: block;
-        transition: transform 0.3s ease;
-    }
-    
-    .mb-bottom---10px {
-        margin-bottom: 10px;
-        display: block;
-        margin-top: 35px;
-    }
-    
-    .mb-bottom---10px {
-        margin-bottom: 0px;
-        display: block;
-        margin-top: 70px;
-    }
-    
-    .mr-55 {
-        margin-right: 0px !important;
-    }
-    /*Media Queries*/
-    
-    @media (min-width: 576px) {
-        .col-md-6 {
-            -webkit-box-flex: 0;
-            -ms-flex: 0 0 75%;
-            flex: 0 0 75%;
-            max-width: 75%
-        }
-    }
-    
-    @media (max-width: 1400px) {
-        #large-video {
-            display: block;
-        }
-        #small-video {
-            display: none;
-        }
-        .image-container {
-            margin-bottom: 200px;
-        }
-        .main-grid {
-            margin-top: 100vh !important;
-        }
-        .main-grid__column {
-            height: 250vh;
-        }
-        .brands-section {
-            margin: 6em 3em 0 3em;
-            gap: 100px;
-        }
-        .header-section-content>h1 {
-            font-size: unset;
-        }
-        .row-container {
-            margin: 3em;
-        }
-        #section-title {
-            font-size: 4em;
-        }
-    }
-    
-    @media (min-width: 992px) {
-        .col-lg-2 {
-            -webkit-box-flex: 0;
-            -ms-flex: 0 0 25%;
-            flex: 0 0 25%;
-            max-width: 25%;
-        }
-        .offset-lg-1 {
-            margin-left: 12.5%;
-        }
-        .fnt-great {
-            font-size: 1.8em;
-        }
-    }
-    
-    .pb-2 {
-        padding-bottom: 0em;
-    }
-    
-    @media screen and (max-width: 479px) {
-        .header-section.section-block {
-            margin-top: 3rem !important;
-        }
-        .brands-section-header {
-            margin: 0 auto;
-            width: auto;
-            display: block;
-            padding: 0 !important;
-        }
-        .main {
-            margin-top: 49px;
-        }
-        .main-grid {
-            margin-top: 10vh;
-        }
-        .main-grid__column {
-            height: 100%;
-        }
-        h1 {
-            font-size: 92px !important;
-        }
-        .garamond-font {
-            font-size: 82px !important;
-        }
-        .mouse-container {
-            display: none !important;
-        }
-        .odd-header {
-            height: 70vh;
-            align-items: center;
-            margin: 0;
-        }
-        .header-section-content {
-            font-size: 2em;
-            margin-top: 0px;
-            margin-bottom: 2em;
-        }
-        .section-block-text {
-            margin: 5em 0;
-        }
-    }
-    
-    .section-block {
-        height: 100vh !important;
-        display: flex;
-        flex-direction: column;
-        color: #fff;
-    }
-    
-    .header-section.section-block {
-        margin-top: 15rem;
-    }
-    
-    .section-block>.bottom-text-header {
-        position: relative;
-    }
-    
-    @media screen and (max-width: 991px) and (min-width: 768px) {
-        #header-font {
+        .story-text-paragraph {
+            text-align: left !important;
             font-size: 40px;
-        }
-        .ul-description>li {
-            font-size: 15px;
-            padding-bottom: 15px;
+            font-family: 'Cormorant Garamond Semibold';
             line-height: 1.5;
-        }
-        .ss-header>#header-font {
-            font-size: 55px;
-        }
-        .ss-col-item-title>#header-font {
-            font-size: 26px;
-            padding: 15px 0px;
-        }
-        #see-cases-btn {
-            color: #fff;
-            font-size: 20px !important;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-        .section-services {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-left: 3em;
-            margin-right: 3em;
-            margin-top: 3em;
-            margin-bottom: 6em;
-        }
-        .ss-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 45px;
-        }
-        .ss-header {
-            display: block;
+            font-weight: 600;
             width: 100%;
-            padding: 0;
-        }
-        .footer-wrapper {
-            height: fit-content;
-            width: 100%;
-            padding: 4em 0 18em 0 !important;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            gap: 4em;
-            justify-content: space-between;
-            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
+            padding: 0 2em;
         }
     }
     
-    @media screen and (max-width: 769px) {
-        .main-grid {
-            margin-top: 10vh;
-        }
-        #discover-h1 {
-            font-size: 1.7em !important;
-        }
-        .pb-2 {
-            padding-bottom: 20px;
-        }
-        .brands-section-header>h2 {
-            margin-bottom: 0;
-        }
-    }
-    
-    .header-cover-title {
+    .box-text-colors {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        margin: 0px 60px;
-        padding: 25px 25px 25px 25px;
-        font-size: 11px !important;
-        position: absolute;
-        gap: 2em;
-        font-weight: 600;
-        z-index: 2;
-        bottom: 0;
-        right: 0;
-        color: #fff;
-        width: 40%;
-        /* background-color: rgba(122, 104, 104, 0.137); */
-        background: rgba(69, 67, 67, 0.4);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(6.3px);
-        -webkit-backdrop-filter: blur(6.3px);
+        max-width: 50%;
     }
     
-    @media screen and (max-width:1921px) and (min-width:1441px) {
-        .header-cover-title {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin: 60px;
-            padding: 25px 25px 25px 25px;
-            font-size: 11px !important;
-            position: absolute;
-            gap: 2em;
-            font-weight: 600;
-            z-index: 2;
-            bottom: 0;
-            right: 0;
-            color: #fff;
-            width: 40%;
-            /* background-color: rgba(122, 104, 104, 0.137); */
-            background: rgba(69, 67, 67, 0.4);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(6.3px);
-            -webkit-backdrop-filter: blur(6.3px);
-        }
-        #main-title {
-            font-size: 1.6em !important;
-        }
-    }
-    
-    @media screen and (max-width:1440px) and (min-width:1200px) {
-        #main-title {
-            font-size: 1.2em !important;
-        }
-    }
-    
-    @media screen and (max-width: 991px) {
-        .header-cover {
-            position: relative;
-            overflow: hidden;
-            height: 1080px;
-        }
-        .header-cover-title {
-            margin: 0px 60px;
-            width: 88%;
-            bottom: 10em;
-        }
-        #large-video {
-            display: block;
-        }
-        #small-video {
-            display: none;
-        }
-        #discover-text {
-            font-size: 2em !important;
-        }
-        .mb-bottom---10px {
-            margin-top: 10px;
-        }
-        .main-grid {
-            margin-top: 20vh;
-        }
-        .mouse-container {
-            display: none !important;
-        }
-        .w-nav-menu {
-            width: 108vw !important;
-        }
-        .w-nav[data-collapse="all"] .w-nav-menu {
-            min-height: 104vh !important;
-        }
-        #main-title {
-            font-size: 2em !important;
-        }
-        .odd-header {
-            height: 70vh;
-            align-items: flex-end;
-            margin-bottom: 0;
-        }
-        .main-grid {
-            margin-top: 15vh !important;
-        }
-        #discover-h1 {
-            font-size: 2em;
-        }
-    }
-    
-    #main-title {
-        padding-top: 50px;
-    }
-    
-    #brand-logo {
-        width: 100%;
-    }
-    
-    .hv-80 {
-        height: 80vh !important;
-    }
-    
-    #grow {
-        max-width: 100%;
-        transform: scale(0.8);
-        z-index: 0;
-        height: auto;
-        width: 100%;
-        display: block;
-        margin: 0 auto;
-        /* Center the image */
-    }
-    
-    .video-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: transparent !important;
-        border: none;
-        opacity: 1;
-        padding: 10px 0px;
-        backdrop-filter: saturate(180%) blur(5px);
-        -webkit-backdrop-filter: saturate(180%) blur(5px);
-    }
-    
-    video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-    
-    #small-video {
-        transform: scale(1);
-    }
-    
-    #large-video {
-        /*transform: scale(1.3);*/
-    }
-    
-    @media (max-width: 768px) {
-        .header-cover-title {
-            margin: 60px 0px;
-            width: 100%;
-            bottom: 10em;
-        }
-        .header-cover {
-            position: relative;
-            overflow: hidden;
-            height: 859px;
-        }
-        video {
-            object-fit: contain;
-        }
-        #large-video {
-            display: none;
-        }
-        #small-video {
-            display: block;
-        }
-        .button {
-            display: flex;
-            border: 1px solid #000;
-            border-radius: 100px;
-            padding: 10px 30px;
-            margin-bottom: 0px;
-            transition: transform 5s;
-            transition: all 0.5s ease;
-            align-items: center;
-            text-align: center;
-            background-color: #f9f4f442;
-        }
-        .button>span {
-            font-size: 16px !important;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: #000;
-            font-family: 'Roboto Regular';
-        }
-    }
-    
-    .button {
-        background: transparent !important;
-        border: 1px solid #696767;
-        opacity: 1;
-        backdrop-filter: saturate(180%) blur(10px);
-        -webkit-backdrop-filter: saturate(180%) blur(10px);
-    }
-    
-    @media screen and (max-width: 479px) {
-        .ss-header>#header-font {
-            font-size: 55px;
-        }
-        .ss-col-item-title>#header-font {
-            font-size: 26px;
-            padding: 15px 0px;
-        }
-        #see-cases-btn {
-            color: #fff;
-            font-size: 20px !important;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-        .section-services {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-top: -3em;
-            margin-bottom: 6em;
-        }
-        .ss-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 45px;
-        }
-        .ss-header {
-            display: flex;
-            width: 100%;
-            padding: 0;
-        }
-    }
-    
-    @media screen and (min-width: 991px) {
-        #see-cases-btn {
-            color: #fff;
-            font-size: 20px !important;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .section-services {
-            display: grid;
-            grid-template-columns: 0.5fr 1fr;
-            grid-template-rows: 1fr;
-            margin: 15rem 15rem 15rem 15rem;
-        }
-        .ss-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            column-gap: 144px;
-            row-gap: 100px;
-        }
-        .ss-header {
-            display: inline-block;
-            width: fit-content;
-        }
-    }
-    
-    @media screen and (min-width: 2000px) {
-        .header-cover {
-            position: relative;
-            overflow: hidden;
-            height: 100vh;
-        }
-        .description {
-            font-size: 1.6em !important;
-            font-family: 'General-Sans Light' !important;
-            font-weight: 900;
-            line-height: normal !important;
-        }
-        #header-font {
-            font-size: 4rem !important;
-            text-align: left;
-            line-height: 1;
-            padding-bottom: 1em;
-            text-transform: capitalize;
-            /* font-family: 'Font-Sans Regular', sans-serif; */
-            font-family: 'Cormorant Garamond Semibold', sans-serif;
-            /* font-family: 'Cormorant Garamond Light', sans-serif; */
-        }
-        #see-cases-btn {
-            color: #fff;
-            font-size: 2em !important;
-        }
-        .button {
-            padding: 20px 60px;
-        }
-        .footer-wrapper {
-            height: 100vh;
-            width: 100%;
-            padding: 4em 12rem 12em 12rem;
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            gap: 8em !important;
-            justify-content: space-between;
-            /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
-        }
-        .link-email,
-        .link-address,
-        .link-telephone {
-            text-decoration: none;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 1.4em;
-            line-height: 1.5;
-        }
-        .footer-link>span {
-            text-decoration: none;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 2.7em !important;
-            line-height: normal;
-        }
-        .footer-fnt.footer-link>.link-anim {
-            font-size: 2.7em !important;
-        }
+    .col-2 {
+        gap: 12em;
     }
 </style>
 
@@ -914,6 +107,7 @@
             </scroll-object>
         </div>
     </div>
+
     <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
         <div class="container-default w-container">
 
@@ -928,7 +122,7 @@
                                     <a href="../" class="nav-link" data-translate="nav-link-1" rel="preload" as="fetch">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../about" class="nav-link w--current" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
+                                    <a href="../about" class="nav-link" data-translate="nav-link-2" rel="preload" as="fetch">About</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../portfolio" class="nav-link" data-translate="nav-link-3" rel="preload" as="fetch">Cases</a>
@@ -951,7 +145,7 @@
                                     <h2 class="nav-info-header white">Get in touch.</h2>
                                     <li class="nav-item">
                                         <a href="#" class="link-address white">228 Nelson's Crescent New
-                                        Westminster, BC V3L 3E3</a>
+                                            Westminster, BC V3L 3E3</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="mailto:hello@dawnstudio.com" class="link-email white">hello@dawnstudio.com</a>
@@ -992,256 +186,257 @@
             </div>
         </div>
     </div>
-    <header class="header-section ">
-        <div class="header-section-content">
 
-            <h1 id="main-title">
-                <span class=" garamond-font" data-translate="about-main-h1-1">Not your typical</span>
-                <span class="mb-bottom---10px mr-55 roboto-light-fnt" data-translate="about-main-h1-2">agency</span>
-            </h1>
 
-        </div>
-        <div class="bottom-text-header">
-            <span class="bottom-text-title"><a class="link-anim fnt-sml" href="https://george-seletski.github.io/studiodawn-minimalizm/contact/">CREATE YOURS NOW</a></span>
 
-        </div>
-    </header>
+    <div class="page-wrapper">
+        <!--<section class="image-container" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+            <img id="image-bg-1" src="./01_Kukla/webp/bb2.webp" loading="eager" alt="cover project" srcset="https://zupimages.net/up/23/41/8u11.jpg 500w, https://zupimages.net/up/23/41/8u11.jpg 800w, https://zupimages.net/up/23/41/8u11.jpg 1080w, https://zupimages.net/up/23/41/8u11.jpg 1200w">
 
-    <div class="page-wrapper" style="margin: 0px;">
-        <div class="header-image-description">
-            <div class="header-cover">
-                <!--<img src="team/main.png" alt="our team" loading="lazy">-->
-                <img src="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg" loading="lazy" srcset="https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-500.jpeg 500w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-800.jpeg 800w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1080.jpeg 1080w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218-p-1600.jpeg 1600w, https://assets.website-files.com/61fb92bac35517f753fbbdd7/6281f1773afd94e829a1c52f_Habitat_Team_110522-02218.jpg 1640w"
-                    alt="header-img" id="grow" />
-
-                <span class="header-cover-title">
-
-                <h2 data-translate="about-main-h2" id="img-description">
-                    Unlock limitless possibilities with our comprehensive solutions block from trademark management to
-                    digital transformation, we offer a wide range of services to elevate your brands success. Harness
-                    the power of our solutions and propel your business to
-                    new heights in the ever-evolving digital landscape.
-                </h2>
-                <h2 data-translate="about-main-h2" id="img-description">
-                    Unlock limitless possibilities with our comprehensive solutions block from trademark management to
-                    digital transformation, we offer a wide range of services to elevate your brands success. Harness
-                    the power of our solutions and propel your business to
-                    new heights in the ever-evolving digital landscape.
-                </h2>
-            </span>
+            <div class="project-header">
+                <h1>Kukla</h1>
             </div>
+        </section>-->
 
-        </div>
+        <header class="contact__header">
+            <div class="carousel-scale contact__header__cover" style="opacity: 1;">
+                <img data-object-fit="cover" src="./img/624c1e6934c8ca3e65e234ab_placeholder 1.svg" role="presentation" class="next">
+                <!--<iframe preload="auto" src="https://player.vimeo.com/video/845341027?h=b3fe141cf9&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&controls=0&loop=1" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen" allowfullscreen class="video-header"></iframe>-->
 
-        <section class="section-services">
-            <div class="ss-header">
-                <h2 id="header-font">Our services.</h2>
             </div>
-            <div class="ss-grid">
-                <div class="ss-col-item">
-                    <span class="ss-col-item-title">
-                    <h2 id="header-font">Brand strategy.</h2>
-                    </span>
-                    <span class="description">
-                        From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                        creativity to
-                        clients doing right by the world.
-                    
-                    </span>
-                </div>
+            <div class="contact__header__content row">
+                <h1 data-splitted="words" class="title title--1">Video</h1>
 
-                <div class="ss-col-item">
-                    <span class="ss-col-item-title">
-                    <h2 id="header-font">Name&plus;tagline development.</h2></span>
-                    <span class="description">
-                        From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                        creativity to
-                        clients doing right by the world.
-                
-                    </span>
-                </div>
 
-                <div class="ss-col-item">
-                    <span class="ss-col-item-title">
-                    <h2 id="header-font">Brand identity.</h2></span>
-                    <span class="description">
-                        From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                        creativity to
-                        clients doing right by the world.
-                
-                    </span>
-                </div>
+            </div>
+        </header>
 
-                <div class="ss-col-item"><span class="ss-col-item-title">
-                    <h2 id="header-font">Packaging design.</h2></span>
-                    <span class="description">
-                        From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                        creativity to
-                        clients doing right by the world.
-                
-                    </span>
+        <section class="col-3" id="project-info" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+            <div class="pr-name">
+                <h2>Kukla</h2>
+            </div>
+            <div class="pr-description">
+                <h2 id="pr-desc-header">A new frontier in piercing</h2>
+                <div class="sub-col-3">
+                    <div class="pr-scope">
+                        <h3 id="project-scope-header">
+                            Project-scope:
+                        </h3>
+                        <ul class="pr-scope-list">
+                            <li>Branding</li>
+                        </ul>
+                    </div>
+                    <div class="pr-location">
+                        <h3 id="pr-location-header">
+                            Location:
+                        </h3>
+                        <span class="pr-location-title">Gold Coast, Australia</span>
+                    </div>
                 </div>
+            </div>
+            <div class="pr-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid explicabo unde voluptatibus, similique ullam. Veniam distinctio non modi natus consequatur? Autem provident totam debitis adipisci eum perferendis aliquid dolores.
+                </p>
+                <p class="pr-text-item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid explicabo unde voluptatibus, similique ullam. Veniam distinctio non modi natus consequatur? Autem provident totam debitis adipisci eum perferendis aliquid dolores.
+                </p>
+                <p class="pr-text-item">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aliquid explicabo unde voluptatibus, similique ullam. Veniam distinctio non modi natus consequatur? Autem provident totam debitis adipisci eum perferendis aliquid dolores.
+                </p>
             </div>
         </section>
-        <div class="row-container mb-100">
-            <div>
-                <h2 id="header-font" data-translate="header-h2-1">The what</h2>
-                <span class="description">
-                    From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-                    creativity to
-                    clients doing right by the world.
+
+        <section class="video-section" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+            <vimeo-embed>
+                <img id='vimeo-video-cover' loading="lazy" src="https://vumbnail.com/70591644.jpg" alt="Video Description">
+                <iframe allow="autoplay" src="" data-src="https://player.vimeo.com/video/70591644?autoplay=1"></iframe>
+                <button class="vimeo-button" aria-label="Play video">
                 
-                </span>
+                        <img id="vimeo-video-icon" src="../icons/play-svg.svg" alt="play video">
+                
+                      
+                </button>
+            </vimeo-embed>
+        </section>
 
 
-                <span class="description">
-        <ul class="ul-description">
-            <br>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-        </ul>
-        </span>
+
+        <section class="col-2 story-box" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+            <div class="story-header">
+                <h2>Kukla elevates your everyday with adornment that steps up your signature look with a sartorial statement. It’s the bold you. The brave you. The you you’ve been building up to be.</h2>
             </div>
-            <div>
-                <h2 id="header-font" data-translate="header-h2-2">The how</h2>
-                <span class="description" data-translate="description-w-2">
-            From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-            creativity to
-            clients doing right by the world.
-
-        </span>
-                <span class="description">
-        <ul class="ul-description">
-            <br>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-        </ul>
-        </span>
+            <div class="story-container">
+                <div class="story-text-header">
+                    <h3>Who is Kukla?</h3>
+                </div>
+                <div class="story-text">Kukla is a unique, powerhouse brand set on disrupting the piercing industry by claiming the space as the go-to for stylish, attainable, sustainable and best in class ear candy. Designed for the sophisticated rebel, Kukla is a bespoke piercing
+                    experience that encourages self expression for a life fully actualised. </div>
             </div>
-            <div>
-                <h2 id="header-font" data-translate="header-h2-3">The why</h2>
-                <span class="description">
-            From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional
-            creativity to
-            clients doing right by the world.<br><br>
+        </section>
 
 
-        </span>
-                <span class="description">
-        <ul class="ul-description">
-            <br>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-            <li>- clients doing right by the world.</li>
-        </ul>
-        </span>
-            </div>
-
-        </div>
-        <div class="container-center-block" style="display: none;">
-
-            <div class="font-text-button">
-                <a href="/portfolio/" rel="noopener noreferrer">
-                    <div class="button see-cases ">
-                        <span data-translate="about-btn-text">
-                    See cases
-                </span>
 
 
+
+
+
+
+        <section class="inst-col-3" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" id="project-instag">
+
+            <div class="card">
+
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
                     </div>
-                </a>
-            </div>
-        </div>
-
-
-        <div class="header-section section-block">
-            <div class="video-background">
-                <video id='large-video' autoplay loop muted playsinline>
-                    <source
-                        src="../video/ShowReel_final edit_16x9 - Trim.mp4"
-                        type="video/mp4"
-                    >
-                </video>
-                <video id='small-video' autoplay loop muted playsinline>
-                    <source
-                        src="../video/SR_9x16_1080x1920 - Trim.mp4"
-                        type="video/mp4"
-                    >
-                </video>
-            </div>
-            <div class="header-section-content " style="--background-color: #3498db;">
-
-                <h1 id="discover-h1">
-                    <span class="mb-bottom---10px garamond-font fnt-great" id="discover-text">Discover</span>
-                    <span class="mb-bottom---10px mr-55 roboto-light-fnt" id="discover-subtext">our work</span>
-                </h1>
-
-            </div>
-            <div class="bottom-text-header pb-2 " style=" cursor:pointer;">
-                <a href="../portfolio/" rel="noopener noreferrer">
-                    <div class="button see-cases" style=" border: none; cursor:pointer;">
-                        <span data-translate="about-btn-text" id="see-cases-btn" style=" cursor:pointer; ">
-                            
-                            See cases
-                         
-                        </span>
-
-
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
                     </div>
-                </a>
-            </div>
-        </div>
-        <div class="brands-section">
-            <div class="brands-section-header ">
-                <h2 data-translate="about-customer-h2">customers</h2>
-            </div>
-            <div class="brands-container">
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
                 </div>
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
-                </div>
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
-                </div>
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
-                </div>
-                <div id="brand">
-
-                    <img src="logo-img/almi_black.svg" alt="" srcset="">
-
-                </div>
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
-                </div>
-                <div id="brand">
-                    <img src="logo-img/almi_black.svg" alt="" srcset="">
-                </div>
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
-                </div>
-                <div id="brand">
-                    <img src="logo-img/abb-logo-black-and-white.png" id='brand-logo' alt="" srcset="">
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
+                    </a>
                 </div>
 
-                <div id="brand">
-                    <img src="logo-img/almi_black.svg" id='brand-logo' alt="" srcset=""></a>
-                </div>
 
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
 
             </div>
-        </div>
+            <div class="card">
 
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
+            </div>
+            <div class="card">
+
+                <div class="top">
+                    <div class="userDetails">
+                        <div class="profile_img">
+                            <img src="../img/320x320px_fb_logo_studiodawn2_round.png" class="cover" alt="studiodawn-logo-instagram">
+                        </div>
+                        <!-- Main Title -->
+                        <h3>studiodawn<br>
+                            <!--<span>Khao Lak, Thailande</span>-->
+                        </h3>
+                    </div>
+                    <div>
+                        <!-- Settings Dot -->
+                        <div class="settings"></div>
+                    </div>
+                </div>
+                <div class="imgBox">
+                    <!-- Main Image -->
+                    <a href="http://">
+                        <img src="./01_Kukla/webp/bb2-sq.webp" class="cover">
+                    </a>
+                </div>
+
+
+                <!-- Description -->
+                <h4 class="message"><b>studiodawn</b> Sunset in Khao Lak in Thailand 🌅#sunset</h4>
+
+            </div>
+
+        </section>
+
+        <section class="col-3" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal" id="listed-core-items">
+            <div class="numbered-item">
+                <span class="number">
+                    <h1>01</h1>
+                </span>
+                <span class="number-item-text">
+                    <h2 class="story-text">Our creative team then took the reins to translate the new strategy into a
+                        creative and compelling identity for
+                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and
+                        play whilst honouring the
+                        precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
+                </span>
+            </div>
+            <div class="numbered-item">
+                <span class="number">
+                    <h1>02</h1>
+                </span>
+                <span class="number-item-text">
+                    <h2 class="story-text">Our creative team then took the reins to translate the new strategy into a
+                        creative and compelling identity
+                        for
+                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and
+                        play whilst
+                        honouring the
+                        precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
+                </span>
+            </div>
+            <div class="numbered-item">
+                <span class="number">
+                    <h1>03</h1>
+                </span>
+                <span class="number-item-text">
+                    <h2 class="story-text">Our creative team then took the reins to translate the new strategy into a
+                        creative and compelling identity
+                        for
+                        Printebebe’s next chapter. The result is a wildly unique brand experience that injects fun and
+                        play whilst
+                        honouring the
+                        precious passage of time that is childhood. Infusing new ideas with the brand’s roots</h2>
+                </span>
+            </div>
+        </section>
+
+
+        <section class="contact-container" data-scroll data-scroll-speed="1" data-scroll-target="#grid2" data-scroll-direction="horizontal">
+
+            <div class="link-container">
+                <ul class="link-list">
+                    <li class="link-item">
+                        <a href="#" id="backToTopBtn">back to top</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="/portfolio/">portfolio</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="">next project</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </section>
         <footer>
             <div class="footer-wrapper">
                 <div class="footer-block" id="ft-block-1">
@@ -1347,29 +542,16 @@
 
         </footer>
     </div>
-    <!-- Cookie Modal -->
-    <!--<div class="cookie-modal">
-        <div class="cookie-content">
-            <div class="col">
-                <p>This website uses cookies to improve the user experience. By using our website, you consent to all cookies in accordance with our cookie policy.</p>
-            </div>
-            <div class="col">
-                <div class="cookie-buttons">
-                    <button id="accept-cookies">Accept</button>
-                    <button id="decline-cookies">Decline</button>
-                </div>
-                <div class="col">
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <script src="../js/all_functions.js"></script>
+
+
+    <script src="./js/ScrollTriger.js" async></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="../js/ScrollTriger.js"></script>
-    <script src="../js/all_functions.js"></script>
-</body>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
+</body>
 <script>
     gsap.registerPlugin(ScrollTrigger);
     let preloaderAnimationCompleted = false;
@@ -1390,12 +572,10 @@
                 headerWrapper.classList.add("loaded");
                 const pageWrapper = document.querySelector(".page-wrapper");
                 pageWrapper.classList.add("loaded");
-                const headerSection = document.querySelector(".header-section");
-                headerSection.classList.add("loaded");
-                const rowMb100 = document.querySelector(".row-container.mb-100");
-                rowMb100.classList.add("loaded");
-                const containerCenterB = document.querySelector(".container-center-block");
-                containerCenterB.classList.add("loaded");
+                /*const containerCenterB = document.querySelector(".video-header");
+                containerCenterB.classList.add("loaded");*/
+
+
                 // Set the flag to true when the preloader animations are completed
                 preloaderAnimationCompleted = true;
 
@@ -1460,23 +640,78 @@
         }
     }
 
-
+    // Check if the page should be displayed when the page is fully loaded
     window.onload = function() {
         showPageIfPreloaderCompleted();
     };
 
     setTimeout(initPage, 1200);
 
-
     function initPage() {
-        //cookieFunction();
         // Check if the device supports touch events
         const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+        const customCursor = document.querySelector(".custom-cursor");
+
+
+        var vimeoPlayer = document.querySelector('vimeo-embed iframe');
+
+
+
+        vimeoPlayer.addEventListener('mouseover', function() {
+            $('.custom-cursor').css('display', 'none');
+        });
+
+
+        vimeoPlayer.addEventListener('mouseout', function() {
+            $('.custom-cursor').css('display', 'block');
+        });
+
+
+        $(document).ready(function() {
+            document.querySelectorAll(':is(vimeo-embed) button').forEach(button => button.addEventListener('click', () => {
+                const video = button.previousElementSibling;
+                video.src = video.dataset.src;
+            }))
+
+            var $backToTop = $('#backToTopBtn');
+            var offset = 300; // browser window scroll (in pixels) after which the "back to top" link is shown
+            var offsetOpacity = 1200; // browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+            var scrollDuration = 700;
+            var scrolling = false;
+
+            // Show/hide the "back to top" button based on scroll position
+            $(window).scroll(function() {
+                if (!scrolling && $(this).scrollTop() > offset) {
+                    $backToTop.fadeIn();
+                } else {
+                    $backToTop.fadeOut();
+                }
+            });
+
+            // Smooth scroll to top
+            $backToTop.on('click', function(event) {
+                event.preventDefault();
+                scrolling = true;
+
+                $('html, body').animate({
+                    scrollTop: 0
+                }, scrollDuration, function() {
+                    scrolling = false;
+                });
+            });
+            /* var $status = $('img');
+
+             $('img').imagesLoaded({
+                 background: true
+             }, function(imgLoad) {
+                 $status.text(imgLoad.images.length + ' images loaded checking backgrounds');
+             });*/
+        });
+
+
 
         if (!isTouchDevice) {
-            const customCursor = document.querySelector(".custom-cursor");
-            // Add custom cursor functionality for non-touch devices
-
+            customCursor.style = `opacity: 1 !important;`;
             const links = document.querySelectorAll("a");
 
             document.addEventListener('mousemove', function(event) {
@@ -1489,22 +724,17 @@
                     customCursor.classList.add("custom-cursor--link");
                 });
 
-                link.addEventListener("mouseout", (event) => {
+                link.addEventListener("mouseout", (event) => { // Capture the event object
                     customCursor.classList.remove("custom-cursor--link");
                     // Add a slight delay to prevent cursor flickering on hover-out
                     setTimeout(() => {
-                        customCursor.style.left = `${event.clientX}px`;
-                        customCursor.style.top = `${event.clientY}px`;
-                    }, 10);
+                        customCursor.style.left = `${event.clientX}px`; // Use the captured event object here
+                        customCursor.style.top = `${event.clientY}px`; // Use the captured event object here
+                    }, 50);
                 });
             });
-
-
-        } else {
-            const customCursor = document.querySelector(".custom-cursor");
-            customCursor.style = `opacity: 0 !important;`;
-
         }
+
 
         $(document).ready(function() {
             $('.hamburger-menu-wrapper').click(function() {
@@ -1535,79 +765,112 @@
                 $('.header-content-wrapper').css('display', 'flex');
                 $('.container-default').css('padding-top', 'your-original-padding-value');
             });
+            $(window).on("scroll", function() {
+                if ($(window).scrollTop() >= 30) {
+                    $(".header-wrapper").addClass("with-effect");
+                } else {
+                    $(".header-wrapper").removeClass("with-effect");
+                }
+            });
         });
-
-        $(window).on("scroll", function() {
-            if ($(window).scrollTop() >= 30) {
-                $(".header-wrapper").addClass("with-effect");
-            } else {
-                $(".header-wrapper").removeClass("with-effect");
-            }
-        });
-
-        // Disable scroll
-        function disableScroll() {
-            // Get the current scroll position
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-            // Save the current scroll position and add scroll-lock styles
-            window.onscroll = function() {
-                window.scrollTo(scrollLeft, scrollTop);
-            };
-            document.body.classList.add('scroll-lock');
-        }
-
-        // Enable scroll
-        function enableScroll() {
-            window.onscroll = null;
-            document.body.classList.remove('scroll-lock');
-        }
-
-
-        // GSAP TimelineMax for animations
-        const timeline = gsap.timeline();
-
-        // Show the main content by setting its display property to "block"
-        const mainContent = document.getElementById('main-content');
-
-
-        // GSAP animations
-        const growTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#grow",
-                scrub: 1,
-                start: "top center",
-                end: "+=400",
-                ease: "power1.out"
-            }
-        });
-        growTl.to("#grow", {
-            duration: 1.5,
-            scale: 1
-        });
-
-        const revealAnimation = gsap.timeline();
-
-        // Set initial state (fully transparent)
-        revealAnimation.set(".header-section-content h1 span", {
-            opacity: 0
-        });
-
-        // Define the animation and add it to the revealAnimation timeline
-        revealAnimation.from(".garamond-font", {
-            opacity: 0,
-            y: 20,
-            duration: 1,
-            delay: 1
-        }).from(".mr-55", {
-            opacity: 0,
-            y: 20,
-            duration: 1
-        }, "-=0.7");
 
 
     };
+
+
+    // Enable scroll
+    function enableScroll() {
+        window.onscroll = null;
+        document.body.classList.remove('scroll-lock');
+    };
+
+    // Create a function to handle the image reveal animations
+    function createImageRevealAnimation(containerSelector) {
+        // Select the images within the container
+        const images = document.querySelectorAll(`${containerSelector} img`);
+
+        // Initial styles (set opacity to 0 and initial position)
+        gsap.set(images, {
+            opacity: 0,
+            x: 0, // You can adjust this if you want to animate in a different direction
+        });
+
+        // Create a timeline for the animation
+        const revealImageTimeline = gsap.timeline();
+
+        // Add animation to reveal the images
+        revealImageTimeline.to(images, {
+            opacity: 1,
+            x: 0, // Adjust this value for horizontal animation
+            duration: 0.4,
+            ease: "power2.inOut",
+        });
+
+        // ScrollTrigger to trigger the animation when the section comes into view
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.create({
+            trigger: containerSelector,
+            start: "top bottom", // Adjust this for the desired trigger point
+            end: "bottom top", // Adjust this for the desired end point
+            animation: revealImageTimeline,
+            toggleActions: "play none none none",
+        });
+    }
+
+    // Disable scroll
+    function disableScroll() {
+        // Get the current scroll position
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        // Save the current scroll position and add scroll-lock styles
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+        document.body.classList.add('scroll-lock');
+    };
+
+    // Function to add event listeners to links
+    function setupLinkEventListeners(links) {
+        const customCursor = document.querySelector(".custom-cursor");
+        links.forEach((link) => {
+            link.addEventListener("mouseover", () => {
+                customCursor.classList.add("custom-cursor--link");
+            });
+
+            link.addEventListener("mouseout", (event) => {
+                customCursor.classList.remove("custom-cursor--link");
+                setTimeout(() => {
+                    customCursor.style.left = `${event.clientX}px`;
+                    customCursor.style.top = `${event.clientY}px`;
+                }, 50);
+            });
+
+            activeLinks.push(link); // Store the active links
+        });
+    }
+
+    // Function to remove event listeners from links
+    function removeLinkEventListeners() {
+        const customCursor = document.querySelector(".custom-cursor");
+        activeLinks.forEach((link) => {
+            link.removeEventListener("mouseover", () => {
+                customCursor.classList.add("custom-cursor--link");
+            });
+
+            link.removeEventListener("mouseout", (event) => {
+                customCursor.classList.remove("custom-cursor--link");
+                setTimeout(() => {
+                    customCursor.style.left = `${event.clientX}px`;
+                    customCursor.style.top = `${event.clientY}px`;
+                }, 50);
+            });
+        });
+
+        activeLinks = []; // Clear the active links array
+    }
 </script>
+
+
 
 </html>
