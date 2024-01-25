@@ -1181,16 +1181,6 @@
      }
  }
  
- footer {
-     height: 100vh !important;
-     width: 100%;
-     border: 0;
-     color: #000 !important;
-     gap: 15em;
-     display: block;
-     padding-top: 0em !important;
- }
- 
  #image-col {
      width: calc(100vw/2);
  }
