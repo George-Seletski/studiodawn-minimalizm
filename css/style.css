@@ -2426,6 +2426,22 @@
     }
     
     @media screen and (min-width:1400px) and (max-width:1919px) {
+        .text-video {
+            top: 0;
+            display: flex;
+            overflow: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 15rem 7.5rem 14rem 0rem !important;
+        }
+        .instagram-container {
+            display: flex;
+            gap: 70px;
+            align-items: center;
+            margin: 5rem 6rem;
+            justify-content: space-between;
+        }
         #discover-h1 {
             font-size: 100px !important;
         }
@@ -2441,7 +2457,7 @@
             margin-top: 8em;
         }
         #header-font-video-text {
-            font-size: 2em !important;
+            font-size: 15px !important;
             text-align: left;
             line-height: 0.9 !important;
             padding-bottom: 2em;
@@ -2461,7 +2477,7 @@
         .text {
             display: flex;
             text-align: left;
-            margin: 10em 3em 10em 6rem;
+            margin: 5em 3em 5em 6rem;
             font-size: 2em;
             align-items: center;
             line-height: normal;
