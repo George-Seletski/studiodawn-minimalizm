@@ -1175,11 +1175,20 @@
          flex-direction: row;
          max-width: 100%;
          gap: 5rem;
-         padding-bottom: 50px;
      }
      .link-container {
          margin-top: 14px;
      }
+ }
+ 
+ footer {
+     height: 100vh !important;
+     width: 100%;
+     border: 0;
+     color: #000 !important;
+     gap: 15em;
+     display: block;
+     padding-top: 0em !important;
  }
  
  #image-col {
@@ -1190,7 +1199,7 @@
      .contact-container {
          display: flex;
          flex-direction: row;
-         margin: 100px;
+         margin: 50px;
      }
      .contact-container-header {
          padding: 100px 0;
