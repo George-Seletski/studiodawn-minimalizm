@@ -2507,7 +2507,7 @@
             max-width: 100%;
         }
         .footer-block {
-            padding: 0em 2em;
+            padding: 2em 0;
         }
         .footer-link-block {
             display: flex;
