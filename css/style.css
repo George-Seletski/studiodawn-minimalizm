@@ -2180,7 +2180,7 @@
             height: 100vh;
         }
         #ft-block-1 {
-            padding: 6em 0 0 0 !important;
+            padding: 8em 0 0 0 !important;
         }
     }
     
@@ -2452,7 +2452,7 @@
             display: flex;
             gap: 70px;
             align-items: center;
-            margin: 5rem 6rem;
+            margin: 100px 6rem;
             justify-content: space-between;
         }
         #discover-h1 {
