@@ -2781,6 +2781,11 @@
     }
     
     @media screen and (max-width: 1919px) {
+        .roboto-light-fnt {
+            font-family: 'Roboto Thin', sans-serif;
+            font-weight: 400 !important;
+            padding-top: 0px;
+        }
         #video-text-description {
             font-size: 25px;
             width: 400px;
