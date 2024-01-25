@@ -2457,7 +2457,7 @@
             margin-top: 8em;
         }
         #header-font-video-text {
-            font-size: 15px !important;
+            font-size: 45px !important;
             text-align: left;
             line-height: 0.9 !important;
             padding-bottom: 2em;
@@ -2774,7 +2774,7 @@
             line-height: normal;
         }
         .description {
-            font-size: 14px !important;
+            font-size: 18px !important;
             line-height: 20px;
         }
         .row-container>div {
