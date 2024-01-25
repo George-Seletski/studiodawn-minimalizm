@@ -112,6 +112,11 @@
     }
     
     @media screen and (max-width: 479px) {
+        .title--1 {
+            font-size: 6rem !important;
+            font-family: 'Roboto Thin';
+            text-transform: uppercase;
+        }
         h1 {
             line-height: 1 !important;
             font-size: 36px;
@@ -121,6 +126,18 @@
         }
         .brands-section-header>h2 {
             font-size: 4em !important;
+        }
+        .footer-navbar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0em;
+            padding-top: 12px;
+            text-align: left;
+        }
+        .logo-svg {
+            padding: 0;
+            max-width: 100%;
+            padding: 4em 1.5em !important;
         }
     }
     
@@ -2568,7 +2585,14 @@
         }
     }
     
+    .logo-svg {
+        padding: 0 4em;
+    }
+    
     @media screen and (max-width: 991px) and (min-width: 768px) {
+        .logo-svg {
+            padding: 0 3em;
+        }
         .footer-wrapper {
             height: fit-content;
             width: 100%;
@@ -2582,11 +2606,17 @@
         }
     }
     
+    @media screen and (max-width: 479px) {
+        .mg-10 {
+            margin: 0 2em !important;
+        }
+    }
+    
     @media screen and (max-width: 1919px) {
         #list-1,
         #list-2,
         #list-3 {
-            width: fit-content !important;
+            width: fit-content;
         }
         #small-video {
             display: block;
@@ -3443,6 +3473,15 @@
     }
     
     @media screen and (max-width: 479px) {
+        footer {
+            width: 100%;
+            border: 0;
+            background-color: #f9f4f4;
+            color: #000 !important;
+            gap: 0 !important;
+            display: block;
+            padding-top: 4em;
+        }
         .instagram-text-contianer>.icons {
             justify-content: flex-start;
             gap: 3em;
@@ -3474,7 +3513,8 @@
         }
         .gara-fnt {
             font-family: 'Roboto Thin';
-            font-size: 59px !important;
+            font-size: 49px !important;
+            text-transform: uppercase;
         }
         .footer-wrapper {
             height: fit-content;
@@ -3734,10 +3774,10 @@
             width: 31px;
         }
         #list-1 {
-            width: 10em;
+            width: 11em;
         }
         #list-2 {
-            width: 8em;
+            width: 7em;
         }
         #list-3 {
             width: auto !important;

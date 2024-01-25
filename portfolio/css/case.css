@@ -50,6 +50,14 @@
      width: 1440px !important;
  }
  
+ @media screen and (min-width: 479px) and (max-width: 991px) {
+     .col-2.story-box {
+         gap: 4rem !important;
+         padding: 240px 144px !important;
+         margin: 0px;
+     }
+ }
+ 
  @media screen and (max-width: 479px) {
      #pr_logo {
          width: 100%;
@@ -1178,6 +1186,33 @@
      }
      .link-container {
          margin-top: 14px;
+     }
+ }
+ 
+ @media screen and (max-width: 1200px)and (min-width: 991px) {
+     #listed-core-items {
+         display: flex;
+         align-items: flex-start;
+         flex-direction: column !important;
+         margin: 0 !important;
+         padding: 144px !important;
+         flex-direction: row;
+         gap: 2em !important;
+         position: relative;
+     }
+     .numbered-item {
+         display: flex;
+         flex-direction: column;
+         gap: 50px;
+         padding-top: 100px;
+     }
+ }
+ 
+ @media screen and (max-width: 479px) {
+     .footer-link-item>a {
+         color: #000;
+         font-size: 49px !important;
+         line-height: normal;
      }
  }
  

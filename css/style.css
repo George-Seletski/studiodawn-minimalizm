@@ -1891,6 +1891,10 @@
         justify-content: space-between;
     }
     
+    .logo-svg {
+        padding: 0 4em;
+    }
+    
     .instagram-text-contianer>h2 {
         font-family: 'Cormorant Garamond Semibold', sans-serif;
     }
@@ -2884,6 +2888,10 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
+            text-align: right;
+        }
+        .logo-svg {
+            padding: 0 3em;
         }
         .container-center-block {
             display: flex;
@@ -2899,13 +2907,13 @@
             color: #000 !important;
             gap: 15em;
             display: block;
-            padding-top: 4em;
+            padding-top: 4em !important;
         }
         .footer-wrapper {
             height: fit-content;
             width: 100%;
             /*padding: 4em 0 26em 0 !important;*/
-            padding: 4em 0 18em 0 !important;
+            padding: 4em 3em 18em 3em !important;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -3469,7 +3477,8 @@
         }
         .gara-fnt {
             font-family: 'Roboto Thin';
-            font-size: 59px !important;
+            font-size: 49px !important;
+            text-transform: uppercase;
         }
         .footer-wrapper {
             height: fit-content;
@@ -3503,6 +3512,12 @@
             flex-direction: column;
             gap: 0em;
             padding-top: 12px;
+            text-align: left;
+        }
+        .logo-svg {
+            padding: 0;
+            max-width: 100%;
+            padding: 4em 1.5em;
         }
         #brand {
             display: flex;

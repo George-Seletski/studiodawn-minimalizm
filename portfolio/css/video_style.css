@@ -26,6 +26,26 @@
     transform: translate(-50%, -50%);
 }
 
+@media screen and (max-width: 1200px)and (min-width: 480px) {
+     :is(vimeo-embed) {
+        aspect-ratio: 16 / 9;
+        border-radius: var(--video-embed-bdrs, 0.25em);
+        display: grid;
+        inline-size: 75% !important;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 479px) {
+     :is(vimeo-embed) {
+        aspect-ratio: 16 / 9;
+        border-radius: var(--video-embed-bdrs, 0.25em);
+        display: grid;
+        inline-size: 85%;
+        position: relative;
+    }
+}
+
 :is(vimeo-embed) button {
     background-color: var(--button-bgc, #00adef);
     block-size: var(--button-h, 60px);
