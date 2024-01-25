@@ -1183,7 +1183,7 @@
  .footer-wrapper {
      height: 70vh;
      width: 100%;
-     padding: 9em 0 28em 0;
+     padding: 0em 0 28em 0;
      align-items: center;
      display: flex;
      flex-direction: column;
