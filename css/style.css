@@ -2426,6 +2426,9 @@
     }
     
     @media screen and (min-width:1400px) and (max-width:1919px) {
+        #discover-h1 {
+            font-size: 100px !important;
+        }
         .video-container {
             height: 100vh;
             border-color: transparent !important;
