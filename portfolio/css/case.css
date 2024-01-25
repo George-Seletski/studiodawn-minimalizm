@@ -1181,7 +1181,7 @@
      }
  }
  
- @media screen and (min-width: 1400px) and (max-width: 1919px) {
+ @media screen and (min-width: 1400px) {
      .footer-wrapper {
          height: 40vh;
          width: 100%;
