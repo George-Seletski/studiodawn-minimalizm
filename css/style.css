@@ -2434,11 +2434,8 @@
             align-items: center;
             position: relative;
             max-width: 50%;
-            padding: 0rem;
+            padding: 15rem;
             margin-top: 8em;
-        }
-        .gif-animation {
-            width: 300px !important;
         }
         #header-font-video-text {
             font-size: 2em !important;
