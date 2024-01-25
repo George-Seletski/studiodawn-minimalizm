@@ -1180,20 +1180,6 @@
      }
  }
  
- .footer-wrapper {
-     height: 40vh;
-     width: 100%;
-     padding: 0em 0 28em 0;
-     align-items: center;
-     display: flex;
-     flex-direction: column;
-     gap: 9em;
-     justify-content: space-between;
-     padding-right: 5rem;
-     padding-left: 5rem;
-     /* border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1; */
- }
- 
  #image-col {
      width: calc(100vw/2);
  }
