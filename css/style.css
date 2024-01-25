@@ -2035,6 +2035,9 @@
     .iblock {
         display: inline-block;
         rotate: -45deg;
+        margin-left: 10px;
+        line-height: normal;
+        height: fit-content;
     }
     
     #footer-navbar-item>a {}
