@@ -2583,6 +2583,11 @@
     }
     
     @media screen and (max-width: 1400px) {
+        #list-1,
+        #list-2,
+        #list-3 {
+            width: fit-content !important;
+        }
         #small-video {
             display: block;
         }
@@ -2754,7 +2759,7 @@
         .filter-container {
             display: flex;
             flex-direction: row;
-            gap: 1em;
+            gap: 3em;
             margin: 0 0 2em 0;
         }
         .filter-list {
