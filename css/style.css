@@ -2426,6 +2426,30 @@
     }
     
     @media screen and (min-width:1400px) and (max-width:1919px) {
+        video-container {
+            height: 100vh;
+            border-color: transparent !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            max-width: 50%;
+            padding: 7.5rem;
+            margin-top: 8em;
+        }
+        .gif-animation {
+            height: 700px !important;
+        }
+        #header-font-video-text {
+            font-size: 2em !important;
+            text-align: left;
+            line-height: 0.9 !important;
+            padding-bottom: 2em;
+            font-family: 'Cormorant Garamond Semibold', sans-serif;
+            margin-bottom: 10px !important;
+            margin-top: 35px;
+            padding-bottom: 35px !important;
+        }
         .svg-title-2 {
             width: 88.33%;
             max-width: 100%;
@@ -2547,7 +2571,7 @@
             padding-bottom: 35px !important;
         }
         .gif-animation {
-            height: 700px;
+            height: 700px !important;
         }
         .video-container {
             border-color: transparent !important;
