@@ -1719,7 +1719,7 @@
     .footer-wrapper {
         height: 70vh;
         width: 100%;
-        padding: 4em 0 28em 0;
+        padding: 9em 0 28em 0;
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -2454,7 +2454,7 @@
             max-width: 100%;
         }
         .footer-block {
-            padding: 0 2em;
+            padding: 2em;
         }
         .footer-link-block {
             display: flex;
@@ -2537,7 +2537,7 @@
             display: none;
         }
         #header-font-video-text {
-            font-size: 45px !important;
+            font-size: 2em !important;
             text-align: left;
             line-height: 0.9 !important;
             padding-bottom: 2em;
@@ -2734,7 +2734,7 @@
             line-height: normal;
         }
         .description {
-            font-size: 14px;
+            font-size: 14px !important;
             line-height: 20px;
         }
         .row-container>div {
