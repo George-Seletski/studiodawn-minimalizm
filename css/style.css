@@ -2426,7 +2426,7 @@
     }
     
     @media screen and (min-width:1400px) and (max-width:1919px) {
-        video-container {
+        .video-container {
             height: 100vh;
             border-color: transparent !important;
             display: flex;
