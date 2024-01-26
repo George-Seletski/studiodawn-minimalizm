@@ -2442,7 +2442,10 @@
         }
     }
     
-    @media screen and (min-width:1400px) and (max-width:1919px) {
+    @media screen and (min-width:1200px) and (max-width:1919px) {
+        footer {
+            height: 80vh !important;
+        }
         .footer-wrapper {
             height: 45vh;
             width: 100%;
