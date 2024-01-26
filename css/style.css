@@ -2431,7 +2431,7 @@
     
     @media screen and (min-width:1400px) and (max-width:1919px) {
         .footer-wrapper {
-            height: 40vh;
+            height: 60vh;
             width: 100%;
             padding: 9em 0 0em 0;
             align-items: center;
