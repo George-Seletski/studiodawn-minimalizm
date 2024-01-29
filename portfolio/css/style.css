@@ -786,6 +786,7 @@
         padding: 0px;
         transition: all 0.5s ease;
         background-color: #f9f4f4;
+        max-width: 60%;
     }
     
     .case-list-img>a {
@@ -814,6 +815,7 @@
         font-size: 1.5em;
         line-height: 1.75;
         padding-top: 2em;
+        padding-left: 10px;
     }
     
     .g-image:hover,
@@ -1049,7 +1051,12 @@
         font-weight: 800;
         font-family: 'General-Sans ExtraLight', sans-serif;
         font-size: 20px;
-        padding-top: 40px;
+        margin-top: 40px;
+        padding: 10px;
+        color: #fff;
+        background-color: #000;
+        width: fit-content;
+        height: fit-content;
     }
     
     #play-button-icon {
@@ -2596,6 +2603,9 @@
         .logo-svg {
             padding: 0 3em;
         }
+        .case-list-img {
+            max-width: 100%;
+        }
         .footer-wrapper {
             height: fit-content;
             width: 100%;
@@ -3265,9 +3275,6 @@
         .wh-30 {
             width: 40px !important;
             height: 40px !important;
-        }
-        .tag {
-            padding-top: 20px;
         }
     }
     
