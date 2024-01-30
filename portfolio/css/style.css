@@ -731,7 +731,7 @@
     .cases-grid {
         column-count: 3;
         column-gap: 10px;
-        margin: 5em 10em 5em 10em;
+        margin: 7em 10em 0em 10em;
         transition: all 0.5s ease;
     }
     
