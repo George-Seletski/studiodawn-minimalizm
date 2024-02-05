@@ -1731,7 +1731,7 @@
         width: 100%;
         border: 0;
         color: #000 !important;
-        gap: 15em;
+        gap: 6em;
         display: block;
         padding-top: 4em;
     }
@@ -2190,6 +2190,9 @@
     }
     
     @media screen and (max-width:1921px) and (min-width:1440px) {
+        .block.rel.mask.in-view {
+            padding-bottom: 6em;
+        }
         .mb-bottom---10px.mr-55.roboto-light-fnt {
             margin: 0 !important;
             padding-top: 0px !important;
