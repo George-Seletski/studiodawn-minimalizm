@@ -2888,6 +2888,12 @@
     }
     
     @media screen and (max-width: 991px) {
+        #image-col,
+        .col-2.img-col-right>img {
+            max-width: 100%;
+            width: 100% !important;
+            display: inline-block;
+        }
         .footer-fnt.footer-link>span {
             padding-left: 4.75em;
         }

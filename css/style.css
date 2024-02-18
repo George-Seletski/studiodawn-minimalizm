@@ -1196,7 +1196,7 @@
         text-transform: lowercase;
         width: auto;
         display: block;
-        border-bottom: 2px solid;
+        border-bottom: 2px solid transparent;
         /*border-image: radial-gradient(circle, rgba(0, 0, 0, 1) 56%, rgba(210, 195, 195, 1) 87%, rgba(249, 244, 244, 1) 100%) 1;*/
     }
     

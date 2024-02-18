@@ -60,7 +60,7 @@
  
  @media screen and (max-width: 479px) {
      #pr_logo {
-         width: 100%;
+         width: 100% !important;
          padding-right: 100px;
      }
      .col-2.box-img-label {
@@ -155,7 +155,7 @@
          margin: 50px 3em !important;
          align-items: center;
          padding: 0 !important;
-         background-color: #fff;
+         background-color: transparent;
      }
      .inst-col-3 {
          display: flex;
@@ -540,7 +540,7 @@
          height: 240px;
      }
      #listed-core-items {
-         background-color: #f9f4f4;
+         background-color: #f9f4f4 !important;
          color: #000 !important;
          display: flex;
          align-items: flex-start;
