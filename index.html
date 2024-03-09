@@ -64,7 +64,7 @@
     
     @media screen and (max-width:1921px) and (min-width:1441px) {
         #main-title {
-            font-size: 2em !important;
+            font-size: 1.8em !important;
         }
     }
     
@@ -347,9 +347,9 @@
     <div class="header-section">
         <div class="header-section-content">
             <h1 id="main-title">
-                <span class="garamond-font" data-translate="main-h1-1">We create</span>
-                <span class="mb-bottom---10px mr-55 roboto-light-fnt " data-translate="main-h1-2">
-                    future brands</span>
+                <span class="garamond-font">Where brands </span>
+                <span class="mb-bottom---10px mr-55 roboto-light-fnt ">
+                    start shining</span>
             </h1>
         </div>
         <div class="bottom-text-header">
@@ -379,9 +379,9 @@
             </div>
             <div class="video-container">
                 <div class="movie-btn movie-btn sixteen-nine-btn" vidurl="https://player.vimeo.com/video/898782145?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;background=1&amp;muted=0">
-                    <div class="play-button-container">
-                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" vidurl="https://player.vimeo.com/video/898782145">
-                            <img id="play-button-icon" src="./icons/play-svg.svg" alt="play video">
+                    <div class="play-button-container" style="cursor: pointer !important;">
+                        <div class="movie-btn movie-btn sixteen-nine-btn play-button" id='play-button' style="cursor: pointer !important;" vidurl="https://player.vimeo.com/video/898782145">
+                            <img id="play-button-icon" src="./icons/play-svg.svg" style="cursor: pointer !important;" alt="play video">
                         </div>
                     </div>
                     <!-- Add the thumbnail image here -->
@@ -1066,7 +1066,7 @@
         $(document).ready(function() {
             var vimeoPlayer = new Vimeo.Player('myVideo');
 
-            $(".movie-btn").click(function() {
+            $(".movie-btn.movie-btn.sixteen-nine-btn").click(function() {
                 var video = $('#myVideo');
                 var vidUrl = $(this).attr("vidUrl");
 
